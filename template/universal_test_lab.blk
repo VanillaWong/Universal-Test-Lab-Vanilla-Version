@@ -3186,7 +3186,7 @@ units{
 
   objectGroups{
     name:t="Airfield_Test"
-    tm:m=[[-0.999, 0, -0.045] [0, 1, 0] [0.045, 0, -0.999] [531.8, 29.85, 577]]
+    tm:m=[[-0.045, 0, 0.999] [0, 1, 0] [-0.999, 0, -0.045] [531.8, 29.85, 577]]
     unit_class:t="dynaf_pg_1line_ground"
     objLayer:i=2
 
