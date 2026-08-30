@@ -558,7 +558,7 @@ triggers{
         replaceAreas:b=no
         canSpawnOnNeutral:b=no
         showOnMap:b=yes
-        target:t="airfields_area"
+        target:t="airfield_target_01"
         team:t="A"
 
         tags{
@@ -3083,6 +3083,18 @@ units{
 
     props{
       army:i=2
+      active:b=yes
+    }
+  }
+
+  objectGroups{
+    name:t="airfield_target_01"
+    tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [531.8, 29.85, 577]]
+    unit_class:t="dummy_airfield"
+    objLayer:i=1
+
+    props{
+      army:i=1
       active:b=yes
     }
   }
