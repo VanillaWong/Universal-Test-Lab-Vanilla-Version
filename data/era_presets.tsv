@@ -1,0 +1,5 @@
+Name	GroundIds	AirIds	AirCounts	ShipId	ShipCount
+WWI - 1916	uk_mark_v,germ_a7v,uk_mark_v,germ_a7v,uk_mark_v,germ_a7v,uk_mark_v	fokker_d7,spad_13,-,-	2,2,0,0	uk_battleship_dreadnought	1
+WWII - 1943	ussr_t_34_1942,germ_pzkpfw_vi_ausf_h1_tiger,us_m4a2_sherman,germ_pzkpfw_v_ausf_d_panther,us_m10,ussr_t_34_1942,germ_pzkpfw_vi_ausf_h1_tiger	bf-109g-2,bf-109e-3,-,-	2,2,0,0	germ_battleship_bismarck	1
+GULF WAR - 1991	us_m1_abrams,ussr_t_72a,ussr_t_64a_1971,us_m60a3_tts,ussr_t_72av_turms,us_m1_abrams,ussr_t_72a	f_14a_early,f_16a_block_10,mi_24d,ah_64a	2,2,2,2	us_battleship_iowa_class_iowa	1
+MODERN - 2020s	us_m1a2_abrams,ussr_t_90a,cn_ztz_99a,jp_type_10,germ_leopard_2a7v,ussr_t_90m_2020,us_m1a2_abrams	f_16c_block_50,j_10c,ka_52,mi_28nm	2,2,2,2	ussr_cruiser_kirov	1

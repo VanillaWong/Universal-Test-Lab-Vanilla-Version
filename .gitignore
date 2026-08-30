@@ -1,0 +1,28 @@
+dist/
+*.user
+*.suo
+*.pdb
+*.tmp
+*.bak
+.vs/
+.idea/
+bin/
+obj/
+_game_extract/
+_mission_extract/
+cleanup-backups/
+diagnostics/
+*.zip
+*.sha256
+# Build logs
+build_run.log
+build_run.err
+build_catalog_phase5.log
+# Game unpacked data (530 MB) — never push
+universal_char_data/
+universal_game_data/
+universal_lang_data/
+universal_units_data/
+universal_weapons_data/
+# Local workspace backups
+data_backup_20260830/

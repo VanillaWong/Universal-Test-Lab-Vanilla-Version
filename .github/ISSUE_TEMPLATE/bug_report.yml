@@ -1,0 +1,75 @@
+name: Bug report
+description: Report a reproducible Universal Test Lab problem
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping improve Universal Test Lab.
+        This is public-beta software. Please check the README's Known beta limitations before filing a report.
+  - type: input
+    id: version
+    attributes:
+      label: Application version
+      placeholder: Release tag or EXE version
+    validations:
+      required: true
+  - type: input
+    id: game_version
+    attributes:
+      label: War Thunder version
+    validations:
+      required: true
+  - type: dropdown
+    id: vehicle_kind
+    attributes:
+      label: Vehicle type
+      options:
+        - Aircraft
+        - Helicopter
+        - Ground vehicle
+        - Drone / event vehicle
+        - User interface / installation
+    validations:
+      required: true
+  - type: input
+    id: vehicle
+    attributes:
+      label: Vehicle
+      placeholder: Exact in-app vehicle name
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: What happened?
+      description: Include modules, ammunition or pylon loadout, map, target, and whether the behavior also occurs with a native loadout.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Select ...
+        2. Mount ...
+        3. Build and launch ...
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Screenshots and generated files
+      description: Attach the generated mission. For ground proxy bugs, also attach the generated us_m2a4.blk and utl_ground_cannon.blk. Do not include credentials, saves, or complete extracted game archives.
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checklist
+      options:
+        - label: I tested with the latest available Universal Test Lab release.
+          required: true
+        - label: I closed and reopened the War Thunder User Missions tab after generation.
+          required: true
+        - label: I checked the README's Known beta limitations.
+          required: true
