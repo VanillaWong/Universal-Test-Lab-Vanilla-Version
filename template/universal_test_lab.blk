@@ -525,6 +525,53 @@ triggers{
     else_actions{}
   }
 
+  create_spawns{
+    is_enabled:b=yes
+    comments:t=""
+
+    props{
+      actionsType:t="PERFORM_ONE_BY_ONE"
+      conditionsType:t="ALL"
+      enableAfterComplete:b=no
+    }
+
+    events{
+      initMission{}
+    }
+
+    conditions{}
+    actions{
+      missionMarkAsRespawnPoint{
+        loc_name:t="missions/airfield_spawn1"
+        radius:r=-1
+        isAirfield:b=yes
+        spawnEffect:b=no
+        isStrictSpawn:b=no
+        resetStrictSpawnIndex:b=no
+        isUnit:b=no
+        forceCreate:b=no
+        useExisting:b=no
+        ignoreTeamsOnReuse:b=no
+        isIndividual:b=no
+        onlyOnePlayerPerSpawnPoint:b=no
+        removeAreas:b=no
+        replaceAreas:b=no
+        canSpawnOnNeutral:b=no
+        showOnMap:b=yes
+        target:t="airfields_area"
+        team:t="A"
+
+        tags{
+          air:b=yes
+          tank:b=no
+          ship:b=no
+        }
+      }
+    }
+
+    else_actions{}
+  }
+
   "Respawn Air"{
     is_enabled:b=yes
     comments:t=""
