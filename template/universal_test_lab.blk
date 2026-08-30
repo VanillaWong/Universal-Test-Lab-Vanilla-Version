@@ -3089,7 +3089,7 @@ units{
 
   objectGroups{
     name:t="airfield_target_01"
-    tm:m=[[0, 0, -1] [0, 1, 0] [1, 0, 0] [531.8, 29.85, 577]]
+    tm:m=[[0, 0, 1] [0, 1, 0] [-1, 0, 0] [1031.8, 29.85, 577]]
     unit_class:t="dynaf_pg_1line_2000_universal"
     objLayer:i=1
 
