@@ -3184,37 +3184,16 @@ units{
     way{}
   }
 
-  structures{
+  objectGroups{
     name:t="Airfield_Test"
     tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [0, 46, -2500]]
-    unit_class:t="dummy_airfield"
-    objLayer:i=1
-    closed_waypoints:b=no
-    isShipSpline:b=no
-    shipTurnRadius:r=100
-    weapons:t=""
-    bullets0:t=""
-    bullets1:t=""
-    bullets2:t=""
-    bullets3:t=""
-    bulletsCount0:i=0
-    bulletsCount1:i=0
-    bulletsCount2:i=0
-    bulletsCount3:i=0
-    crewSkillK:r=0
-    applyAllMods:b=no
+    unit_class:t="dynaf_pg_1line_3000_green"
+    objLayer:i=2
 
     props{
-      army:i=2
-      count:i=1
-      formation_type:t="rows"
-      formation_div:i=3
-      formation_step:p2=2.5, 2
-      formation_noise:p2=0.1, 0.1
-      uniqueName:t="Airfield"
+      army:i=1
+      active:b=yes
     }
-
-    way{}
   }
 
   armada{
