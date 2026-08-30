@@ -23,9 +23,13 @@ if (Test-Path -LiteralPath $staging) { Remove-Item -LiteralPath $staging -Recurs
 New-Item -ItemType Directory -Force -Path $staging | Out-Null
 try {
   Copy-Item -LiteralPath $executable -Destination $staging
-  foreach ($file in @("README.md", "CHANGELOG.md", "LICENSE", "THIRD_PARTY_NOTICES.md", "docs\中文使用教学.md")) {
+  foreach ($file in @("README.md", "CHANGELOG.md", "LICENSE", "THIRD_PARTY_NOTICES.md")) {
     Copy-Item -LiteralPath (Join-Path $projectRoot $file) -Destination $staging
   }
+  # Chinese tutorial (docs/*.md with a non-ASCII filename) - enumerated to stay
+  # encoding-safe for Windows PowerShell 5.1 which reads BOM-less UTF-8 scripts as ANSI.
+  $chinaGuide = Get-ChildItem -LiteralPath (Join-Path $projectRoot "docs") -File -Filter "*.md" | Where-Object { $_.Name -match "[^\x00-\x7F]" } | Select-Object -First 1
+  if ($null -ne $chinaGuide) { Copy-Item -LiteralPath $chinaGuide.FullName -Destination $staging }
   $releaseNotes = Join-Path $projectRoot ("docs\RELEASE_NOTES_" + $Version + ".md")
   if (-not (Test-Path -LiteralPath $releaseNotes)) { throw "Release notes were not found: $releaseNotes" }
   Copy-Item -LiteralPath $releaseNotes -Destination (Join-Path $staging "RELEASE_NOTES.md")
