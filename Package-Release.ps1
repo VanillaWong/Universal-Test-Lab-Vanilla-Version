@@ -23,7 +23,7 @@ if (Test-Path -LiteralPath $staging) { Remove-Item -LiteralPath $staging -Recurs
 New-Item -ItemType Directory -Force -Path $staging | Out-Null
 try {
   Copy-Item -LiteralPath $executable -Destination $staging
-  foreach ($file in @("README.md", "CHANGELOG.md", "LICENSE", "THIRD_PARTY_NOTICES.md")) {
+  foreach ($file in @("README.md", "CHANGELOG.md", "LICENSE", "THIRD_PARTY_NOTICES.md", "docs\中文使用教学.md")) {
     Copy-Item -LiteralPath (Join-Path $projectRoot $file) -Destination $staging
   }
   $releaseNotes = Join-Path $projectRoot ("docs\RELEASE_NOTES_" + $Version + ".md")
