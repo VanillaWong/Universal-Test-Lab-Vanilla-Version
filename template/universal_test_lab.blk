@@ -1250,7 +1250,7 @@ effects{}
 units{
   armada{
     name:t="You"
-    tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [0, 1500, -2500]]
+    tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [531.8, 1500, 577]]
     unit_class:t="utl_safe_player"
     objLayer:i=1
     closed_waypoints:b=no
