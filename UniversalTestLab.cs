@@ -2520,36 +2520,18 @@ public string InjectedCannonUnit;
         {
             if (ground)
                 text = RemoveAirfieldContent(text);
-            if (!airportTakeoff)
-            {
-                // Air-spawn mode: keep the respawn marker (plain point, 1500m air
-                // area) but strip the airfield itself so nothing pulls the player
-                // back to the runway on respawn (legacy 0.11.2 behaviour).
-                text = RemoveNamedBlockAnywhere(text, "addAirfield");
-                text = RemoveNamedBlockAnywhere(text, "spawnOnAirfield");
-                text = RemoveNamedBlockAnywhere(text, "airfield_area");
-                text = RemoveNamedBlockAnywhere(text, "airfield_start");
-                text = RemoveNamedBlockAnywhere(text, "airfield_end");
-                text = RemoveNamedBlockAnywhere(text, "spawn01");
-                text = RemoveNamedBlockAnywhere(text, "airfields_area");
-                text = RemoveNamedBlockAnywhere(text, "airfield_spawnpoint_high");
-                text = RemoveObjectGroupByName(text, "airfield_target_01");
-                text = RemoveObjectGroupByName(text, "Airfield_Runway");
-                text = text.Replace("isAirfield:b = yes", "isAirfield:b = no");
-                text = text.Replace("target:t=\"airfield_target_01\"", "target:t=\"UTL_Player_Air_Spawn\"");
-            }
             BlockSpan mission = FirstBlock(text, "mission", 0);
             if (mission == null) throw new InvalidOperationException("Mission settings block is missing.");
             string missionBlock = mission.Text;
             if (Regex.IsMatch(missionBlock, @"(?m)^\s*restoreType:t\s*="))
-                missionBlock = new Regex(@"(?m)^(\s*)restoreType:t\s*=\s*""[^""]*""").Replace(missionBlock, "$1restoreType:t=\"manual\"", 1);
-            else missionBlock = missionBlock.Insert(missionBlock.IndexOf('{') + 1, Environment.NewLine + "    restoreType:t=\"manual\"");
+                missionBlock = new Regex(@"(?m)^(\s*)restoreType:t\s*=\s*""[^""]*""").Replace(missionBlock, "$1restoreType:t=\"attempts\"", 1);
+            else missionBlock = missionBlock.Insert(missionBlock.IndexOf('{') + 1, Environment.NewLine + "    restoreType:t=\"attempts\"");
             text = ReplaceSpan(text, mission, missionBlock);
 
             BlockSpan triggers = FirstBlock(text, "triggers", 0);
             if (triggers == null) throw new InvalidOperationException("Mission triggers block is missing.");
             string spawn = ground ? "UTL_Player_Ground_Spawn" : "UTL_Player_Air_Spawn";
-            string respawnTarget = ground ? spawn : "spawn01";
+            string respawnTarget = spawn;
             string trigger = @"
   ""UTL Player Respawn Compatible""{
     is_enabled:b=yes
@@ -2653,8 +2635,9 @@ public string InjectedCannonUnit;
             text = RemoveNamedBlockAnywhere(text, "create_spawns");
             foreach (string zone in new[] { "airfield_area", "airfield_start", "airfield_end", "spawn01", "airfields_area", "airfield_spawnpoint_high" })
                 text = RemoveNamedBlockAnywhere(text, zone);
-            text = RemoveObjectGroupByName(text, "airfield_target_01");
-        text = RemoveObjectGroupByName(text, "Airfield_Runway");
+            // NOTE: dynaf runway unit (airfield_target_01) is kept - it is invisible on
+            // this map but harmless; removing it via RemoveObjectGroupByName could
+            // swallow the adjacent rendInst runway (Airfield_Runway) block.
             return text;
         }
 
@@ -6454,7 +6437,7 @@ fpvCameraOffset:p3 = 0.2, -0.1, 0
         private static void CleanupPreviousGeneratedFiles(string root, string currentMission, GeneratedAircraft current)
         {
             string missionDir = Path.Combine(root, MissionFolderRelative);
-            foreach (string file in Directory.GetFiles(missionDir, "universal_test_lab*.blk"))
+            foreach (string file in Directory.GetFiles(missionDir, "universal_test_lab_*.blk"))
             {
                 if (!Path.GetFullPath(file).Equals(Path.GetFullPath(currentMission), StringComparison.OrdinalIgnoreCase)) try { File.Delete(file); } catch { }
             }
@@ -7333,7 +7316,7 @@ fpvCameraOffset:p3 = 0.2, -0.1, 0
                     groundPlayer.Text.IndexOf("crewSkillK:r=1", StringComparison.Ordinal) < 0 ||
                     groundPlayer.Text.IndexOf("applyAllMods:b=no", StringComparison.Ordinal) < 0 ||
                     groundMission.IndexOf("UTL Ground Weapon Initialization", StringComparison.Ordinal) >= 0 ||
-                    groundMission.IndexOf("restoreType:t=\"manual\"", StringComparison.Ordinal) < 0 ||
+                    groundMission.IndexOf("restoreType:t=\"attempts\"", StringComparison.Ordinal) < 0 ||
                     
                     
                                                             groundMission.IndexOf("UTL Fast Rearm Policy", StringComparison.Ordinal) < 0 ||
@@ -7345,7 +7328,7 @@ fpvCameraOffset:p3 = 0.2, -0.1, 0
                     groundSpeedTrigger == null || groundSpeedTrigger.Text.IndexOf("is_enabled:b=no", StringComparison.Ordinal) < 0 ||
                     groundMission.IndexOf("UTL APS Carrier Recovery Compatible", StringComparison.Ordinal) < 0 ||
                     groundMission.IndexOf("UTL Target Ammunition Restore Compatible", StringComparison.Ordinal) >= 0 ||
-                    groundMission.IndexOf("restoreType:t=\"manual\"", StringComparison.Ordinal) < 0 ||
+                    groundMission.IndexOf("restoreType:t=\"attempts\"", StringComparison.Ordinal) < 0 ||
                     groundMission.IndexOf("attack_type:t=\"fire_at_will\"", StringComparison.Ordinal) < 0 ||
                     groundMission.IndexOf("UTL_Player_Ground_Spawn", StringComparison.Ordinal) < 0)
                     throw new InvalidOperationException("Ground vehicle and unlimited-respawn self-test failed.");

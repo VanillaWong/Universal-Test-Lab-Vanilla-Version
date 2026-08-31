@@ -395,7 +395,37 @@ triggers{
 
     else_actions{}
   }
-      "UTL Quick Restore"{
+      
+ create_spawns{
+   is_enabled:b=yes
+   comments:t=""
+
+   props{
+     actionsType:t="PERFORM_ONE_BY_ONE"
+     conditionsType:t="ALL"
+     enableAfterComplete:b=no }
+
+   events{
+     initMission{}
+   }
+
+   conditions{}
+
+   actions{
+     addAirfield{
+       runwayStart:t = "airfield_start"
+       runwayEnd:t = "airfield_end"
+       runwayWidth:r =10
+       army:i =1
+       spawnPoint:t = "spawn01"
+       visibleOnHud:b = yes
+     }
+   }
+
+   else_actions{}
+ }
+
+"UTL Quick Restore"{
     is_enabled:b=yes
     comments:t="Press F (flaps toggle) to fully restore the player unit (parts, ammo, fuel, crew, fire) without respawning."
 
@@ -519,65 +549,6 @@ triggers{
         object_var_comp_op:t="equal"
         object_var_value:i=0
         shouldBlink:b=no
-      }
-    }
-
-    else_actions{}
-  }
-
-  create_spawns{
-    is_enabled:b=yes
-    comments:t=""
-
-    props{
-      actionsType:t="PERFORM_ONE_BY_ONE"
-      conditionsType:t="ALL"
-      enableAfterComplete:b=no
-    }
-
-    events{
-      initMission{}
-    }
-
-    conditions{}
-    actions{
-      addAirfield{
-        runwayStart:t="airfield_start"
-        runwayEnd:t="airfield_end"
-        runwayWidth:r=10
-        army:i=1
-        spawnPoint:t="spawn01"
-        visibleOnHud:b=yes
-      }
-
-  missionMarkAsRespawnPoint{
-    loc_name:t="missions/airfield_spawn1"
-    isAirfield:b = yes
-    spawnEffect:b = no
-    isStrictSpawn:b = no
-    resetStrictSpawnIndex:b = no
-    isUnit:b = no
-    forceCreate:b = no
-    useExisting:b = no
-    ignoreTeamsOnReuse:b = no
-    isIndividual:b = no
-    onlyOnePlayerPerSpawnPoint:b = no
-    removeAreas:b = no
-    replaceAreas:b = no
-    canSpawnOnNeutral:b = no
-    showOnMap:b = yes
-    target:t="airfield_target_01"
-
-    team:t="A"
-
-    tags{
-      air:b = yes
-      tank:b = no
-      ship:b = no }
-  }
-      spawnOnAirfield{
-        runwayName:t="airfield_start"
-        objects:t="UTL_AIRPORT_OBJECTS"
       }
     }
 
@@ -3097,27 +3068,7 @@ units{
       army:i=2
       active:b=yes
     }
- objectGroups{
-   name:t="airfield_target_01"
-   tm:m=[[0,0, -1] [0,1,0] [1,0,0] [531.8,0,577]]
-   unit_class:t="dynaf_pg_1line_3000_green"
-   objLayer:i=1
-   props{
-     army:i = 1
-     active:b = yes
-   }
 
- objectGroups{
- name:t="Airfield_Runway"
- tm:m=[[0,0, -1] [0,1,0] [1,0,0] [531.8,0,577]]
- unit_class:t="utl_airfield_runway"
- objLayer:i=2
- props{
- army:i = 1
- active:b = yes
- }
- }
- }
   }
 
   armada{
@@ -3453,47 +3404,31 @@ areas{
     props{}
   }
 
-  airfield_spawnpoint_high{
-    type:t="Sphere"
-    tm:m=[[185.299, 0.0, 136.756] [0.0, 230.3, 0.0] [-136.756, 0.0, 185.299] [531.8, 32, 577]]
-    props{}
-  }
+ airfield_area{
+   type:t="Box"
+   tm:m=[[150,0,0] [0,100,0] [0,0,600] [551.7,30,575.1]]
+   objLayer:i=0
+   props{}
+ }
+ airfield_start{
+   type:t="Sphere"
+   tm:m=[[20,0,0] [0,20,0] [0,0,20] [551.7,30,-24.9]]
+   objLayer:i=0
+   props{}
+ }
+ airfield_end{
+   type:t="Sphere"
+   tm:m=[[20,0,0] [0,20,0] [0,0,20] [551.7,30,1175.1]]
+   objLayer:i=0
+   props{}
+ }
+ spawn01{
+   type:t="Sphere"
+   tm:m=[[10,0,0] [0,10,0] [0,0,10] [551.7,30,575.1]]
+   objLayer:i=0
+   props{}
+ }
 
-  airfields_area{
-    type:t="Sphere"
-    tm:m=[[22244.8, 0, 20129] [0, 30000, 0] [-20129, 0, 22244.8] [0, 2000, 0]]
-    objLayer:i=4
-
-    props{}
-  }
-
-  airfield_area{
-    type:t="Box"
-    tm:m=[[150,0,0] [0,100,0] [0,0,550] [531.8,32,577]]
-    objLayer:i=4
-    props{}
-  }
-
-  airfield_start{
-    type:t="Sphere"
-    tm:m=[[20,0,0] [0,20,0] [0,0,20] [531.8,32,1027]]
-    objLayer:i=4
-    props{}
-  }
-
-  airfield_end{
-    type:t="Sphere"
-    tm:m=[[20,0,0] [0,20,0] [0,0,20] [531.8,32,27]]
-    objLayer:i=4
-    props{}
-  }
-
-  spawn01{
-    type:t="Sphere"
-    tm:m=[[0,0,2] [0,2,0] [2,0,0] [531.8,32,527]]
-    objLayer:i=4
-    props{}
-  }
 }
 
 objLayers{
