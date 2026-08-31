@@ -2521,7 +2521,10 @@ public string InjectedCannonUnit;
             if (ground)
                 text = RemoveAirfieldContent(text);
             if (!airportTakeoff)
+            {
                 text = text.Replace("target:t=\"airfield_target_01\"", "target:t=\"UTL_Player_Air_Spawn\"");
+                text = text.Replace("isAirfield:b = yes", "isAirfield:b = no");
+            }
             BlockSpan mission = FirstBlock(text, "mission", 0);
             if (mission == null) throw new InvalidOperationException("Mission settings block is missing.");
             string missionBlock = mission.Text;
