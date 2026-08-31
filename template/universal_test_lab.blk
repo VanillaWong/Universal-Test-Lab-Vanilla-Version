@@ -541,32 +541,6 @@ triggers{
 
     conditions{}
     actions{
-      missionMarkAsRespawnPoint{
-        loc_name:t="missions/airfield_spawn1"
-        radius:r=-1
-        isAirfield:b=yes
-        spawnEffect:b=no
-        isStrictSpawn:b=no
-        resetStrictSpawnIndex:b=no
-        isUnit:b=no
-        forceCreate:b=no
-        useExisting:b=no
-        ignoreTeamsOnReuse:b=no
-        isIndividual:b=no
-        onlyOnePlayerPerSpawnPoint:b=no
-        removeAreas:b=no
-        replaceAreas:b=no
-        canSpawnOnNeutral:b=no
-        showOnMap:b=yes
-        target:t="airfield_target_01"
-        team:t="A"
-
-        tags{
-          air:b=yes
-          tank:b=no
-          ship:b=no
-        }
-      }
       addAirfield{
         runwayStart:t="airfield_start"
         runwayEnd:t="airfield_end"
@@ -1309,7 +1283,7 @@ effects{}
 units{
   armada{
     name:t="You"
-    tm:m=[[0, 0, -1] [0, 1, 0] [1, 0, 0] [1453.68, 105, 255.012]]
+    tm:m=[[0, 0, -1] [0, 1, 0] [1, 0, 0] [531.8, 42, 577]]
     unit_class:t="utl_safe_player"
     objLayer:i=1
     closed_waypoints:b=no
@@ -3099,30 +3073,6 @@ units{
     }
   }
 
-  objectGroups{
-    name:t="airfield_target_01"
-    tm:m=[[0, 0, -1] [0, 1, 0] [1, 0, 0] [1453.68, 0, 255.012]]
-    unit_class:t="dynaf_pg_1line_2000_universal"
-    objLayer:i=1
-
-    props{
-      army:i=1
-      active:b=yes
-    }
-  }
-
-  objectGroups{
-    name:t="Airfield_Runway"
-    tm:m=[[0, 0, -1] [0, 1, 0] [1, 0, 0] [1453.68, 0, 255.012]]
-    unit_class:t="utl_airfield_runway"
-    objLayer:i=2
-
-    props{
-      army:i=1
-      active:b=yes
-    }
-  }
-
   armada{
     name:t="Heli_Target"
     tm:m=[[-0.999048, 0, -0.0436191] [0, 1, 0] [0.0436191, 0, -0.999048] [1927.32, 200, 235.481]]
@@ -3458,7 +3408,7 @@ areas{
 
   airfield_spawnpoint_high{
     type:t="Sphere"
-    tm:m=[[185.299, 0.0, 136.756] [0.0, 230.3, 0.0] [-136.756, 0.0, 185.299] [1453.68, 105, 255.012]]
+    tm:m=[[185.299, 0.0, 136.756] [0.0, 230.3, 0.0] [-136.756, 0.0, 185.299] [531.8, 42, 577]]
     props{}
   }
 
@@ -3472,28 +3422,28 @@ areas{
 
   airfield_area{
     type:t="Box"
-    tm:m=[[150,0,0] [0,100,0] [0,0,250] [1453.68,29.85,255]]
+    tm:m=[[150,0,0] [0,100,0] [0,0,250] [531.8,32,577]]
     objLayer:i=4
     props{}
   }
 
   airfield_start{
     type:t="Sphere"
-    tm:m=[[20,0,0] [0,20,0] [0,0,20] [1453.68,29.85,100]]
+    tm:m=[[20,0,0] [0,20,0] [0,0,20] [531.8,32,427]]
     objLayer:i=4
     props{}
   }
 
   airfield_end{
     type:t="Sphere"
-    tm:m=[[20,0,0] [0,20,0] [0,0,20] [1453.68,29.85,400]]
+    tm:m=[[20,0,0] [0,20,0] [0,0,20] [531.8,32,727]]
     objLayer:i=4
     props{}
   }
 
   spawn01{
     type:t="Sphere"
-    tm:m=[[10,0,0] [0,10,0] [0,0,10] [1453.68,29.85,150]]
+    tm:m=[[10,0,0] [0,10,0] [0,0,10] [531.8,32,527]]
     objLayer:i=4
     props{}
   }

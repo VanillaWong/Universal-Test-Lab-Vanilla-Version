@@ -2604,7 +2604,7 @@ public string InjectedCannonUnit;
                 ? @"
   UTL_Player_Air_Spawn{
     type:t=""Sphere""
-    tm:m=[[0, 0, -10] [0, 10, 0] [10, 0, 0] [1453.68, 105, 255.012]]
+    tm:m=[[0, 0, -10] [0, 10, 0] [10, 0, 0] [531.8, 42, 577]]
     objLayer:i=0
 
     props{}
@@ -2613,7 +2613,7 @@ public string InjectedCannonUnit;
                 : @"
   UTL_Player_Air_Spawn{
     type:t=""Sphere""
-    tm:m=[[0, 0, -10] [0, 10, 0] [10, 0, 0] [1453.68, 1500, 255.012]]
+    tm:m=[[0, 0, -10] [0, 10, 0] [10, 0, 0] [531.8, 1500, 577]]
     objLayer:i=0
 
     props{}
