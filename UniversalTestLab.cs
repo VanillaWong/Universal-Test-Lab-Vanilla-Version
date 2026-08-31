@@ -2620,7 +2620,9 @@ public string InjectedCannonUnit;
     props{}
   }
 ";
-            text = text.Replace("objects:t=\"UTL_AIRPORT_OBJECTS\"", airportTakeoff ? "objects:t=\"You\"" : "objects:t=\"\"");
+            if (airportTakeoff)
+                text = text.Replace("objects:t=\"UTL_AIRPORT_OBJECTS\"", "objects:t=\"You\"");
+            else text = Regex.Replace(text, @"\s*spawnOnAirfield\s*\{[^}]*\}", "", RegexOptions.Singleline);
             return text.Insert(areas.End, positions);
         }
 
