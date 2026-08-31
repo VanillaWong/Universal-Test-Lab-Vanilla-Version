@@ -3099,6 +3099,18 @@ units{
     }
   }
 
+  objectGroups{
+    name:t="Airfield_Runway"
+    tm:m=[[0, 0, -1] [0, 1, 0] [1, 0, 0] [1453.68, 0, 255.012]]
+    unit_class:t="utl_airfield_runway"
+    objLayer:i=2
+
+    props{
+      army:i=1
+      active:b=yes
+    }
+  }
+
   armada{
     name:t="Heli_Target"
     tm:m=[[-0.999048, 0, -0.0436191] [0, 1, 0] [0.0436191, 0, -0.999048] [1927.32, 200, 235.481]]
