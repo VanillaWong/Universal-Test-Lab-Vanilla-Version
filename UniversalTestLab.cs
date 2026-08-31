@@ -2518,6 +2518,8 @@ public string InjectedCannonUnit;
 
         public static string ConfigureInstantPlayerRespawn(string text, bool ground, int airSpeedKmh, string customSpawnTransform, double respawnDelay = 0, bool airportTakeoff = false)
         {
+            if (ground)
+                text = RemoveAirfieldContent(text);
             BlockSpan mission = FirstBlock(text, "mission", 0);
             if (mission == null) throw new InvalidOperationException("Mission settings block is missing.");
             string missionBlock = mission.Text;
@@ -2626,11 +2628,49 @@ public string InjectedCannonUnit;
             return text.Insert(areas.End, positions);
         }
 
+        public static string RemoveAirfieldContent(string text)
+        {
+            // Ground (tank) missions never use the airfield: strip airport triggers,
+            // zones and the dynaf runway unit so tanks stay on their own spawn.
+            text = RemoveNamedBlockAnywhere(text, "create_spawns");
+            foreach (string zone in new[] { "airfield_area", "airfield_start", "airfield_end", "spawn01", "airfields_area", "airfield_spawnpoint_high" })
+                text = RemoveNamedBlockAnywhere(text, zone);
+            text = RemoveObjectGroupByName(text, "airfield_target_01");
+            return text;
+        }
+
+        private static string RemoveNamedBlockAnywhere(string text, string name)
+        {
+            Match m = Regex.Match(text, @"(?m)^\s*" + Regex.Escape(name) + @"\s*\{");
+            if (!m.Success) return text;
+            int open = m.Index + m.Length - 1;
+            int end = MatchingBrace(text, open);
+            if (end < 0) return text;
+            int start = m.Index;
+            while (start > 0 && (text[start - 1] == '\n' || text[start - 1] == '\r')) start--;
+            return text.Remove(start, end - start + 1);
+        }
+
+        private static string RemoveObjectGroupByName(string text, string unitName)
+        {
+            string needle = "name:t=\"" + unitName + "\"";
+            int idx = text.IndexOf(needle, StringComparison.Ordinal);
+            if (idx < 0) return text;
+            int open = text.LastIndexOf('{', idx);
+            if (open < 0) return text;
+            int headerStart = text.LastIndexOf('\n', open) + 1;
+            int end = MatchingBrace(text, open);
+            if (end < 0) return text;
+            int start = headerStart;
+            while (start > 0 && (text[start - 1] == '\n' || text[start - 1] == '\r')) start--;
+            return text.Remove(start, end - start + 1);
+        }
         public static string AccelerateRangeRecovery(string text)
         {
             return AccelerateRangeRecovery(text, true);
         }
 
+        
         public static string AccelerateRangeRecovery(string text, bool includeRangeRecovery, double targetRespawnDelay = 0.25, double rearmSeconds = 1.0)
         {
             string respawnDelayText = targetRespawnDelay.ToString("0.###", CultureInfo.InvariantCulture);
@@ -7275,8 +7315,8 @@ fpvCameraOffset:p3 = 0.2, -0.1, 0
                     groundPlayer.Text.IndexOf("applyAllMods:b=no", StringComparison.Ordinal) < 0 ||
                     groundMission.IndexOf("UTL Ground Weapon Initialization", StringComparison.Ordinal) >= 0 ||
                     groundMission.IndexOf("restoreType:t=\"manual\"", StringComparison.Ordinal) < 0 ||
-                    groundMission.IndexOf("missionMarkAsRespawnPoint", StringComparison.Ordinal) < 0 ||
-                    groundMission.IndexOf("isAirfield:b = yes", StringComparison.Ordinal) < 0 ||
+                    
+                    
                                                             groundMission.IndexOf("UTL Fast Rearm Policy", StringComparison.Ordinal) < 0 ||
                     groundMission.IndexOf("rearmTimeOnField:r=1", StringComparison.Ordinal) < 0 ||
                     groundMission.IndexOf("UTL Player Rearm When Empty Compatible", StringComparison.Ordinal) >= 0 ||
@@ -7287,7 +7327,8 @@ fpvCameraOffset:p3 = 0.2, -0.1, 0
                     groundMission.IndexOf("UTL APS Carrier Recovery Compatible", StringComparison.Ordinal) < 0 ||
                     groundMission.IndexOf("UTL Target Ammunition Restore Compatible", StringComparison.Ordinal) >= 0 ||
                     groundMission.IndexOf("restoreType:t=\"manual\"", StringComparison.Ordinal) < 0 ||
-                    groundMission.IndexOf("attack_type:t=\"fire_at_will\"", StringComparison.Ordinal) < 0)
+                    groundMission.IndexOf("attack_type:t=\"fire_at_will\"", StringComparison.Ordinal) < 0 ||
+                    groundMission.IndexOf("UTL_Player_Ground_Spawn", StringComparison.Ordinal) < 0)
                     throw new InvalidOperationException("Ground vehicle and unlimited-respawn self-test failed.");
                 string topGroundMission = BlkTools.ConfigureUnitModifications(groundMission, "You", true, Enumerable.Empty<string>());
                 BlockSpan topGroundPlayer = BlkTools.UnitBlockByName(topGroundMission, "You");

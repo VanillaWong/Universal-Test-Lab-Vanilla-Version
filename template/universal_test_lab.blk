@@ -566,7 +566,7 @@ triggers{
     replaceAreas:b = no
     canSpawnOnNeutral:b = no
     showOnMap:b = yes
-    target:t="spawn01"
+    target:t="airfield_target_01"
 
     team:t="A"
 
@@ -3097,6 +3097,14 @@ units{
       army:i=2
       active:b=yes
     }
+ objectGroups{
+   name:t="airfield_target_01"
+   tm:m=[[0,0, -1] [0,1,0] [1,0,0] [531.8,0,577]]
+   unit_class:t="dynaf_pg_1line_2000_universal"
+   objLayer:i=1
+   props{
+     army:i=1 active:b=yes }
+ }
   }
 
   armada{
