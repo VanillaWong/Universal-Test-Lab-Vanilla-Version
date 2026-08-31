@@ -2521,7 +2521,23 @@ public string InjectedCannonUnit;
             if (ground)
                 text = RemoveAirfieldContent(text);
             if (!airportTakeoff)
-                text = RemoveAirfieldContent(text);
+            {
+                // Air-spawn mode: keep the respawn marker (plain point, 1500m air
+                // area) but strip the airfield itself so nothing pulls the player
+                // back to the runway on respawn (legacy 0.11.2 behaviour).
+                text = RemoveNamedBlockAnywhere(text, "addAirfield");
+                text = RemoveNamedBlockAnywhere(text, "spawnOnAirfield");
+                text = RemoveNamedBlockAnywhere(text, "airfield_area");
+                text = RemoveNamedBlockAnywhere(text, "airfield_start");
+                text = RemoveNamedBlockAnywhere(text, "airfield_end");
+                text = RemoveNamedBlockAnywhere(text, "spawn01");
+                text = RemoveNamedBlockAnywhere(text, "airfields_area");
+                text = RemoveNamedBlockAnywhere(text, "airfield_spawnpoint_high");
+                text = RemoveObjectGroupByName(text, "airfield_target_01");
+                text = RemoveObjectGroupByName(text, "Airfield_Runway");
+                text = text.Replace("isAirfield:b = yes", "isAirfield:b = no");
+                text = text.Replace("target:t=\"airfield_target_01\"", "target:t=\"UTL_Player_Air_Spawn\"");
+            }
             BlockSpan mission = FirstBlock(text, "mission", 0);
             if (mission == null) throw new InvalidOperationException("Mission settings block is missing.");
             string missionBlock = mission.Text;
