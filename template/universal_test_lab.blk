@@ -567,6 +567,18 @@ triggers{
           ship:b=no
         }
       }
+      addAirfield{
+        runwayStart:t="airfield_start"
+        runwayEnd:t="airfield_end"
+        runwayWidth:r=10
+        army:i=1
+        spawnPoint:t="spawn01"
+        visibleOnHud:b=yes
+      }
+      spawnOnAirfield{
+        runwayName:t="airfield_start"
+        objects:t="You"
+      }
     }
 
     else_actions{}
@@ -3455,6 +3467,34 @@ areas{
     tm:m=[[22244.8, 0, 20129] [0, 30000, 0] [-20129, 0, 22244.8] [0, 2000, 0]]
     objLayer:i=4
 
+    props{}
+  }
+
+  airfield_area{
+    type:t="Box"
+    tm:m=[[150,0,0] [0,100,0] [0,0,250] [1453.68,29.85,255]]
+    objLayer:i=4
+    props{}
+  }
+
+  airfield_start{
+    type:t="Sphere"
+    tm:m=[[20,0,0] [0,20,0] [0,0,20] [1453.68,29.85,100]]
+    objLayer:i=4
+    props{}
+  }
+
+  airfield_end{
+    type:t="Sphere"
+    tm:m=[[20,0,0] [0,20,0] [0,0,20] [1453.68,29.85,400]]
+    objLayer:i=4
+    props{}
+  }
+
+  spawn01{
+    type:t="Sphere"
+    tm:m=[[10,0,0] [0,10,0] [0,0,10] [1453.68,29.85,150]]
+    objLayer:i=4
     props{}
   }
 }
