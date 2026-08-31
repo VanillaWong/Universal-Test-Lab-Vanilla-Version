@@ -2529,6 +2529,7 @@ public string InjectedCannonUnit;
             BlockSpan triggers = FirstBlock(text, "triggers", 0);
             if (triggers == null) throw new InvalidOperationException("Mission triggers block is missing.");
             string spawn = ground ? "UTL_Player_Ground_Spawn" : "UTL_Player_Air_Spawn";
+            string respawnTarget = airportTakeoff ? "spawn01" : spawn;
             string trigger = @"
   ""UTL Player Respawn Compatible""{
     is_enabled:b=yes
@@ -2570,7 +2571,7 @@ public string InjectedCannonUnit;
         delay:r=0
         offset:p3=0, 0, 0
         object:t=""You""
-        target:t=""" + spawn + @"""
+        target:t=""" + respawnTarget + @"""
       }
     }
 
@@ -2619,6 +2620,7 @@ public string InjectedCannonUnit;
     props{}
   }
 ";
+            text = text.Replace("objects:t=\"UTL_AIRPORT_OBJECTS\"", airportTakeoff ? "objects:t=\"You\"" : "objects:t=\"\"");
             return text.Insert(areas.End, positions);
         }
 

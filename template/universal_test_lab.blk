@@ -551,7 +551,7 @@ triggers{
       }
       spawnOnAirfield{
         runwayName:t="airfield_start"
-        objects:t="You"
+        objects:t="UTL_AIRPORT_OBJECTS"
       }
     }
 
@@ -1283,7 +1283,7 @@ effects{}
 units{
   armada{
     name:t="You"
-    tm:m=[[0, 0, -1] [0, 1, 0] [1, 0, 0] [531.8, 32, 577]]
+    tm:m=[[0, 0, -1] [0, 1, 0] [1, 0, 0] [531.8, 1500, 577]]
     unit_class:t="utl_safe_player"
     objLayer:i=1
     closed_waypoints:b=no
