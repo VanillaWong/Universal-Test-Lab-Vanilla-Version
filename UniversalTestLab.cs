@@ -7286,7 +7286,7 @@ fpvCameraOffset:p3 = 0.2, -0.1, 0
                     groundSpeedTrigger == null || groundSpeedTrigger.Text.IndexOf("is_enabled:b=no", StringComparison.Ordinal) < 0 ||
                     groundMission.IndexOf("UTL APS Carrier Recovery Compatible", StringComparison.Ordinal) < 0 ||
                     groundMission.IndexOf("UTL Target Ammunition Restore Compatible", StringComparison.Ordinal) >= 0 ||
-                    groundMission.IndexOf("check_period:r=0.25", StringComparison.Ordinal) < 0 ||
+                    groundMission.IndexOf("restoreType:t=\"attempts\"", StringComparison.Ordinal) < 0 ||
                     groundMission.IndexOf("attack_type:t=\"fire_at_will\"", StringComparison.Ordinal) < 0)
                     throw new InvalidOperationException("Ground vehicle and unlimited-respawn self-test failed.");
                 string topGroundMission = BlkTools.ConfigureUnitModifications(groundMission, "You", true, Enumerable.Empty<string>());
