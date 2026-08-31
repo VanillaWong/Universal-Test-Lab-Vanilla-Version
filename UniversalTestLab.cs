@@ -7276,7 +7276,7 @@ fpvCameraOffset:p3 = 0.2, -0.1, 0
                     groundMission.IndexOf("UTL Ground Weapon Initialization", StringComparison.Ordinal) >= 0 ||
                     groundMission.IndexOf("restoreType:t=\"manual\"", StringComparison.Ordinal) < 0 ||
                     groundMission.IndexOf("missionMarkAsRespawnPoint", StringComparison.Ordinal) < 0 ||
-                    groundMission.IndexOf("isAirfield:b=yes", StringComparison.Ordinal) < 0 ||
+                    groundMission.IndexOf("isAirfield:b = yes", StringComparison.Ordinal) < 0 ||
                                                             groundMission.IndexOf("UTL Fast Rearm Policy", StringComparison.Ordinal) < 0 ||
                     groundMission.IndexOf("rearmTimeOnField:r=1", StringComparison.Ordinal) < 0 ||
                     groundMission.IndexOf("UTL Player Rearm When Empty Compatible", StringComparison.Ordinal) >= 0 ||
