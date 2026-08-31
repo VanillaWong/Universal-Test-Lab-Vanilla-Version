@@ -1,0 +1,7 @@
+className:t="composit"
+size:p2 =512,256
+node{
+  name:t="dummy_airfield_1200x250m_a"
+  tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [0, 0, 0]]
+  placeOnCollision:b=yes
+}
