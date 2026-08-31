@@ -2529,7 +2529,7 @@ public string InjectedCannonUnit;
             BlockSpan triggers = FirstBlock(text, "triggers", 0);
             if (triggers == null) throw new InvalidOperationException("Mission triggers block is missing.");
             string spawn = ground ? "UTL_Player_Ground_Spawn" : "UTL_Player_Air_Spawn";
-            string respawnTarget = airportTakeoff ? "spawn01" : spawn;
+            string respawnTarget = ground ? spawn : "spawn01";
             string trigger = @"
   ""UTL Player Respawn Compatible""{
     is_enabled:b=yes
