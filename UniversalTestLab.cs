@@ -2523,16 +2523,32 @@ public string InjectedCannonUnit;
             BlockSpan mission = FirstBlock(text, "mission", 0);
             if (mission == null) throw new InvalidOperationException("Mission settings block is missing.");
             string missionBlock = mission.Text;
+            string restoreTypeValue = airportTakeoff ? "manual" : "attempts";
             if (Regex.IsMatch(missionBlock, @"(?m)^\s*restoreType:t\s*="))
-                missionBlock = new Regex(@"(?m)^(\s*)restoreType:t\s*=\s*""[^""]*""").Replace(missionBlock, "$1restoreType:t=\"attempts\"", 1);
-            else missionBlock = missionBlock.Insert(missionBlock.IndexOf('{') + 1, Environment.NewLine + "    restoreType:t=\"attempts\"");
+                missionBlock = new Regex(@"(?m)^(\s*)restoreType:t\s*=\s*""[^""]*""").Replace(missionBlock, "$1restoreType:t=\"" + restoreTypeValue + "\"", 1);
+            else missionBlock = missionBlock.Insert(missionBlock.IndexOf('{') + 1, Environment.NewLine + "    restoreType:t=\"" + restoreTypeValue + "\"");
             text = ReplaceSpan(text, mission, missionBlock);
 
             BlockSpan triggers = FirstBlock(text, "triggers", 0);
             if (triggers == null) throw new InvalidOperationException("Mission triggers block is missing.");
             string spawn = ground ? "UTL_Player_Ground_Spawn" : "UTL_Player_Air_Spawn";
             string respawnTarget = spawn;
-            string trigger = @"
+                        string respawnActions = airportTakeoff
+                ? @"      wait{
+        time:r=" + respawnDelay.ToString("0.###", CultureInfo.InvariantCulture) + @" }
+      spawnOnAirfield{
+        runwayName:t = ""airfield_start""
+        objects:t = ""You""
+      }"
+                : @"      wait{
+        time:r=" + respawnDelay.ToString("0.###", CultureInfo.InvariantCulture) + @" }
+      unitRespawn{
+        delay:r=0
+        offset:p3=0, 0, 0
+        object:t=""You""
+        target:t=""" + respawnTarget + @"""
+      }";
+string trigger = @"
   ""UTL Player Respawn Compatible""{
     is_enabled:b=yes
     comments:t=""Minimal manual player respawn using documented Mission Editor fields""
@@ -2564,17 +2580,7 @@ public string InjectedCannonUnit;
     }
 
     actions{
-      // unitRespawn's own delay field is ignored by the engine for the
-      // player unit, so hold the respawn with an explicit wait instead.
-      wait{
-        time:r=" + respawnDelay.ToString("0.###", CultureInfo.InvariantCulture) + @"
-      }
-      unitRespawn{
-        delay:r=0
-        offset:p3=0, 0, 0
-        object:t=""You""
-        target:t=""" + respawnTarget + @"""
-      }
+" + respawnActions + @"
     }
 
     else_actions{}
@@ -2607,7 +2613,7 @@ public string InjectedCannonUnit;
                 ? @"
   UTL_Player_Air_Spawn{
     type:t=""Sphere""
-    tm:m=[[0, 0, -10] [0, 10, 0] [10, 0, 0] [531.8, 32, 577]]
+    tm:m=[[0, 0, -10] [0, 10, 0] [10, 0, 0] [551.7, 30, 575.1]]
     objLayer:i=0
 
     props{}

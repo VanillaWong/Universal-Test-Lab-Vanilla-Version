@@ -420,6 +420,10 @@ triggers{
        spawnPoint:t = "spawn01"
        visibleOnHud:b = yes
      }
+     spawnOnAirfield{
+       runwayName:t = "airfield_start"
+       objects:t="UTL_AIRPORT_OBJECTS"
+     }
    }
 
    else_actions{}
@@ -3406,13 +3410,13 @@ areas{
 
  airfield_area{
    type:t="Box"
-   tm:m=[[150,0,0] [0,100,0] [0,0,600] [551.7,30,575.1]]
+   tm:m=[[150,0,0] [0,100,0] [0,0,625] [551.7,30,550.1]]
    objLayer:i=0
    props{}
  }
  airfield_start{
    type:t="Sphere"
-   tm:m=[[20,0,0] [0,20,0] [0,0,20] [551.7,30,-24.9]]
+   tm:m=[[20,0,0] [0,20,0] [0,0,20] [551.7,30,-74.9]]
    objLayer:i=0
    props{}
  }
