@@ -2522,8 +2522,8 @@ public string InjectedCannonUnit;
             if (mission == null) throw new InvalidOperationException("Mission settings block is missing.");
             string missionBlock = mission.Text;
             if (Regex.IsMatch(missionBlock, @"(?m)^\s*restoreType:t\s*="))
-                missionBlock = new Regex(@"(?m)^(\s*)restoreType:t\s*=\s*""[^""]*""").Replace(missionBlock, "$1restoreType:t=\"manual\"", 1);
-            else missionBlock = missionBlock.Insert(missionBlock.IndexOf('{') + 1, Environment.NewLine + "    restoreType:t=\"manual\"");
+                missionBlock = new Regex(@"(?m)^(\s*)restoreType:t\s*=\s*""[^""]*""").Replace(missionBlock, "$1restoreType:t=\"attempts\"", 1);
+            else missionBlock = missionBlock.Insert(missionBlock.IndexOf('{') + 1, Environment.NewLine + "    restoreType:t=\"attempts\"");
             text = ReplaceSpan(text, mission, missionBlock);
 
             BlockSpan triggers = FirstBlock(text, "triggers", 0);
@@ -2578,7 +2578,7 @@ public string InjectedCannonUnit;
     else_actions{}
   }
 ";
-            text = text.Insert(triggers.End, trigger);
+            // Native respawn (restoreType=attempts): no custom unitRespawn trigger injected.
             BlockSpan areas = FirstBlock(text, "areas", 0);
             if (areas == null) throw new InvalidOperationException("Mission areas block is missing.");
             string positions = !String.IsNullOrWhiteSpace(customSpawnTransform)
@@ -7274,7 +7274,7 @@ fpvCameraOffset:p3 = 0.2, -0.1, 0
                     groundPlayer.Text.IndexOf("crewSkillK:r=1", StringComparison.Ordinal) < 0 ||
                     groundPlayer.Text.IndexOf("applyAllMods:b=no", StringComparison.Ordinal) < 0 ||
                     groundMission.IndexOf("UTL Ground Weapon Initialization", StringComparison.Ordinal) >= 0 ||
-                    groundMission.IndexOf("restoreType:t=\"manual\"", StringComparison.Ordinal) < 0 ||
+                    groundMission.IndexOf("restoreType:t=\"attempts\"", StringComparison.Ordinal) < 0 ||
                     groundMission.IndexOf("UTL Player Respawn Compatible", StringComparison.Ordinal) < 0 ||
                     groundMission.IndexOf("delay:r=0", StringComparison.Ordinal) < 0 ||
                     groundMission.IndexOf("UTL Fast Rearm Policy", StringComparison.Ordinal) < 0 ||
