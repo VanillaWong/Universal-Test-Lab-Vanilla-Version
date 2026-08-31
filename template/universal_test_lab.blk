@@ -3103,7 +3103,9 @@ units{
    unit_class:t="dynaf_pg_1line_2000_universal"
    objLayer:i=1
    props{
-     army:i=1 active:b=yes }
+     army:i = 1
+     active:b = yes
+   }
  }
   }
 
