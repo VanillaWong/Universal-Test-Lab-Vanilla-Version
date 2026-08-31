@@ -549,6 +549,16 @@ triggers{
         spawnPoint:t="spawn01"
         visibleOnHud:b=yes
       }
+
+  missionMarkAsRespawnPoint{
+    loc_name:t="missions/airfield_spawn1"
+    isAirfield:b=yes spawnEffect:b=no isStrictSpawn:b=no resetStrictSpawnIndex:b=no isUnit:b=no forceCreate:b=no useExisting:b=no ignoreTeamsOnReuse:b=no isIndividual:b=no onlyOnePlayerPerSpawnPoint:b=no removeAreas:b=no replaceAreas:b=no canSpawnOnNeutral:b=no showOnMap:b=yes target:t="spawn01"
+
+    team:t="A"
+
+    tags{
+      air:b=yes tank:b=no ship:b=no }
+  }
       spawnOnAirfield{
         runwayName:t="airfield_start"
         objects:t="UTL_AIRPORT_OBJECTS"

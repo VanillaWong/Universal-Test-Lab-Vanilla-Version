@@ -2522,8 +2522,8 @@ public string InjectedCannonUnit;
             if (mission == null) throw new InvalidOperationException("Mission settings block is missing.");
             string missionBlock = mission.Text;
             if (Regex.IsMatch(missionBlock, @"(?m)^\s*restoreType:t\s*="))
-                missionBlock = new Regex(@"(?m)^(\s*)restoreType:t\s*=\s*""[^""]*""").Replace(missionBlock, "$1restoreType:t=\"attempts\"", 1);
-            else missionBlock = missionBlock.Insert(missionBlock.IndexOf('{') + 1, Environment.NewLine + "    restoreType:t=\"attempts\"");
+                missionBlock = new Regex(@"(?m)^(\s*)restoreType:t\s*=\s*""[^""]*""").Replace(missionBlock, "$1restoreType:t=\"manual\"", 1);
+            else missionBlock = missionBlock.Insert(missionBlock.IndexOf('{') + 1, Environment.NewLine + "    restoreType:t=\"manual\"");
             text = ReplaceSpan(text, mission, missionBlock);
 
             BlockSpan triggers = FirstBlock(text, "triggers", 0);
@@ -2578,7 +2578,7 @@ public string InjectedCannonUnit;
     else_actions{}
   }
 ";
-            // Native respawn (restoreType=attempts): no custom unitRespawn trigger injected.
+            text = text.Insert(triggers.End, trigger);
             BlockSpan areas = FirstBlock(text, "areas", 0);
             if (areas == null) throw new InvalidOperationException("Mission areas block is missing.");
             string positions = !String.IsNullOrWhiteSpace(customSpawnTransform)
@@ -7274,7 +7274,9 @@ fpvCameraOffset:p3 = 0.2, -0.1, 0
                     groundPlayer.Text.IndexOf("crewSkillK:r=1", StringComparison.Ordinal) < 0 ||
                     groundPlayer.Text.IndexOf("applyAllMods:b=no", StringComparison.Ordinal) < 0 ||
                     groundMission.IndexOf("UTL Ground Weapon Initialization", StringComparison.Ordinal) >= 0 ||
-                    groundMission.IndexOf("restoreType:t=\"attempts\"", StringComparison.Ordinal) < 0 ||
+                    groundMission.IndexOf("restoreType:t=\"manual\"", StringComparison.Ordinal) < 0 ||
+                    groundMission.IndexOf("missionMarkAsRespawnPoint", StringComparison.Ordinal) < 0 ||
+                    groundMission.IndexOf("isAirfield:b=yes", StringComparison.Ordinal) < 0 ||
                                                             groundMission.IndexOf("UTL Fast Rearm Policy", StringComparison.Ordinal) < 0 ||
                     groundMission.IndexOf("rearmTimeOnField:r=1", StringComparison.Ordinal) < 0 ||
                     groundMission.IndexOf("UTL Player Rearm When Empty Compatible", StringComparison.Ordinal) >= 0 ||
@@ -7284,7 +7286,7 @@ fpvCameraOffset:p3 = 0.2, -0.1, 0
                     groundSpeedTrigger == null || groundSpeedTrigger.Text.IndexOf("is_enabled:b=no", StringComparison.Ordinal) < 0 ||
                     groundMission.IndexOf("UTL APS Carrier Recovery Compatible", StringComparison.Ordinal) < 0 ||
                     groundMission.IndexOf("UTL Target Ammunition Restore Compatible", StringComparison.Ordinal) >= 0 ||
-                    groundMission.IndexOf("restoreType:t=\"attempts\"", StringComparison.Ordinal) < 0 ||
+                    groundMission.IndexOf("restoreType:t=\"manual\"", StringComparison.Ordinal) < 0 ||
                     groundMission.IndexOf("attack_type:t=\"fire_at_will\"", StringComparison.Ordinal) < 0)
                     throw new InvalidOperationException("Ground vehicle and unlimited-respawn self-test failed.");
                 string topGroundMission = BlkTools.ConfigureUnitModifications(groundMission, "You", true, Enumerable.Empty<string>());
