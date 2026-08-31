@@ -2521,7 +2521,7 @@ public string InjectedCannonUnit;
             if (ground)
                 text = RemoveAirfieldContent(text);
             if (!airportTakeoff)
-                text = RemoveNamedBlockAnywhere(text, "create_spawns");
+                text = RemoveAirfieldContent(text);
             BlockSpan mission = FirstBlock(text, "mission", 0);
             if (mission == null) throw new InvalidOperationException("Mission settings block is missing.");
             string missionBlock = mission.Text;
@@ -2638,6 +2638,7 @@ public string InjectedCannonUnit;
             foreach (string zone in new[] { "airfield_area", "airfield_start", "airfield_end", "spawn01", "airfields_area", "airfield_spawnpoint_high" })
                 text = RemoveNamedBlockAnywhere(text, zone);
             text = RemoveObjectGroupByName(text, "airfield_target_01");
+        text = RemoveObjectGroupByName(text, "Airfield_Runway");
             return text;
         }
 
