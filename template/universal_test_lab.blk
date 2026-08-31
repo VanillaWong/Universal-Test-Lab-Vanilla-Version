@@ -3111,8 +3111,11 @@ units{
  name:t="Airfield_Runway"
  tm:m=[[0,0, -1] [0,1,0] [1,0,0] [531.8,0,577]]
  unit_class:t="utl_airfield_runway"
- objLayer:i=2 props{
- army:i =1 active:b = yes }
+ objLayer:i=2
+ props{
+ army:i = 1
+ active:b = yes
+ }
  }
  }
   }
