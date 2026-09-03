@@ -75,7 +75,7 @@ const SCHEMAS = {
     cols: ['name', 'groundIds', 'airIds', 'airCounts', 'shipId', 'shipCount']
   },
   'sensors.tsv': {
-    cols: ['id', 'display', 'band']
+    cols: ['id', 'display', 'band', 'role', 'rangeMax', 'type', 'fsm', 'weaponTargetsMax', 'irst', 'domain']
   }
 };
 

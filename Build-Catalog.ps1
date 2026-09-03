@@ -1139,7 +1139,8 @@ foreach ($d in $donorRows) {
 }
 
 # Sensor (radar/IRST) catalog - every sensor blk next to the units tree, with the
-# in-file display name and the first transivers band. Powers the radar-swap picker.
+# in-file display name, first transivers band, role (search vs track, derived from
+# fsm mode names) and top-level rangeMax. Powers the radar-swap picker + detail cards.
 $sensorRoot = Join-Path (Split-Path $UnitsRoot -Parent) 'sensors'
 $sensorRows = New-Object System.Collections.Generic.List[string]
 if (Test-Path -LiteralPath $sensorRoot) {
@@ -1148,7 +1149,20 @@ if (Test-Path -LiteralPath $sensorRoot) {
       $stext = [IO.File]::ReadAllText($sfile.FullName)
       $sname = [regex]::Match($stext, '(?m)^\s*name\s*:\s*t\s*=\s*"([^"]+)"')
       $sband = [regex]::Match($stext, '(?m)^\s*transivers\s*\{[^}]*?band\s*:\s*i\s*=\s*(-?\d+)')
-      $srow = $sfile.BaseName + "`t" + $(if ($sname.Success) { $sname.Groups[1].Value } else { $sfile.BaseName }) + "`t" + $(if ($sband.Success) { $sband.Groups[1].Value } else { '' })
+      # role: fsm mode names are reliable - search/tws/scan => search-class (feeds active/TWS
+      # missiles), lock/track/acquisition/illum => track-class (SARH illumination / SACLOS cmds)
+      $fsmVals = [regex]::Matches($stext, '(?im)^\s*fsm\s*:\s*t\s*=\s*"([^"]+)"') | ForEach-Object { $_.Groups[1].Value }
+      $role = ''
+      if ($fsmVals -match '(?i)search|tws|scan|surveillance|acq') { $role = 'search' }
+      elseif ($fsmVals -match '(?i)lock|track|illum|designat') { $role = 'track' }
+      $srm = [regex]::Match($stext, '(?im)^\s*rangeMax\s*:\s*r\s*=\s*([\d.]+)')
+      # detail-card fields: blk type (radar/irst/rwr), capability fsm set (minus parking noise),
+      # weaponTargetsMax (missile data-link capacity) and presence of an IRST channel
+      $stype = [regex]::Match($stext, '(?im)^\s*type\s*:\s*t\s*=\s*"([^"]+)"')
+      $fset = ([regex]::Matches($stext, '(?im)^\s*fsm\s*:\s*t\s*=\s*"([^"]+)"') | ForEach-Object { $_.Groups[1].Value } | Where-Object { $_ -notmatch '(?i)parkAntenna|sleep|slewing' } | Sort-Object -Unique) -join ','
+      $swm = [regex]::Match($stext, '(?im)^\s*weaponTargetsMax\s*:\s*i\s*=\s*(\d+)')
+      $irst = [regex]::IsMatch($stext, '(?im)^\s*irst\w*\s*\{')
+      $srow = $sfile.BaseName + "`t" + $(if ($sname.Success) { $sname.Groups[1].Value } else { $sfile.BaseName }) + "`t" + $(if ($sband.Success) { $sband.Groups[1].Value } else { '' }) + "`t" + $role + "`t" + $(if ($srm.Success) { [int][double]::Parse($srm.Groups[1].Value, [Globalization.CultureInfo]::InvariantCulture) } else { '' }) + "`t" + $(if ($stype.Success) { $stype.Groups[1].Value } else { '' }) + "`t" + $fset + "`t" + $(if ($swm.Success) { $swm.Groups[1].Value } else { '' }) + "`t" + $(if ($irst) { '1' } else { '' })
       $sensorRows.Add($srow)
     } catch { }
   }

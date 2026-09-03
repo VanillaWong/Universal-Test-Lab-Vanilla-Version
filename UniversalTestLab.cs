@@ -485,6 +485,12 @@ namespace UniversalTestLab
         public string id { get; set; }
         public string display { get; set; }
         public string band { get; set; }
+        public string role { get; set; }
+        public string rangeMax { get; set; }
+        public string type { get; set; }
+        public string fsm { get; set; }
+        public string weaponTargetsMax { get; set; }
+        public string irst { get; set; }
     }
 
     internal sealed class NameValueRowJson

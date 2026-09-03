@@ -5442,7 +5442,15 @@ private void RefreshGroundWorkspace()
             List<ModernPickerItem> items = new List<ModernPickerItem>();
             foreach (SensorRowJson s in MainForm.SensorCatalog)
             {
-                items.Add(new ModernPickerItem { Display = s.display, Detail = (String.IsNullOrWhiteSpace(s.band) ? "" : "band " + s.band.Trim() + "  ") + s.id, Tag = s.id });
+                string roleTag = "";
+                if (s.role == "search") roleTag = ModernText.L("SEARCH", "搜索") + " · ";
+                else if (s.role == "track") roleTag = ModernText.L("TRACK", "跟踪") + " · ";
+                string kmTag = "";
+                double rmM;
+                if (!String.IsNullOrWhiteSpace(s.rangeMax) && double.TryParse(s.rangeMax.Trim(), System.Globalization.NumberStyles.Any, System.Globalization.CultureInfo.InvariantCulture, out rmM))
+                    kmTag = (rmM >= 1000 ? (rmM / 1000.0).ToString("0.#", System.Globalization.CultureInfo.InvariantCulture) + "km" : rmM.ToString("0", System.Globalization.CultureInfo.InvariantCulture) + "m") + " · ";
+                string bandTag = String.IsNullOrWhiteSpace(s.band) ? "" : "band " + s.band.Trim() + "  ";
+                items.Add(new ModernPickerItem { Display = s.display, Detail = roleTag + kmTag + bandTag + s.id, Tag = s.id });
             }
             ModernPickerItem searchPick = null;
             string searchTitle = ModernText.L("SELECT SEARCH RADAR", "选择搜索雷达");
