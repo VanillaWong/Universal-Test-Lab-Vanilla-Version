@@ -2659,6 +2659,11 @@ f_16i_sufa	f_16i_sufa_gbu_39_tutorial	us gbu 39 slot3; us gbu 39 slot8
 f_16i_sufa	f_16i_sufa_spice_250	il spice 250 slot3; il spice 250 slot8
 f_16i_sufa	f_16i_sufa_spice_1000	il spice 1000 slot3; il spice 1000 slot4; il spice 1000 slot7; il spice 1000 slot8
 f_16i_sufa	f_16i_sufa_spice_2000	il spice 2000 slot3; il spice 2000 slot4; il spice 2000 slot7; il spice 2000 slot8
+f_16xl	f_16xl_default	2x aim 9l wingtip default; ptb slot2; aim 120a default; ptb slot12
+f_16xl	f_16xl_aim_120	aim 120a
+f_16xl	f_16xl_mk82	8x mk82; 2x mk82 x4
+f_16xl	f_16xl_mk84	mk84 slot2; mk84 slot5; mk84 slot9; mk84 slot12
+f_16xl	f_16xl_agm_65b	4x agm 65b; agm 65b slot6; agm 65b slot8
 f_20a	f_20a_default	2x aim 9l wingtip default; 2x aim 7f; ptb slot3; ptb slot4; ptb slot5
 f_20a	f_20a_aim_9l	2x aim 9l wingtip default; 2x us aim9l sidewinder x2
 f_20a	f_20a_aim_9l_x4	2x aim 9l wingtip default; 2x aim 9l default

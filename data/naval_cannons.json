@@ -1,0 +1,1298 @@
+[
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/100mm_45_m1917_naval_user_cannon.blk",
+    "value": "100mm 45 m1917"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/100mm_45_mle_1930_naval_user_cannon.blk",
+    "value": "100mm 45 mle 1930"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/100mm_45_mle_1933_naval_user_cannon.blk",
+    "value": "100mm 45 mle 1933"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/100mm_47_1928_naval_user_cannon.blk",
+    "value": "100mm 47 1928"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/100mm_47_1937_naval_user_cannon.blk",
+    "value": "100mm 47 1937"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/100mm_50_minizini_naval_user_cannon.blk",
+    "value": "100mm 50 minizini"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/100mm_55_mle_1945_naval_user_cannon.blk",
+    "value": "100mm 55 mle 1945"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/100mm_55_mle_1953_naval_user_cannon.blk",
+    "value": "100mm 55 mle 1953"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/100mm_56_b34_1940_naval_user_cannon.blk",
+    "value": "100mm 56 b34 1940"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/100mm_56_b34_aa_1940_naval_user_cannon.blk",
+    "value": "100mm 56 b34 aa 1940"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/100mm_65_type_98_naval_user_cannon.blk",
+    "value": "100mm 65 type 98"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/100mm_70_ak100_naval_user_cannon.blk",
+    "value": "100mm 70 ak100"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/100mm_70_sm_5_1_naval_user_cannon.blk",
+    "value": "100mm 70 sm 5 1"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/102mm_33_4in_qf_mk23_naval_user_cannon.blk",
+    "value": "102mm 33 4in qf mk23"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/102mm_35_sav_mod_1915_aa_naval_user_cannon.blk",
+    "value": "102mm 35 sav mod 1915 aa"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/102mm_40_4in_qf_mark3_naval_user_cannon.blk",
+    "value": "102mm 40 4in qf mark3"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/102mm_45_4in_bl_mark9_10_naval_user_cannon.blk",
+    "value": "102mm 45 4in bl mark9 10"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/102mm_45_4in_qf_mark15_naval_user_cannon.blk",
+    "value": "102mm 45 4in qf mark15"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/102mm_45_4in_qf_mark16_21_aa_naval_user_cannon.blk",
+    "value": "102mm 45 4in qf mark16 21 aa"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/102mm_45_4in_qf_mark16_21_naval_user_cannon.blk",
+    "value": "102mm 45 4in qf mark16 21"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/102mm_45_4in_qf_mark5_aa_naval_user_cannon.blk",
+    "value": "102mm 45 4in qf mark5 aa"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/102mm_45_4in_qf_mark5_naval_user_cannon.blk",
+    "value": "102mm 45 4in qf mark5"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/102mm_50_4inch_bl_mk7_naval_user_cannon.blk",
+    "value": "102mm 50 4inch bl mk7"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/102mm_50_4inch_mk9_naval_user_cannon.blk",
+    "value": "102mm 50 4inch mk9"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/102mm_60_1911_naval_user_cannon.blk",
+    "value": "102mm 60 1911"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/105mm_45_skc_32_naval_user_cannon.blk",
+    "value": "105mm 45 skc 32"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/105mm_60_sk_c33_df_naval_user_cannon.blk",
+    "value": "105mm 60 sk c33 df"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/105mm_60_sk_c33_naval_user_cannon.blk",
+    "value": "105mm 60 sk c33"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/105mm_l_65_naval_user_cannon.blk",
+    "value": "105mm l 65"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/114mm_19_4_5in_8cwt_qf_mark1_naval_user_cannon.blk",
+    "value": "114mm 19 4 5in 8cwt qf mark1"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/114mm_45_qf_mk1_aa_naval_user_cannon.blk",
+    "value": "114mm 45 qf mk1 aa"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/114mm_45_qf_mk4_naval_user_cannon.blk",
+    "value": "114mm 45 qf mk4"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/114mm_45_qf_mk5_naval_user_cannon.blk",
+    "value": "114mm 45 qf mk5"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/120mm_40_qf_mk12_mount_ha_single_naval_user_cannon.blk",
+    "value": "120mm 40 qf mk12 mount ha single"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/120mm_45_10th_year_type_naval_user_cannon.blk",
+    "value": "120mm 45 10th year type"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/120mm_45_3rd_year_type_ww1_naval_user_cannon.blk",
+    "value": "120mm 45 3rd year type ww1"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/120mm_45_4_7in_mark12_cp19_mount_naval_user_cannon.blk",
+    "value": "120mm 45 4 7in mark12 cp19 mount"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/120mm_45_canet_schneider_armstrong_1918_naval_user_cannon.blk",
+    "value": "120mm 45 canet schneider armstrong 1918"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/120mm_45_oto_1926_naval_user_cannon.blk",
+    "value": "120mm 45 oto 1926"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/120mm_45_qf_mk12_mount_cp17_single_naval_user_cannon.blk",
+    "value": "120mm 45 qf mk12 mount cp17 single"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/120mm_45_qf_mk9_single_naval_user_cannon.blk",
+    "value": "120mm 45 qf mk9 single"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/120mm_45_type_10_naval_user_cannon.blk",
+    "value": "120mm 45 type 10"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/120mm_45_type_3_naval_user_cannon.blk",
+    "value": "120mm 45 type 3"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/120mm_50_ansaldo_1926_naval_user_cannon.blk",
+    "value": "120mm 50 ansaldo 1926"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/120mm_50_ansaldo_1937_naval_user_cannon.blk",
+    "value": "120mm 50 ansaldo 1937"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/120mm_50_armstrong_1909_naval_user_cannon.blk",
+    "value": "120mm 50 armstrong 1909"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/120mm_50_mk4_bofors_1924_naval_user_cannon.blk",
+    "value": "120mm 50 mk4 bofors 1924"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/120mm_50_obr1905_naval_user_cannon.blk",
+    "value": "120mm 50 obr1905"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/120mm_50_oto_1933_naval_user_cannon.blk",
+    "value": "120mm 50 oto 1933"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/120mm_50_oto_1936_naval_user_cannon.blk",
+    "value": "120mm 50 oto 1936"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/120mm_l_45_mark_8_naval_user_cannon.blk",
+    "value": "120mm l 45 mark 8"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/127mm_25_5inch_mk11_naval_user_cannon.blk",
+    "value": "127mm 25 5inch mk11"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/127mm_25_5inch_mk13_naval_user_cannon.blk",
+    "value": "127mm 25 5inch mk13"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/127mm_38_eu_mk12_turret_mk30_single_naval_user_cannon.blk",
+    "value": "127mm 38 eu mk12 turret mk30 single"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/127mm_38_mk12_aa_naval_user_cannon.blk",
+    "value": "127mm 38 mk12 aa"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/127mm_38_mk12_mod14_aa_naval_user_cannon.blk",
+    "value": "127mm 38 mk12 mod14 aa"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/127mm_38_mk12_naval_user_cannon.blk",
+    "value": "127mm 38 mk12"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/127mm_38_mk12_turret_mk21_single_naval_user_cannon.blk",
+    "value": "127mm 38 mk12 turret mk21 single"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/127mm_38_mk12_turret_mk22_twin_naval_user_cannon.blk",
+    "value": "127mm 38 mk12 turret mk22 twin"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/127mm_38_mk12_turret_mk28_twin_naval_user_cannon.blk",
+    "value": "127mm 38 mk12 turret mk28 twin"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/127mm_38_mk12_turret_mk30_single_naval_user_cannon.blk",
+    "value": "127mm 38 mk12 turret mk30 single"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/127mm_38_mk12_turret_mk32_twin_naval_user_cannon.blk",
+    "value": "127mm 38 mk12 turret mk32 twin"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/127mm_38_mk12_turret_mk38_twin_naval_user_cannon.blk",
+    "value": "127mm 38 mk12 turret mk38 twin"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/127mm_45_skc_34_naval_user_cannon.blk",
+    "value": "127mm 45 skc 34"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/127mm_5_40_type_89_naval_user_cannon.blk",
+    "value": "127mm 5 40 type 89"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/127mm_5_50_type_3_naval_user_cannon.blk",
+    "value": "127mm 5 50 type 3"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/127mm_50_mk5_naval_user_cannon.blk",
+    "value": "127mm 50 mk5"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/127mm_51_mk7_naval_user_cannon.blk",
+    "value": "127mm 51 mk7"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/127mm_54_mk16_single_naval_user_cannon.blk",
+    "value": "127mm 54 mk16 single"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/127mm_54_mk18_turret_mk42_single_naval_user_cannon.blk",
+    "value": "127mm 54 mk18 turret mk42 single"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/127mm_54_mk42_naval_user_cannon.blk",
+    "value": "127mm 54 mk42"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/127mm_54_mk45_naval_user_cannon.blk",
+    "value": "127mm 54 mk45"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/128mm_45_skc_41_naval_user_cannon.blk",
+    "value": "128mm 45 skc 41"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/130mm_40_model_1919_naval_user_cannon.blk",
+    "value": "130mm 40 model 1919"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/130mm_45_model_1932_naval_user_cannon.blk",
+    "value": "130mm 45 model 1932"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/130mm_50_b13_1936_naval_user_cannon.blk",
+    "value": "130mm 50 b13 1936"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/130mm_55_obr1913_naval_user_cannon.blk",
+    "value": "130mm 55 obr1913"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/130mm_58_bl_109a_naval_user_cannon.blk",
+    "value": "130mm 58 bl 109a"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/130mm_58_sm_2_1_naval_user_cannon.blk",
+    "value": "130mm 58 sm 2 1"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/130mm_70_ak_130_naval_user_cannon.blk",
+    "value": "130mm 70 ak 130"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/133mm_5_25inch_50_qf_mk1_ask_naval_user_cannon.blk",
+    "value": "133mm 5 25inch 50 qf mk1 ask"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/133mm_5_25inch_50_qf_mk1_naval_user_cannon.blk",
+    "value": "133mm 5 25inch 50 qf mk1"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/135mm_45_oto_mod1938_naval_user_cannon.blk",
+    "value": "135mm 45 oto mod1938"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/138mm_40_model_1923_naval_user_cannon.blk",
+    "value": "138mm 40 model 1923"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/138mm_40_model_1927_naval_user_cannon.blk",
+    "value": "138mm 40 model 1927"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/138mm_50_model_1929_naval_user_cannon.blk",
+    "value": "138mm 50 model 1929"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/138mm_50_model_1934_naval_user_cannon.blk",
+    "value": "138mm 50 model 1934"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/138mm_55_model_1910_naval_user_cannon.blk",
+    "value": "138mm 55 model 1910"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/140mm_50_3rd_year_type_14_naval_user_cannon.blk",
+    "value": "140mm 50 3rd year type 14"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/150mm_45_skl_45_naval_user_cannon.blk",
+    "value": "150mm 45 skl 45"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/150mm_55_skc_28_naval_user_cannon.blk",
+    "value": "150mm 55 skc 28"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/150mm_60_skc_25_naval_user_cannon.blk",
+    "value": "150mm 60 skc 25"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/150mm_l_48_c_36_naval_user_cannon.blk",
+    "value": "150mm l 48 c 36"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/150mm_l_55_naval_user_cannon.blk",
+    "value": "150mm l 55"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/152mm_40_armstrong_mod_1899_1916_naval_user_cannon.blk",
+    "value": "152mm 40 armstrong mod 1899 1916"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/152mm_45_41st_year_type_naval_user_cannon.blk",
+    "value": "152mm 45 41st year type"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/152mm_45_schneider_mod1911_naval_user_cannon.blk",
+    "value": "152mm 45 schneider mod1911"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/152mm_50_type_41_naval_user_cannon.blk",
+    "value": "152mm 50 type 41"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/152mm_53_mod_45_1926_naval_user_cannon.blk",
+    "value": "152mm 53 mod 45 1926"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/152mm_53_mod_45_1929_naval_user_cannon.blk",
+    "value": "152mm 53 mod 45 1929"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/152mm_55_mod_45_1934_naval_user_cannon.blk",
+    "value": "152mm 55 mod 45 1934"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/152mm_55_model_1930_naval_user_cannon.blk",
+    "value": "152mm 55 model 1930"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/152mm_55_model_1930mod_naval_user_cannon.blk",
+    "value": "152mm 55 model 1930mod"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/152mm_57_b38_naval_user_cannon.blk",
+    "value": "152mm 57 b38"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/152mm_6inch_45_bl_mk12_naval_user_cannon.blk",
+    "value": "152mm 6inch 45 bl mk12"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/152mm_6inch_45_bl_mk7_naval_user_cannon.blk",
+    "value": "152mm 6inch 45 bl mk7"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/152mm_6inch_47_mk_16_dp_naval_user_cannon.blk",
+    "value": "152mm 6inch 47 mk 16 dp"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/152mm_6inch_47_mk_16_naval_user_cannon.blk",
+    "value": "152mm 6inch 47 mk 16"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/152mm_6inch_50_bl_mk22_naval_user_cannon.blk",
+    "value": "152mm 6inch 50 bl mk22"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/152mm_6inch_50_bl_mk23_naval_user_cannon.blk",
+    "value": "152mm 6inch 50 bl mk23"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/152mm_6inch_50_qf_mk_5_naval_user_cannon.blk",
+    "value": "152mm 6inch 50 qf mk 5"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/152mm_6inch_53_mk_12_naval_user_cannon.blk",
+    "value": "152mm 6inch 53 mk 12"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/152mm_m81_naval_user_cannon.blk",
+    "value": "152mm m81"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/155mm_50_model_20_naval_user_cannon.blk",
+    "value": "155mm 50 model 20"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/155mm_60_type_3_naval_user_cannon.blk",
+    "value": "155mm 60 type 3"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/15mm_mg151_1936_naval_user_cannon.blk",
+    "value": "15mm mg151 1936"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/15mm_mg151_1936_overheating_naval_user_cannon.blk",
+    "value": "15mm mg151 1936 overheating"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/180mm_57_b1p_naval_user_cannon.blk",
+    "value": "180mm 57 b1p"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/180mm_60_b1k_naval_user_cannon.blk",
+    "value": "180mm 60 b1k"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/190mm_7_5inch_45_bl_mk6_naval_user_cannon.blk",
+    "value": "190mm 7 5inch 45 bl mk6"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/200mm_45_type_41_naval_user_cannon.blk",
+    "value": "200mm 45 type 41"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/200mm_50_3rd_year_type_no1_naval_user_cannon.blk",
+    "value": "200mm 50 3rd year type no1"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/203mm_50_3rd_year_type_no2_naval_user_cannon.blk",
+    "value": "203mm 50 3rd year type no2"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/203mm_50_8inch_mk8_naval_user_cannon.blk",
+    "value": "203mm 50 8inch mk8"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/203mm_50_ansaldo_mod1924_naval_user_cannon.blk",
+    "value": "203mm 50 ansaldo mod1924"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/203mm_50_ansaldo_mod1927_naval_user_cannon.blk",
+    "value": "203mm 50 ansaldo mod1927"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/203mm_50_mle_1924_naval_user_cannon.blk",
+    "value": "203mm 50 mle 1924"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/203mm_55_8inch_mk12_naval_user_cannon.blk",
+    "value": "203mm 55 8inch mk12"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/203mm_55_8inch_mk14_naval_user_cannon.blk",
+    "value": "203mm 55 8inch mk14"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/203mm_55_8inch_mk16_naval_user_cannon.blk",
+    "value": "203mm 55 8inch mk16"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/203mm_55_8inch_mk9_naval_user_cannon.blk",
+    "value": "203mm 55 8inch mk9"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/203mm_60_skc_34_naval_user_cannon.blk",
+    "value": "203mm 60 skc 34"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/20mm_65_breda_naval_user_cannon.blk",
+    "value": "20mm 65 breda"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/20mm_65_c30_naval_user_cannon.blk",
+    "value": "20mm 65 c30"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/20mm_65_c38_naval_user_cannon.blk",
+    "value": "20mm 65 c38"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/20mm_65_c38_vierling_naval_user_cannon.blk",
+    "value": "20mm 65 c38 vierling"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/20mm_65_c38_zwilling_naval_user_cannon.blk",
+    "value": "20mm 65 c38 zwilling"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/20mm_65_rh_202_naval_user_cannon.blk",
+    "value": "20mm 65 rh 202"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/20mm_70_isotta_fraschini_mod1939_naval_user_cannon.blk",
+    "value": "20mm 70 isotta fraschini mod1939"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/20mm_jm61_m_vulcan_naval_user_cannon.blk",
+    "value": "20mm jm61 m vulcan"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/20mm_jm61_rfs_vulcan_naval_user_cannon.blk",
+    "value": "20mm jm61 rfs vulcan"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/20mm_m61_vulcan_naval_user_cannon.blk",
+    "value": "20mm m61 vulcan"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/20mm_mg151_20_1938_naval_user_cannon.blk",
+    "value": "20mm mg151 20 1938"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/20mm_oerlikon_3s_single_naval_user_cannon.blk",
+    "value": "20mm oerlikon 3s single"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/20mm_oerlikon_mk2_single_naval_user_cannon.blk",
+    "value": "20mm oerlikon mk2 single"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/20mm_oerlikon_mk24_twin_mount_naval_user_cannon.blk",
+    "value": "20mm oerlikon mk24 twin mount"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/20mm_oerlikon_mk5_twin_mount_naval_user_cannon.blk",
+    "value": "20mm oerlikon mk5 twin mount"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/20mm_shvak_naval_user_cannon.blk",
+    "value": "20mm shvak"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/20mm_type_98_naval_user_cannon.blk",
+    "value": "20mm type 98"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/20mm_type_98_twin_type4_naval_user_cannon.blk",
+    "value": "20mm type 98 twin type4"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/23mm_2a14_naval_user_cannon.blk",
+    "value": "23mm 2a14"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/25mm_60_hotchkiss_naval_user_cannon.blk",
+    "value": "25mm 60 hotchkiss"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/25mm_60_type96_naval_user_cannon.blk",
+    "value": "25mm 60 type96"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/25mm_79_110pm_naval_user_cannon.blk",
+    "value": "25mm 79 110pm"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/25mm_79_2m3_naval_user_cannon.blk",
+    "value": "25mm 79 2m3"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/25mm_87_mark_38_naval_user_cannon.blk",
+    "value": "25mm 87 mark 38"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/283mm_45_skl_45_naval_user_cannon.blk",
+    "value": "283mm 45 skl 45"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/283mm_52_skc_28_naval_user_cannon.blk",
+    "value": "283mm 52 skc 28"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/283mm_54_5_skc_34_naval_user_cannon.blk",
+    "value": "283mm 54 5 skc 34"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/28mm_75_mk_1_chicago_piano_naval_user_cannon.blk",
+    "value": "28mm 75 mk 1 chicago piano"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/305mm_45_12inch_mark10_naval_user_cannon.blk",
+    "value": "305mm 45 12inch mark10"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/305mm_45_12inch_mk5_naval_user_cannon.blk",
+    "value": "305mm 45 12inch mk5"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/305mm_45_41st_year_type_naval_user_cannon.blk",
+    "value": "305mm 45 41st year type"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/305mm_45_model_1906_10_naval_user_cannon.blk",
+    "value": "305mm 45 model 1906 10"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/305mm_46_armstrong_mod_1909_naval_user_cannon.blk",
+    "value": "305mm 46 armstrong mod 1909"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/305mm_46_vickers_mod_1909_naval_user_cannon.blk",
+    "value": "305mm 46 vickers mod 1909"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/305mm_50_12inch_mark11_naval_user_cannon.blk",
+    "value": "305mm 50 12inch mark11"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/305mm_50_12inch_mk7_naval_user_cannon.blk",
+    "value": "305mm 50 12inch mk7"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/305mm_50_12inch_mk8_naval_user_cannon.blk",
+    "value": "305mm 50 12inch mk8"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/305mm_50_41st_year_type_naval_user_cannon.blk",
+    "value": "305mm 50 41st year type"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/305mm_50_skl_50_naval_user_cannon.blk",
+    "value": "305mm 50 skl 50"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/305mm_52_obr1907_1941_naval_user_cannon.blk",
+    "value": "305mm 52 obr1907 1941"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/305mm_52_obr1907_mariya_naval_user_cannon.blk",
+    "value": "305mm 52 obr1907 mariya"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/305mm_52_obr1907_naval_user_cannon.blk",
+    "value": "305mm 52 obr1907"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/305mm_54_b_50_naval_user_cannon.blk",
+    "value": "305mm 54 b 50"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/305mm_62_sm_33_obr1948_naval_user_cannon.blk",
+    "value": "305mm 62 sm 33 obr1948"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/30mm_38_mk103_1942_naval_user_cannon.blk",
+    "value": "30mm 38 mk103 1942"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/30mm_54_ak630_naval_user_cannon.blk",
+    "value": "30mm 54 ak630"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/30mm_54_ak630m_naval_user_cannon.blk",
+    "value": "30mm 54 ak630m"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/30mm_73_m44_naval_user_cannon.blk",
+    "value": "30mm 73 m44"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/30mm_ak_230_naval_user_cannon.blk",
+    "value": "30mm ak 230"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/30mm_bp_30_mortar_naval_user_cannon.blk",
+    "value": "30mm bp 30 mortar"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/320mm_40_ansaldo_mod_1934_naval_user_cannon.blk",
+    "value": "320mm 40 ansaldo mod 1934"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/320mm_40_mod_1936_naval_user_cannon.blk",
+    "value": "320mm 40 mod 1936"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/320mm_40_oto_mod_1934_naval_user_cannon.blk",
+    "value": "320mm 40 oto mod 1934"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/330mm_52_model_1931_naval_user_cannon.blk",
+    "value": "330mm 52 model 1931"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/340mm_45_model_1912_naval_user_cannon.blk",
+    "value": "340mm 45 model 1912"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/343mm_45_mk5h_naval_user_cannon.blk",
+    "value": "343mm 45 mk5h"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/343mm_45_mk5l_naval_user_cannon.blk",
+    "value": "343mm 45 mk5l"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/350mm_45_skl_45_naval_user_cannon.blk",
+    "value": "350mm 45 skl 45"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/356mm_45_14inch_mark7_naval_user_cannon.blk",
+    "value": "356mm 45 14inch mark7"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/356mm_45_14inch_mk1_naval_user_cannon.blk",
+    "value": "356mm 45 14inch mk1"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/356mm_45_14inch_mk12_naval_user_cannon.blk",
+    "value": "356mm 45 14inch mk12"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/356mm_45_14inch_mk8_naval_user_cannon.blk",
+    "value": "356mm 45 14inch mk8"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/356mm_45_41st_year_type_naval_user_cannon.blk",
+    "value": "356mm 45 41st year type"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/356mm_50_14inch_mk11_naval_user_cannon.blk",
+    "value": "356mm 50 14inch mk11"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/356mm_52_obr1913_naval_user_cannon.blk",
+    "value": "356mm 52 obr1913"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/37mm_50_model1925_naval_user_cannon.blk",
+    "value": "37mm 50 model1925"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/37mm_50_model1933_naval_user_cannon.blk",
+    "value": "37mm 50 model1933"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/37mm_54_breda_mod1938_mod32_watercool_twin_naval_user_cannon.blk",
+    "value": "37mm 54 breda mod1938 mod32 watercool twin"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/37mm_54_breda_mod1938_mod38_aircool_twin_naval_user_cannon.blk",
+    "value": "37mm 54 breda mod1938 mod38 aircool twin"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/37mm_54_breda_mod1938_mod39_aircool_single_naval_user_cannon.blk",
+    "value": "37mm 54 breda mod1938 mod39 aircool single"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/37mm_56_an_m4_naval_user_cannon.blk",
+    "value": "37mm 56 an m4"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/37mm_57_flak_36_naval_user_cannon.blk",
+    "value": "37mm 57 flak 36"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/37mm_57_flak_43_naval_user_cannon.blk",
+    "value": "37mm 57 flak 43"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/37mm_67_70k_quad_naval_user_cannon.blk",
+    "value": "37mm 67 70k quad"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/37mm_67_70k_single_naval_user_cannon.blk",
+    "value": "37mm 67 70k single"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/37mm_67_70k_twin_v11_naval_user_cannon.blk",
+    "value": "37mm 67 70k twin v11"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/37mm_69_flak_lm42_twin_naval_user_cannon.blk",
+    "value": "37mm 69 flak lm42 twin"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/37mm_69_flak_m42_naval_user_cannon.blk",
+    "value": "37mm 69 flak m42"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/37mm_70_model1935_naval_user_cannon.blk",
+    "value": "37mm 70 model1935"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/37mm_83_skc30_naval_user_cannon.blk",
+    "value": "37mm 83 skc30"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/37mm_type_11_naval_user_cannon.blk",
+    "value": "37mm type 11"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/37mm_type_4_naval_user_cannon.blk",
+    "value": "37mm type 4"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/37mm_type_94_naval_user_cannon.blk",
+    "value": "37mm type 94"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/380mm_45_mle_1935_mod_naval_user_cannon.blk",
+    "value": "380mm 45 mle 1935 mod"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/380mm_45_mle_1935_naval_user_cannon.blk",
+    "value": "380mm 45 mle 1935"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/380mm_45_skl_45_naval_user_cannon.blk",
+    "value": "380mm 45 skl 45"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/380mm_52_skc_34_coastial_naval_user_cannon.blk",
+    "value": "380mm 52 skc 34 coastial"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/380mm_52_skc_34_naval_user_cannon.blk",
+    "value": "380mm 52 skc 34"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/381mm_40_armstrong_mod_1914_naval_user_cannon.blk",
+    "value": "381mm 40 armstrong mod 1914"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/381mm_42_bl_mk1_naval_user_cannon.blk",
+    "value": "381mm 42 bl mk1"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/381mm_50_ansaldo_oto_mod_1934_naval_user_cannon.blk",
+    "value": "381mm 50 ansaldo oto mod 1934"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/406mm_45_bl_mk1_r1_naval_user_cannon.blk",
+    "value": "406mm 45 bl mk1 r1"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/406mm_45_bl_mk1_r2_naval_user_cannon.blk",
+    "value": "406mm 45 bl mk1 r2"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/406mm_45_mk5_naval_user_cannon.blk",
+    "value": "406mm 45 mk5"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/406mm_45_mk6_naval_user_cannon.blk",
+    "value": "406mm 45 mk6"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/406mm_50_b37_naval_user_cannon.blk",
+    "value": "406mm 50 b37"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/406mm_50_mk7_naval_user_cannon.blk",
+    "value": "406mm 50 mk7"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/40mm_39_2pdr_qf_mk2c_naval_user_cannon.blk",
+    "value": "40mm 39 2pdr qf mk2c"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/40mm_39_2pdr_qf_mk8_pom_pom_naval_user_cannon.blk",
+    "value": "40mm 39 2pdr qf mk8 pom pom"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/40mm_39_vickers_terni_mod15_17_modif1930_naval_user_cannon.blk",
+    "value": "40mm 39 vickers terni mod15 17 modif1930"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/40mm_39_vickers_terni_mod15_17_naval_user_cannon.blk",
+    "value": "40mm 39 vickers terni mod15 17"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/40mm_39_vickers_terni_mod1915_1917_naval_user_cannon.blk",
+    "value": "40mm 39 vickers terni mod1915 1917"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/40mm_50_2pdr_rolls_royce_mk14_naval_user_cannon.blk",
+    "value": "40mm 50 2pdr rolls royce mk14"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/40mm_56_4cm_flak_28_bofors_naval_user_cannon.blk",
+    "value": "40mm 56 4cm flak 28 bofors"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/40mm_62_hi_type91_naval_user_cannon.blk",
+    "value": "40mm 62 hi type91"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/40mm_67_skoda_naval_user_cannon.blk",
+    "value": "40mm 67 skoda"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/40mm_l60_bofors_mk1_twin_naval_user_cannon.blk",
+    "value": "40mm l60 bofors mk1 twin"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/40mm_l60_bofors_mk2_quad_naval_user_cannon.blk",
+    "value": "40mm l60 bofors mk2 quad"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/40mm_l60_bofors_mk3_single_naval_user_cannon.blk",
+    "value": "40mm l60 bofors mk3 single"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/40mm_l70_bofors_early_breda_naval_user_cannon.blk",
+    "value": "40mm l70 bofors early breda"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/40mm_l70_bofors_mel58_naval_user_cannon.blk",
+    "value": "40mm l70 bofors mel58"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/40mm_l70_bofors_model48_naval_user_cannon.blk",
+    "value": "40mm l70 bofors model48"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/40mm_l70_bofors_oto_breda_naval_user_cannon.blk",
+    "value": "40mm l70 bofors oto breda"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/40mm_qf_bofors_mk5_twin_naval_user_cannon.blk",
+    "value": "40mm qf bofors mk5 twin"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/40mm_qf_bofors_mk7_single_naval_user_cannon.blk",
+    "value": "40mm qf bofors mk7 single"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/40mm_qf_bofors_staag_mk2_twin_naval_user_cannon.blk",
+    "value": "40mm qf bofors staag mk2 twin"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/410mm_45_type_3_mod_naval_user_cannon.blk",
+    "value": "410mm 45 type 3 mod"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/410mm_45_type_3_naval_user_cannon.blk",
+    "value": "410mm 45 type 3"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/45mm_46_21k_naval_user_cannon.blk",
+    "value": "45mm 46 21k"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/45mm_68_21km_naval_user_cannon.blk",
+    "value": "45mm 68 21km"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/45mm_89_sm_20_zif_naval_user_cannon.blk",
+    "value": "45mm 89 sm 20 zif"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/45mm_89_sm_21_zif_naval_user_cannon.blk",
+    "value": "45mm 89 sm 21 zif"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/460mm_45_type_94_naval_user_cannon.blk",
+    "value": "460mm 45 type 94"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/47mm_qf3pdr_hotchkiss_naval_user_cannon.blk",
+    "value": "47mm qf3pdr hotchkiss"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/52mm_55_skl55_naval_user_cannon.blk",
+    "value": "52mm 55 skl55"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/55mm_77_gerat_58_naval_user_cannon.blk",
+    "value": "55mm 77 gerat 58"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/57mm_43_6pdr_7cwt_qf_mk2a_naval_user_cannon.blk",
+    "value": "57mm 43 6pdr 7cwt qf mk2a"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/57mm_50_6pdr_7cwt_mk5_naval_user_cannon.blk",
+    "value": "57mm 50 6pdr 7cwt mk5"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/57mm_60_mle1951_naval_user_cannon.blk",
+    "value": "57mm 60 mle1951"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/57mm_ak_157_naval_user_cannon.blk",
+    "value": "57mm ak 157"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/57mm_ak_725_naval_user_cannon.blk",
+    "value": "57mm ak 725"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/57mm_type_97_1937_naval_user_cannon.blk",
+    "value": "57mm type 97 1937"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/63mm_38_obr1916_naval_user_cannon.blk",
+    "value": "63mm 38 obr1916"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/65mm_50_m1902_naval_user_cannon.blk",
+    "value": "65mm 50 m1902"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/65mm_64_ansaldo_terni_mod_1939_naval_user_cannon.blk",
+    "value": "65mm 64 ansaldo terni mod 1939"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/75mm_35_model_1897_naval_user_cannon.blk",
+    "value": "75mm 35 model 1897"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/75mm_35_model_1925_naval_user_cannon.blk",
+    "value": "75mm 35 model 1925"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/75mm_50_model_1922_aa_naval_user_cannon.blk",
+    "value": "75mm 50 model 1922 aa"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/75mm_50_model_1922_naval_user_cannon.blk",
+    "value": "75mm 50 model 1922"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/75mm_50_model_1927_aa_naval_user_cannon.blk",
+    "value": "75mm 50 model 1927 aa"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/75mm_type_88_aa_naval_user_cannon.blk",
+    "value": "75mm type 88 aa"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/76mm_1914_lender_naval_user_cannon.blk",
+    "value": "76mm 1914 lender"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/76mm_3_23_mk4_naval_user_cannon.blk",
+    "value": "76mm 3 23 mk4"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/76mm_3_40_12cwt_qf_mk5_naval_user_cannon.blk",
+    "value": "76mm 3 40 12cwt qf mk5"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/76mm_3_50_mk10_naval_user_cannon.blk",
+    "value": "76mm 3 50 mk10"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/76mm_3_50_mk10_ww1_mk11_mount_naval_user_cannon.blk",
+    "value": "76mm 3 50 mk10 ww1 mk11 mount"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/76mm_3_50_mk22_naval_user_cannon.blk",
+    "value": "76mm 3 50 mk22"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/76mm_40_41st_year_type_naval_user_cannon.blk",
+    "value": "76mm 40 41st year type"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/76mm_40_ansaldo_mod_1917_naval_user_cannon.blk",
+    "value": "76mm 40 ansaldo mod 1917"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/76mm_40_armstrong_mod_1897_1910_naval_user_cannon.blk",
+    "value": "76mm 40 armstrong mod 1897 1910"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/76mm_40_armstrong_mod_1897_1912_naval_user_cannon.blk",
+    "value": "76mm 40 armstrong mod 1897 1912"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/76mm_40_f34_naval_user_cannon.blk",
+    "value": "76mm 40 f34"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/76mm_40_type_88_aa_naval_user_cannon.blk",
+    "value": "76mm 40 type 88 aa"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/76mm_40_type_88_naval_user_cannon.blk",
+    "value": "76mm 40 type 88"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/76mm_45_3in_20cwt_qf_mk1_4_naval_user_cannon.blk",
+    "value": "76mm 45 3in 20cwt qf mk1 4"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/76mm_45_3in_20cwt_qf_mk1_naval_user_cannon.blk",
+    "value": "76mm 45 3in 20cwt qf mk1"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/76mm_45_schneider_mod1911_naval_user_cannon.blk",
+    "value": "76mm 45 schneider mod1911"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/76mm_50_3inch_12pdr_18cwt_qf_mk1_naval_user_cannon.blk",
+    "value": "76mm 50 3inch 12pdr 18cwt qf mk1"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/76mm_50_canet_mod1891_naval_user_cannon.blk",
+    "value": "76mm 50 canet mod1891"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/76mm_50_canet_obr1892_naval_user_cannon.blk",
+    "value": "76mm 50 canet obr1892"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/76mm_50_eu_mk33_twin_naval_user_cannon.blk",
+    "value": "76mm 50 eu mk33 twin"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/76mm_50_vickers_mod1909_naval_user_cannon.blk",
+    "value": "76mm 50 vickers mod1909"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/76mm_50cal_mk33_twin_naval_user_cannon.blk",
+    "value": "76mm 50cal mk33 twin"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/76mm_50cal_mk34_naval_user_cannon.blk",
+    "value": "76mm 50cal mk34"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/76mm_52_d56ts_naval_user_cannon.blk",
+    "value": "76mm 52 d56ts"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/76mm_55_34k_naval_user_cannon.blk",
+    "value": "76mm 55 34k"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/76mm_55_39k_naval_user_cannon.blk",
+    "value": "76mm 55 39k"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/76mm_60_ak_126_naval_user_cannon.blk",
+    "value": "76mm 60 ak 126"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/76mm_62_mmi_naval_user_cannon.blk",
+    "value": "76mm 62 mmi"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/76mm_62_oto_melara_compact_naval_user_cannon.blk",
+    "value": "76mm 62 oto melara compact"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/76mm_62_oto_melara_sr_naval_user_cannon.blk",
+    "value": "76mm 62 oto melara sr"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/76mm_62_smp_3_naval_user_cannon.blk",
+    "value": "76mm 62 smp 3"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/76mm_70_mark_37_naval_user_cannon.blk",
+    "value": "76mm 70 mark 37"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/76mm_70_mark_6_naval_user_cannon.blk",
+    "value": "76mm 70 mark 6"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/76mm_ak_726_naval_user_cannon.blk",
+    "value": "76mm ak 726"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/80mm_40_3rd_year_type_naval_user_cannon.blk",
+    "value": "80mm 40 3rd year type"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/80mm_60_type_98_naval_user_cannon.blk",
+    "value": "80mm 60 type 98"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/81mm_mk_2_mortar_naval_user_cannon.blk",
+    "value": "81mm mk 2 mortar"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/82mm_bm_37_mortar_naval_user_cannon.blk",
+    "value": "82mm bm 37 mortar"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/85mm_52_90k_naval_user_cannon.blk",
+    "value": "85mm 52 90k"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/85mm_52_92k_naval_user_cannon.blk",
+    "value": "85mm 52 92k"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/85mm_55_zis_s53_naval_user_cannon.blk",
+    "value": "85mm 55 zis s53"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/87_6mm_31_ordnance_qf_naval_user_cannon.blk",
+    "value": "87 6mm 31 ordnance qf"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/88mm_45_skc_30_naval_user_cannon.blk",
+    "value": "88mm 45 skc 30"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/88mm_45_skc_35_naval_user_cannon.blk",
+    "value": "88mm 45 skc 35"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/88mm_45_skl_45_mpl_c06_naval_user_cannon.blk",
+    "value": "88mm 45 skl 45 mpl c06"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/88mm_45_skl_45_mpl_c13_ha_naval_user_cannon.blk",
+    "value": "88mm 45 skl 45 mpl c13 ha"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/88mm_56_flak18_naval_user_cannon.blk",
+    "value": "88mm 56 flak18"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/88mm_56_flak36_naval_user_cannon.blk",
+    "value": "88mm 56 flak36"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/88mm_76_skc_32_naval_user_cannon.blk",
+    "value": "88mm 76 skc 32"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/90mm_50_ansaldo_mod_1939_naval_user_cannon.blk",
+    "value": "90mm 50 ansaldo mod 1939"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/90mm_50_mle_1926_naval_user_cannon.blk",
+    "value": "90mm 50 mle 1926"
+  }
+]

@@ -338,6 +338,7 @@ f_16d_block_40_barak_2	F-16D Block 40 Barak II	typeFighter	f_16d_block_40_barak_
 f_16d_block_40_barak_2_killstreak	F-16D Block 40 Barak II	typeFighter	f_16d_block_40_barak_2_killstreak_default	Other	0	5420	Aircraft
 f_16d_block_40_barak_2_missile_test	F-16D Block 40 Barak II	typeFighter	f_16d_block_40_barak_2_6x_derby_default	Other	0	5420	Aircraft
 f_16i_sufa	F-16I Sufa	typeFighter	f_16i_sufa_default	Israel	8	5420	Aircraft
+f_16xl	F-16XL-1	typeFighter	f_16xl_default	USA	8	6804	Aircraft
 f_20a	F-20A Tigershark	typeFighter	f_20a_default	USA	8	3600	Aircraft
 f_222_2	F.222.2	typeBomber	f_222_50kg_gammn	France	1	0	Aircraft
 f_2a	F-2A	typeFighter	f_2a_default	Japan	8	5900	Aircraft

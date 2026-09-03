@@ -1,0 +1,634 @@
+[
+  {
+    "id": "cn_cm_34",
+    "value": 3
+  },
+  {
+    "id": "cn_m42_duster",
+    "value": 3
+  },
+  {
+    "id": "cn_pgz_09",
+    "value": 2
+  },
+  {
+    "id": "cn_qn506",
+    "value": 2
+  },
+  {
+    "id": "cn_sdkfz_222_early",
+    "value": 3
+  },
+  {
+    "id": "cn_type_65_aa",
+    "value": 4
+  },
+  {
+    "id": "cn_wz_305",
+    "value": 5
+  },
+  {
+    "id": "cn_zbd_04a",
+    "value": 2
+  },
+  {
+    "id": "cn_zsd63_pg87",
+    "value": 3
+  },
+  {
+    "id": "cn_zsl_92",
+    "value": 2
+  },
+  {
+    "id": "fr_amx_10p",
+    "value": 3
+  },
+  {
+    "id": "fr_amx_13_dca_40",
+    "value": 3
+  },
+  {
+    "id": "fr_amx_30_dca",
+    "value": 2
+  },
+  {
+    "id": "fr_cckw_353_bofors",
+    "value": 3
+  },
+  {
+    "id": "fr_cv_9035_nl",
+    "value": 4
+  },
+  {
+    "id": "fr_lvt_bofors",
+    "value": 3
+  },
+  {
+    "id": "fr_tpk_641_vpc",
+    "value": 3
+  },
+  {
+    "id": "fr_vab_santal",
+    "value": 2
+  },
+  {
+    "id": "fr_vbci",
+    "value": 4
+  },
+  {
+    "id": "fr_vbci2_mct30",
+    "value": 3
+  },
+  {
+    "id": "germ_9a35_m",
+    "value": 2
+  },
+  {
+    "id": "germ_boxer_swatrinf",
+    "value": 2
+  },
+  {
+    "id": "germ_flakpanzer_38t_gepard",
+    "value": 4
+  },
+  {
+    "id": "germ_flakpanzer_IV_Ostwind_2_net",
+    "value": 4
+  },
+  {
+    "id": "germ_flakpanzer_IV_wirbelwind",
+    "value": 4
+  },
+  {
+    "id": "germ_flakpanzer_I_ausf_A",
+    "value": 4
+  },
+  {
+    "id": "germ_flakpanzer_V_Coelian",
+    "value": 3
+  },
+  {
+    "id": "germ_flakpanzer_iv_kugelblitz",
+    "value": 4
+  },
+  {
+    "id": "germ_flakpanzer_iv_ostwind",
+    "value": 4
+  },
+  {
+    "id": "germ_flakpanzer_iv_ostwind_2",
+    "value": 4
+  },
+  {
+    "id": "germ_flakpanzer_zerstorer_45",
+    "value": 4
+  },
+  {
+    "id": "germ_flakpz_1a2_gepard",
+    "value": 2
+  },
+  {
+    "id": "germ_flakpz_I_Gepard",
+    "value": 2
+  },
+  {
+    "id": "germ_marder_1a1",
+    "value": 3
+  },
+  {
+    "id": "germ_marder_1a3",
+    "value": 4
+  },
+  {
+    "id": "germ_panzerwerfer_42",
+    "value": 2
+  },
+  {
+    "id": "germ_pzkpfw_38t_aufklarungspanzer",
+    "value": 4
+  },
+  {
+    "id": "germ_pzkpfw_ii_ausf_c",
+    "value": 3
+  },
+  {
+    "id": "germ_pzkpfw_ii_ausf_c_dak",
+    "value": 3
+  },
+  {
+    "id": "germ_pzkpfw_ii_ausf_c_td",
+    "value": 3
+  },
+  {
+    "id": "germ_pzkpfw_ii_ausf_f",
+    "value": 3
+  },
+  {
+    "id": "germ_schutzenpanzer_puma",
+    "value": 4
+  },
+  {
+    "id": "germ_schutzenpanzer_puma_vjtf",
+    "value": 4
+  },
+  {
+    "id": "germ_sdkfz_222",
+    "value": 4
+  },
+  {
+    "id": "germ_sdkfz_234_1",
+    "value": 4
+  },
+  {
+    "id": "germ_sdkfz_6_2_flak36",
+    "value": 4
+  },
+  {
+    "id": "germ_sppz2_luchs_a2",
+    "value": 2
+  },
+  {
+    "id": "germ_vilkas",
+    "value": 2
+  },
+  {
+    "id": "germ_wiesel_1_mk20",
+    "value": 4
+  },
+  {
+    "id": "il_eitan",
+    "value": 2
+  },
+  {
+    "id": "il_m163_vulcan",
+    "value": 2
+  },
+  {
+    "id": "il_machbet",
+    "value": 2
+  },
+  {
+    "id": "il_namer_rcws_30",
+    "value": 2
+  },
+  {
+    "id": "il_namer_tsrikhon",
+    "value": 2
+  },
+  {
+    "id": "il_tcm_20",
+    "value": 3
+  },
+  {
+    "id": "il_zsu_57_2",
+    "value": 4
+  },
+  {
+    "id": "it_39m_csaba",
+    "value": 2
+  },
+  {
+    "id": "it_9a35_m",
+    "value": 2
+  },
+  {
+    "id": "it_ab_41",
+    "value": 3
+  },
+  {
+    "id": "it_as_42_metropolitana",
+    "value": 4
+  },
+  {
+    "id": "it_btr_80a_hungary",
+    "value": 2
+  },
+  {
+    "id": "it_dardo_vcc",
+    "value": 2
+  },
+  {
+    "id": "it_fiat_6614_firos",
+    "value": 2
+  },
+  {
+    "id": "it_freccia",
+    "value": 2
+  },
+  {
+    "id": "it_freccia_hitfist_ows",
+    "value": 2
+  },
+  {
+    "id": "it_kf_41",
+    "value": 2
+  },
+  {
+    "id": "it_l3_cc",
+    "value": 2
+  },
+  {
+    "id": "it_l6",
+    "value": 3
+  },
+  {
+    "id": "it_l6_leone",
+    "value": 3
+  },
+  {
+    "id": "it_leopard_bofors",
+    "value": 3
+  },
+  {
+    "id": "it_oto_r3_t20_fa",
+    "value": 3
+  },
+  {
+    "id": "it_otobreda_sidam_25",
+    "value": 2
+  },
+  {
+    "id": "it_otobreda_sidam_25_mistral",
+    "value": 2
+  },
+  {
+    "id": "it_vbc_pt2",
+    "value": 4
+  },
+  {
+    "id": "it_vcc_80_hitfist_30",
+    "value": 2
+  },
+  {
+    "id": "it_zsu_57_2",
+    "value": 4
+  },
+  {
+    "id": "jp_btr_3e1",
+    "value": 2
+  },
+  {
+    "id": "jp_icv_ifv_prototype",
+    "value": 4
+  },
+  {
+    "id": "jp_icv_prototype",
+    "value": 4
+  },
+  {
+    "id": "jp_m163_vulcan",
+    "value": 2
+  },
+  {
+    "id": "jp_m19",
+    "value": 3
+  },
+  {
+    "id": "jp_m42_duster",
+    "value": 3
+  },
+  {
+    "id": "jp_sub_i_ii_20mm",
+    "value": 4
+  },
+  {
+    "id": "jp_type_81_tansam",
+    "value": 2
+  },
+  {
+    "id": "jp_type_87",
+    "value": 2
+  },
+  {
+    "id": "jp_type_87_rcv",
+    "value": 4
+  },
+  {
+    "id": "jp_type_87_rcv_prot",
+    "value": 4
+  },
+  {
+    "id": "jp_type_94",
+    "value": 3
+  },
+  {
+    "id": "jp_type_95_so_ki",
+    "value": 3
+  },
+  {
+    "id": "jp_type_98_ta_se",
+    "value": 3
+  },
+  {
+    "id": "sw_asrad_r",
+    "value": 2
+  },
+  {
+    "id": "sw_bmp_2md",
+    "value": 2
+  },
+  {
+    "id": "sw_cv_9030_fin",
+    "value": 3
+  },
+  {
+    "id": "sw_cv_9035_dk",
+    "value": 4
+  },
+  {
+    "id": "sw_cv_90_mk4",
+    "value": 2
+  },
+  {
+    "id": "sw_itpsv_90",
+    "value": 2
+  },
+  {
+    "id": "sw_l_62_anti_ii",
+    "value": 3
+  },
+  {
+    "id": "sw_landsverk_ush_204_gk",
+    "value": 2
+  },
+  {
+    "id": "sw_lvkv_42",
+    "value": 3
+  },
+  {
+    "id": "sw_lvrbv_701",
+    "value": 3
+  },
+  {
+    "id": "sw_pbil_m40",
+    "value": 3
+  },
+  {
+    "id": "sw_pbv_301",
+    "value": 3
+  },
+  {
+    "id": "sw_pbv_302_bill",
+    "value": 3
+  },
+  {
+    "id": "sw_pvlvv_fm42",
+    "value": 3
+  },
+  {
+    "id": "sw_tgdgb_m40_lv",
+    "value": 3
+  },
+  {
+    "id": "sw_veak_40",
+    "value": 3
+  },
+  {
+    "id": "sw_zsu_57_2",
+    "value": 4
+  },
+  {
+    "id": "uk_9a35_m",
+    "value": 2
+  },
+  {
+    "id": "uk_armored_car_mk_2_aa",
+    "value": 3
+  },
+  {
+    "id": "uk_badger",
+    "value": 3
+  },
+  {
+    "id": "uk_bosvark",
+    "value": 3
+  },
+  {
+    "id": "uk_boxer_crv_block2",
+    "value": 2
+  },
+  {
+    "id": "uk_chieftain_marksman",
+    "value": 2
+  },
+  {
+    "id": "uk_crusader_aa_mk_1",
+    "value": 3
+  },
+  {
+    "id": "uk_crusader_aa_mk_2",
+    "value": 3
+  },
+  {
+    "id": "uk_crusader_aa_mk_2_kit_3rank",
+    "value": 3
+  },
+  {
+    "id": "uk_desert_warrior",
+    "value": 2
+  },
+  {
+    "id": "uk_fv102_striker",
+    "value": 2
+  },
+  {
+    "id": "uk_fv107_scimitar",
+    "value": 4
+  },
+  {
+    "id": "uk_fv510_isv",
+    "value": 4
+  },
+  {
+    "id": "uk_fv721_fox",
+    "value": 4
+  },
+  {
+    "id": "uk_ratel_20",
+    "value": 3
+  },
+  {
+    "id": "uk_skink_aa",
+    "value": 3
+  },
+  {
+    "id": "uk_stormer_air_defence",
+    "value": 2
+  },
+  {
+    "id": "uk_ystervark_spaa",
+    "value": 3
+  },
+  {
+    "id": "us_efv_p1",
+    "value": 3
+  },
+  {
+    "id": "us_halftrack_m15",
+    "value": 4
+  },
+  {
+    "id": "us_lav_ad",
+    "value": 3
+  },
+  {
+    "id": "us_m1296_dragoon",
+    "value": 4
+  },
+  {
+    "id": "us_m163_vulcan",
+    "value": 2
+  },
+  {
+    "id": "us_m19",
+    "value": 3
+  },
+  {
+    "id": "us_m247",
+    "value": 2
+  },
+  {
+    "id": "us_m3_bradley",
+    "value": 3
+  },
+  {
+    "id": "us_m3a3_bradley",
+    "value": 2
+  },
+  {
+    "id": "us_m42_duster",
+    "value": 3
+  },
+  {
+    "id": "us_m50_ontos",
+    "value": 2
+  },
+  {
+    "id": "us_skink_aa",
+    "value": 3
+  },
+  {
+    "id": "us_skink_aa_kit_3rank",
+    "value": 3
+  },
+  {
+    "id": "ussr_9a35_m2",
+    "value": 2
+  },
+  {
+    "id": "ussr_bmd_4",
+    "value": 2
+  },
+  {
+    "id": "ussr_bmd_4m",
+    "value": 2
+  },
+  {
+    "id": "ussr_bmd_4m2",
+    "value": 2
+  },
+  {
+    "id": "ussr_bmp_2",
+    "value": 2
+  },
+  {
+    "id": "ussr_bmp_2m",
+    "value": 2
+  },
+  {
+    "id": "ussr_btr_80a",
+    "value": 2
+  },
+  {
+    "id": "ussr_btr_82at",
+    "value": 2
+  },
+  {
+    "id": "ussr_btr_zd",
+    "value": 3
+  },
+  {
+    "id": "ussr_gaz_mm_72k",
+    "value": 3
+  },
+  {
+    "id": "ussr_it_1",
+    "value": 2
+  },
+  {
+    "id": "ussr_m53_59",
+    "value": 3
+  },
+  {
+    "id": "ussr_t_60_1941",
+    "value": 3
+  },
+  {
+    "id": "ussr_type_65_aa",
+    "value": 4
+  },
+  {
+    "id": "ussr_zis_12_94km_1945",
+    "value": 3
+  },
+  {
+    "id": "ussr_zis_43",
+    "value": 3
+  },
+  {
+    "id": "ussr_zsu_23_4m2",
+    "value": 2
+  },
+  {
+    "id": "ussr_zsu_37",
+    "value": 4
+  },
+  {
+    "id": "ussr_zsu_57_2",
+    "value": 4
+  },
+  {
+    "id": "ussr_zut_37",
+    "value": 3
+  }
+]

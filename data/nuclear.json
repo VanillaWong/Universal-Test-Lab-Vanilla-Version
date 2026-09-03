@@ -1,0 +1,42 @@
+[
+  {
+    "aircraftId": "nt_su_24m",
+    "display": "Su-24M — RN-40 (30 kt)",
+    "loadoutId": "nt_su_24m_rn_40"
+  },
+  {
+    "aircraftId": "f_111f_killstreak",
+    "display": "F-111F — B61",
+    "loadoutId": "f_111f_1xb61"
+  },
+  {
+    "aircraftId": "f_16a_block_15_adf_killstreak",
+    "display": "F-16A ADF — B61",
+    "loadoutId": "f_16a_block_15_adf_1xb61"
+  },
+  {
+    "aircraftId": "f_16d_block_40_barak_2_killstreak",
+    "display": "F-16D Barak II — B61",
+    "loadoutId": "f_16d_block_40_barak_2_1xb61"
+  },
+  {
+    "aircraftId": "jaguar_a_killstreak",
+    "display": "Jaguar A — AN-52",
+    "loadoutId": "jaguar_a_1xan52"
+  },
+  {
+    "aircraftId": "su-7bkl_killstreak",
+    "display": "Su-7BKL — RN-24",
+    "loadoutId": "su_7bkl_rn24"
+  },
+  {
+    "aircraftId": "b-29_killstreak",
+    "display": "B-29 — Mk 6",
+    "loadoutId": "b_29_1xmk6"
+  },
+  {
+    "aircraftId": "tu_4_killstreak",
+    "display": "Tu-4 — RDS-4",
+    "loadoutId": "tu_4_1xrds4"
+  }
+]

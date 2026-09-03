@@ -26,3 +26,12 @@ universal_units_data/
 universal_weapons_data/
 # Local workspace backups
 data_backup_20260830/
+
+# Local template/selftest scratch (kept out of the repo)
+template/*.bak*
+backup/
+selftest_run.txt
+selftest_crash.log
+data/*.bak*
+build_selftest.rsp
+UniversalTestLab_selftest.exe

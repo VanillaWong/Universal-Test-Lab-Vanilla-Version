@@ -7713,6 +7713,30 @@ f_16i_sufa	F-16I Sufa	12	aim_9l_wingtip_default	aam	gameData/Weapons/rocketGuns/
 f_16i_sufa	F-16I Sufa	12	aim_9m_wingtip_default	aam	gameData/Weapons/rocketGuns/us_aim9m_sidewinder_default.blk	aim_9e_006	1	missile_type_f_air_to_air	AIM-9M Sidewinder air-to-air missiles	Air-to-Air Missiles	84.46	84.46
 f_16i_sufa	F-16I Sufa	12	aim_120b_slot12	aam	gameData/Weapons/rocketGuns/us_aim_120b.blk	aim_120a_006	1	missile_type_f_air_to_air_midrange	AIM-120B AMRAAM air-to-air missiles	Air-to-Air Missiles	147.87	147.87
 f_16i_sufa	F-16I Sufa	12	aim_120c_slot10	aam	gameData/Weapons/rocketGuns/us_aim_120c_5.blk	aim_120a_006	1	missile_type_s_air_to_air_midrange	AIM-120C-5 AMRAAM air-to-air missiles	Air-to-Air Missiles	161.479	161.479
+f_16xl	F-16XL-1	1	aim_9l_wingtip_default	aam	gameData/Weapons/rocketGuns/us_aim9l_sidewinder_default.blk	aim_9e_001	1	missile_type_b_air_to_air	AIM-9L Sidewinder air-to-air missiles	Air-to-Air Missiles	84.46	84.46
+f_16xl	F-16XL-1	2	mk82	bombs	gameData/Weapons/BombGuns/us_500lb_mk_82_ldgp.blk	500lb_mk_82_014	1	bombs_middle	500 lb LDGP Mk 82 bomb	Bombs	240.9	240.9
+f_16xl	F-16XL-1	2	agm_65b	atgm	gameData/Weapons/rocketGuns/us_agm_65b.blk	us_lau_117a_agm_65a_001	1	missile_air_to_uni	AGM-65B air-to-ground missile	Air-to-Ground Missiles	210.467	210.467
+f_16xl	F-16XL-1	2	mk84_slot2	bombs	gameData/Weapons/BombGuns/us_2000lb_mk_84_ldgp.blk	us_370gal_drop_tank_001	1	bombs_heavy_middle	2000 lb LDGP Mk 84 bomb	Bombs	893.6	893.6
+f_16xl	F-16XL-1	3	mk82	bombs	gameData/Weapons/BombGuns/us_500lb_mk_82_ldgp.blk	500lb_mk_82_013	1	bombs_middle	500 lb LDGP Mk 82 bomb	Bombs	240.9	240.9
+f_16xl	F-16XL-1	4	mk82	bombs	gameData/Weapons/BombGuns/us_500lb_mk_82_ldgp.blk	500lb_mk_82_001	1	bombs_middle	500 lb LDGP Mk 82 bomb	Bombs	240.9	240.9
+f_16xl	F-16XL-1	4	agm_65b	atgm	gameData/Weapons/rocketGuns/us_agm_65b.blk	us_lau_117a_agm_65a_002	1	missile_air_to_uni	AGM-65B air-to-ground missile	Air-to-Ground Missiles	210.467	210.467
+f_16xl	F-16XL-1	5	mk82_x4	bombs	gameData/Weapons/BombGuns/us_500lb_mk_82_ldgp.blk	500lb_mk_82_002	4	bombs_middle_group_x4	500 lb LDGP Mk 82 bomb	Bombs	240.9	963.6
+f_16xl	F-16XL-1	5	mk84_slot5	bombs	gameData/Weapons/BombGuns/us_2000lb_mk_84_ldgp.blk	2000lb_mk_84_001	1	bombs_heavy_middle	2000 lb LDGP Mk 84 bomb	Bombs	893.6	893.6
+f_16xl	F-16XL-1	6	mk82	bombs	gameData/Weapons/BombGuns/us_500lb_mk_82_ldgp.blk	500lb_mk_82_004	1	bombs_middle	500 lb LDGP Mk 82 bomb	Bombs	240.9	240.9
+f_16xl	F-16XL-1	6	agm_65b_slot6	atgm	gameData/Weapons/rocketGuns/us_agm_65b.blk	us_lau_117a_agm_65a_003	1	missile_air_to_uni	AGM-65B air-to-ground missile	Air-to-Ground Missiles	210.467	210.467
+f_16xl	F-16XL-1	7	aim_120a_default	aam	gameData/Weapons/rocketGuns/us_aim_120a_default.blk	aim_120a_003	2	missile_type_f_air_to_air_midrange_group	AIM-120A AMRAAM air-to-air missiles	Air-to-Air Missiles	147.87	295.74
+f_16xl	F-16XL-1	7	aim_120a	aam	gameData/Weapons/rocketGuns/us_aim_120a.blk	aim_120a_001	2	missile_type_f_air_to_air_midrange_group_x4	AIM-120A AMRAAM air-to-air missiles	Air-to-Air Missiles	147.87	295.74
+f_16xl	F-16XL-1	8	mk82	bombs	gameData/Weapons/BombGuns/us_500lb_mk_82_ldgp.blk	500lb_mk_82_009	1	bombs_middle	500 lb LDGP Mk 82 bomb	Bombs	240.9	240.9
+f_16xl	F-16XL-1	8	agm_65b_slot8	atgm	gameData/Weapons/rocketGuns/us_agm_65b.blk	us_lau_117a_agm_65a_004	1	missile_air_to_uni	AGM-65B air-to-ground missile	Air-to-Ground Missiles	210.467	210.467
+f_16xl	F-16XL-1	9	mk82_x4	bombs	gameData/Weapons/BombGuns/us_500lb_mk_82_ldgp.blk	500lb_mk_82_011	4	bombs_middle_group_x4	500 lb LDGP Mk 82 bomb	Bombs	240.9	963.6
+f_16xl	F-16XL-1	9	mk84_slot9	bombs	gameData/Weapons/BombGuns/us_2000lb_mk_84_ldgp.blk	2000lb_mk_84_002	1	bombs_heavy_middle	2000 lb LDGP Mk 84 bomb	Bombs	893.6	893.6
+f_16xl	F-16XL-1	10	mk82	bombs	gameData/Weapons/BombGuns/us_500lb_mk_82_ldgp.blk	500lb_mk_82_012	1	bombs_middle	500 lb LDGP Mk 82 bomb	Bombs	240.9	240.9
+f_16xl	F-16XL-1	10	agm_65b	atgm	gameData/Weapons/rocketGuns/us_agm_65b.blk	us_lau_117a_agm_65a_005	1	missile_air_to_uni	AGM-65B air-to-ground missile	Air-to-Ground Missiles	210.467	210.467
+f_16xl	F-16XL-1	11	mk82	bombs	gameData/Weapons/BombGuns/us_500lb_mk_82_ldgp.blk	500lb_mk_82_015	1	bombs_middle	500 lb LDGP Mk 82 bomb	Bombs	240.9	240.9
+f_16xl	F-16XL-1	12	mk82	bombs	gameData/Weapons/BombGuns/us_500lb_mk_82_ldgp.blk	500lb_mk_82_016	1	bombs_middle	500 lb LDGP Mk 82 bomb	Bombs	240.9	240.9
+f_16xl	F-16XL-1	12	agm_65b	atgm	gameData/Weapons/rocketGuns/us_agm_65b.blk	us_lau_117a_agm_65a_006	1	missile_air_to_uni	AGM-65B air-to-ground missile	Air-to-Ground Missiles	210.467	210.467
+f_16xl	F-16XL-1	12	mk84_slot12	bombs	gameData/Weapons/BombGuns/us_2000lb_mk_84_ldgp.blk	us_370gal_drop_tank_002	1	bombs_heavy_middle	2000 lb LDGP Mk 84 bomb	Bombs	893.6	893.6
+f_16xl	F-16XL-1	13	aim_9l_wingtip_default	aam	gameData/Weapons/rocketGuns/us_aim9l_sidewinder_default.blk	aim_9e_002	1	missile_type_b_air_to_air	AIM-9L Sidewinder air-to-air missiles	Air-to-Air Missiles	84.46	84.46
 f_20a	F-20A Tigershark	1	aim_9l_wingtip_default	aam	gameData/Weapons/rocketGuns/us_aim9l_sidewinder_default.blk	aim_9_003	1	missile_type_b_air_to_air	AIM-9L Sidewinder air-to-air missiles	Air-to-Air Missiles	84.46	84.46
 f_20a	F-20A Tigershark	2	aim_9l_default	aam	gameData/Weapons/rocketGuns/us_aim9l_sidewinder_default.blk	aim_9_001	1	missile_type_b_air_to_air	AIM-9L Sidewinder air-to-air missiles	Air-to-Air Missiles	84.46	84.46
 f_20a	F-20A Tigershark	2	us_aim9l_sidewinder_x2	aam	gameData/Weapons/containers/dra_lau_105a_aim_9l.blk	dra_lau105a_1	1	missile_type_b_air_to_air_group	AIM-9L Sidewinder air-to-air missiles x2	Air-to-Air Missiles	168.92	168.92

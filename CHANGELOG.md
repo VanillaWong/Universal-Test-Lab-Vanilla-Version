@@ -1,5 +1,22 @@
 # Changelog
 
+## v0.12.0-beta.5 — 2026-09-03
+
+### Added / 新增
+
+- English–Chinese UI localization (`ModernText`) with an in-app language toggle. / 主界面中英双语本地化（ModernText）与应用内语言切换。
+- Home ammunition panel for ground vehicles (Ask3lad-style per-slot loadout editor with belt grouping and capacity sliders). / 地面载具主页弹药面板（Ask3lad 式逐槽挂载编辑、弹链分组与容量滑块）。
+- Embedded catalogs migrated from TSV to JSON (`tools/tsv2json.js`, 18 JSON catalogs embedded); catalog refreshed against the 2026-09-01 game update (1,577 aircraft / 29,837 donor mounts / 51,258 modifications). / 内嵌目录由 TSV 全面迁移为 JSON（tools/tsv2json.js，内嵌 18 份 JSON 目录），并随 2026-09-01 游戏更新刷新（1577 架飞机 / 29837 挂载 / 51258 项改装）。
+- Zero-extract weapon browsing: `ExtractGameBlk` prefers a pre-extracted `universal_units_data` / `universal_weapons_data` tree beside the executable before invoking the extraction tool. / 零解包武器浏览：ExtractGameBlk 优先读取 exe 旁的预解包数据树（universal_units_data / universal_weapons_data），之后才调用解包工具。
+- Weapon-swap main-gun detection skips `dummy:b=true` camera mounts, so missile launcher/SAM vehicles swap the real missile mount. / 换炮主武器识别跳过 dummy:b=true 观瞄挂架——导弹发射车/防空车换炮会替换真实导弹架。
+
+### Fixed / 修复
+
+- SARH → fake-ARH conversion now patches every guidance/radarSeeker block; twin-missile files (MIM-104, 5V55/S-300, …) convert both groups. / 伪ARH 转换现在修补所有 guidance/radarSeeker 块——双弹组文件（MIM-104、5V55/S-300 等）两组均转换。
+- Legacy GROUND CONFIGURE window removed (functionality moved to the home ammunition panel and the EXPERIMENTAL gun-swap lab). / 移除旧版 GROUND CONFIGURE 窗口（功能分流至主页弹药面板与 EXPERIMENTAL 换炮实验室）。
+- Self-test crash fixed after JSON migration (core and UI screenshot renderers still referenced removed `.tsv` resources). / 修复 JSON 迁移后自检崩溃（核心与 UI 截图渲染仍引用已移除的 .tsv 资源）。
+- Build-Catalog data roots resolve correctly when run from the project root. / Build-Catalog 在项目根运行时可正确解析数据根路径。
+
 ## v0.12.0-beta.2 — 2026-08-27
 
 ### Added

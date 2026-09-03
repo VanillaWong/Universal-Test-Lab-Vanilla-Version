@@ -617,6 +617,19 @@ function Add-GroundModifications([string]$id, [string]$text) {
   }
 }
 }
+function Get-BulletContainer([string]$text, [int]$bulletStart) {
+  # bulletStart is the start of the matched line (before any indent).
+  $lineEnd = $text.IndexOf("`n", $bulletStart)
+  if ($lineEnd -lt 0) { $lineEnd = $text.Length }
+  $lineText = $text.Substring($bulletStart, $lineEnd - $bulletStart)
+  if ($lineText -notmatch '^[ \t]*bullet\s*\{') { return '' }
+  $indentMatch = [regex]::Match($lineText, '^[ \t]*')
+  if ($indentMatch.Length -le 0) { return '' }
+  $m = [regex]::Matches($text.Substring(0, $bulletStart), '(?m)^([A-Za-z0-9_./+]+)\s*\{')
+  if ($m.Count -eq 0) { return '' }
+  return $m[$m.Count - 1].Groups[1].Value
+}
+
 function Build-GroundAmmoCatalog {
   Write-Output "[catalog] $(Get-Date -Format HH:mm:ss) Phase 4/4: ground ammunition catalog"
   # Scan every weapon blk in groundmodels_weapons: user cannon files, SAM/ATG
@@ -648,7 +661,8 @@ function Build-GroundAmmoCatalog {
       $caliber = if ($caliberMatch.Success) { $caliberMatch.Groups[1].Value } else { '0' }
       $kind = if ($typeMatch.Success) { Friendly-ProjectileType $typeMatch.Groups[1].Value } else { 'Projectile' }
       $penetration = if ($penetrationMatch.Success) { $penetrationMatch.Groups[1].Value } else { '0' }
-      $groundAmmoRows.Add("$source`t$bulletName`t$display`t$kind`t$mass`t$speed`t$explosive`t$caliber`t$penetration")
+      $container = Get-BulletContainer $text $bullet.Start
+      $groundAmmoRows.Add("$source`t$container`t$bulletName`t$display`t$kind`t$mass`t$speed`t$explosive`t$caliber`t$penetration")
     }
   }
 }
@@ -694,7 +708,19 @@ function ConvertTo-JsonManual($map) {
     [void]$sb.Append('],"beltOptions":[')
     for ($i = 0; $i -lt $e.beltOptions.Count; $i++) {
       if ($i -gt 0) { [void]$sb.Append(',') }
-      [void]$sb.Append('"').Append((Escape-Json $e.beltOptions[$i])).Append('"')
+      $bo = $e.beltOptions[$i]
+      [void]$sb.Append('{"name":"').Append((Escape-Json $bo.name)).Append('","calibre":').Append($bo.calibre).Append(',"rounds":[')
+      for ($j = 0; $j -lt $bo.rounds.Count; $j++) {
+        if ($j -gt 0) { [void]$sb.Append(',') }
+        $r = $bo.rounds[$j]
+        [void]$sb.Append('{"bulletName":"').Append((Escape-Json $r.bulletName)).Append('","display":"').Append((Escape-Json $r.display)).Append('","kind":"').Append((Escape-Json $r.kind)).Append('"')
+        [void]$sb.Append(',"mass":').Append(([double]$r.mass).ToString([Globalization.CultureInfo]::InvariantCulture))
+        [void]$sb.Append(',"speed":').Append(([double]$r.speed).ToString([Globalization.CultureInfo]::InvariantCulture))
+        [void]$sb.Append(',"explosive":').Append(([double]$r.explosive).ToString([Globalization.CultureInfo]::InvariantCulture))
+        [void]$sb.Append(',"caliber":').Append(([double]$r.caliber).ToString([Globalization.CultureInfo]::InvariantCulture))
+        [void]$sb.Append(',"penetration":').Append(([double]$r.penetration).ToString([Globalization.CultureInfo]::InvariantCulture)).Append('}')
+      }
+      [void]$sb.Append(']}')
     }
     [void]$sb.Append('],"rackRounds":{')
     $rk = $e.rackRounds
@@ -744,6 +770,27 @@ function Format-Json([string]$raw) {
   return $sb.ToString()
 }
 
+function ConvertTo-GroundAmmoJson([string[]]$rows) {
+  $sb = New-Object System.Text.StringBuilder
+  [void]$sb.Append('[')
+  for ($i = 0; $i -lt $rows.Count; $i++) {
+    if ($i -gt 0) { [void]$sb.Append(',') }
+    $p = $rows[$i] -split "`t"
+    [void]$sb.Append('{"source":"').Append((Escape-Json $p[0]))
+    [void]$sb.Append('","container":"').Append((Escape-Json $p[1]))
+    [void]$sb.Append('","bulletName":"').Append((Escape-Json $p[2]))
+    [void]$sb.Append('","display":"').Append((Escape-Json $p[3]))
+    [void]$sb.Append('","kind":"').Append((Escape-Json $p[4]))
+    [void]$sb.Append('","mass":').Append($p[5])
+    [void]$sb.Append(',"speed":').Append($p[6])
+    [void]$sb.Append(',"explosive":').Append($p[7])
+    [void]$sb.Append(',"caliber":').Append($p[8])
+    [void]$sb.Append(',"penetration":').Append($p[9]).Append('}')
+  }
+  [void]$sb.Append(']')
+  return $sb.ToString()
+}
+
 function Build-VehicleWeaponsJson {
   Write-Output "[catalog] $(Get-Date -Format HH:mm:ss) Phase 5/5: vehicle weapons json (prebuilt ammo data)"
   # Belt-type limits: ammunition types a vehicle may carry per belt weapon (game
@@ -759,6 +806,22 @@ function Build-VehicleWeaponsJson {
         if ([int]::TryParse($parts[1].Trim(), [ref]$v) -and $v -gt 1) { $beltTypeLimits[$parts[0].Trim()] = $v }
       }
     }
+  }
+  # Prebuilt ground-ammo catalog (source + container) for belt-option rounds.
+  $gaJsonPath = Join-Path $OutputRoot 'ground_ammo.json'
+  if (-not (Test-Path -LiteralPath $gaJsonPath)) {
+    Build-GroundAmmoCatalog
+    [IO.File]::WriteAllText($gaJsonPath, (ConvertTo-GroundAmmoJson ($groundAmmoRows | Sort-Object { ($_ -split "`t")[4] }, { ($_ -split "`t")[3] }, { ($_ -split "`t")[2] })), [Text.UTF8Encoding]::new($false))
+  }
+  $groundAmmoBySourceContainer = @{}
+  $knownAmmoContainers = @{}
+  $gaList = Get-Content -LiteralPath $gaJsonPath -Raw | ConvertFrom-Json
+  foreach ($ga in $gaList) {
+    if ($null -eq $ga -or [string]::IsNullOrWhiteSpace($ga.container)) { continue }
+    $key = ([string]$ga.source).ToLowerInvariant() + '|' + [string]$ga.container
+    if (-not $groundAmmoBySourceContainer.ContainsKey($key)) { $groundAmmoBySourceContainer[$key] = New-Object System.Collections.ArrayList }
+    [void]$groundAmmoBySourceContainer[$key].Add($ga)
+    $knownAmmoContainers[([string]$ga.container).ToLowerInvariant()] = $true
   }
   $map = @{}
   $tankDir = Join-Path $UnitsRoot 'tankmodels'
@@ -846,15 +909,45 @@ function Build-VehicleWeaponsJson {
         }
       }
     }
-    # belt options (mirror WorkspaceGunBeltOptions)
+    # belt options (mirror WorkspaceGunBeltOptions); each option carries the
+    # rounds (bulletName + params) available inside its cannon container so the
+    # UI can filter "container in beltOptions" per vehicle.
     $mods = Get-NamedBlocks $text 'modifications' | Select-Object -First 1
     if ($null -ne $mods) {
       foreach ($mod in (Get-DirectChildBlocks $mods.Text)) {
         $mname = $mod.Name
-        if ($mname -notmatch '^\d+mm_') { continue }
+        # Ammo packs are named after their cannon container. Most carry a calibre
+        # prefix (125mm_ussr_HE), but legacy packs keep a bare name (USSR_APDS_FS).
+        # Accept either, as long as the name matches a known cannon container.
+        if ($mname -notmatch '^\d+mm_' -and -not $knownAmmoContainers.ContainsKey($mname.ToLowerInvariant())) { continue }
         if ($mname -match '(?i)_ammo_pack$') { continue }
         if ((Get-DirectChildBlocks $mod.Text).Count -gt 0) { continue }
-        [void]$entry.beltOptions.Add($mname)
+        $belt = @{ name = $mname; calibre = 0; rounds = (New-Object System.Collections.ArrayList) }
+        if ($mname -match '^(\d+(?:_\d+)?)mm_') { $belt.calibre = [int]$Matches[1] }
+        foreach ($w in $entry.weapons) {
+          $blkLower = ([string]$w.blk).ToLowerInvariant()
+          $prefix = $blkLower + '|'
+          foreach ($knownKey in $groundAmmoBySourceContainer.Keys) {
+            if (-not $knownKey.StartsWith($prefix)) { continue }
+            $container = $knownKey.Substring($prefix.Length)
+            $exact = ($container -eq $mname)
+            $stripped = ''
+            if (-not $exact) {
+              $m2 = [regex]::Match($container, '^\d+(?:_\d+)?mm_(.+)$')
+              if (-not $m2.Success) { continue }
+              $stripped = $m2.Groups[1].Value
+              if ($stripped -ne $mname) { continue }
+            }
+            if ($belt.calibre -le 0) {
+              $m3 = [regex]::Match($container, '^(\d+(?:_\d+)?)mm_')
+              if ($m3.Success) { $belt.calibre = [int]$m3.Groups[1].Value }
+            }
+            foreach ($ga in $groundAmmoBySourceContainer[$knownKey]) {
+              [void]$belt.rounds.Add(@{ bulletName = [string]$ga.bulletName; display = [string]$ga.display; kind = [string]$ga.kind; mass = [double]$ga.mass; speed = [double]$ga.speed; explosive = [double]$ga.explosive; caliber = [double]$ga.caliber; penetration = [double]$ga.penetration })
+            }
+          }
+        }
+        [void]$entry.beltOptions.Add($belt)
       }
     }
     if ($beltTypeLimits.ContainsKey($id)) { $entry.beltTypeLimit = $beltTypeLimits[$id] }
@@ -964,7 +1057,8 @@ Build-TargetCatalog (Join-Path $UnitsRoot 'tankmodels') 'gameData/units/tankMode
 Build-TargetCatalog (Join-Path $UnitsRoot 'ships') 'gameData/units/ships/weaponPresets/' 'ships.tsv' $false
 Build-GroundAmmoCatalog
 [IO.File]::WriteAllLines((Join-Path $OutputRoot 'modifications.tsv'), ($modificationRows | Sort-Object { ($_ -split "`t")[0] }, { [int](($_ -split "`t")[3]) }, { ($_ -split "`t")[2] }), [Text.UTF8Encoding]::new($false))
-[IO.File]::WriteAllLines((Join-Path $OutputRoot 'ground_ammo.tsv'), ($groundAmmoRows | Sort-Object { ($_ -split "`t")[3] }, { ($_ -split "`t")[2] }, { ($_ -split "`t")[1] }), [Text.UTF8Encoding]::new($false))
+[IO.File]::WriteAllText((Join-Path $OutputRoot 'ground_ammo.json'), (ConvertTo-GroundAmmoJson ($groundAmmoRows | Sort-Object { ($_ -split "`t")[4] }, { ($_ -split "`t")[3] }, { ($_ -split "`t")[2] })), [Text.UTF8Encoding]::new($false))
+Write-Output "GroundAmmo=$($groundAmmoRows.Count)"
 
 $nuclearRows = @(
   "nt_su_24m`tSu-24M — RN-40 (30 kt)`tnt_su_24m_rn_40",

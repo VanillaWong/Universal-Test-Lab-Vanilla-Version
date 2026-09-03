@@ -6716,8 +6716,8 @@ do_217e_2	mg15120_belt_pack	Mg15120 Belt Pack	3
 do_217e_2	mg15120_new_gun	Mg15120 New Gun	4			mg15120_belt_pack
 do_217e_2	do217_etc2000	SC 2000	4	weapon		do217_2x1000kg_pylon
 do_217e_4	mg131_turret_apt	13 mm machine gun ammunition belt with API-T bullets	0			
-do_217e_4	mgff_turret_ap_he	20 mm cannon ammunition belt for air targets	0			
 do_217e_4	mg151_air_targets	20 mm cannon ammunition belt for air targets	0			
+do_217e_4	mgff_turret_ap_he	20 mm cannon ammunition belt for air targets	0			
 do_217e_4	mg151_armor_targets	20 mm cannon ammunition belt for armored targets	0			
 do_217e_4	mg151_stealth	20 mm cannon ammunition belt for stealth attack	0			
 do_217e_4	mgff_turret_ap	20 mm cannon ammunition belt with AP shells	0			
@@ -8479,6 +8479,23 @@ f_16i_sufa	cd_98	Wings repair	3			hydravlic_power
 f_16i_sufa	us_aim_120c	AIM-120C	4	weapon		us_aim_120b
 f_16i_sufa	hp_105_jet	Engine	4			cd_98
 f_16i_sufa	il_spice_2000	SPICE 2000	4	weapon		il_spice_250_1000
+f_16xl	countermeasures_launcher_chaff	Countermeasures Launcher Chaff	0			
+f_16xl	M60_air_targets	M60 Air Targets	0			
+f_16xl	M60_armor_targets	M60 Armor Targets	0			
+f_16xl	M60_stealth	M60 Stealth	0			
+f_16xl	new_compressor_jet	Compressor	1			
+f_16xl	countermeasures_belt_pack	Flares/Chaff	1	armor	countermeasures	
+f_16xl	f_4c_CdMin_Fuse	Fuselage repair	1	lth		
+f_16xl	M60_belt_pack	M60 Belt Pack	1			
+f_16xl	us_agm_65b	AGM-65B	2	weapon		
+f_16xl	structure_str	Airframe	2	lth		
+f_16xl	f_4c_g_suit	G-suit	2	armor		countermeasures_belt_pack
+f_16xl	hydravlic_power	New boosters	2			new_compressor_jet
+f_16xl	new_cover	Cover	3	lth		
+f_16xl	M60_new_gun	M60 New Gun	3			M60_belt_pack
+f_16xl	cd_98	Wings repair	3			hydravlic_power
+f_16xl	us_aim_120a	AIM-120A	4	weapon		us_agm_65b
+f_16xl	hp_105_jet	Engine	4			cd_98
 f_20a	countermeasures_launcher_chaff	Countermeasures Launcher Chaff	0			
 f_20a	countermeasures_launcher_chaff_large	Countermeasures Launcher Chaff Large	0			
 f_20a	GAU_13A_air_targets	GAU 13A Air Targets	0			
@@ -13721,8 +13738,8 @@ fw-190a-1	cd_98	Wings repair	0
 fw-190a-4	mg151_air_targets	20 mm cannon ammunition belt for air targets	0			
 fw-190a-4	mgff_air_targets	20 mm cannon ammunition belt for air targets	0			
 fw-190a-4	mg151_armor_targets	20 mm cannon ammunition belt for armored targets	0			
-fw-190a-4	mg151_stealth	20 mm cannon ammunition belt for stealth attack	0			
 fw-190a-4	mgff_stealth	20 mm cannon ammunition belt for stealth attack	0			
+fw-190a-4	mg151_stealth	20 mm cannon ammunition belt for stealth attack	0			
 fw-190a-4	mg_stealth	7.92 mm machine gun ammunition belt for stealth attack	0			
 fw-190a-4	mg_all_tracers	7.92 mm machine gun ammunition belt with tracer bullets	0			
 fw-190a-4	structure_str	Airframe	0			
@@ -13768,8 +13785,8 @@ fw-190a-5	Fw-190A-5_R1	R1 modification	2	weapon
 fw-190a-5_cannons	mg151_air_targets	20 mm cannon ammunition belt for air targets	0			
 fw-190a-5_cannons	mgff_air_targets	20 mm cannon ammunition belt for air targets	0			
 fw-190a-5_cannons	mg151_armor_targets	20 mm cannon ammunition belt for armored targets	0			
-fw-190a-5_cannons	mgff_stealth	20 mm cannon ammunition belt for stealth attack	0			
 fw-190a-5_cannons	mg151_stealth	20 mm cannon ammunition belt for stealth attack	0			
+fw-190a-5_cannons	mgff_stealth	20 mm cannon ammunition belt for stealth attack	0			
 fw-190a-5_cannons	mg_stealth	7.92 mm machine gun ammunition belt for stealth attack	0			
 fw-190a-5_cannons	mg_all_tracers	7.92 mm machine gun ammunition belt with tracer bullets	0			
 fw-190a-5_cannons	structure_str	Airframe	0			
@@ -13792,8 +13809,8 @@ fw-190a-5_cannons	mg_universal	Omni-purpose ammunition belt for 7.92 mm machine 
 fw-190a-5_cannons	new_radiator	Radiator	0			
 fw-190a-5_cannons	cd_98	Wings repair	0			
 fw-190a-5_cannons	Fw-190A-5_R6	R6 modification	2	weapon		
-fw-190a-5_cannons_tutorial	mgff_air_targets	20 mm cannon ammunition belt for air targets	0			
 fw-190a-5_cannons_tutorial	mg151_air_targets	20 mm cannon ammunition belt for air targets	0			
+fw-190a-5_cannons_tutorial	mgff_air_targets	20 mm cannon ammunition belt for air targets	0			
 fw-190a-5_cannons_tutorial	mg151_armor_targets	20 mm cannon ammunition belt for armored targets	0			
 fw-190a-5_cannons_tutorial	mg151_stealth	20 mm cannon ammunition belt for stealth attack	0			
 fw-190a-5_cannons_tutorial	mgff_stealth	20 mm cannon ammunition belt for stealth attack	0			
@@ -13813,17 +13830,17 @@ fw-190a-5_cannons_tutorial	mg17_new_gun	Mg17 New Gun	0			mg_belt_pack
 fw-190a-5_cannons_tutorial	mgff_all_tracers	Mgff All Tracers	0			
 fw-190a-5_cannons_tutorial	mgff_belt_pack	Mgff Belt Pack	0			
 fw-190a-5_cannons_tutorial	mgffm_new_gun	Mgffm New Gun	0			mgff_belt_pack
-fw-190a-5_cannons_tutorial	mg151_universal	Omni-purpose ammunition belt for 20 mm cannon	0			
 fw-190a-5_cannons_tutorial	mgff_universal	Omni-purpose ammunition belt for 20 mm cannon	0			
+fw-190a-5_cannons_tutorial	mg151_universal	Omni-purpose ammunition belt for 20 mm cannon	0			
 fw-190a-5_cannons_tutorial	mg_universal	Omni-purpose ammunition belt for 7.92 mm machine gun	0			
 fw-190a-5_cannons_tutorial	new_radiator	Radiator	0			
 fw-190a-5_cannons_tutorial	cd_98	Wings repair	0			
 fw-190a-5_cannons_tutorial	Fw-190A-5_R6	R6 modification	2	weapon		
-fw-190a-5_japan	mg151_air_targets	20 mm cannon ammunition belt for air targets	0			
 fw-190a-5_japan	mgff_air_targets	20 mm cannon ammunition belt for air targets	0			
+fw-190a-5_japan	mg151_air_targets	20 mm cannon ammunition belt for air targets	0			
 fw-190a-5_japan	mg151_armor_targets	20 mm cannon ammunition belt for armored targets	0			
-fw-190a-5_japan	mgff_stealth	20 mm cannon ammunition belt for stealth attack	0			
 fw-190a-5_japan	mg151_stealth	20 mm cannon ammunition belt for stealth attack	0			
+fw-190a-5_japan	mgff_stealth	20 mm cannon ammunition belt for stealth attack	0			
 fw-190a-5_japan	mg_stealth	7.92 mm machine gun ammunition belt for stealth attack	0			
 fw-190a-5_japan	mg_all_tracers	7.92 mm machine gun ammunition belt with tracer bullets	0			
 fw-190a-5_japan	structure_str	Airframe	0			
@@ -13840,8 +13857,8 @@ fw-190a-5_japan	mg17_new_gun	Mg17 New Gun	0			mg_belt_pack
 fw-190a-5_japan	mgff_all_tracers	Mgff All Tracers	0			
 fw-190a-5_japan	mgff_belt_pack	Mgff Belt Pack	0			
 fw-190a-5_japan	mgffm_new_gun	Mgffm New Gun	0			mgff_belt_pack
-fw-190a-5_japan	mg151_universal	Omni-purpose ammunition belt for 20 mm cannon	0			
 fw-190a-5_japan	mgff_universal	Omni-purpose ammunition belt for 20 mm cannon	0			
+fw-190a-5_japan	mg151_universal	Omni-purpose ammunition belt for 20 mm cannon	0			
 fw-190a-5_japan	mg_universal	Omni-purpose ammunition belt for 7.92 mm machine gun	0			
 fw-190a-5_japan	new_radiator	Radiator	0			
 fw-190a-5_japan	cd_98	Wings repair	0			
@@ -19733,8 +19750,8 @@ il_2_m82	new_cover	Cover	4	lth		cd_98
 il_2_m82	new_engine_injection	Engine injection	4	lth		hp_105
 il_2_m82	ro_132_mod	RO-132	4	weapon		der_21
 il_2_m82	shkas_new_gun	Shkas New Gun	4			shkas_belt_pack
-il_28	ns23_air_targets	23 mm cannon ammunition belt for air targets	0			
 il_28	nr23_turret_heit	23 mm cannon ammunition belt for air targets	0			
+il_28	ns23_air_targets	23 mm cannon ammunition belt for air targets	0			
 il_28	ns23_armor_targets	23 mm cannon ammunition belt for armored targets	0			
 il_28	nr23_turret_apit	23 mm cannon ammunition belt for armored targets	0			
 il_28	ns23_stealth	23 mm cannon ammunition belt for stealth attack	0			
@@ -19751,8 +19768,8 @@ il_28	bd-4_bc	BD-4	4	weapon		kd-3_bc
 il_28	new_cover	Cover	4	lth		cd_98
 il_28	air_extinguisher	EFS	4	armor		
 il_28	nr23_turret_new_gun	Nr23 Turret New Gun	4			nr23_turret_belt_pack
-il_28_china	ns23_air_targets	23 mm cannon ammunition belt for air targets	0			
 il_28_china	nr23_turret_heit	23 mm cannon ammunition belt for air targets	0			
+il_28_china	ns23_air_targets	23 mm cannon ammunition belt for air targets	0			
 il_28_china	nr23_turret_apit	23 mm cannon ammunition belt for armored targets	0			
 il_28_china	ns23_armor_targets	23 mm cannon ammunition belt for armored targets	0			
 il_28_china	ns23_stealth	23 mm cannon ammunition belt for stealth attack	0			
@@ -19787,10 +19804,10 @@ il_28_china_killstreak	bd-4_bc	BD-4	4	weapon		kd-3_bc
 il_28_china_killstreak	new_cover	Cover	4	lth		cd_98
 il_28_china_killstreak	air_extinguisher	EFS	4	armor		
 il_28_china_killstreak	nr23_turret_new_gun	Nr23 Turret New Gun	4			nr23_turret_belt_pack
-il_28_german	nr23_turret_heit	23 mm cannon ammunition belt for air targets	0			
 il_28_german	ns23_air_targets	23 mm cannon ammunition belt for air targets	0			
-il_28_german	nr23_turret_apit	23 mm cannon ammunition belt for armored targets	0			
+il_28_german	nr23_turret_heit	23 mm cannon ammunition belt for air targets	0			
 il_28_german	ns23_armor_targets	23 mm cannon ammunition belt for armored targets	0			
+il_28_german	nr23_turret_apit	23 mm cannon ammunition belt for armored targets	0			
 il_28_german	ns23_stealth	23 mm cannon ammunition belt for stealth attack	0			
 il_28_german	new_compressor_jet	Compressor	1	lth		
 il_28_german	CdMin_Fuse	Fuselage repair	1	lth		
@@ -19805,10 +19822,10 @@ il_28_german	bd-4_bc	BD-4	4	weapon		kd-3_bc
 il_28_german	new_cover	Cover	4	lth		cd_98
 il_28_german	air_extinguisher	EFS	4	armor		
 il_28_german	nr23_turret_new_gun	Nr23 Turret New Gun	4			nr23_turret_belt_pack
-il_28_hungary	nr23_turret_heit	23 mm cannon ammunition belt for air targets	0			
 il_28_hungary	ns23_air_targets	23 mm cannon ammunition belt for air targets	0			
-il_28_hungary	nr23_turret_apit	23 mm cannon ammunition belt for armored targets	0			
+il_28_hungary	nr23_turret_heit	23 mm cannon ammunition belt for air targets	0			
 il_28_hungary	ns23_armor_targets	23 mm cannon ammunition belt for armored targets	0			
+il_28_hungary	nr23_turret_apit	23 mm cannon ammunition belt for armored targets	0			
 il_28_hungary	ns23_stealth	23 mm cannon ammunition belt for stealth attack	0			
 il_28_hungary	new_compressor_jet	Compressor	1	lth		
 il_28_hungary	CdMin_Fuse	Fuselage repair	1	lth		
@@ -23061,8 +23078,8 @@ j2m3	type99mk1_ground_targets	20 mm cannon ammunition belt for ground targets	0
 j2m3	type99mk2_ground_targets	20 mm cannon ammunition belt for ground targets	0			
 j2m3	type99mk1_stealth	20 mm cannon ammunition belt for stealth attack	0			
 j2m3	type99mk2_stealth	20 mm cannon ammunition belt for stealth attack	0			
-j2m3	type99mk1_all_tracers	20 mm cannon ammunition belt with tracer shells	0			
 j2m3	type99mk2_all_tracers	20 mm cannon ammunition belt with tracer shells	0			
+j2m3	type99mk1_all_tracers	20 mm cannon ammunition belt with tracer shells	0			
 j2m3	structure_str	Airframe	0			
 j2m3	new_compressor	Compressor	0			
 j2m3	new_cover	Cover	0			
@@ -23082,10 +23099,10 @@ j2m3	jp_rocket_type3_66kg	Type 3 No.6 Mod.27 Mk.1 rockets	3	weapon		jp_rocket_ty
 j2m3	type99mk1_new_gun	Type99mk1 New Gun	3			type99mk1_belt_pack
 j2m3	jp_rocket_type3_84kg	Type 5 No.6 Mod.9 rockets	4	weapon		jp_rocket_type3_66kg
 j2m3	type99mk2_new_gun	Type99mk2 New Gun	4			type99mk2_belt_pack
-j2m4_kai	type99mk2_ground_targets	20 mm cannon ammunition belt for ground targets	0			
 j2m4_kai	type99mk1_ground_targets	20 mm cannon ammunition belt for ground targets	0			
-j2m4_kai	type99mk1_stealth	20 mm cannon ammunition belt for stealth attack	0			
+j2m4_kai	type99mk2_ground_targets	20 mm cannon ammunition belt for ground targets	0			
 j2m4_kai	type99mk2_stealth	20 mm cannon ammunition belt for stealth attack	0			
+j2m4_kai	type99mk1_stealth	20 mm cannon ammunition belt for stealth attack	0			
 j2m4_kai	type99mk2_all_tracers	20 mm cannon ammunition belt with tracer shells	0			
 j2m4_kai	type99mk1_all_tracers	20 mm cannon ammunition belt with tracer shells	0			
 j2m4_kai	structure_str	Airframe	0			
@@ -23094,8 +23111,8 @@ j2m4_kai	new_cover	Cover	0
 j2m4_kai	hp_105	Engine	0			
 j2m4_kai	new_engine_injection	Engine injection	0			
 j2m4_kai	CdMin_Fuse	Fuselage repair	0			
-j2m4_kai	type99mk2_universal	Omni-purpose ammunition belt for 20 mm cannon	0			
 j2m4_kai	type99mk1_universal	Omni-purpose ammunition belt for 20 mm cannon	0			
+j2m4_kai	type99mk2_universal	Omni-purpose ammunition belt for 20 mm cannon	0			
 j2m4_kai	new_radiator	Radiator	0			
 j2m4_kai	cd_98	Wings repair	0			
 j2m4_kai	type99mk2_belt_pack	Type99mk2 Belt Pack	1			
@@ -23106,8 +23123,8 @@ j2m5	type99mk2_ground_targets	20 mm cannon ammunition belt for ground targets	0
 j2m5	type99mk1_ground_targets	20 mm cannon ammunition belt for ground targets	0			
 j2m5	type99mk1_stealth	20 mm cannon ammunition belt for stealth attack	0			
 j2m5	type99mk2_stealth	20 mm cannon ammunition belt for stealth attack	0			
-j2m5	type99mk1_all_tracers	20 mm cannon ammunition belt with tracer shells	0			
 j2m5	type99mk2_all_tracers	20 mm cannon ammunition belt with tracer shells	0			
+j2m5	type99mk1_all_tracers	20 mm cannon ammunition belt with tracer shells	0			
 j2m5	structure_str	Airframe	0			
 j2m5	new_compressor	Compressor	0			
 j2m5	new_cover	Cover	0			
@@ -26325,8 +26342,8 @@ ki-45_hei	ho_203_belt_pack	Ho 203 Belt Pack	1
 ki-45_hei	ki_10in_mod24	10 in (mod24)	2	weapon		
 ki-45_hei	ki45_12in_mod30	12 in (mod30)	3	weapon		ki_10in_mod24
 ki-45_hei	ho203_new_gun	Ho203 New Gun	3			ho_203_belt_pack
-ki-45_hei_tei	ho1_ground_targets	20 mm cannon ammunition belt for ground targets	0			
 ki-45_hei_tei	ho5_ground_targets	20 mm cannon ammunition belt for ground targets	0			
+ki-45_hei_tei	ho1_ground_targets	20 mm cannon ammunition belt for ground targets	0			
 ki-45_hei_tei	ho1_stealth	20 mm cannon ammunition belt for stealth attack	0			
 ki-45_hei_tei	ho5_stealth	20 mm cannon ammunition belt for stealth attack	0			
 ki-45_hei_tei	ho5_all_tracers	20 mm cannon ammunition belt with AP-T shells	0			
@@ -26341,8 +26358,8 @@ ki-45_hei_tei	new_engine_injection	Engine injection	0
 ki-45_hei_tei	CdMin_Fuse	Fuselage repair	0			
 ki-45_hei_tei	ho_203_antibomber	Ho 203 Antibomber	0			
 ki-45_hei_tei	ho_203_antitank	Ho 203 Antitank	0			
-ki-45_hei_tei	ho5_universal	Omni-purpose ammunition belt for 20 mm cannon	0			
 ki-45_hei_tei	ho1_universal	Omni-purpose ammunition belt for 20 mm cannon	0			
+ki-45_hei_tei	ho5_universal	Omni-purpose ammunition belt for 20 mm cannon	0			
 ki-45_hei_tei	new_radiator	Radiator	0			
 ki-45_hei_tei	cd_98	Wings repair	0			
 ki-45_hei_tei	ho_203_belt_pack	Ho 203 Belt Pack	1			
@@ -26371,8 +26388,8 @@ ki-45_hei_tei_china	new_engine_injection	Engine injection	0
 ki-45_hei_tei_china	CdMin_Fuse	Fuselage repair	0			
 ki-45_hei_tei_china	ho_203_antibomber	Ho 203 Antibomber	0			
 ki-45_hei_tei_china	ho_203_antitank	Ho 203 Antitank	0			
-ki-45_hei_tei_china	ho5_universal	Omni-purpose ammunition belt for 20 mm cannon	0			
 ki-45_hei_tei_china	ho1_universal	Omni-purpose ammunition belt for 20 mm cannon	0			
+ki-45_hei_tei_china	ho5_universal	Omni-purpose ammunition belt for 20 mm cannon	0			
 ki-45_hei_tei_china	new_radiator	Radiator	0			
 ki-45_hei_tei_china	cd_98	Wings repair	0			
 ki-45_hei_tei_china	ho_203_belt_pack	Ho 203 Belt Pack	1			
@@ -40950,8 +40967,8 @@ tornado_ids_it_ret8	hp_105_jet	Engine	4			cd_98
 tornado_ids_it_ret8	us_gbu39	GBU-39	4	weapon		us_jdam
 tu_14t	ns23_air_targets	23 mm cannon ammunition belt for air targets	0			
 tu_14t	nr23_turret_heit	23 mm cannon ammunition belt for air targets	0			
-tu_14t	ns23_armor_targets	23 mm cannon ammunition belt for armored targets	0			
 tu_14t	nr23_turret_apit	23 mm cannon ammunition belt for armored targets	0			
+tu_14t	ns23_armor_targets	23 mm cannon ammunition belt for armored targets	0			
 tu_14t	ns23_stealth	23 mm cannon ammunition belt for stealth attack	0			
 tu_14t	new_compressor_jet	Compressor	1	lth		
 tu_14t	CdMin_Fuse	Fuselage repair	1	lth		

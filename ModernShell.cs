@@ -221,7 +221,66 @@ namespace UniversalTestLab
         public WeaponView(DonorWeapon source, bool injected) { Source = source; Mode = injected ? "INJECTED" : "NATIVE"; }
     }
 
-    internal static class ModernPalette
+    internal static class ModernText
+{
+    public static bool Chinese = true;
+    public static string L(string en, string zh)
+    {
+        return Chinese ? zh : en;
+    }
+
+    // XAML placeholder texts (buttons, tab captions, labels) are static in the
+    // template and cannot call L(), so the window replaces them after loading
+    // by walking the visual tree. This map only applies when Chinese is active.
+    public static readonly Dictionary<string, string> XamlMap = new Dictionary<string, string>
+    {
+        { "GAME DIRECTORY", "游戏目录" },
+        { "BROWSE", "浏览" },
+        { "SYNC BASE", "同步基础" },
+        { "MISSIONS", "任务" },
+        { "PRESETS", "预设" },
+        { "SUPPORT", "支持" },
+        { "VEHICLE", "载具" },
+        { "TARGETS", "目标" },
+        { "OPTIONS", "选项" },
+        { "GARAGE", "机库" },
+        { "EXPERIMENTAL", "实验" },
+        { "CHOOSE VEHICLE", "选择载具" },
+        { "Air and ground vehicles", "空中与地面载具" },
+        { "SEARCH", "搜索" },
+        { "NATION", "国家" },
+        { "RANK", "等级" },
+        { "TYPE", "类型" },
+        { "AVAILABLE VEHICLES", "可用载具" },
+        { "BUILD LOADOUT", "构建挂载" },
+        { "Select a station, then mount a weapon", "选择挂架，然后挂载武器" },
+        { "WEAPON SOURCE", "武器来源" },
+        { "INJECT ANY WEAPON", "注入任意武器" },
+        { "WEAPON TYPE", "武器类型" },
+        { "SORT", "排序" },
+        { "Tip: double-click a weapon to mount it", "提示：双击武器即可挂载" },
+        { "CLEAR STATION", "清空挂架" },
+        { "MOUNT WEAPON", "挂载武器" },
+        { "CONFIGURE TEST", "配置测试" },
+        { "Flight, targets and launch profile", "飞行、目标与发射配置" },
+        { "MISSION SETUP", "任务设置" },
+        { "MAP & SCENARIO", "地图与场景" },
+        { "FLIGHT PROFILE", "飞行配置" },
+        { "MAP PROFILE", "地图配置" },
+        { "MISSION OPTIONS", "任务选项" },
+        { "GENERATE TEST MISSION", "生成测试任务" },
+        { "AIR HOT LOAD", "空中热装载" },
+        { "GROUND PROXY RELOAD", "地面代理再装填" },
+        { "Universal Test Lab |   /  Mission Studio", "Universal Test Lab |   /  任务工坊" },
+        { "U.T.L. by AstraSEP | AIR & GROUND VEHICLE TEST WORKSPACE", "U.T.L. by AstraSEP | 空中与地面载具测试工作区" },
+        { "TARGETS — GROUND / AIR / NAVAL TARGETS", "目标 — 地面 / 空中 / 海上目标" },
+        { "GARAGE — COLLECTION & PRESETS", "机库 — 收藏与预设" },
+        { "EXPERIMENTAL — OVERRIDES & INJECTION", "实验 — 覆盖与注入" },
+        { "●  READY", "● 就绪" },
+    };
+}
+
+internal static class ModernPalette
     {
         public const string Window = "#29354D";
         public const string Surface = "#80505B74";
@@ -584,23 +643,23 @@ namespace UniversalTestLab
         <Border x:Name=""PylonCard"" Grid.Row=""2"" Background=""{StaticResource FieldBrush}"" CornerRadius=""12"" Padding=""5"" Margin=""0,2,0,8""><UniformGrid x:Name=""PylonPanel"" Rows=""1"" VerticalAlignment=""Center""/></Border>
         <Grid x:Name=""WeaponFilterPanel"" Grid.Row=""3""><Grid.ColumnDefinitions><ColumnDefinition Width=""175""/><ColumnDefinition Width=""*""/><ColumnDefinition Width=""155""/><ColumnDefinition Width=""125""/><ColumnDefinition Width=""145""/></Grid.ColumnDefinitions><StackPanel Margin=""0,0,5,0""><TextBlock Text=""WEAPON SOURCE"" Style=""{StaticResource Caption}"" Margin=""2,0,0,5""/><ToggleButton x:Name=""InjectionToggle"" Style=""{StaticResource ToggleStyle}"" Content=""INJECT ANY WEAPON""/></StackPanel><StackPanel Grid.Column=""1"" Margin=""5,0""><TextBlock Text=""SEARCH"" Style=""{StaticResource Caption}"" Margin=""2,0,0,5""/><TextBox x:Name=""WeaponSearch""/></StackPanel><StackPanel Grid.Column=""2"" Margin=""5,0""><TextBlock Text=""WEAPON TYPE"" Style=""{StaticResource Caption}"" Margin=""2,0,0,5""/><ComboBox x:Name=""CategoryFilter""/></StackPanel><StackPanel Grid.Column=""3"" Margin=""5,0""><TextBlock Text=""NATION"" Style=""{StaticResource Caption}"" Margin=""2,0,0,5""/><ComboBox x:Name=""WeaponNationFilter""/></StackPanel><StackPanel Grid.Column=""4"" Margin=""5,0,0,0""><TextBlock Text=""SORT"" Style=""{StaticResource Caption}"" Margin=""2,0,0,5""/><ComboBox x:Name=""SortFilter""/></StackPanel></Grid>
         <Grid x:Name=""WeaponTableFrame"" Grid.Row=""4"" Margin=""0,10,0,10""><Border Background=""{StaticResource FieldBrush}"" CornerRadius=""12""/><Grid x:Name=""WeaponTableClipContent""><ListView x:Name=""WeaponList"" Background=""Transparent"" BorderThickness=""0"" Foreground=""{StaticResource TextBrush}"" ScrollViewer.HorizontalScrollBarVisibility=""Disabled"" ScrollViewer.CanContentScroll=""True"" VirtualizingStackPanel.IsVirtualizing=""True"" VirtualizingStackPanel.VirtualizationMode=""Recycling""><ListView.Resources><Style TargetType=""ScrollBar"" BasedOn=""{StaticResource {x:Type ScrollBar}}""><Style.Triggers><Trigger Property=""Orientation"" Value=""Vertical""><Setter Property=""Margin"" Value=""0,32,0,1""/></Trigger></Style.Triggers></Style></ListView.Resources><ListView.GroupStyle><GroupStyle><GroupStyle.HeaderTemplate><DataTemplate><Border Background=""#D9152340"" BorderBrush=""#49698F"" BorderThickness=""0,1,0,1"" Padding=""10,6"" Margin=""0,4,0,2""><TextBlock Foreground=""{StaticResource CyanBrush}"" FontWeight=""SemiBold""><Run Text=""—  ""/><Run Text=""{Binding Name, Mode=OneWay}""/><Run Text=""  —""/></TextBlock></Border></DataTemplate></GroupStyle.HeaderTemplate></GroupStyle></ListView.GroupStyle><ListView.View><GridView><GridViewColumn Header=""Weapon"" Width=""330"" DisplayMemberBinding=""{Binding Name}""/><GridViewColumn Header=""Type"" Width=""185"" DisplayMemberBinding=""{Binding Category}""/><GridViewColumn Header=""Ammo"" Width=""70"" DisplayMemberBinding=""{Binding Ammo}""/><GridViewColumn Header=""Mass"" Width=""85"" DisplayMemberBinding=""{Binding Mass}""/><GridViewColumn Width=""82""><GridViewColumn.Header><GridViewColumnHeader Content=""Mode""/></GridViewColumn.Header><GridViewColumn.CellTemplate><DataTemplate><TextBlock Text=""{Binding Mode}"" HorizontalAlignment=""Center"" TextAlignment=""Center""/></DataTemplate></GridViewColumn.CellTemplate></GridViewColumn></GridView></ListView.View></ListView></Grid><Border BorderBrush=""#A8C7ECFF"" BorderThickness=""1"" CornerRadius=""12"" IsHitTestVisible=""False""/></Grid>
-        <Grid Grid.Row=""5""><Grid.ColumnDefinitions><ColumnDefinition Width=""*""/><ColumnDefinition Width=""145""/><ColumnDefinition Width=""128""/><ColumnDefinition Width=""94""/><ColumnDefinition Width=""145""/></Grid.ColumnDefinitions><TextBlock Text=""Tip: double-click a weapon to mount it"" Foreground=""{StaticResource MutedBrush}"" VerticalAlignment=""Center""/><Button x:Name=""SystemsButton"" Grid.Column=""1"" Style=""{StaticResource ButtonStyle}"" Content=""MODULES"" Margin=""4,0""/><Button x:Name=""ClearStationButton"" Grid.Column=""2"" Style=""{StaticResource ButtonStyle}"" Content=""CLEAR STATION"" Margin=""4,0""/><Button x:Name=""ClearAllButton"" Grid.Column=""3"" Style=""{StaticResource ButtonStyle}"" Content=""CLEAR ALL"" Margin=""4,0""/><Button x:Name=""MountButton"" Grid.Column=""4"" Style=""{StaticResource PrimaryButton}"" Content=""MOUNT WEAPON"" Margin=""4,0,0,0""/></Grid>
+        <Grid Grid.Row=""5""><Grid.ColumnDefinitions><ColumnDefinition Width=""*""/><ColumnDefinition Width=""145""/><ColumnDefinition Width=""128""/><ColumnDefinition Width=""94""/><ColumnDefinition Width=""145""/></Grid.ColumnDefinitions><TextBlock Text=""Tip: double-click a weapon to mount it"" Foreground=""{StaticResource MutedBrush}"" VerticalAlignment=""Center""/><Button x:Name=""SystemsButton"" Grid.Column=""1"" Style=""{StaticResource ButtonStyle}"" Content=""模块"" Margin=""4,0""/><Button x:Name=""ClearStationButton"" Grid.Column=""2"" Style=""{StaticResource ButtonStyle}"" Content=""CLEAR STATION"" Margin=""4,0""/><Button x:Name=""ClearAllButton"" Grid.Column=""3"" Style=""{StaticResource ButtonStyle}"" Content=""全部清空"" Margin=""4,0""/><Button x:Name=""MountButton"" Grid.Column=""4"" Style=""{StaticResource PrimaryButton}"" Content=""MOUNT WEAPON"" Margin=""4,0,0,0""/></Grid>
       </Grid></Border>
 
       <Border Grid.Column=""4"" Style=""{StaticResource GlassCard}""><Grid><Grid.RowDefinitions><RowDefinition Height=""58""/><RowDefinition Height=""150""/><RowDefinition Height=""34""/><RowDefinition Height=""48""/><RowDefinition Height=""48""/><RowDefinition Height=""*""/><RowDefinition Height=""56""/><RowDefinition Height=""26""/></Grid.RowDefinitions>
         <Grid><Grid.ColumnDefinitions><ColumnDefinition Width=""48""/><ColumnDefinition Width=""*""/></Grid.ColumnDefinitions><Border Width=""44"" Height=""44"" CornerRadius=""13"" Background=""{StaticResource AccentDarkBrush}""><TextBlock Text=""03"" HorizontalAlignment=""Center"" VerticalAlignment=""Center"" FontWeight=""Bold""/></Border><StackPanel Grid.Column=""1"" Margin=""10,2,0,0""><TextBlock Text=""CONFIGURE TEST"" FontSize=""16"" FontWeight=""SemiBold""/><TextBlock Text=""Flight, targets and launch profile"" Foreground=""{StaticResource MutedBrush}"" FontSize=""11""/></StackPanel></Grid>
         <Border x:Name=""PreviewCard"" Grid.Row=""1"" CornerRadius=""15"" BorderBrush=""#78A7DFFF"" BorderThickness=""1"" Background=""#7A1D315C""><Grid x:Name=""PreviewClipContent""><Ellipse Width=""155"" Height=""105"" Fill=""#284BD5FF"" VerticalAlignment=""Top"" Margin=""0,12,0,0""/><Grid x:Name=""PreviewAircraftVisual""><Image x:Name=""PreviewAircraftImage"" Width=""220"" Height=""112"" Stretch=""Uniform"" Opacity=""0.92"" VerticalAlignment=""Top"" Margin=""0,4,0,0""/></Grid><Grid x:Name=""PreviewHelicopterVisual"" Visibility=""Collapsed""><Image x:Name=""PreviewHelicopterImage"" Width=""270"" Height=""108"" Stretch=""Uniform"" Opacity=""0.94"" VerticalAlignment=""Top"" Margin=""0,5,0,0""/></Grid><Grid x:Name=""PreviewDroneVisual"" Visibility=""Collapsed""><Image x:Name=""PreviewDroneImage"" Width=""270"" Height=""108"" Stretch=""Uniform"" Opacity=""0.94"" VerticalAlignment=""Top"" Margin=""0,5,0,0""/></Grid><Border VerticalAlignment=""Bottom"" Background=""#900A142E"" Padding=""12,10""><StackPanel><TextBlock x:Name=""PreviewName"" FontSize=""15"" FontWeight=""SemiBold"" TextTrimming=""CharacterEllipsis""/><TextBlock x:Name=""PreviewMeta"" Foreground=""{StaticResource MutedBrush}"" FontSize=""10"" Margin=""0,3,0,0"" TextTrimming=""CharacterEllipsis""/></StackPanel></Border></Grid></Border>
         <TextBlock Grid.Row=""2"" Text=""MISSION SETUP"" FontSize=""14"" FontWeight=""SemiBold"" VerticalAlignment=""Bottom""/>
-        <Button x:Name=""FlightConfigureButton"" Grid.Row=""3"" Style=""{StaticResource ButtonStyle}"" Content=""FLIGHT CONFIGURE"" Margin=""0,7,0,0""/>
+        <Button x:Name=""FlightConfigureButton"" Grid.Row=""3"" Style=""{StaticResource ButtonStyle}"" Content=""飞行配置"" Margin=""0,7,0,0""/>
         <Button x:Name=""MapButton"" Grid.Row=""4"" Style=""{StaticResource ButtonStyle}"" Content=""MAP &amp; SCENARIO"" Margin=""0,7,0,0""/>
         <StackPanel Grid.Row=""5"" Margin=""2,16,2,8""><TextBlock Text=""FLIGHT PROFILE"" Style=""{StaticResource Caption}""/><TextBlock x:Name=""FlightProfileText"" Foreground=""{StaticResource MutedBrush}"" FontSize=""11"" TextWrapping=""Wrap"" Margin=""0,3,0,0""/><TextBlock Text=""MAP PROFILE"" Style=""{StaticResource Caption}"" Margin=""0,14,0,0""/><TextBlock x:Name=""TargetSummaryText"" Foreground=""{StaticResource MutedBrush}"" FontSize=""11"" TextWrapping=""Wrap"" Margin=""0,3,0,0""/><TextBlock Text=""Aircraft/helicopters: reopen User Missions. Ground vehicle changes: restart War Thunder once."" Foreground=""{StaticResource Good}"" FontSize=""11"" TextWrapping=""Wrap"" Margin=""0,14,0,0""/></StackPanel>
-        <Grid Visibility=""Collapsed""><ComboBox x:Name=""AirTargetBox""/><ComboBox x:Name=""AirCountBox""/><ComboBox x:Name=""GroundTargetBox""/><ComboBox x:Name=""GroundCountBox""/><ToggleButton x:Name=""HostileToggle""/><ComboBox x:Name=""ShipTargetBox""/><ComboBox x:Name=""ShipCountBox""/></Grid>
+        <Grid Visibility=""Collapsed""><ComboBox x:Name=""AirTargetBox""/><ComboBox x:Name=""AirCountBox""/><ComboBox x:Name=""GroundTargetBox""/><ComboBox x:Name=""GroundCountBox""/><ToggleButton x:Name=""HostileToggle""/><ToggleButton x:Name=""SamSitesToggle""/><TextBlock x:Name=""SamSitesMode""/><TextBlock x:Name=""SamSitesSelection""/><ComboBox x:Name=""ShipTargetBox""/><ComboBox x:Name=""ShipCountBox""/></Grid>
         <Grid Grid.Row=""6"" Margin=""0,7,0,0""><Grid.ColumnDefinitions><ColumnDefinition Width=""132""/><ColumnDefinition Width=""*""/></Grid.ColumnDefinitions><Button x:Name=""MissionOptionsButton"" Style=""{StaticResource ButtonStyle}"" Content=""MISSION OPTIONS""/><Button x:Name=""GenerateButton"" Grid.Column=""1"" Margin=""6,0,0,0"" Style=""{StaticResource PrimaryButton}"" Content=""GENERATE TEST MISSION""/></Grid>
         <TextBlock Grid.Row=""7"" Text=""AIR HOT LOAD  •  GROUND PROXY RELOAD"" Foreground=""{StaticResource CyanBrush}"" FontSize=""10"" HorizontalAlignment=""Center"" VerticalAlignment=""Bottom""/>
       </Grid></Border>
     </Grid>
     <Grid x:Name=""TabTargetsContent"" Grid.Row=""2"" Visibility=""Collapsed"" IsHitTestVisible=""False""><StackPanel VerticalAlignment=""Center"" HorizontalAlignment=""Center""><TextBlock Text=""TARGETS — GROUND / AIR / NAVAL TARGETS"" FontSize=""18"" FontWeight=""SemiBold""/><TextBlock Text=""Stage1: migrating Map &amp; Scenario here"" Foreground=""{StaticResource MutedBrush}"" Margin=""0,8,0,0""/></StackPanel></Grid>
-    <Grid x:Name=""TabOptionsContent"" Grid.Row=""2"" Visibility=""Collapsed"" IsHitTestVisible=""False""><StackPanel VerticalAlignment=""Center"" HorizontalAlignment=""Center""><TextBlock Text=""OPTIONS — MISSION SETTINGS"" FontSize=""18"" FontWeight=""SemiBold""/><TextBlock Text=""Stage1: migrating Mission Options here"" Foreground=""{StaticResource MutedBrush}"" Margin=""0,8,0,0""/></StackPanel></Grid>
+    <Grid x:Name=""TabOptionsContent"" Grid.Row=""2"" Visibility=""Collapsed"" IsHitTestVisible=""False""><StackPanel VerticalAlignment=""Center"" HorizontalAlignment=""Center""><TextBlock Text=""选项 — 任务设置"" FontSize=""18"" FontWeight=""SemiBold""/><TextBlock Text=""Stage1: migrating Mission Options here"" Foreground=""{StaticResource MutedBrush}"" Margin=""0,8,0,0""/></StackPanel></Grid>
     <Grid x:Name=""TabGarageContent"" Grid.Row=""2"" Visibility=""Collapsed"" IsHitTestVisible=""False""><StackPanel VerticalAlignment=""Center"" HorizontalAlignment=""Center""><TextBlock Text=""GARAGE — COLLECTION &amp; PRESETS"" FontSize=""18"" FontWeight=""SemiBold""/><TextBlock Text=""Stage2: recently used / favourites / presets"" Foreground=""{StaticResource MutedBrush}"" Margin=""0,8,0,0""/></StackPanel></Grid>
     <Grid x:Name=""TabExperimentalContent"" Grid.Row=""2"" Visibility=""Collapsed"" IsHitTestVisible=""False""><StackPanel VerticalAlignment=""Center"" HorizontalAlignment=""Center""><TextBlock Text=""EXPERIMENTAL — OVERRIDES &amp; INJECTION"" FontSize=""18"" FontWeight=""SemiBold""/><TextBlock Text=""Stage1: migrating Ground/Flight Configure here"" Foreground=""{StaticResource MutedBrush}"" Margin=""0,8,0,0""/></StackPanel></Grid>
     <Border Grid.Row=""3"" Background=""#D01A263D"" CornerRadius=""0"" Margin=""0"" Padding=""14,0"" BorderBrush=""#664BD5FF"" BorderThickness=""0,1,0,0""><TextBlock x:Name=""StatusText"" Text=""●  READY"" Foreground=""{StaticResource Good}"" VerticalAlignment=""Center""/></Border>
@@ -710,6 +769,9 @@ namespace UniversalTestLab
         private ComboBox groundCount;
         private ComboBox shipCount;
         private ToggleButton hostileToggle;
+        private ToggleButton samSitesToggle;
+        private TextBlock samSitesMode;
+        private TextBlock samSitesSelection;
         private AircraftView airTarget01;
         private AircraftView heliTarget01;
         private AircraftView heliTarget02;
@@ -730,8 +792,9 @@ namespace UniversalTestLab
         public ModernMainWindow()
         {
             controller = new MainForm();
-            Title = "Universal Test Lab — Mission Studio";
-            Width = 1500;
+            Title = ModernText.L("Universal Test Lab — Mission Studio", "Universal Test Lab — 任务工坊");
+            ModernText.Chinese = ConfigStore.GetString("language") != "en";
+        Width = 1500;
             Height = 920;
             MinWidth = 1200;
             MinHeight = 640;
@@ -771,6 +834,7 @@ namespace UniversalTestLab
             BindControls();
             ApplyChromeAccent();
             LoadPreviewImages();
+        ApplyXamlLocalization();
             WireEvents();
             PopulateControls();
             controller.WorkspaceConfirmation = ConfirmWorkspaceAction;
@@ -780,7 +844,38 @@ namespace UniversalTestLab
             Closed += delegate { SessionSave(); controller.Dispose(); };
         }
 
-        internal void ShowOverlay(ModernDialogWindow dialog)
+        
+    private void ApplyXamlLocalization()
+    {
+        ApplyXamlLocalizationNode(this);
+    }
+
+    private static void ApplyXamlLocalizationNode(DependencyObject node)
+    {
+        if (node == null) return;
+        TextBlock tb = node as TextBlock;
+        if (tb != null && tb.Text != null)
+        {
+            string zh;
+            if (ModernText.Chinese && ModernText.XamlMap.TryGetValue(tb.Text, out zh)) tb.Text = zh;
+        }
+        ContentControl cc = node as ContentControl;
+        if (cc != null && cc.Content is string)
+        {
+            string zh;
+            if (ModernText.Chinese && ModernText.XamlMap.TryGetValue((string)cc.Content, out zh)) cc.Content = zh;
+        }
+        ContentControl tt = node as ContentControl;
+        if (tt != null && tt.ToolTip is string)
+        {
+            string zh;
+            if (ModernText.Chinese && ModernText.XamlMap.TryGetValue((string)tt.ToolTip, out zh)) tt.ToolTip = zh;
+        }
+        int count = VisualTreeHelper.GetChildrenCount(node);
+        for (int i = 0; i < count; i++) ApplyXamlLocalizationNode(VisualTreeHelper.GetChild(node, i));
+    }
+
+    internal void ShowOverlay(ModernDialogWindow dialog)
         {
             if (dialog == null) return;
             ModernDialogWindow previous = overlayDialogs.Count > 0 ? overlayDialogs.Peek() : null;
@@ -885,6 +980,9 @@ namespace UniversalTestLab
             groundCount = Find<ComboBox>("GroundCountBox");
             shipCount = Find<ComboBox>("ShipCountBox");
             hostileToggle = Find<ToggleButton>("HostileToggle");
+            samSitesToggle = Find<ToggleButton>("SamSitesToggle");
+            samSitesMode = Find<TextBlock>("SamSitesMode");
+            samSitesSelection = Find<TextBlock>("SamSitesSelection");
             flightProfileText = Find<TextBlock>("FlightProfileText");
             targetSummaryText = Find<TextBlock>("TargetSummaryText");
             status = Find<TextBlock>("StatusText");
@@ -925,71 +1023,296 @@ namespace UniversalTestLab
         }
 
         private void BuildGroundWorkspace()
+{
+    groundWorkspacePanel.Children.Clear();
+    groundWorkspacePanel.RowDefinitions.Clear();
+    if (selectedAircraft == null) return;
+    AircraftSettings settings = controller.WorkspaceGetSettings(selectedAircraft);
+    GroundWeaponCacheData groundCache = controller.WorkspaceGetGroundWeaponCache(selectedAircraft);
+    List<GroundAmmoLoadout> loadouts = new List<GroundAmmoLoadout>();
+    for (int i = 0; i < 4; i++) loadouts.Add(null);
+    List<ComboBox> boxes = new List<ComboBox>();
+    List<TextBox> counts = new List<TextBox>();
+    StackPanel stack = new StackPanel();
+    int primaryCal = 0;
+    if (groundCache != null && groundCache.Weapons != null)
+    {
+        GroundWeaponInfo primary = groundCache.Weapons.FirstOrDefault(x => x != null && !String.IsNullOrWhiteSpace(x.Blk) && !IsSecondaryGroundWeapon(x.Blk));
+        if (primary == null) primary = groundCache.Weapons.FirstOrDefault(x => x != null && x.NativeAmmo > 0);
+        if (primary != null && !String.IsNullOrWhiteSpace(primary.Blk))
         {
-            groundWorkspacePanel.Children.Clear();
-            groundWorkspacePanel.RowDefinitions.Add(new RowDefinition { Height = GridLength.Auto });
-            groundWorkspacePanel.RowDefinitions.Add(new RowDefinition { Height = GridLength.Auto });
-            groundWorkspacePanel.RowDefinitions.Add(new RowDefinition { Height = GridLength.Auto });
-            groundWorkspacePanel.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
-            groundWorkspacePanel.RowDefinitions.Add(new RowDefinition { Height = GridLength.Auto });
-            groundWorkspacePanel.RowDefinitions.Add(new RowDefinition { Height = GridLength.Auto });
-            groundWorkspacePanel.RowDefinitions.Add(new RowDefinition { Height = GridLength.Auto });
-
-            groundWorkspacePanel.Children.Add(new TextBlock { Text = "GROUND VEHICLE LAB", Foreground = ModernPalette.Brush(ModernPalette.Cyan), FontSize = 22, FontWeight = FontWeights.SemiBold, HorizontalAlignment = HorizontalAlignment.Center });
-            TextBlock desc = new TextBlock { Text = "Ammunition is grouped by weapon like the stock test-drive UI. Belt guns get one ammunition slot by default; guns/missiles may split up to 4 slots total. Each weapon's slots share its total capacity (0 = empty slot).", Foreground = ModernPalette.Brush(ModernPalette.Muted), FontSize = 12, TextWrapping = TextWrapping.Wrap, TextAlignment = TextAlignment.Center, Margin = new Thickness(0, 10, 0, 0) };
-            Grid.SetRow(desc, 1);
-            groundWorkspacePanel.Children.Add(desc);
-
-            groundAmmoPoolText = new TextBlock { FontSize = 11, FontWeight = FontWeights.SemiBold, Foreground = ModernPalette.Brush(ModernPalette.Cyan), TextWrapping = TextWrapping.Wrap, Margin = new Thickness(0, 8, 0, 0) };
-            Grid.SetRow(groundAmmoPoolText, 2);
-            groundWorkspacePanel.Children.Add(groundAmmoPoolText);
-
-            groundGroupsPanel = new StackPanel { Margin = new Thickness(0, 8, 0, 0) };
-            ScrollViewer groupsScroll = new ScrollViewer { VerticalScrollBarVisibility = ScrollBarVisibility.Auto, MaxHeight = 360, Content = groundGroupsPanel };
-            Grid.SetRow(groupsScroll, 3);
-            groundWorkspacePanel.Children.Add(groupsScroll);
-
-            Grid presetRow = new Grid { Margin = new Thickness(0, 10, 0, 0) };
-            presetRow.ColumnDefinitions.Add(new ColumnDefinition());
-            presetRow.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(86) });
-            presetRow.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(140) });
-            presetRow.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(110) });
-            ammoPresetBox = new ComboBox { Height = 30, VerticalContentAlignment = VerticalAlignment.Center, Margin = new Thickness(0, 0, 6, 0), ToolTip = "Saved ammunition presets for this vehicle" };
-            presetRow.Children.Add(ammoPresetBox);
-            Button loadPresetBtn = new Button { Content = "LOAD", Style = (Style)Resources["ButtonStyle"], Height = 30 };
-            loadPresetBtn.Click += delegate { GroundLoadAmmoPreset(); };
-            Grid.SetColumn(loadPresetBtn, 1); presetRow.Children.Add(loadPresetBtn);
-            Button savePresetBtn = new Button { Content = "SAVE AS PRESET", Style = (Style)Resources["ButtonStyle"], Height = 30 };
-            savePresetBtn.Click += delegate { GroundSaveAmmoPreset(); };
-            Grid.SetColumn(savePresetBtn, 2); presetRow.Children.Add(savePresetBtn);
-            Button clearPresetBtn = new Button { Content = "CLEAR ALL", Style = (Style)Resources["ButtonStyle"], Height = 30, Margin = new Thickness(6, 0, 0, 0) };
-            clearPresetBtn.Click += delegate
-            {
-                groundUpdating = true;
-                try
-                {
-                    foreach (ComboBox slotBox in groundSlotBoxes) if (slotBox != null) slotBox.SelectedItem = null;
-                    foreach (TextBox countBox in groundSlotCounts) if (countBox != null) countBox.Text = "0";
-                }
-                finally { groundUpdating = false; }
-                GroundUpdateSettings();
-            };
-            Grid.SetColumn(clearPresetBtn, 3); presetRow.Children.Add(clearPresetBtn);
-            Grid.SetRow(presetRow, 4);
-            groundWorkspacePanel.Children.Add(presetRow);
+            primaryCal = GroundCalibre(primary.Blk);
+            string unit = primaryCal > 0 && primaryCal <= 40 ? "chains" : "rds";
+            stack.Children.Add(new TextBlock { Text = ModernText.L("CANNON: ", "主炮: ") + (primaryCal > 0 ? primaryCal.ToString(CultureInfo.InvariantCulture) + " mm \u2022 " : "") + primary.NativeAmmo + " " + unit + " total", Foreground = ModernPalette.Brush(ModernPalette.Text), Margin = new Thickness(0, 2, 0, 8), HorizontalAlignment = HorizontalAlignment.Center });
         }
+    }
+    List<GroundAmmoOption> options = new List<GroundAmmoOption>();
+    options.Add(new GroundAmmoOption { Display = ModernText.L("STOCK \u2022 default ammunition", "STOCK \u2022 default ammunition"), Value = "", Calibre = primaryCal });
+    if (groundCache != null && groundCache.BeltOptions != null)
+    {
+        foreach (GroundWeaponBeltOption belt in groundCache.BeltOptions)
+        {
+            if (belt == null || String.IsNullOrWhiteSpace(belt.Name)) continue;
+            int beltCal = GroundCalibre(belt.Name);
+            if (belt.Rounds != null && belt.Rounds.Count > 0)
+            {
+                foreach (GroundAmmo round in belt.Rounds)
+                    if (round != null && !String.IsNullOrWhiteSpace(round.Display))
+                        options.Add(new GroundAmmoOption { Display = round.Display + " (" + round.Type + ")", Value = belt.Name, Calibre = beltCal });
+            }
+            else {
+                options.Add(new GroundAmmoOption { Display = belt.Name.Replace('_', ' ').Trim(), Value = belt.Name, Calibre = beltCal });
+            }
+        }
+    }
+    TextBlock counter = new TextBlock { Text = "", Foreground = ModernPalette.Brush(ModernPalette.Cyan), FontWeight = FontWeights.SemiBold, HorizontalAlignment = HorizontalAlignment.Right, Margin = new Thickness(0, 6, 0, 4) };
+    UpdateGroundLoadoutCounter(counter, loadouts, groundCache); // 初始即显示（如 125mm: 0/44 rds）
+    for (int slot = 0; slot < 4; slot++)
+    {
+        Grid row = new Grid { Margin = new Thickness(0, 3, 0, 3) };
+        row.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(58) });
+        row.ColumnDefinitions.Add(new ColumnDefinition());
+        row.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(74) });
+        row.Children.Add(new TextBlock { Text = ModernText.L("SLOT ", "槽位 ") + (slot + 1).ToString(CultureInfo.InvariantCulture), Foreground = ModernPalette.Brush(ModernPalette.Text), VerticalAlignment = VerticalAlignment.Center });
+        ComboBox combo = new ComboBox { Height = 30, Padding = new Thickness(6, 2, 6, 2), Foreground = ModernPalette.Brush(ModernPalette.Text), Background = ModernPalette.Brush("#FF16283E"), BorderBrush = ModernPalette.Brush(ModernPalette.Border), ItemsSource = options, DisplayMemberPath = "Display", IsTextSearchEnabled = true, IsTextSearchCaseSensitive = false };
+        TextBox countBox = new TextBox { Height = 30, Text = "0", Foreground = ModernPalette.Brush(ModernPalette.Text), Background = ModernPalette.Brush("#FF16283E"), BorderBrush = ModernPalette.Brush(ModernPalette.Border), Padding = new Thickness(6, 3, 6, 3), TextAlignment = TextAlignment.Center };
+        int slotCopy = slot;
+        combo.SelectionChanged += delegate {
+            if (groundLoadoutSyncing || combo.SelectedItem == null) return;
+            GroundAmmoOption opt = combo.SelectedItem as GroundAmmoOption;
+            if (opt == null) return;
+            int cal = opt.Calibre;
+            bool isBelt = cal > 0 && cal <= 40;
+            int count = 0;
+            Int32.TryParse(countBox.Text.Trim(), NumberStyles.Integer, CultureInfo.InvariantCulture, out count);
+            if (count < 0) count = 0;
+            if (count == 0)
+            {
+                // Ask3lad-style: an empty slot auto-fills the remaining pool budget.
+                int maxTotal = GroundAmmoCapacity(groundCache, cal);
+                int remaining = Math.Max(0, maxTotal - GroundLoadoutUsed(loadouts, cal));
+                count = remaining;
+                if (remaining > 0) countBox.Text = count.ToString(CultureInfo.InvariantCulture);
+            }
+            loadouts[slotCopy] = new GroundAmmoLoadout { Slot = slotCopy, Count = count, SourceBlk = String.IsNullOrEmpty(opt.Value) ? "stock:" + (cal > 0 ? cal.ToString(CultureInfo.InvariantCulture) : "0") : null, BulletName = opt.Value };
+            SyncGroundLoadoutBoxes(boxes, counts, loadouts);
+            UpdateGroundLoadoutCounter(counter, loadouts, groundCache);
+        };
+        countBox.LostFocus += delegate {
+            int count = 0;
+            Int32.TryParse(countBox.Text.Trim(), NumberStyles.Integer, CultureInfo.InvariantCulture, out count);
+            GroundAmmoLoadout lo = loadouts[slotCopy];
+            if (lo != null)
+            {
+                if (count <= 0) { loadouts[slotCopy] = null; }
+                else
+                {
+                    // 所有槽合计不能超过总量：只 clamp 当前槽，不削减其他已配槽
+                    int loCal = GroundLoadoutCalibre(lo);
+                    int maxTotal = GroundAmmoCapacity(groundCache, loCal);
+                    int others = GroundLoadoutUsed(loadouts, loCal) - lo.Count;
+                    int maxForSlot = Math.Max(0, maxTotal - others);
+                    if (count > maxForSlot) count = maxForSlot;
+                    lo.Count = Math.Max(0, count);
+                }
+            }
+            SyncGroundLoadoutBoxes(boxes, counts, loadouts);
+            UpdateGroundLoadoutCounter(counter, loadouts, groundCache);
+        };
+        Grid.SetColumn(combo, 1); row.Children.Add(combo);
+        Grid.SetColumn(countBox, 2); row.Children.Add(countBox);
+        stack.Children.Add(row);
+        boxes.Add(combo); counts.Add(countBox);
+    }
+    stack.Children.Add(counter);
+    Grid actionRow = new Grid { Margin = new Thickness(0, 6, 0, 0) };
+    actionRow.ColumnDefinitions.Add(new ColumnDefinition());
+    actionRow.ColumnDefinitions.Add(new ColumnDefinition());
+    Button clearAll = new Button { Content = ModernText.L("CLEAR ALL", "全部清空"), Style = (Style)Resources["ButtonStyle"], Padding = new Thickness(18, 2, 18, 2), Margin = new Thickness(0, 0, 6, 0), HorizontalAlignment = HorizontalAlignment.Right, Foreground = ModernPalette.Brush(ModernPalette.Muted) };
+    clearAll.Click += delegate {
+        for (int i = 0; i < 4; i++)
+        {
+            loadouts[i] = null;
+            if (boxes[i] != null) boxes[i].SelectedItem = null;
+            if (counts[i] != null) counts[i].Text = "0";
+        }
+        UpdateGroundLoadoutCounter(counter, loadouts, groundCache);
+    };
+    actionRow.Children.Add(clearAll);
+    Button apply = new Button { Content = ModernText.L("APPLY TO MISSION", "应用到任务"), Style = (Style)Resources["ButtonStyle"], Padding = new Thickness(18, 2, 18, 2), HorizontalAlignment = HorizontalAlignment.Center };
+    apply.Click += delegate {
+        if (selectedAircraft == null) return;
+        settings.GroundAmmoLoadouts.Clear();
+        foreach (GroundAmmoLoadout lo in loadouts) if (lo != null && lo.Count > 0) settings.GroundAmmoLoadouts.Add(lo);
+        controller.WorkspaceSetSettings(selectedAircraft, settings);
+    };
+    Grid.SetColumn(apply, 1); actionRow.Children.Add(apply);
+    stack.Children.Add(actionRow);
+    groundWorkspacePanel.Children.Add(stack);
+}
 
-        private void RefreshGroundWorkspace()
+private static bool groundLoadoutSyncing;
+
+private sealed class GroundAmmoOption
+{
+    public string Display { get; set; }
+    public string Value { get; set; }
+    public int Calibre { get; set; }
+    public override string ToString() { return Display ?? ""; }
+}
+
+private static int GroundAmmoCapacity(GroundWeaponCacheData cache, int cal)
+{
+    if (cache == null || cache.Weapons == null) return 38;
+    bool isBelt = cal > 0 && cal <= 40;
+    int beltSize = 0;
+    if (isBelt && cache.BeltSizes != null) cache.BeltSizes.TryGetValue(cal.ToString(CultureInfo.InvariantCulture), out beltSize);
+    int total = 0;
+    foreach (GroundWeaponInfo w in cache.Weapons)
+    {
+        if (w == null || String.IsNullOrWhiteSpace(w.Blk) || w.NativeAmmo <= 0) continue;
+        if (cal > 0 && GroundCalibre(w.Blk) != cal) continue;
+        total += isBelt && beltSize > 0 ? Math.Max(1, w.NativeAmmo / beltSize) : w.NativeAmmo;
+    }
+    return Math.Max(1, total);
+}
+
+private static int GroundLoadoutCalibre(GroundAmmoLoadout lo)
+{
+    if (lo == null) return 0;
+    string name = lo.BulletName != null && lo.BulletName.Length > 0 ? lo.BulletName : (lo.SourceBlk ?? "");
+    int cal = GroundCalibre(name);
+    if (cal <= 0 && lo.SourceBlk != null && lo.SourceBlk.StartsWith("stock:", StringComparison.OrdinalIgnoreCase))
+    {
+        string num = lo.SourceBlk.Substring(6);
+        int v;
+        if (Int32.TryParse(num, NumberStyles.Integer, CultureInfo.InvariantCulture, out v)) cal = v;
+    }
+    return cal;
+}
+
+private static int GroundLoadoutUsed(List<GroundAmmoLoadout> loadouts, int cal)
+{
+    int used = 0;
+    if (loadouts == null) return 0;
+    foreach (GroundAmmoLoadout lo in loadouts)
+    {
+        if (lo == null || lo.Count <= 0) continue;
+        int loCal = GroundLoadoutCalibre(lo);
+        if (cal <= 0 || loCal == cal || loCal <= 0) used += lo.Count;
+    }
+    return used;
+}
+
+private static void TrimGroundLoadouts(List<GroundAmmoLoadout> loadouts, GroundWeaponCacheData cache)
+{
+    if (loadouts == null || cache == null) return;
+    HashSet<int> cals = new HashSet<int>();
+    foreach (GroundAmmoLoadout lo in loadouts)
+    {
+        if (lo == null || lo.Count <= 0) continue;
+        int loCal = GroundLoadoutCalibre(lo);
+        cals.Add(loCal);
+    }
+    foreach (int cal in cals)
+    {
+        int maxTotal = GroundAmmoCapacity(cache, cal);
+        int used = GroundLoadoutUsed(loadouts, cal);
+        if (used <= maxTotal) continue;
+        for (int i = loadouts.Count - 1; i >= 0 && used > maxTotal; i--)
+        {
+            GroundAmmoLoadout lo = loadouts[i];
+            if (lo == null || lo.Count <= 0) continue;
+            int loCal = GroundLoadoutCalibre(lo);
+            if (cal != loCal) continue;
+            int cut = Math.Min(lo.Count, used - maxTotal);
+            lo.Count -= cut;
+            used -= cut;
+            if (lo.Count <= 0) loadouts[i] = null;
+        }
+    }
+}
+
+private static void SyncGroundLoadoutBoxes(List<ComboBox> boxes, List<TextBox> counts, List<GroundAmmoLoadout> loadouts)
+{
+    if (groundLoadoutSyncing || boxes == null || loadouts == null) return;
+    groundLoadoutSyncing = true;
+    try
+    {
+        for (int i = 0; i < boxes.Count && i < 4; i++)
+    {
+        if (boxes[i] == null) continue;
+        GroundAmmoLoadout lo = loadouts[i];
+        if (lo == null)
+        {
+            boxes[i].SelectedItem = null;
+            continue;
+        }
+        GroundAmmoOption match = null;
+        foreach (object o in boxes[i].Items)
+        {
+            GroundAmmoOption opt = o as GroundAmmoOption;
+            if (opt == null) continue;
+            if (String.IsNullOrEmpty(lo.BulletName) && String.IsNullOrEmpty(opt.Value) && lo.SourceBlk != null && lo.SourceBlk.StartsWith("stock:", StringComparison.OrdinalIgnoreCase)) { match = opt; break; }
+            if (!String.IsNullOrEmpty(lo.BulletName) && String.Equals(opt.Value, lo.BulletName, StringComparison.OrdinalIgnoreCase)) { match = opt; break; }
+        }
+            if (match != null) boxes[i].SelectedItem = match;
+            if (counts != null && i < counts.Count && counts[i] != null) counts[i].Text = lo.Count.ToString(CultureInfo.InvariantCulture);
+        }
+    }
+    finally { groundLoadoutSyncing = false; }
+}
+
+private static void UpdateGroundLoadoutCounter(TextBlock counter, List<GroundAmmoLoadout> loadouts, GroundWeaponCacheData cache)
+{
+    if (counter == null) return;
+    if (cache == null || cache.Weapons == null) { counter.Text = ""; return; }
+    // 每口径一个弹药池（跳过次要武器：机枪/烟雾），Ask3lad 格式：
+    //   "30mm: 0/2 belts  |  152mm: 8/8"
+    // 只显示需要用户选弹药的武器口径：该口径存在弹药包容器（beltOptions）或导弹挂载；
+    // 机枪（含 NSV 这类名字不含 machinegun 的）和烟雾弹没有弹药包，因此不显示。
+    List<int> beltCals = new List<int>();
+    if (cache.BeltOptions != null)
+    {
+        foreach (GroundWeaponBeltOption b in cache.BeltOptions)
+        {
+            if (b == null || b.Calibre <= 0) continue;
+            if (!beltCals.Contains(b.Calibre)) beltCals.Add(b.Calibre);
+        }
+    }
+    List<GroundWeaponInfo> pools = new List<GroundWeaponInfo>();
+    foreach (GroundWeaponInfo w in cache.Weapons)
+    {
+        if (w == null || String.IsNullOrWhiteSpace(w.Blk) || w.NativeAmmo <= 0) continue;
+        if (IsSecondaryGroundWeapon(w.Blk)) continue;
+        int wcal = GroundCalibre(w.Blk);
+        if (wcal <= 0) continue;
+        if (!beltCals.Contains(wcal))
+        {
+            bool hasMissiles = cache.Missiles != null && cache.Missiles.Any(x => !String.IsNullOrWhiteSpace(x.Key) && GroundCalibre(x.Key) == wcal);
+            if (!hasMissiles) continue;
+        }
+        if (!pools.Any(x => GroundCalibre(x.Blk) == wcal)) pools.Add(w);
+    }
+    if (pools.Count == 0) { counter.Text = ""; return; }
+    System.Text.StringBuilder sb = new System.Text.StringBuilder();
+    foreach (GroundWeaponInfo pool in pools)
+    {
+        int pcal = GroundCalibre(pool.Blk);
+        int total = GroundAmmoCapacity(cache, pcal);
+        int used = GroundLoadoutUsed(loadouts, pcal);
+        if (used > total) used = total; // 仅显示，不裁剪
+        string unit = pcal <= 40 ? ModernText.L("belts", "链") : ModernText.L("rds", "发");
+        if (sb.Length > 0) sb.Append("  |  ");
+        sb.Append(pcal.ToString(CultureInfo.InvariantCulture)).Append("mm: ").Append(used.ToString(CultureInfo.InvariantCulture)).Append("/").Append(total.ToString(CultureInfo.InvariantCulture)).Append(" ").Append(unit);
+    }
+    counter.Text = sb.ToString();
+}
+
+private void RefreshGroundWorkspace()
         {
             if (selectedAircraft == null) return;
-            groundUpdating = true;
-            try
-            {
-                GroundRefreshAmmo();
-            }
-            finally { groundUpdating = false; }
-            GroundLoadSlots(controller.WorkspaceGetSettings(selectedAircraft));
-            GroundRefreshAmmoPresets();
+            BuildGroundWorkspace();
         }
 
         private void GroundCannonChanged()
@@ -1080,7 +1403,7 @@ namespace UniversalTestLab
             catch { }
         }
 
-        private static int GroundCalibre(string blk)
+        internal static int GroundCalibre(string blk)
         {
             if (String.IsNullOrWhiteSpace(blk)) return 0;
             Match m = Regex.Match(blk, @"(\d+)(?:_\d+)?mm", RegexOptions.IgnoreCase);
@@ -1100,25 +1423,20 @@ namespace UniversalTestLab
             foreach (ComboBox slotBox in groundSlotBoxes) if (slotBox != null) slotBox.SelectedItem = null;
             foreach (TextBox countBox in groundSlotCounts) if (countBox != null) countBox.Text = "0";
             if (settings == null || settings.GroundAmmoLoadouts == null) { GroundUpdateSlotTotals(); return; }
-            List<GroundAmmoLoadout> stale = new List<GroundAmmoLoadout>();
             foreach (GroundAmmoLoadout loadout in settings.GroundAmmoLoadouts)
             {
-                if (loadout == null || loadout.Slot < 0 || loadout.Slot >= groundSlotBoxes.Count) { stale.Add(loadout); continue; }
+                if (loadout == null || loadout.Slot < 0 || loadout.Slot >= groundSlotBoxes.Count) continue;
                 GroundAmmoEntry entry = GroundFindEntry(loadout);
-                if (entry == null || entry.Ammo == null) { stale.Add(loadout); continue; }
+                if (entry == null || entry.Ammo == null) continue;
                 groundSlotBoxes[loadout.Slot].SelectedItem = entry;
                 groundSlotCounts[loadout.Slot].Text = Math.Max(1, loadout.Count).ToString(CultureInfo.InvariantCulture);
             }
             GroundUpdateSlotTotals();
-            if (stale.Count > 0 && selectedAircraft != null)
-            {
-                // Old persisted entries (e.g. catalog gun projectiles that were
-                // replaced by belt-type options) are invisible in the new UI but
-                // would still be written into the mission. Drop them so the
-                // generated mission reflects what the user actually sees.
-                foreach (GroundAmmoLoadout staleLoadout in stale) settings.GroundAmmoLoadouts.Remove(staleLoadout);
-                controller.WorkspaceSetSettings(selectedAircraft, settings);
-            }
+            // Note: persisted loadouts that cannot be shown in the current options
+            // (e.g. catalog gun projectiles mounted through GROUND CONFIGURE, which
+            // are not part of the belt-type option list) are intentionally kept -
+            // they are still written into the mission. Dropping them silently ate
+            // user configuration (T-80BVM 3BM60 was lost this way).
         }
 
         private GroundAmmoEntry GroundFindEntry(GroundAmmoLoadout loadout)
@@ -1146,7 +1464,8 @@ namespace UniversalTestLab
                         continue;
                     }
                     if (entry.Ammo.BulletName != null
-                        && entry.Ammo.BulletName.Equals(bulletName, StringComparison.OrdinalIgnoreCase)
+                        && (entry.Ammo.BulletName.Equals(bulletName, StringComparison.OrdinalIgnoreCase)
+                            || (entry.Ammo.Display != null && entry.Ammo.Display.Equals(bulletName, StringComparison.OrdinalIgnoreCase)))
                         && GroundSame(entry.Ammo.SourceBlk, sourceBlk)) return entry;
                 }
             return null;
@@ -1255,7 +1574,7 @@ namespace UniversalTestLab
                 if (!Int32.TryParse(pair.Key, NumberStyles.Integer, CultureInfo.InvariantCulture, out cal)) continue;
                 if (groundHasMainWeapon && cal < 20) continue;
                 int used = 0;
-                for (int i = 0; i < 4; i++)
+                for (int i = 0; i < groundSlotBoxes.Count; i++)
                 {
                     GroundAmmoEntry entry = groundSlotBoxes[i] == null ? null : groundSlotBoxes[i].SelectedItem as GroundAmmoEntry;
                     if (entry == null || entry.Ammo == null) continue;
@@ -1326,7 +1645,15 @@ namespace UniversalTestLab
                 GroundUpdateSlotTotals();
                 controller.WorkspaceSetSettings(selectedAircraft, settings);
             }
-            catch { }
+            catch (Exception groundUpdateEx)
+            {
+                try
+                {
+                    System.IO.File.AppendAllText(System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "UniversalTestLab", "ground_settings_error.log"),
+                        DateTime.Now.ToString("HH:mm:ss") + " " + groundUpdateEx.ToString() + Environment.NewLine);
+                }
+                catch { }
+            }
         }
 
         private List<GroundAmmoSlotGroup> BuildGroundAmmoSlotGroups(GroundWeaponCacheData cache)
@@ -1345,16 +1672,25 @@ namespace UniversalTestLab
             }
             catch { }
             if (cache.BeltOptions != null)
-                foreach (string option in cache.BeltOptions)
+                foreach (GroundWeaponBeltOption option in cache.BeltOptions)
                 {
-                    if (String.IsNullOrWhiteSpace(option) || option.IndexOf("_ammo_pack", StringComparison.OrdinalIgnoreCase) >= 0) continue;
-                    if (missileNames.Contains(option)) continue;
-                    int cal = GroundCalibre(option);
+                    if (option == null || String.IsNullOrWhiteSpace(option.Name) || option.Name.IndexOf("_ammo_pack", StringComparison.OrdinalIgnoreCase) >= 0) continue;
+                    if (missileNames.Contains(option.Name)) continue;
+                    int cal = option.Calibre >0 ? option.Calibre : GroundCalibre(option.Name);
                     if (cal <= 0) continue;
                     if (groundHasMainWeapon && cal < 20) continue;
                     List<string> list;
                     if (!optionsByCal.TryGetValue(cal, out list)) { list = new List<string>(); optionsByCal[cal] = list; }
-                    list.Add(option);
+                    list.Add(option.Name);
+                }
+            // Concrete rounds per belt-option container (from ground_ammo.json) so the
+            // UI can show e.g. 3BM60 while still writing the container name.
+            Dictionary<string, IList<GroundAmmo>> roundsByContainer = new Dictionary<string, IList<GroundAmmo>>(StringComparer.OrdinalIgnoreCase);
+            if (cache.BeltOptions != null)
+                foreach (GroundWeaponBeltOption option in cache.BeltOptions)
+                {
+                    if (option == null || String.IsNullOrWhiteSpace(option.Name) || option.Rounds == null || option.Rounds.Count == 0) continue;
+                    roundsByContainer[option.Name] = option.Rounds;
                 }
             int nextSlot = 0;
             foreach (GroundWeaponInfo w in cache.Weapons)
@@ -1417,13 +1753,32 @@ namespace UniversalTestLab
                 if (options != null)
                     foreach (string option in options)
                     {
-                        string display = option.Replace('_', ' ').Trim();
-                        group.Options.Add(new GroundAmmoEntry
+                        // Belt-option containers may carry concrete rounds (bulletName) - show
+                        // those (e.g. 3BM60) while keeping the container name as the written value.
+                        IList<GroundAmmo> rounds = null;
+                        if (roundsByContainer != null && roundsByContainer.TryGetValue(option, out rounds) && rounds != null && rounds.Count > 0)
                         {
-                            Ammo = new GroundAmmo { SourceBlk = null, BulletName = option, Display = display, Type = isBelt ? "Belt" : "Shell" },
-                            Native = maxTotal,
-                            Text = display + " \u2022 " + maxTotal.ToString(CultureInfo.InvariantCulture) + (isBelt ? " chains" : " rds")
-                        });
+                            foreach (GroundAmmo round in rounds)
+                            {
+                                string display = round.BulletName.Replace('_', ' ').Trim();
+                                group.Options.Add(new GroundAmmoEntry
+                                {
+                                    Ammo = new GroundAmmo { SourceBlk = null, BulletName = option, Display = round.BulletName, Type = round.Type },
+                                    Native = maxTotal,
+                                    Text = display + " \u2022 " + maxTotal.ToString(CultureInfo.InvariantCulture) + (isBelt ? " chains" : " rds")
+                                });
+                            }
+                        }
+                        else
+                        {
+                            string display = option.Replace('_', ' ').Trim();
+                            group.Options.Add(new GroundAmmoEntry
+                            {
+                                Ammo = new GroundAmmo { SourceBlk = null, BulletName = option, Display = display, Type = isBelt ? "Belt" : "Shell" },
+                                Native = maxTotal,
+                                Text = display + " \u2022 " + maxTotal.ToString(CultureInfo.InvariantCulture) + (isBelt ? " chains" : " rds")
+                            });
+                        }
                     }
                 // missile preset names for this calibre (e.g. 170mm_57e6_aam).
                 try
@@ -1510,7 +1865,39 @@ namespace UniversalTestLab
                     slot.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(56) });
                     ComboBox combo = new ComboBox { Height = 28, VerticalContentAlignment = VerticalAlignment.Center, Width = 150, ItemsPanel = new ItemsPanelTemplate(new FrameworkElementFactory(typeof(VirtualizingStackPanel))) };
                     combo.ItemsSource = group.Options;
-                    combo.SelectionChanged += delegate { if (!groundUpdating) GroundUpdateSettings(); };
+                    combo.SelectionChanged += delegate
+                    {
+                        if (groundUpdating) return;
+                        // Selecting a round auto-fills a count so the choice is not silently
+                        // dropped (0 = empty slot). STOCK (empty bullet name) also gets a count:
+                        // Ask3lad writes bulletsN:t="" + count to load the native default round
+                        // (e.g. T-80BVM 3BK18M) alongside other slots. The count fills the
+                        // remaining ammo-pool budget (maxTotal minus the other slots of this
+                        // group), so combinations like "half STOCK + half round" stay in range.
+                        int idx = groundSlotBoxes.IndexOf(combo);
+                        if (idx >= 0 && idx < groundSlotCounts.Count && groundSlotCounts[idx] != null && groundSlotCounts[idx].Text.Trim() == "0")
+                        {
+                            GroundAmmoEntry sel = combo.SelectedItem as GroundAmmoEntry;
+                            if (sel != null && sel.Ammo != null)
+                            {
+                                GroundAmmoSlotGroup grp = GroundSlotGroupFor(idx);
+                                int otherUsed = 0;
+                                if (grp != null)
+                                {
+                                    for (int k = grp.FirstSlot; k < grp.FirstSlot + grp.SlotCount && k < groundSlotCounts.Count; k++)
+                                    {
+                                        if (k == idx || groundSlotCounts[k] == null) continue;
+                                        int oc;
+                                        if (Int32.TryParse(groundSlotCounts[k].Text.Trim(), NumberStyles.Integer, CultureInfo.InvariantCulture, out oc)) otherUsed += oc;
+                                    }
+                                }
+                                int pool = grp != null && grp.MaxTotal > 0 ? grp.MaxTotal : (sel.Native > 0 ? sel.Native : 38);
+                                int fill = Math.Max(1, pool - otherUsed);
+                                groundSlotCounts[idx].Text = fill.ToString(CultureInfo.InvariantCulture);
+                            }
+                        }
+                        GroundUpdateSettings();
+                    };
                     Grid.SetColumn(combo, 0);
                     slot.Children.Add(combo);
                     TextBox countBox = new TextBox { Height = 28, Padding = new Thickness(6, 2, 6, 2), VerticalContentAlignment = VerticalAlignment.Center, Width = 56, Text = "0", ToolTip = "Ammunition count (0 = empty slot)" };
@@ -1660,6 +2047,25 @@ namespace UniversalTestLab
             tabExperimentalButton.Click += delegate { ShowWorkspaceTab(4); };
         }
 
+        private void ShowLanguageBusy(ToggleButton zh, ToggleButton en, bool chinese)
+        {
+            zh.IsEnabled = false; en.IsEnabled = false;
+            zh.Content = chinese ? "切换中…" : zh.Content;
+            en.Content = !chinese ? "切换中…" : en.Content;
+            Dispatcher.BeginInvoke(new Action(delegate { SwitchInterfaceLanguage(chinese); }), System.Windows.Threading.DispatcherPriority.Background);
+        }
+
+        private static void SwitchInterfaceLanguage(bool chinese)
+        {
+            ModernText.Chinese = chinese;
+            try { ConfigStore.SetString("language", chinese ? "zh" : "en"); } catch { }
+            if (Application.Current == null) return;
+            ModernMainWindow previous = Application.Current.MainWindow as ModernMainWindow;
+            ModernMainWindow next = new ModernMainWindow();
+            next.Show();
+            if (previous != null) { Application.Current.MainWindow = next; previous.Close(); }
+        }
+
         private void BuildOptionsTab()
         {
             if (tabOptionsContent == null) return;
@@ -1670,21 +2076,29 @@ namespace UniversalTestLab
             layout.RowDefinitions.Add(new RowDefinition());
             layout.RowDefinitions.Add(new RowDefinition { Height = GridLength.Auto });
             StackPanel header = new StackPanel { Margin = new Thickness(16, 12, 16, 4) };
-            header.Children.Add(new TextBlock { Text = "OPTIONS — MISSION SETTINGS", Foreground = ModernPalette.Brush(ModernPalette.Text), FontSize = 18, FontWeight = FontWeights.SemiBold });
-            header.Children.Add(new TextBlock { Text = "Global — applies to every generated mission", Foreground = ModernPalette.Brush(ModernPalette.Cyan), Margin = new Thickness(0, 4, 0, 0) });
+            header.Children.Add(new TextBlock { Text = ModernText.L("OPTIONS — MISSION SETTINGS", "选项 — 任务设置"), Foreground = ModernPalette.Brush(ModernPalette.Text), FontSize = 18, FontWeight = FontWeights.SemiBold });
+            header.Children.Add(new TextBlock { Text = ModernText.L("Global — applies to every generated mission", "全局设置 — 应用于所有生成的任务"), Foreground = ModernPalette.Brush(ModernPalette.Cyan), Margin = new Thickness(0, 4, 0, 0) });
+        StackPanel langRow = new StackPanel { Orientation = Orientation.Horizontal, Margin = new Thickness(0, 10, 0, 0) };
+        langRow.Children.Add(new TextBlock { Text = ModernText.L("Interface language:", "界面语言: "), Foreground = ModernPalette.Brush(ModernPalette.Text), VerticalAlignment = VerticalAlignment.Center });
+        ToggleButton langZh = new ToggleButton { Content = "中文", Style = (Style)Resources["ToggleStyle"], IsChecked = ModernText.Chinese, Padding = new Thickness(10, 1, 10, 1), Margin = new Thickness(8, 0, 0, 0) };
+        ToggleButton langEn = new ToggleButton { Content = "English", Style = (Style)Resources["ToggleStyle"], IsChecked = !ModernText.Chinese, Padding = new Thickness(10, 1, 10, 1), Margin = new Thickness(6, 0, 0, 0) };
+        langZh.Click += delegate { if (!ModernText.Chinese) ShowLanguageBusy(langZh, langEn, true); };
+        langEn.Click += delegate { if (ModernText.Chinese) ShowLanguageBusy(langZh, langEn, false); };
+        langRow.Children.Add(langZh); langRow.Children.Add(langEn);
+        header.Children.Add(langRow);
             layout.Children.Add(header);
             MissionOptionsPanel panel = new MissionOptionsPanel(MissionSettings.Current);
             ScrollViewer scroll = new ScrollViewer { Content = panel, VerticalScrollBarVisibility = ScrollBarVisibility.Auto, HorizontalScrollBarVisibility = ScrollBarVisibility.Disabled, Margin = new Thickness(16, 0, 16, 8), Padding = new Thickness(0, 0, 8, 20) };
             Grid.SetRow(scroll, 1);
             layout.Children.Add(scroll);
-            Button apply = new Button { Content = "APPLY OPTIONS", Height = 34, HorizontalAlignment = HorizontalAlignment.Right, Margin = new Thickness(16, 0, 16, 14), Padding = new Thickness(24, 2, 24, 2) };
+            Button apply = new Button { Content = ModernText.L("APPLY OPTIONS", "应用选项"), Height = 34, HorizontalAlignment = HorizontalAlignment.Right, Margin = new Thickness(16, 0, 16, 14), Padding = new Thickness(24, 2, 24, 2) };
             apply.Style = (Style)Resources["ButtonStyle"];
             apply.Click += delegate
             {
                 MissionSettings updated = panel.Apply();
                 MissionSettings.Current = updated;
                 updated.Save();
-                if (status != null) status.Text = "●  MISSION OPTIONS APPLIED";
+                if (status != null) status.Text = ModernText.L("●  MISSION OPTIONS APPLIED", "● 任务选项已应用");
             };
             Grid.SetRow(apply, 2);
             layout.Children.Add(apply);
@@ -1701,14 +2115,14 @@ namespace UniversalTestLab
             layout.RowDefinitions.Add(new RowDefinition());
             layout.RowDefinitions.Add(new RowDefinition { Height = GridLength.Auto });
             StackPanel header = new StackPanel { Margin = new Thickness(16, 12, 16, 4) };
-            header.Children.Add(new TextBlock { Text = "TARGETS — GROUND / AIR / NAVAL", Foreground = ModernPalette.Brush(ModernPalette.Text), FontSize = 18, FontWeight = FontWeights.SemiBold });
-            header.Children.Add(new TextBlock { Text = "Seven range positions, four flying targets, one naval target and the optional combined-battles spawn.", Foreground = ModernPalette.Brush(ModernPalette.Cyan), Margin = new Thickness(0, 4, 0, 0) });
+            header.Children.Add(new TextBlock { Text = ModernText.L("TARGETS — GROUND / AIR / NAVAL", "目标 — 地面 / 空中 / 海上"), Foreground = ModernPalette.Brush(ModernPalette.Text), FontSize = 18, FontWeight = FontWeights.SemiBold });
+            header.Children.Add(new TextBlock { Text = ModernText.L("Seven range positions, four flying targets, one naval target and the optional combined-battles spawn.", "七个距离位置、四个空中目标、一个海上目标，以及可选的联合战役出生点。"), Foreground = ModernPalette.Brush(ModernPalette.Cyan), Margin = new Thickness(0, 4, 0, 0) });
             layout.Children.Add(header);
             targetsPanel = new MapPanel(BuildMapPanelState(), (Style)Resources["StatusToggleStyle"]);
             ScrollViewer scroll = new ScrollViewer { Content = targetsPanel, VerticalScrollBarVisibility = ScrollBarVisibility.Auto, HorizontalScrollBarVisibility = ScrollBarVisibility.Disabled, Margin = new Thickness(16, 0, 16, 8), Padding = new Thickness(0, 0, 8, 20) };
             Grid.SetRow(scroll, 1);
             layout.Children.Add(scroll);
-            Button apply = new Button { Content = "APPLY TARGETS", Height = 34, HorizontalAlignment = HorizontalAlignment.Right, Margin = new Thickness(16, 0, 16, 14), Padding = new Thickness(24, 2, 24, 2) };
+            Button apply = new Button { Content = ModernText.L("APPLY TARGETS", "应用目标"), Height = 34, HorizontalAlignment = HorizontalAlignment.Right, Margin = new Thickness(16, 0, 16, 14), Padding = new Thickness(24, 2, 24, 2) };
             apply.Style = (Style)Resources["ButtonStyle"];
             apply.Click += delegate { ApplyTargetsPanel(); };
             Grid.SetRow(apply, 2);
@@ -1736,6 +2150,9 @@ namespace UniversalTestLab
             state.CurrentHeli02Count = heliTarget02Count;
             state.CurrentGround = configuredGroundTargets;
             state.Hostile = hostileToggle == null ? false : hostileToggle.IsChecked == true;
+            state.SamSites = samSitesToggle == null ? true : samSitesToggle.IsChecked == true;
+            state.SamSitesMode = samSitesMode == null ? "active" : samSitesMode.Text;
+            state.SamSitesSelection = samSitesSelection == null ? "s300" : samSitesSelection.Text;
             state.CurrentShip = shipTarget == null ? null : shipTarget.SelectedItem as TargetView;
             state.CurrentShipCount = SelectedCount(shipCount);
             state.PassiveShip = passiveShip;
@@ -1749,7 +2166,7 @@ namespace UniversalTestLab
             MapPanelResult r = targetsPanel.Collect();
             if (r == null)
             {
-                if (status != null) status.Text = "● SELECT A MAP, SIDE AND COMPATIBLE SPAWN FOR THE COMBINED SCENARIO";
+                if (status != null) status.Text = ModernText.L("● SELECT A MAP, SIDE AND COMPATIBLE SPAWN FOR THE COMBINED SCENARIO", "● 为联合场景选择地图、阵营与兼容出生点");
                 return;
             }
             airTarget.SelectedItem = r.AirTarget;
@@ -1765,12 +2182,15 @@ namespace UniversalTestLab
             if (configuredGroundTargets.Count > 0) groundTarget.SelectedItem = configuredGroundTargets[0];
             groundCount.SelectedItem = configuredGroundTargets.Count > 0 ? 1 : 0;
             hostileToggle.IsChecked = r.Hostile;
+            samSitesToggle.IsChecked = r.SamSitesMode != "disabled";
+            samSitesMode.Text = r.SamSitesMode;
+            samSitesSelection.Text = r.SamSitesSelection;
             shipTarget.SelectedItem = r.ShipTarget;
             shipCount.SelectedItem = r.ShipCount;
             passiveShip = r.PassiveShip;
             combinedScenario = r.Scenario == null ? new CombinedScenarioSettings() : r.Scenario.Copy();
             UpdateConfigurationSummary();
-            if (status != null) status.Text = "● TARGETS APPLIED — READY TO GENERATE";
+            if (status != null) status.Text = ModernText.L("● TARGETS APPLIED — READY TO GENERATE", "● 目标已应用 — 可生成任务");
         }
 
         private void BuildExperimentalTab()
@@ -1784,19 +2204,19 @@ namespace UniversalTestLab
             layout.RowDefinitions.Add(new RowDefinition());
             layout.RowDefinitions.Add(new RowDefinition { Height = GridLength.Auto });
             StackPanel header = new StackPanel { Margin = new Thickness(16, 12, 16, 4) };
-            header.Children.Add(new TextBlock { Text = "EXPERIMENTAL — GROUND / FLIGHT CONFIGURE", Foreground = ModernPalette.Brush(ModernPalette.Text), FontSize = 18, FontWeight = FontWeights.SemiBold });
-            header.Children.Add(new TextBlock { Text = "Cross-domain cannon injection, ammunition slots, projectile & mobility tuning (ground), or fuel, belts and countermeasures (flight).", Foreground = ModernPalette.Brush(ModernPalette.Cyan), Margin = new Thickness(0, 4, 0, 0) });
+            header.Children.Add(new TextBlock { Text = ModernText.L("EXPERIMENTAL — GROUND / FLIGHT CONFIGURE", "实验 — 地面 / 飞行配置"), Foreground = ModernPalette.Brush(ModernPalette.Text), FontSize = 18, FontWeight = FontWeights.SemiBold });
+            header.Children.Add(new TextBlock { Text = ModernText.L("Cross-domain cannon injection, ammunition slots, projectile & mobility tuning (ground), or fuel, belts and countermeasures (flight).", "跨域换炮注入、弹药槽、弹道与机动性调校（地面）；燃油、弹带与干扰弹（飞行）。"), Foreground = ModernPalette.Brush(ModernPalette.Cyan), Margin = new Thickness(0, 4, 0, 0) });
             layout.Children.Add(header);
             ScrollViewer scroll = new ScrollViewer { VerticalScrollBarVisibility = ScrollBarVisibility.Auto, HorizontalScrollBarVisibility = ScrollBarVisibility.Disabled, Margin = new Thickness(16, 0, 16, 8), Padding = new Thickness(0, 0, 8, 20) };
             Grid.SetRow(scroll, 1);
             layout.Children.Add(scroll);
             if (selectedAircraft == null)
             {
-                scroll.Content = new TextBlock { Text = "Select a vehicle first.", Foreground = ModernPalette.Brush(ModernPalette.Muted), Margin = new Thickness(8, 8, 0, 0) };
+                scroll.Content = new TextBlock { Text = ModernText.L("Select a vehicle first.", "请先选择载具。"), Foreground = ModernPalette.Brush(ModernPalette.Muted), Margin = new Thickness(8, 8, 0, 0) };
             }
             else if (GroundSelected)
             {
-                GroundConfigurePanel panel = new GroundConfigurePanel(selectedAircraft, controller.WorkspaceGetSettings(selectedAircraft), controller.WorkspaceGroundAmmo, controller.WorkspaceGroundTargets, controller.WorkspaceUnitWeapons, controller.WorkspaceGroundWeapons(selectedAircraft), new GroundAmmo[0], controller.WorkspaceResolveCannonAmmo, (Style)Resources["ButtonStyle"], (Style)Resources["ToggleStyle"]);
+                GroundConfigurePanel panel = new GroundConfigurePanel(selectedAircraft, controller.WorkspaceGetSettings(selectedAircraft), controller.WorkspaceGroundAmmo, controller.WorkspaceGroundTargets, controller.WorkspaceUnitWeapons, controller.WorkspaceGroundWeapons(selectedAircraft), new GroundAmmo[0], controller.WorkspaceGunBeltOptions(selectedAircraft), controller.WorkspaceResolveCannonAmmo, (Style)Resources["ButtonStyle"], (Style)Resources["ToggleStyle"]);
                 experimentalPanel = panel;
                 scroll.Content = panel;
             }
@@ -1810,11 +2230,11 @@ namespace UniversalTestLab
             buttons.ColumnDefinitions.Add(new ColumnDefinition { Width = GridLength.Auto });
             buttons.ColumnDefinitions.Add(new ColumnDefinition());
             buttons.ColumnDefinitions.Add(new ColumnDefinition { Width = GridLength.Auto });
-            Button refresh = new Button { Content = "REFRESH FOR CURRENT VEHICLE", Height = 34, Padding = new Thickness(16, 2, 16, 2) };
+            Button refresh = new Button { Content = ModernText.L("REFRESH FOR CURRENT VEHICLE", "刷新当前载具"), Height = 34, Padding = new Thickness(16, 2, 16, 2) };
             refresh.Style = (Style)Resources["ButtonStyle"];
             refresh.Click += delegate { experimentalBuilt = false; BuildExperimentalTab(); };
             buttons.Children.Add(refresh);
-            Button apply = new Button { Content = "APPLY CONFIGURATION", Height = 34, Padding = new Thickness(24, 2, 24, 2), Margin = new Thickness(10, 0, 0, 0) };
+            Button apply = new Button { Content = ModernText.L("APPLY CONFIGURATION", "应用配置"), Height = 34, Padding = new Thickness(24, 2, 24, 2), Margin = new Thickness(10, 0, 0, 0) };
             apply.Style = (Style)Resources["ButtonStyle"];
             apply.Click += delegate { ApplyExperimentalPanel(); };
             Grid.SetColumn(apply, 2);
@@ -1834,6 +2254,7 @@ namespace UniversalTestLab
                 MissionSettings.Current.InjectedCannonBlk = r.InjectedCannonBlk;
                 MissionSettings.Current.InjectedCannonDomain = r.InjectedCannonDomain;
                 MissionSettings.Current.InjectedCannonUnit = r.InjectedCannonUnit;
+                MissionSettings.Current.FakeArhConversion = r.FakeArhConversion;
                 MissionSettings.Current.Save();
                 SetStatus("GROUND CONFIGURATION UPDATED — " + selectedAircraft.Display, false);
             }
@@ -1878,32 +2299,32 @@ namespace UniversalTestLab
             root.RowDefinitions.Add(new RowDefinition { Height = GridLength.Auto });
             root.RowDefinitions.Add(new RowDefinition());
             StackPanel header = new StackPanel { Margin = new Thickness(0, 0, 0, 8) };
-            header.Children.Add(new TextBlock { Text = "GARAGE — COLLECTION & PRESETS", Foreground = ModernPalette.Brush(ModernPalette.Text), FontSize = 18, FontWeight = FontWeights.SemiBold });
-            header.Children.Add(new TextBlock { Text = "Recently used vehicles, favourites and saved ammunition loadouts (Ask3lad style).", Foreground = ModernPalette.Brush(ModernPalette.Cyan), Margin = new Thickness(0, 4, 0, 0) });
+            header.Children.Add(new TextBlock { Text = ModernText.L("GARAGE — COLLECTION & PRESETS", "机库 — 收藏与预设"), Foreground = ModernPalette.Brush(ModernPalette.Text), FontSize = 18, FontWeight = FontWeights.SemiBold });
+            header.Children.Add(new TextBlock { Text = ModernText.L("Recently used vehicles, favourites and saved ammunition loadouts (Ask3lad style).", "最近使用的载具、收藏与已保存的弹药配置（Ask3lad 风格）。"), Foreground = ModernPalette.Brush(ModernPalette.Cyan), Margin = new Thickness(0, 4, 0, 0) });
             root.Children.Add(header);
             StackPanel col0 = GarageColumn("RECENTLY USED");
             garageRecentlyBox = GarageListBox();
             garageRecentlyBox.SelectionChanged += delegate { SelectGarageVehicle(garageRecentlyBox.SelectedItem as GarageEntry); };
             col0.Children.Add(garageRecentlyBox);
-            col0.Children.Add(new TextBlock { Text = "Click a vehicle to jump to it.", Foreground = ModernPalette.Brush(ModernPalette.Muted), FontSize = 11, Margin = new Thickness(0, 6, 0, 0), TextWrapping = TextWrapping.Wrap });
+            col0.Children.Add(new TextBlock { Text = ModernText.L("Click a vehicle to jump to it.", "点击载具即可跳转。"), Foreground = ModernPalette.Brush(ModernPalette.Muted), FontSize = 11, Margin = new Thickness(0, 6, 0, 0), TextWrapping = TextWrapping.Wrap });
             StackPanel col1 = GarageColumn("FAVOURITES");
             garageFavBox = GarageListBox();
             garageFavBox.SelectionChanged += delegate { SelectGarageVehicle(garageFavBox.SelectedItem as GarageEntry); };
             col1.Children.Add(garageFavBox);
-            Button addFav = new Button { Content = "★  ADD CURRENT TO FAVOURITES", Style = (Style)Resources["ButtonStyle"], Height = 30, Margin = new Thickness(0, 8, 0, 0) };
+            Button addFav = new Button { Content = ModernText.L("★  ADD CURRENT TO FAVOURITES", "★ 将当前加入收藏"), Style = (Style)Resources["ButtonStyle"], Height = 30, Margin = new Thickness(0, 8, 0, 0) };
             addFav.Click += delegate { ToggleFavourite(); };
-            Button removeFav = new Button { Content = "REMOVE SELECTED", Style = (Style)Resources["ButtonStyle"], Height = 30, Margin = new Thickness(0, 6, 0, 0) };
+            Button removeFav = new Button { Content = ModernText.L("REMOVE SELECTED", "移除所选"), Style = (Style)Resources["ButtonStyle"], Height = 30, Margin = new Thickness(0, 6, 0, 0) };
             removeFav.Click += delegate { RemoveFavourite(); };
             col1.Children.Add(addFav);
             col1.Children.Add(removeFav);
             StackPanel col2 = GarageColumn("AMMO PRESETS");
             garagePresetBox = GarageListBox();
             col2.Children.Add(garagePresetBox);
-            Button savePreset = new Button { Content = "SAVE CURRENT AS PRESET…", Style = (Style)Resources["ButtonStyle"], Height = 30, Margin = new Thickness(0, 8, 0, 0) };
+            Button savePreset = new Button { Content = ModernText.L("SAVE CURRENT AS PRESET…", "保存当前为预设…"), Style = (Style)Resources["ButtonStyle"], Height = 30, Margin = new Thickness(0, 8, 0, 0) };
             savePreset.Click += delegate { SaveGaragePreset(); };
-            Button loadPreset = new Button { Content = "LOAD SELECTED", Style = (Style)Resources["ButtonStyle"], Height = 30, Margin = new Thickness(0, 6, 0, 0) };
+            Button loadPreset = new Button { Content = ModernText.L("LOAD SELECTED", "加载所选"), Style = (Style)Resources["ButtonStyle"], Height = 30, Margin = new Thickness(0, 6, 0, 0) };
             loadPreset.Click += delegate { LoadGaragePreset(); };
-            Button deletePreset = new Button { Content = "DELETE SELECTED", Style = (Style)Resources["ButtonStyle"], Height = 30, Margin = new Thickness(0, 6, 0, 0) };
+            Button deletePreset = new Button { Content = ModernText.L("DELETE SELECTED", "删除所选"), Style = (Style)Resources["ButtonStyle"], Height = 30, Margin = new Thickness(0, 6, 0, 0) };
             deletePreset.Click += delegate { DeleteGaragePreset(); };
             col2.Children.Add(savePreset);
             col2.Children.Add(loadPreset);
@@ -2230,19 +2651,19 @@ namespace UniversalTestLab
         {
             gameFolder.Text = controller.WorkspaceGameFolder;
             aircraftViews = controller.WorkspaceAircraft.Select(x => new AircraftView(x)).ToList();
-            nationFilter.Items.Add("All Nations");
+            nationFilter.Items.Add(ModernText.L("All Nations", "全部国家"));
             foreach (string value in controller.WorkspaceNations) nationFilter.Items.Add(value);
-            rankFilter.Items.Add("Any Rank");
-            for (int i = 1; i <= Math.Max(9, controller.WorkspaceAircraft.Max(x => x.Rank)); i++) rankFilter.Items.Add("Rank " + AircraftViewRoman(i));
-            typeFilter.Items.Add("All Types");
+            rankFilter.Items.Add(ModernText.L("Any Rank", "任意等级"));
+            for (int i = 1; i <= Math.Max(9, controller.WorkspaceAircraft.Max(x => x.Rank)); i++) rankFilter.Items.Add(ModernText.L("Rank ", "等级 ") + AircraftViewRoman(i));
+            typeFilter.Items.Add(ModernText.L("All Types", "全部类型"));
             foreach (string value in controller.WorkspaceAircraft.Select(x => x.Kind).Distinct().OrderBy(x => x)) typeFilter.Items.Add(value);
-            categoryFilter.Items.Add("All Weapon Types");
+            categoryFilter.Items.Add(ModernText.L("All Weapon Types", "全部武器类型"));
             foreach (string value in controller.WorkspaceWeaponCategories) categoryFilter.Items.Add(value);
-            weaponNationFilter.Items.Add("All Nations");
+            weaponNationFilter.Items.Add(ModernText.L("All Nations", "全部国家"));
             foreach (string value in controller.WorkspaceNations) weaponNationFilter.Items.Add(value);
-            sortFilter.Items.Add("Mass: low to high");
-            sortFilter.Items.Add("Mass: high to low");
-            sortFilter.Items.Add("Name: A to Z");
+            sortFilter.Items.Add(ModernText.L("Mass: low to high", "质量: 低到高"));
+            sortFilter.Items.Add(ModernText.L("Mass: high to low", "质量: 高到低"));
+            sortFilter.Items.Add(ModernText.L("Name: A to Z", "名称: A到Z"));
             nationFilter.SelectedIndex = rankFilter.SelectedIndex = typeFilter.SelectedIndex = categoryFilter.SelectedIndex = weaponNationFilter.SelectedIndex = sortFilter.SelectedIndex = 0;
 
             List<AircraftView> targets = aircraftViews.OrderBy(x => x.Name).ToList();
@@ -2311,6 +2732,9 @@ namespace UniversalTestLab
                 if (airCountValue > 0) kv.Add("air_count", airCountValue);
                 if (configuredGroundTargets.Count > 0) kv.Add("ground_targets", String.Join(",", configuredGroundTargets.Select(x => x.Source.Id)));
                 kv.Add("hostile", hostileToggle.IsChecked == true ? "1" : "0");
+                kv.Add("sam_sites", samSitesToggle.IsChecked == true ? "1" : "0");
+                kv.Add("sam_sites_mode", samSitesMode == null ? "active" : samSitesMode.Text);
+                kv.Add("sam_sites_selection", samSitesSelection == null ? "s300" : samSitesSelection.Text);
                 TargetView ship = shipTarget.SelectedItem as TargetView;
                 if (ship != null) kv.Add("ship_target", ship.Source.Id);
                 int shipCountValue = SelectedCount(shipCount);
@@ -2377,6 +2801,10 @@ namespace UniversalTestLab
                     groundCount.SelectedItem = configuredGroundTargets.Count > 0 ? 1 : 0;
                 }
                 if (kv.TryGetValue("hostile", out value)) hostileToggle.IsChecked = value == "1";
+                if (kv.TryGetValue("sam_sites", out value)) samSitesToggle.IsChecked = value == "1";
+                if (kv.TryGetValue("sam_sites_mode", out value)) samSitesMode.Text = value;
+                if (kv.TryGetValue("sam_sites_selection", out value)) samSitesSelection.Text = value;
+                if (kv.ContainsKey("sam_sites") && !kv.ContainsKey("sam_sites_mode") && kv.TryGetValue("sam_sites", out value) && value == "0") samSitesMode.Text = "disabled";
                 if (kv.TryGetValue("ship_target", out value)) SelectShipTarget(value);
                 if (kv.TryGetValue("ship_count", out value)) { int c; if (int.TryParse(value, out c)) SelectCountValue(shipCount, c); }
                 if (kv.TryGetValue("passive_ship", out value)) passiveShip = value == "1";
@@ -2471,10 +2899,10 @@ namespace UniversalTestLab
             weaponList.Visibility = ground ? Visibility.Collapsed : Visibility.Visible;
             if (groundWorkspacePanel != null) groundWorkspacePanel.Visibility = ground ? Visibility.Visible : Visibility.Collapsed;
             if (ground) RefreshGroundWorkspace();
-            systemsButton.Content = "MODULES";
-            flightConfigureButton.Content = ground ? "GROUND CONFIGURE" : "FLIGHT CONFIGURE";
+            systemsButton.Content = ModernText.L("MODULES", "模块");
+            flightConfigureButton.Content = ground ? ModernText.L("GROUND CONFIGURE", "地面配置") : ModernText.L("FLIGHT CONFIGURE", "飞行配置");
             clearStationButton.Visibility = clearAllButton.Visibility = mountButton.Visibility = ground ? Visibility.Collapsed : Visibility.Visible;
-            massText.Text = ground ? "GROUND UNIT" : massText.Text;
+            massText.Text = ground ? ModernText.L("GROUND UNIT", "地面单位") : massText.Text;
         }
 
         private void UpdatePreviewKind(string kind)
@@ -2500,7 +2928,7 @@ namespace UniversalTestLab
             if (selectedAircraft == null) return;
             if (GroundSelected)
             {
-                stationText.Text = "CUSTOM GROUND UNIT — choose research modules and create a projectile/mobility profile.";
+                stationText.Text = ModernText.L("CUSTOM GROUND UNIT — choose research modules and create a projectile/mobility profile.", "自定义地面单位 — 选择研发模块并创建弹道/机动配置。");
                 weaponList.ItemsSource = null;
                 UpdateMass();
                 return;
@@ -2522,7 +2950,7 @@ namespace UniversalTestLab
                 });
                 label.Children.Add(new TextBlock
                 {
-                    Text = assignment == null ? "EMPTY" : ShortName(assignment.Weapon.Name, 9),
+                    Text = assignment == null ? ModernText.L("EMPTY", "空") : ShortName(assignment.Weapon.Name, 9),
                     FontSize = 8,
                     Foreground = ModernPalette.Brush(ModernPalette.Muted),
                     TextTrimming = TextTrimming.CharacterEllipsis,
@@ -2535,7 +2963,7 @@ namespace UniversalTestLab
                     Margin = new Thickness(2, 0, 2, 0),
                     Padding = new Thickness(2),
                     Tag = slot,
-                    ToolTip = "Station " + stationNumber.ToString(CultureInfo.InvariantCulture),
+                    ToolTip = ModernText.L("Station ", "挂架 ") + stationNumber.ToString(CultureInfo.InvariantCulture),
                     Content = label,
                     Style = (Style)root.Resources["ButtonStyle"],
                     Background = assignment == null ? ModernPalette.Brush("#24365F") : ModernPalette.Brush("#225C62")
@@ -2564,7 +2992,7 @@ namespace UniversalTestLab
         {
             if (slot == null) return;
             selectedPylon = slot;
-            stationText.Text = "STATION " + DisplayStation(slot).ToString(CultureInfo.InvariantCulture) + " — choose a compatible weapon, or enable Injection for the full catalog.";
+            stationText.Text = ModernText.L("STATION ", "挂架 ") + DisplayStation(slot).ToString(CultureInfo.InvariantCulture) + " — choose a compatible weapon, or enable Injection for the full catalog.";
             foreach (Button button in pylonPanel.Children.OfType<Button>())
             {
                 PylonSlot current = button.Tag as PylonSlot;
@@ -2582,8 +3010,8 @@ namespace UniversalTestLab
                 return;
             }
             bool injected = injectionToggle.IsChecked == true;
-            string category = categoryFilter.SelectedItem as string;
-            string nation = weaponNationFilter.SelectedItem as string;
+            string category = categoryFilter.SelectedIndex > 0 ? categoryFilter.SelectedItem as string : null;
+            string nation = weaponNationFilter.SelectedIndex > 0 ? weaponNationFilter.SelectedItem as string : null;
             int sort = Math.Max(0, sortFilter.SelectedIndex);
             List<WeaponView> weapons = controller.WorkspaceWeapons(selectedAircraft.Id, selectedPylon.Slot, injected, weaponSearch.Text, category, nation, sort)
                 .Select(x => new WeaponView(x, injected)).ToList();
@@ -2667,15 +3095,15 @@ namespace UniversalTestLab
 
         private void UpdateMass()
         {
-            if (GroundSelected) { massText.Text = "GROUND UNIT"; return; }
+            if (GroundSelected) { massText.Text = ModernText.L("GROUND UNIT", "地面单位"); return; }
             double total = controller.WorkspaceAssignments.Values.Sum(x => x.Weapon.TotalMass);
             string limit = selectedAircraft != null && selectedAircraft.MaxLoad > 0 ? " / " + selectedAircraft.MaxLoad.ToString("0", CultureInfo.InvariantCulture) + " kg" : "";
-            massText.Text = "MASS: " + total.ToString("0.0", CultureInfo.InvariantCulture) + " kg" + limit;
+            massText.Text = ModernText.L("MASS: ", "质量: ") + total.ToString("0.0", CultureInfo.InvariantCulture) + " kg" + limit;
         }
 
         private static string ShortName(string value, int length)
         {
-            if (String.IsNullOrEmpty(value)) return "WEAPON";
+            if (String.IsNullOrEmpty(value)) return ModernText.L("WEAPON", "武器");
             string clean = value.Trim();
             return clean.Length <= length ? clean.ToUpperInvariant() : clean.Substring(0, Math.Max(3, length - 1)).ToUpperInvariant() + "…";
         }
@@ -2695,7 +3123,7 @@ namespace UniversalTestLab
                 if (heliTarget01 != null) flying.Add(new FlyingTargetSlot("Heli_Target", heliTarget01.Source.Id, Math.Max(0, heliTarget01Count)));
                 if (heliTarget02 != null) flying.Add(new FlyingTargetSlot("Heli_Target_02", heliTarget02.Source.Id, Math.Max(0, heliTarget02Count)));
                 bool generated = controller.WorkspaceGenerateMission(air == null ? null : air.Source.Id, SelectedCount(airCount), configuredGroundTargets.Select(x => x.Source.Id).ToList(),
-                    hostileToggle.IsChecked == true, ship == null ? null : ship.Source.Id, SelectedCount(shipCount), passiveShip, flying, combinedScenario);
+                    hostileToggle.IsChecked == true, ship == null ? null : ship.Source.Id, SelectedCount(shipCount), passiveShip, flying, combinedScenario, samSitesToggle.IsChecked == true ? samSitesMode.Text : "disabled", samSitesSelection.Text);
                 if (generated)
                 {
                     SetStatus("MISSION GENERATED — reopen User Missions in War Thunder", false);
@@ -2706,7 +3134,7 @@ namespace UniversalTestLab
             catch (Exception ex)
             {
                 SetStatus(ex.Message, true);
-                ModernMessageDialog error = new ModernMessageDialog("Universal Test Lab", ex.Message, "CLOSE", null, true) { Owner = this };
+                ModernMessageDialog error = new ModernMessageDialog("Universal Test Lab", ex.Message, "关闭", null, true) { Owner = this };
                 error.ShowDialog();
             }
         }
@@ -2752,14 +3180,14 @@ namespace UniversalTestLab
 
         private bool ConfirmWorkspaceAction(string title, string message)
         {
-            ModernMessageDialog dialog = new ModernMessageDialog(title, message, "CONTINUE", "CANCEL", false) { Owner = this };
+            ModernMessageDialog dialog = new ModernMessageDialog(title, message, "CONTINUE", "取消", false) { Owner = this };
             return dialog.ShowDialog() == true;
         }
 
         private void ShowWorkspaceMessage(string title, string message, bool danger)
         {
             SetStatus(message, danger);
-            ModernMessageDialog dialog = new ModernMessageDialog(title, message, "CLOSE", null, danger) { Owner = this };
+            ModernMessageDialog dialog = new ModernMessageDialog(title, message, "关闭", null, danger) { Owner = this };
             dialog.ShowDialog();
         }
 
@@ -2805,7 +3233,7 @@ namespace UniversalTestLab
             if (selectedAircraft == null) return;
             if (GroundSelected)
             {
-                ModernGroundConfigureWindow groundDialog = new ModernGroundConfigureWindow(selectedAircraft, controller.WorkspaceGetSettings(selectedAircraft), controller.WorkspaceGroundAmmo, controller.WorkspaceGroundTargets, controller.WorkspaceUnitWeapons, controller.WorkspaceGroundWeapons(selectedAircraft), new GroundAmmo[0], controller.WorkspaceResolveCannonAmmo);
+                ModernGroundConfigureWindow groundDialog = new ModernGroundConfigureWindow(selectedAircraft, controller.WorkspaceGetSettings(selectedAircraft), controller.WorkspaceGroundAmmo, controller.WorkspaceGroundTargets, controller.WorkspaceUnitWeapons, controller.WorkspaceGroundWeapons(selectedAircraft), new GroundAmmo[0], controller.WorkspaceGunBeltOptions(selectedAircraft), controller.WorkspaceResolveCannonAmmo);
                 groundDialog.Owner = this;
                 if (groundDialog.ShowDialog() == true && groundDialog.Result != null)
                 {
@@ -2853,7 +3281,7 @@ namespace UniversalTestLab
                 (groundTarget.ItemsSource as IEnumerable<TargetView>) ?? Enumerable.Empty<TargetView>(),
                 (shipTarget.ItemsSource as IEnumerable<TargetView>) ?? Enumerable.Empty<TargetView>(),
                 airTarget.SelectedItem as AircraftView, SelectedCount(airCount), configuredGroundTargets,
-                hostileToggle.IsChecked == true, shipTarget.SelectedItem as TargetView, SelectedCount(shipCount), passiveShip,
+                hostileToggle.IsChecked == true, samSitesMode.Text, samSitesSelection.Text, shipTarget.SelectedItem as TargetView, SelectedCount(shipCount), passiveShip,
                 controller.WorkspaceCombinedMaps, playerKind, combinedScenario,
                 airTarget01, airTarget01Count, heliTarget01, heliTarget01Count, heliTarget02, heliTarget02Count);
             dialog.Owner = this;
@@ -2871,6 +3299,9 @@ namespace UniversalTestLab
             if (configuredGroundTargets.Count > 0) groundTarget.SelectedItem = configuredGroundTargets[0];
             groundCount.SelectedItem = configuredGroundTargets.Count > 0 ? 1 : 0;
             hostileToggle.IsChecked = dialog.Hostile;
+            samSitesToggle.IsChecked = dialog.SamSitesMode != "disabled";
+            samSitesMode.Text = dialog.SamSitesMode;
+            samSitesSelection.Text = dialog.SamSitesSelection;
             shipTarget.SelectedItem = dialog.ShipTarget;
             shipCount.SelectedItem = dialog.ShipCount;
             passiveShip = dialog.PassiveShip;
@@ -2892,7 +3323,7 @@ namespace UniversalTestLab
             }
             else
             {
-            string fuel = settings.FullFuel ? "Full internal fuel" : settings.FuelMinutes.ToString(CultureInfo.InvariantCulture) + " minutes of internal fuel";
+            string fuel = settings.FullFuel ? ModernText.L("Full internal fuel", "满内部燃油") : settings.FuelMinutes.ToString(CultureInfo.InvariantCulture) + " minutes of internal fuel";
             string countermeasures = !settings.OverrideCountermeasures ? "Native countermeasure load" :
                 settings.CountermeasureLoadouts.Count.ToString(CultureInfo.InvariantCulture) + " configured dispenser groups";
             string belts = settings.GunBeltSelections.Count == 0 ? "default gun belts" : settings.GunBeltSelections.Count.ToString(CultureInfo.InvariantCulture) + " selected gun belt groups";
@@ -2909,9 +3340,10 @@ namespace UniversalTestLab
             AircraftView air = airTarget == null ? null : airTarget.SelectedItem as AircraftView;
             TargetView ground = groundTarget == null ? null : groundTarget.SelectedItem as TargetView;
             TargetView ship = shipTarget == null ? null : shipTarget.SelectedItem as TargetView;
-            targetSummaryText.Text = "Air: " + SelectedCount(airCount).ToString(CultureInfo.InvariantCulture) + " × " + (air == null ? "none" : air.Name) +
-                "\nGround: " + configuredGroundTargets.Count.ToString(CultureInfo.InvariantCulture) + " positions  •  " + (hostileToggle.IsChecked == true ? "ATTACKING" : "PASSIVE") +
-                "\nNaval: " + SelectedCount(shipCount).ToString(CultureInfo.InvariantCulture) + " × " + (ship == null ? "none" : ship.Name) + "  •  " + (passiveShip ? "PASSIVE" : "RETURNS FIRE");
+            targetSummaryText.Text = ModernText.L("Air: ", "空中: ") + SelectedCount(airCount).ToString(CultureInfo.InvariantCulture) + " × " + (air == null ? "none" : air.Name) +
+                ModernText.L("\nGround: ", "\n地面: ") + configuredGroundTargets.Count.ToString(CultureInfo.InvariantCulture) + " positions  •  " + (hostileToggle.IsChecked == true ? "ATTACKING" : "PASSIVE") +
+                ModernText.L("\nNaval: ", "\n海上: ") + SelectedCount(shipCount).ToString(CultureInfo.InvariantCulture) + " × " + (ship == null ? "none" : ship.Name) + "  •  " + (passiveShip ? "PASSIVE" : "RETURNS FIRE") +
+                ModernText.L("\nAir Defence: ", "\n防空: ") + (samSitesToggle.IsChecked == true ? ModernText.L("SAM SITES ", "SAM 阵地 ") + (samSitesMode != null && samSitesMode.Text == "passive" ? "PASSIVE" : samSitesMode != null && samSitesMode.Text == "friendly" ? "FRIENDLY" : "ACTIVE") : "SAM SITES DISABLED") + "  •  " + (samSitesSelection == null ? "S300" : samSitesSelection.Text.ToUpperInvariant());
         }
 
         private void ShowPresets()
@@ -2978,7 +3410,7 @@ namespace UniversalTestLab
             ModernMessageDialog dialog = new ModernMessageDialog(
                 danger ? "Game Resource" : "Base Mission Installed",
                 danger ? "Extracted game resource was not found." : "Base mission installed. Close the User Missions tab in War Thunder and open it again; no game restart is required.",
-                "CLOSE", null, danger) { Owner = this };
+                "关闭", null, danger) { Owner = this };
             ShowOverlay(dialog);
         }
 
@@ -2996,7 +3428,7 @@ namespace UniversalTestLab
                 !root.IsHitTestVisible &&
                 System.Windows.Application.Current.Windows.Count == windowCountBefore;
 
-            ModernMessageDialog nested = new ModernMessageDialog("Overlay Test", "Nested confirmations stay inside the same application window.", "OK", "CANCEL", false) { Owner = this };
+            ModernMessageDialog nested = new ModernMessageDialog("Overlay Test", "Nested confirmations stay inside the same application window.", "OK", "取消", false) { Owner = this };
             ShowOverlay(nested);
             UpdateLayout();
             bool nestedShown = overlayDialogs.Count == 2 &&
@@ -3157,7 +3589,7 @@ namespace UniversalTestLab
                 VerticalAlignment = VerticalAlignment.Top,
                 Margin = new Thickness(0, 14, 14, 0),
                 Cursor = Cursors.Hand,
-                ToolTip = "Close",
+                ToolTip = ModernText.L("Close", "关闭"),
                 Tag = "OverlayCloseCloud"
             };
             closeCloud.Child = new TextBlock
@@ -3449,7 +3881,7 @@ namespace UniversalTestLab
             Grid footer = new Grid { HorizontalAlignment = HorizontalAlignment.Right };
             footer.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(150) });
             footer.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(160) });
-            Button cancel = DialogButton("CANCEL", false); cancel.Click += delegate { DialogResult = false; Close(); }; footer.Children.Add(cancel);
+            Button cancel = DialogButton("取消", false); cancel.Click += delegate { DialogResult = false; Close(); }; footer.Children.Add(cancel);
             Button save = DialogButton("SAVE PRESET", true); Grid.SetColumn(save, 1); save.Click += delegate { Value = box.Text; DialogResult = true; Close(); }; footer.Children.Add(save);
             Grid.SetRow(footer, 1); layout.Children.Add(footer);
         }
@@ -3472,6 +3904,9 @@ namespace UniversalTestLab
         public int CurrentHeli02Count;
         public List<TargetView> CurrentGround;
         public bool Hostile;
+        public bool SamSites;
+        public string SamSitesMode;
+        public string SamSitesSelection;
         public TargetView CurrentShip;
         public int CurrentShipCount;
         public bool PassiveShip;
@@ -3490,6 +3925,9 @@ namespace UniversalTestLab
         public int HeliCount02;
         public List<TargetView> GroundTargets;
         public bool Hostile;
+        public bool SamSites;
+        public string SamSitesMode;
+        public string SamSitesSelection;
         public TargetView ShipTarget;
         public int ShipCount;
         public bool PassiveShip;
@@ -3525,6 +3963,9 @@ namespace UniversalTestLab
         private ComboBox groundNation;
         private ComboBox groundRank;
         private ToggleButton hostileBox;
+        private ToggleButton samSitesBox;
+        private ComboBox samSitesSelectionBox;
+        private int samSitesModeState;
         private ComboBox shipBox;
         private ComboBox shipCountBox;
         private ComboBox shipNation;
@@ -3617,7 +4058,7 @@ namespace UniversalTestLab
             foreach (EraPreset era in EraPresets) eraBox.Items.Add(era.Name);
             eraBox.SelectedIndex = 0;
             Grid.SetColumn(eraBox, 1); eraLine.Children.Add(eraBox);
-            Button savePreset = new Button { Content = "SAVE CURRENT AS PRESET", Style = toggleStyleSource == null ? null : ButtonStyleFrom(toggleStyleSource), Margin = new Thickness(4, 0, 0, 0), Padding = new Thickness(14, 2, 14, 2) };
+            Button savePreset = new Button { Content = ModernText.L("SAVE CURRENT AS PRESET", "保存当前为预设"), Style = toggleStyleSource == null ? null : ButtonStyleFrom(toggleStyleSource), Margin = new Thickness(4, 0, 0, 0), Padding = new Thickness(14, 2, 14, 2) };
             savePreset.Click += delegate { SavePresetClicked(); };
             Grid.SetColumn(savePreset, 2); eraLine.Children.Add(savePreset);
             header.Children.Add(eraLine);
@@ -3669,11 +4110,31 @@ namespace UniversalTestLab
             groundHeader.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(190) });
             groundHeader.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(125) });
             groundHeader.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(250) });
+            groundHeader.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(230) });
             TextBlock groundTitle = Heading("GROUND RANGE POSITIONS", 15); groundTitle.VerticalAlignment = VerticalAlignment.Center; groundHeader.Children.Add(groundTitle);
-            groundNation = FilterBox(allGround.Select(x => x.Nation), "All Nations"); Grid.SetColumn(groundNation, 1); groundHeader.Children.Add(groundNation);
+            groundNation = FilterBox(allGround.Select(x => x.Nation), ModernText.L("All Nations", "全部国家")); Grid.SetColumn(groundNation, 1); groundHeader.Children.Add(groundNation);
             groundRank = RankBox(allGround); groundRank.Margin = new Thickness(8, 0, 0, 0); Grid.SetColumn(groundRank, 2); groundHeader.Children.Add(groundRank);
             hostileBox = new ToggleButton { IsChecked = state.Hostile, Style = toggleStyle, Margin = new Thickness(8, 0, 0, 0), ToolTip = "Controls whether all seven selected ground targets actively aim at and fire on the player." }; Grid.SetColumn(hostileBox, 3); groundHeader.Children.Add(hostileBox);
+            samSitesBox = new ToggleButton { IsChecked = true, Style = toggleStyle, Margin = new Thickness(8, 0, 0, 0), ToolTip = "Cycles the clean-range SAM sites: ACTIVE (engage the player), PASSIVE (deployed but never attack), FRIENDLY (army 1, intercepts enemy air targets), DISABLED (not spawned)." };
+            samSitesBox.Click += delegate { samSitesModeState = (samSitesModeState + 1) % 4; UpdateReactionButtons(); };
+            samSitesSelectionBox = new ComboBox { Width = 150, VerticalAlignment = VerticalAlignment.Center };
+            samSitesSelectionBox.Items.Add("S300");
+            samSitesSelectionBox.Items.Add("PATRIOT");
+            samSitesSelectionBox.Items.Add("HAWK");
+            samSitesSelectionBox.Items.Add("BUK");
+            samSitesSelectionBox.Items.Add("ALL");
+            string initialSamSelection = String.IsNullOrWhiteSpace(state.SamSitesSelection) ? "s300" : state.SamSitesSelection;
+            samSitesSelectionBox.SelectedIndex = Math.Max(0, Math.Min(4, new[] { "S300", "PATRIOT", "HAWK", "BUK", "ALL" }.ToList().IndexOf(initialSamSelection.ToUpperInvariant())));
+            samSitesModeState = state.SamSitesMode == "passive" ? 1 : state.SamSitesMode == "friendly" ? 2 : state.SamSitesMode == "disabled" ? 3 : (state.SamSites ? 0 : 3);
+            Grid samRow = new Grid { Margin = new Thickness(0, 0, 0, 10) };
+            samRow.ColumnDefinitions.Add(new ColumnDefinition());
+            samRow.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(150) });
+            samRow.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(230) });
+            TextBlock samCaption = Heading("SAM SITES", 15); samCaption.VerticalAlignment = VerticalAlignment.Center; samRow.Children.Add(samCaption);
+            Grid.SetColumn(samSitesSelectionBox, 1); samRow.Children.Add(samSitesSelectionBox);
+            Grid.SetColumn(samSitesBox, 2); samRow.Children.Add(samSitesBox);
             groundPanel.Children.Add(groundHeader);
+            groundPanel.Children.Add(samRow);
 
             Grid groundGrid = new Grid();
             groundGrid.ColumnDefinitions.Add(new ColumnDefinition());
@@ -3697,7 +4158,7 @@ namespace UniversalTestLab
             shipFilters.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(190) });
             shipFilters.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(125) });
             TextBlock shipTitle = Heading("NAVAL TARGET", 15); shipTitle.VerticalAlignment = VerticalAlignment.Center; shipFilters.Children.Add(shipTitle);
-            shipNation = FilterBox(allShips.Select(x => x.Nation), "All Nations"); Grid.SetColumn(shipNation, 1); shipFilters.Children.Add(shipNation);
+            shipNation = FilterBox(allShips.Select(x => x.Nation), ModernText.L("All Nations", "全部国家")); Grid.SetColumn(shipNation, 1); shipFilters.Children.Add(shipNation);
             shipRank = RankBox(allShips); shipRank.Margin = new Thickness(8, 0, 0, 0); Grid.SetColumn(shipRank, 2); shipFilters.Children.Add(shipRank);
             shipPanel.Children.Add(shipFilters);
             Grid shipLine = new Grid(); shipLine.ColumnDefinitions.Add(new ColumnDefinition()); shipLine.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(90) }); shipLine.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(220) });
@@ -3879,7 +4340,7 @@ namespace UniversalTestLab
             row.ColumnDefinitions.Add(new ColumnDefinition());
             row.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(84) });
             TextBlock label = new TextBlock { Text = caption, Foreground = ModernPalette.Brush(ModernPalette.Cyan), FontSize = 12, FontWeight = FontWeights.SemiBold, VerticalAlignment = VerticalAlignment.Center };
-            if (!String.IsNullOrWhiteSpace(templateDefaultId)) label.ToolTip = "Template default: " + templateDefaultId;
+            if (!String.IsNullOrWhiteSpace(templateDefaultId)) label.ToolTip = ModernText.L("Template default: ", "模板默认: ") + templateDefaultId;
             row.Children.Add(label);
             box = new ComboBox { ItemsSource = source, SelectedItem = current, Margin = new Thickness(8, 0, 8, 0), VerticalContentAlignment = VerticalAlignment.Center };
             if (box.SelectedItem == null && source.Count > 0) box.SelectedIndex = 0;
@@ -3900,7 +4361,7 @@ namespace UniversalTestLab
         private ComboBox RankBox(IEnumerable<TargetView> values)
         {
             ComboBox box = new ComboBox();
-            box.Items.Add("Any Rank");
+            box.Items.Add(ModernText.L("Any Rank", "任意等级"));
             foreach (int rank in values.Select(x => x.Rank).Where(x => x > 0).Distinct().OrderBy(x => x)) box.Items.Add(rank);
             box.SelectedIndex = 0;
             return box;
@@ -3942,6 +4403,12 @@ namespace UniversalTestLab
             hostileBox.BorderBrush = ModernPalette.Brush(groundAttacks ? ModernPalette.Danger : ModernPalette.Good);
             hostileBox.Foreground = ModernPalette.Brush(groundAttacks ? "#FFFFE7EF" : "#FFE7FFF7");
 
+            bool samsActive = samSitesModeState != 3;
+            samSitesBox.Content = samsActive ? (samSitesModeState == 1 ? "SAM SITES PASSIVE" : samSitesModeState == 2 ? "SAM SITES FRIENDLY" : "SAM SITES ACTIVE") : "SAM SITES DISABLED";
+            samSitesBox.Background = ModernPalette.Brush(samsActive ? (samSitesModeState == 1 ? "#8A5A1D48" : samSitesModeState == 2 ? "#8A1D4A48" : "#A34B1733") : "#8A1D5148");
+            samSitesBox.BorderBrush = ModernPalette.Brush(samsActive ? (samSitesModeState == 1 ? "#FFE0A030" : samSitesModeState == 2 ? "#FF50C8A0" : ModernPalette.Danger) : ModernPalette.Good);
+            samSitesBox.Foreground = ModernPalette.Brush(samsActive ? "#FFFFE7EF" : "#FFE7FFF7");
+
             bool shipPassive = passiveShipBox.IsChecked == true;
             passiveShipBox.Content = shipPassive ? "SHIP — STAYS PASSIVE" : "SHIP — RETURNS FIRE";
             passiveShipBox.Background = ModernPalette.Brush(shipPassive ? "#8A1D5148" : "#A34B1733");
@@ -3972,6 +4439,9 @@ namespace UniversalTestLab
             r.HeliCount02 = (int)(heliCountBox02.SelectedItem ?? 0);
             r.GroundTargets = groundBoxes.Select(x => x.SelectedItem as TargetView).Where(x => x != null).ToList();
             r.Hostile = hostileBox.IsChecked == true;
+            r.SamSitesMode = samSitesModeState == 0 ? "active" : samSitesModeState == 1 ? "passive" : samSitesModeState == 2 ? "friendly" : "disabled";
+            r.SamSitesSelection = (samSitesSelectionBox.SelectedItem as string ?? "S300").ToLowerInvariant();
+            r.SamSites = samSitesModeState != 3;
             r.ShipTarget = shipBox.SelectedItem as TargetView;
             r.ShipCount = (int)(shipCountBox.SelectedItem ?? 0);
             r.PassiveShip = passiveShipBox.IsChecked == true;
@@ -4015,6 +4485,9 @@ namespace UniversalTestLab
         private readonly ComboBox groundNation;
         private readonly ComboBox groundRank;
         private readonly ToggleButton hostileBox;
+        private readonly ToggleButton samSitesBox;
+        private readonly ComboBox samSitesSelectionBox;
+        private int samSitesModeState;
         private readonly ComboBox shipBox;
         private readonly ComboBox shipCountBox;
         private readonly ComboBox shipNation;
@@ -4031,6 +4504,9 @@ namespace UniversalTestLab
         public int HeliCount02 { get; private set; }
         public IList<TargetView> GroundTargets { get; private set; }
         public bool Hostile { get; private set; }
+        public bool SamSites { get; private set; }
+        public string SamSitesMode { get; private set; }
+        public string SamSitesSelection { get; private set; }
         public TargetView ShipTarget { get; private set; }
         public int ShipCount { get; private set; }
         public bool PassiveShip { get; private set; }
@@ -4126,7 +4602,7 @@ namespace UniversalTestLab
         }
 
         public ModernMapWindow(IEnumerable<AircraftView> aircraft, IEnumerable<TargetView> ground, IEnumerable<TargetView> ships,
-            AircraftView currentAir, int currentAirCount, IEnumerable<TargetView> currentGround, bool hostile,
+            AircraftView currentAir, int currentAirCount, IEnumerable<TargetView> currentGround, bool hostile, string samSitesMode, string samSitesSelection,
             TargetView currentShip, int currentShipCount, bool passiveShip, IEnumerable<CombinedMap> combinedMaps,
             string currentPlayerKind, CombinedScenarioSettings currentScenario, AircraftView currentAir01, int currentAir01Count,
             AircraftView currentHeli01, int currentHeli01Count, AircraftView currentHeli02, int currentHeli02Count) : base("Map & Scenario", 1000, 820)
@@ -4167,7 +4643,7 @@ namespace UniversalTestLab
             foreach (EraPreset era in EraPresets) eraBox.Items.Add(era.Name);
             eraBox.SelectedIndex = 0;
             Grid.SetColumn(eraBox, 1); eraLine.Children.Add(eraBox);
-            Button savePreset = DialogButton("SAVE CURRENT AS PRESET", false);
+            Button savePreset = DialogButton(ModernText.L("SAVE CURRENT AS PRESET", "保存当前为预设"), false);
             savePreset.Click += delegate { SavePresetClicked(); };
             Grid.SetColumn(savePreset, 2); eraLine.Children.Add(savePreset);
             header.Children.Add(eraLine);
@@ -4224,11 +4700,31 @@ namespace UniversalTestLab
             groundHeader.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(190) });
             groundHeader.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(125) });
             groundHeader.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(250) });
+            groundHeader.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(230) });
             TextBlock groundTitle = Heading("GROUND RANGE POSITIONS", 15); groundTitle.VerticalAlignment = VerticalAlignment.Center; groundHeader.Children.Add(groundTitle);
-            groundNation = FilterBox(allGround.Select(x => x.Nation), "All Nations"); Grid.SetColumn(groundNation, 1); groundHeader.Children.Add(groundNation);
+            groundNation = FilterBox(allGround.Select(x => x.Nation), ModernText.L("All Nations", "全部国家")); Grid.SetColumn(groundNation, 1); groundHeader.Children.Add(groundNation);
             groundRank = RankBox(allGround); groundRank.Margin = new Thickness(8, 0, 0, 0); Grid.SetColumn(groundRank, 2); groundHeader.Children.Add(groundRank);
             hostileBox = new ToggleButton { IsChecked = hostile, Style = (Style)DialogRoot.Resources["StatusToggleStyle"], Margin = new Thickness(8, 0, 0, 0), ToolTip = "Controls whether all seven selected ground targets actively aim at and fire on the player." }; Grid.SetColumn(hostileBox, 3); groundHeader.Children.Add(hostileBox);
+            samSitesBox = new ToggleButton { IsChecked = true, Style = (Style)DialogRoot.Resources["StatusToggleStyle"], Margin = new Thickness(8, 0, 0, 0), ToolTip = "Cycles the clean-range SAM sites: ACTIVE (engage the player), PASSIVE (deployed but never attack), FRIENDLY (army 1, intercepts enemy air targets), DISABLED (not spawned)." };
+            samSitesBox.Click += delegate { samSitesModeState = (samSitesModeState + 1) % 4; UpdateReactionButtons(); };
+            samSitesSelectionBox = new ComboBox { Width = 150, VerticalAlignment = VerticalAlignment.Center };
+            samSitesSelectionBox.Items.Add("S300");
+            samSitesSelectionBox.Items.Add("PATRIOT");
+            samSitesSelectionBox.Items.Add("HAWK");
+            samSitesSelectionBox.Items.Add("BUK");
+            samSitesSelectionBox.Items.Add("ALL");
+            string initialSamSelection = String.IsNullOrWhiteSpace(samSitesSelection) ? "s300" : samSitesSelection;
+            samSitesSelectionBox.SelectedIndex = Math.Max(0, Math.Min(4, new[] { "S300", "PATRIOT", "HAWK", "BUK", "ALL" }.ToList().IndexOf(initialSamSelection.ToUpperInvariant())));
+            samSitesModeState = samSitesMode == "passive" ? 1 : samSitesMode == "friendly" ? 2 : samSitesMode == "disabled" ? 3 : 0;
+            Grid samRow = new Grid { Margin = new Thickness(0, 0, 0, 10) };
+            samRow.ColumnDefinitions.Add(new ColumnDefinition());
+            samRow.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(150) });
+            samRow.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(230) });
+            TextBlock samCaption = Heading("SAM SITES", 15); samCaption.VerticalAlignment = VerticalAlignment.Center; samRow.Children.Add(samCaption);
+            Grid.SetColumn(samSitesSelectionBox, 1); samRow.Children.Add(samSitesSelectionBox);
+            Grid.SetColumn(samSitesBox, 2); samRow.Children.Add(samSitesBox);
             groundPanel.Children.Add(groundHeader);
+            groundPanel.Children.Add(samRow);
 
             Grid groundGrid = new Grid();
             groundGrid.ColumnDefinitions.Add(new ColumnDefinition());
@@ -4252,7 +4748,7 @@ namespace UniversalTestLab
             shipFilters.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(190) });
             shipFilters.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(125) });
             TextBlock shipTitle = Heading("NAVAL TARGET", 15); shipTitle.VerticalAlignment = VerticalAlignment.Center; shipFilters.Children.Add(shipTitle);
-            shipNation = FilterBox(allShips.Select(x => x.Nation), "All Nations"); Grid.SetColumn(shipNation, 1); shipFilters.Children.Add(shipNation);
+            shipNation = FilterBox(allShips.Select(x => x.Nation), ModernText.L("All Nations", "全部国家")); Grid.SetColumn(shipNation, 1); shipFilters.Children.Add(shipNation);
             shipRank = RankBox(allShips); shipRank.Margin = new Thickness(8, 0, 0, 0); Grid.SetColumn(shipRank, 2); shipFilters.Children.Add(shipRank);
             shipPanel.Children.Add(shipFilters);
             Grid shipLine = new Grid(); shipLine.ColumnDefinitions.Add(new ColumnDefinition()); shipLine.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(90) }); shipLine.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(220) });
@@ -4278,7 +4774,7 @@ namespace UniversalTestLab
             Grid footer = new Grid(); footer.ColumnDefinitions.Add(new ColumnDefinition()); footer.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(145) }); footer.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(170) });
             footerHint = new TextBlock { Foreground = ModernPalette.Brush(ModernPalette.Muted), VerticalAlignment = VerticalAlignment.Center, TextWrapping = TextWrapping.Wrap };
             footer.Children.Add(footerHint);
-            Button cancel = DialogButton("CANCEL", false); cancel.Click += delegate { DialogResult = false; Close(); }; Grid.SetColumn(cancel, 1); footer.Children.Add(cancel);
+            Button cancel = DialogButton("取消", false); cancel.Click += delegate { DialogResult = false; Close(); }; Grid.SetColumn(cancel, 1); footer.Children.Add(cancel);
             Button apply = DialogButton("APPLY MAP", true); apply.Click += delegate { Save(); }; Grid.SetColumn(apply, 2); footer.Children.Add(apply); Grid.SetRow(footer, 2); layout.Children.Add(footer);
             RefreshCombinedSpawns();
             UpdateScenarioMode();
@@ -4287,7 +4783,7 @@ namespace UniversalTestLab
         public ModernMapWindow(IEnumerable<AircraftView> aircraft, IEnumerable<TargetView> ground, IEnumerable<TargetView> ships,
             AircraftView currentAir, int currentAirCount, TargetView currentGround, int currentGroundCount, bool hostile,
             TargetView currentShip, int currentShipCount)
-            : this(aircraft, ground, ships, currentAir, currentAirCount, new[] { currentGround }, hostile, currentShip, currentShipCount, false,
+            : this(aircraft, ground, ships, currentAir, currentAirCount, new[] { currentGround }, hostile, "active", "all", currentShip, currentShipCount, false,
                 Enumerable.Empty<CombinedMap>(), "aircraft", new CombinedScenarioSettings(), null, 1, null, 1, null, 1) { }
 
         private void UpdateScenarioMode()
@@ -4440,7 +4936,7 @@ namespace UniversalTestLab
             row.ColumnDefinitions.Add(new ColumnDefinition());
             row.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(84) });
             TextBlock label = new TextBlock { Text = caption, Foreground = ModernPalette.Brush(ModernPalette.Cyan), FontSize = 12, FontWeight = FontWeights.SemiBold, VerticalAlignment = VerticalAlignment.Center };
-            if (!String.IsNullOrWhiteSpace(templateDefaultId)) label.ToolTip = "Template default: " + templateDefaultId;
+            if (!String.IsNullOrWhiteSpace(templateDefaultId)) label.ToolTip = ModernText.L("Template default: ", "模板默认: ") + templateDefaultId;
             row.Children.Add(label);
             box = new ComboBox { ItemsSource = source, SelectedItem = current, Margin = new Thickness(8, 0, 8, 0), VerticalContentAlignment = VerticalAlignment.Center };
             if (box.SelectedItem == null && source.Count > 0) box.SelectedIndex = 0;
@@ -4461,7 +4957,7 @@ namespace UniversalTestLab
         private ComboBox RankBox(IEnumerable<TargetView> values)
         {
             ComboBox box = new ComboBox();
-            box.Items.Add("Any Rank");
+            box.Items.Add(ModernText.L("Any Rank", "任意等级"));
             foreach (int rank in values.Select(x => x.Rank).Where(x => x > 0).Distinct().OrderBy(x => x)) box.Items.Add(rank);
             box.SelectedIndex = 0;
             return box;
@@ -4503,6 +4999,12 @@ namespace UniversalTestLab
             hostileBox.BorderBrush = ModernPalette.Brush(groundAttacks ? ModernPalette.Danger : ModernPalette.Good);
             hostileBox.Foreground = ModernPalette.Brush(groundAttacks ? "#FFFFE7EF" : "#FFE7FFF7");
 
+            bool samsActive = samSitesModeState != 3;
+            samSitesBox.Content = samsActive ? (samSitesModeState == 1 ? "SAM SITES PASSIVE" : samSitesModeState == 2 ? "SAM SITES FRIENDLY" : "SAM SITES ACTIVE") : "SAM SITES DISABLED";
+            samSitesBox.Background = ModernPalette.Brush(samsActive ? (samSitesModeState == 1 ? "#8A5A1D48" : samSitesModeState == 2 ? "#8A1D4A48" : "#A34B1733") : "#8A1D5148");
+            samSitesBox.BorderBrush = ModernPalette.Brush(samsActive ? (samSitesModeState == 1 ? "#FFE0A030" : samSitesModeState == 2 ? "#FF50C8A0" : ModernPalette.Danger) : ModernPalette.Good);
+            samSitesBox.Foreground = ModernPalette.Brush(samsActive ? "#FFFFE7EF" : "#FFE7FFF7");
+
             bool shipPassive = passiveShipBox.IsChecked == true;
             passiveShipBox.Content = shipPassive ? "SHIP — STAYS PASSIVE" : "SHIP — RETURNS FIRE";
             passiveShipBox.Background = ModernPalette.Brush(shipPassive ? "#8A1D5148" : "#A34B1733");
@@ -4522,6 +5024,9 @@ namespace UniversalTestLab
             HeliCount02 = (int)(heliCountBox02.SelectedItem ?? 0);
             GroundTargets = groundBoxes.Select(x => x.SelectedItem as TargetView).Where(x => x != null).ToList();
             Hostile = hostileBox.IsChecked == true;
+            SamSitesMode = samSitesModeState == 0 ? "active" : samSitesModeState == 1 ? "passive" : samSitesModeState == 2 ? "friendly" : "disabled";
+            SamSitesSelection = (samSitesSelectionBox.SelectedItem as string ?? "S300").ToLowerInvariant();
+            SamSites = SamSitesMode != "disabled";
             ShipTarget = shipBox.SelectedItem as TargetView;
             ShipCount = (int)(shipCountBox.SelectedItem ?? 0);
             PassiveShip = passiveShipBox.IsChecked == true;
@@ -4536,7 +5041,7 @@ namespace UniversalTestLab
             };
             if (Scenario.Enabled && (map == null || spawn == null))
             {
-                ModernMessageDialog error = new ModernMessageDialog("Map & Scenario", "Select a map, side and compatible spawn.", "CLOSE", null, true) { Owner = Owner };
+                ModernMessageDialog error = new ModernMessageDialog("Map & Scenario", "Select a map, side and compatible spawn.", "关闭", null, true) { Owner = Owner };
                 error.ShowDialog();
                 return;
             }
@@ -4570,6 +5075,7 @@ namespace UniversalTestLab
     // Configure window keeps its own copy (keep both in sync when editing).
     internal sealed class GroundConfigurePanel : StackPanel
     {
+        private readonly bool simplified;
         private readonly Aircraft vehicle;
         private readonly AircraftSettings original;
         private readonly List<GroundAmmo> catalog;
@@ -4586,6 +5092,7 @@ namespace UniversalTestLab
         private readonly ComboBox roundBox;
         private readonly Func<string, IList<GroundAmmo>> resolveCannonAmmo;
         private readonly CheckBox ammoUnlimitedBox;
+        private readonly CheckBox fakeArhBox;
         private readonly Dictionary<string, IList<GroundAmmo>> cannonAmmoCache = new Dictionary<string, IList<GroundAmmo>>(StringComparer.OrdinalIgnoreCase);
         private readonly Style buttonStyle;
         private readonly Style toggleStyle;
@@ -4594,6 +5101,7 @@ namespace UniversalTestLab
         private bool syncingCannon;
         private readonly IList<UnitWeapon> unitWeapons;
         private readonly IList<GroundAmmo> injectedCannonAmmo;
+        private readonly IList<GroundWeaponBeltOption> vehicleBeltOptions;
         private readonly IList<GroundWeaponInfo> groundWeapons;
         private readonly List<TargetUnit> groundVehicles;
         private readonly ListBox ammoList;
@@ -4605,8 +5113,21 @@ namespace UniversalTestLab
 
         private int AmmoCapacity { get { return vehicle.MaxAmmo > 0 ? vehicle.MaxAmmo : 200; } }
 
-        public GroundConfigurePanel(Aircraft item, AircraftSettings current, IEnumerable<GroundAmmo> ammo, IEnumerable<TargetUnit> groundVehicles, IEnumerable<UnitWeapon> unitWeapons, IEnumerable<GroundWeaponInfo> groundWeapons, IEnumerable<GroundAmmo> injectedCannonAmmo, Func<string, IList<GroundAmmo>> resolveCannonAmmo, Style buttonStyleSource, Style toggleStyleSource)
+        private bool ContainerAllowed(string container)
         {
+            // Unnamed default rounds (empty container) are the STOCK ammunition - they
+            // cannot be written into a slot by name (the game falls back and shows a
+            // wrong round), so they are hidden here; STOCK covers them.
+            if (String.IsNullOrWhiteSpace(container)) return false;
+            if (vehicleBeltOptions == null || vehicleBeltOptions.Count == 0) return true; // no data -> keep old behaviour
+            foreach (GroundWeaponBeltOption belt in vehicleBeltOptions)
+                if (belt != null && String.Equals(belt.Name, container, StringComparison.OrdinalIgnoreCase)) return true;
+            return false;
+        }
+
+        public GroundConfigurePanel(Aircraft item, AircraftSettings current, IEnumerable<GroundAmmo> ammo, IEnumerable<TargetUnit> groundVehicles, IEnumerable<UnitWeapon> unitWeapons, IEnumerable<GroundWeaponInfo> groundWeapons, IEnumerable<GroundAmmo> injectedCannonAmmo, IEnumerable<GroundWeaponBeltOption> beltOptions, Func<string, IList<GroundAmmo>> resolveCannonAmmo, Style buttonStyleSource, Style toggleStyleSource, bool simplified = false)
+        {
+            this.simplified = simplified;
             vehicle = item;
             original = (current ?? new AircraftSettings()).Copy();
             if (String.IsNullOrWhiteSpace(original.InjectedCannonBlk))
@@ -4615,20 +5136,26 @@ namespace UniversalTestLab
                 original.InjectedCannonDomain = MissionSettings.Current.InjectedCannonDomain;
                 original.InjectedCannonUnit = MissionSettings.Current.InjectedCannonUnit;
             }
+            if (!original.FakeArhConversion && MissionSettings.Current.FakeArhConversion)
+                original.FakeArhConversion = true;
             catalog = (ammo ?? Enumerable.Empty<GroundAmmo>()).ToList();
             this.groundVehicles = (groundVehicles ?? Enumerable.Empty<TargetUnit>()).Where(v => !String.IsNullOrWhiteSpace(v.MainWeaponBlk)).ToList();
             this.unitWeapons = (unitWeapons ?? Enumerable.Empty<UnitWeapon>()).ToList();
             this.groundWeapons = (groundWeapons ?? Enumerable.Empty<GroundWeaponInfo>()).ToList();
             this.injectedCannonAmmo = (injectedCannonAmmo ?? Enumerable.Empty<GroundAmmo>()).ToList();
+            this.vehicleBeltOptions = (beltOptions ?? Enumerable.Empty<GroundWeaponBeltOption>()).ToList();
             this.resolveCannonAmmo = resolveCannonAmmo;
             buttonStyle = buttonStyleSource;
             toggleStyle = toggleStyleSource;
             foreach (GroundAmmoLoadout entry in original.GroundAmmoLoadouts.Where(x => x.Slot >= 0 && x.Slot < 4)) loadouts[entry.Slot] = entry.Copy();
 
+            if (!simplified)
+            {
             StackPanel header = new StackPanel();
-            header.Children.Add(Heading("GROUND CONFIGURE", 18));
-            header.Children.Add(new TextBlock { Text = item.Display + "  •  ammunition, projectile, cannon and mobility setup", Foreground = ModernPalette.Brush(ModernPalette.Cyan), Margin = new Thickness(0, 4, 0, 0) });
-            Children.Add(header);
+            if (!simplified) header.Children.Add(Heading(ModernText.L("GROUND CONFIGURE", "地面配置"), 18));
+            header.Children.Add(new TextBlock { Text = item.Display, Foreground = ModernPalette.Brush(ModernPalette.Cyan), Margin = new Thickness(0, simplified ? 0 : 4, 0, 0) });
+                Children.Add(header);
+            }
 
             Grid body = new Grid { Margin = new Thickness(0, 6, 0, 8), ClipToBounds = true };
             body.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1.25, GridUnitType.Star) });
@@ -4641,22 +5168,23 @@ namespace UniversalTestLab
             ammoGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(44) });
             ammoGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(48) });
             ammoGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
-            ammoGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(174) });
-            ammoGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(48) });
+            ammoGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(simplified ? 0 : 174) });
+            ammoGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(simplified ? 0 : 48) });
             Grid ammoHeader = new Grid(); ammoHeader.ColumnDefinitions.Add(new ColumnDefinition()); ammoHeader.ColumnDefinitions.Add(new ColumnDefinition { Width = GridLength.Auto });
             ammoHeader.Children.Add(Heading("AMMUNITION & PROJECTILE INJECTION", 15));
             totalAmmoText = new TextBlock { Foreground = ModernPalette.Brush(ModernPalette.Cyan), FontWeight = FontWeights.SemiBold, VerticalAlignment = VerticalAlignment.Center, HorizontalAlignment = HorizontalAlignment.Right };
             Grid.SetColumn(totalAmmoText, 1); ammoHeader.Children.Add(totalAmmoText); ammoGrid.Children.Add(ammoHeader);
             Grid cannonRow = new Grid { Margin = new Thickness(0, 1, 0, 1) }; cannonRow.ColumnDefinitions.Add(new ColumnDefinition { Width = GridLength.Auto }); cannonRow.ColumnDefinitions.Add(new ColumnDefinition());
-            TextBlock cannonCaption = new TextBlock { Text = "CANNON", Foreground = ModernPalette.Brush(ModernPalette.Cyan), FontWeight = FontWeights.SemiBold, FontSize = 11, VerticalAlignment = VerticalAlignment.Center, Margin = new Thickness(0, 0, 8, 0) };
+            TextBlock cannonCaption = new TextBlock { Text = ModernText.L("CANNON", "主炮"), Foreground = ModernPalette.Brush(ModernPalette.Cyan), FontWeight = FontWeights.SemiBold, FontSize = 11, VerticalAlignment = VerticalAlignment.Center, Margin = new Thickness(0, 0, 8, 0) };
             cannonSelector = new ComboBox { Foreground = ModernPalette.Brush(ModernPalette.Text), Background = ModernPalette.Brush("#FF16283E"), BorderBrush = ModernPalette.Brush(ModernPalette.Border), Padding = new Thickness(8, 3, 8, 3), Height = 32, HorizontalAlignment = HorizontalAlignment.Stretch, IsTextSearchEnabled = true, IsTextSearchCaseSensitive = false, ItemsPanel = new ItemsPanelTemplate(new FrameworkElementFactory(typeof(VirtualizingStackPanel))) };
             cannonSelector.SelectionChanged += delegate { CannonSelectorChanged(); };
             cannonRow.Children.Add(cannonCaption); Grid.SetColumn(cannonSelector, 1); cannonRow.Children.Add(cannonSelector); Grid.SetRow(cannonRow, 1); ammoGrid.Children.Add(cannonRow);
             Grid filters = new Grid(); filters.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(160) }); filters.ColumnDefinitions.Add(new ColumnDefinition()); filters.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(180) });
-            injectionToggle = new ToggleButton { Content = "INJECT ANY SHELL", Style = toggleStyle, Margin = new Thickness(0, 3, 8, 3) };
+            injectionToggle = new ToggleButton { Content = ModernText.L("INJECT ANY SHELL", "注入任意炮弹"), Style = toggleStyle, Margin = new Thickness(0, 3, 8, 3) };
             searchBox = new TextBox { Margin = new Thickness(0, 3, 8, 3) }; Grid.SetColumn(searchBox, 1);
             typeBox = new ComboBox { Margin = new Thickness(0, 3, 0, 3) }; Grid.SetColumn(typeBox, 2);
             filters.Children.Add(injectionToggle); filters.Children.Add(searchBox); filters.Children.Add(typeBox); Grid.SetRow(filters, 2); ammoGrid.Children.Add(filters);
+            if (simplified) injectionToggle.Visibility = Visibility.Collapsed;
             ammoList = new ListBox { Background = ModernPalette.Brush(ModernPalette.Field), BorderBrush = ModernPalette.Brush(ModernPalette.Border), BorderThickness = new Thickness(1), Margin = new Thickness(0, 4, 0, 7) };
             Grid.SetRow(ammoList, 3); ammoGrid.Children.Add(ammoList);
 
@@ -4664,21 +5192,22 @@ namespace UniversalTestLab
             for (int slot = 0; slot < 4; slot++) slots.Children.Add(CreateAmmoSlot(slot));
             Grid.SetRow(slots, 4); ammoGrid.Children.Add(slots);
             Grid mountRow = new Grid(); mountRow.ColumnDefinitions.Add(new ColumnDefinition()); mountRow.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(145) });
-            mountRow.Children.Add(new TextBlock { Text = "Choose a slot, select a round above, then mount it.", Foreground = ModernPalette.Brush(ModernPalette.Muted), VerticalAlignment = VerticalAlignment.Center, TextWrapping = TextWrapping.Wrap });
-            Button mount = new Button { Content = "MOUNT ROUND", Style = buttonStyle, Padding = new Thickness(18, 2, 18, 2), Margin = new Thickness(4, 0, 0, 0) }; mount.Click += delegate { MountSelectedAmmo(); }; Grid.SetColumn(mount, 1); mountRow.Children.Add(mount); Grid.SetRow(mountRow, 5); ammoGrid.Children.Add(mountRow);
+            mountRow.Children.Add(new TextBlock { Text = ModernText.L("Choose a slot, select a round above, then mount it.", "选择槽位，先在上方选择炮弹，再装填。"), Foreground = ModernPalette.Brush(ModernPalette.Muted), VerticalAlignment = VerticalAlignment.Center, TextWrapping = TextWrapping.Wrap });
+            Button mount = new Button { Content = ModernText.L("MOUNT ROUND", "装填炮弹"), Style = buttonStyle, Padding = new Thickness(18, 2, 18, 2), Margin = new Thickness(4, 0, 0, 0) }; mount.Click += delegate { MountSelectedAmmo(); }; Grid.SetColumn(mount, 1); mountRow.Children.Add(mount); Grid.SetRow(mountRow, 5); ammoGrid.Children.Add(mountRow);
             ammoCard.Child = ammoGrid; body.Children.Add(ammoCard);
 
-            Border tuningCard = Card(); ScrollViewer tuningScroll = new ScrollViewer { VerticalScrollBarVisibility = ScrollBarVisibility.Auto, HorizontalScrollBarVisibility = ScrollBarVisibility.Disabled, ClipToBounds = true };
+            Border tuningCard = Card();
+            ScrollViewer tuningScroll = new ScrollViewer { VerticalScrollBarVisibility = ScrollBarVisibility.Auto, HorizontalScrollBarVisibility = ScrollBarVisibility.Disabled, ClipToBounds = true };
             StackPanel tuningPanel = new StackPanel();
             tuningPanel.Children.Add(Heading("CROSS-DOMAIN CANNON", 15));
             Grid domainRow = new Grid { Margin = new Thickness(0, 6, 0, 0) };
             domainRow.ColumnDefinitions.Add(new ColumnDefinition());
             domainRow.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(90) });
             domainBox = new ComboBox { Foreground = ModernPalette.Brush(ModernPalette.Text), Background = ModernPalette.Brush("#FF16283E"), BorderBrush = ModernPalette.Brush(ModernPalette.Border), Padding = new Thickness(8, 4, 8, 4), Height = 32, HorizontalAlignment = HorizontalAlignment.Stretch };
-            domainBox.Items.Add(new ComboBoxItem { Content = "GROUND VEHICLE", Tag = "ground" });
-            domainBox.Items.Add(new ComboBoxItem { Content = "NAVAL SHIP", Tag = "naval" });
-            domainBox.Items.Add(new ComboBoxItem { Content = "AIRCRAFT", Tag = "aircraft" });
-            domainBox.Items.Add(new ComboBoxItem { Content = "HELICOPTER", Tag = "helicopter" });
+            domainBox.Items.Add(new ComboBoxItem { Content = ModernText.L("GROUND VEHICLE", "地面载具"), Tag = "ground" });
+            domainBox.Items.Add(new ComboBoxItem { Content = ModernText.L("NAVAL SHIP", "海上舰船"), Tag = "naval" });
+            domainBox.Items.Add(new ComboBoxItem { Content = ModernText.L("AIRCRAFT", "空中载具"), Tag = "aircraft" });
+            domainBox.Items.Add(new ComboBoxItem { Content = ModernText.L("HELICOPTER", "直升机"), Tag = "helicopter" });
             string savedDomain = String.IsNullOrWhiteSpace(original.InjectedCannonDomain) ? "ground" : original.InjectedCannonDomain;
             ComboBoxItem savedDomainItem = domainBox.Items.OfType<ComboBoxItem>().FirstOrDefault(x => String.Equals(x.Tag as string, savedDomain, StringComparison.OrdinalIgnoreCase)) ?? (ComboBoxItem)domainBox.Items[0];
             unitBox = new ComboBox { Foreground = ModernPalette.Brush(ModernPalette.Text), Background = ModernPalette.Brush("#FF16283E"), BorderBrush = ModernPalette.Brush(ModernPalette.Border), Padding = new Thickness(8, 4, 8, 4), Height = 32, Margin = new Thickness(0, 6, 0, 0), HorizontalAlignment = HorizontalAlignment.Stretch };
@@ -4686,7 +5215,7 @@ namespace UniversalTestLab
             domainBox.SelectionChanged += delegate { RefreshUnitBox(); };
             unitBox.SelectionChanged += delegate { RefreshCannonBox(); };
             cannonBox.SelectionChanged += delegate { RefreshRoundBox(); SyncLeftCannon(); };
-            Button clearCannon = new Button { Content = "CLEAR", Style = buttonStyle, Padding = new Thickness(10, 2, 10, 2), Margin = new Thickness(4, 0, 0, 0) };
+            Button clearCannon = new Button { Content = ModernText.L("CLEAR", "清除"), Style = buttonStyle, Padding = new Thickness(10, 2, 10, 2), Margin = new Thickness(4, 0, 0, 0) };
             clearCannon.Click += delegate { cannonBox.SelectedIndex = -1; };
             domainRow.Children.Add(domainBox);
             Grid.SetColumn(clearCannon, 1);
@@ -4695,7 +5224,7 @@ namespace UniversalTestLab
             tuningPanel.Children.Add(unitBox);
             tuningPanel.Children.Add(cannonBox);
             roundBox = new ComboBox { Foreground = ModernPalette.Brush(ModernPalette.Text), Background = ModernPalette.Brush("#FF16283E"), BorderBrush = ModernPalette.Brush(ModernPalette.Border), Padding = new Thickness(8, 4, 8, 4), Height = 32, Margin = new Thickness(0, 6, 0, 0), HorizontalAlignment = HorizontalAlignment.Stretch };
-            roundBox.Items.Add(new ComboBoxItem { Content = "ALL (native rounds)", Tag = "" });
+            roundBox.Items.Add(new ComboBoxItem { Content = ModernText.L("ALL (native rounds)", "全部（原生炮弹）"), Tag = "" });
             foreach (GroundAmmo injectedRound in injectedCannonAmmo)
                 roundBox.Items.Add(new ComboBoxItem { Content = injectedRound.Display, Tag = injectedRound.BulletName });
             if (!String.IsNullOrWhiteSpace(original.InjectedCannonRound))
@@ -4706,8 +5235,10 @@ namespace UniversalTestLab
             if (roundBox.SelectedItem == null) roundBox.SelectedIndex = 0;
             roundBox.SelectionChanged += delegate { SyncRoundToSlot(); };
             tuningPanel.Children.Add(roundBox);
-            ammoUnlimitedBox = new CheckBox { Content = "Unlimited ammunition (9999 per slot)", IsChecked = original.UnlimitedAmmo, Foreground = ModernPalette.Brush(ModernPalette.Text), Margin = new Thickness(0, 6, 0, 0) };
+            ammoUnlimitedBox = new CheckBox { Content = ModernText.L("Unlimited ammunition (9999 per slot)", "无限弹药（每槽 9999）"), IsChecked = original.UnlimitedAmmo, Foreground = ModernPalette.Brush(ModernPalette.Text), Margin = new Thickness(0, 6, 0, 0) };
             tuningPanel.Children.Add(ammoUnlimitedBox);
+            fakeArhBox = new CheckBox { Content = ModernText.L("Fake-ARH conversion (SARH missiles self-guide, TWS launch)", "伪ARH转换（半主动弹自主制导，TWS直射）"), IsChecked = original.FakeArhConversion, Foreground = ModernPalette.Brush(ModernPalette.Cyan), Margin = new Thickness(0, 6, 0, 0), ToolTip = "Injects active seeker + permanently-activated guidance into radar missiles so they launch without a pre-launch lock (SARH -> ARH). Verified on AIM-7E-2: active:b, permanentlyActivated, lockDistance, inertialNavigation+datalink, breakLockMaxTime=160, wider seeker angles, distGate, shotFreq cap." };
+            tuningPanel.Children.Add(fakeArhBox);
             domainBox.SelectedItem = savedDomainItem;
             RefreshCannonBox();
             BuildCannonSelector();
@@ -4716,7 +5247,7 @@ namespace UniversalTestLab
             tuningPanel.Children.Add(new Border { Height = 1, Background = ModernPalette.Brush(ModernPalette.Border), Margin = new Thickness(0, 10, 0, 10) });
             tuningPanel.Children.Add(Heading("REAL VEHICLE VALUES", 15));
 
-            overrideBallistics = new CheckBox { Content = "Override native values", IsChecked = original.OverrideGroundBallistics, Foreground = ModernPalette.Brush(ModernPalette.Cyan), Margin = new Thickness(0, 12, 0, 7) }; tuningPanel.Children.Add(overrideBallistics);
+            overrideBallistics = new CheckBox { Content = ModernText.L("Override native values", "覆盖原生数值"), IsChecked = original.OverrideGroundBallistics, Foreground = ModernPalette.Brush(ModernPalette.Cyan), Margin = new Thickness(0, 12, 0, 7) }; tuningPanel.Children.Add(overrideBallistics);
             tuningPanel.Children.Add(new TextBlock { Text = "Projectile values follow the selected ammunition slot. Every field can be typed directly.", Foreground = ModernPalette.Brush(ModernPalette.Muted), TextWrapping = TextWrapping.Wrap, Margin = new Thickness(0, 0, 0, 6) });
             projectileReference = ResolveProjectileReference();
             AddValue(tuningPanel, "PROJECTILE MASS", "projectileMass", projectileReference == null ? 0 : projectileReference.Mass, original.ProjectileMassMultiplier, "kg");
@@ -4731,13 +5262,30 @@ namespace UniversalTestLab
             AddValue(tuningPanel, "VEHICLE MASS", "mass", vehicle.NativeMass, original.VehicleMassMultiplier, "kg");
             AddValue(tuningPanel, "FORWARD SPEED LIMIT", "forward", vehicle.NativeForwardSpeed, original.ForwardSpeedMultiplier, "km/h");
             AddValue(tuningPanel, "REVERSE SPEED LIMIT", "reverse", vehicle.NativeReverseSpeed, original.ReverseSpeedMultiplier, "km/h");
-            Button resetAll = new Button { Content = "RESET ALL TO CURRENT STOCK", Style = buttonStyle, Padding = new Thickness(14, 2, 14, 2), Margin = new Thickness(0, 10, 0, 4) }; resetAll.Click += delegate { ResetAllValues(); }; tuningPanel.Children.Add(resetAll);
+            Button resetAll = new Button { Content = ModernText.L("RESET ALL TO CURRENT STOCK", "重置为当前默认弹"), Style = buttonStyle, Padding = new Thickness(14, 2, 14, 2), Margin = new Thickness(0, 10, 0, 4) }; resetAll.Click += delegate { ResetAllValues(); }; tuningPanel.Children.Add(resetAll);
             tuningPanel.Children.Add(new TextBlock { Text = "Stock reset uses this vehicle's current game definition; selected research modules remain configured separately in Modules.", Foreground = ModernPalette.Brush(ModernPalette.Muted), TextWrapping = TextWrapping.Wrap, Margin = new Thickness(0, 8, 0, 4) });
             tuningScroll.Content = tuningPanel; tuningCard.Child = tuningScroll; Grid.SetColumn(tuningCard, 2); body.Children.Add(tuningCard);
+            if (simplified)
+            {
+                // Home panel: the right card holds the 4 ammunition slots (MOUNT + pool)
+                // instead of the cross-domain cannon / projectile tuning.
+                StackPanel slotPanel = new StackPanel();
+                slotPanel.Children.Add(Heading("AMMUNITION SLOTS", 15));
+                UniformGrid slotGrid = new UniformGrid { Rows = 2, Columns = 2, Margin = new Thickness(0, 6, 0, 6) };
+                for (int slot = 0; slot < 4; slot++) slotGrid.Children.Add(CreateAmmoSlot(slot));
+                slotPanel.Children.Add(slotGrid);
+                Grid slotMountRow = new Grid(); slotMountRow.ColumnDefinitions.Add(new ColumnDefinition()); slotMountRow.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(120) });
+                slotMountRow.Children.Add(new TextBlock { Text = ModernText.L("Select a round, pick a slot, mount it.", "选择炮弹与槽位并装填。"), Foreground = ModernPalette.Brush(ModernPalette.Muted), VerticalAlignment = VerticalAlignment.Center, TextWrapping = TextWrapping.Wrap });
+                Button slotMount = new Button { Content = ModernText.L("MOUNT ROUND", "装填炮弹"), Style = buttonStyle, Padding = new Thickness(14, 2, 14, 2), Margin = new Thickness(4, 0, 0, 0) }; slotMount.Click += delegate { MountSelectedAmmo(); }; Grid.SetColumn(slotMount, 1); slotMountRow.Children.Add(slotMount);
+                slotPanel.Children.Add(slotMountRow);
+                slotPanel.Children.Add(new TextBlock { Text = ModernText.L("STOCK = native default round (empty slot + count).", "STOCK = 原生默认弹（空槽 + 数量）。"), Foreground = ModernPalette.Brush(ModernPalette.Muted), TextWrapping = TextWrapping.Wrap, Margin = new Thickness(0, 8, 0, 0) });
+                tuningCard.Child = slotPanel;
+            }
 
             typeBox.Items.Add("All Projectile Types"); foreach (string kind in catalog.Select(x => x.Type).Distinct().OrderBy(x => x)) typeBox.Items.Add(kind); typeBox.SelectedIndex = 0;
             injectionToggle.IsChecked = false; injectionToggle.Checked += delegate { RefreshAmmo(); }; injectionToggle.Unchecked += delegate { RefreshAmmo(); }; searchBox.TextChanged += delegate { RefreshAmmo(); }; typeBox.SelectionChanged += delegate { RefreshAmmo(); };
             overrideBallistics.Checked += delegate { UpdateTuningState(); }; overrideBallistics.Unchecked += delegate { UpdateTuningState(); };
+            if (simplified) currentCannon = new CannonChoice { Blk = vehicle.MainWeaponBlk, Display = "PRIMARY", IsNative = true };
             SelectSlot(0); RefreshAmmo(); RefreshSlotEditors();
             UpdateTuningState();
         }
@@ -4751,10 +5299,12 @@ namespace UniversalTestLab
         {
             GroundAmmoSlotEditor editor = new GroundAmmoSlotEditor { Slot = slot };
             editor.Card = new Border { CornerRadius = new CornerRadius(10), BorderThickness = new Thickness(1), BorderBrush = ModernPalette.Brush(ModernPalette.Border), Background = ModernPalette.Brush("#8A24324D"), Padding = new Thickness(8), Margin = new Thickness(3) };
-            Grid grid = new Grid(); grid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(28) }); grid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(22) }); grid.RowDefinitions.Add(new RowDefinition());
-            editor.Select = new Button { Content = "AMMO " + (slot + 1).ToString(CultureInfo.InvariantCulture), Tag = slot, Style = buttonStyle, Padding = new Thickness(5, 1, 5, 1) };
+            Grid grid = new Grid(); grid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(28) }); grid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(22) }); grid.RowDefinitions.Add(new RowDefinition()); grid.ColumnDefinitions.Add(new ColumnDefinition()); grid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(30) });
+            editor.Select = new Button { Content = ModernText.L("AMMO ", "槽位 ") + (slot + 1).ToString(CultureInfo.InvariantCulture), Tag = slot, Style = buttonStyle, Padding = new Thickness(5, 1, 5, 1) };
             editor.Select.Click += delegate { SelectSlot(editor.Slot); }; grid.Children.Add(editor.Select);
-            editor.Name = new TextBlock { Text = "EMPTY", Foreground = ModernPalette.Brush(ModernPalette.Muted), FontSize = 10, TextTrimming = TextTrimming.CharacterEllipsis, VerticalAlignment = VerticalAlignment.Center };
+            Button clear = new Button { Content = "\u00d7", Tag = slot, Style = buttonStyle, Padding = new Thickness(0, 1, 0, 1), Margin = new Thickness(4, 0, 0, 0), ToolTip = "Clear this ammunition slot", FontSize = 12, Foreground = ModernPalette.Brush(ModernPalette.Muted) };
+            clear.Click += delegate { if (loadouts.ContainsKey(editor.Slot)) loadouts.Remove(editor.Slot); RefreshSlotEditors(); }; Grid.SetColumn(clear, 1); grid.Children.Add(clear);
+            editor.Name = new TextBlock { Text = ModernText.L("EMPTY", "空"), Foreground = ModernPalette.Brush(ModernPalette.Muted), FontSize = 10, TextTrimming = TextTrimming.CharacterEllipsis, VerticalAlignment = VerticalAlignment.Center };
             Grid.SetRow(editor.Name, 1); grid.Children.Add(editor.Name);
             Grid count = new Grid(); count.ColumnDefinitions.Add(new ColumnDefinition()); count.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(60) }); count.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(64) });
             editor.Count = new Slider { Minimum = 0, Maximum = AmmoCapacity, TickFrequency = 1, IsSnapToTickEnabled = true, VerticalAlignment = VerticalAlignment.Center };
@@ -4772,9 +5322,9 @@ namespace UniversalTestLab
             tuningStock[key] = stock;
             Grid row = new Grid { Margin = new Thickness(0, 3, 0, 5) };
             row.ColumnDefinitions.Add(new ColumnDefinition()); row.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(92) }); row.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(54) });
-            StackPanel labelStack = new StackPanel(); labelStack.Children.Add(Caption(label)); labelStack.Children.Add(new TextBlock { Text = "Stock: " + FormatValue(stock) + " " + unit, Foreground = ModernPalette.Brush(ModernPalette.Muted), FontSize = 9, Margin = new Thickness(0, 2, 4, 0) }); row.Children.Add(labelStack);
+            StackPanel labelStack = new StackPanel(); labelStack.Children.Add(Caption(label)); labelStack.Children.Add(new TextBlock { Text = ModernText.L("Stock: ", "默认弹: ") + FormatValue(stock) + " " + unit, Foreground = ModernPalette.Brush(ModernPalette.Muted), FontSize = 9, Margin = new Thickness(0, 2, 4, 0) }); row.Children.Add(labelStack);
             TextBox box = new TextBox { Text = FormatValue(initial), Height = 34, Padding = new Thickness(8, 3, 8, 3), Tag = unit }; Grid.SetColumn(box, 1); row.Children.Add(box);
-            Button reset = new Button { Content = "RESET", Style = buttonStyle, FontSize = 9, Padding = new Thickness(2), Margin = new Thickness(5, 0, 0, 0), Tag = key };
+            Button reset = new Button { Content = ModernText.L("RESET", "重置"), Style = buttonStyle, FontSize = 9, Padding = new Thickness(2), Margin = new Thickness(5, 0, 0, 0), Tag = key };
             reset.Click += delegate { ResetValue((string)reset.Tag); }; Grid.SetColumn(reset, 2); row.Children.Add(reset);
             panel.Children.Add(row); tuning[key] = box;
         }
@@ -4783,6 +5333,7 @@ namespace UniversalTestLab
 
         private double ReadValue(string key)
         {
+            if (!tuning.ContainsKey(key)) return 0;
             double value;
             string text = (tuning[key].Text ?? "").Trim();
             if (Double.TryParse(text, NumberStyles.Float, CultureInfo.InvariantCulture, out value) || Double.TryParse(text, NumberStyles.Float, CultureInfo.CurrentCulture, out value)) return Math.Max(0, value);
@@ -4791,6 +5342,7 @@ namespace UniversalTestLab
 
         private double Ratio(string key)
         {
+            if (!tuningStock.ContainsKey(key)) return 1.0;
             double stock = tuningStock[key];
             return stock > 0 ? ReadValue(key) / stock : 1.0;
         }
@@ -4859,6 +5411,15 @@ namespace UniversalTestLab
         private void BuildCannonSelector()
         {
             if (cannonSelector == null) return;
+            if (simplified)
+            {
+                // Home panel: native weapons only (no cross-domain cannon list).
+                foreach (GroundWeaponInfo gw in groundWeapons.Where(x => !String.IsNullOrWhiteSpace(x.Blk)).OrderBy(x => x.Display))
+                    cannonSelector.Items.Add(new ComboBoxItem { Content = ModernText.L("NATIVE  \u2022  ", "原生  \u2022  ") + gw.Display, Tag = new CannonChoice { Blk = gw.Blk, Display = gw.Display, IsNative = true } });
+                if (cannonSelector.Items.Count == 0 && !String.IsNullOrWhiteSpace(vehicle.MainWeaponBlk))
+                    cannonSelector.Items.Add(new ComboBoxItem { Content = ModernText.L("NATIVE  \u2022  PRIMARY", "原生  \u2022  主武器"), Tag = new CannonChoice { Blk = vehicle.MainWeaponBlk, Display = "PRIMARY", IsNative = true } });
+                return;
+            }
             List<GroundWeaponInfo> mains = new List<GroundWeaponInfo>();
             List<GroundWeaponInfo> secondary = new List<GroundWeaponInfo>();
             foreach (GroundWeaponInfo gw in groundWeapons.Where(x => !String.IsNullOrWhiteSpace(x.Blk)))
@@ -4869,24 +5430,24 @@ namespace UniversalTestLab
             bool anyNative = false;
             foreach (GroundWeaponInfo gw in mains)
             {
-                cannonSelector.Items.Add(new ComboBoxItem { Content = "NATIVE  •  " + gw.Display, Tag = new CannonChoice { Blk = gw.Blk, Display = gw.Display, IsNative = true } });
+                cannonSelector.Items.Add(new ComboBoxItem { Content = ModernText.L("NATIVE  •  ", "原生  •  ") + gw.Display, Tag = new CannonChoice { Blk = gw.Blk, Display = gw.Display, IsNative = true } });
                 anyNative = true;
             }
             if (!anyNative && secondary.Count > 0)
             {
                 foreach (GroundWeaponInfo gw in secondary)
                 {
-                    cannonSelector.Items.Add(new ComboBoxItem { Content = "NATIVE  •  " + gw.Display, Tag = new CannonChoice { Blk = gw.Blk, Display = gw.Display, IsNative = true } });
+                    cannonSelector.Items.Add(new ComboBoxItem { Content = ModernText.L("NATIVE  •  ", "原生  •  ") + gw.Display, Tag = new CannonChoice { Blk = gw.Blk, Display = gw.Display, IsNative = true } });
                     anyNative = true;
                 }
             }
             if (!anyNative && !String.IsNullOrWhiteSpace(vehicle.MainWeaponBlk))
-                cannonSelector.Items.Add(new ComboBoxItem { Content = "NATIVE  •  PRIMARY", Tag = new CannonChoice { Blk = vehicle.MainWeaponBlk, Display = "PRIMARY", IsNative = true } });
+                cannonSelector.Items.Add(new ComboBoxItem { Content = ModernText.L("NATIVE  •  PRIMARY", "原生  •  主武器"), Tag = new CannonChoice { Blk = vehicle.MainWeaponBlk, Display = "PRIMARY", IsNative = true } });
             if (mains.Count > 0 && secondary.Count > 0)
             {
-                cannonSelector.Items.Add(new ComboBoxItem { Content = "— SECONDARY (MACHINE GUNS / SMOKE) —", IsEnabled = false, Foreground = System.Windows.Media.Brushes.Gray });
+                cannonSelector.Items.Add(new ComboBoxItem { Content = ModernText.L("— SECONDARY (MACHINE GUNS / SMOKE) —", "— 次要武器（机枪 / 烟雾）—"), IsEnabled = false, Foreground = System.Windows.Media.Brushes.Gray });
                 foreach (GroundWeaponInfo gw in secondary)
-                    cannonSelector.Items.Add(new ComboBoxItem { Content = "NATIVE  •  " + gw.Display, Foreground = System.Windows.Media.Brushes.Gray, Tag = new CannonChoice { Blk = gw.Blk, Display = gw.Display, IsNative = true } });
+                    cannonSelector.Items.Add(new ComboBoxItem { Content = ModernText.L("NATIVE  •  ", "原生  •  ") + gw.Display, Foreground = System.Windows.Media.Brushes.Gray, Tag = new CannonChoice { Blk = gw.Blk, Display = gw.Display, IsNative = true } });
             }
             foreach (string domain in new[] { "ground", "naval", "aircraft", "helicopter" })
             {
@@ -5030,11 +5591,14 @@ namespace UniversalTestLab
             if (currentCannon != null && !currentCannon.IsNative)
             {
                 query = ResolveCannonAmmoCached(currentCannon.Blk);
-                if (injectionToggle.IsChecked == true) query = query.Concat(catalog);
+                if (injectionToggle != null && injectionToggle.IsChecked == true) query = query.Concat(catalog);
             }
-            else if (currentCannon != null && currentCannon.IsNative && injectionToggle.IsChecked != true)
+            else if (currentCannon != null && currentCannon.IsNative && injectionToggle == null || injectionToggle.IsChecked != true)
             {
-                query = catalog.Where(x => SameBlk(x.SourceBlk, currentCannon.Blk));
+                // Native cannon: only rounds whose cannon container belongs to this
+                // vehicle's ammo packages (beltOptions) - the same cannon can serve
+                // vehicles with different ammunition (Type16 vs Type16 FPS).
+                query = catalog.Where(x => SameBlk(x.SourceBlk, currentCannon.Blk) && ContainerAllowed(x.Container));
             }
             else
             {
@@ -5042,6 +5606,13 @@ namespace UniversalTestLab
                 if (injectionToggle.IsChecked != true && CannonBlkSet.Count > 0) query = query.Where(x => CannonBlkSet.Contains(x.SourceBlk));
             }
             if (injectedCannonAmmo != null && injectedCannonAmmo.Count > 0) query = query.Concat(injectedCannonAmmo);
+            if (simplified)
+            {
+                // STOCK (native default round) is the first entry; it is written as an
+                // empty slot (bulletsN:t="" + count) exactly like Ask3lad.
+                int stockCal = currentCannon == null ? 0 : ModernMainWindow.GroundCalibre(currentCannon.Blk);
+                query = new[] { new GroundAmmo { SourceBlk = "stock:" + stockCal.ToString(CultureInfo.InvariantCulture), BulletName = "", Display = ModernText.L("STOCK \u2022 default ammunition", "STOCK \u2022 default ammunition"), Type = "Default", Caliber = stockCal } }.Concat(query);
+            }
             string search = (searchBox.Text ?? "").Trim(); if (search.Length > 0) query = query.Where(x => x.Display.IndexOf(search, StringComparison.CurrentCultureIgnoreCase) >= 0 || x.BulletName.IndexOf(search, StringComparison.OrdinalIgnoreCase) >= 0 || x.Type.IndexOf(search, StringComparison.OrdinalIgnoreCase) >= 0);
             string type = typeBox.SelectedIndex > 0 ? typeBox.SelectedItem as string : null; if (!String.IsNullOrEmpty(type)) query = query.Where(x => x.Type == type);
             ammoList.ItemsSource = query.OrderBy(x => x.Caliber).ThenBy(x => x.Type).ThenBy(x => x.Display).ToList();
@@ -5058,6 +5629,16 @@ namespace UniversalTestLab
         {
             GroundAmmo ammo = ammoList.SelectedItem as GroundAmmo; if (ammo == null) return;
             GroundAmmoLoadout existing; loadouts.TryGetValue(selectedSlot, out existing);
+            if (simplified && ammo.BulletName != null && ammo.BulletName.Length == 0)
+            {
+                // STOCK: empty slot + count -> the game loads the native default round.
+                int stockOthers = loadouts.Values.Where(x => x.Slot != selectedSlot && x.SourceBlk != null && x.SourceBlk.StartsWith("stock:", StringComparison.OrdinalIgnoreCase)).Sum(x => Math.Max(0, x.Count));
+                int stockAvailable = Math.Max(0, AmmoCapacity - stockOthers);
+                int stockCount = existing == null ? Math.Max(1, stockAvailable) : Math.Min(Math.Max(1, existing.Count), stockAvailable);
+                loadouts[selectedSlot] = new GroundAmmoLoadout { Slot = selectedSlot, Count = stockCount, SourceBlk = ammo.SourceBlk, BulletName = "" };
+                SetProjectileReference(ammo); RefreshSlotEditors(); SelectSlot(selectedSlot);
+                return;
+            }
             int others = loadouts.Values.Where(x => x.Slot != selectedSlot && SameBlk(x.SourceBlk, ammo.SourceBlk)).Sum(x => Math.Max(0, x.Count));
             int available = Math.Max(0, AmmoTotalFor(new GroundAmmoLoadout { SourceBlk = ammo.SourceBlk }) - others);
             int count;
@@ -5067,7 +5648,7 @@ namespace UniversalTestLab
             }
             else
             {
-                count = existing == null ? Math.Min(1, available) : Math.Min(Math.Max(1, existing.Count), available);
+                count = existing == null ? (simplified ? Math.Max(1, available) : Math.Min(1, available)) : Math.Min(Math.Max(1, existing.Count), available);
             }
             loadouts[selectedSlot] = new GroundAmmoLoadout { Slot = selectedSlot, Count = count, SourceBlk = ammo.SourceBlk, BulletName = ammo.BulletName };
             SetProjectileReference(ammo); RefreshSlotEditors(); SelectSlot(selectedSlot);
@@ -5106,9 +5687,10 @@ namespace UniversalTestLab
                     editor.Count.Maximum = gunTotal;
                     editor.Count.Value = current;
                     editor.Value.Text = current.ToString(CultureInfo.InvariantCulture) + " / " + allowedMaximum.ToString(CultureInfo.InvariantCulture);
-                    editor.Count.ToolTip = "Loaded: " + current.ToString(CultureInfo.InvariantCulture) + "  •  Maximum currently available: " + allowedMaximum.ToString(CultureInfo.InvariantCulture);
+                    editor.Count.ToolTip = ModernText.L("Loaded: ", "已加载: ") + current.ToString(CultureInfo.InvariantCulture) + "  •  Maximum currently available: " + allowedMaximum.ToString(CultureInfo.InvariantCulture);
                     GroundAmmo ammo = FindAmmoForLoadout(entry);
-                    editor.Name.Text = ammo == null ? "EMPTY" : ammo.Display + "  •  " + ammo.Type;
+                    if (entry != null && entry.SourceBlk != null && entry.SourceBlk.StartsWith("stock:", StringComparison.OrdinalIgnoreCase)) editor.Name.Text = ModernText.L("STOCK • default ammunition", "STOCK • 默认弹药");
+                    else editor.Name.Text = ammo == null ? ModernText.L("EMPTY", "空") : ammo.Display + "  •  " + ammo.Type;
                 }
                 if (currentCannon != null && !currentCannon.IsNative)
                 {
@@ -5139,7 +5721,7 @@ namespace UniversalTestLab
                 if (!seen.Add(uw.UnitId)) continue;
                 unitBox.Items.Add(new ComboBoxItem { Content = uw.UnitDisplay, Tag = uw.UnitId });
             }
-            if (unitBox.Items.Count == 0) unitBox.Items.Add(new ComboBoxItem { Content = "(no units in this domain)", Tag = null });
+            if (unitBox.Items.Count == 0) unitBox.Items.Add(new ComboBoxItem { Content = ModernText.L("(no units in this domain)", "（该领域无单位）"), Tag = null });
             if (!String.IsNullOrWhiteSpace(original.InjectedCannonUnit))
             {
                 ComboBoxItem match = unitBox.Items.OfType<ComboBoxItem>().FirstOrDefault(x => String.Equals(x.Tag as string, original.InjectedCannonUnit, StringComparison.OrdinalIgnoreCase));
@@ -5157,7 +5739,7 @@ namespace UniversalTestLab
             string unitId = unitItem == null ? null : unitItem.Tag as string;
             if (String.IsNullOrEmpty(unitId))
             {
-                cannonBox.Items.Add(new ComboBoxItem { Content = "(select a unit)", Tag = null });
+                cannonBox.Items.Add(new ComboBoxItem { Content = ModernText.L("(select a unit)", "（选择单位）"), Tag = null });
                 return;
             }
             foreach (UnitWeapon uw in unitWeapons.Where(x => String.Equals(x.Domain, domain, StringComparison.OrdinalIgnoreCase) && String.Equals(x.UnitId, unitId, StringComparison.OrdinalIgnoreCase)).OrderBy(x => x.WeaponDisplay))
@@ -5177,7 +5759,7 @@ namespace UniversalTestLab
             ComboBoxItem previous = roundBox.SelectedItem as ComboBoxItem;
             string previousTag = previous == null ? null : (previous.Tag as string);
             roundBox.Items.Clear();
-            roundBox.Items.Add(new ComboBoxItem { Content = "ALL (native rounds)", Tag = "" });
+            roundBox.Items.Add(new ComboBoxItem { Content = ModernText.L("ALL (native rounds)", "全部（原生炮弹）"), Tag = "" });
             if (!String.IsNullOrWhiteSpace(blk))
             {
                 foreach (GroundAmmo ammo in ResolveCannonAmmoCached(blk))
@@ -5218,7 +5800,17 @@ namespace UniversalTestLab
         public AircraftSettings Collect()
         {
             AircraftSettings result = original.Copy(); result.GroundAmmoLoadouts.Clear(); foreach (GroundAmmoLoadout entry in loadouts.Values.Where(x => x.Count > 0).OrderBy(x => x.Slot)) result.GroundAmmoLoadouts.Add(entry.Copy());
-            result.OverrideGroundBallistics = overrideBallistics.IsChecked == true;
+            if (simplified)
+            {
+                // The home panel only configures native ammunition; leave any injected
+                // cross-domain cannon (EXPERIMENTAL GROUND CONFIGURE) untouched.
+                result.InjectedCannonBlk = original.InjectedCannonBlk;
+                result.InjectedCannonDomain = original.InjectedCannonDomain;
+                result.InjectedCannonUnit = original.InjectedCannonUnit;
+                result.InjectedCannonRound = original.InjectedCannonRound;
+                return result;
+            }
+            result.OverrideGroundBallistics = overrideBallistics != null && overrideBallistics.IsChecked == true;
             result.ProjectileMassMultiplier = result.OverrideGroundBallistics ? Ratio("projectileMass") : 1; result.MuzzleVelocityMultiplier = result.OverrideGroundBallistics ? Ratio("velocity") : 1; result.ExplosiveMassMultiplier = result.OverrideGroundBallistics ? Ratio("explosive") : 1; result.PenetrationMultiplier = result.OverrideGroundBallistics ? Ratio("penetration") : 1;
             result.ReloadSeconds = ReadValue("reload"); result.RecoilMultiplier = result.OverrideGroundBallistics ? Ratio("recoil") : 1; result.EnginePowerMultiplier = result.OverrideGroundBallistics ? Ratio("engine") : 1; result.VehicleMassMultiplier = result.OverrideGroundBallistics ? Ratio("mass") : 1; result.ForwardSpeedMultiplier = result.OverrideGroundBallistics ? Ratio("forward") : 1; result.ReverseSpeedMultiplier = result.OverrideGroundBallistics ? Ratio("reverse") : 1;
             CannonChoice cannonChoice = cannonSelector == null ? null : ((cannonSelector.SelectedItem as ComboBoxItem) == null ? null : (cannonSelector.SelectedItem as ComboBoxItem).Tag as CannonChoice);
@@ -5249,12 +5841,16 @@ namespace UniversalTestLab
                 result.InjectedCannonRound = roundSelection == null || !(roundSelection.Tag is string) ? null : (string)roundSelection.Tag;
             }
             result.UnlimitedAmmo = ammoUnlimitedBox == null ? original.UnlimitedAmmo : ammoUnlimitedBox.IsChecked == true;
+            result.FakeArhConversion = fakeArhBox == null ? original.FakeArhConversion : fakeArhBox.IsChecked == true;
             return result;
         }
     }
 
     internal sealed class ModernGroundConfigureWindow : ModernDialogWindow
     {
+        // Home panel simplified mode flag (window is always the full cross-domain lab).
+        private readonly bool simplified = false;
+        private Style buttonStyle { get { return (Style)DialogRoot.Resources["ButtonStyle"]; } }
         private readonly Aircraft vehicle;
         private readonly AircraftSettings original;
         private readonly List<GroundAmmo> catalog;
@@ -5277,6 +5873,7 @@ namespace UniversalTestLab
         private bool syncingCannon;
         private readonly IList<UnitWeapon> unitWeapons;
         private readonly IList<GroundAmmo> injectedCannonAmmo;
+        private readonly IList<GroundWeaponBeltOption> vehicleBeltOptions;
         private readonly IList<GroundWeaponInfo> groundWeapons;
                 private readonly List<TargetUnit> groundVehicles;
         private readonly ListBox ammoList;
@@ -5289,7 +5886,19 @@ namespace UniversalTestLab
 
         private int AmmoCapacity { get { return vehicle.MaxAmmo > 0 ? vehicle.MaxAmmo : 200; } }
 
-        public ModernGroundConfigureWindow(Aircraft item, AircraftSettings current, IEnumerable<GroundAmmo> ammo, IEnumerable<TargetUnit> groundVehicles, IEnumerable<UnitWeapon> unitWeapons, IEnumerable<GroundWeaponInfo> groundWeapons, IEnumerable<GroundAmmo> injectedCannonAmmo, Func<string, IList<GroundAmmo>> resolveCannonAmmo) : base("Ground Configure — " + item.Display, 1180, 780)
+        private bool ContainerAllowed(string container)
+        {
+            // Unnamed default rounds (empty container) are the STOCK ammunition - they
+            // cannot be written into a slot by name (the game falls back and shows a
+            // wrong round), so they are hidden here; STOCK covers them.
+            if (String.IsNullOrWhiteSpace(container)) return false;
+            if (vehicleBeltOptions == null || vehicleBeltOptions.Count == 0) return true; // no data -> keep old behaviour
+            foreach (GroundWeaponBeltOption belt in vehicleBeltOptions)
+                if (belt != null && String.Equals(belt.Name, container, StringComparison.OrdinalIgnoreCase)) return true;
+            return false;
+        }
+
+        public ModernGroundConfigureWindow(Aircraft item, AircraftSettings current, IEnumerable<GroundAmmo> ammo, IEnumerable<TargetUnit> groundVehicles, IEnumerable<UnitWeapon> unitWeapons, IEnumerable<GroundWeaponInfo> groundWeapons, IEnumerable<GroundAmmo> injectedCannonAmmo, IEnumerable<GroundWeaponBeltOption> beltOptions, Func<string, IList<GroundAmmo>> resolveCannonAmmo) : base("Ground Configure — " + item.Display, 1180, 780)
         {
             vehicle = item;
             original = (current ?? new AircraftSettings()).Copy();
@@ -5306,6 +5915,7 @@ namespace UniversalTestLab
             this.unitWeapons = (unitWeapons ?? Enumerable.Empty<UnitWeapon>()).ToList();
             this.groundWeapons = (groundWeapons ?? Enumerable.Empty<GroundWeaponInfo>()).ToList();
             this.injectedCannonAmmo = (injectedCannonAmmo ?? Enumerable.Empty<GroundAmmo>()).ToList();
+            this.vehicleBeltOptions = (beltOptions ?? Enumerable.Empty<GroundWeaponBeltOption>()).ToList();
             this.resolveCannonAmmo = resolveCannonAmmo;
             foreach (GroundAmmoLoadout entry in original.GroundAmmoLoadouts.Where(x => x.Slot >= 0 && x.Slot < 4)) loadouts[entry.Slot] = entry.Copy();
 
@@ -5315,7 +5925,7 @@ namespace UniversalTestLab
             layout.RowDefinitions.Add(new RowDefinition { Height = new GridLength(58) });
             ContentCard.Child = layout;
             StackPanel header = new StackPanel();
-            header.Children.Add(Heading("GROUND CONFIGURE", 22));
+            header.Children.Add(Heading(ModernText.L("GROUND CONFIGURE", "地面配置"), 22));
             header.Children.Add(new TextBlock { Text = item.Display + "  •  ammunition, projectile, cannon and mobility setup", Foreground = ModernPalette.Brush(ModernPalette.Cyan), Margin = new Thickness(0, 4, 0, 0) });
             layout.Children.Add(header);
 
@@ -5330,19 +5940,19 @@ namespace UniversalTestLab
             ammoGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(44) });
             ammoGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(48) });
             ammoGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
-            ammoGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(174) });
-            ammoGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(48) });
+            ammoGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(simplified ? 0 : 174) });
+            ammoGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(simplified ? 0 : 48) });
             Grid ammoHeader = new Grid(); ammoHeader.ColumnDefinitions.Add(new ColumnDefinition()); ammoHeader.ColumnDefinitions.Add(new ColumnDefinition { Width = GridLength.Auto });
             ammoHeader.Children.Add(Heading("AMMUNITION & PROJECTILE INJECTION", 15));
             totalAmmoText = new TextBlock { Foreground = ModernPalette.Brush(ModernPalette.Cyan), FontWeight = FontWeights.SemiBold, VerticalAlignment = VerticalAlignment.Center, HorizontalAlignment = HorizontalAlignment.Right };
             Grid.SetColumn(totalAmmoText, 1); ammoHeader.Children.Add(totalAmmoText); ammoGrid.Children.Add(ammoHeader);
             Grid cannonRow = new Grid { Margin = new Thickness(0, 1, 0, 1) }; cannonRow.ColumnDefinitions.Add(new ColumnDefinition { Width = GridLength.Auto }); cannonRow.ColumnDefinitions.Add(new ColumnDefinition());
-            TextBlock cannonCaption = new TextBlock { Text = "CANNON", Foreground = ModernPalette.Brush(ModernPalette.Cyan), FontWeight = FontWeights.SemiBold, FontSize = 11, VerticalAlignment = VerticalAlignment.Center, Margin = new Thickness(0, 0, 8, 0) };
+            TextBlock cannonCaption = new TextBlock { Text = ModernText.L("CANNON", "主炮"), Foreground = ModernPalette.Brush(ModernPalette.Cyan), FontWeight = FontWeights.SemiBold, FontSize = 11, VerticalAlignment = VerticalAlignment.Center, Margin = new Thickness(0, 0, 8, 0) };
             cannonSelector = new ComboBox { Foreground = ModernPalette.Brush(ModernPalette.Text), Background = ModernPalette.Brush("#FF16283E"), BorderBrush = ModernPalette.Brush(ModernPalette.Border), Padding = new Thickness(8, 3, 8, 3), Height = 32, HorizontalAlignment = HorizontalAlignment.Stretch, IsTextSearchEnabled = true, IsTextSearchCaseSensitive = false, ItemsPanel = new ItemsPanelTemplate(new FrameworkElementFactory(typeof(VirtualizingStackPanel))) };
             cannonSelector.SelectionChanged += delegate { CannonSelectorChanged(); };
             cannonRow.Children.Add(cannonCaption); Grid.SetColumn(cannonSelector, 1); cannonRow.Children.Add(cannonSelector); Grid.SetRow(cannonRow, 1); ammoGrid.Children.Add(cannonRow);
             Grid filters = new Grid(); filters.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(160) }); filters.ColumnDefinitions.Add(new ColumnDefinition()); filters.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(180) });
-            injectionToggle = new ToggleButton { Content = "INJECT ANY SHELL", Style = (Style)DialogRoot.Resources["ToggleStyle"], Margin = new Thickness(0, 3, 8, 3) };
+            injectionToggle = new ToggleButton { Content = ModernText.L("INJECT ANY SHELL", "注入任意炮弹"), Style = (Style)DialogRoot.Resources["ToggleStyle"], Margin = new Thickness(0, 3, 8, 3) };
             searchBox = new TextBox { Margin = new Thickness(0, 3, 8, 3) }; Grid.SetColumn(searchBox, 1);
             typeBox = new ComboBox { Margin = new Thickness(0, 3, 0, 3) }; Grid.SetColumn(typeBox, 2);
             filters.Children.Add(injectionToggle); filters.Children.Add(searchBox); filters.Children.Add(typeBox); Grid.SetRow(filters, 2); ammoGrid.Children.Add(filters);
@@ -5353,21 +5963,22 @@ namespace UniversalTestLab
             for (int slot = 0; slot < 4; slot++) slots.Children.Add(CreateAmmoSlot(slot));
             Grid.SetRow(slots, 4); ammoGrid.Children.Add(slots);
             Grid mountRow = new Grid(); mountRow.ColumnDefinitions.Add(new ColumnDefinition()); mountRow.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(145) });
-            mountRow.Children.Add(new TextBlock { Text = "Choose a slot, select a round above, then mount it.", Foreground = ModernPalette.Brush(ModernPalette.Muted), VerticalAlignment = VerticalAlignment.Center, TextWrapping = TextWrapping.Wrap });
-            Button mount = DialogButton("MOUNT ROUND", true); mount.Click += delegate { MountSelectedAmmo(); }; Grid.SetColumn(mount, 1); mountRow.Children.Add(mount); Grid.SetRow(mountRow, 5); ammoGrid.Children.Add(mountRow);
+            mountRow.Children.Add(new TextBlock { Text = ModernText.L("Choose a slot, select a round above, then mount it.", "选择槽位，先在上方选择炮弹，再装填。"), Foreground = ModernPalette.Brush(ModernPalette.Muted), VerticalAlignment = VerticalAlignment.Center, TextWrapping = TextWrapping.Wrap });
+            Button mount = DialogButton(ModernText.L("MOUNT ROUND", "装填炮弹"), true); mount.Click += delegate { MountSelectedAmmo(); }; Grid.SetColumn(mount, 1); mountRow.Children.Add(mount); Grid.SetRow(mountRow, 5); ammoGrid.Children.Add(mountRow);
             ammoCard.Child = ammoGrid; body.Children.Add(ammoCard);
 
-            Border tuningCard = Card(); ScrollViewer tuningScroll = new ScrollViewer { VerticalScrollBarVisibility = ScrollBarVisibility.Auto, HorizontalScrollBarVisibility = ScrollBarVisibility.Disabled, ClipToBounds = true };
+            Border tuningCard = Card();
+            ScrollViewer tuningScroll = new ScrollViewer { VerticalScrollBarVisibility = ScrollBarVisibility.Auto, HorizontalScrollBarVisibility = ScrollBarVisibility.Disabled, ClipToBounds = true };
             StackPanel tuningPanel = new StackPanel();
             tuningPanel.Children.Add(Heading("CROSS-DOMAIN CANNON", 15));
             Grid domainRow = new Grid { Margin = new Thickness(0, 6, 0, 0) };
             domainRow.ColumnDefinitions.Add(new ColumnDefinition());
             domainRow.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(90) });
             domainBox = new ComboBox { Foreground = ModernPalette.Brush(ModernPalette.Text), Background = ModernPalette.Brush("#FF16283E"), BorderBrush = ModernPalette.Brush(ModernPalette.Border), Padding = new Thickness(8, 4, 8, 4), Height = 32, HorizontalAlignment = HorizontalAlignment.Stretch };
-            domainBox.Items.Add(new ComboBoxItem { Content = "GROUND VEHICLE", Tag = "ground" });
-            domainBox.Items.Add(new ComboBoxItem { Content = "NAVAL SHIP", Tag = "naval" });
-            domainBox.Items.Add(new ComboBoxItem { Content = "AIRCRAFT", Tag = "aircraft" });
-            domainBox.Items.Add(new ComboBoxItem { Content = "HELICOPTER", Tag = "helicopter" });
+            domainBox.Items.Add(new ComboBoxItem { Content = ModernText.L("GROUND VEHICLE", "地面载具"), Tag = "ground" });
+            domainBox.Items.Add(new ComboBoxItem { Content = ModernText.L("NAVAL SHIP", "海上舰船"), Tag = "naval" });
+            domainBox.Items.Add(new ComboBoxItem { Content = ModernText.L("AIRCRAFT", "空中载具"), Tag = "aircraft" });
+            domainBox.Items.Add(new ComboBoxItem { Content = ModernText.L("HELICOPTER", "直升机"), Tag = "helicopter" });
             string savedDomain = String.IsNullOrWhiteSpace(original.InjectedCannonDomain) ? "ground" : original.InjectedCannonDomain;
             ComboBoxItem savedDomainItem = domainBox.Items.OfType<ComboBoxItem>().FirstOrDefault(x => String.Equals(x.Tag as string, savedDomain, StringComparison.OrdinalIgnoreCase)) ?? (ComboBoxItem)domainBox.Items[0];
             unitBox = new ComboBox { Foreground = ModernPalette.Brush(ModernPalette.Text), Background = ModernPalette.Brush("#FF16283E"), BorderBrush = ModernPalette.Brush(ModernPalette.Border), Padding = new Thickness(8, 4, 8, 4), Height = 32, Margin = new Thickness(0, 6, 0, 0), HorizontalAlignment = HorizontalAlignment.Stretch };
@@ -5375,7 +5986,7 @@ namespace UniversalTestLab
             domainBox.SelectionChanged += delegate { RefreshUnitBox(); };
             unitBox.SelectionChanged += delegate { RefreshCannonBox(); };
             cannonBox.SelectionChanged += delegate { RefreshRoundBox(); SyncLeftCannon(); };
-            Button clearCannon = DialogButton("CLEAR", false);
+            Button clearCannon = DialogButton(ModernText.L("CLEAR", "清除"), false);
             clearCannon.Click += delegate { cannonBox.SelectedIndex = -1; };
             domainRow.Children.Add(domainBox);
             Grid.SetColumn(clearCannon, 1);
@@ -5384,7 +5995,7 @@ namespace UniversalTestLab
             tuningPanel.Children.Add(unitBox);
             tuningPanel.Children.Add(cannonBox);
             roundBox = new ComboBox { Foreground = ModernPalette.Brush(ModernPalette.Text), Background = ModernPalette.Brush("#FF16283E"), BorderBrush = ModernPalette.Brush(ModernPalette.Border), Padding = new Thickness(8, 4, 8, 4), Height = 32, Margin = new Thickness(0, 6, 0, 0), HorizontalAlignment = HorizontalAlignment.Stretch };
-            roundBox.Items.Add(new ComboBoxItem { Content = "ALL (native rounds)", Tag = "" });
+            roundBox.Items.Add(new ComboBoxItem { Content = ModernText.L("ALL (native rounds)", "全部（原生炮弹）"), Tag = "" });
             foreach (GroundAmmo injectedRound in injectedCannonAmmo)
                 roundBox.Items.Add(new ComboBoxItem { Content = injectedRound.Display, Tag = injectedRound.BulletName });
             if (!String.IsNullOrWhiteSpace(original.InjectedCannonRound))
@@ -5395,7 +6006,7 @@ namespace UniversalTestLab
             if (roundBox.SelectedItem == null) roundBox.SelectedIndex = 0;
             roundBox.SelectionChanged += delegate { SyncRoundToSlot(); };
             tuningPanel.Children.Add(roundBox);
-            ammoUnlimitedBox = new CheckBox { Content = "Unlimited ammunition (9999 per slot)", IsChecked = original.UnlimitedAmmo, Foreground = ModernPalette.Brush(ModernPalette.Text), Margin = new Thickness(0, 6, 0, 0) };
+            ammoUnlimitedBox = new CheckBox { Content = ModernText.L("Unlimited ammunition (9999 per slot)", "无限弹药（每槽 9999）"), IsChecked = original.UnlimitedAmmo, Foreground = ModernPalette.Brush(ModernPalette.Text), Margin = new Thickness(0, 6, 0, 0) };
             tuningPanel.Children.Add(ammoUnlimitedBox);
             domainBox.SelectedItem = savedDomainItem;
             RefreshCannonBox();
@@ -5407,7 +6018,7 @@ namespace UniversalTestLab
 tuningPanel.Children.Add(Heading("REAL VEHICLE VALUES", 15));
             
 
-            overrideBallistics = new CheckBox { Content = "Override native values", IsChecked = original.OverrideGroundBallistics, Foreground = ModernPalette.Brush(ModernPalette.Cyan), Margin = new Thickness(0, 12, 0, 7) }; tuningPanel.Children.Add(overrideBallistics);
+            overrideBallistics = new CheckBox { Content = ModernText.L("Override native values", "覆盖原生数值"), IsChecked = original.OverrideGroundBallistics, Foreground = ModernPalette.Brush(ModernPalette.Cyan), Margin = new Thickness(0, 12, 0, 7) }; tuningPanel.Children.Add(overrideBallistics);
             tuningPanel.Children.Add(new TextBlock { Text = "Projectile values follow the selected ammunition slot. Every field can be typed directly.", Foreground = ModernPalette.Brush(ModernPalette.Muted), TextWrapping = TextWrapping.Wrap, Margin = new Thickness(0, 0, 0, 6) });
             projectileReference = ResolveProjectileReference();
             AddValue(tuningPanel, "PROJECTILE MASS", "projectileMass", projectileReference == null ? 0 : projectileReference.Mass, original.ProjectileMassMultiplier, "kg");
@@ -5422,18 +6033,35 @@ tuningPanel.Children.Add(Heading("REAL VEHICLE VALUES", 15));
             AddValue(tuningPanel, "VEHICLE MASS", "mass", vehicle.NativeMass, original.VehicleMassMultiplier, "kg");
             AddValue(tuningPanel, "FORWARD SPEED LIMIT", "forward", vehicle.NativeForwardSpeed, original.ForwardSpeedMultiplier, "km/h");
             AddValue(tuningPanel, "REVERSE SPEED LIMIT", "reverse", vehicle.NativeReverseSpeed, original.ReverseSpeedMultiplier, "km/h");
-            Button resetAll = DialogButton("RESET ALL TO CURRENT STOCK", false); resetAll.Margin = new Thickness(0, 10, 0, 4); resetAll.Click += delegate { ResetAllValues(); }; tuningPanel.Children.Add(resetAll);
+            Button resetAll = DialogButton(ModernText.L("RESET ALL TO CURRENT STOCK", "重置为当前默认弹"), false); resetAll.Margin = new Thickness(0, 10, 0, 4); resetAll.Click += delegate { ResetAllValues(); }; tuningPanel.Children.Add(resetAll);
             tuningPanel.Children.Add(new TextBlock { Text = "Stock reset uses this vehicle's current game definition; selected research modules remain configured separately in Modules.", Foreground = ModernPalette.Brush(ModernPalette.Muted), TextWrapping = TextWrapping.Wrap, Margin = new Thickness(0, 8, 0, 4) });
             tuningScroll.Content = tuningPanel; tuningCard.Child = tuningScroll; Grid.SetColumn(tuningCard, 2); body.Children.Add(tuningCard);
+            if (simplified)
+            {
+                // Home panel: the right card holds the 4 ammunition slots (MOUNT + pool)
+                // instead of the cross-domain cannon / projectile tuning.
+                StackPanel slotPanel = new StackPanel();
+                slotPanel.Children.Add(Heading("AMMUNITION SLOTS", 15));
+                UniformGrid slotGrid = new UniformGrid { Rows = 2, Columns = 2, Margin = new Thickness(0, 6, 0, 6) };
+                for (int slot = 0; slot < 4; slot++) slotGrid.Children.Add(CreateAmmoSlot(slot));
+                slotPanel.Children.Add(slotGrid);
+                Grid slotMountRow = new Grid(); slotMountRow.ColumnDefinitions.Add(new ColumnDefinition()); slotMountRow.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(120) });
+                slotMountRow.Children.Add(new TextBlock { Text = ModernText.L("Select a round, pick a slot, mount it.", "选择炮弹与槽位并装填。"), Foreground = ModernPalette.Brush(ModernPalette.Muted), VerticalAlignment = VerticalAlignment.Center, TextWrapping = TextWrapping.Wrap });
+                Button slotMount = new Button { Content = ModernText.L("MOUNT ROUND", "装填炮弹"), Style = buttonStyle, Padding = new Thickness(14, 2, 14, 2), Margin = new Thickness(4, 0, 0, 0) }; slotMount.Click += delegate { MountSelectedAmmo(); }; Grid.SetColumn(slotMount, 1); slotMountRow.Children.Add(slotMount);
+                slotPanel.Children.Add(slotMountRow);
+                slotPanel.Children.Add(new TextBlock { Text = ModernText.L("STOCK = native default round (empty slot + count).", "STOCK = 原生默认弹（空槽 + 数量）。"), Foreground = ModernPalette.Brush(ModernPalette.Muted), TextWrapping = TextWrapping.Wrap, Margin = new Thickness(0, 8, 0, 0) });
+                tuningCard.Child = slotPanel;
+            }
 
             Grid footer = new Grid(); footer.ColumnDefinitions.Add(new ColumnDefinition()); footer.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(165) }); footer.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(185) });
-            footer.Children.Add(new TextBlock { Text = "Player ammunition is restored one second after complete depletion.", Foreground = ModernPalette.Brush(ModernPalette.Muted), VerticalAlignment = VerticalAlignment.Center });
-            Button cancel = DialogButton("CANCEL", false); cancel.Click += delegate { DialogResult = false; Close(); }; Grid.SetColumn(cancel, 1); footer.Children.Add(cancel);
+            footer.Children.Add(new TextBlock { Text = ModernText.L("Player ammunition is restored one second after complete depletion.", "玩家弹药耗尽一秒后自动恢复。"), Foreground = ModernPalette.Brush(ModernPalette.Muted), VerticalAlignment = VerticalAlignment.Center });
+            Button cancel = DialogButton("取消", false); cancel.Click += delegate { DialogResult = false; Close(); }; Grid.SetColumn(cancel, 1); footer.Children.Add(cancel);
             Button apply = DialogButton("APPLY CONFIG", true); apply.Click += delegate { Save(); }; Grid.SetColumn(apply, 2); footer.Children.Add(apply); Grid.SetRow(footer, 2); layout.Children.Add(footer);
 
             typeBox.Items.Add("All Projectile Types"); foreach (string kind in catalog.Select(x => x.Type).Distinct().OrderBy(x => x)) typeBox.Items.Add(kind); typeBox.SelectedIndex = 0;
             injectionToggle.IsChecked = false; injectionToggle.Checked += delegate { RefreshAmmo(); }; injectionToggle.Unchecked += delegate { RefreshAmmo(); }; searchBox.TextChanged += delegate { RefreshAmmo(); }; typeBox.SelectionChanged += delegate { RefreshAmmo(); };
             overrideBallistics.Checked += delegate { UpdateTuningState(); }; overrideBallistics.Unchecked += delegate { UpdateTuningState(); };
+            if (simplified) currentCannon = new CannonChoice { Blk = vehicle.MainWeaponBlk, Display = "PRIMARY", IsNative = true };
             SelectSlot(0); RefreshAmmo(); RefreshSlotEditors();
             UpdateTuningState();
         }
@@ -5444,10 +6072,12 @@ tuningPanel.Children.Add(Heading("REAL VEHICLE VALUES", 15));
         {
             GroundAmmoSlotEditor editor = new GroundAmmoSlotEditor { Slot = slot };
             editor.Card = new Border { CornerRadius = new CornerRadius(10), BorderThickness = new Thickness(1), BorderBrush = ModernPalette.Brush(ModernPalette.Border), Background = ModernPalette.Brush("#8A24324D"), Padding = new Thickness(8), Margin = new Thickness(3) };
-            Grid grid = new Grid(); grid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(28) }); grid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(22) }); grid.RowDefinitions.Add(new RowDefinition());
-            editor.Select = new Button { Content = "AMMO " + (slot + 1).ToString(CultureInfo.InvariantCulture), Tag = slot, Style = (Style)DialogRoot.Resources["ButtonStyle"], Padding = new Thickness(5, 1, 5, 1) };
+            Grid grid = new Grid(); grid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(28) }); grid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(22) }); grid.RowDefinitions.Add(new RowDefinition()); grid.ColumnDefinitions.Add(new ColumnDefinition()); grid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(30) });
+            editor.Select = new Button { Content = ModernText.L("AMMO ", "槽位 ") + (slot + 1).ToString(CultureInfo.InvariantCulture), Tag = slot, Style = (Style)DialogRoot.Resources["ButtonStyle"], Padding = new Thickness(5, 1, 5, 1) };
             editor.Select.Click += delegate { SelectSlot(editor.Slot); }; grid.Children.Add(editor.Select);
-            editor.Name = new TextBlock { Text = "EMPTY", Foreground = ModernPalette.Brush(ModernPalette.Muted), FontSize = 10, TextTrimming = TextTrimming.CharacterEllipsis, VerticalAlignment = VerticalAlignment.Center };
+            Button clear = new Button { Content = "\u00d7", Tag = slot, Style = (Style)DialogRoot.Resources["ButtonStyle"], Padding = new Thickness(0, 1, 0, 1), Margin = new Thickness(4, 0, 0, 0), ToolTip = "Clear this ammunition slot", FontSize = 12, Foreground = ModernPalette.Brush(ModernPalette.Muted) };
+            clear.Click += delegate { if (loadouts.ContainsKey(editor.Slot)) loadouts.Remove(editor.Slot); RefreshSlotEditors(); }; Grid.SetColumn(clear, 1); grid.Children.Add(clear);
+            editor.Name = new TextBlock { Text = ModernText.L("EMPTY", "空"), Foreground = ModernPalette.Brush(ModernPalette.Muted), FontSize = 10, TextTrimming = TextTrimming.CharacterEllipsis, VerticalAlignment = VerticalAlignment.Center };
             Grid.SetRow(editor.Name, 1); grid.Children.Add(editor.Name);
             Grid count = new Grid(); count.ColumnDefinitions.Add(new ColumnDefinition()); count.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(60) }); count.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(64) });
             editor.Count = new Slider { Minimum = 0, Maximum = AmmoCapacity, TickFrequency = 1, IsSnapToTickEnabled = true, VerticalAlignment = VerticalAlignment.Center };
@@ -5465,9 +6095,9 @@ tuningPanel.Children.Add(Heading("REAL VEHICLE VALUES", 15));
             tuningStock[key] = stock;
             Grid row = new Grid { Margin = new Thickness(0, 3, 0, 5) };
             row.ColumnDefinitions.Add(new ColumnDefinition()); row.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(92) }); row.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(54) });
-            StackPanel labelStack = new StackPanel(); labelStack.Children.Add(Caption(label)); labelStack.Children.Add(new TextBlock { Text = "Stock: " + FormatValue(stock) + " " + unit, Foreground = ModernPalette.Brush(ModernPalette.Muted), FontSize = 9, Margin = new Thickness(0, 2, 4, 0) }); row.Children.Add(labelStack);
+            StackPanel labelStack = new StackPanel(); labelStack.Children.Add(Caption(label)); labelStack.Children.Add(new TextBlock { Text = ModernText.L("Stock: ", "默认弹: ") + FormatValue(stock) + " " + unit, Foreground = ModernPalette.Brush(ModernPalette.Muted), FontSize = 9, Margin = new Thickness(0, 2, 4, 0) }); row.Children.Add(labelStack);
             TextBox box = new TextBox { Text = FormatValue(initial), Height = 34, Padding = new Thickness(8, 3, 8, 3), Tag = unit }; Grid.SetColumn(box, 1); row.Children.Add(box);
-            Button reset = new Button { Content = "RESET", Style = (Style)DialogRoot.Resources["ButtonStyle"], FontSize = 9, Padding = new Thickness(2), Margin = new Thickness(5, 0, 0, 0), Tag = key };
+            Button reset = new Button { Content = ModernText.L("RESET", "重置"), Style = (Style)DialogRoot.Resources["ButtonStyle"], FontSize = 9, Padding = new Thickness(2), Margin = new Thickness(5, 0, 0, 0), Tag = key };
             reset.Click += delegate { ResetValue((string)reset.Tag); }; Grid.SetColumn(reset, 2); row.Children.Add(reset);
             panel.Children.Add(row); tuning[key] = box;
         }
@@ -5476,6 +6106,7 @@ tuningPanel.Children.Add(Heading("REAL VEHICLE VALUES", 15));
 
         private double ReadValue(string key)
         {
+            if (!tuning.ContainsKey(key)) return 0;
             double value;
             string text = (tuning[key].Text ?? "").Trim();
             if (Double.TryParse(text, NumberStyles.Float, CultureInfo.InvariantCulture, out value) || Double.TryParse(text, NumberStyles.Float, CultureInfo.CurrentCulture, out value)) return Math.Max(0, value);
@@ -5484,6 +6115,7 @@ tuningPanel.Children.Add(Heading("REAL VEHICLE VALUES", 15));
 
         private double Ratio(string key)
         {
+            if (!tuningStock.ContainsKey(key)) return 1.0;
             double stock = tuningStock[key];
             return stock > 0 ? ReadValue(key) / stock : 1.0;
         }
@@ -5555,6 +6187,15 @@ tuningPanel.Children.Add(Heading("REAL VEHICLE VALUES", 15));
         private void BuildCannonSelector()
         {
             if (cannonSelector == null) return;
+            if (simplified)
+            {
+                // Home panel: native weapons only (no cross-domain cannon list).
+                foreach (GroundWeaponInfo gw in groundWeapons.Where(x => !String.IsNullOrWhiteSpace(x.Blk)).OrderBy(x => x.Display))
+                    cannonSelector.Items.Add(new ComboBoxItem { Content = ModernText.L("NATIVE  \u2022  ", "原生  \u2022  ") + gw.Display, Tag = new CannonChoice { Blk = gw.Blk, Display = gw.Display, IsNative = true } });
+                if (cannonSelector.Items.Count == 0 && !String.IsNullOrWhiteSpace(vehicle.MainWeaponBlk))
+                    cannonSelector.Items.Add(new ComboBoxItem { Content = ModernText.L("NATIVE  \u2022  PRIMARY", "原生  \u2022  主武器"), Tag = new CannonChoice { Blk = vehicle.MainWeaponBlk, Display = "PRIMARY", IsNative = true } });
+                return;
+            }
             List<GroundWeaponInfo> mains = new List<GroundWeaponInfo>();
             List<GroundWeaponInfo> secondary = new List<GroundWeaponInfo>();
             foreach (GroundWeaponInfo gw in groundWeapons.Where(x => !String.IsNullOrWhiteSpace(x.Blk)))
@@ -5565,7 +6206,7 @@ tuningPanel.Children.Add(Heading("REAL VEHICLE VALUES", 15));
             bool anyNative = false;
             foreach (GroundWeaponInfo gw in mains)
             {
-                cannonSelector.Items.Add(new ComboBoxItem { Content = "NATIVE  •  " + gw.Display, Tag = new CannonChoice { Blk = gw.Blk, Display = gw.Display, IsNative = true } });
+                cannonSelector.Items.Add(new ComboBoxItem { Content = ModernText.L("NATIVE  •  ", "原生  •  ") + gw.Display, Tag = new CannonChoice { Blk = gw.Blk, Display = gw.Display, IsNative = true } });
                 anyNative = true;
             }
             if (!anyNative && secondary.Count > 0)
@@ -5573,17 +6214,17 @@ tuningPanel.Children.Add(Heading("REAL VEHICLE VALUES", 15));
                 // Machine-gun-only vehicle: the MGs are its primary armament (Ask3lad-style).
                 foreach (GroundWeaponInfo gw in secondary)
                 {
-                    cannonSelector.Items.Add(new ComboBoxItem { Content = "NATIVE  •  " + gw.Display, Tag = new CannonChoice { Blk = gw.Blk, Display = gw.Display, IsNative = true } });
+                    cannonSelector.Items.Add(new ComboBoxItem { Content = ModernText.L("NATIVE  •  ", "原生  •  ") + gw.Display, Tag = new CannonChoice { Blk = gw.Blk, Display = gw.Display, IsNative = true } });
                     anyNative = true;
                 }
             }
             if (!anyNative && !String.IsNullOrWhiteSpace(vehicle.MainWeaponBlk))
-                cannonSelector.Items.Add(new ComboBoxItem { Content = "NATIVE  •  PRIMARY", Tag = new CannonChoice { Blk = vehicle.MainWeaponBlk, Display = "PRIMARY", IsNative = true } });
+                cannonSelector.Items.Add(new ComboBoxItem { Content = ModernText.L("NATIVE  •  PRIMARY", "原生  •  主武器"), Tag = new CannonChoice { Blk = vehicle.MainWeaponBlk, Display = "PRIMARY", IsNative = true } });
             if (mains.Count > 0 && secondary.Count > 0)
             {
-                cannonSelector.Items.Add(new ComboBoxItem { Content = "— SECONDARY (MACHINE GUNS / SMOKE) —", IsEnabled = false, Foreground = System.Windows.Media.Brushes.Gray });
+                cannonSelector.Items.Add(new ComboBoxItem { Content = ModernText.L("— SECONDARY (MACHINE GUNS / SMOKE) —", "— 次要武器（机枪 / 烟雾）—"), IsEnabled = false, Foreground = System.Windows.Media.Brushes.Gray });
                 foreach (GroundWeaponInfo gw in secondary)
-                    cannonSelector.Items.Add(new ComboBoxItem { Content = "NATIVE  •  " + gw.Display, Foreground = System.Windows.Media.Brushes.Gray, Tag = new CannonChoice { Blk = gw.Blk, Display = gw.Display, IsNative = true } });
+                    cannonSelector.Items.Add(new ComboBoxItem { Content = ModernText.L("NATIVE  •  ", "原生  •  ") + gw.Display, Foreground = System.Windows.Media.Brushes.Gray, Tag = new CannonChoice { Blk = gw.Blk, Display = gw.Display, IsNative = true } });
             }
             foreach (string domain in new[] { "ground", "naval", "aircraft", "helicopter" })
             {
@@ -5697,7 +6338,7 @@ tuningPanel.Children.Add(Heading("REAL VEHICLE VALUES", 15));
             if (syncingCannon || roundBox == null || currentCannon == null || currentCannon.IsNative) return;
             ComboBoxItem item = roundBox.SelectedItem as ComboBoxItem;
             string tag = item == null ? null : (item.Tag as string);
-            if (String.IsNullOrWhiteSpace(tag)) return; // "ALL (native rounds)"
+            if (String.IsNullOrWhiteSpace(tag)) return; // ModernText.L("ALL (native rounds)", "全部（原生炮弹）")
             IEnumerable<GroundAmmo> source = ammoList.ItemsSource as IEnumerable<GroundAmmo>;
             if (source == null) return;
             GroundAmmo ammo = source.FirstOrDefault(x => x.BulletName != null && x.BulletName.Equals(tag, StringComparison.OrdinalIgnoreCase));
@@ -5731,13 +6372,16 @@ tuningPanel.Children.Add(Heading("REAL VEHICLE VALUES", 15));
                 // Cross-domain cannon: the list shows that gun's own ammunition
                 // (belt groups first), resolved once per cannon and cached.
                 query = ResolveCannonAmmoCached(currentCannon.Blk);
-                if (injectionToggle.IsChecked == true) query = query.Concat(catalog);
+                if (injectionToggle != null && injectionToggle.IsChecked == true) query = query.Concat(catalog);
             }
-            else if (currentCannon != null && currentCannon.IsNative && injectionToggle.IsChecked != true)
+            else if (currentCannon != null && currentCannon.IsNative && injectionToggle == null || injectionToggle.IsChecked != true)
             {
                 // Native cannon: the list shows the currently selected gun's shells
-                // unless INJECT ANY SHELL opens the whole catalog.
-                query = catalog.Where(x => SameBlk(x.SourceBlk, currentCannon.Blk));
+                // unless INJECT ANY SHELL opens the whole catalog. Rounds are
+                // further filtered by this vehicle's ammo containers (beltOptions)
+                // because the same cannon can serve vehicles with different
+                // ammunition (Type16 vs Type16 FPS).
+                query = catalog.Where(x => SameBlk(x.SourceBlk, currentCannon.Blk) && ContainerAllowed(x.Container));
             }
             else
             {
@@ -5745,6 +6389,13 @@ tuningPanel.Children.Add(Heading("REAL VEHICLE VALUES", 15));
                 if (injectionToggle.IsChecked != true && CannonBlkSet.Count > 0) query = query.Where(x => CannonBlkSet.Contains(x.SourceBlk));
             }
             if (injectedCannonAmmo != null && injectedCannonAmmo.Count > 0) query = query.Concat(injectedCannonAmmo);
+            if (simplified)
+            {
+                // STOCK (native default round) is the first entry; it is written as an
+                // empty slot (bulletsN:t="" + count) exactly like Ask3lad.
+                int stockCal = currentCannon == null ? 0 : ModernMainWindow.GroundCalibre(currentCannon.Blk);
+                query = new[] { new GroundAmmo { SourceBlk = "stock:" + stockCal.ToString(CultureInfo.InvariantCulture), BulletName = "", Display = ModernText.L("STOCK \u2022 default ammunition", "STOCK \u2022 default ammunition"), Type = "Default", Caliber = stockCal } }.Concat(query);
+            }
             string search = (searchBox.Text ?? "").Trim(); if (search.Length > 0) query = query.Where(x => x.Display.IndexOf(search, StringComparison.CurrentCultureIgnoreCase) >= 0 || x.BulletName.IndexOf(search, StringComparison.OrdinalIgnoreCase) >= 0 || x.Type.IndexOf(search, StringComparison.OrdinalIgnoreCase) >= 0);
             string type = typeBox.SelectedIndex > 0 ? typeBox.SelectedItem as string : null; if (!String.IsNullOrEmpty(type)) query = query.Where(x => x.Type == type);
             ammoList.ItemsSource = query.OrderBy(x => x.Caliber).ThenBy(x => x.Type).ThenBy(x => x.Display).ToList();
@@ -5761,6 +6412,16 @@ tuningPanel.Children.Add(Heading("REAL VEHICLE VALUES", 15));
         {
             GroundAmmo ammo = ammoList.SelectedItem as GroundAmmo; if (ammo == null) return;
             GroundAmmoLoadout existing; loadouts.TryGetValue(selectedSlot, out existing);
+            if (simplified && ammo.BulletName != null && ammo.BulletName.Length == 0)
+            {
+                // STOCK: empty slot + count -> the game loads the native default round.
+                int stockOthers = loadouts.Values.Where(x => x.Slot != selectedSlot && x.SourceBlk != null && x.SourceBlk.StartsWith("stock:", StringComparison.OrdinalIgnoreCase)).Sum(x => Math.Max(0, x.Count));
+                int stockAvailable = Math.Max(0, AmmoCapacity - stockOthers);
+                int stockCount = existing == null ? Math.Max(1, stockAvailable) : Math.Min(Math.Max(1, existing.Count), stockAvailable);
+                loadouts[selectedSlot] = new GroundAmmoLoadout { Slot = selectedSlot, Count = stockCount, SourceBlk = ammo.SourceBlk, BulletName = "" };
+                SetProjectileReference(ammo); RefreshSlotEditors(); SelectSlot(selectedSlot);
+                return;
+            }
             int others = loadouts.Values.Where(x => x.Slot != selectedSlot && SameBlk(x.SourceBlk, ammo.SourceBlk)).Sum(x => Math.Max(0, x.Count));
             int available = Math.Max(0, AmmoTotalFor(new GroundAmmoLoadout { SourceBlk = ammo.SourceBlk }) - others);
             int count;
@@ -5772,7 +6433,7 @@ tuningPanel.Children.Add(Heading("REAL VEHICLE VALUES", 15));
             }
             else
             {
-                count = existing == null ? Math.Min(1, available) : Math.Min(Math.Max(1, existing.Count), available);
+                count = existing == null ? (simplified ? Math.Max(1, available) : Math.Min(1, available)) : Math.Min(Math.Max(1, existing.Count), available);
             }
             loadouts[selectedSlot] = new GroundAmmoLoadout { Slot = selectedSlot, Count = count, SourceBlk = ammo.SourceBlk, BulletName = ammo.BulletName };
             SetProjectileReference(ammo); RefreshSlotEditors(); SelectSlot(selectedSlot);
@@ -5811,9 +6472,10 @@ tuningPanel.Children.Add(Heading("REAL VEHICLE VALUES", 15));
                     editor.Count.Maximum = gunTotal;
                     editor.Count.Value = current;
                     editor.Value.Text = current.ToString(CultureInfo.InvariantCulture) + " / " + allowedMaximum.ToString(CultureInfo.InvariantCulture);
-                    editor.Count.ToolTip = "Loaded: " + current.ToString(CultureInfo.InvariantCulture) + "  •  Maximum currently available: " + allowedMaximum.ToString(CultureInfo.InvariantCulture);
+                    editor.Count.ToolTip = ModernText.L("Loaded: ", "已加载: ") + current.ToString(CultureInfo.InvariantCulture) + "  •  Maximum currently available: " + allowedMaximum.ToString(CultureInfo.InvariantCulture);
                     GroundAmmo ammo = FindAmmoForLoadout(entry);
-                    editor.Name.Text = ammo == null ? "EMPTY" : ammo.Display + "  •  " + ammo.Type;
+                    if (entry != null && entry.SourceBlk != null && entry.SourceBlk.StartsWith("stock:", StringComparison.OrdinalIgnoreCase)) editor.Name.Text = ModernText.L("STOCK • default ammunition", "STOCK • 默认弹药");
+                    else editor.Name.Text = ammo == null ? ModernText.L("EMPTY", "空") : ammo.Display + "  •  " + ammo.Type;
                 }
                 if (currentCannon != null && !currentCannon.IsNative)
                 {
@@ -5851,7 +6513,7 @@ tuningPanel.Children.Add(Heading("REAL VEHICLE VALUES", 15));
         private void Save()
         {
             AircraftSettings result = original.Copy(); result.GroundAmmoLoadouts.Clear(); foreach (GroundAmmoLoadout entry in loadouts.Values.Where(x => x.Count > 0).OrderBy(x => x.Slot)) result.GroundAmmoLoadouts.Add(entry.Copy());
-            result.OverrideGroundBallistics = overrideBallistics.IsChecked == true;
+            result.OverrideGroundBallistics = overrideBallistics != null && overrideBallistics.IsChecked == true;
                         result.ProjectileMassMultiplier = result.OverrideGroundBallistics ? Ratio("projectileMass") : 1; result.MuzzleVelocityMultiplier = result.OverrideGroundBallistics ? Ratio("velocity") : 1; result.ExplosiveMassMultiplier = result.OverrideGroundBallistics ? Ratio("explosive") : 1; result.PenetrationMultiplier = result.OverrideGroundBallistics ? Ratio("penetration") : 1;
             result.ReloadSeconds = ReadValue("reload"); result.RecoilMultiplier = result.OverrideGroundBallistics ? Ratio("recoil") : 1; result.EnginePowerMultiplier = result.OverrideGroundBallistics ? Ratio("engine") : 1; result.VehicleMassMultiplier = result.OverrideGroundBallistics ? Ratio("mass") : 1; result.ForwardSpeedMultiplier = result.OverrideGroundBallistics ? Ratio("forward") : 1; result.ReverseSpeedMultiplier = result.OverrideGroundBallistics ? Ratio("reverse") : 1;
             // The CANNON selector on the ammunition panel is the single source of
@@ -5901,7 +6563,7 @@ tuningPanel.Children.Add(Heading("REAL VEHICLE VALUES", 15));
                 if (!seen.Add(uw.UnitId)) continue;
                 unitBox.Items.Add(new ComboBoxItem { Content = uw.UnitDisplay, Tag = uw.UnitId });
             }
-            if (unitBox.Items.Count == 0) unitBox.Items.Add(new ComboBoxItem { Content = "(no units in this domain)", Tag = null });
+            if (unitBox.Items.Count == 0) unitBox.Items.Add(new ComboBoxItem { Content = ModernText.L("(no units in this domain)", "（该领域无单位）"), Tag = null });
             if (!String.IsNullOrWhiteSpace(original.InjectedCannonUnit))
             {
                 ComboBoxItem match = unitBox.Items.OfType<ComboBoxItem>().FirstOrDefault(x => String.Equals(x.Tag as string, original.InjectedCannonUnit, StringComparison.OrdinalIgnoreCase));
@@ -5919,7 +6581,7 @@ tuningPanel.Children.Add(Heading("REAL VEHICLE VALUES", 15));
             string unitId = unitItem == null ? null : unitItem.Tag as string;
             if (String.IsNullOrEmpty(unitId))
             {
-                cannonBox.Items.Add(new ComboBoxItem { Content = "(select a unit)", Tag = null });
+                cannonBox.Items.Add(new ComboBoxItem { Content = ModernText.L("(select a unit)", "（选择单位）"), Tag = null });
                 return;
             }
             foreach (UnitWeapon uw in unitWeapons.Where(x => String.Equals(x.Domain, domain, StringComparison.OrdinalIgnoreCase) && String.Equals(x.UnitId, unitId, StringComparison.OrdinalIgnoreCase)).OrderBy(x => x.WeaponDisplay))
@@ -5939,7 +6601,7 @@ tuningPanel.Children.Add(Heading("REAL VEHICLE VALUES", 15));
             ComboBoxItem previous = roundBox.SelectedItem as ComboBoxItem;
             string previousTag = previous == null ? null : (previous.Tag as string);
             roundBox.Items.Clear();
-            roundBox.Items.Add(new ComboBoxItem { Content = "ALL (native rounds)", Tag = "" });
+            roundBox.Items.Add(new ComboBoxItem { Content = ModernText.L("ALL (native rounds)", "全部（原生炮弹）"), Tag = "" });
             if (!String.IsNullOrWhiteSpace(blk))
             {
                 foreach (GroundAmmo ammo in ResolveCannonAmmoCached(blk))
@@ -6027,8 +6689,8 @@ tuningPanel.Children.Add(Heading("REAL VEHICLE VALUES", 15));
             Border ammoCard = Card("AMMUNITION POLICY");
             StackPanel ammoStack = ammoCard.Child as StackPanel;
             ammoMode = new ComboBox { Foreground = ModernPalette.Brush(ModernPalette.Text), Background = ModernPalette.Brush("#FF16283E"), BorderBrush = ModernPalette.Brush(ModernPalette.Border), Padding = new Thickness(8, 4, 8, 4), Margin = new Thickness(0, 8, 0, 0), HorizontalAlignment = HorizontalAlignment.Left, MinWidth = 260 };
-            ammoMode.Items.Add(new ComboBoxItem { Content = "Unlimited ammunition", Tag = false });
-            ammoMode.Items.Add(new ComboBoxItem { Content = "Limited + rearm on the field", Tag = true });
+            ammoMode.Items.Add(new ComboBoxItem { Content = ModernText.L("Unlimited ammunition", "无限弹药"), Tag = false });
+            ammoMode.Items.Add(new ComboBoxItem { Content = ModernText.L("Limited + rearm on the field", "有限 + 战场再补给"), Tag = true });
             ammoMode.SelectedIndex = original.LimitedAmmo ? 1 : 0;
             ammoStack.Children.Add(ammoMode);
             ammoStack.Children.Add(new TextBlock { Text = "Unlimited keeps isLimitedAmmo=false. Limited enables the flag so ordnance and cannon ammunition can be exhausted and then replenished after the configured ground rearm time.", Foreground = ModernPalette.Brush(ModernPalette.Muted), TextWrapping = TextWrapping.Wrap, Margin = new Thickness(0, 8, 0, 0) });
@@ -6036,8 +6698,8 @@ tuningPanel.Children.Add(Heading("REAL VEHICLE VALUES", 15));
             Border spawnCard = Card("SPAWN");
             StackPanel spawnStack = spawnCard.Child as StackPanel;
             spawnMode = new ComboBox { Foreground = ModernPalette.Brush(ModernPalette.Text), Background = ModernPalette.Brush("#FF16283E"), BorderBrush = ModernPalette.Brush(ModernPalette.Border), Padding = new Thickness(8, 4, 8, 4), Margin = new Thickness(0, 8, 0, 0), HorizontalAlignment = HorizontalAlignment.Left, MinWidth = 260 };
-            spawnMode.Items.Add(new ComboBoxItem { Content = "Air spawn (with speed)", Tag = "air" });
-            spawnMode.Items.Add(new ComboBoxItem { Content = "Airport takeoff (stationary)", Tag = "airport" });
+            spawnMode.Items.Add(new ComboBoxItem { Content = ModernText.L("Air spawn (with speed)", "空中出生（带速度）"), Tag = "air" });
+            spawnMode.Items.Add(new ComboBoxItem { Content = ModernText.L("Airport takeoff (stationary)", "机场起飞（静止）"), Tag = "airport" });
             spawnMode.SelectedIndex = (original.SpawnMode ?? "air").Equals("airport", StringComparison.OrdinalIgnoreCase) ? 1 : 0;
             spawnStack.Children.Add(spawnMode);
             speedRow = new StackPanel { Margin = new Thickness(0, 8, 0, 0) };
@@ -6057,7 +6719,7 @@ tuningPanel.Children.Add(Heading("REAL VEHICLE VALUES", 15));
             speedGrid.Children.Add(spawnSpeedValue);
             speedRow.Children.Add(speedGrid);
             ModernNumericBox.Bind(spawnSpeedSlider, spawnSpeedBox);
-            spawnSpeedAuto = new CheckBox { Content = "Auto (airframe-safe speed)", IsChecked = original.SpawnSpeedAuto, Foreground = ModernPalette.Brush(ModernPalette.Text), Margin = new Thickness(0, 8, 0, 0) };
+            spawnSpeedAuto = new CheckBox { Content = ModernText.L("Auto (airframe-safe speed)", "自动（机体安全速度）"), IsChecked = original.SpawnSpeedAuto, Foreground = ModernPalette.Brush(ModernPalette.Text), Margin = new Thickness(0, 8, 0, 0) };
             speedRow.Children.Add(spawnSpeedAuto);
             speedRow.Children.Add(new TextBlock { Text = "Airport takeoff always starts stationary; the speed row only applies to air spawns. Auto clamps the stock spawn speed to the airframe's lowest published maxSpeed so fragile aircraft no longer tear apart on spawn.", Foreground = ModernPalette.Brush(ModernPalette.Muted), TextWrapping = TextWrapping.Wrap, Margin = new Thickness(0, 8, 0, 0) });
             spawnStack.Children.Add(speedRow);
@@ -6072,15 +6734,15 @@ tuningPanel.Children.Add(Heading("REAL VEHICLE VALUES", 15));
             Children.Add(spawnCard);
             Border rapidCard = Card("RAPID FIRE (AUTO REPAIR + REARM)");
             StackPanel rapidStack = rapidCard.Child as StackPanel;
-            rapidToggle = new CheckBox { Content = "ENABLED (auto repair + rearm)", IsChecked = original.RapidFireEnabled, Foreground = ModernPalette.Brush(ModernPalette.Text), HorizontalAlignment = HorizontalAlignment.Left, Margin = new Thickness(0, 8, 0, 0) };
+            rapidToggle = new CheckBox { Content = ModernText.L("ENABLED (auto repair + rearm)", "启用（自动维修 + 补给）"), IsChecked = original.RapidFireEnabled, Foreground = ModernPalette.Brush(ModernPalette.Text), HorizontalAlignment = HorizontalAlignment.Left, Margin = new Thickness(0, 8, 0, 0) };
             rapidStack.Children.Add(rapidToggle);
-            rapidFullBox = new CheckBox { Content = "FULL RESTORE (all parts)", IsChecked = original.RapidFireFullRestore, Foreground = ModernPalette.Brush(ModernPalette.Text), HorizontalAlignment = HorizontalAlignment.Left, Margin = new Thickness(0, 10, 0, 0) };
-            rapidPartialBox = new CheckBox { Content = "PARTIAL RESTORE (barrel/breech/engine/tracks + crew + ammo + fuel)", IsChecked = !original.RapidFireFullRestore, Foreground = ModernPalette.Brush(ModernPalette.Text), HorizontalAlignment = HorizontalAlignment.Left, Margin = new Thickness(0, 6, 0, 0) };
+            rapidFullBox = new CheckBox { Content = ModernText.L("FULL RESTORE (all parts)", "完全修复（全部部件）"), IsChecked = original.RapidFireFullRestore, Foreground = ModernPalette.Brush(ModernPalette.Text), HorizontalAlignment = HorizontalAlignment.Left, Margin = new Thickness(0, 10, 0, 0) };
+            rapidPartialBox = new CheckBox { Content = ModernText.L("PARTIAL RESTORE (barrel/breech/engine/tracks + crew + ammo + fuel)", "部分修复（炮管/炮闩/发动机/履带 + 乘员 + 弹药 + 燃油）"), IsChecked = !original.RapidFireFullRestore, Foreground = ModernPalette.Brush(ModernPalette.Text), HorizontalAlignment = HorizontalAlignment.Left, Margin = new Thickness(0, 6, 0, 0) };
             rapidFullBox.Checked += delegate { if (rapidPartialBox.IsChecked == true) rapidPartialBox.IsChecked = false; };
             rapidPartialBox.Checked += delegate { if (rapidFullBox.IsChecked == true) rapidFullBox.IsChecked = false; };
             rapidStack.Children.Add(rapidFullBox);
             rapidStack.Children.Add(rapidPartialBox);
-            rapidStack.Children.Add(new TextBlock { Text = "REARM INTERVAL (s)", Foreground = ModernPalette.Brush(ModernPalette.Cyan), FontSize = 12, FontWeight = FontWeights.SemiBold, Margin = new Thickness(0, 10, 0, 0) });
+            rapidStack.Children.Add(new TextBlock { Text = ModernText.L("REARM INTERVAL (s)", "补给间隔（秒）"), Foreground = ModernPalette.Brush(ModernPalette.Cyan), FontSize = 12, FontWeight = FontWeights.SemiBold, Margin = new Thickness(0, 10, 0, 0) });
             Grid rapidGrid = new Grid();
             rapidGrid.ColumnDefinitions.Add(new ColumnDefinition());
             rapidGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(76) });
@@ -6190,7 +6852,7 @@ tuningPanel.Children.Add(Heading("REAL VEHICLE VALUES", 15));
             ContentCard.Child = layout;
             StackPanel header = new StackPanel();
             header.Children.Add(Heading("MISSION OPTIONS", 22));
-            header.Children.Add(new TextBlock { Text = "Global — applies to every generated mission", Foreground = ModernPalette.Brush(ModernPalette.Cyan), Margin = new Thickness(0, 4, 0, 0) });
+            header.Children.Add(new TextBlock { Text = ModernText.L("Global — applies to every generated mission", "全局设置 — 应用于所有生成的任务"), Foreground = ModernPalette.Brush(ModernPalette.Cyan), Margin = new Thickness(0, 4, 0, 0) });
             layout.Children.Add(header);
             StackPanel content = new StackPanel();
             respawnSlider = OptionCard(content, "PLAYER RESPAWN DELAY", "Seconds before the player unit respawns after destruction (0 = instant).", original.PlayerRespawnDelaySeconds, 0, 60, true);
@@ -6199,8 +6861,8 @@ tuningPanel.Children.Add(Heading("REAL VEHICLE VALUES", 15));
             Border ammoCard = Card("AMMUNITION POLICY");
             StackPanel ammoStack = ammoCard.Child as StackPanel;
             ammoMode = new ComboBox { Foreground = ModernPalette.Brush(ModernPalette.Text), Background = ModernPalette.Brush("#FF16283E"), BorderBrush = ModernPalette.Brush(ModernPalette.Border), Padding = new Thickness(8, 4, 8, 4), Margin = new Thickness(0, 8, 0, 0), HorizontalAlignment = HorizontalAlignment.Left, MinWidth = 260 };
-            ammoMode.Items.Add(new ComboBoxItem { Content = "Unlimited ammunition", Tag = false });
-            ammoMode.Items.Add(new ComboBoxItem { Content = "Limited + rearm on the field", Tag = true });
+            ammoMode.Items.Add(new ComboBoxItem { Content = ModernText.L("Unlimited ammunition", "无限弹药"), Tag = false });
+            ammoMode.Items.Add(new ComboBoxItem { Content = ModernText.L("Limited + rearm on the field", "有限 + 战场再补给"), Tag = true });
             ammoMode.SelectedIndex = original.LimitedAmmo ? 1 : 0;
             ammoStack.Children.Add(ammoMode);
             ammoStack.Children.Add(new TextBlock { Text = "Unlimited keeps isLimitedAmmo=false. Limited enables the flag so ordnance and cannon ammunition can be exhausted and then replenished after the configured ground rearm time.", Foreground = ModernPalette.Brush(ModernPalette.Muted), TextWrapping = TextWrapping.Wrap, Margin = new Thickness(0, 8, 0, 0) });
@@ -6208,8 +6870,8 @@ tuningPanel.Children.Add(Heading("REAL VEHICLE VALUES", 15));
             Border spawnCard = Card("SPAWN");
             StackPanel spawnStack = spawnCard.Child as StackPanel;
             spawnMode = new ComboBox { Foreground = ModernPalette.Brush(ModernPalette.Text), Background = ModernPalette.Brush("#FF16283E"), BorderBrush = ModernPalette.Brush(ModernPalette.Border), Padding = new Thickness(8, 4, 8, 4), Margin = new Thickness(0, 8, 0, 0), HorizontalAlignment = HorizontalAlignment.Left, MinWidth = 260 };
-            spawnMode.Items.Add(new ComboBoxItem { Content = "Air spawn (with speed)", Tag = "air" });
-            spawnMode.Items.Add(new ComboBoxItem { Content = "Airport takeoff (stationary)", Tag = "airport" });
+            spawnMode.Items.Add(new ComboBoxItem { Content = ModernText.L("Air spawn (with speed)", "空中出生（带速度）"), Tag = "air" });
+            spawnMode.Items.Add(new ComboBoxItem { Content = ModernText.L("Airport takeoff (stationary)", "机场起飞（静止）"), Tag = "airport" });
             spawnMode.SelectedIndex = (original.SpawnMode ?? "air").Equals("airport", StringComparison.OrdinalIgnoreCase) ? 1 : 0;
             spawnStack.Children.Add(spawnMode);
             speedRow = new StackPanel { Margin = new Thickness(0, 8, 0, 0) };
@@ -6229,7 +6891,7 @@ tuningPanel.Children.Add(Heading("REAL VEHICLE VALUES", 15));
             speedGrid.Children.Add(spawnSpeedValue);
             speedRow.Children.Add(speedGrid);
             ModernNumericBox.Bind(spawnSpeedSlider, spawnSpeedBox);
-            spawnSpeedAuto = new CheckBox { Content = "Auto (airframe-safe speed)", IsChecked = original.SpawnSpeedAuto, Foreground = ModernPalette.Brush(ModernPalette.Text), Margin = new Thickness(0, 8, 0, 0) };
+            spawnSpeedAuto = new CheckBox { Content = ModernText.L("Auto (airframe-safe speed)", "自动（机体安全速度）"), IsChecked = original.SpawnSpeedAuto, Foreground = ModernPalette.Brush(ModernPalette.Text), Margin = new Thickness(0, 8, 0, 0) };
             speedRow.Children.Add(spawnSpeedAuto);
             speedRow.Children.Add(new TextBlock { Text = "Airport takeoff always starts stationary; the speed row only applies to air spawns. Auto clamps the stock spawn speed to the airframe's lowest published maxSpeed so fragile aircraft no longer tear apart on spawn.", Foreground = ModernPalette.Brush(ModernPalette.Muted), TextWrapping = TextWrapping.Wrap, Margin = new Thickness(0, 8, 0, 0) });
             spawnStack.Children.Add(speedRow);
@@ -6244,15 +6906,15 @@ tuningPanel.Children.Add(Heading("REAL VEHICLE VALUES", 15));
             content.Children.Add(spawnCard);
             Border rapidCard = Card("RAPID FIRE (AUTO REPAIR + REARM)");
             StackPanel rapidStack = rapidCard.Child as StackPanel;
-            rapidToggle = new CheckBox { Content = "ENABLED (auto repair + rearm)", IsChecked = original.RapidFireEnabled, Foreground = ModernPalette.Brush(ModernPalette.Text), HorizontalAlignment = HorizontalAlignment.Left, Margin = new Thickness(0, 8, 0, 0) };
+            rapidToggle = new CheckBox { Content = ModernText.L("ENABLED (auto repair + rearm)", "启用（自动维修 + 补给）"), IsChecked = original.RapidFireEnabled, Foreground = ModernPalette.Brush(ModernPalette.Text), HorizontalAlignment = HorizontalAlignment.Left, Margin = new Thickness(0, 8, 0, 0) };
             rapidStack.Children.Add(rapidToggle);
-            rapidFullBox = new CheckBox { Content = "FULL RESTORE (all parts)", IsChecked = original.RapidFireFullRestore, Foreground = ModernPalette.Brush(ModernPalette.Text), HorizontalAlignment = HorizontalAlignment.Left, Margin = new Thickness(0, 10, 0, 0) };
-            rapidPartialBox = new CheckBox { Content = "PARTIAL RESTORE (barrel/breech/engine/tracks + crew + ammo + fuel)", IsChecked = !original.RapidFireFullRestore, Foreground = ModernPalette.Brush(ModernPalette.Text), HorizontalAlignment = HorizontalAlignment.Left, Margin = new Thickness(0, 6, 0, 0) };
+            rapidFullBox = new CheckBox { Content = ModernText.L("FULL RESTORE (all parts)", "完全修复（全部部件）"), IsChecked = original.RapidFireFullRestore, Foreground = ModernPalette.Brush(ModernPalette.Text), HorizontalAlignment = HorizontalAlignment.Left, Margin = new Thickness(0, 10, 0, 0) };
+            rapidPartialBox = new CheckBox { Content = ModernText.L("PARTIAL RESTORE (barrel/breech/engine/tracks + crew + ammo + fuel)", "部分修复（炮管/炮闩/发动机/履带 + 乘员 + 弹药 + 燃油）"), IsChecked = !original.RapidFireFullRestore, Foreground = ModernPalette.Brush(ModernPalette.Text), HorizontalAlignment = HorizontalAlignment.Left, Margin = new Thickness(0, 6, 0, 0) };
             rapidFullBox.Checked += delegate { if (rapidPartialBox.IsChecked == true) rapidPartialBox.IsChecked = false; };
             rapidPartialBox.Checked += delegate { if (rapidFullBox.IsChecked == true) rapidFullBox.IsChecked = false; };
             rapidStack.Children.Add(rapidFullBox);
             rapidStack.Children.Add(rapidPartialBox);
-            rapidStack.Children.Add(new TextBlock { Text = "REARM INTERVAL (s)", Foreground = ModernPalette.Brush(ModernPalette.Cyan), FontSize = 12, FontWeight = FontWeights.SemiBold, Margin = new Thickness(0, 10, 0, 0) });
+            rapidStack.Children.Add(new TextBlock { Text = ModernText.L("REARM INTERVAL (s)", "补给间隔（秒）"), Foreground = ModernPalette.Brush(ModernPalette.Cyan), FontSize = 12, FontWeight = FontWeights.SemiBold, Margin = new Thickness(0, 10, 0, 0) });
             Grid rapidGrid = new Grid();
             rapidGrid.ColumnDefinitions.Add(new ColumnDefinition());
             rapidGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(76) });
@@ -6278,12 +6940,12 @@ tuningPanel.Children.Add(Heading("REAL VEHICLE VALUES", 15));
             footer.ColumnDefinitions.Add(new ColumnDefinition());
             footer.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(145) });
             footer.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(185) });
-            footer.Children.Add(new TextBlock { Text = "Saved globally — no per-aircraft tuning needed.", Foreground = ModernPalette.Brush(ModernPalette.Muted), VerticalAlignment = VerticalAlignment.Center });
-            Button cancel = DialogButton("CANCEL", false);
+            footer.Children.Add(new TextBlock { Text = ModernText.L("Saved globally — no per-aircraft tuning needed.", "全局保存 —无需逐机调校。"), Foreground = ModernPalette.Brush(ModernPalette.Muted), VerticalAlignment = VerticalAlignment.Center });
+            Button cancel = DialogButton("取消", false);
             cancel.Click += delegate { DialogResult = false; Close(); };
             Grid.SetColumn(cancel, 1);
             footer.Children.Add(cancel);
-            Button apply = DialogButton("APPLY OPTIONS", true);
+            Button apply = DialogButton(ModernText.L("APPLY OPTIONS", "应用选项"), true);
             apply.Click += delegate { Save(); };
             Grid.SetColumn(apply, 2);
             footer.Children.Add(apply);
@@ -6370,12 +7032,12 @@ tuningPanel.Children.Add(Heading("REAL VEHICLE VALUES", 15));
                 original.InjectedCannonUnit = MissionSettings.Current.InjectedCannonUnit;
             }
             StackPanel header = new StackPanel();
-            header.Children.Add(Heading("FLIGHT CONFIGURE", 18));
+            header.Children.Add(Heading(ModernText.L("FLIGHT CONFIGURE", "飞行配置"), 18));
             header.Children.Add(new TextBlock { Text = (aircraft == null ? "" : aircraft.Display) + "  •  fuel, gun belts and countermeasure stations", Foreground = ModernPalette.Brush(ModernPalette.Cyan), Margin = new Thickness(0, 4, 0, 0) });
             Children.Add(header);
             StackPanel content = new StackPanel();
             Border fuelCard = Card("STARTING FUEL"); StackPanel fuelContent = fuelCard.Child as StackPanel;
-            fullFuel = new CheckBox { Content = "Full internal fuel", IsChecked = original.FullFuel, Foreground = ModernPalette.Brush(ModernPalette.Text), FontWeight = FontWeights.SemiBold, Margin = new Thickness(0, 10, 0, 8) }; fuelContent.Children.Add(fullFuel);
+            fullFuel = new CheckBox { Content = ModernText.L("Full internal fuel", "满内部燃油"), IsChecked = original.FullFuel, Foreground = ModernPalette.Brush(ModernPalette.Text), FontWeight = FontWeights.SemiBold, Margin = new Thickness(0, 10, 0, 8) }; fuelContent.Children.Add(fullFuel);
             Grid fuelRow = new Grid(); fuelRow.ColumnDefinitions.Add(new ColumnDefinition()); fuelRow.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(64) }); fuelRow.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(120) });
             fuelSlider = new Slider { Minimum = 5, Maximum = 60, TickFrequency = 5, IsSnapToTickEnabled = true, Value = Math.Max(5, Math.Min(60, original.FuelMinutes)), AutoToolTipPlacement = AutoToolTipPlacement.TopLeft, VerticalAlignment = VerticalAlignment.Center };
             fuelBox = ModernNumericBox.Create();
@@ -6386,7 +7048,7 @@ tuningPanel.Children.Add(Heading("REAL VEHICLE VALUES", 15));
             AddGunBeltCard(content, modifications == null ? Enumerable.Empty<AircraftModification>() : modifications);
 
             Border cmCard = Card("COUNTERMEASURE STATIONS"); StackPanel cmContent = cmCard.Child as StackPanel;
-            customizeCountermeasures = new CheckBox { Content = "Customize installed countermeasure stations", IsChecked = original.OverrideCountermeasures, Foreground = ModernPalette.Brush(ModernPalette.Cyan), FontWeight = FontWeights.SemiBold, Margin = new Thickness(0, 10, 0, 8) }; cmContent.Children.Add(customizeCountermeasures);
+            customizeCountermeasures = new CheckBox { Content = ModernText.L("Customize installed countermeasure stations", "自定义已装干扰弹站"), IsChecked = original.OverrideCountermeasures, Foreground = ModernPalette.Brush(ModernPalette.Cyan), FontWeight = FontWeights.SemiBold, Margin = new Thickness(0, 10, 0, 8) }; cmContent.Children.Add(customizeCountermeasures);
             foreach (CountermeasureLauncher launcher in launchers) AddLauncher(cmContent, launcher);
             cmContent.Children.Add(new TextBlock { Text = "Each emitter is configured separately. Flare-only or chaff-only dispensers expose only the supported slider; BOL, BKO and MAW modules still decide which stations exist. Ammunition is restored only after it is exhausted so active optics and seekers are not reset in flight.", Foreground = ModernPalette.Brush(ModernPalette.Muted), TextWrapping = TextWrapping.Wrap, Margin = new Thickness(0, 8, 0, 0) }); content.Children.Add(cmCard);
             contentScroll = new ScrollViewer { Content = content, VerticalScrollBarVisibility = ScrollBarVisibility.Auto, HorizontalScrollBarVisibility = ScrollBarVisibility.Disabled, Margin = new Thickness(0, 6, 0, 8), Padding = new Thickness(0, 0, 8, 20) };
@@ -6416,7 +7078,7 @@ tuningPanel.Children.Add(Heading("REAL VEHICLE VALUES", 15));
             List<AircraftModification> beltPacks = all.Where(x => x.Id.IndexOf("belt_pack", StringComparison.OrdinalIgnoreCase) >= 0).ToList();
             Border card = Card("CANNON AMMUNITION BELTS");
             StackPanel stack = card.Child as StackPanel;
-            stack.Children.Add(new TextBlock { Text = "Available belts follow the current Modules configuration.", Foreground = ModernPalette.Brush(ModernPalette.Muted), TextWrapping = TextWrapping.Wrap, Margin = new Thickness(0, 7, 0, 8) });
+            stack.Children.Add(new TextBlock { Text = ModernText.L("Available belts follow the current Modules configuration.", "可用弹带随当前模块配置。"), Foreground = ModernPalette.Brush(ModernPalette.Muted), TextWrapping = TextWrapping.Wrap, Margin = new Thickness(0, 7, 0, 8) });
             int groupIndex = 0;
             foreach (IGrouping<string, AircraftModification> family in families)
             {
@@ -6430,8 +7092,8 @@ tuningPanel.Children.Add(Heading("REAL VEHICLE VALUES", 15));
                 row.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(220) }); row.ColumnDefinitions.Add(new ColumnDefinition());
                 string familyName = family.Key.Replace('_', ' ').ToUpperInvariant();
                 StackPanel label = new StackPanel { VerticalAlignment = VerticalAlignment.Center };
-                label.Children.Add(new TextBlock { Text = "GUN GROUP " + (groupIndex + 1).ToString(CultureInfo.InvariantCulture) + "  •  " + familyName, Foreground = ModernPalette.Brush(ModernPalette.Text), FontWeight = FontWeights.SemiBold, FontSize = 11 });
-                if (!unlocked) label.Children.Add(new TextBlock { Text = "Enable its Belt Pack in Modules", Foreground = ModernPalette.Brush(ModernPalette.Danger), FontSize = 10, Margin = new Thickness(0, 2, 0, 0) });
+                label.Children.Add(new TextBlock { Text = ModernText.L("GUN GROUP ", "机炮组 ") + (groupIndex + 1).ToString(CultureInfo.InvariantCulture) + "  •  " + familyName, Foreground = ModernPalette.Brush(ModernPalette.Text), FontWeight = FontWeights.SemiBold, FontSize = 11 });
+                if (!unlocked) label.Children.Add(new TextBlock { Text = ModernText.L("Enable its Belt Pack in Modules", "在模块中启用其弹带包"), Foreground = ModernPalette.Brush(ModernPalette.Danger), FontSize = 10, Margin = new Thickness(0, 2, 0, 0) });
                 row.Children.Add(label);
                 ComboBox selector = new ComboBox { ItemsSource = options, Margin = new Thickness(8, 0, 0, 0) };
                 string saved;
@@ -6471,7 +7133,7 @@ tuningPanel.Children.Add(Heading("REAL VEHICLE VALUES", 15));
             int chaff = saved == null ? (launcher.AllowsChaff ? (launcher.AllowsFlares ? launcher.NativeRounds - flares : launcher.NativeRounds) : 0) : saved.Chaff;
             Border card = new Border { CornerRadius = new CornerRadius(12), Background = ModernPalette.Brush(ModernPalette.Field), BorderBrush = ModernPalette.Brush("#526F99"), BorderThickness = new Thickness(1), Padding = new Thickness(12), Margin = new Thickness(0, 4, 0, 8) };
             StackPanel stack = new StackPanel(); stack.Children.Add(new TextBlock { Text = launcher.Display, FontWeight = FontWeights.SemiBold, Foreground = ModernPalette.Brush(ModernPalette.Text) });
-            stack.Children.Add(new TextBlock { Text = "Native capacity: " + launcher.NativeRounds.ToString(CultureInfo.InvariantCulture), Foreground = ModernPalette.Brush(ModernPalette.Muted), FontSize = 10, Margin = new Thickness(0, 2, 0, 8) });
+            stack.Children.Add(new TextBlock { Text = ModernText.L("Native capacity: ", "原生容量: ") + launcher.NativeRounds.ToString(CultureInfo.InvariantCulture), Foreground = ModernPalette.Brush(ModernPalette.Muted), FontSize = 10, Margin = new Thickness(0, 2, 0, 8) });
             CountermeasureEditor editor = new CountermeasureEditor { Launcher = launcher, Card = card };
             if (launcher.AllowsFlares) AddCountermeasureSlider(stack, "FLARES", flares, out editor.FlareSlider, out editor.FlareValue);
             if (launcher.AllowsChaff) AddCountermeasureSlider(stack, "CHAFF", chaff, out editor.ChaffSlider, out editor.ChaffValue);
@@ -6502,7 +7164,7 @@ tuningPanel.Children.Add(Heading("REAL VEHICLE VALUES", 15));
             int total = flares + chaff;
             if (total <= 0)
             {
-                editor.GamePreview.Text = "IN GAME: 0 FLARE / 0 CHAFF";
+                editor.GamePreview.Text = ModernText.L("IN GAME: 0 FLARE / 0 CHAFF", "游戏内: 0 红外干扰弹 / 0 箔条");
                 editor.GamePreview.Foreground = ModernPalette.Brush(ModernPalette.Muted);
                 return;
             }
@@ -6510,7 +7172,7 @@ tuningPanel.Children.Add(Heading("REAL VEHICLE VALUES", 15));
             int displayFlares = (int)Math.Ceiling(total * eighths / 8.0);
             int displayChaff = total - displayFlares;
             bool pure = eighths == 0 || eighths == 8;
-            editor.GamePreview.Text = "IN GAME: " + displayFlares.ToString(CultureInfo.InvariantCulture) + " FLARE / " + displayChaff.ToString(CultureInfo.InvariantCulture) + " CHAFF" + (pure ? "" : "   (quantized to 1/8 steps)");
+            editor.GamePreview.Text = ModernText.L("IN GAME: ", "游戏内: ") + displayFlares.ToString(CultureInfo.InvariantCulture) + " FLARE / " + displayChaff.ToString(CultureInfo.InvariantCulture) + " CHAFF" + (pure ? "" : "   (quantized to 1/8 steps)");
             editor.GamePreview.Foreground = ModernPalette.Brush(pure ? ModernPalette.Muted : ModernPalette.Cyan);
         }
 
@@ -6573,10 +7235,10 @@ tuningPanel.Children.Add(Heading("REAL VEHICLE VALUES", 15));
                 original.InjectedCannonUnit = MissionSettings.Current.InjectedCannonUnit;
             }
             Grid layout = new Grid(); layout.RowDefinitions.Add(new RowDefinition { Height = new GridLength(70) }); layout.RowDefinitions.Add(new RowDefinition()); layout.RowDefinitions.Add(new RowDefinition { Height = new GridLength(58) }); ContentCard.Child = layout;
-            StackPanel header = new StackPanel(); header.Children.Add(Heading("FLIGHT CONFIGURE", 22)); header.Children.Add(new TextBlock { Text = aircraft.Display + "  •  fuel, gun belts and countermeasure stations", Foreground = ModernPalette.Brush(ModernPalette.Cyan), Margin = new Thickness(0, 4, 0, 0) }); layout.Children.Add(header);
+            StackPanel header = new StackPanel(); header.Children.Add(Heading(ModernText.L("FLIGHT CONFIGURE", "飞行配置"), 22)); header.Children.Add(new TextBlock { Text = aircraft.Display + "  •  fuel, gun belts and countermeasure stations", Foreground = ModernPalette.Brush(ModernPalette.Cyan), Margin = new Thickness(0, 4, 0, 0) }); layout.Children.Add(header);
             StackPanel content = new StackPanel();
             Border fuelCard = Card("STARTING FUEL"); StackPanel fuelContent = fuelCard.Child as StackPanel;
-            fullFuel = new CheckBox { Content = "Full internal fuel", IsChecked = original.FullFuel, Foreground = ModernPalette.Brush(ModernPalette.Text), FontWeight = FontWeights.SemiBold, Margin = new Thickness(0, 10, 0, 8) }; fuelContent.Children.Add(fullFuel);
+            fullFuel = new CheckBox { Content = ModernText.L("Full internal fuel", "满内部燃油"), IsChecked = original.FullFuel, Foreground = ModernPalette.Brush(ModernPalette.Text), FontWeight = FontWeights.SemiBold, Margin = new Thickness(0, 10, 0, 8) }; fuelContent.Children.Add(fullFuel);
             Grid fuelRow = new Grid(); fuelRow.ColumnDefinitions.Add(new ColumnDefinition()); fuelRow.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(64) }); fuelRow.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(120) });
             fuelSlider = new Slider { Minimum = 5, Maximum = 60, TickFrequency = 5, IsSnapToTickEnabled = true, Value = Math.Max(5, Math.Min(60, original.FuelMinutes)), AutoToolTipPlacement = AutoToolTipPlacement.TopLeft, VerticalAlignment = VerticalAlignment.Center };
             fuelBox = ModernNumericBox.Create();
@@ -6587,12 +7249,12 @@ tuningPanel.Children.Add(Heading("REAL VEHICLE VALUES", 15));
             AddGunBeltCard(content, modifications == null ? Enumerable.Empty<AircraftModification>() : modifications);
 
             Border cmCard = Card("COUNTERMEASURE STATIONS"); StackPanel cmContent = cmCard.Child as StackPanel;
-            customizeCountermeasures = new CheckBox { Content = "Customize installed countermeasure stations", IsChecked = original.OverrideCountermeasures, Foreground = ModernPalette.Brush(ModernPalette.Cyan), FontWeight = FontWeights.SemiBold, Margin = new Thickness(0, 10, 0, 8) }; cmContent.Children.Add(customizeCountermeasures);
+            customizeCountermeasures = new CheckBox { Content = ModernText.L("Customize installed countermeasure stations", "自定义已装干扰弹站"), IsChecked = original.OverrideCountermeasures, Foreground = ModernPalette.Brush(ModernPalette.Cyan), FontWeight = FontWeights.SemiBold, Margin = new Thickness(0, 10, 0, 8) }; cmContent.Children.Add(customizeCountermeasures);
             foreach (CountermeasureLauncher launcher in launchers) AddLauncher(cmContent, launcher);
             cmContent.Children.Add(new TextBlock { Text = "Each emitter is configured separately. Flare-only or chaff-only dispensers expose only the supported slider; BOL, BKO and MAW modules still decide which stations exist. Ammunition is restored only after it is exhausted so active optics and seekers are not reset in flight.", Foreground = ModernPalette.Brush(ModernPalette.Muted), TextWrapping = TextWrapping.Wrap, Margin = new Thickness(0, 8, 0, 0) }); content.Children.Add(cmCard);
             contentScroll = new ScrollViewer { Content = content, VerticalScrollBarVisibility = ScrollBarVisibility.Auto, HorizontalScrollBarVisibility = ScrollBarVisibility.Disabled, Margin = new Thickness(0, 6, 0, 14), Padding = new Thickness(0, 0, 8, 30) }; Grid.SetRow(contentScroll, 1); layout.Children.Add(contentScroll);
-            Grid footer = new Grid(); footer.ColumnDefinitions.Add(new ColumnDefinition()); footer.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(145) }); footer.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(175) }); footer.Children.Add(new TextBlock { Text = "Settings are saved with this aircraft and custom presets.", Foreground = ModernPalette.Brush(ModernPalette.Muted), VerticalAlignment = VerticalAlignment.Center });
-            Button cancel = DialogButton("CANCEL", false); cancel.Click += delegate { DialogResult = false; Close(); }; Grid.SetColumn(cancel, 1); footer.Children.Add(cancel);
+            Grid footer = new Grid(); footer.ColumnDefinitions.Add(new ColumnDefinition()); footer.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(145) }); footer.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(175) }); footer.Children.Add(new TextBlock { Text = ModernText.L("Settings are saved with this aircraft and custom presets.", "设置随该飞机及自定义预设保存。"), Foreground = ModernPalette.Brush(ModernPalette.Muted), VerticalAlignment = VerticalAlignment.Center });
+            Button cancel = DialogButton("取消", false); cancel.Click += delegate { DialogResult = false; Close(); }; Grid.SetColumn(cancel, 1); footer.Children.Add(cancel);
             Button apply = DialogButton("APPLY CONFIG", true); apply.Click += delegate { Save(); }; Grid.SetColumn(apply, 2); footer.Children.Add(apply); Grid.SetRow(footer, 2); layout.Children.Add(footer);
             fuelSlider.ValueChanged += delegate { UpdateState(); }; fullFuel.Checked += delegate { UpdateState(); }; fullFuel.Unchecked += delegate { UpdateState(); };
             customizeCountermeasures.Checked += delegate { UpdateState(); }; customizeCountermeasures.Unchecked += delegate { UpdateState(); }; UpdateState();
@@ -6625,7 +7287,7 @@ tuningPanel.Children.Add(Heading("REAL VEHICLE VALUES", 15));
             List<AircraftModification> beltPacks = all.Where(x => x.Id.IndexOf("belt_pack", StringComparison.OrdinalIgnoreCase) >= 0).ToList();
             Border card = Card("CANNON AMMUNITION BELTS");
             StackPanel stack = card.Child as StackPanel;
-            stack.Children.Add(new TextBlock { Text = "Available belts follow the current Modules configuration.", Foreground = ModernPalette.Brush(ModernPalette.Muted), TextWrapping = TextWrapping.Wrap, Margin = new Thickness(0, 7, 0, 8) });
+            stack.Children.Add(new TextBlock { Text = ModernText.L("Available belts follow the current Modules configuration.", "可用弹带随当前模块配置。"), Foreground = ModernPalette.Brush(ModernPalette.Muted), TextWrapping = TextWrapping.Wrap, Margin = new Thickness(0, 7, 0, 8) });
             int groupIndex = 0;
             foreach (IGrouping<string, AircraftModification> family in families)
             {
@@ -6639,8 +7301,8 @@ tuningPanel.Children.Add(Heading("REAL VEHICLE VALUES", 15));
                 row.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(220) }); row.ColumnDefinitions.Add(new ColumnDefinition());
                 string familyName = family.Key.Replace('_', ' ').ToUpperInvariant();
                 StackPanel label = new StackPanel { VerticalAlignment = VerticalAlignment.Center };
-                label.Children.Add(new TextBlock { Text = "GUN GROUP " + (groupIndex + 1).ToString(CultureInfo.InvariantCulture) + "  •  " + familyName, Foreground = ModernPalette.Brush(ModernPalette.Text), FontWeight = FontWeights.SemiBold, FontSize = 11 });
-                if (!unlocked) label.Children.Add(new TextBlock { Text = "Enable its Belt Pack in Modules", Foreground = ModernPalette.Brush(ModernPalette.Danger), FontSize = 10, Margin = new Thickness(0, 2, 0, 0) });
+                label.Children.Add(new TextBlock { Text = ModernText.L("GUN GROUP ", "机炮组 ") + (groupIndex + 1).ToString(CultureInfo.InvariantCulture) + "  •  " + familyName, Foreground = ModernPalette.Brush(ModernPalette.Text), FontWeight = FontWeights.SemiBold, FontSize = 11 });
+                if (!unlocked) label.Children.Add(new TextBlock { Text = ModernText.L("Enable its Belt Pack in Modules", "在模块中启用其弹带包"), Foreground = ModernPalette.Brush(ModernPalette.Danger), FontSize = 10, Margin = new Thickness(0, 2, 0, 0) });
                 row.Children.Add(label);
                 ComboBox selector = new ComboBox { ItemsSource = options, Margin = new Thickness(8, 0, 0, 0) };
                 string saved;
@@ -6680,7 +7342,7 @@ tuningPanel.Children.Add(Heading("REAL VEHICLE VALUES", 15));
             int chaff = saved == null ? (launcher.AllowsChaff ? (launcher.AllowsFlares ? launcher.NativeRounds - flares : launcher.NativeRounds) : 0) : saved.Chaff;
             Border card = new Border { CornerRadius = new CornerRadius(12), Background = ModernPalette.Brush(ModernPalette.Field), BorderBrush = ModernPalette.Brush("#526F99"), BorderThickness = new Thickness(1), Padding = new Thickness(12), Margin = new Thickness(0, 4, 0, 8) };
             StackPanel stack = new StackPanel(); stack.Children.Add(new TextBlock { Text = launcher.Display, FontWeight = FontWeights.SemiBold, Foreground = ModernPalette.Brush(ModernPalette.Text) });
-            stack.Children.Add(new TextBlock { Text = "Native capacity: " + launcher.NativeRounds.ToString(CultureInfo.InvariantCulture), Foreground = ModernPalette.Brush(ModernPalette.Muted), FontSize = 10, Margin = new Thickness(0, 2, 0, 8) });
+            stack.Children.Add(new TextBlock { Text = ModernText.L("Native capacity: ", "原生容量: ") + launcher.NativeRounds.ToString(CultureInfo.InvariantCulture), Foreground = ModernPalette.Brush(ModernPalette.Muted), FontSize = 10, Margin = new Thickness(0, 2, 0, 8) });
             CountermeasureEditor editor = new CountermeasureEditor { Launcher = launcher, Card = card };
             if (launcher.AllowsFlares) AddCountermeasureSlider(stack, "FLARES", flares, out editor.FlareSlider, out editor.FlareValue);
             if (launcher.AllowsChaff) AddCountermeasureSlider(stack, "CHAFF", chaff, out editor.ChaffSlider, out editor.ChaffValue);
@@ -6714,7 +7376,7 @@ tuningPanel.Children.Add(Heading("REAL VEHICLE VALUES", 15));
             int total = flares + chaff;
             if (total <= 0)
             {
-                editor.GamePreview.Text = "IN GAME: 0 FLARE / 0 CHAFF";
+                editor.GamePreview.Text = ModernText.L("IN GAME: 0 FLARE / 0 CHAFF", "游戏内: 0 红外干扰弹 / 0 箔条");
                 editor.GamePreview.Foreground = ModernPalette.Brush(ModernPalette.Muted);
                 return;
             }
@@ -6722,7 +7384,7 @@ tuningPanel.Children.Add(Heading("REAL VEHICLE VALUES", 15));
             int displayFlares = (int)Math.Ceiling(total * eighths / 8.0);
             int displayChaff = total - displayFlares;
             bool pure = eighths == 0 || eighths == 8;
-            editor.GamePreview.Text = "IN GAME: " + displayFlares.ToString(CultureInfo.InvariantCulture) + " FLARE / " + displayChaff.ToString(CultureInfo.InvariantCulture) + " CHAFF" + (pure ? "" : "   (quantized to 1/8 steps)");
+            editor.GamePreview.Text = ModernText.L("IN GAME: ", "游戏内: ") + displayFlares.ToString(CultureInfo.InvariantCulture) + " FLARE / " + displayChaff.ToString(CultureInfo.InvariantCulture) + " CHAFF" + (pure ? "" : "   (quantized to 1/8 steps)");
             editor.GamePreview.Foreground = ModernPalette.Brush(pure ? ModernPalette.Muted : ModernPalette.Cyan);
         }
 
@@ -6786,7 +7448,7 @@ tuningPanel.Children.Add(Heading("REAL VEHICLE VALUES", 15));
             ContentCard.Child = layout;
 
             bool ground = String.Equals(item.Kind, "Ground Vehicle", StringComparison.OrdinalIgnoreCase);
-            Grid header = StepHeader("MD", "MODULES", item.Display + "  •  research modules");
+            Grid header = StepHeader("MD", ModernText.L("MODULES", "模块"), item.Display + "  •  research modules");
             layout.Children.Add(header);
 
             pageHost = new Grid { ClipToBounds = true, Margin = new Thickness(0, 0, 0, 2) };
@@ -6798,8 +7460,8 @@ tuningPanel.Children.Add(Heading("REAL VEHICLE VALUES", 15));
             footer.ColumnDefinitions.Add(new ColumnDefinition());
             footer.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(140) });
             footer.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(160) });
-            footer.Children.Add(new TextBlock { Text = "Settings stay with this vehicle and are saved in presets.", Foreground = ModernPalette.Brush(ModernPalette.Muted), VerticalAlignment = VerticalAlignment.Center });
-            Button cancel = DialogButton("CANCEL", false); Grid.SetColumn(cancel, 1); footer.Children.Add(cancel);
+            footer.Children.Add(new TextBlock { Text = ModernText.L("Settings stay with this vehicle and are saved in presets.", "设置随该载具并保存在预设中。"), Foreground = ModernPalette.Brush(ModernPalette.Muted), VerticalAlignment = VerticalAlignment.Center });
+            Button cancel = DialogButton("取消", false); Grid.SetColumn(cancel, 1); footer.Children.Add(cancel);
             Button apply = DialogButton("APPLY SETTINGS", true); Grid.SetColumn(apply, 2); footer.Children.Add(apply);
             cancel.Click += delegate { DialogResult = false; Close(); };
             apply.Click += delegate { Save(); };
@@ -6849,7 +7511,7 @@ tuningPanel.Children.Add(Heading("REAL VEHICLE VALUES", 15));
                 Margin = new Thickness(0, 0, 0, 10)
             };
             StackPanel selectionContent = new StackPanel();
-            all = new CheckBox { Content = "Enable all research modifications (current default)", IsChecked = settings.UseAllModifications, Foreground = ModernPalette.Brush(ModernPalette.Cyan), FontWeight = FontWeights.SemiBold };
+            all = new CheckBox { Content = ModernText.L("Enable all research modifications (current default)", "启用全部研发改造（当前默认）"), IsChecked = settings.UseAllModifications, Foreground = ModernPalette.Brush(ModernPalette.Cyan), FontWeight = FontWeights.SemiBold };
             selectionContent.Children.Add(all);
             selectionContent.Children.Add(new TextBlock { Text = "Turn this off to build a stock or selective vehicle. Alternative weapon groups remain mutually exclusive.", Foreground = ModernPalette.Brush(ModernPalette.Muted), TextWrapping = TextWrapping.Wrap, Margin = new Thickness(0, 7, 0, 0) });
             selectionCard.Child = selectionContent;
@@ -6926,7 +7588,7 @@ tuningPanel.Children.Add(Heading("REAL VEHICLE VALUES", 15));
             controls.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(120) });
             controls.Children.Add(new TextBlock { Text = definitions.Count.ToString(CultureInfo.InvariantCulture) + " modules found", Foreground = ModernPalette.Brush(ModernPalette.Cyan), VerticalAlignment = VerticalAlignment.Center });
             Button top = DialogButton("SELECT TOP SET", false); Grid.SetColumn(top, 1); controls.Children.Add(top);
-            Button clear = DialogButton("CLEAR", false); Grid.SetColumn(clear, 2); controls.Children.Add(clear);
+            Button clear = DialogButton(ModernText.L("CLEAR", "清除"), false); Grid.SetColumn(clear, 2); controls.Children.Add(clear);
             top.Click += delegate { SelectTopSet(); };
             clear.Click += delegate { allControl.IsChecked = false; foreach (ModificationChoice choice in choices) choice.Check.IsChecked = false; };
             Grid.SetRow(controls, 2); page.Children.Add(controls);
@@ -6964,7 +7626,7 @@ tuningPanel.Children.Add(Heading("REAL VEHICLE VALUES", 15));
             page.RowDefinitions.Add(new RowDefinition { Height = GridLength.Auto });
             page.RowDefinitions.Add(new RowDefinition { Height = GridLength.Auto });
             page.RowDefinitions.Add(new RowDefinition());
-            enable = new CheckBox { Content = "Override countermeasure settings", IsChecked = settings.OverrideCountermeasures, Foreground = ModernPalette.Brush(ModernPalette.Cyan), FontWeight = FontWeights.SemiBold, Margin = new Thickness(0, 0, 0, 18) };
+            enable = new CheckBox { Content = ModernText.L("Override countermeasure settings", "覆盖干扰弹设置"), IsChecked = settings.OverrideCountermeasures, Foreground = ModernPalette.Brush(ModernPalette.Cyan), FontWeight = FontWeights.SemiBold, Margin = new Thickness(0, 0, 0, 18) };
             page.Children.Add(enable);
             flares = LabeledTextBox(page, "FLARES PER INSTALLED LAUNCHER", settings.FlareRounds.ToString(CultureInfo.InvariantCulture), 1);
             chaff = LabeledTextBox(page, "CHAFF PER INSTALLED LAUNCHER", settings.ChaffRounds.ToString(CultureInfo.InvariantCulture), 2);
@@ -7044,7 +7706,7 @@ tuningPanel.Children.Add(Heading("REAL VEHICLE VALUES", 15));
         private readonly ListBox list;
         private readonly List<SavedPreset> presets;
 
-        public ModernPresetWindow(MainForm source, ModernMainWindow owner) : base("Custom Presets", 760, 560)
+        public ModernPresetWindow(MainForm source, ModernMainWindow owner) : base(ModernText.L("Custom Presets", "自定义预设"), 760, 560)
         {
             controller = source;
             main = owner;
@@ -7059,17 +7721,17 @@ tuningPanel.Children.Add(Heading("REAL VEHICLE VALUES", 15));
             layout.RowDefinitions.Add(new RowDefinition { Height = new GridLength(54) });
             ContentCard.Child = layout;
             StackPanel heading = new StackPanel();
-            heading.Children.Add(Heading("CUSTOM LOADOUT PRESETS", 18));
-            heading.Children.Add(new TextBlock { Text = "Save or restore the vehicle, pylons, Modules and configuration settings.", Foreground = ModernPalette.Brush(ModernPalette.Cyan), FontSize = 11, Margin = new Thickness(0, 4, 0, 0) });
+            heading.Children.Add(Heading("自定义弹药预设", 18));
+            heading.Children.Add(new TextBlock { Text = ModernText.L("Save or restore the vehicle, pylons, Modules and configuration settings.", "保存或恢复载具、挂架、模块和配置设置。"), Foreground = ModernPalette.Brush(ModernPalette.Cyan), FontSize = 11, Margin = new Thickness(0, 4, 0, 0) });
             layout.Children.Add(heading);
-            StackPanel name = new StackPanel(); name.Children.Add(Caption("PRESET NAME"));
+            StackPanel name = new StackPanel(); name.Children.Add(Caption("预设名称"));
             nameBox = new TextBox { Text = controller.WorkspaceSelectedAircraft == null ? "" : controller.WorkspaceSelectedAircraft.Display, Margin = new Thickness(0, 6, 0, 0) }; name.Children.Add(nameBox);
             Grid.SetRow(name, 1); layout.Children.Add(name);
             if (groundPreset)
             {
                 StackPanel sight = new StackPanel();
                 List<UserSightEntry> sights = UserSightStore.Discover(controller.WorkspaceGameFolder);
-                sight.Children.Add(Caption("GROUND USER SIGHT — " + Math.Max(0, sights.Count - 1).ToString(CultureInfo.InvariantCulture) + " FOUND • SAVED WITH THIS PRESET"));
+                sight.Children.Add(Caption("地面用户瞄准镜 — " + Math.Max(0, sights.Count - 1).ToString(CultureInfo.InvariantCulture) + ModernText.L(" FOUND • SAVED WITH THIS PRESET", " 已找到 \u2022 随此预设保存")));
                 sightBox = new ComboBox { ItemsSource = sights, Margin = new Thickness(0, 6, 0, 0) };
                 AircraftSettings settings = controller.WorkspaceGetSettings(presetVehicle);
                 sightBox.SelectedItem = sights.FirstOrDefault(x => String.Equals(x.FilePath ?? "", settings.UserSightPath ?? "", StringComparison.OrdinalIgnoreCase)) ?? sights.First();
@@ -7081,10 +7743,10 @@ tuningPanel.Children.Add(Heading("REAL VEHICLE VALUES", 15));
             list.MouseDoubleClick += delegate { LoadSelected(); };
             Grid buttons = new Grid();
             for (int i = 0; i < 4; i++) buttons.ColumnDefinitions.Add(new ColumnDefinition());
-            Button save = DialogButton("SAVE CURRENT", true); buttons.Children.Add(save);
-            Button load = DialogButton("LOAD SELECTED", false); Grid.SetColumn(load, 1); buttons.Children.Add(load);
-            Button delete = DialogButton("DELETE", false); Grid.SetColumn(delete, 2); buttons.Children.Add(delete);
-            Button close = DialogButton("CLOSE", false); Grid.SetColumn(close, 3); buttons.Children.Add(close);
+            Button save = DialogButton("保存当前", true); buttons.Children.Add(save);
+            Button load = DialogButton(ModernText.L("LOAD SELECTED", "加载所选"), false); Grid.SetColumn(load, 1); buttons.Children.Add(load);
+            Button delete = DialogButton("删除", false); Grid.SetColumn(delete, 2); buttons.Children.Add(delete);
+            Button close = DialogButton("关闭", false); Grid.SetColumn(close, 3); buttons.Children.Add(close);
             save.Click += delegate { SaveCurrent(); }; load.Click += delegate { LoadSelected(); }; delete.Click += delegate { DeleteSelected(); }; close.Click += delegate { DialogResult = false; Close(); };
             Grid.SetRow(buttons, 4); layout.Children.Add(buttons);
         }
@@ -7107,14 +7769,14 @@ tuningPanel.Children.Add(Heading("REAL VEHICLE VALUES", 15));
             string name = (nameBox.Text ?? "").Trim();
             if (String.IsNullOrEmpty(name))
             {
-                ModernMessageDialog warning = new ModernMessageDialog("Presets", "Enter a preset name.", "OK", null, true) { Owner = Owner };
+                ModernMessageDialog warning = new ModernMessageDialog(ModernText.L("Presets", "预设"), ModernText.L("Enter a preset name.", "请输入预设名称。"), "确定", null, true) { Owner = Owner };
                 warning.ShowDialog();
                 return;
             }
             SavedPreset existing = presets.FirstOrDefault(x => x.Name.Equals(name, StringComparison.CurrentCultureIgnoreCase));
             if (existing != null)
             {
-                ModernMessageDialog confirm = new ModernMessageDialog("Replace Preset", "Replace the existing preset '" + existing.Name + "'?", "REPLACE", "CANCEL", false) { Owner = Owner };
+                ModernMessageDialog confirm = new ModernMessageDialog(ModernText.L("Replace Preset", "替换预设"), ModernText.L("Replace the existing preset '", "替换现有预设 '") + existing.Name + "'?", "替换", "取消", false) { Owner = Owner };
                 if (confirm.ShowDialog() != true) return;
             }
             if (existing != null) presets.Remove(existing);
@@ -7146,7 +7808,7 @@ tuningPanel.Children.Add(Heading("REAL VEHICLE VALUES", 15));
         {
             SavedPreset selected = Selected;
             if (selected == null) return;
-            ModernMessageDialog confirm = new ModernMessageDialog("Delete Preset", "Delete preset '" + selected.Name + "'?", "DELETE", "CANCEL", true) { Owner = Owner };
+            ModernMessageDialog confirm = new ModernMessageDialog(ModernText.L("Delete Preset", "删除预设"), ModernText.L("Delete preset '", "删除预设 '") + selected.Name + "'?", "删除", "取消", true) { Owner = Owner };
             if (confirm.ShowDialog() != true) return;
             presets.Remove(selected); PresetStore.Save(presets); RefreshList();
         }
@@ -7159,7 +7821,7 @@ tuningPanel.Children.Add(Heading("REAL VEHICLE VALUES", 15));
         private const string AstraYoutubeUrl = "https://youtube.com/@astra-sep?si=TiMO8--EXG2zXapG";
         private const string AstraTiktokUrl = "https://www.tiktok.com/@astro.sep?_r=1&_t=ZS-997wx6cJtcm";
 
-        public ModernAboutWindow(int aircraftCount, int weaponCount) : base("Support Universal Test Lab", 900, 670)
+        public ModernAboutWindow(int aircraftCount, int weaponCount) : base(ModernText.L("Support Universal Test Lab", "支持通用测试实验室"), 900, 670)
         {
             ResizeMode = ResizeMode.NoResize;
             Grid layout = new Grid();
@@ -7169,33 +7831,33 @@ tuningPanel.Children.Add(Heading("REAL VEHICLE VALUES", 15));
             ContentCard.Child = layout;
             StackPanel header = new StackPanel();
             header.Children.Add(Heading("UNIVERSAL TEST LAB", 24));
-            header.Children.Add(new TextBlock { Text = "Public beta  •  community-inspired mission and vehicle test workspace for War Thunder", Foreground = ModernPalette.Brush(ModernPalette.Cyan), FontSize = 12, Margin = new Thickness(0, 4, 0, 0) });
+            header.Children.Add(new TextBlock { Text = ModernText.L("Public beta  •  community-inspired mission and vehicle test workspace for War Thunder", "公开测试版  \u2022  社区启发的战雷任务与载具测试工作区"), Foreground = ModernPalette.Brush(ModernPalette.Cyan), FontSize = 12, Margin = new Thickness(0, 4, 0, 0) });
             layout.Children.Add(header);
             Grid content = new Grid(); content.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(3, GridUnitType.Star) }); content.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(2, GridUnitType.Star) });
             StackPanel info = new StackPanel { Margin = new Thickness(0, 6, 20, 0) };
-            info.Children.Add(Heading("PROJECT", 14));
+            info.Children.Add(Heading("项目", 14));
             info.Children.Add(new TextBlock { Text = "Build experimental vehicles, modules, ammunition, loadouts and reusable test missions from one workspace.", TextWrapping = TextWrapping.Wrap, Foreground = ModernPalette.Brush(ModernPalette.Muted), Margin = new Thickness(0, 4, 0, 5) });
             info.Children.Add(new TextBlock { Text = aircraftCount.ToString("N0", CultureInfo.InvariantCulture) + " playable vehicle entries  •  " + weaponCount.ToString("N0", CultureInfo.InvariantCulture) + " air-weapon entries", Foreground = ModernPalette.Brush(ModernPalette.Cyan), Margin = new Thickness(0, 0, 0, 15) });
-            info.Children.Add(Heading("COMMUNITY INSPIRATION", 14));
+            info.Children.Add(Heading("社区灵感", 14));
             info.Children.Add(new TextBlock { Text = "Independent work by AstraSEP, inspired by GUI and custom-mission concepts shared by community creators and YouTube channels, for example Ask3lad. They are not project contributors.", TextWrapping = TextWrapping.Wrap, Foreground = ModernPalette.Brush(ModernPalette.Muted), Margin = new Thickness(0, 4, 0, 15) });
-            info.Children.Add(Heading("CREATED BY ASTRASEP", 14));
-            info.Children.Add(new TextBlock { Text = "Independent fan-made software shaped by community testing and feedback.", TextWrapping = TextWrapping.Wrap, Foreground = ModernPalette.Brush(ModernPalette.Muted), Margin = new Thickness(0, 4, 0, 8) });
-            Button youtube = DialogButton("ASTRASEP ON YOUTUBE", false); youtube.Margin = new Thickness(0, 0, 0, 4); youtube.Click += delegate { OpenUrl(AstraYoutubeUrl); }; info.Children.Add(youtube);
-            Button tiktok = DialogButton("ASTRASEP ON TIKTOK", false); tiktok.Margin = new Thickness(0, 0, 0, 12); tiktok.Click += delegate { OpenUrl(AstraTiktokUrl); }; info.Children.Add(tiktok);
-            info.Children.Add(Heading("OPEN SOURCE", 14));
+            info.Children.Add(Heading("作者 ASTRASEP", 14));
+            info.Children.Add(new TextBlock { Text = ModernText.L("Independent fan-made software shaped by community testing and feedback.", "由社区测试与反馈打磨的独立粉丝自制软件。"), TextWrapping = TextWrapping.Wrap, Foreground = ModernPalette.Brush(ModernPalette.Muted), Margin = new Thickness(0, 4, 0, 8) });
+            Button youtube = DialogButton("ASTRASEP 的 YouTube", false); youtube.Margin = new Thickness(0, 0, 0, 4); youtube.Click += delegate { OpenUrl(AstraYoutubeUrl); }; info.Children.Add(youtube);
+            Button tiktok = DialogButton("ASTRASEP 的 TikTok", false); tiktok.Margin = new Thickness(0, 0, 0, 12); tiktok.Click += delegate { OpenUrl(AstraTiktokUrl); }; info.Children.Add(tiktok);
+            info.Children.Add(Heading("开源", 14));
             info.Children.Add(new TextBlock { Text = "Source, issue tracking and contribution information are available on GitHub. The bundled wt_ext_cli component retains its Apache 2.0 license.", TextWrapping = TextWrapping.Wrap, Foreground = ModernPalette.Brush(ModernPalette.Muted), Margin = new Thickness(0, 4, 0, 10) });
-            Button github = DialogButton("OPEN PROJECT ON GITHUB", false); github.Margin = new Thickness(0, 0, 0, 4); github.Click += delegate { OpenUrl(ProjectUrl); }; info.Children.Add(github);
+            Button github = DialogButton("在 GitHub 打开项目", false); github.Margin = new Thickness(0, 0, 0, 4); github.Click += delegate { OpenUrl(ProjectUrl); }; info.Children.Add(github);
             content.Children.Add(info);
             Border support = new Border { CornerRadius = new CornerRadius(16), BorderBrush = ModernPalette.Brush(ModernPalette.Border), BorderThickness = new Thickness(1), Background = ModernPalette.Brush("#E80D1835"), Padding = new Thickness(16), Margin = new Thickness(0, 6, 0, 10) };
             StackPanel supportContent = new StackPanel();
-            supportContent.Children.Add(new TextBlock { Text = "SUPPORT THE PROJECT", FontSize = 15, FontWeight = FontWeights.SemiBold, Foreground = ModernPalette.Brush(ModernPalette.Cyan), HorizontalAlignment = HorizontalAlignment.Center });
+            supportContent.Children.Add(new TextBlock { Text = ModernText.L("SUPPORT THE PROJECT", "支持本项目"), FontSize = 15, FontWeight = FontWeights.SemiBold, Foreground = ModernPalette.Brush(ModernPalette.Cyan), HorizontalAlignment = HorizontalAlignment.Center });
             Image qr = new Image { Source = LoadImage(Embedded.Bytes("UTL.support-qr.png")), Height = 240, Stretch = Stretch.Uniform, Margin = new Thickness(8, 12, 8, 10), Cursor = Cursors.Hand };
             qr.MouseLeftButtonUp += delegate { OpenUrl(SupportUrl); }; supportContent.Children.Add(qr);
-            supportContent.Children.Add(new TextBlock { Text = "Support is optional. Scan the QR code or open the secure Stripe payment page.", TextWrapping = TextWrapping.Wrap, TextAlignment = TextAlignment.Center, Foreground = ModernPalette.Brush(ModernPalette.Muted), Margin = new Thickness(4, 0, 4, 12) });
-            Button stripe = DialogButton("SUPPORT VIA STRIPE", true); stripe.Click += delegate { OpenUrl(SupportUrl); }; supportContent.Children.Add(stripe);
+            supportContent.Children.Add(new TextBlock { Text = ModernText.L("Support is optional. Scan the QR code or open the secure Stripe payment page.", "支持与否自愿。扫码或打开安全的 Stripe 支付页面。"), TextWrapping = TextWrapping.Wrap, TextAlignment = TextAlignment.Center, Foreground = ModernPalette.Brush(ModernPalette.Muted), Margin = new Thickness(4, 0, 4, 12) });
+            Button stripe = DialogButton("通过 Stripe 支持", true); stripe.Click += delegate { OpenUrl(SupportUrl); }; supportContent.Children.Add(stripe);
             support.Child = supportContent; Grid.SetColumn(support, 1); content.Children.Add(support);
             Grid.SetRow(content, 1); layout.Children.Add(content);
-            Button close = DialogButton("CLOSE", false); close.Width = 150; close.HorizontalAlignment = HorizontalAlignment.Right; close.Margin = new Thickness(0, 10, 0, 0); close.Click += delegate { Close(); }; Grid.SetRow(close, 2); layout.Children.Add(close);
+            Button close = DialogButton("关闭", false); close.Width = 150; close.HorizontalAlignment = HorizontalAlignment.Right; close.Margin = new Thickness(0, 10, 0, 0); close.Click += delegate { Close(); }; Grid.SetRow(close, 2); layout.Children.Add(close);
         }
 
         private static BitmapImage LoadImage(byte[] bytes)
@@ -7213,7 +7875,7 @@ tuningPanel.Children.Add(Heading("REAL VEHICLE VALUES", 15));
             try { Process.Start(new ProcessStartInfo { FileName = url, UseShellExecute = true }); }
             catch (Exception ex)
             {
-                ModernMessageDialog error = new ModernMessageDialog("Universal Test Lab", "Could not open the link.\n\n" + url + "\n\n" + ex.Message, "CLOSE", null, true) { Owner = Owner };
+                ModernMessageDialog error = new ModernMessageDialog("Universal Test Lab", "Could not open the link.\n\n" + url + "\n\n" + ex.Message, "关闭", null, true) { Owner = Owner };
                 error.ShowDialog();
             }
         }
@@ -7371,11 +8033,10 @@ tuningPanel.Children.Add(Heading("REAL VEHICLE VALUES", 15));
             System.Windows.Application app = new System.Windows.Application();
             Aircraft sample = new Aircraft { Id = "ef_2000_aesa", Display = "EF-2000 Typhoon (AESA)", Kind = "Aircraft", Nation = "Great Britain", Rank = 9 };
             List<AircraftModification> sampleMods = new List<AircraftModification>();
-            foreach (string line in Embedded.Text("UTL.modifications.tsv").Replace("\r", "").Split(new[] { '\n' }, StringSplitOptions.RemoveEmptyEntries))
+            foreach (ModificationRowJson r in MainForm.JsonRows<ModificationRowJson>("UTL.modifications.json"))
             {
-                string[] p = line.Split('\t'); int tier;
-                if (p.Length >= 7 && p[0].Equals(sample.Id, StringComparison.OrdinalIgnoreCase) && Int32.TryParse(p[3], out tier))
-                    sampleMods.Add(new AircraftModification { AircraftId = p[0], Id = p[1], Display = p[2], Tier = tier, ModClass = p[4], Group = p[5], Requires = p[6] });
+                if (r != null && r.aircraftId != null && r.aircraftId.Equals(sample.Id, StringComparison.OrdinalIgnoreCase) && !String.IsNullOrWhiteSpace(r.id))
+                    sampleMods.Add(new AircraftModification { AircraftId = r.aircraftId, Id = r.id, Display = r.display, Tier = r.tier, ModClass = r.modClass, Group = r.group, Requires = r.requires });
             }
             ModernFlightSystemsWindow window = new ModernFlightSystemsWindow(sample, sampleMods, new AircraftSettings(), false);
             window.WindowStartupLocation = WindowStartupLocation.Manual;
@@ -7399,16 +8060,30 @@ tuningPanel.Children.Add(Heading("REAL VEHICLE VALUES", 15));
                 NativeMass = 54000, NativeEnginePower = 1519, NativeForwardSpeed = 75, NativeReverseSpeed = 10, NativeReloadSeconds = 5, NativeRecoil = 0.5
             };
             List<GroundAmmo> ammo = new List<GroundAmmo>();
-            foreach (string line in Embedded.Text("UTL.ground_ammo.tsv").Replace("\r", "").Split(new[] { '\n' }, StringSplitOptions.RemoveEmptyEntries))
+            string groundAmmoJsonText = Embedded.Text("UTL.ground_ammo.json");
+            if (!String.IsNullOrWhiteSpace(groundAmmoJsonText))
             {
-                string[] p = line.Split('\t');
-                if (p.Length < 8 || !p[0].Equals(sample.MainWeaponBlk, StringComparison.OrdinalIgnoreCase)) continue;
-                ammo.Add(new GroundAmmo { SourceBlk = p[0], BulletName = p[1], Display = p[2], Type = p[3], Mass = MainForm.ParseNumber(p[4]), Speed = MainForm.ParseNumber(p[5]), ExplosiveMass = MainForm.ParseNumber(p[6]), Caliber = MainForm.ParseNumber(p[7]), Penetration = p.Length > 8 ? MainForm.ParseNumber(p[8]) : 0 });
+                try
+                {
+                    System.Web.Script.Serialization.JavaScriptSerializer gaSerializer = new System.Web.Script.Serialization.JavaScriptSerializer();
+                    gaSerializer.MaxJsonLength = int.MaxValue;
+                    List<GroundAmmoJson> ammoList = gaSerializer.Deserialize<List<GroundAmmoJson>>(groundAmmoJsonText);
+                    if (ammoList != null)
+                    {
+                        foreach (GroundAmmoJson ga in ammoList)
+                        {
+                            if (ga == null || String.IsNullOrWhiteSpace(ga.source)) continue;
+                            if (!ga.source.Equals(sample.MainWeaponBlk, StringComparison.OrdinalIgnoreCase)) continue;
+                            ammo.Add(new GroundAmmo { SourceBlk = ga.source, Container = ga.container ?? "", BulletName = ga.bulletName, Display = ga.display ?? "", Type = ga.kind ?? "", Mass = ga.mass, Speed = ga.speed, ExplosiveMass = ga.explosive, Caliber = ga.caliber, Penetration = ga.penetration });
+                        }
+                    }
+                }
+                catch { }
             }
             AircraftSettings settings = new AircraftSettings();
             if (ammo.Count > 0) settings.GroundAmmoLoadouts.Add(new GroundAmmoLoadout { Slot = 0, Count = 31, SourceBlk = ammo[0].SourceBlk, BulletName = ammo[0].BulletName });
             if (ammo.Count > 1) settings.GroundAmmoLoadouts.Add(new GroundAmmoLoadout { Slot = 1, Count = 9, SourceBlk = ammo[1].SourceBlk, BulletName = ammo[1].BulletName });
-            ModernGroundConfigureWindow window = new ModernGroundConfigureWindow(sample, settings, ammo, new TargetUnit[0], new UnitWeapon[0], new GroundWeaponInfo[0], new GroundAmmo[0], null);
+            ModernGroundConfigureWindow window = new ModernGroundConfigureWindow(sample, settings, ammo, new TargetUnit[0], new UnitWeapon[0], new GroundWeaponInfo[0], new GroundAmmo[0], new GroundWeaponBeltOption[0], null);
             window.WindowStartupLocation = WindowStartupLocation.Manual; window.Left = 0; window.Top = 0; window.Show();
             window.Dispatcher.Invoke(new Action(delegate { }), System.Windows.Threading.DispatcherPriority.ApplicationIdle);
             RenderWindow(window, path); window.Close(); app.Shutdown();
@@ -7452,7 +8127,7 @@ tuningPanel.Children.Add(Heading("REAL VEHICLE VALUES", 15));
             CombinedMap map = new CombinedMap { Id = "western_europe", Display = "Western Europe", Level = "levels/avg_western_europe.bin" };
             map.Spawns.Add(new CombinedSpawn { Kind = "aircraft", Side = 1, Option = "airfield", Label = "Airfield" });
             map.Spawns.Add(new CombinedSpawn { Kind = "aircraft", Side = 1, Option = "air", Label = "Air spawn" });
-            ModernMapWindow window = new ModernMapWindow(new[] { air }, new[] { ground }, new[] { ship }, air, 1, new[] { ground }, true, ship, 1, false,
+            ModernMapWindow window = new ModernMapWindow(new[] { air }, new[] { ground }, new[] { ship }, air, 1, new[] { ground }, true, "active", "all", ship, 1, false,
                 new[] { map }, "aircraft", new CombinedScenarioSettings { Enabled = true, MapId = map.Id, Side = 1, SpawnOption = "airfield" }, null, 1, null, 1, null, 1);
             window.WindowStartupLocation = WindowStartupLocation.Manual; window.Left = 0; window.Top = 0; window.Show();
             window.Dispatcher.Invoke(new Action(delegate { }), System.Windows.Threading.DispatcherPriority.ApplicationIdle);
@@ -7511,7 +8186,7 @@ tuningPanel.Children.Add(Heading("REAL VEHICLE VALUES", 15));
             AircraftSettings groundSettings = new AircraftSettings();
             groundSettings.GroundAmmoLoadouts.Add(new GroundAmmoLoadout { Slot = 0, Count = 31, SourceBlk = groundRound.SourceBlk, BulletName = groundRound.BulletName });
             groundSettings.GroundAmmoLoadouts.Add(new GroundAmmoLoadout { Slot = 1, Count = 9, SourceBlk = groundRound.SourceBlk, BulletName = groundRound.BulletName });
-            ModernGroundConfigureWindow groundConfigure = new ModernGroundConfigureWindow(groundVehicle, groundSettings, new[] { groundRound }, new TargetUnit[0], new UnitWeapon[0], new GroundWeaponInfo[0], new GroundAmmo[0], null);
+            ModernGroundConfigureWindow groundConfigure = new ModernGroundConfigureWindow(groundVehicle, groundSettings, new[] { groundRound }, new TargetUnit[0], new UnitWeapon[0], new GroundWeaponInfo[0], new GroundAmmo[0], new GroundWeaponBeltOption[0], null);
             if (!groundConfigure.AmmoSlidersStableForSelfTest())
                 throw new InvalidOperationException("WPF ground-ammunition slider self-test failed.");
 

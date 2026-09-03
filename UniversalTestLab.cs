@@ -14,7 +14,7 @@ using System.Windows.Forms;
 [assembly: AssemblyTitle("Universal Test Lab")]
 [assembly: AssemblyProduct("Universal Test Lab")]
 [assembly: AssemblyDescription("War Thunder User Mission and vehicle test workspace (public beta)")]
-[assembly: AssemblyCompany("AstraSEP")]
+[assembly: AssemblyCompany("Vanilla Wong")]
 [assembly: AssemblyVersion("0.12.0.0")]
 [assembly: AssemblyFileVersion("0.12.0.2")]
 [assembly: AssemblyInformationalVersion("0.12.0-beta.2")]
@@ -287,6 +287,7 @@ namespace UniversalTestLab
         public string InjectedCannonDomain;
         public string InjectedCannonRound;
         public bool UnlimitedAmmo;
+        public bool FakeArhConversion;
         public string InjectedCannonUnit;
 
         public AircraftSettings Copy()
@@ -318,7 +319,8 @@ namespace UniversalTestLab
                 InjectedCannonDomain = InjectedCannonDomain,
                 InjectedCannonUnit = InjectedCannonUnit,
                 InjectedCannonRound = InjectedCannonRound,
-                UnlimitedAmmo = UnlimitedAmmo
+                UnlimitedAmmo = UnlimitedAmmo,
+                FakeArhConversion = FakeArhConversion
             };
             foreach (string id in EnabledModifications) copy.EnabledModifications.Add(id);
             foreach (CountermeasureLoadout loadout in CountermeasureLoadouts) copy.CountermeasureLoadouts.Add(loadout.Copy());
@@ -331,6 +333,9 @@ namespace UniversalTestLab
     internal sealed class GroundAmmo
     {
         public string SourceBlk;
+        // Named ammunition container (cannon top-level block) the round belongs
+        // to, e.g. 125mm_ussr_3BM42_APDS_FS. Empty for anonymous default rounds.
+        public string Container;
         public string BulletName;
         public string Display;
         public string Type;
@@ -341,6 +346,144 @@ namespace UniversalTestLab
         public double Penetration;
         public override string ToString() { return Display + "  •  " + Type + "  •  " + Speed.ToString("0", CultureInfo.InvariantCulture) + " m/s"; }
     }
+
+    internal sealed class GroundAmmoJson
+    {
+        public string source { get; set; }
+        public string container { get; set; }
+        public string bulletName { get; set; }
+        public string display { get; set; }
+        public string kind { get; set; }
+        public double mass { get; set; }
+        public double speed { get; set; }
+        public double explosive { get; set; }
+        public double caliber { get; set; }
+        public double penetration { get; set; }
+    }
+
+    // Catalog JSON row DTOs (mirror tools/tsv2json.js schemas; camelCase keys match
+    // JavaScriptSerializer property binding).
+    internal sealed class AircraftRowJson
+    {
+        public string id { get; set; }
+        public string display { get; set; }
+        public string type { get; set; }
+        public string defaultPreset { get; set; }
+        public string nation { get; set; }
+        public int rank { get; set; }
+        public double maxLoad { get; set; }
+        public string kind { get; set; }
+    }
+
+    internal sealed class GroundRowJson
+    {
+        public string id { get; set; }
+        public string display { get; set; }
+        public string defaultPreset { get; set; }
+        public string nation { get; set; }
+        public int rank { get; set; }
+        public string type { get; set; }
+        public string mainWeaponBlk { get; set; }
+        public int maxAmmo { get; set; }
+        public double mass { get; set; }
+        public double enginePower { get; set; }
+        public double forwardSpeed { get; set; }
+        public double reverseSpeed { get; set; }
+        public double reloadSeconds { get; set; }
+        public double recoil { get; set; }
+    }
+
+    internal sealed class ShipRowJson
+    {
+        public string id { get; set; }
+        public string display { get; set; }
+        public string defaultPreset { get; set; }
+        public string nation { get; set; }
+        public int rank { get; set; }
+        public string type { get; set; }
+    }
+
+    internal sealed class DonorWeaponRowJson
+    {
+        public string aircraftId { get; set; }
+        public string aircraftDisplay { get; set; }
+        public int slot { get; set; }
+        public string mount { get; set; }
+        public string trigger { get; set; }
+        public string blk { get; set; }
+        public string emitter { get; set; }
+        public int bullets { get; set; }
+        public string icon { get; set; }
+        public string name { get; set; }
+        public string category { get; set; }
+        public double unitMass { get; set; }
+        public double totalMass { get; set; }
+    }
+
+    internal sealed class UnitWeaponRowJson
+    {
+        public string unitId { get; set; }
+        public string domain { get; set; }
+        public string unitDisplay { get; set; }
+        public string weaponBlk { get; set; }
+        public string weaponDisplay { get; set; }
+        public string kind { get; set; }
+    }
+
+    internal sealed class PylonSlotRowJson
+    {
+        public string aircraftId { get; set; }
+        public int slot { get; set; }
+        public int order { get; set; }
+        public int tier { get; set; }
+        public double maxLoad { get; set; }
+        public string anchorMount { get; set; }
+    }
+
+    internal sealed class ModificationRowJson
+    {
+        public string aircraftId { get; set; }
+        public string id { get; set; }
+        public string display { get; set; }
+        public int tier { get; set; }
+        public string modClass { get; set; }
+        public string group { get; set; }
+        public string requires { get; set; }
+    }
+
+    internal sealed class CombinedMapRowJson
+    {
+        public string id { get; set; }
+        public string display { get; set; }
+        public string level { get; set; }
+        public string kind { get; set; }
+        public int side { get; set; }
+        public string detail { get; set; }
+        public string label { get; set; }
+        public string transform { get; set; }
+        public string objectClass { get; set; }
+    }
+
+    internal sealed class EraPresetRowJson
+    {
+        public string name { get; set; }
+        public string groundIds { get; set; }
+        public string airIds { get; set; }
+        public string airCounts { get; set; }
+        public string shipId { get; set; }
+        public int shipCount { get; set; }
+    }
+
+    internal sealed class NameValueRowJson
+    {
+        // naval_cannons.tsv -> key/value; air_ordnance.tsv -> blk/display/kind
+        public string key { get; set; }
+        public string value { get; set; }
+        public string blk { get; set; }
+        public string display { get; set; }
+        public string kind { get; set; }
+    }
+
 
     internal sealed class GroundAmmoLoadout
     {
@@ -729,20 +872,46 @@ internal sealed class DonorWeapon
     {
         public IList<GroundWeaponInfo> Weapons;
         public IList<KeyValuePair<string, string>> Missiles;
-        public IList<string> BeltOptions;
+        public IList<GroundWeaponBeltOption> BeltOptions;
         public readonly Dictionary<string, int> RackRounds = new Dictionary<string, int>(StringComparer.OrdinalIgnoreCase);
         public readonly Dictionary<string, int> BeltSizes = new Dictionary<string, int>(StringComparer.OrdinalIgnoreCase);
         public int BeltTypeLimit = 1;
+    }
+
+    internal sealed class GroundWeaponBeltOption
+    {
+        public string Name;
+        public int Calibre;
+        public IList<GroundAmmo> Rounds;
     }
 
     internal sealed class GroundWeaponCacheJson
     {
         public List<GroundWeaponInfoJson> weapons { get; set; }
         public List<MissileInfoJson> missiles { get; set; }
-        public List<string> beltOptions { get; set; }
+        public List<GroundWeaponBeltJson> beltOptions { get; set; }
         public Dictionary<string, int> rackRounds { get; set; }
         public Dictionary<string, int> beltSizes { get; set; }
         public int beltTypeLimit { get; set; }
+    }
+
+    internal sealed class GroundWeaponBeltJson
+    {
+        public string name { get; set; }
+        public int calibre { get; set; }
+        public List<GroundWeaponRoundJson> rounds { get; set; }
+    }
+
+    internal sealed class GroundWeaponRoundJson
+    {
+        public string bulletName { get; set; }
+        public string display { get; set; }
+        public string kind { get; set; }
+        public double mass { get; set; }
+        public double speed { get; set; }
+        public double explosive { get; set; }
+        public double caliber { get; set; }
+        public double penetration { get; set; }
     }
 
     internal sealed class GroundWeaponInfoJson
@@ -1472,6 +1641,7 @@ internal sealed class DonorWeapon
 public string InjectedCannonBlk;
 public string InjectedCannonDomain;
 public string InjectedCannonUnit;
+public bool FakeArhConversion;
         public bool SpawnSpeedAuto = true;
         public int SpawnSpeedKmh = 450;
 
@@ -1498,7 +1668,8 @@ public string InjectedCannonUnit;
                 SpawnSpeedKmh = SpawnSpeedKmh,
                 InjectedCannonBlk = InjectedCannonBlk,
                 InjectedCannonDomain = InjectedCannonDomain,
-                InjectedCannonUnit = InjectedCannonUnit
+                InjectedCannonUnit = InjectedCannonUnit,
+                FakeArhConversion = FakeArhConversion
             };
         }
 
@@ -1520,6 +1691,7 @@ public string InjectedCannonUnit;
                 if (!String.IsNullOrWhiteSpace(InjectedCannonBlk)) mo.Add("inject_cannon_blk", InjectedCannonBlk);
                 if (!String.IsNullOrWhiteSpace(InjectedCannonDomain)) mo.Add("inject_cannon_domain", InjectedCannonDomain);
                 if (!String.IsNullOrWhiteSpace(InjectedCannonUnit)) mo.Add("inject_cannon_unit", InjectedCannonUnit);
+                mo.Add("fake_arh_conversion", FakeArhConversion);
                 ConfigStore.SetObject("mission_options", mo);
                 ConfigStore.Save();
             }
@@ -1547,6 +1719,7 @@ public string InjectedCannonUnit;
                 if (mo.TryGetValue("inject_cannon_blk", out v) && v != null) Current.InjectedCannonBlk = Convert.ToString(v, CultureInfo.InvariantCulture);
                 if (mo.TryGetValue("inject_cannon_domain", out v) && v != null) Current.InjectedCannonDomain = Convert.ToString(v, CultureInfo.InvariantCulture);
                 if (mo.TryGetValue("inject_cannon_unit", out v) && v != null) Current.InjectedCannonUnit = Convert.ToString(v, CultureInfo.InvariantCulture);
+                if (mo.TryGetValue("fake_arh_conversion", out v) && v != null) Current.FakeArhConversion = Convert.ToBoolean(v, CultureInfo.InvariantCulture);
             }
             catch { }
         }
@@ -2165,6 +2338,37 @@ public string InjectedCannonUnit;
             return text.Insert(triggers.End, trigger);
         }
 
+        public static string SetSamSites(string text, string mode, string selection)
+        {
+            // The CTR_ SAM sites are spawned by dedicated triggers (spawn_ctr_s300_sites /
+            // spawn_ctr_patriot_sites / spawn_ctr_buk_sites) from isDelayed tank models.
+            // mode: "active" | "passive" | "friendly" | "disabled"
+            //   passive keeps the sites on the field but marks every CTR_ unit
+            //   attack_type:t="dont_aim" so they never engage the player.
+            //   friendly flips every CTR_ unit to army1 so the sites intercept
+            //   the enemy air targets (Target_Air / Heli) instead of the player.
+            // selection: "all" | "s300" | "patriot" | "hawk" | "buk"
+            string[] triggers = { "spawn_ctr_s300_sites", "spawn_ctr_hawk_sites", "spawn_ctr_patriot_sites", "spawn_ctr_buk_sites", "spawn_ctr_aew_55j6", "spawn_ctr_aew_tps59", "create_ctr_sites", "ctr_s300_sites", "ctr_hawk_sites", "ctr_patriot_sites", "ctr_buk_sites" };
+            string[] keys = { "s300", "hawk", "patriot", "buk", "s300", "hawk|patriot", "*", "s300", "hawk", "patriot", "buk" };
+            for (int i = 0; i < triggers.Length; i++)
+            {
+                BlockSpan trigger = FirstBlock(text, triggers[i], 0);
+                if (trigger == null) continue;
+                bool enabled = mode != "disabled" && (keys[i] == "*" || selection == "all" || keys[i].Split('|').Contains(selection));
+                string block = new Regex(@"(?m)^(\s*is_enabled:b\s*=\s*)(?:yes|no|true|false)\s*$").Replace(trigger.Text, "$1" + (enabled ? "yes" : "no"), 1);
+                text = ReplaceSpan(text, trigger, block);
+            }
+            if (mode == "passive")
+            {
+                text = new Regex(@"(tankModels\{\s*name:t=""CTR_[^""]+""(?:(?!attack_type)[\s\S])*?props\{)").Replace(text, "$1\n      attack_type:t=\"dont_aim\"");
+            }
+            if (mode == "friendly")
+            {
+                text = new Regex(@"(name:t=""CTR_[^""]+""[\s\S]*?props\{\s*army:i=)2").Replace(text, "${1}1");
+            }
+            return text;
+        }
+
         public static string DisablePlayerSwitch(string text)
         {
             int marker = text.IndexOf("comments:t=\"UTL_PLAYER_SWITCH\"", StringComparison.Ordinal);
@@ -2396,7 +2600,7 @@ public string InjectedCannonUnit;
         {
             BlockSpan old = UnitBlockByName(text, "You");
             List<GroundAmmoLoadout> ammunition = (missionAmmo ?? (settings == null ? Enumerable.Empty<GroundAmmoLoadout>() : settings.GroundAmmoLoadouts))
-                .Where(x => x != null && x.Slot >= 0 && x.Slot < 4 && !String.IsNullOrWhiteSpace(x.BulletName))
+                .Where(x => x != null && x.Slot >= 0 && x.Slot < 4 && x.Count > 0)
                 .GroupBy(x => x.Slot)
                 .Select(x => x.Last().Copy())
                 .ToList();
@@ -3137,6 +3341,9 @@ string trigger = @"
         private NumericUpDown groundCount;
         private NumericUpDown shipCount;
         private CheckBox hostileGround;
+        private CheckBox samSites;
+        private string pendingSamMode = "active";
+        private string pendingSamSelection = "all";
         private Label status;
         private Button aircraftSettingsButton;
         private PylonSlot selectedPylon;
@@ -3219,7 +3426,27 @@ string trigger = @"
                         }
                         dst.Missiles = missiles;
                     }
-                    dst.BeltOptions = src.beltOptions ?? new List<string>();
+                    if (src.beltOptions != null)
+                    {
+                        List<GroundWeaponBeltOption> belts = new List<GroundWeaponBeltOption>();
+                        foreach (GroundWeaponBeltJson bj in src.beltOptions)
+                        {
+                            if (bj == null || String.IsNullOrWhiteSpace(bj.name)) continue;
+                            GroundWeaponBeltOption bo = new GroundWeaponBeltOption { Name = bj.name, Calibre = bj.calibre };
+                            if (bj.rounds != null)
+                            {
+                                List<GroundAmmo> rounds = new List<GroundAmmo>();
+                                foreach (GroundWeaponRoundJson rj in bj.rounds)
+                                {
+                                    if (rj == null || String.IsNullOrWhiteSpace(rj.bulletName)) continue;
+                                    rounds.Add(new GroundAmmo { Container = bj.name, BulletName = rj.bulletName, Display = rj.display ?? "", Type = rj.kind ?? "", Mass = rj.mass, Speed = rj.speed, ExplosiveMass = rj.explosive, Caliber = rj.caliber, Penetration = rj.penetration });
+                                }
+                                bo.Rounds = rounds;
+                            }
+                            belts.Add(bo);
+                        }
+                        dst.BeltOptions = belts;
+                    }
                     if (src.rackRounds != null)
                     {
                         foreach (KeyValuePair<string, int> r in src.rackRounds) dst.RackRounds[r.Key] = r.Value;
@@ -3247,7 +3474,7 @@ string trigger = @"
             {
                 cache.Weapons = prebuilt.Weapons ?? new List<GroundWeaponInfo>();
                 cache.Missiles = prebuilt.Missiles ?? new List<KeyValuePair<string, string>>();
-                cache.BeltOptions = prebuilt.BeltOptions ?? new List<string>();
+                cache.BeltOptions = prebuilt.BeltOptions ?? new List<GroundWeaponBeltOption>();
                 foreach (KeyValuePair<string, int> r in prebuilt.RackRounds) cache.RackRounds[r.Key] = r.Value;
                 foreach (KeyValuePair<string, int> b in prebuilt.BeltSizes) cache.BeltSizes[b.Key] = b.Value;
                 cache.BeltTypeLimit = prebuilt.BeltTypeLimit > 1 ? prebuilt.BeltTypeLimit : 1;
@@ -3439,15 +3666,15 @@ public IList<GroundAmmo> WorkspaceResolveCannonAmmo(string cannonBlk)
         // empty modification module per belt type (e.g. 30mm_2a38_HE, 30mm_2a42_AP
         // on Pantsir-SM-SV). Ask3lad lists these modification names as the vehicle's
         // ammo and the mission slots accept them directly (bullets0:t="30mm_2a42_AP").
-        internal IList<string> WorkspaceGunBeltOptions(Aircraft target)
+        internal IList<GroundWeaponBeltOption> WorkspaceGunBeltOptions(Aircraft target)
         {
             GroundWeaponCacheData cache = WorkspaceGetGroundWeaponCache(target);
-            return cache == null ? new List<string>() : cache.BeltOptions;
+            return cache == null ? new List<GroundWeaponBeltOption>() : cache.BeltOptions;
         }
 
-        private IList<string> WorkspaceGunBeltOptionsUncached(Aircraft target)
+        private IList<GroundWeaponBeltOption> WorkspaceGunBeltOptionsUncached(Aircraft target)
         {
-            List<string> result = new List<string>();
+            List<GroundWeaponBeltOption> result = new List<GroundWeaponBeltOption>();
             if (target == null || String.IsNullOrWhiteSpace(target.Id)) return result;
             try
             {
@@ -3461,7 +3688,8 @@ public IList<GroundAmmo> WorkspaceResolveCannonAmmo(string cannonBlk)
                         if (!Regex.IsMatch(name, @"^\d+mm_", RegexOptions.IgnoreCase)) continue;
                         if (name.IndexOf("_ammo_pack", StringComparison.OrdinalIgnoreCase) >= 0) continue;
                         if (BlkTools.DirectChildBlocks(module.Text).Count > 0) continue;
-                        if (!result.Contains(name, StringComparer.OrdinalIgnoreCase)) result.Add(name);
+                        if (!result.Any(x => String.Equals(x.Name, name, StringComparison.OrdinalIgnoreCase)))
+                            result.Add(new GroundWeaponBeltOption { Name = name });
                     }
             }
             catch { }
@@ -3705,15 +3933,15 @@ public IList<GroundAmmo> WorkspaceResolveCannonAmmo(string cannonBlk)
 
         internal bool WorkspaceGenerateMission(string airTargetId, int airTargetCount, IList<string> groundTargetIds, bool hostile, string shipTargetId, int shipTargetCount, bool passiveShip)
         {
-            return WorkspaceGenerateMission(airTargetId, airTargetCount, groundTargetIds, hostile, shipTargetId, shipTargetCount, passiveShip, null, null);
+            return WorkspaceGenerateMission(airTargetId, airTargetCount, groundTargetIds, hostile, shipTargetId, shipTargetCount, passiveShip, null, null, "active", "all");
         }
 
         internal bool WorkspaceGenerateMission(string airTargetId, int airTargetCount, IList<string> groundTargetIds, bool hostile, string shipTargetId, int shipTargetCount, bool passiveShip, IList<FlyingTargetSlot> flyingTargets)
         {
-            return WorkspaceGenerateMission(airTargetId, airTargetCount, groundTargetIds, hostile, shipTargetId, shipTargetCount, passiveShip, flyingTargets, null);
+            return WorkspaceGenerateMission(airTargetId, airTargetCount, groundTargetIds, hostile, shipTargetId, shipTargetCount, passiveShip, flyingTargets, null, "active", "all");
         }
 
-        internal bool WorkspaceGenerateMission(string airTargetId, int airTargetCount, IList<string> groundTargetIds, bool hostile, string shipTargetId, int shipTargetCount, bool passiveShip, IList<FlyingTargetSlot> flyingTargets, CombinedScenarioSettings combinedScenario)
+        internal bool WorkspaceGenerateMission(string airTargetId, int airTargetCount, IList<string> groundTargetIds, bool hostile, string shipTargetId, int shipTargetCount, bool passiveShip, IList<FlyingTargetSlot> flyingTargets, CombinedScenarioSettings combinedScenario, string samSitesMode = "active", string samSitesSelection = "all")
         {
             SelectComboById(airTargetBox, airTargetId);
             string firstGround = groundTargetIds == null ? null : groundTargetIds.FirstOrDefault(x => !String.IsNullOrWhiteSpace(x));
@@ -3723,6 +3951,9 @@ public IList<GroundAmmo> WorkspaceResolveCannonAmmo(string cannonBlk)
             groundCount.Value = firstGround == null ? 0 : 1;
             shipCount.Value = Math.Max(0, Math.Min(20, shipTargetCount));
             hostileGround.Checked = hostile;
+            samSites.Checked = samSitesMode != "disabled";
+            pendingSamMode = samSitesMode;
+            pendingSamSelection = samSitesSelection;
             workspaceGroundTargetOverrides = groundTargetIds == null ? null : groundTargetIds.Where(x => !String.IsNullOrWhiteSpace(x)).Take(7).ToList();
             workspaceFlyingTargets = flyingTargets == null ? null : flyingTargets.Where(x => x != null && !String.IsNullOrWhiteSpace(x.AircraftId)).ToList();
             workspacePassiveShip = passiveShip;
@@ -3752,6 +3983,22 @@ public IList<GroundAmmo> WorkspaceResolveCannonAmmo(string cannonBlk)
             return Embedded.Text(resource).Replace("\r", "").Split(new[] { '\n' }, StringSplitOptions.RemoveEmptyEntries);
         }
 
+        // Deserialize an embedded catalog JSON resource into row DTOs. Mirrors the
+        // legacy TSV parsers but reads the converted JSON catalogs instead.
+        internal static List<T> JsonRows<T>(string resource)
+        {
+            try
+            {
+                string text = Embedded.Text(resource);
+                if (String.IsNullOrWhiteSpace(text)) return new List<T>();
+                System.Web.Script.Serialization.JavaScriptSerializer serializer = new System.Web.Script.Serialization.JavaScriptSerializer();
+                serializer.MaxJsonLength = int.MaxValue;
+                List<T> rows = serializer.Deserialize<List<T>>(text);
+                return rows ?? new List<T>();
+            }
+            catch { return new List<T>(); }
+        }
+
         internal static double ParseNumber(string value)
         {
             double result;
@@ -3761,132 +4008,102 @@ public IList<GroundAmmo> WorkspaceResolveCannonAmmo(string cannonBlk)
         private void LoadCatalogs()
         {
             prebuiltGroundWeapons = LoadPrebuiltGroundWeapons();
-            foreach (string line in Lines("UTL.aircraft.tsv"))
+            foreach (AircraftRowJson r in MainForm.JsonRows<AircraftRowJson>("UTL.aircraft.json"))
             {
-                string[] p = line.Split('\t');
-                int rank;
-                if (p.Length >= 6 && Int32.TryParse(p[5], out rank))
-                    aircraft.Add(new Aircraft { Id = p[0], Display = p[1], Type = p[2], DefaultPreset = p[3], Nation = p[4], Rank = rank, MaxLoad = p.Length > 6 ? ParseNumber(p[6]) : 0, Kind = p.Length > 7 && !String.IsNullOrWhiteSpace(p[7]) ? p[7] : "Aircraft" });
+                if (r == null || String.IsNullOrWhiteSpace(r.id)) continue;
+                aircraft.Add(new Aircraft { Id = r.id, Display = r.display, Type = r.type, DefaultPreset = r.defaultPreset, Nation = r.nation, Rank = r.rank, MaxLoad = r.maxLoad, Kind = String.IsNullOrWhiteSpace(r.kind) ? "Aircraft" : r.kind });
             }
-            foreach (string line in Lines("UTL.ground.tsv"))
+            foreach (GroundRowJson r in MainForm.JsonRows<GroundRowJson>("UTL.ground.json"))
             {
-                string[] p = line.Split('\t');
-                int rank;
-                if (p.Length >= 3)
+                if (r == null || String.IsNullOrWhiteSpace(r.id)) continue;
+                TargetUnit target = new TargetUnit
                 {
-                    if (p.Length < 5 || !Int32.TryParse(p[4], out rank)) rank = 0;
-                    int maxAmmo;
-                    if (p.Length < 8 || !Int32.TryParse(p[7], NumberStyles.Integer, CultureInfo.InvariantCulture, out maxAmmo)) maxAmmo = 0;
-                    TargetUnit target = new TargetUnit
-                    {
-                        Id = p[0], Display = p[1], DefaultPreset = p[2], Nation = p.Length > 3 ? p[3] : "Other", Rank = rank,
-                        Type = p.Length > 5 ? p[5] : "Ground Vehicle", MainWeaponBlk = p.Length > 6 ? p[6] : "", MaxAmmo = maxAmmo,
-                        NativeMass = p.Length > 8 ? ParseNumber(p[8]) : 0, NativeEnginePower = p.Length > 9 ? ParseNumber(p[9]) : 0,
-                        NativeForwardSpeed = p.Length > 10 ? ParseNumber(p[10]) : 0, NativeReverseSpeed = p.Length > 11 ? ParseNumber(p[11]) : 0,
-                        NativeReloadSeconds = p.Length > 12 ? ParseNumber(p[12]) : 0, NativeRecoil = p.Length > 13 ? ParseNumber(p[13]) : 0
-                    };
-                    groundTargets.Add(target);
-                    aircraft.Add(new Aircraft
-                    {
-                        Id = target.Id, Display = target.Display, Type = target.Type, DefaultPreset = target.DefaultPreset, Nation = target.Nation,
-                        Rank = target.Rank, Kind = "Ground Vehicle", MainWeaponBlk = target.MainWeaponBlk, MaxAmmo = target.MaxAmmo,
-                        NativeMass = target.NativeMass, NativeEnginePower = target.NativeEnginePower, NativeForwardSpeed = target.NativeForwardSpeed,
-                        NativeReverseSpeed = target.NativeReverseSpeed, NativeReloadSeconds = target.NativeReloadSeconds, NativeRecoil = target.NativeRecoil
-                    });
-                }
-            }
-            foreach (string line in Lines("UTL.ships.tsv"))
-            {
-                string[] p = line.Split('\t');
-                int rank;
-                if (p.Length >= 3)
+                    Id = r.id, Display = r.display, DefaultPreset = r.defaultPreset, Nation = String.IsNullOrWhiteSpace(r.nation) ? "Other" : r.nation, Rank = r.rank,
+                    Type = String.IsNullOrWhiteSpace(r.type) ? "Ground Vehicle" : r.type, MainWeaponBlk = r.mainWeaponBlk ?? "", MaxAmmo = r.maxAmmo,
+                    NativeMass = r.mass, NativeEnginePower = r.enginePower,
+                    NativeForwardSpeed = r.forwardSpeed, NativeReverseSpeed = r.reverseSpeed,
+                    NativeReloadSeconds = r.reloadSeconds, NativeRecoil = r.recoil
+                };
+                groundTargets.Add(target);
+                aircraft.Add(new Aircraft
                 {
-                    if (p.Length < 5 || !Int32.TryParse(p[4], out rank)) rank = 0;
-                    shipTargets.Add(new TargetUnit { Id = p[0], Display = p[1], DefaultPreset = p[2], Nation = p.Length > 3 ? p[3] : "Other", Rank = rank, Type = p.Length > 5 ? p[5] : "Ship" });
-                }
+                    Id = target.Id, Display = target.Display, Type = target.Type, DefaultPreset = target.DefaultPreset, Nation = target.Nation,
+                    Rank = target.Rank, Kind = "Ground Vehicle", MainWeaponBlk = target.MainWeaponBlk, MaxAmmo = target.MaxAmmo,
+                    NativeMass = target.NativeMass, NativeEnginePower = target.NativeEnginePower, NativeForwardSpeed = target.NativeForwardSpeed,
+                    NativeReverseSpeed = target.NativeReverseSpeed, NativeReloadSeconds = target.NativeReloadSeconds, NativeRecoil = target.NativeRecoil
+                });
             }
-            foreach (string line in Lines("UTL.ground_ammo.tsv"))
+            foreach (ShipRowJson r in MainForm.JsonRows<ShipRowJson>("UTL.ships.json"))
             {
-                string[] p = line.Split('\t');
-                if (p.Length < 8) continue;
-                groundAmmo.Add(new GroundAmmo { SourceBlk = p[0], BulletName = p[1], Display = p[2], Type = p[3], Mass = ParseNumber(p[4]), Speed = ParseNumber(p[5]), ExplosiveMass = ParseNumber(p[6]), Caliber = ParseNumber(p[7]), Penetration = p.Length > 8 ? ParseNumber(p[8]) : 0 });
+                if (r == null || String.IsNullOrWhiteSpace(r.id)) continue;
+                shipTargets.Add(new TargetUnit { Id = r.id, Display = r.display, DefaultPreset = r.defaultPreset, Nation = String.IsNullOrWhiteSpace(r.nation) ? "Other" : r.nation, Rank = r.rank, Type = String.IsNullOrWhiteSpace(r.type) ? "Ship" : r.type });
             }
-            foreach (string line in Lines("UTL.donor_weapons.tsv"))
+            foreach (DonorWeaponRowJson r in MainForm.JsonRows<DonorWeaponRowJson>("UTL.donor_weapons.json"))
             {
-                string[] p = line.Split('\t');
-                int slot, bullets;
-                if (p.Length < 13 || !Int32.TryParse(p[2], out slot) || !Int32.TryParse(p[7], out bullets)) continue;
+                if (r == null || String.IsNullOrWhiteSpace(r.blk)) continue;
                 nativeWeapons.Add(new DonorWeapon
                 {
-                    AircraftId = p[0], AircraftDisplay = p[1], Slot = slot, Mount = p[3], Trigger = p[4], Blk = p[5],
-                    Emitter = p[6], Bullets = bullets, Icon = p[8], Name = p[9], Category = p[10], UnitMass = ParseNumber(p[11]), TotalMass = ParseNumber(p[12])
+                    AircraftId = r.aircraftId, AircraftDisplay = r.aircraftDisplay, Slot = r.slot, Mount = r.mount, Trigger = r.trigger, Blk = r.blk,
+                    Emitter = r.emitter, Bullets = r.bullets, Icon = r.icon, Name = r.name, Category = r.category, UnitMass = r.unitMass, TotalMass = r.totalMass
                 });
             }
-            foreach (string line in Lines("UTL.weapon_catalog.tsv"))
+            foreach (DonorWeaponRowJson r in MainForm.JsonRows<DonorWeaponRowJson>("UTL.weapon_catalog.json"))
             {
-                string[] p = line.Split('\t');
-                int bullets;
-                if (p.Length < 8 || !Int32.TryParse(p[2], out bullets)) continue;
-                globalWeapons.Add(new DonorWeapon { Trigger = p[0], Blk = p[1], Bullets = bullets, Icon = p[3], Name = p[4], Category = p[5], UnitMass = ParseNumber(p[6]), TotalMass = ParseNumber(p[7]), Nations = p.Length > 8 ? p[8] : "" });
+                if (r == null || String.IsNullOrWhiteSpace(r.blk)) continue;
+                globalWeapons.Add(new DonorWeapon { Trigger = r.trigger, Blk = r.blk, Bullets = r.bullets, Icon = r.icon, Name = r.name, Category = r.category, UnitMass = r.unitMass, TotalMass = r.totalMass });
             }
             navalCannons.Clear();
-            foreach (string line in Lines("UTL.naval_cannons.tsv"))
+            foreach (NameValueRowJson r in MainForm.JsonRows<NameValueRowJson>("UTL.naval_cannons.json"))
             {
-                string[] p = line.Split('\t');
-                if (p.Length >= 2 && !String.IsNullOrWhiteSpace(p[0])) navalCannons.Add(new KeyValuePair<string, string>(p[0].Trim(), p[1].Trim()));
+                if (r == null || String.IsNullOrWhiteSpace(r.key)) continue;
+                navalCannons.Add(new KeyValuePair<string, string>(r.key.Trim(), (r.value ?? "").Trim()));
             }
             unitWeapons.Clear();
-            foreach (string line in Lines("UTL.unit_weapons.tsv"))
+            foreach (UnitWeaponRowJson r in MainForm.JsonRows<UnitWeaponRowJson>("UTL.unit_weapons.json"))
             {
-                string[] p = line.Split('\t');
-                if (p.Length >= 6 && !String.IsNullOrWhiteSpace(p[0]) && !String.IsNullOrWhiteSpace(p[3]))
-                    unitWeapons.Add(new UnitWeapon { UnitId = p[0].Trim(), Domain = p[1].Trim(), UnitDisplay = p[2].Trim(), WeaponBlk = p[3].Trim(), WeaponDisplay = p[4].Trim(), Kind = p[5].Trim() });
+                if (r == null || String.IsNullOrWhiteSpace(r.unitId) || String.IsNullOrWhiteSpace(r.weaponBlk)) continue;
+                unitWeapons.Add(new UnitWeapon { UnitId = r.unitId, Domain = r.domain, UnitDisplay = r.unitDisplay, WeaponBlk = r.weaponBlk, WeaponDisplay = r.weaponDisplay, Kind = r.kind });
             }
             airOrdnance.Clear();
-            foreach (string line in Lines("UTL.air_ordnance.tsv"))
+            foreach (NameValueRowJson r in MainForm.JsonRows<NameValueRowJson>("UTL.air_ordnance.json"))
             {
-                string[] p = line.Split('\t');
-                if (p.Length >= 2 && !String.IsNullOrWhiteSpace(p[0])) airOrdnance.Add(new KeyValuePair<string, string>(p[0].Trim(), p[1].Trim()));
+                if (r == null || String.IsNullOrWhiteSpace(r.blk)) continue;
+                airOrdnance.Add(new KeyValuePair<string, string>(r.blk.Trim(), (r.display ?? "").Trim()));
             }
-            foreach (string line in Lines("UTL.aircraft_slots.tsv"))
+            foreach (PylonSlotRowJson r in MainForm.JsonRows<PylonSlotRowJson>("UTL.aircraft_slots.json"))
             {
-                string[] p = line.Split('\t');
-                int slot, order, tier;
-                if (p.Length < 6 || !Int32.TryParse(p[1], out slot) || !Int32.TryParse(p[2], out order) || !Int32.TryParse(p[3], out tier)) continue;
-                pylons.Add(new PylonSlot { AircraftId = p[0], Slot = slot, Order = order, Tier = tier, MaxLoad = ParseNumber(p[4]), AnchorMount = p[5] });
+                if (r == null || String.IsNullOrWhiteSpace(r.aircraftId)) continue;
+                pylons.Add(new PylonSlot { AircraftId = r.aircraftId, Slot = r.slot, Order = r.order, Tier = r.tier, MaxLoad = r.maxLoad, AnchorMount = r.anchorMount });
             }
-            foreach (string line in Lines("UTL.modifications.tsv"))
+            foreach (ModificationRowJson r in MainForm.JsonRows<ModificationRowJson>("UTL.modifications.json"))
             {
-                string[] p = line.Split('\t');
-                int tier;
-                if (p.Length < 7 || !Int32.TryParse(p[3], out tier)) continue;
+                if (r == null || String.IsNullOrWhiteSpace(r.aircraftId) || String.IsNullOrWhiteSpace(r.id)) continue;
                 modifications.Add(new AircraftModification
                 {
-                    AircraftId = p[0], Id = p[1], Display = p[2], Tier = tier,
-                    ModClass = p[4], Group = p[5], Requires = p[6]
+                    AircraftId = r.aircraftId, Id = r.id, Display = r.display, Tier = r.tier,
+                    ModClass = r.modClass, Group = r.group, Requires = r.requires
                 });
             }
-            foreach (string line in Lines("UTL.combined_maps.tsv"))
+            foreach (CombinedMapRowJson r in MainForm.JsonRows<CombinedMapRowJson>("UTL.combined_maps.json"))
             {
-                string[] p = line.Split('\t');
-                int side;
-                if (p.Length < 9 || !Int32.TryParse(p[4], NumberStyles.Integer, CultureInfo.InvariantCulture, out side)) continue;
-                CombinedMap map = combinedMaps.FirstOrDefault(x => x.Id.Equals(p[0], StringComparison.OrdinalIgnoreCase));
+                if (r == null || String.IsNullOrWhiteSpace(r.id)) continue;
+                CombinedMap map = combinedMaps.FirstOrDefault(x => x.Id.Equals(r.id, StringComparison.OrdinalIgnoreCase));
                 if (map == null)
                 {
-                    map = new CombinedMap { Id = p[0], Display = p[1], Level = p[2] };
+                    map = new CombinedMap { Id = r.id, Display = r.display, Level = r.level };
                     combinedMaps.Add(map);
                 }
-                if (p[3].Equals("capture", StringComparison.OrdinalIgnoreCase))
+                if (!String.IsNullOrWhiteSpace(r.kind) && r.kind.Equals("capture", StringComparison.OrdinalIgnoreCase))
                 {
-                    map.CapturePoints.Add(new CombinedCapturePoint { Id = p[5], Label = p[6], Transform = p[7] });
+                    map.CapturePoints.Add(new CombinedCapturePoint { Id = r.detail, Label = r.label, Transform = r.transform });
                     continue;
                 }
                 map.Spawns.Add(new CombinedSpawn
                 {
-                    Kind = p[3], Side = side, Option = p[5], Label = p[6], Transform = p[7], ObjectClass = p[8]
+                    Kind = r.kind, Side = r.side, Option = r.detail, Label = r.label, Transform = r.transform, ObjectClass = r.objectClass
                 });
             }
+
             combinedMaps.Sort(delegate(CombinedMap left, CombinedMap right) { return StringComparer.CurrentCultureIgnoreCase.Compare(left.Display, right.Display); });
             PopulateWeaponNations();
         }
@@ -4183,13 +4400,14 @@ public IList<GroundAmmo> WorkspaceResolveCannonAmmo(string cannonBlk)
         private Control BuildMissionPanel()
         {
             Panel panel = (Panel)SurfacePanel();
-            TableLayoutPanel grid = new TableLayoutPanel { Dock = DockStyle.Fill, RowCount = 13, ColumnCount = 1, Padding = new Padding(15), BackColor = Color.Transparent };
+            TableLayoutPanel grid = new TableLayoutPanel { Dock = DockStyle.Fill, RowCount = 14, ColumnCount = 1, Padding = new Padding(15), BackColor = Color.Transparent };
             grid.RowStyles.Add(new RowStyle(SizeType.Absolute, 58));
             grid.RowStyles.Add(new RowStyle(SizeType.Absolute, 145));
             grid.RowStyles.Add(new RowStyle(SizeType.Absolute, 26));
             grid.RowStyles.Add(new RowStyle(SizeType.Absolute, 22));
             grid.RowStyles.Add(new RowStyle(SizeType.Absolute, 40));
             grid.RowStyles.Add(new RowStyle(SizeType.Absolute, 22));
+            grid.RowStyles.Add(new RowStyle(SizeType.Absolute, 40));
             grid.RowStyles.Add(new RowStyle(SizeType.Absolute, 40));
             grid.RowStyles.Add(new RowStyle(SizeType.Absolute, 22));
             grid.RowStyles.Add(new RowStyle(SizeType.Absolute, 40));
@@ -4212,24 +4430,29 @@ public IList<GroundAmmo> WorkspaceResolveCannonAmmo(string cannonBlk)
             Theme.Toggle(hostileGround);
             hostileGround.ForeColor = Theme.Danger;
             grid.Controls.Add(ComboCountAndOption(groundTargetBox, groundCount, hostileGround), 0, 6);
-            grid.Controls.Add(Theme.Label("NAVAL TARGET", false), 0, 7);
+            samSites = new CheckBox { Text = "SAM SITES: ACTIVE", Dock = DockStyle.Fill, Appearance = Appearance.Button, TextAlign = ContentAlignment.MiddleCenter, Checked = true };
+            Theme.Toggle(samSites);
+            samSites.ForeColor = Theme.Danger;
+            samSites.CheckedChanged += delegate { samSites.Text = samSites.Checked ? "SAM SITES: ACTIVE" : "SAM SITES: DISABLED"; };
+            grid.Controls.Add(samSites, 0, 7);
+            grid.Controls.Add(Theme.Label("NAVAL TARGET", false), 0, 8);
             shipTargetBox = TargetRowCombo(shipTargets.Cast<object>().ToList());
             shipCount = CountBox(1);
-            grid.Controls.Add(ComboAndCount(shipTargetBox, shipCount), 0, 8);
-            Label details = Theme.Label("FLIGHT PROFILE\r\nFull fuel • adaptive air start • no external tanks\r\nAmmo restoration: every 10 seconds\r\nHOSTILE: active enemy air defence\r\nNuclear weapons: native detonation", false);
+            grid.Controls.Add(ComboAndCount(shipTargetBox, shipCount), 0, 9);
+            Label details = Theme.Label("FLIGHT PROFILE\r\nFull fuel • adaptive air start • no external tanks\r\nAmmo restoration: every 10 seconds\r\nHOSTILE: active enemy air defence\r\nSAM SITES: ACTIVE keeps the S-300/Patriot/Buk sites engaging you\r\nNuclear weapons: native detonation", false);
             details.Padding = new Padding(4, 12, 4, 4);
-            grid.Controls.Add(details, 0, 9);
+            grid.Controls.Add(details, 0, 10);
             Label hint = Theme.Label("Aircraft/helicopters: reopen User Missions. Ground vehicle changes: restart War Thunder once so the tank proxy is reloaded.", false);
             hint.ForeColor = Theme.Good;
-            grid.Controls.Add(hint, 0, 10);
+            grid.Controls.Add(hint, 0, 11);
             Button apply = new Button { Text = "GENERATE TEST MISSION", Dock = DockStyle.Fill, Font = new Font("Segoe UI Semibold", 11f), Margin = new Padding(0, 4, 0, 2) };
             Theme.Button(apply, true);
             apply.Click += delegate { ApplyClicked(); };
-            grid.Controls.Add(apply, 0, 11);
+            grid.Controls.Add(apply, 0, 12);
             Label version = Theme.Label("HOT LOAD  •  NO GAME RESTART", false);
             version.TextAlign = ContentAlignment.MiddleCenter;
             version.ForeColor = Theme.AccentLight;
-            grid.Controls.Add(version, 0, 12);
+            grid.Controls.Add(version, 0, 13);
             panel.Controls.Add(grid);
             return panel;
         }
@@ -4854,6 +5077,15 @@ public IList<GroundAmmo> WorkspaceResolveCannonAmmo(string cannonBlk)
         private static string ExtractGameBlk(string root, string relative)
         {
             string normalizedRelative = NormalizeGameResourcePath(relative);
+            // Zero-extract fast path: a full pre-extracted game-data tree laid out as
+            // <tree>/aces.vromfs.bin_u/gamedata/... (the project's universal_units_data /
+            // universal_weapons_data extraction). Reading it avoids launching wt_ext_cli
+            // per uncached resource - the per-weapon-swap stall.
+            foreach (string tree in FindPreExtractedTrees())
+            {
+                string candidate = Path.Combine(tree, "aces.vromfs.bin_u", normalizedRelative.Replace('/', Path.DirectorySeparatorChar));
+                if (File.Exists(candidate)) return candidate;
+            }
             // Deterministic per-resource cache directory (stable across calls
             // and sessions) so selecting vehicles / building missions does not
             // re-launch wt_ext_cli for the same game resource every time.
@@ -4881,6 +5113,44 @@ public IList<GroundAmmo> WorkspaceResolveCannonAmmo(string cannonBlk)
             if (!File.Exists(resultPath))
                 throw new FileNotFoundException("The War Thunder folder is valid, but this game resource was not found after extraction:" + Environment.NewLine + normalizedRelative, resultPath);
             return resultPath;
+        }
+
+        private static string[] preExtractedTrees = null;
+        // Project-local full vromfs extractions (universal_units_data for gamedata/units,
+        // universal_weapons_data for gamedata/weapons). Both may sit next to the exe's
+        // parent (project root) or in the exe folder itself. Auto-detected once.
+        private static string[] FindPreExtractedTrees()
+        {
+            if (preExtractedTrees != null) return preExtractedTrees;
+            preExtractedTrees = new string[0];
+            try
+            {
+                string baseDir = AppDomain.CurrentDomain.BaseDirectory;
+                List<string> found = new List<string>();
+                string[] roots =
+                {
+                    Path.GetFullPath(Path.Combine(baseDir, "..")),
+                    Path.GetFullPath(Path.Combine(baseDir, "..", "..")),
+                    Path.GetFullPath(baseDir)
+                };
+                string[] names = { "universal_units_data", "universal_weapons_data" };
+                foreach (string root in roots)
+                {
+                    foreach (string name in names)
+                    {
+                        string candidate = Path.Combine(root, name);
+                        try
+                        {
+                            if (Directory.Exists(Path.Combine(candidate, "aces.vromfs.bin_u", "gamedata")) && !found.Contains(candidate))
+                                found.Add(candidate);
+                        }
+                        catch { }
+                    }
+                }
+                preExtractedTrees = found.ToArray();
+            }
+            catch { }
+            return preExtractedTrees;
         }
 
         private static uint GetStableHash(string value)
@@ -5137,6 +5407,9 @@ public IList<GroundAmmo> WorkspaceResolveCannonAmmo(string cannonBlk)
             // with count0=9999) so the game applies the vehicle's native default
             // ammunition configuration - Ask3lad writes exactly this and the game
             // loads the preset default (e.g. Pantsir-SM-SV gets its stock gun belt).
+            // A STOCK slot (BulletName empty, SourceBlk "stock:<cal>") is kept on purpose:
+            // Ask3lad writes bulletsN:t="" with a count to load the native default round
+            // (e.g. T-80BVM 3BK18M) alongside other slots.
             return configured;
         }
 
@@ -5372,11 +5645,15 @@ string cannon = ((customCannonNeeded || moduleShipsWeapons) && hasEditableCannon
             List<GroundAmmoLoadout> missionAmmo = ResolveGroundMissionAmmo(target, settings, effectiveCannonPath);
             if (settings.UnlimitedAmmo)
                 foreach (GroundAmmoLoadout unlimited in missionAmmo) unlimited.Count = 9999;
+            // Note: without any configured ammo the mission keeps the empty ammo
+            // block (bullets0-3 = "" + count 9999), which makes the game use the
+            // vehicle preset's native default ammunition - confirmed behaviour on
+            // the userVehicles proxy class (full native rack, same as entering the
+            // mission without touching ammo). A fallback to the first projectile
+            // would silently replace the native default and was therefore removed.
             // An injected cannon brings its own ammunition. When the fused UI
             // mounted rounds for the injected gun (their SourceBlk matches the
-            // injected cannon path) those loadouts become the actual mission slots;
-            // otherwise fall back to the first projectile of the injected gun so the
-            // HUD ammunition counter has a current round type to display.
+            // injected cannon path) those loadouts become the actual mission slots.
             if (!String.IsNullOrWhiteSpace(settings.InjectedCannonBlk))
             {
                 List<GroundAmmoLoadout> injectedConfigured = settings.GroundAmmoLoadouts
@@ -5393,23 +5670,6 @@ string cannon = ((customCannonNeeded || moduleShipsWeapons) && hasEditableCannon
                     {
                         if (!String.IsNullOrEmpty(cannon))
                             loadout.AmmoGroup = ResolveAmmoSlotId(cannon, loadout.BulletName);
-                    }
-                }
-                else
-                {
-                    missionAmmo = new List<GroundAmmoLoadout>();
-                    if (!String.IsNullOrEmpty(cannon))
-                    {
-                        BlockSpan firstBullet = BlkTools.Blocks(cannon, "bullet").FirstOrDefault();
-                        if (firstBullet != null)
-                        {
-                            string bulletName = BlkTools.Field(firstBullet.Text, "bulletName", "t");
-                            if (!String.IsNullOrWhiteSpace(bulletName))
-                            {
-                                string ammoGroup = FindGroundAmmoGroup(cannon, bulletName);
-                                missionAmmo.Add(new GroundAmmoLoadout { Slot = 0, Count = 9999, SourceBlk = effectiveCannonPath, BulletName = bulletName, AmmoGroup = ammoGroup });
-                            }
-                        }
                     }
                 }
             }
@@ -5556,7 +5816,7 @@ string cannon = ((customCannonNeeded || moduleShipsWeapons) && hasEditableCannon
             Dictionary<string, string> ammunitionSources = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
             foreach (GroundAmmoLoadout loadout in missionAmmo)
             {
-                if (String.IsNullOrWhiteSpace(loadout.SourceBlk)) continue;
+                if (String.IsNullOrWhiteSpace(loadout.SourceBlk) || loadout.SourceBlk.StartsWith("stock:", StringComparison.OrdinalIgnoreCase)) continue;
                 string sourcePath = loadout.SourceBlk.Replace('\\', '/').TrimStart('/');
                 string source;
                 if (!ammunitionSources.TryGetValue(sourcePath, out source))
@@ -5723,7 +5983,13 @@ string cannon = ((customCannonNeeded || moduleShipsWeapons) && hasEditableCannon
                     : BlkTools.Blocks(nativeUnit, "commonWeapons").FirstOrDefault();
                 if (commonWeapons == null) throw new InvalidOperationException("Native common weapon controller was not found in the ground vehicle.");
                 string commonOverride = commonWeapons.Text;
-                BlockSpan mainWeapon = BlkTools.Blocks(commonOverride, "Weapon").FirstOrDefault(x => String.Equals(BlkTools.Field(x.Text, "trigger", "t"), "gunner0", StringComparison.OrdinalIgnoreCase));
+                // Pick the real gun to swap: skip dummy weapons (launcher/SAM vehicles
+                // carry a dummy:b=true gunner0 mount that only aims the camera). Prefer
+                // a non-dummy gunner0 (normal tank gun), else the first non-dummy
+                // Weapon (missile launcher like Buk/Osa/Tor is gunner1).
+                List<BlockSpan> weapons = BlkTools.Blocks(commonOverride, "Weapon").ToList();
+                BlockSpan mainWeapon = weapons.FirstOrDefault(x => String.Equals(BlkTools.Field(x.Text, "trigger", "t"), "gunner0", StringComparison.OrdinalIgnoreCase) && !IsDummyWeapon(x))
+                    ?? weapons.FirstOrDefault(x => !IsDummyWeapon(x));
                 if (mainWeapon == null) throw new InvalidOperationException("Primary gun mount was not found in the ground vehicle.");
                 string weaponBlock = mainWeapon.Text;
                 if (customCannonNeeded)
@@ -5777,6 +6043,11 @@ string cannon = ((customCannonNeeded || moduleShipsWeapons) && hasEditableCannon
                 }
             }
 
+            // SARH -> fake-ARH conversion (EXPERIMENTAL switch): patch the injected
+            // cannon text in place so the game loads an already-converted missile.
+            if (useCustomCannon && settings.FakeArhConversion && !String.IsNullOrWhiteSpace(cannon))
+                cannon = ApplyFakeArhPatch(cannon, 2.0);
+
             // Publish dependencies first. The game must never observe a playable unit
             // whose gun BLK is still absent or was deleted with the previous token.
             if (useCustomCannon) WriteBytes(cannonOut, new UTF8Encoding(false).GetBytes(cannon));
@@ -5785,6 +6056,212 @@ string cannon = ((customCannonNeeded || moduleShipsWeapons) && hasEditableCannon
             foreach (GroundAmmoLoadout loadout in missionAmmo) generated.GroundAmmoLoadouts.Add(loadout.Copy());
             if (useCustomCannon) generated.AuxiliaryPaths.Add(cannonOut);
             return generated;
+        }
+
+        // True when a commonWeapons Weapon is a camera-aiming dummy (dummy:b = true).
+        // These vehicles (launcher/SAM trucks, e.g. Buk/Osa/Tor TELs) mount the real
+        // weapon on a separate gunner1 Weapon - swapping the dummy would hang the
+        // injected gun on the observation sight instead of the launcher.
+        internal static bool IsDummyWeapon(BlockSpan weapon)
+        {
+            // dummy:b is an unquoted bool (dummy:b = true) - BlkTools.Field only
+            // matches quoted :t values, so scan the raw text directly.
+            return Regex.IsMatch(weapon.Text, @"(?m)^\s*dummy\s*:\s*b\s*=\s*(true|yes)\s*$", RegexOptions.IgnoreCase);
+        }
+
+        // SARH -> fake-ARH conversion, verified 2026-09-02 on AIM-7E-2 (sparrow v9):
+        // 1) radarSeeker active:b = true            -> missile self-illuminates (no radar illumination required)
+        // 2) guidance permanentlyActivated:b = true -> TWS launch, no pre-launch lock needed
+        // 3) lockDistance / inertialNavigation + datalink / useTargetVel
+        // 4) breakLockMaxTime -> 160 (re-acquire window)
+        // 5) wider seeker cone (lockAngleMax/angleMax/rateMax), angleGateRate, distGate
+        // 6) shotFreq capped (rocketGun native 1000.25 -> sane rate; ground SAMs already sane)
+        internal static string ApplyFakeArhPatch(string cannon, double shotsPerSecond)
+        {
+            if (String.IsNullOrWhiteSpace(cannon)) return cannon;
+            string lower = cannon.ToLowerInvariant();
+            if (!lower.Contains("guidancetype:t = \"radar\"")) return cannon;
+            if (lower.Contains("active:b = true") && lower.Contains("permanentlyactivated:b = true")) return cannon;
+
+            List<string> lines = new List<string>(cannon.Split('\n'));
+            for (int i = 0; i < lines.Count; i++)
+            {
+                Match m = Regex.Match(lines[i], @"^\s*shotFreq:r\s*=\s*([0-9.]+)", RegexOptions.IgnoreCase);
+                double rate;
+                if (m.Success && Double.TryParse(m.Groups[1].Value, NumberStyles.Float, CultureInfo.InvariantCulture, out rate) && rate > 10.0)
+                    lines[i] = Regex.Replace(lines[i], @"shotFreq:r\s*=\s*[0-9.]+", "shotFreq:r = " + shotsPerSecond.ToString("0.##", CultureInfo.InvariantCulture), RegexOptions.IgnoreCase);
+            }
+
+            // Patch EVERY guidance / radarSeeker block (multi-missile files like
+            // MIM-23 / 5V55 carry two missile groups - patching only the first one
+            // left the second group as true SARH when the player switches shells).
+            InsertFieldInEveryBlock(lines, "guidance", "permanentlyActivated", "permanentlyActivated:b = true");
+            InsertFieldInEveryBlock(lines, "guidance", "lockDistance", "lockDistance:r = 16000");
+            InsertFieldInEveryBlock(lines, "guidance", "inertialNavigation", "inertialNavigation:b = true");
+            InsertFieldInEveryBlock(lines, "guidance", "useTargetVel", "useTargetVel:b = true");
+            ReplaceFieldInEveryBlock(lines, "guidance", "breakLockMaxTime", "breakLockMaxTime:r = 160");
+            InsertInertialGuidanceInAllGuidanceBlocks(lines);
+
+            InsertFieldInEveryBlock(lines, "radarSeeker", "active", "active:b = true");
+            InsertFieldInEveryBlock(lines, "radarSeeker", "angleGateRate", "angleGateRate:r = 30");
+            RaiseFieldInEveryBlock(lines, "radarSeeker", "lockAngleMax", 60.0);
+            RaiseFieldInEveryBlock(lines, "radarSeeker", "angleMax", 60.0);
+            RaiseFieldInEveryBlock(lines, "radarSeeker", "rateMax", 20.0);
+            AddDistGateToEverySeeker(lines);
+            return String.Join("\n", lines);
+        }
+
+        private static int IndexOfBlock(List<string> lines, string blockName, int from = 0)
+        {
+            Regex rx = new Regex(@"^\s*" + blockName + @"\s*\{", RegexOptions.IgnoreCase);
+            for (int i = from; i < lines.Count; i++) if (rx.IsMatch(lines[i])) return i;
+            return -1;
+        }
+
+        private static int BlockEnd(List<string> lines, int openIdx)
+        {
+            int depth = 0;
+            for (int i = openIdx; i < lines.Count; i++)
+            {
+                depth += lines[i].Count(c => c == '{') - lines[i].Count(c => c == '}');
+                if (i > openIdx && depth <= 0) return i;
+            }
+            return -1;
+        }
+
+        private static string FieldIndent(List<string> lines, int openIdx, int closeIdx)
+        {
+            for (int i = openIdx + 1; i < closeIdx; i++)
+            {
+                Match m = Regex.Match(lines[i], @"^(\s*)\S");
+                if (m.Success) return m.Groups[1].Value;
+            }
+            Match om = Regex.Match(lines[openIdx], @"^(\s*)");
+            return om.Success ? om.Groups[1].Value + "\t" : "\t";
+        }
+
+        private static bool RangeContains(List<string> lines, int openIdx, int closeIdx, string field)
+        {
+            Regex rx = new Regex(@"^\s*" + field + @"\s*[:bri]?\s*=", RegexOptions.IgnoreCase);
+            for (int i = openIdx + 1; i < closeIdx; i++) if (rx.IsMatch(lines[i])) return true;
+            return false;
+        }
+
+        private static int IndexOfField(List<string> lines, int openIdx, int closeIdx, string field)
+        {
+            Regex rx = new Regex(@"^\s*" + field + @"\s*[:bri]?\s*=", RegexOptions.IgnoreCase);
+            for (int i = openIdx + 1; i < closeIdx; i++) if (rx.IsMatch(lines[i])) return i;
+            return -1;
+        }
+
+        private static void InsertLineIfMissing(List<string> lines, int index, string line, string indent)
+        {
+            string body = line.TrimStart();
+            for (int i = 0; i < lines.Count; i++) if (lines[i].Trim().Equals(body, StringComparison.OrdinalIgnoreCase)) return;
+            if (index >= 0 && index <= lines.Count) lines.Insert(index, indent + body);
+        }
+
+        private static void InsertFieldInEveryBlock(List<string> lines, string block, string field, string line)
+        {
+            int from = 0;
+            while (true)
+            {
+                int open = IndexOfBlock(lines, block, from);
+                if (open < 0) return;
+                int close = BlockEnd(lines, open);
+                if (!RangeContains(lines, open, close, field))
+                {
+                    string indent = FieldIndent(lines, open, close);
+                    InsertLineIfMissing(lines, open + 1, line, indent);
+                }
+                from = open + 1;
+            }
+        }
+
+        private static void ReplaceFieldInEveryBlock(List<string> lines, string block, string field, string line)
+        {
+            int from = 0;
+            while (true)
+            {
+                int open = IndexOfBlock(lines, block, from);
+                if (open < 0) return;
+                int close = BlockEnd(lines, open);
+                int idx = IndexOfField(lines, open, close, field);
+                if (idx >= 0)
+                {
+                    lines[idx] = Regex.Replace(lines[idx], @"\b" + Regex.Escape(field) + @"\s*:[a-z]\s*=\s*[^/\r\n]*", line, RegexOptions.IgnoreCase);
+                }
+                else
+                {
+                    string indent = FieldIndent(lines, open, close);
+                    InsertLineIfMissing(lines, open + 1, line, indent);
+                }
+                from = open + 1;
+            }
+        }
+
+        private static void RaiseFieldInEveryBlock(List<string> lines, string block, string field, double target)
+        {
+            int from = 0;
+            while (true)
+            {
+                int open = IndexOfBlock(lines, block, from);
+                if (open < 0) return;
+                int close = BlockEnd(lines, open);
+                int idx = IndexOfField(lines, open, close, field);
+                if (idx < 0)
+                {
+                    string indent = FieldIndent(lines, open, close);
+                    InsertLineIfMissing(lines, open + 1, field + ":r = " + target.ToString("0.##", CultureInfo.InvariantCulture), indent);
+                }
+                else
+                {
+                    Match m = Regex.Match(lines[idx], @"\b" + Regex.Escape(field) + @"\s*:r\s*=\s*([0-9.]+)", RegexOptions.IgnoreCase);
+                    double v;
+                    if (m.Success && Double.TryParse(m.Groups[1].Value, NumberStyles.Float, CultureInfo.InvariantCulture, out v) && v < target)
+                        lines[idx] = Regex.Replace(lines[idx], @"\b" + Regex.Escape(field) + @"\s*:r\s*=\s*[0-9.]+", field + ":r = " + target.ToString("0.##", CultureInfo.InvariantCulture), RegexOptions.IgnoreCase);
+                }
+                from = open + 1;
+            }
+        }
+
+        private static void InsertInertialGuidanceInAllGuidanceBlocks(List<string> lines)
+        {
+            int from = 0;
+            while (true)
+            {
+                int open = IndexOfBlock(lines, "guidance", from);
+                if (open < 0) return;
+                int close = BlockEnd(lines, open);
+                if (!RangeContains(lines, open, close, "inertialGuidance"))
+                {
+                    string indent = FieldIndent(lines, open, close);
+                    string guidanceBlock = indent + "inertialGuidance {\n" + indent + "\tinertialNavigationDriftSpeed:r = 2\n" + indent + "\tdatalink:b = true\n" + indent + "}";
+                    InsertLineIfMissing(lines, close, guidanceBlock, "");
+                }
+                from = open + 1;
+            }
+        }
+
+        private static void AddDistGateToEverySeeker(List<string> lines)
+        {
+            int from = 0;
+            while (true)
+            {
+                int open = IndexOfBlock(lines, "radarSeeker", from);
+                if (open < 0) return;
+                int close = BlockEnd(lines, open);
+                if (!RangeContains(lines, open, close, "distGate"))
+                {
+                    string indent = FieldIndent(lines, open, close);
+                    string dist = indent + "distGate {\n" + indent + "\tfilterAlpha:r = 0.8\n" + indent + "\tfilterBetta:r = 0.05\n" + indent + "\tdistGateSearchRange:r = 5000\n" + indent + "}";
+                    int tx = IndexOfField(lines, open, close, "transmitter");
+                    int dopp = IndexOfField(lines, open, close, "dopplerSpeedGate");
+                    int at = tx >= 0 ? tx : (dopp >= 0 ? BlockEnd(lines, dopp) : close);
+                    if (at >= 0 && at <= lines.Count) lines.Insert(at, dist);
+                }
+                from = open + 1;
+            }
         }
 
         internal static bool HasExplicitFlightModel(string unitBlk)
@@ -6375,6 +6852,8 @@ fpvCameraOffset:p3 = 0.2, -0.1, 0
                     }
                     text = BlkTools.UpdateUnit(text, "Ship_Target", ship.Id, ship.DefaultPreset, (int)shipCount.Value);
                     if (workspacePassiveShip) text = BlkTools.MakeShipPassive(text, "Ship_Target");
+                    string samMode = samSites != null && !samSites.Checked ? "disabled" : pendingSamMode;
+                    text = BlkTools.SetSamSites(text, samMode, pendingSamSelection);
                 }
                 if (MissionSettings.Current.LimitedAmmo)
                     text = Regex.Replace(text, @"(?m)^(\s*isLimitedAmmo:b\s*=\s*)(?:true|false)\s*$", "$1true", RegexOptions.IgnoreCase);
@@ -6874,6 +7353,17 @@ fpvCameraOffset:p3 = 0.2, -0.1, 0
         [STAThread]
         private static void Main(string[] args)
         {
+            // Diagnostic crash log for headless self-tests (writes next to the exe).
+            AppDomain.CurrentDomain.UnhandledException += delegate(object sender, UnhandledExceptionEventArgs e)
+            {
+                try
+                {
+                    string log = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "selftest_crash.log");
+                    File.WriteAllText(log, e.ExceptionObject == null ? "(null exception)" : e.ExceptionObject.ToString());
+                }
+                catch { }
+            };
+
             if (args != null)
             {
                 for (int i = 0; i < args.Length - 1; i++)
@@ -7157,7 +7647,8 @@ fpvCameraOffset:p3 = 0.2, -0.1, 0
                 if (text.Count(c => c == '{') != text.Count(c => c == '}') ||
                     text.IndexOf("doNuclearExplosion", StringComparison.Ordinal) >= 0 ||
                     text.IndexOf("ID_FIRE_SECONDARY", StringComparison.Ordinal) >= 0 ||
-                    text.IndexOf("campaign:t=\"UserMissions\"", StringComparison.Ordinal) < 0 ||
+                    text.IndexOf("campaign:t=\"UTL\"", StringComparison.Ordinal) < 0 ||
+                    text.IndexOf("campaign:t=\"UserMissions\"", StringComparison.Ordinal) >= 0 ||
                     text.IndexOf("campaign:t=\"UniversalTestLab\"", StringComparison.Ordinal) >= 0 ||
                     text.IndexOf("chapter:t=\"TestDrive\"", StringComparison.Ordinal) >= 0 ||
                     directAirPlayer.Text.IndexOf("unit_class:t=\"utl_run_selftest_player\"", StringComparison.Ordinal) < 0 ||
@@ -7180,6 +7671,23 @@ fpvCameraOffset:p3 = 0.2, -0.1, 0
                     hostileMission.IndexOf("attack_type:t=\"fire_at_will\"", StringComparison.Ordinal) < 0 ||
                     hostileMission.IndexOf("object:t=\"Target_03\"", StringComparison.Ordinal) < 0)
                     throw new InvalidOperationException("Hostile ground-target self-test failed.");
+                string samSitesDisabled = BlkTools.SetSamSites(text, "disabled", "all");
+                if (samSitesDisabled.Count(c => c == '{') != samSitesDisabled.Count(c => c == '}'))
+                    throw new InvalidOperationException("SAM-sites disable self-test failed.");
+                foreach (string samTriggerName in new[] { "spawn_ctr_s300_sites", "spawn_ctr_patriot_sites", "spawn_ctr_buk_sites" })
+                {
+                    BlockSpan samTrigger = BlkTools.FirstBlock(samSitesDisabled, samTriggerName, 0);
+                    if (samTrigger == null || samTrigger.Text.IndexOf("is_enabled:b=no", StringComparison.Ordinal) < 0)
+                        throw new InvalidOperationException("SAM-sites disable self-test failed: " + samTriggerName);
+                }
+                string samSitesPassive = BlkTools.SetSamSites(text, "passive", "s300");
+                if (samSitesPassive.IndexOf("attack_type:t=\"dont_aim\"", StringComparison.Ordinal) < 0 ||
+                    samSitesPassive.Count(c => c == '{') != samSitesPassive.Count(c => c == '}'))
+                    throw new InvalidOperationException("SAM-sites passive self-test failed.");
+                string samSitesFriendly = BlkTools.SetSamSites(text, "friendly", "all");
+                if (!Regex.IsMatch(samSitesFriendly, @"name:t=""CTR_[^""]+""[\s\S]*?props\{\s*army:i=1") ||
+                    samSitesFriendly.Count(c => c == '{') != samSitesFriendly.Count(c => c == '}'))
+                    throw new InvalidOperationException("SAM-sites friendly self-test failed.");
                 CombinedMap combinedTestMap = new CombinedMap { Id = "selftest", Display = "Self Test", Level = "levels/avg_abandoned_factory.bin" };
                 CombinedSpawn combinedTestSpawn = new CombinedSpawn
                 {
@@ -7372,7 +7880,7 @@ fpvCameraOffset:p3 = 0.2, -0.1, 0
                 string emptyGlobalSight = UserSightStore.BindGeneratedVehicleSelectionText("content{\n  profile{\n  }\n}\n", "utl_run_empty_ground", "sight_1");
                 if (emptyGlobalSight.IndexOf("tankSightSettings", StringComparison.Ordinal) < 0 || emptyGlobalSight.IndexOf("crosshair:t=\"sight_1\"", StringComparison.Ordinal) < 0)
                     throw new InvalidOperationException("New War Thunder custom-sight settings block self-test failed.");
-                if (Embedded.Text("UTL.aircraft.tsv").IndexOf("uav_inf_fpv_strike_drone\tFPV Strike Drone\t", StringComparison.Ordinal) < 0)
+                if (!MainForm.JsonRows<AircraftRowJson>("UTL.aircraft.json").Any(x => x != null && x.id == "uav_inf_fpv_strike_drone" && x.kind == "Drone"))
                     throw new InvalidOperationException("FPV drone catalog self-test failed.");
                 Dictionary<string, GroundWeaponCacheData> prebuiltWeapons = MainForm.LoadPrebuiltGroundWeapons();
                 GroundWeaponCacheData prebuiltT72;
@@ -7386,26 +7894,26 @@ fpvCameraOffset:p3 = 0.2, -0.1, 0
                     prebuiltM16.Weapons[0].NativeAmmo < 4800 ||
                     !prebuiltM16.BeltSizes.ContainsKey("12") || prebuiltM16.BeltSizes["12"] != 200)
                     throw new InvalidOperationException("Prebuilt multi-mount/belt-size self-test failed.");
-                string aircraftData = Embedded.Text("UTL.aircraft.tsv");
-                string groundData = Embedded.Text("UTL.ground.tsv");
-                string groundAmmoData = Embedded.Text("UTL.ground_ammo.tsv");
-                string stationData = Embedded.Text("UTL.aircraft_slots.tsv");
-                string modificationData = Embedded.Text("UTL.modifications.tsv");
-                if (aircraftData.IndexOf("nt_b_52h\tB-52H (Nuclear Escalation)\t", StringComparison.Ordinal) < 0 ||
-                    aircraftData.IndexOf("nt_tu_95m\tTu-95M (Nuclear Escalation)\t", StringComparison.Ordinal) < 0 ||
-                    aircraftData.IndexOf("fau-1\tV-1 (Fi 103)\ttypeTransport\tfau-1_default\tEvent / Experimental", StringComparison.Ordinal) < 0 ||
-                    aircraftData.IndexOf("ah_64d\tAH-64D\ttypeFighter\tah_64d_default\tUSA\t7\t5000\tHelicopter", StringComparison.Ordinal) < 0 ||
-                    groundData.IndexOf("us_m1a2_sep2_abrams\tM1A2 SEP V2\t", StringComparison.Ordinal) < 0 ||
-                    groundData.IndexOf("us_m1a2_sep3_abrams\tM1A2 SEP V3\t", StringComparison.Ordinal) < 0 ||
-                    groundData.IndexOf("germ_leichter_ladungstrager_303a\tGoliath 303a\t", StringComparison.Ordinal) < 0 ||
-                    groundData.IndexOf("\t42\t54000\t1519\t75\t10\t5\t0.5", StringComparison.Ordinal) < 0 ||
-                    groundAmmoData.IndexOf("120mm_m829a2\t120 mm M829A2\tAPFSDS", StringComparison.Ordinal) < 0 ||
-                    modificationData.IndexOf("yak-9ut\tyak9ut_n37_mod\tN-37 cannon", StringComparison.Ordinal) < 0 ||
-                    modificationData.IndexOf("yak-9ut\tyak9ut_ns45_mod\tNS-45 cannon", StringComparison.Ordinal) < 0 ||
-                    modificationData.IndexOf("us_m1a2_sep2_abrams\ttank_medical_kit_expendable", StringComparison.Ordinal) >= 0 ||
-                    stationData.Split(new[] { '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries).Count(x => x.StartsWith("b_52h\t", StringComparison.Ordinal)) != 5 ||
-                    stationData.Split(new[] { '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries).Count(x => x.StartsWith("tu_95m\t", StringComparison.Ordinal)) != 1 ||
-                    stationData.Split(new[] { '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries).Count(x => x.StartsWith("ah_64d\t", StringComparison.Ordinal)) != 6)
+                List<AircraftRowJson> aircraftCatalogRows = MainForm.JsonRows<AircraftRowJson>("UTL.aircraft.json");
+                List<GroundRowJson> groundCatalogRows = MainForm.JsonRows<GroundRowJson>("UTL.ground.json");
+                List<GroundAmmoJson> groundAmmoCatalogRows = MainForm.JsonRows<GroundAmmoJson>("UTL.ground_ammo.json");
+                List<PylonSlotRowJson> slotCatalogRows = MainForm.JsonRows<PylonSlotRowJson>("UTL.aircraft_slots.json");
+                List<ModificationRowJson> modificationCatalogRows = MainForm.JsonRows<ModificationRowJson>("UTL.modifications.json");
+                if (aircraftCatalogRows.Count < 1400 ||
+                    !aircraftCatalogRows.Any(x => x != null && x.id == "nt_b_52h" && x.display.IndexOf("B-52H", StringComparison.Ordinal) >= 0) ||
+                    !aircraftCatalogRows.Any(x => x != null && x.id == "nt_tu_95m" && x.display.IndexOf("Tu-95M", StringComparison.Ordinal) >= 0) ||
+                    !aircraftCatalogRows.Any(x => x != null && x.id == "fau-1" && x.type == "typeTransport") ||
+                    !aircraftCatalogRows.Any(x => x != null && x.id == "ah_64d" && x.kind == "Helicopter") ||
+                    !groundCatalogRows.Any(x => x != null && x.id == "us_m1a2_sep2_abrams") ||
+                    !groundCatalogRows.Any(x => x != null && x.id == "us_m1a2_sep3_abrams" && x.maxAmmo == 42 && x.mass == 54000) ||
+                    !groundCatalogRows.Any(x => x != null && x.id == "germ_leichter_ladungstrager_303a") ||
+                    !groundAmmoCatalogRows.Any(x => x != null && x.bulletName == "120mm_m829a2") ||
+                    !modificationCatalogRows.Any(x => x != null && x.aircraftId == "yak-9ut" && x.id == "yak9ut_n37_mod") ||
+                    !modificationCatalogRows.Any(x => x != null && x.aircraftId == "yak-9ut" && x.id == "yak9ut_ns45_mod") ||
+                    modificationCatalogRows.Any(x => x != null && x.aircraftId == "us_m1a2_sep2_abrams" && x.id == "tank_medical_kit_expendable") ||
+                    slotCatalogRows.Count(x => x != null && x.aircraftId == "b_52h") != 5 ||
+                    slotCatalogRows.Count(x => x != null && x.aircraftId == "tu_95m") != 1 ||
+                    slotCatalogRows.Count(x => x != null && x.aircraftId == "ah_64d") != 6)
                     throw new InvalidOperationException("Aircraft/helicopter catalog self-test failed.");
                 StringBuilder helicopterLoadout = new StringBuilder();
                 string helicopterUnit = "commonWeapons {\nWeapon {\nslot:i = 0\npreset:t = \"m230e1_common\"\n}\nWeapon {\nslot:i = 2\npreset:t = \"fixed_optional\"\n}\n}\nweapon_presets {\n}\n";
@@ -7509,22 +8017,22 @@ fpvCameraOffset:p3 = 0.2, -0.1, 0
                     samAdapter.IndexOf("iris_t_sl_rocket_deployed_char", StringComparison.Ordinal) >= 0 ||
                     samAdapter.Count(c => c == '{') != samAdapter.Count(c => c == '}'))
                     throw new InvalidOperationException("Ground SAM adapter self-test failed.");
-                string weaponCatalog = Embedded.Text("UTL.weapon_catalog.tsv");
-                if (weaponCatalog.IndexOf("#us_aim_9x_block_2\t1\t", StringComparison.Ordinal) < 0 ||
-                    weaponCatalog.IndexOf("\tGround SAM Missiles\t", StringComparison.Ordinal) < 0 ||
-                    weaponCatalog.IndexOf("\tTargeting & Sensor Pods\t", StringComparison.Ordinal) < 0 ||
-                    weaponCatalog.IndexOf("us_b28.blk", StringComparison.OrdinalIgnoreCase) < 0 ||
-                    weaponCatalog.IndexOf("su_rds37.blk", StringComparison.OrdinalIgnoreCase) < 0)
+                List<DonorWeaponRowJson> weaponCatalogRows = MainForm.JsonRows<DonorWeaponRowJson>("UTL.weapon_catalog.json");
+                if (weaponCatalogRows.Count < 2000 ||
+                    !weaponCatalogRows.Any(x => x != null && x.blk != null && x.blk.IndexOf("#us_aim_9x_block_2", StringComparison.Ordinal) >= 0) ||
+                    !weaponCatalogRows.Any(x => x != null && x.category == "Ground SAM Missiles") ||
+                    !weaponCatalogRows.Any(x => x != null && x.category == "Targeting & Sensor Pods") ||
+                    !weaponCatalogRows.Any(x => x != null && x.blk != null && x.blk.IndexOf("us_b28.blk", StringComparison.OrdinalIgnoreCase) >= 0) ||
+                    !weaponCatalogRows.Any(x => x != null && x.blk != null && x.blk.IndexOf("su_rds37.blk", StringComparison.OrdinalIgnoreCase) >= 0))
                     throw new InvalidOperationException("Extended weapon catalog self-test failed.");
-                List<string[]> combinedCatalogRows = Embedded.Text("UTL.combined_maps.tsv")
-                    .Split(new[] { '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries)
-                    .Select(line => line.Split('\t')).Where(fields => fields.Length >= 9).ToList();
-                List<IGrouping<string, string[]>> combinedCatalogMaps = combinedCatalogRows
-                    .GroupBy(fields => fields[0], StringComparer.OrdinalIgnoreCase).ToList();
+                List<CombinedMapRowJson> combinedCatalogRows = MainForm.JsonRows<CombinedMapRowJson>("UTL.combined_maps.json");
+                List<IGrouping<string, CombinedMapRowJson>> combinedCatalogMaps = combinedCatalogRows
+                    .Where(x => x != null && !String.IsNullOrWhiteSpace(x.id))
+                    .GroupBy(x => x.id, StringComparer.OrdinalIgnoreCase).ToList();
                 if (combinedCatalogMaps.Count != 48 || combinedCatalogMaps.Any(group =>
-                    group.Count(fields => !fields[3].Equals("capture", StringComparison.OrdinalIgnoreCase)) != 12 ||
-                    group.Count(fields => fields[3].Equals("capture", StringComparison.OrdinalIgnoreCase)) < 2 ||
-                    group.Count(fields => fields[3].Equals("capture", StringComparison.OrdinalIgnoreCase)) > 3))
+                    group.Count(x => x.kind == null || !x.kind.Equals("capture", StringComparison.OrdinalIgnoreCase)) != 12 ||
+                    group.Count(x => x.kind != null && x.kind.Equals("capture", StringComparison.OrdinalIgnoreCase)) < 2 ||
+                    group.Count(x => x.kind != null && x.kind.Equals("capture", StringComparison.OrdinalIgnoreCase)) > 3))
                     throw new InvalidOperationException("Combined map/spawn/marker catalog self-test failed.");
                 string countermeasureSource = "bullets:i = 90\nisBulletBelt:b = false\nbullet {\n bulletType:t = \"flr\"\n bulletName:t = \"flare_launcher\"\n rocket { mass:r=0.1 }\n}\nbullet {\n bulletType:t = \"chff\"\n bulletName:t = \"chaffs_launcher\"\n rocket { mass:r=0.01 }\n}\n";
                 string customBelt = MainForm.BuildCountermeasureBelt(countermeasureSource, 6, 3);
@@ -7584,7 +8092,7 @@ fpvCameraOffset:p3 = 0.2, -0.1, 0
                     fpv.IndexOf("mass:r = 2.6", StringComparison.Ordinal) < 0 ||
                     fpv.Count(c => c == '{') != fpv.Count(c => c == '}'))
                     throw new InvalidOperationException("Downloaded FPV compatibility self-test failed.");
-                Console.WriteLine("SELFTEST OK aircraft={0} ground-vehicles=yes ground-ammo=yes ground-user-sights=yes ground-pkg-local=yes stable-mission=yes instant-respawn=yes rapid-target-recovery=yes helicopters=yes heli-thermal=yes modifications=yes countermeasures=yes gun-belts=yes native-preset-order=yes preset-settings=yes weapons={1} native-nuclear=yes fpv-impact=yes clean-menu=yes f2-injected=yes pods=yes ground-sam=yes legacy-fm=yes adaptive-spawn=yes vrom-paths=yes", LinesForTest("UTL.aircraft.tsv"), LinesForTest("UTL.weapon_catalog.tsv"));
+                Console.WriteLine("SELFTEST OK aircraft={0} ground-vehicles=yes ground-ammo=yes ground-user-sights=yes ground-pkg-local=yes stable-mission=yes instant-respawn=yes rapid-target-recovery=yes helicopters=yes heli-thermal=yes modifications=yes countermeasures=yes gun-belts=yes native-preset-order=yes preset-settings=yes weapons={1} native-nuclear=yes fpv-impact=yes clean-menu=yes f2-injected=yes pods=yes ground-sam=yes legacy-fm=yes adaptive-spawn=yes vrom-paths=yes", MainForm.JsonRows<AircraftRowJson>("UTL.aircraft.json").Count, MainForm.JsonRows<DonorWeaponRowJson>("UTL.weapon_catalog.json").Count);
                 return;
             }
             Application.EnableVisualStyles();

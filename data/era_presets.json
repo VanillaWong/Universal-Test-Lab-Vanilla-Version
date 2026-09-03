@@ -1,0 +1,34 @@
+[
+  {
+    "name": "WWI - 1916",
+    "groundIds": "uk_mark_v,germ_a7v,uk_mark_v,germ_a7v,uk_mark_v,germ_a7v,uk_mark_v",
+    "airIds": "fokker_d7,spad_13,-,-",
+    "airCounts": "2,2,0,0",
+    "shipId": "uk_battleship_dreadnought",
+    "shipCount": 1
+  },
+  {
+    "name": "WWII - 1943",
+    "groundIds": "ussr_t_34_1942,germ_pzkpfw_vi_ausf_h1_tiger,us_m4a2_sherman,germ_pzkpfw_v_ausf_d_panther,us_m10,ussr_t_34_1942,germ_pzkpfw_vi_ausf_h1_tiger",
+    "airIds": "bf-109g-2,bf-109e-3,-,-",
+    "airCounts": "2,2,0,0",
+    "shipId": "germ_battleship_bismarck",
+    "shipCount": 1
+  },
+  {
+    "name": "GULF WAR - 1991",
+    "groundIds": "us_m1_abrams,ussr_t_72a,ussr_t_64a_1971,us_m60a3_tts,ussr_t_72av_turms,us_m1_abrams,ussr_t_72a",
+    "airIds": "f_14a_early,f_16a_block_10,mi_24d,ah_64a",
+    "airCounts": "2,2,2,2",
+    "shipId": "us_battleship_iowa_class_iowa",
+    "shipCount": 1
+  },
+  {
+    "name": "MODERN - 2020s",
+    "groundIds": "us_m1a2_abrams,ussr_t_90a,cn_ztz_99a,jp_type_10,germ_leopard_2a7v,ussr_t_90m_2020,us_m1a2_abrams",
+    "airIds": "f_16c_block_50,j_10c,ka_52,mi_28nm",
+    "airCounts": "2,2,2,2",
+    "shipId": "ussr_cruiser_kirov",
+    "shipCount": 1
+  }
+]

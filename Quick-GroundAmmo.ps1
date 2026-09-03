@@ -79,6 +79,22 @@ function Get-NamedBlocks([string]$text, [string]$name) {
   return $results
 }
 
+function Get-BulletContainer([string]$text, [int]$bulletStart) {
+  $lineEnd = $text.IndexOf("`n", $bulletStart)
+  if ($lineEnd -lt 0) { $lineEnd = $text.Length }
+  $lineText = $text.Substring($bulletStart, $lineEnd - $bulletStart)
+  if ($lineText -notmatch '^[ \t]*bullet\s*\{') { return '' }
+  $indentMatch = [regex]::Match($lineText, '^[ \t]*')
+  if ($indentMatch.Length -le 0) { return '' }
+  $m = [regex]::Matches($text.Substring(0, $bulletStart), '(?m)^([A-Za-z0-9_./+]+)\s*\{')
+  if ($m.Count -eq 0) { return '' }
+  return $m[$m.Count - 1].Groups[1].Value
+}
+function Escape-Json([string]$s) {
+  if ($null -eq $s) { return '' }
+  return $s.Replace('"', '\"')
+}
+
 # Known display names from the previous catalog (SourceBlk|BulletName -> Display)
 $knownDisplay = @{}
 $oldPath = Join-Path $scriptRoot 'data\ground_ammo.tsv'
@@ -118,10 +134,28 @@ foreach ($file in (Get-ChildItem -LiteralPath $cannonDir -File -Filter '*.blk' |
     $caliber = if ($caliberMatch.Success) { $caliberMatch.Groups[1].Value } else { '0' }
     $kind = if ($typeMatch.Success) { Friendly-ProjectileType $typeMatch.Groups[1].Value } else { 'Projectile' }
     $penetration = if ($penetrationMatch.Success) { $penetrationMatch.Groups[1].Value } else { '0' }
-    $rows.Add("$source`t$bulletName`t$display`t$kind`t$mass`t$speed`t$explosive`t$caliber`t$penetration")
+    $container = Get-BulletContainer $text $bullet.Start
+    $rows.Add("$source`t$container`t$bulletName`t$display`t$kind`t$mass`t$speed`t$explosive`t$caliber`t$penetration")
   }
 }
-$sorted = $rows | Sort-Object { ($_ -split "`t")[3] }, { ($_ -split "`t")[2] }, { ($_ -split "`t")[1] }
-$outPath = Join-Path $scriptRoot 'data\ground_ammo.tsv'
-[IO.File]::WriteAllLines($outPath, $sorted, [Text.UTF8Encoding]::new($false))
-Write-Host "ground_ammo.tsv updated: $($sorted.Count) rows -> $outPath"
+$sorted = $rows | Sort-Object { ($_ -split "`t")[4] }, { ($_ -split "`t")[3] }, { ($_ -split "`t")[2] }
+$sb = New-Object System.Text.StringBuilder
+[void]$sb.Append('[')
+for ($i = 0; $i -lt $sorted.Count; $i++) {
+  if ($i -gt 0) { [void]$sb.Append(',') }
+  $p = $sorted[$i] -split "`t"
+  [void]$sb.Append('{"source":"').Append((Escape-Json $p[0]))
+  [void]$sb.Append('","container":"').Append((Escape-Json $p[1]))
+  [void]$sb.Append('","bulletName":"').Append((Escape-Json $p[2]))
+  [void]$sb.Append('","display":"').Append((Escape-Json $p[3]))
+  [void]$sb.Append('","kind":"').Append((Escape-Json $p[4]))
+  [void]$sb.Append('","mass":').Append($p[5])
+  [void]$sb.Append(',"speed":').Append($p[6])
+  [void]$sb.Append(',"explosive":').Append($p[7])
+  [void]$sb.Append(',"caliber":').Append($p[8])
+  [void]$sb.Append(',"penetration":').Append($p[9]).Append('}')
+}
+[void]$sb.Append(']')
+$outPath = Join-Path $scriptRoot 'data\ground_ammo.json'
+[IO.File]::WriteAllText($outPath, $sb.ToString(), [Text.UTF8Encoding]::new($false))
+Write-Host "ground_ammo.json updated: $($sorted.Count) rows -> $outPath"

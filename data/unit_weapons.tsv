@@ -6450,6 +6450,15 @@ f_16i_sufa	aircraft	F-16I Sufa	gameData/Weapons/containers/bru_61_bomb_pylon_gbu
 f_16i_sufa	aircraft	F-16I Sufa	gameData/Weapons/containers/is_spice_250_sqr_rack.blk	is spice 250 sqr rack	cannon
 f_16i_sufa	aircraft	F-16I Sufa	gameData/Weapons/BombGuns/il_spice_1000.blk	il spice 1000	cannon
 f_16i_sufa	aircraft	F-16I Sufa	gameData/Weapons/BombGuns/il_spice_2000.blk	il spice 2000	cannon
+f_16xl	aircraft	F-16XL-1	gameData/Weapons/cannonM61A1_pgu_28.blk	cannonM61A1 pgu 28	cannon
+f_16xl	aircraft	F-16XL-1	gameData/Weapons/dummy_weapon.blk	dummy weapon	cannon
+f_16xl	aircraft	F-16XL-1	gameData/Weapons/rocketGuns/countermeasure_split_launcher_jet.blk	countermeasure split launcher jet	cannon
+f_16xl	aircraft	F-16XL-1	gameData/Weapons/rocketGuns/us_aim9l_sidewinder_default.blk	us aim9l sidewinder default	cannon
+f_16xl	aircraft	F-16XL-1	gameData/Weapons/BombGuns/us_500lb_mk_82_ldgp.blk	us 500lb mk 82 ldgp	cannon
+f_16xl	aircraft	F-16XL-1	gameData/Weapons/rocketGuns/us_agm_65b.blk	us agm 65b	cannon
+f_16xl	aircraft	F-16XL-1	gameData/Weapons/BombGuns/us_2000lb_mk_84_ldgp.blk	us 2000lb mk 84 ldgp	cannon
+f_16xl	aircraft	F-16XL-1	gameData/Weapons/rocketGuns/us_aim_120a_default.blk	us aim 120a default	cannon
+f_16xl	aircraft	F-16XL-1	gameData/Weapons/rocketGuns/us_aim_120a.blk	us aim 120a	cannon
 f_20a	aircraft	F-20A Tigershark	gameData/Weapons/cannonM39A3.blk	cannonM39A3	cannon
 f_20a	aircraft	F-20A Tigershark	gameData/Weapons/dummy_weapon.blk	dummy weapon	cannon
 f_20a	aircraft	F-20A Tigershark	gameData/Weapons/rocketGuns/countermeasure_split_launcher_jet.blk	countermeasure split launcher jet	cannon
