@@ -30,7 +30,6 @@
 /resource:resources\Clean_Testdrive.bin,UTL.Clean_Testdrive.bin
 /resource:resources\Clean_Testdrive.blk,UTL.Clean_Testdrive.blk
 /resource:resources\Clean_Testdrive_map.png,UTL.Clean_Testdrive_map.png
-/resource:resources\support-qr.png,UTL.support-qr.png
 /resource:resources\preview-yf23.png,UTL.preview-yf23.png
 /resource:resources\preview-ah64e.png,UTL.preview-ah64e.png
 /resource:resources\preview-m1a2-sepv3.png,UTL.preview-m1a2-sepv3.png

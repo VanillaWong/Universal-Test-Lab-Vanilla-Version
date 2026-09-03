@@ -4187,7 +4187,7 @@ public IList<GroundAmmo> WorkspaceResolveCannonAmmo(string cannonBlk)
             TableLayoutPanel brand = new TableLayoutPanel { Dock = DockStyle.Fill, RowCount = 2, ColumnCount = 1, BackColor = Color.Transparent, Margin = new Padding(0) };
             brand.RowStyles.Add(new RowStyle(SizeType.Absolute, 35));
             brand.RowStyles.Add(new RowStyle(SizeType.Percent, 100));
-            Label title = Theme.Label("U.T.L. by AstraSEP", true);
+            Label title = Theme.Label("Universal Test Lab", true);
             title.Font = new Font("Segoe UI Semibold", 15.5f);
             title.ForeColor = Theme.Text;
             brand.Controls.Add(title, 0, 0);
@@ -7229,9 +7229,7 @@ fpvCameraOffset:p3 = 0.2, -0.1, 0
 
     internal sealed class AboutForm : Form
     {
-        private const string SupportUrl = "https://buy.stripe.com/bJe00bbHB0GH0qI655fQI00";
-        private const string ProjectUrl = "https://github.com/UKRAngler/Universal-Test-Lab";
-        private const string AstraYoutubeUrl = "https://youtube.com/@astra-sep?si=TiMO8--EXG2zXapG";
+        private const string ProjectUrl = "https://github.com/VanillaWong/Universal-Test-Lab-Vanilla-Version";
 
         public AboutForm(int aircraftCount, int weaponCount)
         {
@@ -7281,43 +7279,10 @@ fpvCameraOffset:p3 = 0.2, -0.1, 0
             body.Padding = new Padding(8, 8, 8, 8);
             info.Controls.Add(body, 0, 0);
 
-            Button channel = new Button { Text = "ASTRASEP ON YOUTUBE", Dock = DockStyle.Fill, Margin = new Padding(8, 3, 8, 3) };
-            Theme.Button(channel, false);
-            channel.Click += delegate { OpenUrl(AstraYoutubeUrl); };
-            info.Controls.Add(channel, 0, 1);
-
             Button project = new Button { Text = "OPEN PROJECT ON GITHUB", Dock = DockStyle.Fill, Margin = new Padding(8, 3, 8, 3) };
             Theme.Button(project, false);
             project.Click += delegate { OpenUrl(ProjectUrl); };
-            info.Controls.Add(project, 0, 2);
-
-            GlassPanel supportCard = new GlassPanel { Dock = DockStyle.Fill, Margin = new Padding(6) };
-            TableLayoutPanel support = new TableLayoutPanel { Dock = DockStyle.Fill, RowCount = 4, ColumnCount = 1, Padding = new Padding(16), BackColor = Color.Transparent };
-            support.RowStyles.Add(new RowStyle(SizeType.Absolute, 34));
-            support.RowStyles.Add(new RowStyle(SizeType.Percent, 100));
-            support.RowStyles.Add(new RowStyle(SizeType.Absolute, 52));
-            support.RowStyles.Add(new RowStyle(SizeType.Absolute, 46));
-            supportCard.Controls.Add(support);
-            content.Controls.Add(supportCard, 1, 0);
-
-            Label supportTitle = Theme.Label("SUPPORT THE PROJECT", true);
-            supportTitle.TextAlign = ContentAlignment.MiddleCenter;
-            supportTitle.ForeColor = Theme.AccentLight;
-            support.Controls.Add(supportTitle, 0, 0);
-
-            PictureBox qr = new PictureBox { Dock = DockStyle.Fill, SizeMode = PictureBoxSizeMode.Zoom, Margin = new Padding(12), Cursor = Cursors.Hand };
-            qr.Image = LoadEmbeddedImage("UTL.support-qr.png");
-            qr.Click += delegate { OpenUrl(SupportUrl); };
-            support.Controls.Add(qr, 0, 1);
-
-            Label supportText = Theme.Label("Scan the QR code or open the secure Stripe payment page. Support is optional.", false);
-            supportText.TextAlign = ContentAlignment.MiddleCenter;
-            support.Controls.Add(supportText, 0, 2);
-
-            Button stripe = new Button { Text = "SUPPORT VIA STRIPE", Dock = DockStyle.Fill, Margin = new Padding(8, 3, 8, 3) };
-            Theme.Button(stripe, true);
-            stripe.Click += delegate { OpenUrl(SupportUrl); };
-            support.Controls.Add(stripe, 0, 3);
+            info.Controls.Add(project, 0, 1);
 
             Label privacy = Theme.Label("Presets stay on this PC. The application does not send loadouts or account data anywhere.", false);
             privacy.ForeColor = Theme.Good;

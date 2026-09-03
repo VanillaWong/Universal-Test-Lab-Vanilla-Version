@@ -272,7 +272,7 @@ namespace UniversalTestLab
         { "AIR HOT LOAD", "空中热装载" },
         { "GROUND PROXY RELOAD", "地面代理再装填" },
         { "Universal Test Lab |   /  Mission Studio", "Universal Test Lab |   /  任务工坊" },
-        { "U.T.L. by AstraSEP | AIR & GROUND VEHICLE TEST WORKSPACE", "U.T.L. by AstraSEP | 空中与地面载具测试工作区" },
+        { "Universal Test Lab | AIR & GROUND VEHICLE TEST WORKSPACE", "Universal Test Lab | 空中与地面载具测试工作区" },
         { "TARGETS — GROUND / AIR / NAVAL TARGETS", "目标 — 地面 / 空中 / 海上目标" },
         { "GARAGE — COLLECTION & PRESETS", "机库 — 收藏与预设" },
         { "EXPERIMENTAL — OVERRIDES & INJECTION", "实验 — 覆盖与注入" },
@@ -621,7 +621,7 @@ internal static class ModernPalette
 
   <Grid Grid.Row=""1"" Margin=""0""><Grid.RowDefinitions><RowDefinition Height=""64""/><RowDefinition Height=""Auto""/><RowDefinition Height=""*""/><RowDefinition Height=""28""/></Grid.RowDefinitions>
     <Border Style=""{StaticResource GlassCard}"" Padding=""22,4"" Margin=""0"" CornerRadius=""0"" BorderThickness=""0,0,0,1""><Grid><Grid.ColumnDefinitions><ColumnDefinition Width=""270""/><ColumnDefinition Width=""*""/><ColumnDefinition Width=""Auto""/></Grid.ColumnDefinitions>
-      <StackPanel VerticalAlignment=""Center""><TextBlock Text=""U.T.L. by AstraSEP"" FontSize=""20"" FontWeight=""SemiBold""/><TextBlock Text=""AIR &amp; GROUND VEHICLE TEST WORKSPACE"" Foreground=""{StaticResource CyanBrush}"" FontSize=""10"" FontWeight=""SemiBold""/></StackPanel>
+      <StackPanel VerticalAlignment=""Center""><TextBlock Text=""Universal Test Lab"" FontSize=""20"" FontWeight=""SemiBold""/><TextBlock Text=""AIR &amp; GROUND VEHICLE TEST WORKSPACE"" Foreground=""{StaticResource CyanBrush}"" FontSize=""10"" FontWeight=""SemiBold""/></StackPanel>
       <StackPanel Grid.Column=""1"" Margin=""10,0,12,0"" VerticalAlignment=""Center""><TextBlock Text=""GAME DIRECTORY"" Style=""{StaticResource Caption}"" Margin=""2,0,0,3""/><TextBox x:Name=""GameFolderBox"" Height=""30"" Padding=""10,3"" Margin=""0"" VerticalContentAlignment=""Center""/></StackPanel>
       <StackPanel Grid.Column=""2"" Orientation=""Horizontal"" VerticalAlignment=""Center""><Button x:Name=""BrowseButton"" Style=""{StaticResource ButtonStyle}"" Content=""BROWSE"" Margin=""4,0""/><Button x:Name=""SyncButton"" Style=""{StaticResource ButtonStyle}"" Content=""SYNC BASE"" Margin=""4,0""/><Button x:Name=""MissionsButton"" Style=""{StaticResource ButtonStyle}"" Content=""MISSIONS"" Margin=""4,0""/><Button x:Name=""PresetsButton"" Style=""{StaticResource ButtonStyle}"" Content=""PRESETS"" Margin=""4,0""/><Button x:Name=""AboutButton"" Style=""{StaticResource ButtonStyle}"" Content=""SUPPORT"" Margin=""4,0,0,0""/></StackPanel>
     </Grid></Border>
@@ -7816,10 +7816,7 @@ tuningPanel.Children.Add(Heading("REAL VEHICLE VALUES", 15));
 
     internal sealed class ModernAboutWindow : ModernDialogWindow
     {
-        private const string SupportUrl = "https://buy.stripe.com/bJe00bbHB0GH0qI655fQI00";
-        private const string ProjectUrl = "https://github.com/UKRAngler/Universal-Test-Lab";
-        private const string AstraYoutubeUrl = "https://youtube.com/@astra-sep?si=TiMO8--EXG2zXapG";
-        private const string AstraTiktokUrl = "https://www.tiktok.com/@astro.sep?_r=1&_t=ZS-997wx6cJtcm";
+        private const string ProjectUrl = "https://github.com/VanillaWong/Universal-Test-Lab-Vanilla-Version";
 
         public ModernAboutWindow(int aircraftCount, int weaponCount) : base(ModernText.L("Support Universal Test Lab", "支持通用测试实验室"), 900, 670)
         {
@@ -7839,23 +7836,13 @@ tuningPanel.Children.Add(Heading("REAL VEHICLE VALUES", 15));
             info.Children.Add(new TextBlock { Text = "Build experimental vehicles, modules, ammunition, loadouts and reusable test missions from one workspace.", TextWrapping = TextWrapping.Wrap, Foreground = ModernPalette.Brush(ModernPalette.Muted), Margin = new Thickness(0, 4, 0, 5) });
             info.Children.Add(new TextBlock { Text = aircraftCount.ToString("N0", CultureInfo.InvariantCulture) + " playable vehicle entries  •  " + weaponCount.ToString("N0", CultureInfo.InvariantCulture) + " air-weapon entries", Foreground = ModernPalette.Brush(ModernPalette.Cyan), Margin = new Thickness(0, 0, 0, 15) });
             info.Children.Add(Heading("社区灵感", 14));
-            info.Children.Add(new TextBlock { Text = "Independent work by AstraSEP, inspired by GUI and custom-mission concepts shared by community creators and YouTube channels, for example Ask3lad. They are not project contributors.", TextWrapping = TextWrapping.Wrap, Foreground = ModernPalette.Brush(ModernPalette.Muted), Margin = new Thickness(0, 4, 0, 15) });
-            info.Children.Add(Heading("作者 ASTRASEP", 14));
+            info.Children.Add(new TextBlock { Text = "Originally created by AstraSEP; now maintained by VanillaWong. Inspired by GUI and custom-mission concepts shared by community creators and YouTube channels, for example Ask3lad. They are not project contributors.", TextWrapping = TextWrapping.Wrap, Foreground = ModernPalette.Brush(ModernPalette.Muted), FontSize = 13.5, LineHeight = 20, Margin = new Thickness(0, 0, 0, 14) });
+            info.Children.Add(Heading("维护者 / MAINTAINER", 14));
             info.Children.Add(new TextBlock { Text = ModernText.L("Independent fan-made software shaped by community testing and feedback.", "由社区测试与反馈打磨的独立粉丝自制软件。"), TextWrapping = TextWrapping.Wrap, Foreground = ModernPalette.Brush(ModernPalette.Muted), Margin = new Thickness(0, 4, 0, 8) });
-            Button youtube = DialogButton("ASTRASEP 的 YouTube", false); youtube.Margin = new Thickness(0, 0, 0, 4); youtube.Click += delegate { OpenUrl(AstraYoutubeUrl); }; info.Children.Add(youtube);
-            Button tiktok = DialogButton("ASTRASEP 的 TikTok", false); tiktok.Margin = new Thickness(0, 0, 0, 12); tiktok.Click += delegate { OpenUrl(AstraTiktokUrl); }; info.Children.Add(tiktok);
             info.Children.Add(Heading("开源", 14));
             info.Children.Add(new TextBlock { Text = "Source, issue tracking and contribution information are available on GitHub. The bundled wt_ext_cli component retains its Apache 2.0 license.", TextWrapping = TextWrapping.Wrap, Foreground = ModernPalette.Brush(ModernPalette.Muted), Margin = new Thickness(0, 4, 0, 10) });
             Button github = DialogButton("在 GitHub 打开项目", false); github.Margin = new Thickness(0, 0, 0, 4); github.Click += delegate { OpenUrl(ProjectUrl); }; info.Children.Add(github);
             content.Children.Add(info);
-            Border support = new Border { CornerRadius = new CornerRadius(16), BorderBrush = ModernPalette.Brush(ModernPalette.Border), BorderThickness = new Thickness(1), Background = ModernPalette.Brush("#E80D1835"), Padding = new Thickness(16), Margin = new Thickness(0, 6, 0, 10) };
-            StackPanel supportContent = new StackPanel();
-            supportContent.Children.Add(new TextBlock { Text = ModernText.L("SUPPORT THE PROJECT", "支持本项目"), FontSize = 15, FontWeight = FontWeights.SemiBold, Foreground = ModernPalette.Brush(ModernPalette.Cyan), HorizontalAlignment = HorizontalAlignment.Center });
-            Image qr = new Image { Source = LoadImage(Embedded.Bytes("UTL.support-qr.png")), Height = 240, Stretch = Stretch.Uniform, Margin = new Thickness(8, 12, 8, 10), Cursor = Cursors.Hand };
-            qr.MouseLeftButtonUp += delegate { OpenUrl(SupportUrl); }; supportContent.Children.Add(qr);
-            supportContent.Children.Add(new TextBlock { Text = ModernText.L("Support is optional. Scan the QR code or open the secure Stripe payment page.", "支持与否自愿。扫码或打开安全的 Stripe 支付页面。"), TextWrapping = TextWrapping.Wrap, TextAlignment = TextAlignment.Center, Foreground = ModernPalette.Brush(ModernPalette.Muted), Margin = new Thickness(4, 0, 4, 12) });
-            Button stripe = DialogButton("通过 Stripe 支持", true); stripe.Click += delegate { OpenUrl(SupportUrl); }; supportContent.Children.Add(stripe);
-            support.Child = supportContent; Grid.SetColumn(support, 1); content.Children.Add(support);
             Grid.SetRow(content, 1); layout.Children.Add(content);
             Button close = DialogButton("关闭", false); close.Width = 150; close.HorizontalAlignment = HorizontalAlignment.Right; close.Margin = new Thickness(0, 10, 0, 0); close.Click += delegate { Close(); }; Grid.SetRow(close, 2); layout.Children.Add(close);
         }

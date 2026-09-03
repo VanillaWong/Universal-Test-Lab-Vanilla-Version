@@ -1,6 +1,6 @@
 # Universal Test Lab
 
-> **Public beta — v0.12.0-beta.2**
+> **Public beta — v0.12.0-beta.5**
 
 Universal Test Lab creates local War Thunder User Missions for testing aircraft, helicopters, drones, ground vehicles, custom loadouts, and targets.
 
@@ -18,7 +18,7 @@ Universal Test Lab creates local War Thunder User Missions for testing aircraft,
 
 ## Installation
 
-1. Download the latest `Universal_Test_Lab` ZIP from [Releases](https://github.com/UKRAngler/Universal-Test-Lab/releases) and extract it.
+1. Download the latest `Universal_Test_Lab` ZIP from [Releases](https://github.com/VanillaWong/Universal-Test-Lab-Vanilla-Version/releases) and extract it.
 2. Run `UniversalTestLab.exe` and select the War Thunder root folder.
 3. Select **Sync Base**, configure a vehicle, and generate the mission.
 4. In War Thunder, close and reopen **User Missions**, then launch the current **HOT UTL** mission.
@@ -60,15 +60,9 @@ To remove the generated content:
 3. Delete `%LOCALAPPDATA%\UniversalTestLab\` to remove the saved game path and presets.
 4. Delete `UserSights\us_m2a4\` only if it contains `.universal-test-lab-generated`. Remove its entry from `global.blk` manually if necessary.
 
-## Support
-
-Optional support is available through [Stripe](https://buy.stripe.com/bJe00bbHB0GH0qI655fQI00).
-
-<a href="https://buy.stripe.com/bJe00bbHB0GH0qI655fQI00"><img src="docs/support-qr.png" alt="QR code for optional project support" width="260"></a>
-
 ## Inspiration
 
-Universal Test Lab is an independent project by AstraSEP, inspired by GUI and custom-mission projects shared by the War Thunder community and YouTube channels such as Ask3lad. Those creators are not contributors to this project.
+Universal Test Lab was created by AstraSEP and is now maintained by [VanillaWong](https://github.com/VanillaWong), inspired by GUI and custom-mission projects shared by the War Thunder community and YouTube channels such as Ask3lad. Those creators are not contributors to this project.
 
 ## Building
 
@@ -84,7 +78,7 @@ The compiled application is written to `dist\UniversalTestLab.exe`.
 
 ## Contributing
 
-Bug reports and feature proposals are welcome through [GitHub Issues](https://github.com/UKRAngler/Universal-Test-Lab/issues). See [CONTRIBUTING.md](CONTRIBUTING.md) and [SECURITY.md](SECURITY.md).
+Bug reports and feature proposals are welcome through [GitHub Issues](https://github.com/VanillaWong/Universal-Test-Lab-Vanilla-Version/issues). See [CONTRIBUTING.md](CONTRIBUTING.md) and [SECURITY.md](SECURITY.md).
 
 ## Legal
 
