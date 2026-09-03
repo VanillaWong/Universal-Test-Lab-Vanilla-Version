@@ -2216,7 +2216,7 @@ private void RefreshGroundWorkspace()
             }
             else if (GroundSelected)
             {
-                GroundConfigurePanel panel = new GroundConfigurePanel(selectedAircraft, controller.WorkspaceGetSettings(selectedAircraft), controller.WorkspaceGroundAmmo, controller.WorkspaceGroundTargets, controller.WorkspaceUnitWeapons, controller.WorkspaceGroundWeapons(selectedAircraft), new GroundAmmo[0], controller.WorkspaceGunBeltOptions(selectedAircraft), controller.WorkspaceResolveCannonAmmo, (Style)Resources["ButtonStyle"], (Style)Resources["ToggleStyle"]);
+                GroundConfigurePanel panel = new GroundConfigurePanel(selectedAircraft, controller.WorkspaceGetSettings(selectedAircraft), controller.WorkspaceGroundAmmo, controller.WorkspaceGroundTargets, controller.WorkspaceUnitWeapons, controller.WorkspaceGroundWeapons(selectedAircraft), new GroundAmmo[0], controller.WorkspaceGunBeltOptions(selectedAircraft), controller.WorkspaceResolveCannonAmmo, (Style)Resources["ButtonStyle"], (Style)Resources["ToggleStyle"], false, gameFolder.Text);
                 experimentalPanel = panel;
                 scroll.Content = panel;
             }
@@ -5200,6 +5200,13 @@ private void RefreshGroundWorkspace()
         private string radarTrackSel;
         private readonly CheckBox stripAiBox;
         private readonly TextBlock radarStatus;
+        private readonly string gameRoot;
+        // Native sensor slots of the current vehicle (resolved once from its blk):
+        // null = absent slot, non-null = the catalog row of the native radar.
+        private SensorRowJson nativeSearchSensor;
+        private SensorRowJson nativeTrackSensor;
+        private readonly TextBlock radarDetailSearch = new TextBlock { Foreground = ModernPalette.Brush(ModernPalette.Text), FontSize = 11.5, TextWrapping = TextWrapping.Wrap, Margin = new Thickness(0, 0, 0, 4) };
+        private readonly TextBlock radarDetailTrack = new TextBlock { Foreground = ModernPalette.Brush(ModernPalette.Text), FontSize = 11.5, TextWrapping = TextWrapping.Wrap, Margin = new Thickness(0, 0, 0, 4) };
         private readonly Dictionary<string, IList<GroundAmmo>> cannonAmmoCache = new Dictionary<string, IList<GroundAmmo>>(StringComparer.OrdinalIgnoreCase);
         private readonly Style buttonStyle;
         private readonly Style toggleStyle;
@@ -5232,9 +5239,11 @@ private void RefreshGroundWorkspace()
             return false;
         }
 
-        public GroundConfigurePanel(Aircraft item, AircraftSettings current, IEnumerable<GroundAmmo> ammo, IEnumerable<TargetUnit> groundVehicles, IEnumerable<UnitWeapon> unitWeapons, IEnumerable<GroundWeaponInfo> groundWeapons, IEnumerable<GroundAmmo> injectedCannonAmmo, IEnumerable<GroundWeaponBeltOption> beltOptions, Func<string, IList<GroundAmmo>> resolveCannonAmmo, Style buttonStyleSource, Style toggleStyleSource, bool simplified = false)
+        public GroundConfigurePanel(Aircraft item, AircraftSettings current, IEnumerable<GroundAmmo> ammo, IEnumerable<TargetUnit> groundVehicles, IEnumerable<UnitWeapon> unitWeapons, IEnumerable<GroundWeaponInfo> groundWeapons, IEnumerable<GroundAmmo> injectedCannonAmmo, IEnumerable<GroundWeaponBeltOption> beltOptions, Func<string, IList<GroundAmmo>> resolveCannonAmmo, Style buttonStyleSource, Style toggleStyleSource, bool simplified = false, string gameRoot = null)
         {
             this.simplified = simplified;
+            this.gameRoot = gameRoot;
+            ResolveNativeSensors(item);
             vehicle = item;
             original = (current ?? new AircraftSettings()).Copy();
             if (String.IsNullOrWhiteSpace(original.InjectedCannonBlk))
@@ -5354,8 +5363,21 @@ private void RefreshGroundWorkspace()
             Button radarReset = new Button { Content = ModernText.L("RESET RADARS TO NATIVE", "恢复原生雷达"), Style = buttonStyle, Padding = new Thickness(10, 3, 10, 3), Margin = new Thickness(8, 3, 0, 1), HorizontalAlignment = HorizontalAlignment.Left };
             radarReset.Click += delegate { radarSearchSel = null; radarTrackSel = null; UpdateRadarStatus(); };
             StackPanel radarRow = new StackPanel { Orientation = Orientation.Horizontal }; radarRow.Children.Add(radarPick); radarRow.Children.Add(radarReset); tuningPanel.Children.Add(radarRow);
+            // Swap is meaningless on vehicles without any native sensor structure - disable.
+            if (nativeSearchSensor == null && nativeTrackSensor == null)
+            {
+                radarPick.IsEnabled = false;
+                radarPick.ToolTip = ModernText.L("This vehicle has no radar at all - installing one needs a sensor structure first.", "此车完全没有雷达——更换不可用（需先有传感器结构）。");
+            }
             tuningPanel.Children.Add(stripAiBox);
             tuningPanel.Children.Add(radarStatus);
+            Border radarCard = new Border { CornerRadius = new CornerRadius(10), BorderThickness = new Thickness(1), BorderBrush = ModernPalette.Brush(ModernPalette.Border), Background = ModernPalette.Brush("#8A24324D"), Padding = new Thickness(10, 8, 10, 8), Margin = new Thickness(0, 8, 0, 4) };
+            StackPanel radarCardStack = new StackPanel();
+            radarCardStack.Children.Add(new TextBlock { Text = ModernText.L("RADAR DETAILS", "雷达详情"), Foreground = ModernPalette.Brush(ModernPalette.Cyan), FontSize = 12, FontWeight = FontWeights.SemiBold, Margin = new Thickness(0, 0, 0, 5) });
+            radarCardStack.Children.Add(radarDetailSearch);
+            radarCardStack.Children.Add(radarDetailTrack);
+            radarCard.Child = radarCardStack;
+            tuningPanel.Children.Add(radarCard);
             UpdateRadarStatus();
             domainBox.SelectedItem = savedDomainItem;
             RefreshCannonBox();
@@ -5445,6 +5467,7 @@ private void RefreshGroundWorkspace()
                 string roleTag = "";
                 if (s.role == "search") roleTag = ModernText.L("SEARCH", "搜索") + " · ";
                 else if (s.role == "track") roleTag = ModernText.L("TRACK", "跟踪") + " · ";
+                if (s.domain == "air") roleTag = ModernText.L("AIR", "机载") + " · " + roleTag;
                 string kmTag = "";
                 double rmM;
                 if (!String.IsNullOrWhiteSpace(s.rangeMax) && double.TryParse(s.rangeMax.Trim(), System.Globalization.NumberStyles.Any, System.Globalization.CultureInfo.InvariantCulture, out rmM))
@@ -5466,12 +5489,98 @@ private void RefreshGroundWorkspace()
             UpdateRadarStatus();
         }
 
+        // Resolve which search/track radar slots the native vehicle actually has, by
+        // reading its tankmodel blk for sensor references and looking them up in the
+        // 442-entry catalog (role search/track from fsm names). Best effort: on any
+        // failure both slots stay null and the swap lab keeps its permissive behaviour.
+        private void ResolveNativeSensors(Aircraft item)
+        {
+            if (String.IsNullOrWhiteSpace(gameRoot) || item == null) return;
+            try
+            {
+                string blk = MainForm.ExtractGameBlk(gameRoot, "gamedata/units/tankmodels/" + item.Id.ToLowerInvariant() + ".blk");
+                string text = File.ReadAllText(blk);
+                List<string> ids = new List<string>();
+                foreach (System.Text.RegularExpressions.Match m in System.Text.RegularExpressions.Regex.Matches(text, "gameData/sensors/([\\w-]+)\\.blk"))
+                    if (!ids.Contains(m.Groups[1].Value)) ids.Add(m.Groups[1].Value);
+                foreach (string id in ids)
+                {
+                    SensorRowJson s = MainForm.SensorCatalog == null ? null : MainForm.SensorCatalog.FirstOrDefault(x => String.Equals(x.id, id, StringComparison.OrdinalIgnoreCase));
+                    if (s == null) continue;
+                    if (s.role == "search" && nativeSearchSensor == null) nativeSearchSensor = s;
+                    else if (s.role == "track" && nativeTrackSensor == null) nativeTrackSensor = s;
+                }
+            }
+            catch { }
+        }
+
+        // Format a catalog radar row into an in-construction style one-liner.
+        private static string DescribeRadar(SensorRowJson s)
+        {
+            if (s == null) return null;
+            List<string> parts = new List<string>();
+            parts.Add(s.display + " (" + s.id + ")");
+            if (!String.IsNullOrWhiteSpace(s.band))
+            {
+                int bn;
+                if (int.TryParse(s.band.Trim(), out bn) && bn >= 4) parts.Add("band " + "DEFGHIJKLMNOPQRSTUVWX"[bn - 4]);
+                else parts.Add("band " + s.band.Trim());
+            }
+            double rng;
+            if (!String.IsNullOrWhiteSpace(s.rangeMax) && double.TryParse(s.rangeMax.Trim(), System.Globalization.NumberStyles.Any, System.Globalization.CultureInfo.InvariantCulture, out rng))
+                parts.Add((rng >= 1000 ? (rng / 1000.0).ToString("0.#", System.Globalization.CultureInfo.InvariantCulture) + " km" : rng.ToString("0", System.Globalization.CultureInfo.InvariantCulture) + " m"));
+            if (s.role == "search") parts.Add(ModernText.L("search radar", "搜索雷达"));
+            else if (s.role == "track") parts.Add(ModernText.L("track radar", "跟踪雷达"));
+            if (!String.IsNullOrWhiteSpace(s.fsm))
+            {
+                string caps = String.Join("/", s.fsm.Split(',').Select(f => FsmWord(f.Trim())).ToArray());
+                if (caps.Length > 0) parts.Add(caps);
+            }
+            if (!String.IsNullOrWhiteSpace(s.weaponTargetsMax)) parts.Add(ModernText.L("data-link targets", "数据链目标") + " " + s.weaponTargetsMax.Trim());
+            if (s.irst == "1") parts.Add(ModernText.L("with IRST", "含红外通道"));
+            if (s.domain == "air") parts.Add(ModernText.L("airborne", "机载"));
+            return String.Join("  ·  ", parts.ToArray());
+        }
+
+        private static string FsmWord(string f)
+        {
+            switch (f.ToLowerInvariant())
+            {
+                case "lock": return ModernText.L("lock", "锁定");
+                case "track": return ModernText.L("track", "跟踪");
+                case "tws": return "TWS";
+                case "search": return ModernText.L("search", "搜索");
+                case "illumination": return ModernText.L("illumination", "照射");
+                case "radartrack": return ModernText.L("radar track", "雷达跟踪");
+                default: return f;
+            }
+        }
+
+        private static SensorRowJson SensorById(string id)
+        {
+            if (String.IsNullOrWhiteSpace(id) || MainForm.SensorCatalog == null) return null;
+            return MainForm.SensorCatalog.FirstOrDefault(x => String.Equals(x.id, id.Trim(), StringComparison.OrdinalIgnoreCase));
+        }
+
         private void UpdateRadarStatus()
         {
             if (radarStatus == null) return;
-            string search = String.IsNullOrWhiteSpace(radarSearchSel) ? ModernText.L("native", "原生") : radarSearchSel;
-            string track = String.IsNullOrWhiteSpace(radarTrackSel) ? ModernText.L("native", "原生") : radarTrackSel;
-            radarStatus.Text = ModernText.L("SEARCH: ", "搜索雷达：") + search + "    " + ModernText.L("TRACK: ", "跟踪雷达：") + track;
+            // Effective slot content: replacement (if set) falls back to the native radar.
+            SensorRowJson effSearch = SensorById(radarSearchSel) ?? nativeSearchSensor;
+            SensorRowJson effTrack = SensorById(radarTrackSel) ?? nativeTrackSensor;
+            bool anyNative = nativeSearchSensor != null || nativeTrackSensor != null;
+            string searchName = effSearch != null ? effSearch.display : (anyNative ? ModernText.L("(none)", "无") : ModernText.L("native", "原生"));
+            string trackName = effTrack != null ? effTrack.display : (anyNative ? ModernText.L("(none)", "无") : ModernText.L("native", "原生"));
+            radarStatus.Text = ModernText.L("SEARCH: ", "搜索雷达：") + searchName + "    " + ModernText.L("TRACK: ", "跟踪雷达：") + trackName;
+
+            string searchLabel = ModernText.L("SEARCH SLOT", "搜索位") + (String.IsNullOrWhiteSpace(radarSearchSel) ? ModernText.L(" (native)", "（原生）") : ModernText.L(" (replaced)", "（替换）"));
+            string trackLabel = ModernText.L("TRACK SLOT", "跟踪位") + (String.IsNullOrWhiteSpace(radarTrackSel) ? ModernText.L(" (native)", "（原生）") : ModernText.L(" (replaced)", "（替换）"));
+            radarDetailSearch.Text = searchLabel + Environment.NewLine + (effSearch != null ? "   " + DescribeRadar(effSearch)
+                : (anyNative ? "   " + ModernText.L("This vehicle has no search slot.", "此车无搜索雷达位（只有跟踪位）。")
+                             : "   " + ModernText.L("No native sensors - swap disabled (needs a sensor structure first).", "无原生雷达——更换已禁用（需先有传感器结构）。")));
+            radarDetailTrack.Text = trackLabel + Environment.NewLine + (effTrack != null ? "   " + DescribeRadar(effTrack)
+                : (anyNative ? "   " + ModernText.L("This vehicle has no track slot.", "此车无跟踪雷达位（只有搜索位）。")
+                             : "   " + ModernText.L("No native sensors.", "无原生雷达。")));
         }
 
         private void AddValue(StackPanel panel, string label, string key, double stock, double multiplier, string unit)

@@ -491,6 +491,7 @@ namespace UniversalTestLab
         public string fsm { get; set; }
         public string weaponTargetsMax { get; set; }
         public string irst { get; set; }
+        public string domain { get; set; }
     }
 
     internal sealed class NameValueRowJson
@@ -5126,7 +5127,7 @@ public IList<GroundAmmo> WorkspaceResolveCannonAmmo(string cannonBlk)
             return relative.Trim().Replace('\\', '/').TrimStart('/').ToLowerInvariant();
         }
 
-        private static string ExtractGameBlk(string root, string relative)
+        internal static string ExtractGameBlk(string root, string relative)
         {
             string normalizedRelative = NormalizeGameResourcePath(relative);
             // Zero-extract fast path: a full pre-extracted game-data tree laid out as
