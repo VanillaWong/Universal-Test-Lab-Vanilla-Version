@@ -286,6 +286,7 @@ namespace UniversalTestLab
         public string InjectedCannonBlk;
         public string InjectedCannonDomain;
         public string InjectedCannonRound;
+        public int InjectedCannonRounds; // >0: override the injected cannon's bulletsCartridge (rounds per reload/volley, e.g. 6 on an Osa rack)
         public bool UnlimitedAmmo;
         public bool FakeArhConversion;
         public string RadarSearchBlk;   // sensor blk to install as the player search radar (e.g. su_p_12ma)
@@ -322,6 +323,7 @@ namespace UniversalTestLab
                 InjectedCannonDomain = InjectedCannonDomain,
                 InjectedCannonUnit = InjectedCannonUnit,
                 InjectedCannonRound = InjectedCannonRound,
+                InjectedCannonRounds = InjectedCannonRounds,
                 UnlimitedAmmo = UnlimitedAmmo,
                 FakeArhConversion = FakeArhConversion,
                 RadarSearchBlk = RadarSearchBlk,
@@ -6104,6 +6106,12 @@ string cannon = ((customCannonNeeded || moduleShipsWeapons) && hasEditableCannon
             // cannon text in place so the game loads an already-converted missile.
             if (useCustomCannon && settings.FakeArhConversion && !String.IsNullOrWhiteSpace(cannon))
                 cannon = ApplyFakeArhPatch(cannon, 2.0);
+
+            // Rounds-per-reload override: rewrite the injected cannon's bulletsCartridge
+            // so the launcher carries e.g. 6 S-300 missiles on the Osa rack instead of the
+            // native S-300 4-canister figure. 0 keeps the source value untouched.
+            if (useCustomCannon && settings.InjectedCannonRounds > 0 && !String.IsNullOrWhiteSpace(cannon))
+                cannon = Regex.Replace(cannon, @"(?m)^\s*bulletsCartridge\s*:\s*i\s*=\s*\d+\s*$", "bulletsCartridge:i = " + settings.InjectedCannonRounds.ToString(CultureInfo.InvariantCulture));
 
             // Publish dependencies first. The game must never observe a playable unit
             // whose gun BLK is still absent or was deleted with the previous token.

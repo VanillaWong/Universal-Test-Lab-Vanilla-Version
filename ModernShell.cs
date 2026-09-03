@@ -5201,6 +5201,7 @@ private void RefreshGroundWorkspace()
         private readonly CheckBox stripAiBox;
         private readonly TextBlock radarStatus;
         private readonly string gameRoot;
+        private readonly AircraftSettings currentSettings;
         // Native sensor slots of the current vehicle (resolved once from its blk):
         // null = absent slot, non-null = the catalog row of the native radar.
         private SensorRowJson nativeSearchSensor;
@@ -5245,6 +5246,7 @@ private void RefreshGroundWorkspace()
             this.gameRoot = gameRoot;
             ResolveNativeSensors(item);
             vehicle = item;
+            currentSettings = current;
             original = (current ?? new AircraftSettings()).Copy();
             if (String.IsNullOrWhiteSpace(original.InjectedCannonBlk))
             {
@@ -5351,6 +5353,18 @@ private void RefreshGroundWorkspace()
             if (roundBox.SelectedItem == null) roundBox.SelectedIndex = 0;
             roundBox.SelectionChanged += delegate { SyncRoundToSlot(); };
             tuningPanel.Children.Add(roundBox);
+            bool roundsSyncing = true;
+            StackPanel roundsRow = new StackPanel { Orientation = Orientation.Horizontal, Margin = new Thickness(0, 6, 0, 0) };
+            roundsRow.Children.Add(new TextBlock { Text = ModernText.L("ROUNDS PER RELOAD (0 = source)", "每次装填弹数（0 = 沿用原值）"), Foreground = ModernPalette.Brush(ModernPalette.Muted), VerticalAlignment = VerticalAlignment.Center, Margin = new Thickness(0, 0, 6, 0) });
+            TextBox roundsBox = new TextBox { Text = original.InjectedCannonRounds > 0 ? original.InjectedCannonRounds.ToString(CultureInfo.InvariantCulture) : "0", Width = 64, Height = 26, Padding = new Thickness(6, 2, 6, 2), VerticalContentAlignment = VerticalAlignment.Center, ToolTip = "Osa + S-300: 6 fills the native 6-rail rack (S-300 source carries 4)." };
+            roundsRow.Children.Add(roundsBox); tuningPanel.Children.Add(roundsRow);
+            roundsBox.TextChanged += delegate
+            {
+                if (roundsSyncing) return;
+                int v;
+                if (int.TryParse(roundsBox.Text.Trim(), out v) && v >= 0 && v <= 999) { original.InjectedCannonRounds = v; if (currentSettings != null) currentSettings.InjectedCannonRounds = v; }
+            };
+            roundsSyncing = false;
             ammoUnlimitedBox = new CheckBox { Content = ModernText.L("Unlimited ammunition (9999 per slot)", "无限弹药（每槽 9999）"), IsChecked = original.UnlimitedAmmo, Foreground = ModernPalette.Brush(ModernPalette.Text), Margin = new Thickness(0, 6, 0, 0) };
             tuningPanel.Children.Add(ammoUnlimitedBox);
             fakeArhBox = new CheckBox { Content = ModernText.L("Fake-ARH conversion (SARH missiles self-guide, TWS launch)", "伪ARH转换（半主动弹自主制导，TWS直射）"), IsChecked = original.FakeArhConversion, Foreground = ModernPalette.Brush(ModernPalette.Cyan), Margin = new Thickness(0, 6, 0, 0), ToolTip = "Injects active seeker + permanently-activated guidance into radar missiles so they launch without a pre-launch lock (SARH -> ARH). Verified on AIM-7E-2: active:b, permanentlyActivated, lockDistance, inertialNavigation+datalink, breakLockMaxTime=160, wider seeker angles, distGate, shotFreq cap." };
@@ -5361,7 +5375,7 @@ private void RefreshGroundWorkspace()
             Button radarPick = new Button { Content = ModernText.L("CHANGE RADARS (SEARCH / TRACK)", "更换雷达（搜索 / 跟踪）"), Style = buttonStyle, Padding = new Thickness(14, 4, 14, 4), Margin = new Thickness(0, 3, 0, 1), HorizontalAlignment = HorizontalAlignment.Left };
             radarPick.Click += delegate { PickRadars(); };
             Button radarReset = new Button { Content = ModernText.L("RESET RADARS TO NATIVE", "恢复原生雷达"), Style = buttonStyle, Padding = new Thickness(10, 3, 10, 3), Margin = new Thickness(8, 3, 0, 1), HorizontalAlignment = HorizontalAlignment.Left };
-            radarReset.Click += delegate { radarSearchSel = null; radarTrackSel = null; UpdateRadarStatus(); };
+            radarReset.Click += delegate { radarSearchSel = null; radarTrackSel = null; if (currentSettings != null) { currentSettings.RadarSearchBlk = null; currentSettings.RadarTrackBlk = null; } UpdateRadarStatus(); };
             StackPanel radarRow = new StackPanel { Orientation = Orientation.Horizontal }; radarRow.Children.Add(radarPick); radarRow.Children.Add(radarReset); tuningPanel.Children.Add(radarRow);
             // Swap is meaningless on vehicles without any native sensor structure - disable.
             if (nativeSearchSensor == null && nativeTrackSensor == null)
@@ -5486,6 +5500,8 @@ private void RefreshGroundWorkspace()
             string trackTitle = ModernText.L("SELECT TRACK RADAR", "选择跟踪雷达");
             ModernPickerDialog dlg = new ModernPickerDialog(trackTitle, items, trackTitle);
             if (dlg.ShowDialog() == true && dlg.Selected != null) { radarTrackSel = (string)dlg.Selected.Tag; trackPick = dlg.Selected; }
+            // Persist immediately to the live settings so panel rebuilds / vehicle switches keep the choice.
+            if (currentSettings != null) { currentSettings.RadarSearchBlk = radarSearchSel; currentSettings.RadarTrackBlk = radarTrackSel; }
             UpdateRadarStatus();
         }
 
