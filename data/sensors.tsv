@@ -1,0 +1,442 @@
+an_aps_54a	SPO-2	
+bl_carapace	CARAPACE	
+cn_antelope_ads_track	Antelope	9
+cn_clc_1_search	CLC-1	4
+cn_helicopter_z_late_rwr	YH-96ME	
+cn_helicopter_z_lws	CN-LWS	
+cn_helicopter_z_mlws	CN-MLWS	
+cn_helicopter_z_rwr	YH-96	
+cn_hq_11_search	HQ-11 TA	5
+cn_hq_11_search_ai	HQ-11 TA	5
+cn_hq_17_search	HQ-17 TA	5
+cn_hq_17_track	HQ-17 TT	9
+cn_jl_10a	JL-10A	8
+cn_jl_10ag	JL-10A	8
+cn_jl_7a	JL-7A	8
+cn_kj_8602	KJ8602	
+cn_kj8602a	KJ8602A	
+cn_klj_10a	KLJ-10A	8
+cn_klj_7	KLJ-7	8
+cn_krkz2200	K/RKZ	
+cn_pgz_09_search	PGZ-09 TA	8
+cn_pgz_09_track	PGZ-09 TT	8
+cn_pgz_625_search	PGZ-625 TA	6
+cn_pgz_625_track	PGZ-625 TT	9
+cn_rn_01_ii	RN-01-II	10
+cn_rw_30	RW-30	
+cn_rwr_esm	ESM	2
+cn_s740	S740	
+cn_se_2_mlws	SE-2	
+cn_type_1473	Type 1473	8
+cn_type_1492	Type 1492	8
+cn_type_1493_pd	Type 1493	8
+cn_type_208a	Type 208A	8
+cn_type_280	Type 208	8
+cn_type_930	Type 930	
+cn_type_930_4	SPO-10	
+cn_z10_fcr	Z-10 FCR	10
+de_flarakrad_fr	Roland TT	9
+de_fug_200	FuG-200	2
+de_fug_202	FuG-202	1
+de_fug_220	FuG-220	1
+de_gepard_fr	Gepard TT	9
+de_gepard_sr	Gepard TA	4
+de_hensoldt_trml_4b	TRML-4D	6
+de_roland_fr	Roland TT	9
+de_roland_sr	Roland TA	3
+esm	ESM	2
+fr_aida_2	AIDA 2	8
+fr_anemone	Anemone	9
+fr_antares_lws	fr_antares_lws	
+fr_antilope_5	ANTILOPE-5	9
+fr_antilope_5_hmd	ANTILOPE-5	9
+fr_arabel	Arabel	8
+fr_arabel_ai	Arabel	8
+fr_as37_armat_esm	AS-37 ARMAT ESM	2
+fr_as37_c_esm	AS-37 Martel C ESM	2
+fr_as37_l_esm	AS-37 Martel L ESM	5
+fr_as37_s_esm	AS-37 Martel S ESM	8
+fr_crotale_search	Crotale TA	4
+fr_crotale_track	Crotale TT	9
+fr_crotale_track_ai	Crotale TT	9
+fr_cyrano	Cyrano Ibis	8
+fr_cyrano_ii	Cyrano Ibis	8
+fr_cyrano_iv	Cyrano-IV	8
+fr_cyrano_ivmr	Cyrano-IV	8
+fr_ddm2000	DDM 2000	
+fr_dr_vc_1a	DR-VC-1A	4
+fr_draa_3d	DRAA 3D AIDA	8
+fr_drac_25	DRAC-25A	8
+fr_drac_32a	DRAC-32A	8
+fr_leclerc_auto_target_tracker	Auto tracker	-1
+fr_mirage_3e_detecteur	Mirage Detecteur	
+fr_ralm01	RALM01	
+fr_rodeo_2	DR-VC-1A	4
+fr_serval_rwr	SERVAL RWR	
+fr_sherloc	Sherloc	
+fr_spectra_lws	Thales SPECTRA DAL	
+fr_spectra_mlws	Thales SPECTRA DDM-NG	
+fr_spectra_rwr	Thales SPECTRA DAR	
+fr_taran_18	TARAN 18	8
+fr_thales_rbe2	Thales RBE2 AESA	8
+fr_thales_rdy	Thales RDY	8
+fr_thomson-csf_rdi	Thomson-CSF RDI	8
+fr_thomson-csf_rdm	Thomson-CSF RDI	8
+il_el_m_2001b	ELTA EL/M-2001B	8
+il_el_m_2032	ELTA EL/M-2032	8
+il_el_m_2052	ELTA EL/M-2052	8
+il_elisra_sps_200	ELISRA SPS-200	
+il_elisra_sps_3000	ELISRA SPS-3000	
+il_machbet_optics	Machbet TV/FLIR	-1
+il_paws_2	PAWS-2	
+il_sps_20v	SPS-20(V)	
+il_spyder_search	SPYDER AIO TA	5
+il_spyder_search_ai	SPYDER AIO TA	5
+ir_tracker	Auto tracker	
+ir_tracker_360	Auto tracker	-1
+ir_tracker_tgp	Auto tracker	
+it_elt_156	ELT/156	
+it_grifo_346	GRIFO 346	8
+it_ralm-101	it_ralm-101	
+it_sma_vps-a05	SMA VPS-A05	4
+it_sma_vps-a06	SMA VPS-A06	10
+it_tv_tracker_3jb10	3JB10	-1
+jp_an_apg_66j	AN/APG-66	8
+jp_awg_11	AN/APG-59	8
+jp_awg_12	AN/APG-59	8
+jp_j_apg_1	J/APG-1	8
+jp_j_apg_2	J/APG-2	8
+jp_j_apr_1	J/APR-1	
+jp_j_apr_2	J/APR-2	
+jp_j_apr_3	J/APR-3	
+jp_j_apr_4	J/APR-4	
+jp_j_apr_6	J/APR-6	
+jp_j_asq_2	J/ASQ-2	
+jp_type_03_search	Type 03 TA	5
+jp_type_81_search	Type 81 TA	8
+jp_type_87_track	Type-87 TT	9
+laserbeamridingsensor	laserbeamridingsensor	
+laserdesignatorsensor	laserdesignatorsensor	
+laserwarningsensor	LWS	
+nw_xenta_m_5	XENTA M5	8
+optic_tracker_tgp	Auto tracker	
+rooikat_aa_eot_track	AA-EOT	-1
+sa_d_36	D-36	
+sam_tv_ir_track	TV/IR tracker	-1
+sam_tv_ir_track_rc	Roland TT	-1
+slaved_radar_fsm	slaved_radar_fsm	
+su_1rl144_search	1RL114 TA	4
+su_1rl144_track	1RL114 TT	9
+su_1rl33	1RL33	9
+su_1rl33_ai	1RL33	9
+su_1rl33rt	1RL33	9
+su_1rl34	1RL34	8
+su_1rs1	1RS1	5
+su_1rs1_4	1RS1-4	8
+su_1rs1_ai	1RS1	5
+su_1rs2	1RS2	10
+su_1rs2_3	1RS2-3	10
+su_1rs2_ai	1RS2	10
+su_55zh6	55ZH6	5
+su_5n63s	5N63S	8
+su_5n64s	5N64S	5
+su_9k_330_search	9K330 TA	6
+su_9k_330_track	9K330 TT	9
+su_9k_33m3_search	9K33 TA	7
+su_9k_33m3_search_ai	9K33 TA	7
+su_9k_33m3_track	9K33 TT	9
+su_9k_33m3_track_ai	9K33 TT	9
+su_9s18	9S18	5
+su_9s18m3	9S18M3	5
+su_9s18m3_ai	9S18M3	5
+su_9s35	9S35	8
+su_9s86	9S86	8
+su_bmp_auto_target_tracker	Auto tracker	-1
+su_cd-30	CD-30	8
+su_gneys_5s	GNEYS-5S	0
+su_kh_27ps_viuga_esm	Kh-27PS ESM	8
+su_kh_31p_111_esm	Kh-31 L-111 ESM	8
+su_kh_31p_112_esm	Kh-31 L-112 ESM	3
+su_kh_31p_113_esm	Kh-31 L-113 ESM	6
+su_kh_58_a_viuga_esm	Kh-58 A ESM	8
+su_kh_58_b_viuga_esm	Kh-58 B ESM	5
+su_kh_58_c_viuga_esm	Kh-58 C ESM	3
+su_kh_58_phantasmagoria_a_esm	Phantasmagoria A ESM	8
+su_kh_58_phantasmagoria_b_esm	Phantasmagoria B ESM	5
+su_kh_58_phantasmagoria_c_esm	Phantasmagoria C ESM	3
+su_khrizantema	1L32-1	10
+su_kopio	N019	8
+su_kopio_25	N019	8
+su_l_370_2	L-370-2	
+su_l-082	L-082	
+su_l-140	L-140	
+su_mr_123	MR-123	8
+su_n_001	N001	8
+su_n_001k	N001	8
+su_n_001ve	N001	8
+su_n_001vep	N001	8
+su_n_010	N010	8
+su_n_010m	N010	8
+su_n_011m	N011M	8
+su_n_011r	N011R	8
+su_n_019	N019	8
+su_n_019e	N019	8
+su_n_019me	N019	8
+su_n_025	N-025	10
+su_n_035e	N035	8
+su_orion	Orion	8
+su_orion_phantasmagoria	ESM	2
+su_p_12ma	S75 P12MA	6
+su_rn_01_arbalet	RN-01 Arbalet	10
+su_rp-1_search	RP-1 TA	8
+su_rp-1_track	RP-1 TT	8
+su_rp-5_search	RP-5 TA	8
+su_rp-5_track	RP-5 TT	8
+su_sapphire_21	Sapphire-21	9
+su_sapphire_23	Sapphire-23	9
+su_sapphire_23e	Sapphire-23	9
+su_sapphire_23ml	Sapphire-23	9
+su_sapphire_23mla	Sapphire-23	9
+su_sapphire_23mla_2	Sapphire-23	9
+su_sapphire_25	Sapphire-25	9
+su_satellite_m2	Satellite M2	
+su_snr_75	S75 RSN-75	6
+su_spo_150_esm	SPO-150 ESM	2
+su_spo-10	SPO-10	
+su_spo-15	SPO-15	
+su_spo-150	SPO-150	
+su_spo-150-14	SPO-150-14	
+su_spo-150-16m	SPO-150-16M	
+su_spo-150-28m	SPO-150-28M	
+su_spo-150-30	SPO-150-30	
+su_spo-150-30m	SPO-150-30M	
+su_spo-150-30m1	SPO-150-30M.1	
+su_spo-150-30sm	SPO-150-30SM	
+su_spo-15l	SPO-15	
+su_spo-15le	SPO-15LM	
+su_spo-15lm	SPO-15LM	
+su_spo-15m	SPO-15M	
+su_spo-15s	SPO-15S	
+su_spo-2	SPO-2	
+su_srd-1	SRD-1	8
+su_srd-5	SRD-5	8
+su_tarang	TARANG	
+su_thorium	Thorium	8
+su_tshu_1_11	su_tshu_1_11	
+su_v_004	V004	8
+su_viking	viking	6
+su_viking_ai	viking	6
+su_vn_001	VN001	8
+su_wa316ld	WA 316LD	8
+su_wg_319	WG 319	-1
+sw_app_f9_5	APP F9/5	
+sw_asrad_search	ASRAD TA	8
+sw_es_05	ES-05	8
+sw_giraffe_1x	Giraffe 1X	8
+sw_giraffe_amb	Giraffe AMB	6
+sw_giraffe_amb_ai	Giraffe AMB	6
+sw_ps_05a	PS-05	8
+sw_ps_20	PS-20	5
+sw_ps-011a_71h_ir	PS-011A 71H IR	8
+sw_ps-03	PS-03	8
+sw_ps-371a	PS-37	8
+sw_ps-37a	PS-37	8
+sw_ps-42_search	PS-42 TA	8
+sw_ps-42_track	PS-42 TT	8
+sw_ps-46a	PS-37	8
+sw_triad_search	TriAD TA	8
+sw_utaas_track	UTAAS	-1
+swd_app_27	APP-27	
+swd_app_73	APP-73	
+swd_ar830	AR830	
+swd_bow_21	BOW-21	
+tv_tracker	Auto tracker	
+tv_tracker_tgp	Auto tracker	
+tv_tracker_tgp_mercury	Auto tracker	
+tv_tracker_tgp_platan	Auto tracker	
+uk_ai	AI Mk.23	8
+uk_ai_mk_4	AI Mk.4	0
+uk_ai_mk18	AI Mk.18	8
+uk_alarm_esm	ALARM ESM	4
+uk_ari_18223	ARI 18223	
+uk_ari_18228	ARI 18228	
+uk_ari_18228_10	ARI 18228/10	
+uk_ari_18228_19	ARI 18228/19	
+uk_ari_18241_1	ARI 18241/1	
+uk_ari_23274	ARI 23274	9
+uk_ari_23274_ids	ARI 23274	9
+uk_ari_23284	ARI 23284	
+uk_ari_23333	ARI 23333	
+uk_ari_5390	ARI.5390	8
+uk_ari_5820	ARI.5820	8
+uk_ari_5857	ARI.5857	8
+uk_captor_ecrs_1_pirate	CAPTOR-E	8
+uk_captor_ecrs_2_pirate	CAPTOR-E	8
+uk_captor_m	CAPTOR-M	8
+uk_captor_m_pirate	CAPTOR-M	8
+uk_esd_ra_20_s_search	ESD RA-20 S	4
+uk_ferranti_blue_fox	Ferranti Blue Fox	8
+uk_ferranti_blue_vixen	Ferranti Blue Vixen	8
+uk_marconi_ai_mk24_stage_2g	AI.24 Foxhunter	8
+uk_marconi_ai_mk24_stage_3g	AI.24 Foxhunter	8
+uk_marconi_ai_mk24w	AI.24 Foxhunter	8
+uk_marconi_ai_mk24z	AI.24 Foxhunter	8
+uk_marconi_s_400	Marconi S-400	8
+uk_marconi_type_226	Marconi Type 226	8
+uk_praetorian_lws	Praetorian DASS	
+uk_praetorian_maw	Praetorian DASS	
+uk_praetorian_mlws	Praetorian DASS	
+uk_praetorian_rwr	Praetorian DASS	
+uk_pvs2000_maw	ARI 23348/1	
+uk_rapier_fr	Rapier TT	9
+uk_rapier_sr	Rapier TA	5
+uk_rooikat_za_35_search_radar	EDR 110	3
+uk_s1223	UK S1223	
+uk_sky_guardian_200	Sky Guardian 200	
+uk_sky_guardian_200d	Sky Guardian 200-D	
+uk_sky_guardian_200d_apr_48	Sky Guardian 200-D	
+uk_thales_adad_search	ADAD TA	1
+uk_thales_adad_track	ADAD	1
+uk_type_a14d	Type A.14D	10
+uk_vinten	Vinten	
+us_2caws	2CAWS	
+us_adats_search	ADATS TA	8
+us_adats_track	ADATS	-1
+us_altas_2q	ALTAS-2Q	
+us_an_aar_32	AN/AAR-32	
+us_an_aar_47	AN/AAR-47	
+us_an_aar_47a_v2	AN/AAR-47A(V)2	
+us_an_aar_47a_v2_lws	AN/AAR-47A(V)2	
+us_an_aar_54v	AN/AAR-54(V)	
+us_an_aar_57	AN/AAR-57	
+us_an_aar_57_maw_300	MAW-300	
+us_an_aar_57_terma	AN/AAR-57	
+us_an_aar_60	AN/AAR-60	
+us_an_alq_73	AN/ALQ-73	
+us_an_alr_2002_mlws	AN/ALR-2002	
+us_an_alr_2002_rwr	AN/ALR-2002	
+us_an_alr_400	ALR-400	
+us_an_alr_45	AN/ALR-45	
+us_an_alr_45f_v	AN/ALR-45F(V)	
+us_an_alr_45v	AN/ALR-45(V)	
+us_an_alr_46	AN/ALR-46	
+us_an_alr_46_v	AN/ALR-46(V)	
+us_an_alr_46_v2	AN/ALR-46(V)2	
+us_an_alr_46_v3	AN/ALR-46(V)3	
+us_an_alr_46_v3_f_5th	AN/ALR-46(V)3	
+us_an_alr_56a	AN/ALR-56A	
+us_an_alr_56c	AN/ALR-56C	
+us_an_alr_56m	AN/ALR-56M	
+us_an_alr_66	AN/ALR-66	
+us_an_alr_67	AN/ALR-67	
+us_an_alr_67_v_3	AN/ALR-67(V)3	
+us_an_alr_68_v	AN/ALR-68(V)	
+us_an_alr_68_v_3	AN/ALR-68(V)3	
+us_an_alr_69	AN/ALR-69	
+us_an_alr_69a_v	AN/ALR-69A(V)	
+us_an_alr_87	AN/ALR-87	
+us_an_apg_26	AN/APG-26	8
+us_an_apg_30	AN/APG-30	8
+us_an_apg_30a	AN/APG-30A	8
+us_an_apg_33	AN/APG-33	8
+us_an_apg_37	AN/APG-37	8
+us_an_apg_501	AN/APG-501	8
+us_an_apg_59	AN/APG-59	8
+us_an_apg_59_f_4j	AN/APG-59	8
+us_an_apg_59u	AN/APG-59	8
+us_an_apg_60	AN/APG-59	8
+us_an_apg_61	AN/APG-59	8
+us_an_apg_63	AN/APG-63	8
+us_an_apg_63_baz	AN/APG-63	8
+us_an_apg_63_psp	AN/APG-63	8
+us_an_apg_63_v_1	AN/APG-63	8
+us_an_apg_63_v_3	AN/APG-63	8
+us_an_apg_65	AN/APG-65	8
+us_an_apg_65gy	AN/APG-65	8
+us_an_apg_65q	AN/APG-65	8
+us_an_apg_66	AN/APG-66	8
+us_an_apg_66_m_247	M-247 TA	8
+us_an_apg_66_v_1	AN/APG-66	8
+us_an_apg_66_v_2	AN/APG-66	8
+us_an_apg_66_v_2_hms	AN/APG-66	8
+us_an_apg_66_v_3	AN/APG-66	8
+us_an_apg_66h	AN/APG-66	8
+us_an_apg_66s	AN/APG-66S	8
+us_an_apg_67	AN/APG-67	8
+us_an_apg_68	AN/APG-68	8
+us_an_apg_68_v_5	AN/APG-68	8
+us_an_apg_68_v_7	AN/APG-68	8
+us_an_apg_68_v_9	AN/APG-68	8
+us_an_apg_69	AN/APG-69	8
+us_an_apg_70	AN/APG-63	8
+us_an_apg_70i	AN/APG-63	8
+us_an_apg_71	AN/AWG-9	8
+us_an_apg_73	AN/APG-65	8
+us_an_apg_73_hms	AN/APG-65	8
+us_an_apg_76_an_asx_1	AN/APG-76 / AN/ASX-1	9
+us_an_apg_78	AN/APG-78	10
+us_an_apg_78_v6	AN/APG-78	10
+us_an_apg_79	AN/APG-79	8
+us_an_apg_83	AN/APG-83	8
+us_an_apq_100	AN/APQ-72	8
+us_an_apq_104	AN/APQ-104	8
+us_an_apq_113	AN/APQ-113	9
+us_an_apq_120	AN/APQ-120	8
+us_an_apq_159	AN/APQ-159	8
+us_an_apq_159_hms	AN/APQ-159	8
+us_an_apq_159_v	AN/APQ-159	8
+us_an_apq_169	AN/APQ-159	8
+us_an_apq_50	AN/APQ-50	8
+us_an_apq_51	AN/APQ-51	8
+us_an_apq_72	AN/APQ-72	8
+us_an_apq_94	AN/APQ-94	8
+us_an_apr_25	AN/APR-25	
+us_an_apr_27	AN/APR-27	
+us_an_apr_32	AN/APR-32	
+us_an_apr_36	AN/APR-36	
+us_an_apr_39	AN/APR-39	
+us_an_apr_39_apr_48	AN/APR-39	
+us_an_apr_39_v1	AN/APR-39(V)1	
+us_an_apr_39_v2	AN/APR-39(V)2	
+us_an_apr_39_v4_apr_48	AN/APR-39A(V)4	
+us_an_apr_39a_v1	AN/APR-39A(V)1	
+us_an_apr_39a_v1_apr_48	AN/APR-39A(V)1	
+us_an_apr_39a_v2	AN/APR-39A(V)2	
+us_an_apr_39b_v2	AN/APR-39B(V)2	
+us_an_aps_109	AN/APS-109	
+us_an_aps_19	AN/APS-19	8
+us_an_aps_21	AN/APS-21	8
+us_an_aps_31	AN/APS-31	8
+us_an_aps_4	AN/APS-4	8
+us_an_aps_54	AN/APS-54	
+us_an_aps_6	AN/APS-6	8
+us_an_aps_67	AN/APS-67	8
+us_an_asg_14	AN/ASG-14	8
+us_an_asg_19	AN/ASG-19	8
+us_an_asq_213_esm	AN/ASQ-213	2
+us_an_avr-2	AN/AVR-2	
+us_an_avr-2a	AN/AVR-2A	
+us_an_avs-2	AN/AVS-2	
+us_an_awg_9	AN/AWG-9	8
+us_an_awg_9_tiseo	AN/AWG-9	8
+us_an_mpq_50	AN/MPQ-50	7
+us_an_mpq_53	AN/MPQ-53	6
+us_an_mpq_61	AN/MPQ-61	8
+us_an_mpq_64	AN/MPQ-64	8
+us_an_vps_2	AN/VPS-2	8
+us_chaparral_track	Chapparal	-1
+us_comanche_fcr	AN/APG-78	10
+us_flir	us_flir	
+us_harm_a_esm	AGM-88 HAS	4
+us_harm_c_esm	AGM-88 HAS	4
+us_lav_ad_track	LAV-AD	-1
+us_lws_310	LWS-310	
+us_m_247_track	AN/APG-66	8
+us_ma_1	MA-1	8
+us_md_1a	MD-1A	8
+us_mk_x	Mk.X	5
+us_nasarr	NASARR	8
+us_phalanx_search	Phalanx Search Radar	9
+us_phalanx_track	Phalanx Track Radar	9
+us_r21g_m1	US R21G M1	8
+us_tps_59	AN/TPS-59	5

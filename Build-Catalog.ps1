@@ -1137,6 +1137,25 @@ foreach ($d in $donorRows) {
 }
 [IO.File]::WriteAllLines((Join-Path $OutputRoot 'unit_weapons.tsv'), $unitWeaponRows, [Text.UTF8Encoding]::new($false))
 }
+
+# Sensor (radar/IRST) catalog - every sensor blk next to the units tree, with the
+# in-file display name and the first transivers band. Powers the radar-swap picker.
+$sensorRoot = Join-Path (Split-Path $UnitsRoot -Parent) 'sensors'
+$sensorRows = New-Object System.Collections.Generic.List[string]
+if (Test-Path -LiteralPath $sensorRoot) {
+  foreach ($sfile in (Get-ChildItem -LiteralPath $sensorRoot -File -Filter '*.blk' | Sort-Object Name)) {
+    try {
+      $stext = [IO.File]::ReadAllText($sfile.FullName)
+      $sname = [regex]::Match($stext, '(?m)^\s*name\s*:\s*t\s*=\s*"([^"]+)"')
+      $sband = [regex]::Match($stext, '(?m)^\s*transivers\s*\{[^}]*?band\s*:\s*i\s*=\s*(-?\d+)')
+      $srow = $sfile.BaseName + "`t" + $(if ($sname.Success) { $sname.Groups[1].Value } else { $sfile.BaseName }) + "`t" + $(if ($sband.Success) { $sband.Groups[1].Value } else { '' })
+      $sensorRows.Add($srow)
+    } catch { }
+  }
+}
+[IO.File]::WriteAllLines((Join-Path $OutputRoot 'sensors.tsv'), $sensorRows, [Text.UTF8Encoding]::new($false))
+Write-Output "Sensors=$($sensorRows.Count)"
+
 Build-VehicleWeaponsJson
 
 Write-Output "[catalog] $(Get-Date -Format HH:mm:ss) done"

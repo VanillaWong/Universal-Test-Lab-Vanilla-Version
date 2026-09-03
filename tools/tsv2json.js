@@ -73,6 +73,9 @@ const SCHEMAS = {
   'era_presets.tsv': {
     hasHeader: true,
     cols: ['name', 'groundIds', 'airIds', 'airCounts', 'shipId', 'shipCount']
+  },
+  'sensors.tsv': {
+    cols: ['id', 'display', 'band']
   }
 };
 
@@ -116,6 +119,12 @@ function convertFile(name) {
 
   const out = path.join(DATA_DIR, name.replace(/\.tsv$/, '.json'));
   fs.writeFileSync(out, JSON.stringify(rows, null, 2) + '\n', 'utf8');
+
+  // Compact twin under data/embed/<name>.json - this is what gets embedded into
+  // the executable (build.rsp). Pretty copies stay in data/ for humans.
+  const embedDir = path.join(DATA_DIR, 'embed');
+  if (!fs.existsSync(embedDir)) fs.mkdirSync(embedDir, { recursive: true });
+  fs.writeFileSync(path.join(embedDir, name.replace(/\.tsv$/, '.json')), JSON.stringify(rows), 'utf8');
   return { rows: rows.length, bytes: fs.statSync(p).size, out: path.basename(out) };
 }
 

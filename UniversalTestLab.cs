@@ -288,6 +288,9 @@ namespace UniversalTestLab
         public string InjectedCannonRound;
         public bool UnlimitedAmmo;
         public bool FakeArhConversion;
+        public string RadarSearchBlk;   // sensor blk to install as the player search radar (e.g. su_p_12ma)
+        public string RadarTrackBlk;    // sensor blk to install as the player track radar (e.g. su_snr_75)
+        public bool RadarStripAiSensors; // remove the AI-only *_ai sensor pair from the proxy
         public string InjectedCannonUnit;
 
         public AircraftSettings Copy()
@@ -320,7 +323,10 @@ namespace UniversalTestLab
                 InjectedCannonUnit = InjectedCannonUnit,
                 InjectedCannonRound = InjectedCannonRound,
                 UnlimitedAmmo = UnlimitedAmmo,
-                FakeArhConversion = FakeArhConversion
+                FakeArhConversion = FakeArhConversion,
+                RadarSearchBlk = RadarSearchBlk,
+                RadarTrackBlk = RadarTrackBlk,
+                RadarStripAiSensors = RadarStripAiSensors
             };
             foreach (string id in EnabledModifications) copy.EnabledModifications.Add(id);
             foreach (CountermeasureLoadout loadout in CountermeasureLoadouts) copy.CountermeasureLoadouts.Add(loadout.Copy());
@@ -472,6 +478,13 @@ namespace UniversalTestLab
         public string airCounts { get; set; }
         public string shipId { get; set; }
         public int shipCount { get; set; }
+    }
+
+    internal sealed class SensorRowJson
+    {
+        public string id { get; set; }
+        public string display { get; set; }
+        public string band { get; set; }
     }
 
     internal sealed class NameValueRowJson
@@ -3305,12 +3318,24 @@ string trigger = @"
         private readonly List<Aircraft> aircraft = new List<Aircraft>();
         private readonly List<TargetUnit> groundTargets = new List<TargetUnit>();
         private readonly List<TargetUnit> shipTargets = new List<TargetUnit>();
-        private readonly List<DonorWeapon> nativeWeapons = new List<DonorWeapon>();
+    private List<DonorWeapon> nativeWeaponsBacking;
+    private List<DonorWeapon> nativeWeapons
+    {
+        get { if (nativeWeaponsBacking == null) { LoadDonorWeaponsCatalog(); } return nativeWeaponsBacking; }
+    }
         private readonly List<DonorWeapon> globalWeapons = new List<DonorWeapon>();
         private readonly List<KeyValuePair<string, string>> navalCannons = new List<KeyValuePair<string, string>>();
         private readonly List<KeyValuePair<string, string>> airOrdnance = new List<KeyValuePair<string, string>>();
-        private readonly List<UnitWeapon> unitWeapons = new List<UnitWeapon>();
-        private readonly List<AircraftModification> modifications = new List<AircraftModification>();
+    private List<UnitWeapon> unitWeaponsBacking;
+    private List<UnitWeapon> unitWeapons
+    {
+        get { if (unitWeaponsBacking == null) { LoadUnitWeaponsCatalog(); } return unitWeaponsBacking; }
+    }
+    private List<AircraftModification> modificationsBacking;
+    private List<AircraftModification> modifications
+    {
+        get { if (modificationsBacking == null) { LoadModificationsCatalog(); } return modificationsBacking; }
+    }
         private readonly List<GroundAmmo> groundAmmo = new List<GroundAmmo>();
         private readonly List<CombinedMap> combinedMaps = new List<CombinedMap>();
         private readonly List<PylonSlot> pylons = new List<PylonSlot>();
@@ -3388,7 +3413,11 @@ string trigger = @"
         internal IList<TargetUnit> WorkspaceShipTargets { get { return shipTargets; } }
         private readonly Dictionary<string, int> groundCannonAmmoCache = new Dictionary<string, int>(StringComparer.OrdinalIgnoreCase);
         private readonly Dictionary<string, GroundWeaponCacheData> groundWeaponCacheMap = new Dictionary<string, GroundWeaponCacheData>(StringComparer.OrdinalIgnoreCase);
-        internal static Dictionary<string, GroundWeaponCacheData> prebuiltGroundWeapons;
+    private static Dictionary<string, GroundWeaponCacheData> prebuiltGroundWeaponsBacking;
+    internal static Dictionary<string, GroundWeaponCacheData> prebuiltGroundWeapons
+    {
+        get { if (prebuiltGroundWeaponsBacking == null) { prebuiltGroundWeaponsBacking = LoadPrebuiltGroundWeapons(); } return prebuiltGroundWeaponsBacking; }
+    }
 
         internal static Dictionary<string, GroundWeaponCacheData> LoadPrebuiltGroundWeapons()
         {
@@ -4007,7 +4036,6 @@ public IList<GroundAmmo> WorkspaceResolveCannonAmmo(string cannonBlk)
 
         private void LoadCatalogs()
         {
-            prebuiltGroundWeapons = LoadPrebuiltGroundWeapons();
             foreach (AircraftRowJson r in MainForm.JsonRows<AircraftRowJson>("UTL.aircraft.json"))
             {
                 if (r == null || String.IsNullOrWhiteSpace(r.id)) continue;
@@ -4038,15 +4066,6 @@ public IList<GroundAmmo> WorkspaceResolveCannonAmmo(string cannonBlk)
                 if (r == null || String.IsNullOrWhiteSpace(r.id)) continue;
                 shipTargets.Add(new TargetUnit { Id = r.id, Display = r.display, DefaultPreset = r.defaultPreset, Nation = String.IsNullOrWhiteSpace(r.nation) ? "Other" : r.nation, Rank = r.rank, Type = String.IsNullOrWhiteSpace(r.type) ? "Ship" : r.type });
             }
-            foreach (DonorWeaponRowJson r in MainForm.JsonRows<DonorWeaponRowJson>("UTL.donor_weapons.json"))
-            {
-                if (r == null || String.IsNullOrWhiteSpace(r.blk)) continue;
-                nativeWeapons.Add(new DonorWeapon
-                {
-                    AircraftId = r.aircraftId, AircraftDisplay = r.aircraftDisplay, Slot = r.slot, Mount = r.mount, Trigger = r.trigger, Blk = r.blk,
-                    Emitter = r.emitter, Bullets = r.bullets, Icon = r.icon, Name = r.name, Category = r.category, UnitMass = r.unitMass, TotalMass = r.totalMass
-                });
-            }
             foreach (DonorWeaponRowJson r in MainForm.JsonRows<DonorWeaponRowJson>("UTL.weapon_catalog.json"))
             {
                 if (r == null || String.IsNullOrWhiteSpace(r.blk)) continue;
@@ -4058,12 +4077,6 @@ public IList<GroundAmmo> WorkspaceResolveCannonAmmo(string cannonBlk)
                 if (r == null || String.IsNullOrWhiteSpace(r.key)) continue;
                 navalCannons.Add(new KeyValuePair<string, string>(r.key.Trim(), (r.value ?? "").Trim()));
             }
-            unitWeapons.Clear();
-            foreach (UnitWeaponRowJson r in MainForm.JsonRows<UnitWeaponRowJson>("UTL.unit_weapons.json"))
-            {
-                if (r == null || String.IsNullOrWhiteSpace(r.unitId) || String.IsNullOrWhiteSpace(r.weaponBlk)) continue;
-                unitWeapons.Add(new UnitWeapon { UnitId = r.unitId, Domain = r.domain, UnitDisplay = r.unitDisplay, WeaponBlk = r.weaponBlk, WeaponDisplay = r.weaponDisplay, Kind = r.kind });
-            }
             airOrdnance.Clear();
             foreach (NameValueRowJson r in MainForm.JsonRows<NameValueRowJson>("UTL.air_ordnance.json"))
             {
@@ -4074,15 +4087,6 @@ public IList<GroundAmmo> WorkspaceResolveCannonAmmo(string cannonBlk)
             {
                 if (r == null || String.IsNullOrWhiteSpace(r.aircraftId)) continue;
                 pylons.Add(new PylonSlot { AircraftId = r.aircraftId, Slot = r.slot, Order = r.order, Tier = r.tier, MaxLoad = r.maxLoad, AnchorMount = r.anchorMount });
-            }
-            foreach (ModificationRowJson r in MainForm.JsonRows<ModificationRowJson>("UTL.modifications.json"))
-            {
-                if (r == null || String.IsNullOrWhiteSpace(r.aircraftId) || String.IsNullOrWhiteSpace(r.id)) continue;
-                modifications.Add(new AircraftModification
-                {
-                    AircraftId = r.aircraftId, Id = r.id, Display = r.display, Tier = r.tier,
-                    ModClass = r.modClass, Group = r.group, Requires = r.requires
-                });
             }
             foreach (CombinedMapRowJson r in MainForm.JsonRows<CombinedMapRowJson>("UTL.combined_maps.json"))
             {
@@ -4105,7 +4109,49 @@ public IList<GroundAmmo> WorkspaceResolveCannonAmmo(string cannonBlk)
             }
 
             combinedMaps.Sort(delegate(CombinedMap left, CombinedMap right) { return StringComparer.CurrentCultureIgnoreCase.Compare(left.Display, right.Display); });
+        }
+
+        internal static List<SensorRowJson> SensorCatalog { get { if (sensorCatalogBacking == null) { sensorCatalogBacking = JsonRows<SensorRowJson>("UTL.sensors.json"); } return sensorCatalogBacking; } }
+        private static List<SensorRowJson> sensorCatalogBacking;
+
+        // Lazy catalog loaders - the big tables parse on first use so the window opens quickly.
+        private void LoadDonorWeaponsCatalog()
+        {
+            nativeWeaponsBacking = new List<DonorWeapon>();
+            foreach (DonorWeaponRowJson r in JsonRows<DonorWeaponRowJson>("UTL.donor_weapons.json"))
+            {
+                if (r == null || String.IsNullOrWhiteSpace(r.blk)) continue;
+                nativeWeaponsBacking.Add(new DonorWeapon
+                {
+                    AircraftId = r.aircraftId, AircraftDisplay = r.aircraftDisplay, Slot = r.slot, Mount = r.mount, Trigger = r.trigger, Blk = r.blk,
+                    Emitter = r.emitter, Bullets = r.bullets, Icon = r.icon, Name = r.name, Category = r.category, UnitMass = r.unitMass, TotalMass = r.totalMass
+                });
+            }
             PopulateWeaponNations();
+        }
+
+        private void LoadUnitWeaponsCatalog()
+        {
+            unitWeaponsBacking = new List<UnitWeapon>();
+            foreach (UnitWeaponRowJson r in JsonRows<UnitWeaponRowJson>("UTL.unit_weapons.json"))
+            {
+                if (r == null || String.IsNullOrWhiteSpace(r.unitId) || String.IsNullOrWhiteSpace(r.weaponBlk)) continue;
+                unitWeaponsBacking.Add(new UnitWeapon { UnitId = r.unitId, Domain = r.domain, UnitDisplay = r.unitDisplay, WeaponBlk = r.weaponBlk, WeaponDisplay = r.weaponDisplay, Kind = r.kind });
+            }
+        }
+
+        private void LoadModificationsCatalog()
+        {
+            modificationsBacking = new List<AircraftModification>();
+            foreach (ModificationRowJson r in JsonRows<ModificationRowJson>("UTL.modifications.json"))
+            {
+                if (r == null || String.IsNullOrWhiteSpace(r.aircraftId) || String.IsNullOrWhiteSpace(r.id)) continue;
+                modificationsBacking.Add(new AircraftModification
+                {
+                    AircraftId = r.aircraftId, Id = r.id, Display = r.display, Tier = r.tier,
+                    ModClass = r.modClass, Group = r.group, Requires = r.requires
+                });
+            }
         }
 
         private void PopulateWeaponNations()
@@ -6026,6 +6072,10 @@ string cannon = ((customCannonNeeded || moduleShipsWeapons) && hasEditableCannon
                 proxy.AppendLine(commonOverride);
             }
 
+                // Radar swap: rebuild the sensors block (@delete + re-define like commonWeapons)
+                // installing the requested search/track radars and optionally dropping the AI pair.
+                if (settings.RadarSearchBlk != null || settings.RadarTrackBlk != null || settings.RadarStripAiSensors)
+                    ApplyRadarSwapToProxy(proxy, nativeUnit, settings);
             string unit = proxy.ToString();
 
             string unitOut = Path.Combine(root, @"content\pkg_local\gameData\units\tankModels\userVehicles", GroundProxyVehicleFileName);
@@ -6056,6 +6106,72 @@ string cannon = ((customCannonNeeded || moduleShipsWeapons) && hasEditableCannon
             foreach (GroundAmmoLoadout loadout in missionAmmo) generated.GroundAmmoLoadouts.Add(loadout.Copy());
             if (useCustomCannon) generated.AuxiliaryPaths.Add(cannonOut);
             return generated;
+        }
+
+        // Rebuilds the vehicle's sensors block in the include proxy: installs the
+        // requested player search/track radars and optionally strips the AI-only
+        // *_ai sensor pair (AI secondary sight). Used by the radar-swap lab.
+        private static void ApplyRadarSwapToProxy(StringBuilder proxy, string nativeUnit, AircraftSettings settings)
+        {
+            int open = nativeUnit.IndexOf("sensors {", StringComparison.OrdinalIgnoreCase);
+            if (open < 0) return;
+            int close = BlkTools.MatchingBrace(nativeUnit, open);
+            if (close <= open || close >= nativeUnit.Length) return;
+            string sensorsText = nativeUnit.Substring(open, close - open + 1);
+            List<BlockSpan> sensors = BlkTools.Blocks(sensorsText, "sensor");
+            if (sensors.Count == 0) return;
+
+            StringBuilder rebuilt = new StringBuilder("sensors {");
+            foreach (BlockSpan sensor in sensors)
+            {
+                string text = sensor.Text;
+                string blk = BlkTools.Field(text, "blk", "t");
+                bool aiOnly = blk != null && blk.IndexOf("_ai.", StringComparison.OrdinalIgnoreCase) >= 0;
+                if (aiOnly)
+                {
+                    if (settings.RadarStripAiSensors) continue; // drop the AI pair
+                }
+                else
+                {
+                    bool isSearch = blk != null && blk.IndexOf("search", StringComparison.OrdinalIgnoreCase) >= 0
+                        && blk.IndexOf("track", StringComparison.OrdinalIgnoreCase) < 0;
+                    bool isTrack = blk != null && blk.IndexOf("track", StringComparison.OrdinalIgnoreCase) >= 0;
+                    if (isSearch && !String.IsNullOrWhiteSpace(settings.RadarSearchBlk))
+                        text = BlkTools.ReplaceStringField(text, "blk", "gameData/sensors/" + settings.RadarSearchBlk.Trim() + ".blk");
+                    else if (isTrack && !String.IsNullOrWhiteSpace(settings.RadarTrackBlk))
+                        text = BlkTools.ReplaceStringField(text, "blk", "gameData/sensors/" + settings.RadarTrackBlk.Trim() + ".blk");
+                }
+                rebuilt.Append(text);
+            }
+            rebuilt.Append("}");
+
+            proxy.AppendLine("\"@delete:sensors\"{}");
+            proxy.AppendLine(rebuilt.ToString());
+
+            // A vehicle whose native SAM menu is disabled (available:b=false - e.g.
+            // IR-only launchers like the Strela-10) has no target list to drive the
+            // installed radar. Installing radars via the swap lab implies the player
+            // needs the SAM interface, so re-enable it with a full target list.
+            int menuOpen = nativeUnit.IndexOf("antiAirComplexMenu {", StringComparison.OrdinalIgnoreCase);
+            bool menuDisabled = false;
+            if (menuOpen >= 0)
+            {
+                int menuClose = BlkTools.MatchingBrace(nativeUnit, menuOpen);
+                if (menuClose > menuOpen && menuClose < nativeUnit.Length)
+                    menuDisabled = Regex.IsMatch(nativeUnit.Substring(menuOpen, menuClose - menuOpen + 1), @"available\s*:\s*b\s*=\s*false", RegexOptions.IgnoreCase);
+            }
+            if (menuDisabled)
+            {
+                proxy.AppendLine("\"@delete:antiAirComplexMenu\"{}");
+                proxy.AppendLine("antiAirComplexMenu {");
+                proxy.AppendLine("\tavailable:b = true");
+                proxy.AppendLine("\tisVerticalViewAvailable:b = true");
+                proxy.AppendLine("\thasTargetList:b = true");
+                proxy.AppendLine("\thasTurretView:b = true");
+                proxy.AppendLine("\thasVerticalView:b = true");
+                proxy.AppendLine("\tverticalViewMaxAltitude:r = 15");
+                proxy.AppendLine("}");
+            }
         }
 
         // True when a commonWeapons Weapon is a camera-aiming dummy (dummy:b = true).
@@ -7318,13 +7434,30 @@ fpvCameraOffset:p3 = 0.2, -0.1, 0
         [STAThread]
         private static void Main(string[] args)
         {
-            // Diagnostic crash log for headless self-tests (writes next to the exe).
+            // Diagnostic crash log (next to the exe and under %LOCALAPPDATA%\UniversalTestLab)
+            // so players can share an exact stack trace. Built with /debug+ so line numbers appear.
             AppDomain.CurrentDomain.UnhandledException += delegate(object sender, UnhandledExceptionEventArgs e)
             {
                 try
                 {
-                    string log = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "selftest_crash.log");
-                    File.WriteAllText(log, e.ExceptionObject == null ? "(null exception)" : e.ExceptionObject.ToString());
+                    string detail = e.ExceptionObject == null ? "(null exception)" : e.ExceptionObject.ToString();
+                    try
+                    {
+                        detail += Environment.NewLine + "OS=" + Environment.OSVersion
+                            + " | culture=" + System.Threading.Thread.CurrentThread.CurrentUICulture.Name
+                            + " | lang=" + ConfigStore.GetString("language");
+                    }
+                    catch { }
+                    string exeDir = AppDomain.CurrentDomain.BaseDirectory;
+                    string[] targets =
+                    {
+                        Path.Combine(exeDir, "selftest_crash.log"),
+                        Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "UniversalTestLab", "crash.log")
+                    };
+                    foreach (string log in targets)
+                    {
+                        try { File.WriteAllText(log, detail); } catch { }
+                    }
                 }
                 catch { }
             };

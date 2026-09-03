@@ -3889,6 +3889,8 @@ private void RefreshGroundWorkspace()
 
     internal sealed class MapPanelState
     {
+
+
         public List<AircraftView> Aircraft;
         public List<TargetView> Ground;
         public List<TargetView> Ships;
@@ -3911,6 +3913,107 @@ private void RefreshGroundWorkspace()
         public int CurrentShipCount;
         public bool PassiveShip;
         public CombinedScenarioSettings Scenario;
+    }
+    // Ask3lad-style search picker: modal search box + instant-filter list.
+    // Used for every long list choice (sensors, ammunition, maps, targets...).
+    internal sealed class ModernPickerItem
+    {
+        public string Display { get; set; }
+        public string Detail { get; set; }
+        public object Tag { get; set; }
+        public override string ToString()
+        {
+            return String.IsNullOrWhiteSpace(Detail) ? Display : Display + "    " + Detail;
+        }
+    }
+
+    internal sealed class ModernPickerDialog : ModernDialogWindow
+    {
+        private readonly List<ModernPickerItem> allItems = new List<ModernPickerItem>();
+        private readonly List<ModernPickerItem> filtered = new List<ModernPickerItem>();
+        private readonly ListBox listBox = new ListBox { Margin = new Thickness(0, 10, 0, 6), Background = ModernPalette.Brush(ModernPalette.Field), BorderBrush = ModernPalette.Brush(ModernPalette.Border), BorderThickness = new Thickness(1), Foreground = ModernPalette.Brush(ModernPalette.Text), Padding = new Thickness(6, 4, 6, 4) };
+        private readonly TextBlock countText = new TextBlock { Foreground = ModernPalette.Brush(ModernPalette.Muted), FontSize = 12, Margin = new Thickness(2, 0, 0, 0) };
+        private TextBox searchBox;
+        private string searchTerm = "";
+
+        public ModernPickerItem Selected { get; private set; }
+
+        public ModernPickerDialog(string title, IEnumerable<ModernPickerItem> items, string searchPrompt)
+            : base(title, 640, 600)
+        {
+            if (items != null) allItems.AddRange(items);
+            ResizeMode = ResizeMode.NoResize;
+            Grid layout = new Grid();
+            layout.RowDefinitions.Add(new RowDefinition { Height = new GridLength(64) });
+            layout.RowDefinitions.Add(new RowDefinition());
+            layout.RowDefinitions.Add(new RowDefinition { Height = new GridLength(34) });
+            layout.RowDefinitions.Add(new RowDefinition { Height = new GridLength(58) });
+            ContentCard.Child = layout;
+
+            // Search row
+            StackPanel searchPanel = new StackPanel { Margin = new Thickness(0, 4, 0, 0) };
+            searchPanel.Children.Add(new TextBlock { Text = ModernText.L(searchPrompt ?? "SEARCH", searchPrompt ?? "搜索"), FontSize = 13, FontWeight = FontWeights.SemiBold, Foreground = ModernPalette.Brush(ModernPalette.Cyan), Margin = new Thickness(2, 0, 0, 6) });
+            searchBox = new TextBox { Height = 32, Padding = new Thickness(8, 4, 8, 2), Background = ModernPalette.Brush(ModernPalette.Field), Foreground = ModernPalette.Brush(ModernPalette.Text), BorderBrush = ModernPalette.Brush(ModernPalette.Border), BorderThickness = new Thickness(1), CaretBrush = ModernPalette.Brush(ModernPalette.Text) };
+            searchBox.TextChanged += delegate { searchTerm = (searchBox.Text ?? "").Trim(); ApplyFilter(); };
+            searchBox.PreviewKeyDown += delegate(object s, System.Windows.Input.KeyEventArgs e) { if (e.Key == System.Windows.Input.Key.Escape) { searchBox.Text = ""; e.Handled = true; } };
+            searchPanel.Children.Add(searchBox);
+            layout.Children.Add(searchPanel);
+
+            // List row
+            Grid.SetRow(listBox, 1); layout.Children.Add(listBox);
+            listBox.MouseDoubleClick += delegate { ConfirmSelection(); };
+            listBox.PreviewKeyDown += delegate(object s, System.Windows.Input.KeyEventArgs e) { if (e.Key == System.Windows.Input.Key.Enter) { ConfirmSelection(); e.Handled = true; } };
+
+            // Count row
+            Grid.SetRow(countText, 2); layout.Children.Add(countText);
+
+            // Footer
+            Grid footer = new Grid { HorizontalAlignment = HorizontalAlignment.Right };
+            footer.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(140) });
+            footer.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(160) });
+            Button cancel = DialogButton(ModernText.L("CANCEL", "取消"), false); cancel.Click += delegate { DialogResult = false; Close(); }; footer.Children.Add(cancel);
+            Button select = DialogButton(ModernText.L("SELECT", "选择"), true); Grid.SetColumn(select, 1); select.Click += delegate { ConfirmSelection(); }; footer.Children.Add(select);
+            Grid.SetRow(footer, 3); layout.Children.Add(footer);
+
+            ApplyFilter();
+            Loaded += delegate { searchBox.Focus(); };
+        }
+
+        private void ApplyFilter()
+        {
+            filtered.Clear();
+            string term = searchTerm.ToLowerInvariant();
+            if (term.Length == 0)
+            {
+                filtered.AddRange(allItems);
+            }
+            else
+            {
+                foreach (ModernPickerItem item in allItems)
+                {
+                    if ((item.Display != null && item.Display.ToLowerInvariant().IndexOf(term, StringComparison.Ordinal) >= 0) ||
+                        (item.Detail != null && item.Detail.ToLowerInvariant().IndexOf(term, StringComparison.Ordinal) >= 0))
+                        filtered.Add(item);
+                }
+            }
+            List<string> rows = new List<string>(filtered.Count);
+            foreach (ModernPickerItem item in filtered) rows.Add(item.ToString());
+            listBox.ItemsSource = rows;
+            if (rows.Count > 0) listBox.SelectedIndex = 0;
+            if (filtered.Count == 0 && searchTerm.Length > 0)
+                countText.Text = ModernText.L("No matches for \"" + searchTerm + "\" - press Esc to clear.", "没有匹配 \"" + searchTerm + "\" - 按 Esc 清空搜索。");
+            else
+                countText.Text = filtered.Count + (filtered.Count == allItems.Count ? "" : " / " + allItems.Count) + (filtered.Count == 1 ? " item" : " items");
+        }
+
+        private void ConfirmSelection()
+        {
+            int idx = listBox.SelectedIndex;
+            if (idx < 0 || idx >= filtered.Count) return;
+            Selected = filtered[idx];
+            DialogResult = true;
+            Close();
+        }
     }
 
     internal sealed class MapPanelResult
@@ -5093,6 +5196,10 @@ private void RefreshGroundWorkspace()
         private readonly Func<string, IList<GroundAmmo>> resolveCannonAmmo;
         private readonly CheckBox ammoUnlimitedBox;
         private readonly CheckBox fakeArhBox;
+        private string radarSearchSel;
+        private string radarTrackSel;
+        private readonly CheckBox stripAiBox;
+        private readonly TextBlock radarStatus;
         private readonly Dictionary<string, IList<GroundAmmo>> cannonAmmoCache = new Dictionary<string, IList<GroundAmmo>>(StringComparer.OrdinalIgnoreCase);
         private readonly Style buttonStyle;
         private readonly Style toggleStyle;
@@ -5239,6 +5346,17 @@ private void RefreshGroundWorkspace()
             tuningPanel.Children.Add(ammoUnlimitedBox);
             fakeArhBox = new CheckBox { Content = ModernText.L("Fake-ARH conversion (SARH missiles self-guide, TWS launch)", "伪ARH转换（半主动弹自主制导，TWS直射）"), IsChecked = original.FakeArhConversion, Foreground = ModernPalette.Brush(ModernPalette.Cyan), Margin = new Thickness(0, 6, 0, 0), ToolTip = "Injects active seeker + permanently-activated guidance into radar missiles so they launch without a pre-launch lock (SARH -> ARH). Verified on AIM-7E-2: active:b, permanentlyActivated, lockDistance, inertialNavigation+datalink, breakLockMaxTime=160, wider seeker angles, distGate, shotFreq cap." };
             tuningPanel.Children.Add(fakeArhBox);
+            radarStatus = new TextBlock { Foreground = ModernPalette.Brush(ModernPalette.Muted), FontSize = 12, TextWrapping = TextWrapping.Wrap, Margin = new Thickness(0, 2, 0, 0) };
+            radarSearchSel = original.RadarSearchBlk; radarTrackSel = original.RadarTrackBlk;
+            stripAiBox = new CheckBox { Content = ModernText.L("Radar swap strips the AI-only radar pair", "雷达替换时移除 AI 专用雷达组"), IsChecked = original.RadarStripAiSensors, Margin = new Thickness(0, 1, 0, 0) };
+            Button radarPick = new Button { Content = ModernText.L("CHANGE RADARS (SEARCH / TRACK)", "更换雷达（搜索 / 跟踪）"), Style = buttonStyle, Padding = new Thickness(14, 4, 14, 4), Margin = new Thickness(0, 3, 0, 1), HorizontalAlignment = HorizontalAlignment.Left };
+            radarPick.Click += delegate { PickRadars(); };
+            Button radarReset = new Button { Content = ModernText.L("RESET RADARS TO NATIVE", "恢复原生雷达"), Style = buttonStyle, Padding = new Thickness(10, 3, 10, 3), Margin = new Thickness(8, 3, 0, 1), HorizontalAlignment = HorizontalAlignment.Left };
+            radarReset.Click += delegate { radarSearchSel = null; radarTrackSel = null; UpdateRadarStatus(); };
+            StackPanel radarRow = new StackPanel { Orientation = Orientation.Horizontal }; radarRow.Children.Add(radarPick); radarRow.Children.Add(radarReset); tuningPanel.Children.Add(radarRow);
+            tuningPanel.Children.Add(stripAiBox);
+            tuningPanel.Children.Add(radarStatus);
+            UpdateRadarStatus();
             domainBox.SelectedItem = savedDomainItem;
             RefreshCannonBox();
             BuildCannonSelector();
@@ -5314,6 +5432,38 @@ private void RefreshGroundWorkspace()
             editor.Count.ValueChanged += delegate { if (!updatingSlots) UpdateSlotCount(editor.Slot, (int)editor.Count.Value); };
             ModernNumericBox.Bind(editor.Count, editor.CountBox);
             editor.Card.Child = grid; slotEditors.Add(editor); return editor.Card;
+        }
+
+        // Radar swap lab: two Ask3lad-style pickers (search + track) over the 442-entry
+        // sensor catalog, plus the AI-pair strip option. Selection is stored on the
+        // aircraft settings and applied when the mission is generated.
+        private void PickRadars()
+        {
+            List<ModernPickerItem> items = new List<ModernPickerItem>();
+            foreach (SensorRowJson s in MainForm.SensorCatalog)
+            {
+                items.Add(new ModernPickerItem { Display = s.display, Detail = (String.IsNullOrWhiteSpace(s.band) ? "" : "band " + s.band.Trim() + "  ") + s.id, Tag = s.id });
+            }
+            ModernPickerItem searchPick = null;
+            string searchTitle = ModernText.L("SELECT SEARCH RADAR", "选择搜索雷达");
+            if (String.IsNullOrWhiteSpace(radarSearchSel))
+            {
+                ModernPickerDialog searchDlg = new ModernPickerDialog(searchTitle, items, searchTitle);
+                if (searchDlg.ShowDialog() == true && searchDlg.Selected != null) { radarSearchSel = (string)searchDlg.Selected.Tag; searchPick = searchDlg.Selected; }
+            }
+            ModernPickerItem trackPick = null;
+            string trackTitle = ModernText.L("SELECT TRACK RADAR", "选择跟踪雷达");
+            ModernPickerDialog dlg = new ModernPickerDialog(trackTitle, items, trackTitle);
+            if (dlg.ShowDialog() == true && dlg.Selected != null) { radarTrackSel = (string)dlg.Selected.Tag; trackPick = dlg.Selected; }
+            UpdateRadarStatus();
+        }
+
+        private void UpdateRadarStatus()
+        {
+            if (radarStatus == null) return;
+            string search = String.IsNullOrWhiteSpace(radarSearchSel) ? ModernText.L("native", "原生") : radarSearchSel;
+            string track = String.IsNullOrWhiteSpace(radarTrackSel) ? ModernText.L("native", "原生") : radarTrackSel;
+            radarStatus.Text = ModernText.L("SEARCH: ", "搜索雷达：") + search + "    " + ModernText.L("TRACK: ", "跟踪雷达：") + track;
         }
 
         private void AddValue(StackPanel panel, string label, string key, double stock, double multiplier, string unit)
@@ -5842,6 +5992,9 @@ private void RefreshGroundWorkspace()
             }
             result.UnlimitedAmmo = ammoUnlimitedBox == null ? original.UnlimitedAmmo : ammoUnlimitedBox.IsChecked == true;
             result.FakeArhConversion = fakeArhBox == null ? original.FakeArhConversion : fakeArhBox.IsChecked == true;
+            result.RadarSearchBlk = radarSearchSel;
+            result.RadarTrackBlk = radarTrackSel;
+            result.RadarStripAiSensors = stripAiBox == null ? original.RadarStripAiSensors : stripAiBox.IsChecked == true;
             return result;
         }
     }

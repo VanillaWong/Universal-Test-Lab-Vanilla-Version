@@ -2,7 +2,7 @@
 /target:winexe
 /platform:anycpu
 /optimize+
-/out:dist\UniversalTestLab.exe
+/debug+ /out:dist\UniversalTestLab.exe
 /win32icon:resources\utl.ico
 /reference:System.Windows.Forms.dll
 /reference:System.Drawing.dll
@@ -39,3 +39,4 @@
 UniversalTestLab.cs
 ModernShell.cs
 /resource:data\era_presets.json,UTL.era_presets.json
+/resource:data\sensors.json,UTL.sensors.json
