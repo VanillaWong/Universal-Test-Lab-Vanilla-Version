@@ -167,3 +167,91 @@ bk S300 整合 / osa 5V55 S300 6发 / osa v759（注入 209+654mm SACLOS）/ osa
 - 每会话结束：追加 `ARCHIVE_2026-09-02.md`（分节：日期/主题/成果/坑）+ commit + push
 - 新会话接续：只带 ARCHIVE 尾部 + git log——所有背景在文档里
 - git 惯例：commit 信息结尾 `Co-authored-by: Chatbox <chatbox@chatboxai.com>`
+
+---
+
+## 10. 待办速改模板（照抄即用）
+
+### A. TARGETS 地图选择 Picker 化（MapPanel——**半成品待完成，当前会 NRE**）
+
+现状：ModernShell.cs MapPanel 构造（~4256 行）里 mapStack 已是按钮 `mapPickerButton`（**无 Click handler**），但
+字段 `mapBox`（~4127 声明）**从未赋值**——构造尾部 `mapBox.SelectionChanged += ...`（~4372）和
+`RefreshCombinedSpawns()` 里 `mapBox.SelectedItem`（~4400）引用它 → **进 TARGETS 视图构造即 NullReferenceException**。
+
+完成步骤：
+
+1) 类字段加当前地图：
+```csharp
+private CombinedMap currentMap;   // 替换 mapBox 的角色（mapBox 字段可删）
+```
+2) 构造里 mapPickerButton 接 Click（样式用已有 toggleStyle，别用 FindResource——不在树里会抛）：
+```csharp
+mapPickerButton.Style = toggleStyle;
+mapPickerButton.Click += delegate { PickCombinedMap(); };
+```
+3) 类内新方法（照抄 GroundConfigurePanel.PickRadars 的 Picker 模式）：
+```csharp
+private void PickCombinedMap()
+{
+    List<ModernPickerItem> items = new List<ModernPickerItem>();
+    foreach (CombinedMap m in allCombinedMaps)
+        items.Add(new ModernPickerItem { Display = m.Display, Detail = m.Level, Tag = m });
+    ModernPickerDialog dlg = new ModernPickerDialog(ModernText.L("SELECT MAP", "选择地图"), items,
+        ModernText.L("SELECT MAP", "选择地图")) { Owner = System.Windows.Window.GetWindow(this) };
+    if (dlg.ShowDialog() == true && dlg.Selected != null)
+    {
+        currentMap = (CombinedMap)dlg.Selected.Tag;
+        TextBlock label = mapPickerButton.Content as TextBlock;
+        if (label != null) label.Text = currentMap.Display;
+        RefreshCombinedSpawns();
+    }
+}
+```
+4) 引用替换：
+- 删构造里 `mapBox.SelectionChanged += delegate { RefreshCombinedSpawns(); };`（~4372）
+- `RefreshCombinedSpawns()` 里 `CombinedMap map = mapBox.SelectedItem as CombinedMap;` → `CombinedMap map = currentMap;`
+5) 构造里初始化 `currentMap = state.CurrentMap ?? allCombinedMaps.FirstOrDefault();` 并同步按钮文本。
+6) 检查 `MapPanelState.CurrentMap` 已有（保存/恢复用）。完成后：删 `mapBox` 字段声明。
+
+### B. EXPERIMENTAL 一键归零按钮（GroundConfigurePanel，~5253 类）
+
+在 VEHICLE TUNING 页 resetAll 按钮旁加"RESET ALL MODS（清空全部爆改）"：
+
+```csharp
+Button resetMods = new Button { Content = ModernText.L("RESET ALL MODS", "清空全部爆改"),
+    Style = buttonStyle, Padding = new Thickness(14, 2, 14, 2), Margin = new Thickness(10, 10, 0, 4) };
+resetMods.Click += delegate
+{
+    // 清爆改字段（写 currentSettings——生成时读它；original 是构造副本可同清）
+    if (currentSettings != null)
+    {
+        currentSettings.InjectedCannonBlk = null; currentSettings.InjectedCannonDomain = null;
+        currentSettings.InjectedCannonUnit = null; currentSettings.InjectedCannonRound = null;
+        currentSettings.InjectedCannonRounds = 0;  currentSettings.InjectNativeLauncher = false;
+        currentSettings.UnlimitedAmmo = false;     currentSettings.FakeArhConversion = false;
+        currentSettings.RadarSearchBlk = null;     currentSettings.RadarTrackBlk = null;
+        currentSettings.RadarStripAiSensors = false;
+        currentSettings.OverrideGroundBallistics = false;
+        currentSettings.ProjectileMassMultiplier = 1; currentSettings.MuzzleVelocityMultiplier = 1;
+        currentSettings.ExplosiveMassMultiplier = 1;  currentSettings.PenetrationMultiplier = 1;
+        currentSettings.ReloadSeconds = 0; currentSettings.RecoilMultiplier = 1;
+        currentSettings.EnginePowerMultiplier = 1;  currentSettings.VehicleMassMultiplier = 1;
+        currentSettings.ForwardSpeedMultiplier = 1; currentSettings.ReverseSpeedMultiplier = 1;
+        // 换炮/弹药槽回原生
+        currentSettings.InjectedCannonBlk = null;
+        currentSettings.GroundAmmoLoadouts.Clear();
+    }
+    // UI 同步（照抄现有重置的调用链）
+    ResetAllValues();
+    overrideBallistics.IsChecked = false; ammoUnlimitedBox.IsChecked = false; fakeArhBox.IsChecked = false;
+    radarSearchSel = null; radarTrackSel = null; stripAiBox.IsChecked = false; UpdateRadarStatus();
+    roundsBox.Text = "0"; injectBox.IsChecked = false;
+    SelectInitialCannon(); RefreshAmmo(); RefreshSlotEditors();
+};
+```
+注意：真正的"会话默认干净"（启动不自动套上次爆改）是 M4 完整版——改 `LoadAircraftSettings`/启动路径，
+暂缓（涉及 AircraftSettings 持久化语义，别急着动）。
+
+### C. 已知：当前代码 TARGETS 视图会崩（mapBox null）
+进 UTL 的 TARGETS 前先完成上面 A（或临时把 `mapBox.SelectionChanged +=` 那行删掉/注释掉）。
+
