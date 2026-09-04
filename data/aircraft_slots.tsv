@@ -3327,10 +3327,10 @@ mig_23mf_hungary	1	1	8	0	r_13m1
 mig_23mf_hungary	2	3	7	0	r_13m1
 mig_23mf_hungary	4	4	5	0	r_13m1
 mig_23mf_hungary	5	2	4	0	r_13m1
-mig_23ml	1	1	8	0	default_r_13m1
+mig_23ml	1	1	8	0	x23m
 mig_23ml	2	3	7	0	r_13m1
 mig_23ml	4	4	5	0	r_13m1
-mig_23ml	5	2	4	0	default_r_13m1
+mig_23ml	5	2	4	0	x23m
 mig_23mla	1	1	8	0	default_r_13m1
 mig_23mla	2	3	7	0	r_13m1
 mig_23mla	4	4	5	0	r_13m1

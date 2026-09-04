@@ -2196,3 +2196,4 @@ torpedoes	gameData/Weapons/torpedoes/it_f200_450_torpedo.blk	2		2x 450 mm W 170/
 torpedoes	gameData/Weapons/torpedoes/de_f5w_torpedo.blk	2		2x F5W torpedo	Torpedoes	905	1810
 torpedoes	gameData/Weapons/torpedoes/us_mk13_torpedo.blk	2	air_torpedo_x2	Mk.13-6 Case Torpedo (2216 lbs)	Torpedoes	964.79	1929.58
 torpedoes	gameData/Weapons/torpedoes/it_f200_450_torpedo.blk	3		3x 450 mm W 170/450/5.46 torpedo	Torpedoes	905	2715
+atgm	gameData/Weapons/rocketGuns/su_kh_23m_ir.blk	1	missile_air_to_uni	Kh-23M (IR) missiles	Air-to-Ground Missiles	289	289
