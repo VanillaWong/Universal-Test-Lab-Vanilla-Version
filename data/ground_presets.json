@@ -1,0 +1,122 @@
+[
+  {
+    "id": "osa_buk_9m38_sarh",
+    "name": "Osa + Buk 9S35 radar + 9M38 (true SARH x6)",
+    "vehicle": "ussr_9a33bm3",
+    "cannon": "gameData/weapons/groundmodels_weapons/400mm_buk_9m38_rocket_launcher.blk",
+    "cannonRounds": 6,
+    "radarSearch": "",
+    "radarTrack": "su_9s35",
+    "fakeArh": false,
+    "unlimited": true,
+    "note": "Native Osa search + Buk 9S35 track/illum fitted; 9M38 true semi-active on 6 rails - lock & hold to hit."
+  },
+  {
+    "id": "buk_9a310_integrated_9m38",
+    "name": "AI Buk 9A310 + 9S18 search (true SARH)",
+    "vehicle": "ussr_ai_sam_launcher_9a310",
+    "cannon": "",
+    "cannonRounds": 0,
+    "radarSearch": "su_9s18",
+    "radarTrack": "",
+    "fakeArh": false,
+    "unlimited": true,
+    "note": "9S18 search radar fitted on the launcher + native 9S35 track/illum - one vehicle full Buk site. 9M38 true SARH: lock & hold to hit."
+  },
+  {
+    "id": "buk_s300_integrated",
+    "name": "S-300 on Buk-M3 (integrated VLS)",
+    "vehicle": "ussr_buk_m3_launcher",
+    "cannon": "gameData/weapons/groundmodels_weapons/508mm_s300ps_5v55_rocket_launcher.blk",
+    "cannonRounds": 6,
+    "radarSearch": "su_9s18m3",
+    "radarTrack": "",
+    "fakeArh": true,
+    "unlimited": true,
+    "note": "One vehicle: 9S18M3 TWS search + native Viking track + 6x S-300 VLS."
+  },
+  {
+    "id": "osa_s300_full",
+    "name": "S-300 on Osa (64N6 + 30N6)",
+    "vehicle": "ussr_9a33bm3",
+    "cannon": "gameData/weapons/groundmodels_weapons/508mm_s300ps_5v55_rocket_launcher.blk",
+    "cannonRounds": 6,
+    "radarSearch": "su_5n64s",
+    "radarTrack": "su_5n63s",
+    "fakeArh": true,
+    "unlimited": true,
+    "note": "Full S-300 pair: 64N6 search + 30N6 track(illum), verified hitting."
+  },
+  {
+    "id": "arrow10_hq11_fm3000",
+    "name": "箭10 + HQ-11 radar + FM-3000",
+    "vehicle": "it_9a35_m",
+    "cannon": "gameData/weapons/groundmodels_weapons/250mm_FM_3000_user_cannon.blk",
+    "cannonRounds": 8,
+    "radarSearch": "cn_hq_11_search",
+    "radarTrack": "",
+    "fakeArh": false,
+    "unlimited": true,
+    "note": "IR launcher turned radar SAM: HQ-11 search feeds active FM-3000, SAM menu auto-enabled."
+  },
+  {
+    "id": "tor_fm3000",
+    "name": "Tor-M1 + FM-3000",
+    "vehicle": "cn_tor_m1",
+    "cannon": "gameData/weapons/groundmodels_weapons/250mm_FM_3000_user_cannon.blk",
+    "cannonRounds": 8,
+    "radarSearch": "",
+    "radarTrack": "",
+    "fakeArh": false,
+    "unlimited": true,
+    "note": "Native Tor search+track with FM-3000 active missiles on the whole-cannon swap."
+  },
+  {
+    "id": "osa_v759_s75",
+    "name": "Osa + S-75 V-759 SACLOS",
+    "vehicle": "ussr_9a33bm3",
+    "cannon": "gameData/weapons/groundmodels_weapons/654mm_s_75_v_755_20ds_rocket_launcher.blk",
+    "cannonRounds": 2,
+    "radarSearch": "",
+    "radarTrack": "",
+    "fakeArh": false,
+    "unlimited": true,
+    "note": "Heavy 2.4t S-75 SACLOS on the open Osa rails - lock required, 2 simultaneous max."
+  },
+  {
+    "id": "osa_5v55_arh",
+    "name": "Osa + 5V55 (fake-ARH TWS)",
+    "vehicle": "ussr_9a33bm3",
+    "cannon": "gameData/weapons/groundmodels_weapons/508mm_s300ps_5v55_rocket_launcher.blk",
+    "cannonRounds": 6,
+    "radarSearch": "",
+    "radarTrack": "",
+    "fakeArh": true,
+    "unlimited": true,
+    "note": "Native Osa radar + self-guiding 5V55 - verified hitting."
+  },
+  {
+    "id": "buk9a310_sarh",
+    "name": "AI Buk 9A310 - native true SARH",
+    "vehicle": "ussr_ai_sam_launcher_9a310",
+    "cannon": "",
+    "cannonRounds": 0,
+    "radarSearch": "",
+    "radarTrack": "",
+    "fakeArh": false,
+    "unlimited": true,
+    "note": "The only drivable true-SARH launcher: 9S35 illumination + native 9M38, Alt+F lock, keep locked."
+  },
+  {
+    "id": "buk9a310_sarh_search",
+    "name": "AI Buk 9A310 + 9S18 search (integrated)",
+    "vehicle": "ussr_ai_sam_launcher_9a310",
+    "cannon": "",
+    "cannonRounds": 0,
+    "radarSearch": "su_9s18",
+    "radarTrack": "",
+    "fakeArh": false,
+    "unlimited": true,
+    "note": "Buk radar-truck search (180km) on the launcher: find far targets on the SAM list, lock with 9S35, fire 9M38 - full true-SARH Buk on one vehicle."
+  }
+]

@@ -2206,6 +2206,26 @@ private void RefreshGroundWorkspace()
             StackPanel header = new StackPanel { Margin = new Thickness(16, 12, 16, 4) };
             header.Children.Add(new TextBlock { Text = ModernText.L("EXPERIMENTAL — GROUND / FLIGHT CONFIGURE", "实验 — 地面 / 飞行配置"), Foreground = ModernPalette.Brush(ModernPalette.Text), FontSize = 18, FontWeight = FontWeights.SemiBold });
             header.Children.Add(new TextBlock { Text = ModernText.L("Cross-domain cannon injection, ammunition slots, projectile & mobility tuning (ground), or fuel, belts and countermeasures (flight).", "跨域换炮注入、弹药槽、弹道与机动性调校（地面）；燃油、弹带与干扰弹（飞行）。"), Foreground = ModernPalette.Brush(ModernPalette.Cyan), Margin = new Thickness(0, 4, 0, 0) });
+            StackPanel presetRow = new StackPanel { Orientation = Orientation.Horizontal, Margin = new Thickness(0, 8, 0, 0) };
+            Button presetButton = new Button { Content = ModernText.L("ONE-CLICK ASSEMBLY (PRESET)", "一键装配（预设）"), Style = (Style)Resources["ButtonStyle"], Padding = new Thickness(12, 3, 12, 3) };
+            TextBlock presetHint = new TextBlock { Text = ModernText.L("Built-in verified loadouts - switches vehicle and fills every field.", "内置已验证配置——自动切车并填好全部选项。"), Foreground = ModernPalette.Brush(ModernPalette.Muted), VerticalAlignment = VerticalAlignment.Center, Margin = new Thickness(10, 0, 0, 0), FontSize = 11.5 };
+            presetButton.Click += delegate
+            {
+                List<GroundPresetRowJson> presets = MainForm.GroundPresets;
+                if (presets == null || presets.Count == 0) { status.Text = ModernText.L("No presets available.", "没有可用预设。"); return; }
+                List<ModernPickerItem> items = new List<ModernPickerItem>();
+                foreach (GroundPresetRowJson pr in presets)
+                    items.Add(new ModernPickerItem { Display = pr.name, Detail = (pr.note ?? "") + "  ·  " + pr.vehicle, Tag = pr });
+                ModernPickerDialog dlg = new ModernPickerDialog(ModernText.L("ONE-CLICK ASSEMBLY", "一键装配"), items, ModernText.L("ONE-CLICK ASSEMBLY", "一键装配"));
+                if (dlg.ShowDialog() == true && dlg.Selected != null)
+                {
+                    GroundPresetRowJson picked = dlg.Selected.Tag as GroundPresetRowJson;
+                    if (picked != null) ApplyGroundPreset(picked);
+                }
+            };
+            presetRow.Children.Add(presetButton);
+            presetRow.Children.Add(presetHint);
+            header.Children.Add(presetRow);
             layout.Children.Add(header);
             ScrollViewer scroll = new ScrollViewer { VerticalScrollBarVisibility = ScrollBarVisibility.Auto, HorizontalScrollBarVisibility = ScrollBarVisibility.Disabled, Margin = new Thickness(16, 0, 16, 8), Padding = new Thickness(0, 0, 8, 20) };
             Grid.SetRow(scroll, 1);
@@ -2437,6 +2457,47 @@ private void RefreshGroundWorkspace()
         {
             if (entry == null) return;
             SelectVehicleById(entry.Id, entry.Kind);
+        }
+
+        // One-click assembly: write the preset's settings onto the target vehicle's live
+        // settings, switch to that vehicle, then rebuild the experimental panel so every
+        // field reflects the preset (cannon, rounds-per-reload, radars, fake-ARH, ammo).
+        private void ApplyGroundPreset(GroundPresetRowJson preset)
+        {
+            if (preset == null || controller == null) return;
+            Aircraft target = null;
+            if (aircraftViews != null)
+                foreach (AircraftView av in aircraftViews)
+                    if (av != null && av.Source != null && av.Source.Id.Equals(preset.vehicle, StringComparison.OrdinalIgnoreCase)) { target = av.Source; break; }
+            if (target == null) { if (status != null) status.Text = ModernText.L("Preset vehicle not in the catalog.", "预设载具不在目录中。"); return; }
+            // WorkspaceGetSettings returns a COPY of the live settings - mutate it, then
+            // write it back through WorkspaceSetSettings or the preset never lands.
+            AircraftSettings s = controller.WorkspaceGetSettings(target);
+            // Empty cannon = keep the vehicle's native weapon. The panel constructor falls
+            // back to MissionSettings.Current when InjectedCannonBlk is blank, so a stale
+            // global cannon (e.g. an earlier S-300 swap) would otherwise hijack native
+            // loadouts - clear the globals alongside the per-vehicle settings.
+            if (String.IsNullOrWhiteSpace(preset.cannon))
+            {
+                s.InjectedCannonBlk = null; s.InjectedCannonDomain = null; s.InjectedCannonRound = null; s.InjectedCannonRounds = 0;
+                MissionSettings.Current.InjectedCannonBlk = null;
+                MissionSettings.Current.InjectedCannonDomain = null;
+            }
+            else
+            {
+                s.InjectedCannonBlk = preset.cannon;
+                s.InjectedCannonRound = preset.cannonRound;
+                s.InjectedCannonRounds = preset.cannonRounds;
+                MissionSettings.Current.InjectedCannonBlk = preset.cannon;
+            }
+            s.UnlimitedAmmo = preset.unlimited;
+            s.FakeArhConversion = preset.fakeArh;
+            s.RadarSearchBlk = preset.radarSearch;
+            s.RadarTrackBlk = preset.radarTrack;
+            controller.WorkspaceSetSettings(target, s);
+            SelectVehicleById(target.Id, null);
+            experimentalBuilt = false;
+            BuildExperimentalTab();
         }
 
         private void SelectVehicleById(string id, string kind)

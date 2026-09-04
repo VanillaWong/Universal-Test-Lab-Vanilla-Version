@@ -496,6 +496,21 @@ namespace UniversalTestLab
         public string domain { get; set; }
     }
 
+
+    internal sealed class GroundPresetRowJson
+    {
+        public string id { get; set; }
+        public string name { get; set; }
+        public string vehicle { get; set; }
+        public string cannon { get; set; }
+        public string cannonRound { get; set; }
+        public int cannonRounds { get; set; }
+        public string radarSearch { get; set; }
+        public string radarTrack { get; set; }
+        public bool fakeArh { get; set; }
+        public bool unlimited { get; set; }
+        public string note { get; set; }
+    }
     internal sealed class NameValueRowJson
     {
         // naval_cannons.tsv -> key/value; air_ordnance.tsv -> blk/display/kind
@@ -4120,6 +4135,9 @@ public IList<GroundAmmo> WorkspaceResolveCannonAmmo(string cannonBlk)
             combinedMaps.Sort(delegate(CombinedMap left, CombinedMap right) { return StringComparer.CurrentCultureIgnoreCase.Compare(left.Display, right.Display); });
         }
 
+
+        internal static List<GroundPresetRowJson> GroundPresets { get { if (groundPresetsBacking == null) { groundPresetsBacking = JsonRows<GroundPresetRowJson>("UTL.ground_presets.json"); } return groundPresetsBacking; } }
+        private static List<GroundPresetRowJson> groundPresetsBacking;
         internal static List<SensorRowJson> SensorCatalog { get { if (sensorCatalogBacking == null) { sensorCatalogBacking = JsonRows<SensorRowJson>("UTL.sensors.json"); } return sensorCatalogBacking; } }
         private static List<SensorRowJson> sensorCatalogBacking;
 
@@ -6137,6 +6155,8 @@ string cannon = ((customCannonNeeded || moduleShipsWeapons) && hasEditableCannon
             if (sensors.Count == 0) return;
 
             StringBuilder rebuilt = new StringBuilder("sensors {");
+            bool searchInstalled = false;
+            bool trackInstalled = false;
             foreach (BlockSpan sensor in sensors)
             {
                 string text = sensor.Text;
@@ -6151,12 +6171,36 @@ string cannon = ((customCannonNeeded || moduleShipsWeapons) && hasEditableCannon
                     bool isSearch = blk != null && blk.IndexOf("search", StringComparison.OrdinalIgnoreCase) >= 0
                         && blk.IndexOf("track", StringComparison.OrdinalIgnoreCase) < 0;
                     bool isTrack = blk != null && blk.IndexOf("track", StringComparison.OrdinalIgnoreCase) >= 0;
-                    if (isSearch && !String.IsNullOrWhiteSpace(settings.RadarSearchBlk))
-                        text = BlkTools.ReplaceStringField(text, "blk", "gameData/sensors/" + settings.RadarSearchBlk.Trim() + ".blk");
-                    else if (isTrack && !String.IsNullOrWhiteSpace(settings.RadarTrackBlk))
-                        text = BlkTools.ReplaceStringField(text, "blk", "gameData/sensors/" + settings.RadarTrackBlk.Trim() + ".blk");
+                    if (isSearch)
+                    {
+                        searchInstalled = true;
+                        if (!String.IsNullOrWhiteSpace(settings.RadarSearchBlk))
+                            text = BlkTools.ReplaceStringField(text, "blk", "gameData/sensors/" + settings.RadarSearchBlk.Trim() + ".blk");
+                    }
+                    else if (isTrack)
+                    {
+                        trackInstalled = true;
+                        if (!String.IsNullOrWhiteSpace(settings.RadarTrackBlk))
+                            text = BlkTools.ReplaceStringField(text, "blk", "gameData/sensors/" + settings.RadarTrackBlk.Trim() + ".blk");
+                    }
                 }
                 rebuilt.Append(text);
+            }
+            // A vehicle with no native search (or track) slot gets one appended using
+            // the first sensor as a template (same turret mount / DM parts) - otherwise
+            // the requested radar could never be installed (e.g. Buk 9A310 launcher,
+            // which carries only its 9S35 track radar; fitting the 9S18 site search
+            // radar previously did nothing).
+            BlockSpan template = sensors.FirstOrDefault(x => !String.IsNullOrWhiteSpace(BlkTools.Field(x.Text, "blk", "t")));
+            if (!searchInstalled && !String.IsNullOrWhiteSpace(settings.RadarSearchBlk) && template != null)
+            {
+                string add = BlkTools.ReplaceStringField(template.Text, "blk", "gameData/sensors/" + settings.RadarSearchBlk.Trim() + ".blk");
+                rebuilt.Append(add);
+            }
+            if (!trackInstalled && !String.IsNullOrWhiteSpace(settings.RadarTrackBlk) && template != null)
+            {
+                string add = BlkTools.ReplaceStringField(template.Text, "blk", "gameData/sensors/" + settings.RadarTrackBlk.Trim() + ".blk");
+                rebuilt.Append(add);
             }
             rebuilt.Append("}");
 

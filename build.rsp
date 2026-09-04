@@ -40,3 +40,4 @@ UniversalTestLab.cs
 ModernShell.cs
 /resource:data\era_presets.json,UTL.era_presets.json
 /resource:data\sensors.json,UTL.sensors.json
+/resource:data\ground_presets.json,UTL.ground_presets.json
