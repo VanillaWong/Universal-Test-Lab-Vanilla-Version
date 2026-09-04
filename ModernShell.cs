@@ -3699,15 +3699,27 @@ private void RefreshGroundWorkspace()
 
         public bool? ShowDialog()
         {
-            ModernMainWindow main = Owner as ModernMainWindow ?? System.Windows.Application.Current.MainWindow as ModernMainWindow;
+            System.Windows.Application app = System.Windows.Application.Current;
+            ModernMainWindow main = Owner as ModernMainWindow ?? (app != null ? app.MainWindow as ModernMainWindow : null);
             DialogResult = null;
             isOpen = true;
             if (main != null)
             {
-                main.ShowOverlay(this);
-                dialogFrame = new System.Windows.Threading.DispatcherFrame();
-                System.Windows.Threading.Dispatcher.PushFrame(dialogFrame);
-                dialogFrame = null;
+                try
+                {
+                    main.ShowOverlay(this);
+                    dialogFrame = new System.Windows.Threading.DispatcherFrame();
+                    System.Windows.Threading.Dispatcher.PushFrame(dialogFrame);
+                }
+                catch
+                {
+                    // An exception thrown by a dialog interaction while the modal frame is
+                    // active can leave the overlay stack half-open and hang the window.
+                    // Detach cleanly before rethrowing to the global crash handler.
+                    try { Close(); } catch { }
+                    throw;
+                }
+                finally { dialogFrame = null; }
                 return DialogResult;
             }
 
@@ -5378,8 +5390,33 @@ private void RefreshGroundWorkspace()
 
             Border tuningCard = Card();
             ScrollViewer tuningScroll = new ScrollViewer { VerticalScrollBarVisibility = ScrollBarVisibility.Auto, HorizontalScrollBarVisibility = ScrollBarVisibility.Disabled, ClipToBounds = true };
-            StackPanel tuningPanel = new StackPanel();
-            tuningPanel.Children.Add(Heading("CROSS-DOMAIN CANNON", 15));
+            StackPanel cannonPage = new StackPanel(), radarPage = new StackPanel(), ammoPage = new StackPanel(), tuningPage = new StackPanel();
+            StackPanel[] labPages = new StackPanel[] { cannonPage, radarPage, ammoPage, tuningPage };
+            StackPanel labHeader = new StackPanel { Orientation = Orientation.Horizontal, Margin = new Thickness(0, 0, 0, 10) };
+            ToggleButton[] labTabs = new ToggleButton[labPages.Length];
+            string[] labTitles =
+            {
+                ModernText.L("CANNON INJECT", "换炮注入"),
+                ModernText.L("RADAR SWAP", "雷达替换"),
+                ModernText.L("AMMO SWITCHES", "弹药开关"),
+                ModernText.L("VEHICLE TUNING", "载具数值")
+            };
+            for (int lab = 0; lab < labPages.Length; lab++)
+            {
+                int page = lab;
+                ToggleButton tab = new ToggleButton { Content = labTitles[lab], Style = toggleStyle, Margin = new Thickness(0, 0, 8, 0) };
+                tab.Checked += delegate
+                {
+                    for (int t = 0; t < labTabs.Length; t++) if (t != page && labTabs[t] != null) labTabs[t].IsChecked = false;
+                    for (int pi = 0; pi < labPages.Length; pi++) labPages[pi].Visibility = pi == page ? Visibility.Visible : Visibility.Collapsed;
+                };
+                labTabs[lab] = tab;
+                labHeader.Children.Add(tab);
+            }
+            StackPanel labBody = new StackPanel();
+            foreach (StackPanel pagePanel in labPages) labBody.Children.Add(pagePanel);
+            labTabs[0].IsChecked = true;
+            cannonPage.Children.Add(Heading("CROSS-DOMAIN CANNON", 15));
             Grid domainRow = new Grid { Margin = new Thickness(0, 6, 0, 0) };
             domainRow.ColumnDefinitions.Add(new ColumnDefinition());
             domainRow.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(90) });
@@ -5400,9 +5437,9 @@ private void RefreshGroundWorkspace()
             domainRow.Children.Add(domainBox);
             Grid.SetColumn(clearCannon, 1);
             domainRow.Children.Add(clearCannon);
-            tuningPanel.Children.Add(domainRow);
-            tuningPanel.Children.Add(unitBox);
-            tuningPanel.Children.Add(cannonBox);
+            cannonPage.Children.Add(domainRow);
+            cannonPage.Children.Add(unitBox);
+            cannonPage.Children.Add(cannonBox);
             roundBox = new ComboBox { Foreground = ModernPalette.Brush(ModernPalette.Text), Background = ModernPalette.Brush("#FF16283E"), BorderBrush = ModernPalette.Brush(ModernPalette.Border), Padding = new Thickness(8, 4, 8, 4), Height = 32, Margin = new Thickness(0, 6, 0, 0), HorizontalAlignment = HorizontalAlignment.Stretch };
             roundBox.Items.Add(new ComboBoxItem { Content = ModernText.L("ALL (native rounds)", "全部（原生炮弹）"), Tag = "" });
             foreach (GroundAmmo injectedRound in injectedCannonAmmo)
@@ -5414,12 +5451,12 @@ private void RefreshGroundWorkspace()
             }
             if (roundBox.SelectedItem == null) roundBox.SelectedIndex = 0;
             roundBox.SelectionChanged += delegate { SyncRoundToSlot(); };
-            tuningPanel.Children.Add(roundBox);
+            cannonPage.Children.Add(roundBox);
             bool roundsSyncing = true;
             StackPanel roundsRow = new StackPanel { Orientation = Orientation.Horizontal, Margin = new Thickness(0, 6, 0, 0) };
             roundsRow.Children.Add(new TextBlock { Text = ModernText.L("ROUNDS PER RELOAD (0 = source)", "每次装填弹数（0 = 沿用原值）"), Foreground = ModernPalette.Brush(ModernPalette.Muted), VerticalAlignment = VerticalAlignment.Center, Margin = new Thickness(0, 0, 6, 0) });
             TextBox roundsBox = new TextBox { Text = original.InjectedCannonRounds > 0 ? original.InjectedCannonRounds.ToString(CultureInfo.InvariantCulture) : "0", Width = 64, Height = 26, Padding = new Thickness(6, 2, 6, 2), VerticalContentAlignment = VerticalAlignment.Center, ToolTip = "Osa + S-300: 6 fills the native 6-rail rack (S-300 source carries 4)." };
-            roundsRow.Children.Add(roundsBox); tuningPanel.Children.Add(roundsRow);
+            roundsRow.Children.Add(roundsBox); cannonPage.Children.Add(roundsRow);
             roundsBox.TextChanged += delegate
             {
                 if (roundsSyncing) return;
@@ -5431,12 +5468,12 @@ private void RefreshGroundWorkspace()
             CheckBox injectBox = new CheckBox { Content = ModernText.L("Inject into native launcher (inject-shell)", "注入原生发射器（inject-shell）"), IsChecked = original.InjectNativeLauncher, Foreground = ModernPalette.Brush(ModernPalette.Text), Margin = new Thickness(0, 2, 0, 0), ToolTip = "S-75 V-759 style: mounts the chosen missile into the vehicle's own launcher mechanism instead of swapping the whole cannon file (needed for AI site missiles)." };
             injectBox.Checked += delegate { if (!injectSyncing) { original.InjectNativeLauncher = true; if (currentSettings != null) currentSettings.InjectNativeLauncher = true; } };
             injectBox.Unchecked += delegate { if (!injectSyncing) { original.InjectNativeLauncher = false; if (currentSettings != null) currentSettings.InjectNativeLauncher = false; } };
-            tuningPanel.Children.Add(injectBox);
+            cannonPage.Children.Add(injectBox);
             injectSyncing = false;
             ammoUnlimitedBox = new CheckBox { Content = ModernText.L("Unlimited ammunition (9999 per slot)", "无限弹药（每槽 9999）"), IsChecked = original.UnlimitedAmmo, Foreground = ModernPalette.Brush(ModernPalette.Text), Margin = new Thickness(0, 6, 0, 0) };
-            tuningPanel.Children.Add(ammoUnlimitedBox);
+            ammoPage.Children.Add(ammoUnlimitedBox);
             fakeArhBox = new CheckBox { Content = ModernText.L("Fake-ARH conversion (SARH missiles self-guide, TWS launch)", "伪ARH转换（半主动弹自主制导，TWS直射）"), IsChecked = original.FakeArhConversion, Foreground = ModernPalette.Brush(ModernPalette.Cyan), Margin = new Thickness(0, 6, 0, 0), ToolTip = "Injects active seeker + permanently-activated guidance into radar missiles so they launch without a pre-launch lock (SARH -> ARH). Verified on AIM-7E-2: active:b, permanentlyActivated, lockDistance, inertialNavigation+datalink, breakLockMaxTime=160, wider seeker angles, distGate, shotFreq cap." };
-            tuningPanel.Children.Add(fakeArhBox);
+            ammoPage.Children.Add(fakeArhBox);
             radarStatus = new TextBlock { Foreground = ModernPalette.Brush(ModernPalette.Muted), FontSize = 12, TextWrapping = TextWrapping.Wrap, Margin = new Thickness(0, 2, 0, 0) };
             radarSearchSel = original.RadarSearchBlk; radarTrackSel = original.RadarTrackBlk;
             stripAiBox = new CheckBox { Content = ModernText.L("Radar swap strips the AI-only radar pair", "雷达替换时移除 AI 专用雷达组"), IsChecked = original.RadarStripAiSensors, Margin = new Thickness(0, 1, 0, 0) };
@@ -5444,49 +5481,54 @@ private void RefreshGroundWorkspace()
             radarPick.Click += delegate { PickRadars(); };
             Button radarReset = new Button { Content = ModernText.L("RESET RADARS TO NATIVE", "恢复原生雷达"), Style = buttonStyle, Padding = new Thickness(10, 3, 10, 3), Margin = new Thickness(8, 3, 0, 1), HorizontalAlignment = HorizontalAlignment.Left };
             radarReset.Click += delegate { radarSearchSel = null; radarTrackSel = null; if (currentSettings != null) { currentSettings.RadarSearchBlk = null; currentSettings.RadarTrackBlk = null; } UpdateRadarStatus(); };
-            StackPanel radarRow = new StackPanel { Orientation = Orientation.Horizontal }; radarRow.Children.Add(radarPick); radarRow.Children.Add(radarReset); tuningPanel.Children.Add(radarRow);
+            radarPage.Children.Add(Heading("RADAR & SENSOR SWAP", 15));
+            StackPanel radarRow = new StackPanel { Orientation = Orientation.Horizontal }; radarRow.Children.Add(radarPick); radarRow.Children.Add(radarReset); radarPage.Children.Add(radarRow);
             // Swap is meaningless on vehicles without any native sensor structure - disable.
             if (nativeSearchSensor == null && nativeTrackSensor == null)
             {
                 radarPick.IsEnabled = false;
                 radarPick.ToolTip = ModernText.L("This vehicle has no radar at all - installing one needs a sensor structure first.", "此车完全没有雷达——更换不可用（需先有传感器结构）。");
             }
-            tuningPanel.Children.Add(stripAiBox);
-            tuningPanel.Children.Add(radarStatus);
+            radarPage.Children.Add(stripAiBox);
+            radarPage.Children.Add(radarStatus);
             Border radarCard = new Border { CornerRadius = new CornerRadius(10), BorderThickness = new Thickness(1), BorderBrush = ModernPalette.Brush(ModernPalette.Border), Background = ModernPalette.Brush("#8A24324D"), Padding = new Thickness(10, 8, 10, 8), Margin = new Thickness(0, 8, 0, 4) };
             StackPanel radarCardStack = new StackPanel();
             radarCardStack.Children.Add(new TextBlock { Text = ModernText.L("RADAR DETAILS", "雷达详情"), Foreground = ModernPalette.Brush(ModernPalette.Cyan), FontSize = 12, FontWeight = FontWeights.SemiBold, Margin = new Thickness(0, 0, 0, 5) });
             radarCardStack.Children.Add(radarDetailSearch);
             radarCardStack.Children.Add(radarDetailTrack);
             radarCard.Child = radarCardStack;
-            tuningPanel.Children.Add(radarCard);
+            radarPage.Children.Add(radarCard);
             UpdateRadarStatus();
             domainBox.SelectedItem = savedDomainItem;
             RefreshCannonBox();
             BuildCannonSelector();
             SelectInitialCannon();
-            tuningPanel.Children.Add(new TextBlock { Text = "Pick the source unit (e.g. Yamato), then its weapon (460/155/127 mm). Ground, naval and air units are all supported; air also includes missiles and rockets. Ammunition slots and projectile tuning below then apply to the injected weapon.", Foreground = ModernPalette.Brush(ModernPalette.Muted), TextWrapping = TextWrapping.Wrap, Margin = new Thickness(0, 6, 0, 0) });
-            tuningPanel.Children.Add(new Border { Height = 1, Background = ModernPalette.Brush(ModernPalette.Border), Margin = new Thickness(0, 10, 0, 10) });
-            tuningPanel.Children.Add(Heading("REAL VEHICLE VALUES", 15));
+            cannonPage.Children.Add(new TextBlock { Text = "Pick the source unit (e.g. Yamato), then its weapon (460/155/127 mm). Ground, naval and air units are all supported; air also includes missiles and rockets. Ammunition slots and projectile tuning below then apply to the injected weapon.", Foreground = ModernPalette.Brush(ModernPalette.Muted), TextWrapping = TextWrapping.Wrap, Margin = new Thickness(0, 6, 0, 0) });
+            cannonPage.Children.Add(new Border { Height = 1, Background = ModernPalette.Brush(ModernPalette.Border), Margin = new Thickness(0, 10, 0, 10) });
+            tuningPage.Children.Add(Heading("REAL VEHICLE VALUES", 15));
 
-            overrideBallistics = new CheckBox { Content = ModernText.L("Override native values", "覆盖原生数值"), IsChecked = original.OverrideGroundBallistics, Foreground = ModernPalette.Brush(ModernPalette.Cyan), Margin = new Thickness(0, 12, 0, 7) }; tuningPanel.Children.Add(overrideBallistics);
-            tuningPanel.Children.Add(new TextBlock { Text = "Projectile values follow the selected ammunition slot. Every field can be typed directly.", Foreground = ModernPalette.Brush(ModernPalette.Muted), TextWrapping = TextWrapping.Wrap, Margin = new Thickness(0, 0, 0, 6) });
+            overrideBallistics = new CheckBox { Content = ModernText.L("Override native values", "覆盖原生数值"), IsChecked = original.OverrideGroundBallistics, Foreground = ModernPalette.Brush(ModernPalette.Cyan), Margin = new Thickness(0, 12, 0, 7) }; tuningPage.Children.Add(overrideBallistics);
+            tuningPage.Children.Add(new TextBlock { Text = "Projectile values follow the selected ammunition slot. Every field can be typed directly.", Foreground = ModernPalette.Brush(ModernPalette.Muted), TextWrapping = TextWrapping.Wrap, Margin = new Thickness(0, 0, 0, 6) });
             projectileReference = ResolveProjectileReference();
-            AddValue(tuningPanel, "PROJECTILE MASS", "projectileMass", projectileReference == null ? 0 : projectileReference.Mass, original.ProjectileMassMultiplier, "kg");
-            AddValue(tuningPanel, "MUZZLE VELOCITY", "velocity", projectileReference == null ? 0 : projectileReference.Speed, original.MuzzleVelocityMultiplier, "m/s");
-            AddValue(tuningPanel, "EXPLOSIVE FILLER", "explosive", projectileReference == null ? 0 : projectileReference.ExplosiveMass, original.ExplosiveMassMultiplier, "kg");
-            AddValue(tuningPanel, "REFERENCE PENETRATION", "penetration", projectileReference == null ? 0 : projectileReference.Penetration, original.PenetrationMultiplier, "mm");
-            AddValue(tuningPanel, "FIRE RATE OVERRIDE (SEC)", "reload", 0, 0, "s");
+            AddValue(tuningPage, "PROJECTILE MASS", "projectileMass", projectileReference == null ? 0 : projectileReference.Mass, original.ProjectileMassMultiplier, "kg");
+            AddValue(tuningPage, "MUZZLE VELOCITY", "velocity", projectileReference == null ? 0 : projectileReference.Speed, original.MuzzleVelocityMultiplier, "m/s");
+            AddValue(tuningPage, "EXPLOSIVE FILLER", "explosive", projectileReference == null ? 0 : projectileReference.ExplosiveMass, original.ExplosiveMassMultiplier, "kg");
+            AddValue(tuningPage, "REFERENCE PENETRATION", "penetration", projectileReference == null ? 0 : projectileReference.Penetration, original.PenetrationMultiplier, "mm");
+            AddValue(tuningPage, "FIRE RATE OVERRIDE (SEC)", "reload", 0, 0, "s");
             if (original.ReloadSeconds > 0 && tuning.ContainsKey("reload")) tuning["reload"].Text = FormatValue(original.ReloadSeconds);
-            AddValue(tuningPanel, "RECOIL TRAVEL", "recoil", vehicle.NativeRecoil, original.RecoilMultiplier, "m");
-            tuningPanel.Children.Add(new Border { Height = 1, Background = ModernPalette.Brush(ModernPalette.Border), Margin = new Thickness(0, 8, 0, 7) });
-            AddValue(tuningPanel, "ENGINE POWER", "engine", vehicle.NativeEnginePower, original.EnginePowerMultiplier, "hp");
-            AddValue(tuningPanel, "VEHICLE MASS", "mass", vehicle.NativeMass, original.VehicleMassMultiplier, "kg");
-            AddValue(tuningPanel, "FORWARD SPEED LIMIT", "forward", vehicle.NativeForwardSpeed, original.ForwardSpeedMultiplier, "km/h");
-            AddValue(tuningPanel, "REVERSE SPEED LIMIT", "reverse", vehicle.NativeReverseSpeed, original.ReverseSpeedMultiplier, "km/h");
-            Button resetAll = new Button { Content = ModernText.L("RESET ALL TO CURRENT STOCK", "重置为当前默认弹"), Style = buttonStyle, Padding = new Thickness(14, 2, 14, 2), Margin = new Thickness(0, 10, 0, 4) }; resetAll.Click += delegate { ResetAllValues(); }; tuningPanel.Children.Add(resetAll);
-            tuningPanel.Children.Add(new TextBlock { Text = "Stock reset uses this vehicle's current game definition; selected research modules remain configured separately in Modules.", Foreground = ModernPalette.Brush(ModernPalette.Muted), TextWrapping = TextWrapping.Wrap, Margin = new Thickness(0, 8, 0, 4) });
-            tuningScroll.Content = tuningPanel; tuningCard.Child = tuningScroll; Grid.SetColumn(tuningCard, 2); body.Children.Add(tuningCard);
+            AddValue(tuningPage, "RECOIL TRAVEL", "recoil", vehicle.NativeRecoil, original.RecoilMultiplier, "m");
+            tuningPage.Children.Add(new Border { Height = 1, Background = ModernPalette.Brush(ModernPalette.Border), Margin = new Thickness(0, 8, 0, 7) });
+            AddValue(tuningPage, "ENGINE POWER", "engine", vehicle.NativeEnginePower, original.EnginePowerMultiplier, "hp");
+            AddValue(tuningPage, "VEHICLE MASS", "mass", vehicle.NativeMass, original.VehicleMassMultiplier, "kg");
+            AddValue(tuningPage, "FORWARD SPEED LIMIT", "forward", vehicle.NativeForwardSpeed, original.ForwardSpeedMultiplier, "km/h");
+            AddValue(tuningPage, "REVERSE SPEED LIMIT", "reverse", vehicle.NativeReverseSpeed, original.ReverseSpeedMultiplier, "km/h");
+            Button resetAll = new Button { Content = ModernText.L("RESET ALL TO CURRENT STOCK", "重置为当前默认弹"), Style = buttonStyle, Padding = new Thickness(14, 2, 14, 2), Margin = new Thickness(0, 10, 0, 4) }; resetAll.Click += delegate { ResetAllValues(); }; tuningPage.Children.Add(resetAll);
+            tuningPage.Children.Add(new TextBlock { Text = "Stock reset uses this vehicle's current game definition; selected research modules remain configured separately in Modules.", Foreground = ModernPalette.Brush(ModernPalette.Muted), TextWrapping = TextWrapping.Wrap, Margin = new Thickness(0, 8, 0, 4) });
+            tuningScroll.Content = labBody;
+            StackPanel labHost = new StackPanel();
+            labHost.Children.Add(labHeader);
+            labHost.Children.Add(tuningScroll);
+            tuningCard.Child = labHost; Grid.SetColumn(tuningCard, 2); body.Children.Add(tuningCard);
             if (simplified)
             {
                 // Home panel: the right card holds the 4 ammunition slots (MOUNT + pool)
@@ -5564,14 +5606,14 @@ private void RefreshGroundWorkspace()
             // TWS vehicles) shouldn't have to dismiss an irrelevant picker first.
             if (nativeSearchSensor != null && String.IsNullOrWhiteSpace(radarSearchSel))
             {
-                ModernPickerDialog searchDlg = new ModernPickerDialog(searchTitle, items, searchTitle);
+                ModernPickerDialog searchDlg = new ModernPickerDialog(searchTitle, items, searchTitle) { Owner = System.Windows.Window.GetWindow(this) };
                 if (searchDlg.ShowDialog() == true && searchDlg.Selected != null) { radarSearchSel = (string)searchDlg.Selected.Tag; searchPick = searchDlg.Selected; }
             }
             ModernPickerItem trackPick = null;
             string trackTitle = ModernText.L("SELECT TRACK RADAR", "选择跟踪雷达");
             if (nativeTrackSensor != null)
             {
-                ModernPickerDialog dlg = new ModernPickerDialog(trackTitle, items, trackTitle);
+                ModernPickerDialog dlg = new ModernPickerDialog(trackTitle, items, trackTitle) { Owner = System.Windows.Window.GetWindow(this) };
                 if (dlg.ShowDialog() == true && dlg.Selected != null) { radarTrackSel = (string)dlg.Selected.Tag; trackPick = dlg.Selected; }
             }
             // Persist immediately to the live settings so panel rebuilds / vehicle switches keep the choice.
