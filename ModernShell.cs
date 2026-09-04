@@ -5559,15 +5559,21 @@ private void RefreshGroundWorkspace()
             }
             ModernPickerItem searchPick = null;
             string searchTitle = ModernText.L("SELECT SEARCH RADAR", "选择搜索雷达");
-            if (String.IsNullOrWhiteSpace(radarSearchSel))
+            // Only ask for a radar the vehicle actually has a native slot for - vehicles with
+            // just one radar (track-only launchers like the 9A310 / Strela-10, search-only
+            // TWS vehicles) shouldn't have to dismiss an irrelevant picker first.
+            if (nativeSearchSensor != null && String.IsNullOrWhiteSpace(radarSearchSel))
             {
                 ModernPickerDialog searchDlg = new ModernPickerDialog(searchTitle, items, searchTitle);
                 if (searchDlg.ShowDialog() == true && searchDlg.Selected != null) { radarSearchSel = (string)searchDlg.Selected.Tag; searchPick = searchDlg.Selected; }
             }
             ModernPickerItem trackPick = null;
             string trackTitle = ModernText.L("SELECT TRACK RADAR", "选择跟踪雷达");
-            ModernPickerDialog dlg = new ModernPickerDialog(trackTitle, items, trackTitle);
-            if (dlg.ShowDialog() == true && dlg.Selected != null) { radarTrackSel = (string)dlg.Selected.Tag; trackPick = dlg.Selected; }
+            if (nativeTrackSensor != null)
+            {
+                ModernPickerDialog dlg = new ModernPickerDialog(trackTitle, items, trackTitle);
+                if (dlg.ShowDialog() == true && dlg.Selected != null) { radarTrackSel = (string)dlg.Selected.Tag; trackPick = dlg.Selected; }
+            }
             // Persist immediately to the live settings so panel rebuilds / vehicle switches keep the choice.
             if (currentSettings != null) { currentSettings.RadarSearchBlk = radarSearchSel; currentSettings.RadarTrackBlk = radarTrackSel; }
             UpdateRadarStatus();
