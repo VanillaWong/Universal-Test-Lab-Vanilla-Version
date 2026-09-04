@@ -749,6 +749,8 @@ internal static class ModernPalette
         private Button clearStationButton;
         private Button clearAllButton;
         private Button mountButton;
+
+        
         private TextBlock stationText;
         private TextBlock massText;
         private UniformGrid pylonPanel;
@@ -4122,7 +4124,8 @@ private void RefreshGroundWorkspace()
         private readonly Style toggleStyle;
         private ComboBox modeBox;
         private ComboBox eraBox;
-        private ComboBox mapBox;
+        private CombinedMap currentMap;
+        private Button mapPickerButton;
         private ComboBox sideBox;
         private ComboBox spawnBox;
         private Border combinedCard;
@@ -4255,9 +4258,20 @@ private void RefreshGroundWorkspace()
             combinedFields.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(120) });
             combinedFields.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1.4, GridUnitType.Star) });
             StackPanel mapStack = new StackPanel { Margin = new Thickness(0, 0, 8, 0) }; mapStack.Children.Add(Caption("MAP"));
-            mapBox = new ComboBox { ItemsSource = allCombinedMaps, Margin = new Thickness(0, 6, 0, 0) };
-            mapBox.SelectedItem = allCombinedMaps.FirstOrDefault(x => x.Id.Equals(currentScenario.MapId ?? "", StringComparison.OrdinalIgnoreCase)) ?? allCombinedMaps.FirstOrDefault();
-            mapStack.Children.Add(mapBox); combinedFields.Children.Add(mapStack);
+
+
+            // 新代码：按钮 + 文本显示
+            mapPickerButton = new Button
+            {
+                Style = toggleStyle,
+                Margin = new Thickness(0, 6, 0, 0),
+                Padding = new Thickness(8, 4, 8, 4),
+                HorizontalAlignment = HorizontalAlignment.Stretch,
+                Content = ModernText.L("PICK MAP...", "点击选择地图...")
+            };
+            currentMap = allCombinedMaps.FirstOrDefault(x => x.Id != null && x.Id.Equals(currentScenario.MapId, StringComparison.OrdinalIgnoreCase)) ?? allCombinedMaps.FirstOrDefault();
+            mapPickerButton.Click += delegate { PickCombinedMap(); };
+            mapStack.Children.Add(mapPickerButton); Grid.SetColumn(mapStack, 0); combinedFields.Children.Add(mapStack);
             StackPanel sideStack = new StackPanel { Margin = new Thickness(0, 0, 8, 0) }; sideStack.Children.Add(Caption("SIDE"));
             sideBox = new ComboBox { ItemsSource = new[] { "Side 1", "Side 2" }, SelectedIndex = currentScenario.Side == 2 ? 1 : 0, Margin = new Thickness(0, 6, 0, 0) };
             sideStack.Children.Add(sideBox); Grid.SetColumn(sideStack, 1); combinedFields.Children.Add(sideStack);
@@ -4353,7 +4367,6 @@ private void RefreshGroundWorkspace()
             passiveShipBox.Checked += delegate { UpdateReactionButtons(); };
             passiveShipBox.Unchecked += delegate { UpdateReactionButtons(); };
             modeBox.SelectionChanged += delegate { UpdateScenarioMode(); };
-            mapBox.SelectionChanged += delegate { RefreshCombinedSpawns(); };
             sideBox.SelectionChanged += delegate { RefreshCombinedSpawns(); };
             eraBox.SelectionChanged += delegate { ApplyEraPreset(); };
             UpdateReactionButtons();
@@ -4379,9 +4392,24 @@ private void RefreshGroundWorkspace()
                 : "Destroyed targets recover rapidly; player ammunition rearms after depletion.";
         }
 
+        private void PickCombinedMap()
+        {
+            List<ModernPickerItem> items = new List<ModernPickerItem>();
+            foreach (CombinedMap map in allCombinedMaps)
+                items.Add(new ModernPickerItem { Display = map.Display, Detail = map.Level ?? "", Tag = map });
+            ModernPickerDialog dlg = new ModernPickerDialog(ModernText.L("SELECT MAP", "选择地图"), items, ModernText.L("SELECT MAP", "选择地图")) { Owner = System.Windows.Window.GetWindow(this) };
+            if (dlg.ShowDialog() == true && dlg.Selected != null && dlg.Selected.Tag is CombinedMap)
+            {
+                currentMap = (CombinedMap)dlg.Selected.Tag;
+                mapPickerButton.Content = currentMap.Display;
+                RefreshCombinedSpawns();
+            }
+        }
+
+
         private void RefreshCombinedSpawns()
         {
-            CombinedMap map = mapBox.SelectedItem as CombinedMap;
+            CombinedMap map = currentMap;
             int side = sideBox.SelectedIndex == 1 ? 2 : 1;
             string preferred = spawnBox.SelectedItem is CombinedSpawn ? ((CombinedSpawn)spawnBox.SelectedItem).Option : spawnBox.Tag as string;
             List<CombinedSpawn> values = map == null ? new List<CombinedSpawn>() : map.Spawns
@@ -4622,7 +4650,7 @@ private void RefreshGroundWorkspace()
             r.ShipTarget = shipBox.SelectedItem as TargetView;
             r.ShipCount = (int)(shipCountBox.SelectedItem ?? 0);
             r.PassiveShip = passiveShipBox.IsChecked == true;
-            CombinedMap map = mapBox.SelectedItem as CombinedMap;
+            CombinedMap map = currentMap;
             CombinedSpawn spawn = spawnBox.SelectedItem as CombinedSpawn;
             r.Scenario = new CombinedScenarioSettings
             {
@@ -5522,7 +5550,88 @@ private void RefreshGroundWorkspace()
             AddValue(tuningPage, "VEHICLE MASS", "mass", vehicle.NativeMass, original.VehicleMassMultiplier, "kg");
             AddValue(tuningPage, "FORWARD SPEED LIMIT", "forward", vehicle.NativeForwardSpeed, original.ForwardSpeedMultiplier, "km/h");
             AddValue(tuningPage, "REVERSE SPEED LIMIT", "reverse", vehicle.NativeReverseSpeed, original.ReverseSpeedMultiplier, "km/h");
-            Button resetAll = new Button { Content = ModernText.L("RESET ALL TO CURRENT STOCK", "重置为当前默认弹"), Style = buttonStyle, Padding = new Thickness(14, 2, 14, 2), Margin = new Thickness(0, 10, 0, 4) }; resetAll.Click += delegate { ResetAllValues(); }; tuningPage.Children.Add(resetAll);
+            Button resetAll = new Button { Content = ModernText.L("RESET ALL TO CURRENT STOCK", "重置为当前默认弹"), Style = buttonStyle, Padding = new Thickness(14, 2, 14, 2), Margin = new Thickness(0, 10, 0, 4) };             
+            resetAll.Click += delegate { ResetAllValues(); }; tuningPage.Children.Add(resetAll);
+            Button resetMods = new Button { Content = ModernText.L("RESET ALL MODS", "清空全部爆改"), Style = buttonStyle, Padding = new Thickness(14, 2, 14, 2), Margin = new Thickness(10, 10, 0, 4) };
+            resetMods.Click += delegate
+            {
+                // ---- 1. 清 UI 工作副本（original——炮选择器/数值的显示源头）----
+                if (original != null)
+                {
+                    // 换炮
+                    original.InjectedCannonBlk = null;
+                    original.InjectedCannonDomain = null;
+                    original.InjectedCannonUnit = null;
+                    original.InjectedCannonRound = null;
+                    original.InjectedCannonRounds = 0;
+                    original.InjectNativeLauncher = false;
+                    // 弹药开关
+                    original.UnlimitedAmmo = false;
+                    original.FakeArhConversion = false;
+                    // 雷达
+                    original.RadarSearchBlk = null;
+                    original.RadarTrackBlk = null;
+                    original.RadarStripAiSensors = false;
+                    // 数值倍率
+                    original.OverrideGroundBallistics = false;
+                    original.ProjectileMassMultiplier = 1;
+                    original.MuzzleVelocityMultiplier = 1;
+                    original.ExplosiveMassMultiplier = 1;
+                    original.PenetrationMultiplier = 1;
+                    original.ReloadSeconds = 0;
+                    original.RecoilMultiplier = 1;
+                    original.EnginePowerMultiplier = 1;
+                    original.VehicleMassMultiplier = 1;
+                    original.ForwardSpeedMultiplier = 1;
+                    original.ReverseSpeedMultiplier = 1;
+                    // 弹药槽
+                    original.GroundAmmoLoadouts.Clear();
+                }
+                // 弹药槽 UI 源（4 个槽位的挂载显示）
+                loadouts.Clear();
+
+                if (currentSettings != null)
+                {
+                    // 换炮
+                    currentSettings.InjectedCannonBlk = null;
+                    currentSettings.InjectedCannonDomain = null;
+                    currentSettings.InjectedCannonUnit = null;
+                    currentSettings.InjectedCannonRound = null;
+                    currentSettings.InjectedCannonRounds = 0;
+                    currentSettings.InjectNativeLauncher = false;
+                    // 弹药开关
+                    currentSettings.UnlimitedAmmo = false;
+                    currentSettings.FakeArhConversion = false;
+                    // 雷达
+                    currentSettings.RadarSearchBlk = null;
+                    currentSettings.RadarTrackBlk = null;
+                    currentSettings.RadarStripAiSensors = false;
+                    // 数值倍率
+                    currentSettings.OverrideGroundBallistics = false;
+                    currentSettings.ProjectileMassMultiplier = 1;
+                    currentSettings.MuzzleVelocityMultiplier = 1;
+                    currentSettings.ExplosiveMassMultiplier = 1;
+                    currentSettings.PenetrationMultiplier = 1;
+                    currentSettings.ReloadSeconds = 0;
+                    currentSettings.RecoilMultiplier = 1;
+                    currentSettings.EnginePowerMultiplier = 1;
+                    currentSettings.VehicleMassMultiplier = 1;
+                    currentSettings.ForwardSpeedMultiplier = 1;
+                    currentSettings.ReverseSpeedMultiplier = 1;
+                    // 弹药槽
+                    currentSettings.GroundAmmoLoadouts.Clear();
+                }
+                ResetAllValues();
+                overrideBallistics.IsChecked = false;
+                if (ammoUnlimitedBox != null) ammoUnlimitedBox.IsChecked = false;
+                if (fakeArhBox != null) fakeArhBox.IsChecked = false;
+                radarSearchSel = null; radarTrackSel = null;
+                if (stripAiBox != null) stripAiBox.IsChecked = false;
+                UpdateRadarStatus();
+                SelectInitialCannon(); RefreshAmmo(); RefreshSlotEditors();
+            };
+            tuningPage.Children.Add(resetMods);
+
             tuningPage.Children.Add(new TextBlock { Text = "Stock reset uses this vehicle's current game definition; selected research modules remain configured separately in Modules.", Foreground = ModernPalette.Brush(ModernPalette.Muted), TextWrapping = TextWrapping.Wrap, Margin = new Thickness(0, 8, 0, 4) });
             tuningScroll.Content = labBody;
             StackPanel labHost = new StackPanel();
