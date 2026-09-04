@@ -2273,21 +2273,12 @@ private void RefreshGroundWorkspace()
             {
                 AircraftSettings r = ((GroundConfigurePanel)experimentalPanel).Collect();
                 controller.WorkspaceSetSettings(selectedAircraft, r);
-                MissionSettings.Current.InjectedCannonBlk = r.InjectedCannonBlk;
-                MissionSettings.Current.InjectedCannonDomain = r.InjectedCannonDomain;
-                MissionSettings.Current.InjectedCannonUnit = r.InjectedCannonUnit;
-                MissionSettings.Current.FakeArhConversion = r.FakeArhConversion;
-                MissionSettings.Current.Save();
                 SetStatus("GROUND CONFIGURATION UPDATED — " + selectedAircraft.Display, false);
             }
             else if (experimentalPanel is FlightConfigurePanel)
             {
                 AircraftSettings r = ((FlightConfigurePanel)experimentalPanel).Collect();
                 controller.WorkspaceSetSettings(selectedAircraft, r);
-                MissionSettings.Current.InjectedCannonBlk = r.InjectedCannonBlk;
-                MissionSettings.Current.InjectedCannonDomain = r.InjectedCannonDomain;
-                MissionSettings.Current.InjectedCannonUnit = r.InjectedCannonUnit;
-                MissionSettings.Current.Save();
                 SetStatus("FLIGHT CONFIGURATION UPDATED — " + selectedAircraft.Display, false);
             }
             UpdateConfigurationSummary();
@@ -2475,22 +2466,16 @@ private void RefreshGroundWorkspace()
             // WorkspaceGetSettings returns a COPY of the live settings - mutate it, then
             // write it back through WorkspaceSetSettings or the preset never lands.
             AircraftSettings s = controller.WorkspaceGetSettings(target);
-            // Empty cannon = keep the vehicle's native weapon. The panel constructor falls
-            // back to MissionSettings.Current when InjectedCannonBlk is blank, so a stale
-            // global cannon (e.g. an earlier S-300 swap) would otherwise hijack native
-            // loadouts - clear the globals alongside the per-vehicle settings.
+            // Empty cannon = keep the vehicle's native weapon (per-vehicle).
             if (String.IsNullOrWhiteSpace(preset.cannon))
             {
                 s.InjectedCannonBlk = null; s.InjectedCannonDomain = null; s.InjectedCannonRound = null; s.InjectedCannonRounds = 0;
-                MissionSettings.Current.InjectedCannonBlk = null;
-                MissionSettings.Current.InjectedCannonDomain = null;
             }
             else
             {
                 s.InjectedCannonBlk = preset.cannon;
                 s.InjectedCannonRound = preset.cannonRound;
                 s.InjectedCannonRounds = preset.cannonRounds;
-                MissionSettings.Current.InjectedCannonBlk = preset.cannon;
             }
             s.UnlimitedAmmo = preset.unlimited;
             s.FakeArhConversion = preset.fakeArh;
@@ -3282,11 +3267,6 @@ private void RefreshGroundWorkspace()
             if (dialog.ShowDialog() == true && dialog.Result != null)
             {
                 controller.WorkspaceSetSettings(selectedAircraft, dialog.Result);
-            // Remember the cannon injection globally so every vehicle reuses it.
-            MissionSettings.Current.InjectedCannonBlk = dialog.Result.InjectedCannonBlk;
-            MissionSettings.Current.InjectedCannonDomain = dialog.Result.InjectedCannonDomain;
-            MissionSettings.Current.InjectedCannonUnit = dialog.Result.InjectedCannonUnit;
-            MissionSettings.Current.Save();
                 SetStatus("MODULES UPDATED — " + selectedAircraft.Display, false);
                 UpdateConfigurationSummary();
             }
@@ -3314,11 +3294,6 @@ private void RefreshGroundWorkspace()
             if (dialog.ShowDialog() == true && dialog.Result != null)
             {
                 controller.WorkspaceSetSettings(selectedAircraft, dialog.Result);
-            // Remember the cannon injection globally so every vehicle reuses it.
-            MissionSettings.Current.InjectedCannonBlk = dialog.Result.InjectedCannonBlk;
-            MissionSettings.Current.InjectedCannonDomain = dialog.Result.InjectedCannonDomain;
-            MissionSettings.Current.InjectedCannonUnit = dialog.Result.InjectedCannonUnit;
-            MissionSettings.Current.Save();
                 SetStatus("FLIGHT CONFIGURATION UPDATED — " + selectedAircraft.Display, false);
                 UpdateConfigurationSummary();
             }
@@ -5350,14 +5325,6 @@ private void RefreshGroundWorkspace()
             vehicle = item;
             currentSettings = current;
             original = (current ?? new AircraftSettings()).Copy();
-            if (String.IsNullOrWhiteSpace(original.InjectedCannonBlk))
-            {
-                original.InjectedCannonBlk = MissionSettings.Current.InjectedCannonBlk;
-                original.InjectedCannonDomain = MissionSettings.Current.InjectedCannonDomain;
-                original.InjectedCannonUnit = MissionSettings.Current.InjectedCannonUnit;
-            }
-            if (!original.FakeArhConversion && MissionSettings.Current.FakeArhConversion)
-                original.FakeArhConversion = true;
             catalog = (ammo ?? Enumerable.Empty<GroundAmmo>()).ToList();
             this.groundVehicles = (groundVehicles ?? Enumerable.Empty<TargetUnit>()).Where(v => !String.IsNullOrWhiteSpace(v.MainWeaponBlk)).ToList();
             this.unitWeapons = (unitWeapons ?? Enumerable.Empty<UnitWeapon>()).ToList();
@@ -5441,6 +5408,85 @@ private void RefreshGroundWorkspace()
                 labTabs[lab] = tab;
                 labHeader.Children.Add(tab);
             }
+            Button resetMods = new Button { Content = ModernText.L("RESET ALL MODS", "清空全部爆改"), Style = buttonStyle, Padding = new Thickness(14, 2, 14, 2), Margin = new Thickness(10, 10, 0, 4) };
+            resetMods.Click += delegate
+            {
+                // ---- 1. 清 UI 工作副本（original——炮选择器/数值的显示源头）----
+                if (original != null)
+                {
+                    // 换炮
+                    original.InjectedCannonBlk = null;
+                    original.InjectedCannonDomain = null;
+                    original.InjectedCannonUnit = null;
+                    original.InjectedCannonRound = null;
+                    original.InjectedCannonRounds = 0;
+                    original.InjectNativeLauncher = false;
+                    // 弹药开关
+                    original.UnlimitedAmmo = false;
+                    original.FakeArhConversion = false;
+                    // 雷达
+                    original.RadarSearchBlk = null;
+                    original.RadarTrackBlk = null;
+                    original.RadarStripAiSensors = false;
+                    // 数值倍率
+                    original.OverrideGroundBallistics = false;
+                    original.ProjectileMassMultiplier = 1;
+                    original.MuzzleVelocityMultiplier = 1;
+                    original.ExplosiveMassMultiplier = 1;
+                    original.PenetrationMultiplier = 1;
+                    original.ReloadSeconds = 0;
+                    original.RecoilMultiplier = 1;
+                    original.EnginePowerMultiplier = 1;
+                    original.VehicleMassMultiplier = 1;
+                    original.ForwardSpeedMultiplier = 1;
+                    original.ReverseSpeedMultiplier = 1;
+                    // 弹药槽
+                    original.GroundAmmoLoadouts.Clear();
+                }
+                // 弹药槽 UI 源（4 个槽位的挂载显示）
+                loadouts.Clear();
+
+                if (currentSettings != null)
+                {
+                    // 换炮
+                    currentSettings.InjectedCannonBlk = null;
+                    currentSettings.InjectedCannonDomain = null;
+                    currentSettings.InjectedCannonUnit = null;
+                    currentSettings.InjectedCannonRound = null;
+                    currentSettings.InjectedCannonRounds = 0;
+                    currentSettings.InjectNativeLauncher = false;
+                    // 弹药开关
+                    currentSettings.UnlimitedAmmo = false;
+                    currentSettings.FakeArhConversion = false;
+                    // 雷达
+                    currentSettings.RadarSearchBlk = null;
+                    currentSettings.RadarTrackBlk = null;
+                    currentSettings.RadarStripAiSensors = false;
+                    // 数值倍率
+                    currentSettings.OverrideGroundBallistics = false;
+                    currentSettings.ProjectileMassMultiplier = 1;
+                    currentSettings.MuzzleVelocityMultiplier = 1;
+                    currentSettings.ExplosiveMassMultiplier = 1;
+                    currentSettings.PenetrationMultiplier = 1;
+                    currentSettings.ReloadSeconds = 0;
+                    currentSettings.RecoilMultiplier = 1;
+                    currentSettings.EnginePowerMultiplier = 1;
+                    currentSettings.VehicleMassMultiplier = 1;
+                    currentSettings.ForwardSpeedMultiplier = 1;
+                    currentSettings.ReverseSpeedMultiplier = 1;
+                    // 弹药槽
+                    currentSettings.GroundAmmoLoadouts.Clear();
+                }
+                ResetAllValues();
+                overrideBallistics.IsChecked = false;
+                if (ammoUnlimitedBox != null) ammoUnlimitedBox.IsChecked = false;
+                if (fakeArhBox != null) fakeArhBox.IsChecked = false;
+                radarSearchSel = null; radarTrackSel = null;
+                if (stripAiBox != null) stripAiBox.IsChecked = false;
+                UpdateRadarStatus();
+                SelectInitialCannon(); RefreshAmmo(); RefreshSlotEditors();
+            };
+            labHeader.Children.Add(resetMods);
             StackPanel labBody = new StackPanel();
             foreach (StackPanel pagePanel in labPages) labBody.Children.Add(pagePanel);
             labTabs[0].IsChecked = true;
@@ -5552,85 +5598,6 @@ private void RefreshGroundWorkspace()
             AddValue(tuningPage, "REVERSE SPEED LIMIT", "reverse", vehicle.NativeReverseSpeed, original.ReverseSpeedMultiplier, "km/h");
             Button resetAll = new Button { Content = ModernText.L("RESET ALL TO CURRENT STOCK", "重置为当前默认弹"), Style = buttonStyle, Padding = new Thickness(14, 2, 14, 2), Margin = new Thickness(0, 10, 0, 4) };             
             resetAll.Click += delegate { ResetAllValues(); }; tuningPage.Children.Add(resetAll);
-            Button resetMods = new Button { Content = ModernText.L("RESET ALL MODS", "清空全部爆改"), Style = buttonStyle, Padding = new Thickness(14, 2, 14, 2), Margin = new Thickness(10, 10, 0, 4) };
-            resetMods.Click += delegate
-            {
-                // ---- 1. 清 UI 工作副本（original——炮选择器/数值的显示源头）----
-                if (original != null)
-                {
-                    // 换炮
-                    original.InjectedCannonBlk = null;
-                    original.InjectedCannonDomain = null;
-                    original.InjectedCannonUnit = null;
-                    original.InjectedCannonRound = null;
-                    original.InjectedCannonRounds = 0;
-                    original.InjectNativeLauncher = false;
-                    // 弹药开关
-                    original.UnlimitedAmmo = false;
-                    original.FakeArhConversion = false;
-                    // 雷达
-                    original.RadarSearchBlk = null;
-                    original.RadarTrackBlk = null;
-                    original.RadarStripAiSensors = false;
-                    // 数值倍率
-                    original.OverrideGroundBallistics = false;
-                    original.ProjectileMassMultiplier = 1;
-                    original.MuzzleVelocityMultiplier = 1;
-                    original.ExplosiveMassMultiplier = 1;
-                    original.PenetrationMultiplier = 1;
-                    original.ReloadSeconds = 0;
-                    original.RecoilMultiplier = 1;
-                    original.EnginePowerMultiplier = 1;
-                    original.VehicleMassMultiplier = 1;
-                    original.ForwardSpeedMultiplier = 1;
-                    original.ReverseSpeedMultiplier = 1;
-                    // 弹药槽
-                    original.GroundAmmoLoadouts.Clear();
-                }
-                // 弹药槽 UI 源（4 个槽位的挂载显示）
-                loadouts.Clear();
-
-                if (currentSettings != null)
-                {
-                    // 换炮
-                    currentSettings.InjectedCannonBlk = null;
-                    currentSettings.InjectedCannonDomain = null;
-                    currentSettings.InjectedCannonUnit = null;
-                    currentSettings.InjectedCannonRound = null;
-                    currentSettings.InjectedCannonRounds = 0;
-                    currentSettings.InjectNativeLauncher = false;
-                    // 弹药开关
-                    currentSettings.UnlimitedAmmo = false;
-                    currentSettings.FakeArhConversion = false;
-                    // 雷达
-                    currentSettings.RadarSearchBlk = null;
-                    currentSettings.RadarTrackBlk = null;
-                    currentSettings.RadarStripAiSensors = false;
-                    // 数值倍率
-                    currentSettings.OverrideGroundBallistics = false;
-                    currentSettings.ProjectileMassMultiplier = 1;
-                    currentSettings.MuzzleVelocityMultiplier = 1;
-                    currentSettings.ExplosiveMassMultiplier = 1;
-                    currentSettings.PenetrationMultiplier = 1;
-                    currentSettings.ReloadSeconds = 0;
-                    currentSettings.RecoilMultiplier = 1;
-                    currentSettings.EnginePowerMultiplier = 1;
-                    currentSettings.VehicleMassMultiplier = 1;
-                    currentSettings.ForwardSpeedMultiplier = 1;
-                    currentSettings.ReverseSpeedMultiplier = 1;
-                    // 弹药槽
-                    currentSettings.GroundAmmoLoadouts.Clear();
-                }
-                ResetAllValues();
-                overrideBallistics.IsChecked = false;
-                if (ammoUnlimitedBox != null) ammoUnlimitedBox.IsChecked = false;
-                if (fakeArhBox != null) fakeArhBox.IsChecked = false;
-                radarSearchSel = null; radarTrackSel = null;
-                if (stripAiBox != null) stripAiBox.IsChecked = false;
-                UpdateRadarStatus();
-                SelectInitialCannon(); RefreshAmmo(); RefreshSlotEditors();
-            };
-            tuningPage.Children.Add(resetMods);
 
             tuningPage.Children.Add(new TextBlock { Text = "Stock reset uses this vehicle's current game definition; selected research modules remain configured separately in Modules.", Foreground = ModernPalette.Brush(ModernPalette.Muted), TextWrapping = TextWrapping.Wrap, Margin = new Thickness(0, 8, 0, 4) });
             tuningScroll.Content = labBody;
@@ -6415,12 +6382,6 @@ private void RefreshGroundWorkspace()
             original = (current ?? new AircraftSettings()).Copy();
             // Fall back to the globally remembered cannon injection so the last
             // domain/unit/weapon choice is reused across vehicles and sessions.
-            if (String.IsNullOrWhiteSpace(original.InjectedCannonBlk))
-            {
-                original.InjectedCannonBlk = MissionSettings.Current.InjectedCannonBlk;
-                original.InjectedCannonDomain = MissionSettings.Current.InjectedCannonDomain;
-                original.InjectedCannonUnit = MissionSettings.Current.InjectedCannonUnit;
-            }
             catalog = (ammo ?? Enumerable.Empty<GroundAmmo>()).ToList();
             this.groundVehicles = (groundVehicles ?? Enumerable.Empty<TargetUnit>()).Where(v => !String.IsNullOrWhiteSpace(v.MainWeaponBlk)).ToList();
             this.unitWeapons = (unitWeapons ?? Enumerable.Empty<UnitWeapon>()).ToList();
@@ -7174,6 +7135,7 @@ tuningPanel.Children.Add(Heading("REAL VEHICLE VALUES", 15));
         private Slider respawnSlider;
         private Slider targetSlider;
         private Slider rearmSlider;
+        private CheckBox rearmOverrideBox;
         private ComboBox ammoMode;
         private ComboBox spawnMode;
         private Slider spawnSpeedSlider;
@@ -7197,6 +7159,11 @@ tuningPanel.Children.Add(Heading("REAL VEHICLE VALUES", 15));
             respawnSlider = OptionCard(this, "PLAYER RESPAWN DELAY", "Seconds before the player unit respawns after destruction (0 = instant).", original.PlayerRespawnDelaySeconds, 0, 60, true);
             targetSlider = OptionCard(this, "TARGET RECOVERY DELAY", "Seconds before destroyed target units reappear (stock template: 5 s, lab default: 0.25 s).", original.TargetRespawnDelaySeconds, 0.25, 30, true);
             rearmSlider = OptionCard(this, "GROUND REARM TIME", "Seconds spent on the field before ammunition is replenished (engine rearmTimeOnField).", original.RearmSeconds, 0, 60, true);
+            rearmOverrideBox = new CheckBox { Content = ModernText.L("Override ground rearm time (writes rearmTimeOnField)", "改写战场补给时间（写入 rearmTimeOnField）"), IsChecked = original.RearmOverride, Foreground = ModernPalette.Brush(ModernPalette.Text), Margin = new Thickness(0, 8, 0, 0) };
+            rearmOverrideBox.Checked += delegate { rearmSlider.IsEnabled = true; };
+            rearmOverrideBox.Unchecked += delegate { rearmSlider.IsEnabled = false; };
+            rearmSlider.IsEnabled = original.RearmOverride;
+            this.Children.Add(rearmOverrideBox);
             Border ammoCard = Card("AMMUNITION POLICY");
             StackPanel ammoStack = ammoCard.Child as StackPanel;
             ammoMode = new ComboBox { Foreground = ModernPalette.Brush(ModernPalette.Text), Background = ModernPalette.Brush("#FF16283E"), BorderBrush = ModernPalette.Brush(ModernPalette.Border), Padding = new Thickness(8, 4, 8, 4), Margin = new Thickness(0, 8, 0, 0), HorizontalAlignment = HorizontalAlignment.Left, MinWidth = 260 };
@@ -7320,6 +7287,7 @@ tuningPanel.Children.Add(Heading("REAL VEHICLE VALUES", 15));
             updated.PlayerRespawnDelaySeconds = respawnSlider.Value;
             updated.TargetRespawnDelaySeconds = targetSlider.Value;
             updated.RearmSeconds = rearmSlider.Value;
+            updated.RearmOverride = rearmOverrideBox.IsChecked == true;
             ComboBoxItem ammo = ammoMode.SelectedItem as ComboBoxItem;
             updated.LimitedAmmo = ammo != null && (ammo.Tag as bool? ?? false);
             ComboBoxItem spawn = spawnMode.SelectedItem as ComboBoxItem;
@@ -7339,6 +7307,7 @@ tuningPanel.Children.Add(Heading("REAL VEHICLE VALUES", 15));
         private readonly Slider respawnSlider;
         private readonly Slider targetSlider;
         private readonly Slider rearmSlider;
+        private readonly CheckBox rearmOverrideBox;
         private readonly ComboBox ammoMode;
         private readonly ComboBox spawnMode;
         private readonly Slider spawnSpeedSlider;
@@ -7369,6 +7338,11 @@ tuningPanel.Children.Add(Heading("REAL VEHICLE VALUES", 15));
             respawnSlider = OptionCard(content, "PLAYER RESPAWN DELAY", "Seconds before the player unit respawns after destruction (0 = instant).", original.PlayerRespawnDelaySeconds, 0, 60, true);
             targetSlider = OptionCard(content, "TARGET RECOVERY DELAY", "Seconds before destroyed target units reappear (stock template: 5 s, lab default: 0.25 s).", original.TargetRespawnDelaySeconds, 0.25, 30, true);
             rearmSlider = OptionCard(content, "GROUND REARM TIME", "Seconds spent on the field before ammunition is replenished (engine rearmTimeOnField).", original.RearmSeconds, 0, 60, true);
+            rearmOverrideBox = new CheckBox { Content = ModernText.L("Override ground rearm time (writes rearmTimeOnField)", "改写战场补给时间（写入 rearmTimeOnField）"), IsChecked = original.RearmOverride, Foreground = ModernPalette.Brush(ModernPalette.Text), Margin = new Thickness(0, 8, 0, 0) };
+            rearmOverrideBox.Checked += delegate { rearmSlider.IsEnabled = true; };
+            rearmOverrideBox.Unchecked += delegate { rearmSlider.IsEnabled = false; };
+            rearmSlider.IsEnabled = original.RearmOverride;
+            content.Children.Add(rearmOverrideBox);
             Border ammoCard = Card("AMMUNITION POLICY");
             StackPanel ammoStack = ammoCard.Child as StackPanel;
             ammoMode = new ComboBox { Foreground = ModernPalette.Brush(ModernPalette.Text), Background = ModernPalette.Brush("#FF16283E"), BorderBrush = ModernPalette.Brush(ModernPalette.Border), Padding = new Thickness(8, 4, 8, 4), Margin = new Thickness(0, 8, 0, 0), HorizontalAlignment = HorizontalAlignment.Left, MinWidth = 260 };
@@ -7505,6 +7479,7 @@ tuningPanel.Children.Add(Heading("REAL VEHICLE VALUES", 15));
             updated.PlayerRespawnDelaySeconds = respawnSlider.Value;
             updated.TargetRespawnDelaySeconds = targetSlider.Value;
             updated.RearmSeconds = rearmSlider.Value;
+            updated.RearmOverride = rearmOverrideBox.IsChecked == true;
             ComboBoxItem ammo = ammoMode.SelectedItem as ComboBoxItem;
             updated.LimitedAmmo = ammo != null && (ammo.Tag as bool? ?? false);
             ComboBoxItem spawn = spawnMode.SelectedItem as ComboBoxItem;
@@ -7536,12 +7511,6 @@ tuningPanel.Children.Add(Heading("REAL VEHICLE VALUES", 15));
         public FlightConfigurePanel(Aircraft aircraft, AircraftSettings current, IEnumerable<CountermeasureLauncher> launchers, IEnumerable<AircraftModification> modifications)
         {
             original = (current ?? new AircraftSettings()).Copy();
-            if (String.IsNullOrWhiteSpace(original.InjectedCannonBlk))
-            {
-                original.InjectedCannonBlk = MissionSettings.Current.InjectedCannonBlk;
-                original.InjectedCannonDomain = MissionSettings.Current.InjectedCannonDomain;
-                original.InjectedCannonUnit = MissionSettings.Current.InjectedCannonUnit;
-            }
             StackPanel header = new StackPanel();
             header.Children.Add(Heading(ModernText.L("FLIGHT CONFIGURE", "飞行配置"), 18));
             header.Children.Add(new TextBlock { Text = (aircraft == null ? "" : aircraft.Display) + "  •  fuel, gun belts and countermeasure stations", Foreground = ModernPalette.Brush(ModernPalette.Cyan), Margin = new Thickness(0, 4, 0, 0) });
@@ -7739,12 +7708,6 @@ tuningPanel.Children.Add(Heading("REAL VEHICLE VALUES", 15));
             original = (current ?? new AircraftSettings()).Copy();
             // Fall back to the globally remembered cannon injection so the last
             // domain/unit/weapon choice is reused across vehicles and sessions.
-            if (String.IsNullOrWhiteSpace(original.InjectedCannonBlk))
-            {
-                original.InjectedCannonBlk = MissionSettings.Current.InjectedCannonBlk;
-                original.InjectedCannonDomain = MissionSettings.Current.InjectedCannonDomain;
-                original.InjectedCannonUnit = MissionSettings.Current.InjectedCannonUnit;
-            }
             Grid layout = new Grid(); layout.RowDefinitions.Add(new RowDefinition { Height = new GridLength(70) }); layout.RowDefinitions.Add(new RowDefinition()); layout.RowDefinitions.Add(new RowDefinition { Height = new GridLength(58) }); ContentCard.Child = layout;
             StackPanel header = new StackPanel(); header.Children.Add(Heading(ModernText.L("FLIGHT CONFIGURE", "飞行配置"), 22)); header.Children.Add(new TextBlock { Text = aircraft.Display + "  •  fuel, gun belts and countermeasure stations", Foreground = ModernPalette.Brush(ModernPalette.Cyan), Margin = new Thickness(0, 4, 0, 0) }); layout.Children.Add(header);
             StackPanel content = new StackPanel();

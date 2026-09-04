@@ -1677,6 +1677,7 @@ internal sealed class DonorWeapon
         public bool RapidFireEnabled;
         public double RapidFireInterval = 0.5;
         public bool RapidFireFullRestore = true;
+        public bool RearmOverride;
         public string SpawnMode = "air";
 public string InjectedCannonBlk;
 public string InjectedCannonDomain;
@@ -1703,6 +1704,7 @@ public bool FakeArhConversion;
                 RapidFireEnabled = RapidFireEnabled,
                 RapidFireInterval = RapidFireInterval,
                 RapidFireFullRestore = RapidFireFullRestore,
+            RearmOverride = RearmOverride,
                 SpawnMode = SpawnMode,
                 SpawnSpeedAuto = SpawnSpeedAuto,
                 SpawnSpeedKmh = SpawnSpeedKmh,
@@ -1732,6 +1734,7 @@ public bool FakeArhConversion;
                 if (!String.IsNullOrWhiteSpace(InjectedCannonDomain)) mo.Add("inject_cannon_domain", InjectedCannonDomain);
                 if (!String.IsNullOrWhiteSpace(InjectedCannonUnit)) mo.Add("inject_cannon_unit", InjectedCannonUnit);
                 mo.Add("fake_arh_conversion", FakeArhConversion);
+            mo.Add("rearm_override", RearmOverride);
                 ConfigStore.SetObject("mission_options", mo);
                 ConfigStore.Save();
             }
@@ -1760,6 +1763,7 @@ public bool FakeArhConversion;
                 if (mo.TryGetValue("inject_cannon_domain", out v) && v != null) Current.InjectedCannonDomain = Convert.ToString(v, CultureInfo.InvariantCulture);
                 if (mo.TryGetValue("inject_cannon_unit", out v) && v != null) Current.InjectedCannonUnit = Convert.ToString(v, CultureInfo.InvariantCulture);
                 if (mo.TryGetValue("fake_arh_conversion", out v) && v != null) Current.FakeArhConversion = Convert.ToBoolean(v, CultureInfo.InvariantCulture);
+            if (mo.TryGetValue("rearm_override", out v) && v != null) Current.RearmOverride = Convert.ToBoolean(v, CultureInfo.InvariantCulture);
             }
             catch { }
         }
@@ -2923,10 +2927,10 @@ string trigger = @"
         }
 
         
-        public static string AccelerateRangeRecovery(string text, bool includeRangeRecovery, double targetRespawnDelay = 0.25, double rearmSeconds = 1.0)
+        public static string AccelerateRangeRecovery(string text, bool includeRangeRecovery, double targetRespawnDelay = 0.25, double? rearmSeconds = 1.0)
         {
             string respawnDelayText = targetRespawnDelay.ToString("0.###", CultureInfo.InvariantCulture);
-            string rearmText = rearmSeconds.ToString("0.###", CultureInfo.InvariantCulture);
+            string rearmText = rearmSeconds.HasValue ? rearmSeconds.Value.ToString("0.###", CultureInfo.InvariantCulture) : "";
             text = Regex.Replace(text, @"(wait\s*\{\s*time:r\s*=\s*)(?:5|10|15)(\s*\})", "${1}" + respawnDelayText + "${2}", RegexOptions.IgnoreCase);
             // The old template restored the whole player unit on a timer. Apart
             // from rearming, that also resets active seekers, helicopter optics
@@ -2941,7 +2945,8 @@ string trigger = @"
             }
             BlockSpan triggers = FirstBlock(text, "triggers", 0);
             if (triggers == null) return text;
-            string extras = @"
+            string extras = "";
+            if (rearmSeconds.HasValue) extras += @"
   ""UTL Fast Rearm Policy""{
     is_enabled:b=yes
     comments:t=""Set the engine's native rearm delay once without restoring or reinitializing the player unit""
@@ -7097,7 +7102,7 @@ fpvCameraOffset:p3 = 0.2, -0.1, 0
                 }
                 if (MissionSettings.Current.LimitedAmmo)
                     text = Regex.Replace(text, @"(?m)^(\s*isLimitedAmmo:b\s*=\s*)(?:true|false)\s*$", "$1true", RegexOptions.IgnoreCase);
-                text = BlkTools.AccelerateRangeRecovery(text, combinedMap == null, MissionSettings.Current.TargetRespawnDelaySeconds, MissionSettings.Current.RearmSeconds);
+                text = BlkTools.AccelerateRangeRecovery(text, combinedMap == null, MissionSettings.Current.TargetRespawnDelaySeconds, MissionSettings.Current.RearmOverride ? (double?)MissionSettings.Current.RearmSeconds : null);
                 text = BlkTools.ConfigureInstantPlayerRespawn(text, groundPlayer, generated.SpawnSpeedKmh,
                     combinedSpawn == null ? null : BlkTools.CombinedRespawnTransform(combinedSpawn), MissionSettings.Current.PlayerRespawnDelaySeconds,
                     MissionSettings.Current.SpawnMode != null && MissionSettings.Current.SpawnMode.Equals("airport", StringComparison.OrdinalIgnoreCase));
@@ -8055,8 +8060,9 @@ fpvCameraOffset:p3 = 0.2, -0.1, 0
                     groundMission.IndexOf("restoreType:t=\"attempts\"", StringComparison.Ordinal) < 0 ||
                     
                     
-                                                            groundMission.IndexOf("UTL Fast Rearm Policy", StringComparison.Ordinal) < 0 ||
-                    groundMission.IndexOf("rearmTimeOnField:r=1", StringComparison.Ordinal) < 0 ||
+                                                            (MissionSettings.Current.RearmOverride
+                        ? groundMission.IndexOf("UTL Fast Rearm Policy", StringComparison.Ordinal) < 0 || groundMission.IndexOf("rearmTimeOnField:r=1", StringComparison.Ordinal) < 0
+                        : groundMission.IndexOf("UTL Fast Rearm Policy", StringComparison.Ordinal) >= 0) ||
                     groundMission.IndexOf("UTL Player Rearm When Empty Compatible", StringComparison.Ordinal) >= 0 ||
                     groundMission.IndexOf("object_type:t=\"noAmmo\"", StringComparison.Ordinal) >= 0 ||
                     legacyTimedReload == null || legacyTimedReload.Text.IndexOf("is_enabled:b=no", StringComparison.Ordinal) < 0 ||
