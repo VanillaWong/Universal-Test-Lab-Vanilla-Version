@@ -2492,6 +2492,7 @@ private void RefreshGroundWorkspace()
             }
             s.UnlimitedAmmo = preset.unlimited;
             s.FakeArhConversion = preset.fakeArh;
+            s.InjectNativeLauncher = preset.injectNative;
             s.RadarSearchBlk = preset.radarSearch;
             s.RadarTrackBlk = preset.radarTrack;
             controller.WorkspaceSetSettings(target, s);
@@ -5426,6 +5427,12 @@ private void RefreshGroundWorkspace()
                 if (int.TryParse(roundsBox.Text.Trim(), out v) && v >= 0 && v <= 999) { original.InjectedCannonRounds = v; if (currentSettings != null) currentSettings.InjectedCannonRounds = v; }
             };
             roundsSyncing = false;
+            bool injectSyncing = true;
+            CheckBox injectBox = new CheckBox { Content = ModernText.L("Inject into native launcher (inject-shell)", "注入原生发射器（inject-shell）"), IsChecked = original.InjectNativeLauncher, Foreground = ModernPalette.Brush(ModernPalette.Text), Margin = new Thickness(0, 2, 0, 0), ToolTip = "S-75 V-759 style: mounts the chosen missile into the vehicle's own launcher mechanism instead of swapping the whole cannon file (needed for AI site missiles)." };
+            injectBox.Checked += delegate { if (!injectSyncing) { original.InjectNativeLauncher = true; if (currentSettings != null) currentSettings.InjectNativeLauncher = true; } };
+            injectBox.Unchecked += delegate { if (!injectSyncing) { original.InjectNativeLauncher = false; if (currentSettings != null) currentSettings.InjectNativeLauncher = false; } };
+            tuningPanel.Children.Add(injectBox);
+            injectSyncing = false;
             ammoUnlimitedBox = new CheckBox { Content = ModernText.L("Unlimited ammunition (9999 per slot)", "无限弹药（每槽 9999）"), IsChecked = original.UnlimitedAmmo, Foreground = ModernPalette.Brush(ModernPalette.Text), Margin = new Thickness(0, 6, 0, 0) };
             tuningPanel.Children.Add(ammoUnlimitedBox);
             fakeArhBox = new CheckBox { Content = ModernText.L("Fake-ARH conversion (SARH missiles self-guide, TWS launch)", "伪ARH转换（半主动弹自主制导，TWS直射）"), IsChecked = original.FakeArhConversion, Foreground = ModernPalette.Brush(ModernPalette.Cyan), Margin = new Thickness(0, 6, 0, 0), ToolTip = "Injects active seeker + permanently-activated guidance into radar missiles so they launch without a pre-launch lock (SARH -> ARH). Verified on AIM-7E-2: active:b, permanentlyActivated, lockDistance, inertialNavigation+datalink, breakLockMaxTime=160, wider seeker angles, distGate, shotFreq cap." };

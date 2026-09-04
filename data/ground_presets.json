@@ -1,5 +1,17 @@
 [
   {
+    "id": "buk_m3_ai_9s35_9m38",
+    "name": "Buk-M3 + AI-Buk radar(9S35) + 9M38 (true SARH)",
+    "vehicle": "ussr_buk_m3_launcher",
+    "cannon": "gameData/weapons/groundmodels_weapons/400mm_buk_9m38_rocket_launcher.blk",
+    "cannonRounds": 6,
+    "radarSearch": "",
+    "radarTrack": "su_9s35",
+    "fakeArh": false,
+    "unlimited": true,
+    "note": "AI-Buk 9S35 track/illum on the Buk-M3 VLS (no search - avoids tracker interference); 9M38 true semi-active."
+  },
+  {
     "id": "osa_buk_9m38_sarh",
     "name": "Osa + Buk 9S35 radar + 9M38 (true SARH x6)",
     "vehicle": "ussr_9a33bm3",
@@ -81,7 +93,8 @@
     "radarTrack": "",
     "fakeArh": false,
     "unlimited": true,
-    "note": "Heavy 2.4t S-75 SACLOS on the open Osa rails - lock required, 2 simultaneous max."
+    "note": "Heavy 2.4t S-75 SACLOS on the open Osa rails - lock required, 2 simultaneous max.",
+    "injectNative": true
   },
   {
     "id": "osa_5v55_arh",

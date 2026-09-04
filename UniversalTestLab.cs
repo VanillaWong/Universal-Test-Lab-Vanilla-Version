@@ -286,6 +286,7 @@ namespace UniversalTestLab
         public string InjectedCannonBlk;
         public string InjectedCannonDomain;
         public string InjectedCannonRound;
+        public bool InjectNativeLauncher; // inject-shell: mount the chosen missile INTO the native launcher (S-75 V-759 in Osa 209mm), instead of swapping the whole cannon
         public int InjectedCannonRounds; // >0: override the injected cannon's bulletsCartridge (rounds per reload/volley, e.g. 6 on an Osa rack)
         public bool UnlimitedAmmo;
         public bool FakeArhConversion;
@@ -323,6 +324,7 @@ namespace UniversalTestLab
                 InjectedCannonDomain = InjectedCannonDomain,
                 InjectedCannonUnit = InjectedCannonUnit,
                 InjectedCannonRound = InjectedCannonRound,
+                InjectNativeLauncher = InjectNativeLauncher,
                 InjectedCannonRounds = InjectedCannonRounds,
                 UnlimitedAmmo = UnlimitedAmmo,
                 FakeArhConversion = FakeArhConversion,
@@ -508,6 +510,7 @@ namespace UniversalTestLab
         public string radarSearch { get; set; }
         public string radarTrack { get; set; }
         public bool fakeArh { get; set; }
+        public bool injectNative { get; set; }
         public bool unlimited { get; set; }
         public string note { get; set; }
     }
@@ -5715,6 +5718,12 @@ public IList<GroundAmmo> WorkspaceResolveCannonAmmo(string cannonBlk)
                 }
             }
 string cannon = ((customCannonNeeded || moduleShipsWeapons) && hasEditableCannon) ? File.ReadAllText(ExtractGameBlk(root, effectiveCannonPath), Encoding.UTF8) : null;
+            // Inject-shell: instead of swapping the whole cannon, mount the chosen weapon's
+            // bullets INTO the vehicle's native launcher (same launch mechanism, new round).
+            // Mandatory for AI site missiles (S-75 V-759 into the Osa 209mm rail) whose own
+            // launcher files carry no compatible player fire-control.
+            if (customCannonNeeded && settings.InjectNativeLauncher && !String.IsNullOrWhiteSpace(cannon))
+                cannon = InjectShellCannon(nativeUnit, cannon, root);
             List<GroundAmmoLoadout> missionAmmo = ResolveGroundMissionAmmo(target, settings, effectiveCannonPath);
             if (settings.UnlimitedAmmo)
                 foreach (GroundAmmoLoadout unlimited in missionAmmo) unlimited.Count = 9999;
@@ -6102,7 +6111,7 @@ string cannon = ((customCannonNeeded || moduleShipsWeapons) && hasEditableCannon
                 // Radar swap: rebuild the sensors block (@delete + re-define like commonWeapons)
                 // installing the requested search/track radars and optionally dropping the AI pair.
                 if (settings.RadarSearchBlk != null || settings.RadarTrackBlk != null || settings.RadarStripAiSensors)
-                    ApplyRadarSwapToProxy(proxy, nativeUnit, settings);
+                    ApplyRadarSwapToProxy(proxy, nativeUnit, settings, root);
             string unit = proxy.ToString();
 
             string unitOut = Path.Combine(root, @"content\pkg_local\gameData\units\tankModels\userVehicles", GroundProxyVehicleFileName);
@@ -6144,7 +6153,7 @@ string cannon = ((customCannonNeeded || moduleShipsWeapons) && hasEditableCannon
         // Rebuilds the vehicle's sensors block in the include proxy: installs the
         // requested player search/track radars and optionally strips the AI-only
         // *_ai sensor pair (AI secondary sight). Used by the radar-swap lab.
-        private static void ApplyRadarSwapToProxy(StringBuilder proxy, string nativeUnit, AircraftSettings settings)
+        private static void ApplyRadarSwapToProxy(StringBuilder proxy, string nativeUnit, AircraftSettings settings, string root)
         {
             int open = nativeUnit.IndexOf("sensors {", StringComparison.OrdinalIgnoreCase);
             if (open < 0) return;
@@ -6168,9 +6177,35 @@ string cannon = ((customCannonNeeded || moduleShipsWeapons) && hasEditableCannon
                 }
                 else
                 {
-                    bool isSearch = blk != null && blk.IndexOf("search", StringComparison.OrdinalIgnoreCase) >= 0
-                        && blk.IndexOf("track", StringComparison.OrdinalIgnoreCase) < 0;
-                    bool isTrack = blk != null && blk.IndexOf("track", StringComparison.OrdinalIgnoreCase) >= 0;
+                    // Only swap sensors mounted on a real antenna (dmPart antenna_*). Buk-style
+                    // launchers carry a second copy of the track radar on the optic mount
+                    // (optic_gun_dm) - swapping that one too creates a ghost duplicate that
+                    // reads like a phased-array / wide-sector emitter.
+                    bool onAntenna = text.IndexOf("antenna_", StringComparison.OrdinalIgnoreCase) >= 0;
+                    // Role from file name first; many radars don't carry search/track in the
+                    // name (su_viking, su_9s35...) so fall back to the sensor blk's fsm modes.
+                    bool isSearch = false;
+                    bool isTrack = false;
+                    if (onAntenna && !String.IsNullOrWhiteSpace(blk))
+                    {
+                        string lower = blk.ToLowerInvariant();
+                        if (lower.IndexOf("search", StringComparison.OrdinalIgnoreCase) >= 0 && lower.IndexOf("track", StringComparison.OrdinalIgnoreCase) < 0) isSearch = true;
+                        else if (lower.IndexOf("track", StringComparison.OrdinalIgnoreCase) >= 0) isTrack = true;
+                        else
+                        {
+                            string sensorText = null;
+                            try { sensorText = File.ReadAllText(ExtractGameBlk(root, blk.Trim().Replace('\\', '/').TrimStart('/')), Encoding.UTF8); }
+                            catch { }
+                            if (sensorText != null)
+                            {
+                                string fsm = sensorText.ToLowerInvariant();
+                                if (Regex.IsMatch(fsm, "(?m)^\\s*fsm\\s*:\\s*t\\s*=\\s*\"(search|tws)\"") || Regex.IsMatch(fsm, "(?m)^\\s*fsm\\s*:\\s*t\\s*=\\s*\"[a-z_]*scan[a-z_]*\""))
+                                    isSearch = true;
+                                else if (Regex.IsMatch(fsm, "(?m)^\\s*fsm\\s*:\\s*t\\s*=\\s*\"(lock|track|acquisition|illumination|designate)\"") || Regex.IsMatch(fsm, "(?m)^\\s*fsm\\s*:\\s*t\\s*=\\s*\"[a-z_]*track[a-z_]*\""))
+                                    isTrack = true;
+                            }
+                        }
+                    }
                     if (isSearch)
                     {
                         searchInstalled = true;
@@ -6233,10 +6268,40 @@ string cannon = ((customCannonNeeded || moduleShipsWeapons) && hasEditableCannon
             }
         }
 
-        // True when a commonWeapons Weapon is a camera-aiming dummy (dummy:b = true).
-        // These vehicles (launcher/SAM trucks, e.g. Buk/Osa/Tor TELs) mount the real
+        // True when a commonWeapons Weapon is a camera-aiming dummy (dummy:b = true).        // These vehicles (launcher/SAM trucks, e.g. Buk/Osa/Tor TELs) mount the real
         // weapon on a separate gunner1 Weapon - swapping the dummy would hang the
         // injected gun on the observation sight instead of the launcher.
+        // Inject-shell assembly (S-75 V-759 into the Osa 209mm rail): keep the vehicle's
+        // native launcher file (fire-control, aim, rails) and swap in every bullet block
+        // of the chosen site missile. Whole-cannon swaps of AI rocket_launcher files fail
+        // silently (no player fire-control in the source launcher) - verified V-759.
+        private static string InjectShellCannon(string nativeUnit, string sourceCannon, string root)
+        {
+            // Native launcher = first non-dummy commonWeapons Weapon that references a blk.
+            string launcherPath = null;
+            foreach (BlockSpan weapon in BlkTools.Blocks(nativeUnit, "Weapon"))
+            {
+                if (IsDummyWeapon(weapon)) continue;
+                string blk = BlkTools.Field(weapon.Text, "blk", "t");
+                if (!String.IsNullOrWhiteSpace(blk) && blk.IndexOf("dummy", StringComparison.OrdinalIgnoreCase) < 0 && blk.IndexOf("utl_ground", StringComparison.OrdinalIgnoreCase) < 0)
+                { launcherPath = blk.Trim().Replace('\\', '/').TrimStart('/'); break; }
+            }
+            if (String.IsNullOrWhiteSpace(launcherPath)) return sourceCannon;
+            string launcherText;
+            try { launcherText = File.ReadAllText(ExtractGameBlk(root, launcherPath), Encoding.UTF8); }
+            catch { return sourceCannon; }
+            List<BlockSpan> nativeBullets = BlkTools.Blocks(launcherText, "bullet");
+            if (nativeBullets.Count == 0) return sourceCannon;
+            List<BlockSpan> sourceBullets = BlkTools.Blocks(sourceCannon, "bullet");
+            if (sourceBullets.Count == 0) return sourceCannon;
+            StringBuilder srcAll = new StringBuilder();
+            foreach (BlockSpan sb in sourceBullets) srcAll.Append(sb.Text);
+            string result = launcherText;
+            for (int i = nativeBullets.Count - 1; i >= 1; i--) result = BlkTools.ReplaceSpan(result, nativeBullets[i], "");
+            result = BlkTools.ReplaceSpan(result, nativeBullets[0], srcAll.ToString());
+            return result;
+        }
+
         internal static bool IsDummyWeapon(BlockSpan weapon)
         {
             // dummy:b is an unquoted bool (dummy:b = true) - BlkTools.Field only
