@@ -164,94 +164,59 @@ bk S300 整合 / osa 5V55 S300 6发 / osa v759（注入 209+654mm SACLOS）/ osa
 
 ## 9. 归档与接续
 
-- 每会话结束：追加 `ARCHIVE_2026-09-02.md`（分节：日期/主题/成果/坑）+ commit + push
-- 新会话接续：只带 ARCHIVE 尾部 + git log——所有背景在文档里
+- 每会话结束：追加 `docs/ARCHIVE_YYYY-MM-DD.md`（分节：日期/主题/成果/坑/文件地图/待办）+ commit（未 push 时注明）
+- 新会话接续：只带最新 ARCHIVE + git log——所有背景在文档里（代码文件地图见 ARCHIVE_2026-09-05 §5，拆分后行号全作废）
 - git 惯例：commit 信息结尾 `Co-authored-by: Chatbox <chatbox@chatboxai.com>`
 
 ---
 
 ## 10. 待办速改模板（照抄即用）
 
-### A. TARGETS 地图选择 Picker 化（MapPanel——**半成品待完成，当前会 NRE**）
+> 已完成模板已移入归档：TARGETS 地图 Picker（71935c3）、RESET ALL MODS 归零（71935c3）、
+> 换炮 per-vehicle（71935c3）、rearm 开关（71935c3）、AIM-120 4 发计数（f92db48）、
+> selftest 双修复（3fc50c9）。详见 docs/ARCHIVE_2026-09-04.md / ARCHIVE_2026-09-05.md。
 
-现状：ModernShell.cs MapPanel 构造（~4256 行）里 mapStack 已是按钮 `mapPickerButton`（**无 Click handler**），但
-字段 `mapBox`（~4127 声明）**从未赋值**——构造尾部 `mapBox.SelectionChanged += ...`（~4372）和
-`RefreshCombinedSpawns()` 里 `mapBox.SelectedItem`（~4400）引用它 → **进 TARGETS 视图构造即 NullReferenceException**。
+### A. Update-Data.ps1 补 tsv2json（一行，用户点头即做）
 
-完成步骤：
+`Update-Data.ps1` 现在不调 tsv2json → 编译嵌的是旧 json。在 `if (-not $SkipCatalog)` 段
+（Build-Catalog 调用之后）补：
 
-1) 类字段加当前地图：
-```csharp
-private CombinedMap currentMap;   // 替换 mapBox 的角色（mapBox 字段可删）
+```powershell
+    Write-Host 'Converting TSV catalogs to JSON ...'
+    node (Join-Path $scriptRoot 'tools\tsv2json.js')
+    if ($LASTEXITCODE -ne 0) { throw 'tsv2json failed.' }
 ```
-2) 构造里 mapPickerButton 接 Click（样式用已有 toggleStyle，别用 FindResource——不在树里会抛）：
-```csharp
-mapPickerButton.Style = toggleStyle;
-mapPickerButton.Click += delegate { PickCombinedMap(); };
+
+### B. 副油箱支持（两处放行 + 实测）
+
+现状：catalog 无任何 `drop_tank/` 弹（Build-Catalog.ps1 Phase 2 过滤 `fuel tanks` trigger）；
+生成端 `RemoveFuelTankPresets`（UniversalTestLab.MainForm.Proxies.cs）主动删飞机 fuel-tank preset。
+
+1) Build-Catalog.ps1 过滤行改为只滤 `countermeasures|cannon`；
+2) 决定 RemoveFuelTankPresets 去留（为何删的动机不明——先试保留 catalog 放行 + 生成端照旧，
+   游戏实测副油箱能否挂；崩/异常再回来查 RemoveFuelTankPresets）
+3) 重跑 Build-Catalog → tsv2json → compile（见上 A 或手动三连）
+
+### C. 数据更新完整三连（编译前必做，防"旧数据"假象）
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File .\Update-Data.ps1 -SkipExtract -SkipCompile   # 只重建 catalog(tsv)
+node tools/tsv2json.js       # tsv → json（Update-Data 漏这步！）
+compile.bat                  # 嵌 json 重编译（先关 UTL）
 ```
-3) 类内新方法（照抄 GroundConfigurePanel.PickRadars 的 Picker 模式）：
-```csharp
-private void PickCombinedMap()
-{
-    List<ModernPickerItem> items = new List<ModernPickerItem>();
-    foreach (CombinedMap m in allCombinedMaps)
-        items.Add(new ModernPickerItem { Display = m.Display, Detail = m.Level, Tag = m });
-    ModernPickerDialog dlg = new ModernPickerDialog(ModernText.L("SELECT MAP", "选择地图"), items,
-        ModernText.L("SELECT MAP", "选择地图")) { Owner = System.Windows.Window.GetWindow(this) };
-    if (dlg.ShowDialog() == true && dlg.Selected != null)
-    {
-        currentMap = (CombinedMap)dlg.Selected.Tag;
-        TextBlock label = mapPickerButton.Content as TextBlock;
-        if (label != null) label.Text = currentMap.Display;
-        RefreshCombinedSpawns();
-    }
-}
-```
-4) 引用替换：
-- 删构造里 `mapBox.SelectionChanged += delegate { RefreshCombinedSpawns(); };`（~4372）
-- `RefreshCombinedSpawns()` 里 `CombinedMap map = mapBox.SelectedItem as CombinedMap;` → `CombinedMap map = currentMap;`
-5) 构造里初始化 `currentMap = state.CurrentMap ?? allCombinedMaps.FirstOrDefault();` 并同步按钮文本。
-6) 检查 `MapPanelState.CurrentMap` 已有（保存/恢复用）。完成后：删 `mapBox` 字段声明。
 
-### B. EXPERIMENTAL 一键归零按钮（GroundConfigurePanel，~5253 类）
+### D. 老式挂载隔离（用户理论，待讨论设计）
 
-在 VEHICLE TUNING 页 resetAll 按钮旁加"RESET ALL MODS（清空全部爆改）"：
+legacy 飞机（无 WeaponSlot 树，slot 0 方案式）走 `BuildCustomAircraft` presetStyle 分支（整方案重建）；
+WeaponSlot 树飞机走逐挂点注入。用户主张 legacy 禁 inject-all（否则崩）。开工前先查 UI
+（INJECT 面板）与生成端是否已按 presetStyle 隔离。
 
-```csharp
-Button resetMods = new Button { Content = ModernText.L("RESET ALL MODS", "清空全部爆改"),
-    Style = buttonStyle, Padding = new Thickness(14, 2, 14, 2), Margin = new Thickness(10, 10, 0, 4) };
-resetMods.Click += delegate
-{
-    // 清爆改字段（写 currentSettings——生成时读它；original 是构造副本可同清）
-    if (currentSettings != null)
-    {
-        currentSettings.InjectedCannonBlk = null; currentSettings.InjectedCannonDomain = null;
-        currentSettings.InjectedCannonUnit = null; currentSettings.InjectedCannonRound = null;
-        currentSettings.InjectedCannonRounds = 0;  currentSettings.InjectNativeLauncher = false;
-        currentSettings.UnlimitedAmmo = false;     currentSettings.FakeArhConversion = false;
-        currentSettings.RadarSearchBlk = null;     currentSettings.RadarTrackBlk = null;
-        currentSettings.RadarStripAiSensors = false;
-        currentSettings.OverrideGroundBallistics = false;
-        currentSettings.ProjectileMassMultiplier = 1; currentSettings.MuzzleVelocityMultiplier = 1;
-        currentSettings.ExplosiveMassMultiplier = 1;  currentSettings.PenetrationMultiplier = 1;
-        currentSettings.ReloadSeconds = 0; currentSettings.RecoilMultiplier = 1;
-        currentSettings.EnginePowerMultiplier = 1;  currentSettings.VehicleMassMultiplier = 1;
-        currentSettings.ForwardSpeedMultiplier = 1; currentSettings.ReverseSpeedMultiplier = 1;
-        // 换炮/弹药槽回原生
-        currentSettings.InjectedCannonBlk = null;
-        currentSettings.GroundAmmoLoadouts.Clear();
-    }
-    // UI 同步（照抄现有重置的调用链）
-    ResetAllValues();
-    overrideBallistics.IsChecked = false; ammoUnlimitedBox.IsChecked = false; fakeArhBox.IsChecked = false;
-    radarSearchSel = null; radarTrackSel = null; stripAiBox.IsChecked = false; UpdateRadarStatus();
-    roundsBox.Text = "0"; injectBox.IsChecked = false;
-    SelectInitialCannon(); RefreshAmmo(); RefreshSlotEditors();
-};
-```
-注意：真正的"会话默认干净"（启动不自动套上次爆改）是 M4 完整版——改 `LoadAircraftSettings`/启动路径，
-暂缓（涉及 AircraftSettings 持久化语义，别急着动）。
+### E. selftest 契约速查（改生成逻辑后必对照）
 
-### C. 已知：当前代码 TARGETS 视图会崩（mapBox null）
-进 UTL 的 TARGETS 前先完成上面 A（或临时把 `mapBox.SelectionChanged +=` 那行删掉/注释掉）。
+- selftest 段在 `UniversalTestLab.Program.cs`；UI 自检在 `ModernShell.MainWindow.SelfTest.cs`
+- `AccelerateRangeRecovery(text, includeRangeRecovery, targetRespawnDelay, double? rearmSeconds)`：
+  rearmSeconds **null = 不注入** "UTL Fast Rearm Policy"（默认关）；传值才注入。自检断言与之一致
+- 三件套：`--selftest` `--uiselftest` `--selftest-config`（exit 0 才可发布）
+- uiselftest 先调 `SelectFirstFixedWingForSelfTest()` 选中固定翼再量布局（别依赖 SelectionChanged 事件）；
+  XAML 哨兵过时会导致 layout 断言永假——改 XAML 时同步查 `LayoutFixesReadyForSelfTest` 尾部三连 Contains
 
