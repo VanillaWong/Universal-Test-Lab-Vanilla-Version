@@ -140,6 +140,10 @@ namespace UniversalTestLab
                     : (nuclear ? "Custom hot-load air vehicle with native nuclear weapons." : "Custom hot-load air vehicle and pylon setup.");
                 description += " Close and reopen the User Missions tab after applying.";
                 text = BlkTools.UpdateMissionLabels(text, title, description);
+                // Ground player vehicles get a native restoration zone at their spawn
+                // plus periodic consumable top-ups (repair kit / extinguisher / medkit);
+                // user missions otherwise leave those RB systems without stock.
+                if (groundPlayer) text = BlkTools.ConfigurePlayerFieldSupport(text);
                 text = BlkTools.ConfigureRapidFire(text, MissionSettings.Current.RapidFireEnabled, MissionSettings.Current.RapidFireInterval, MissionSettings.Current.RapidFireFullRestore);
                 string missionDir = Path.Combine(root, MissionFolderRelative);
                 Directory.CreateDirectory(missionDir);
