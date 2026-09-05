@@ -880,6 +880,25 @@ namespace UniversalTestLab
             block.AppendLine("    isShipSpline:b=no");
             block.AppendLine("    shipTurnRadius:r=100");
             block.AppendLine("    weapons:t=\"" + (preset ?? "").Replace("\"", "") + "\"");
+            // Player test vehicles carry the native ground consumables (field repair
+            // kit + manual fire extinguisher) exactly like official tank PvE missions
+            // inject them (gameData/missions/pve_missions/tank_pve presets). Without
+            // these lines a user-mission vehicle has no repair kit or extinguisher:
+            // the in-game repair key stays dead and fires never go out.
+            block.AppendLine("    modification:t=\"tank_tool_kit\"");
+            block.AppendLine("    modification:t=\"manual_extinguisher\"");
+            // Player test vehicles carry the native ground consumables (field repair
+            // kit + manual fire extinguisher) exactly like official PvE tank missions
+            // inject them (gameData/missions/pve_missions/tank_pve presets). Without
+            // these lines the vehicle has no repair kit or extinguisher in a user
+            // mission, so the in-game repair key does nothing and fires never go out.
+            block.AppendLine("    modification:t=\"tank_tool_kit\"");
+            block.AppendLine("    modification:t=\"manual_extinguisher\"");
+            // Ground consumables so the player can repair and extinguish in-mission
+            // like a normal RB vehicle (same injection the official tank PvE missions
+            // use). Without these the repair/extinguish action-bar buttons stay dead.
+            block.AppendLine("    modification:t=\"tank_tool_kit\"");
+            block.AppendLine("    modification:t=\"manual_extinguisher\"");
             // Keep the known-working reserve proxy and native tank controller. The
             // projectile IDs and counts select the real ammunition carried by the
             // included vehicle; the proxy class can still supply fallback HUD metadata.
