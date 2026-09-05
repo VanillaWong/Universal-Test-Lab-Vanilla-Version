@@ -3412,6 +3412,16 @@ private void RefreshGroundWorkspace()
             UpdateConfigurationSummary();
         }
 
+        internal void SelectFirstFixedWingForSelfTest()
+        {
+            Aircraft pick = controller.WorkspaceAircraft.FirstOrDefault(x =>
+                String.Equals(x.Kind, "Aircraft", StringComparison.OrdinalIgnoreCase) &&
+                controller.WorkspacePylons(x.Id).Count > 0);
+            if (pick == null) return;
+            controller.WorkspaceSelectAircraft(pick.Id);
+            RefreshFromController();
+        }
+
         internal void ExerciseDropdownForSelfTest()
         {
             rankFilter.IsDropDownOpen = true;
@@ -3549,8 +3559,8 @@ private void RefreshGroundWorkspace()
                 aircraftPreview && helicopterPreview && dronePreview &&
                 track != null && track.IsDirectionReversed &&
                 !ModernXaml.Main.Contains("ChromeFill") &&
-                ModernXaml.Main.Contains("Margin=\"10,7,34,7\"") &&
-                ModernXaml.Main.Contains("Grid Grid.Row=\"1\" Margin=\"12,10,12,10\"");
+                ModernXaml.Main.Contains("x:Name=\"TitleBar\" Grid.Row=\"0\"") &&
+                ModernXaml.Main.Contains("x:Name=\"TabVehicleContent\" Grid.Row=\"2\" Margin=\"12,10,12,10\"");
         }
 
         internal bool CombinedCatalogReadyForSelfTest()
@@ -8628,6 +8638,13 @@ tuningPanel.Children.Add(Heading("REAL VEHICLE VALUES", 15));
             window.Show();
             window.Dispatcher.Invoke(new Action(delegate { }), System.Windows.Threading.DispatcherPriority.ApplicationIdle);
             window.ExerciseDropdownForSelfTest();
+            // The pylon/weapon layout assertions below need an aircraft selected so the
+            // station panel is populated. The window restores the last session vehicle
+            // on startup, which is often a ground vehicle (no pylon stations), so pin
+            // a fixed-wing aircraft through the controller and refresh the pylon/weapon
+            // panels explicitly (selection events are not guaranteed to fire yet).
+            window.SelectFirstFixedWingForSelfTest();
+            window.Dispatcher.Invoke(new Action(delegate { }), System.Windows.Threading.DispatcherPriority.ApplicationIdle);
             if (!window.LayoutFixesReadyForSelfTest())
                 throw new InvalidOperationException("WPF clipping/dropdown/work-area self-test failed.");
             if (!window.CombinedCatalogReadyForSelfTest())

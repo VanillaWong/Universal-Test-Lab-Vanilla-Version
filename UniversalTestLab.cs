@@ -8041,7 +8041,10 @@ fpvCameraOffset:p3 = 0.2, -0.1, 0
                 groundSettings.GroundAmmoLoadouts.Add(new GroundAmmoLoadout { Slot = 0, Count = 22, BulletName = "120mm_us_m829a3", AmmoGroup = "120mm_us_M829A3_APDSFS" });
                 string groundMission = BlkTools.ConfigureGroundPlayer(text, MainForm.GroundProxyClassId, "m1a2_sep3", "us_m1a2_sep3_abrams_default", groundSettings);
                 groundMission = BlkTools.ConfigureInstantPlayerRespawn(groundMission, true, 0);
-                groundMission = BlkTools.AccelerateRangeRecovery(groundMission);
+                // Follow the real generation path (AccelerateRangeRecovery 4-arg call at the
+                // mission builder): the rearmTimeOnField policy block is injected only when
+                // the user enables the rearm override, which is OFF by default.
+                groundMission = BlkTools.AccelerateRangeRecovery(groundMission, true, 0.25, null);
                 groundMission = BlkTools.MakeShipPassive(groundMission, "Ship_Target");
                 BlockSpan groundPlayer = BlkTools.UnitBlockByName(groundMission, "You");
                 BlockSpan legacyTimedReload = BlkTools.FirstBlock(groundMission, "\"Player Ammo Reload 10s\"", 0);
@@ -8080,6 +8083,12 @@ fpvCameraOffset:p3 = 0.2, -0.1, 0
                     topGroundPlayer.Text.IndexOf("applyAllMods:b=yes", StringComparison.Ordinal) < 0 ||
                     Regex.Matches(topGroundPlayer.Text, @"(?m)^\s*modification:t=").Count != 0)
                     throw new InvalidOperationException("Top ground modification and crew self-test failed.");
+                // Positive check for the rearm override path: enabling it must inject the
+                // one-second on-field rearm policy into the template's trigger set.
+                string rearmOverrideMission = BlkTools.AccelerateRangeRecovery(text, true, 0.25, 1.0);
+                if (rearmOverrideMission.IndexOf("UTL Fast Rearm Policy", StringComparison.Ordinal) < 0 ||
+                    rearmOverrideMission.IndexOf("rearmTimeOnField:r=1", StringComparison.Ordinal) < 0)
+                    throw new InvalidOperationException("Fast rearm override self-test failed.");
                 string selectiveGroundMission = BlkTools.ConfigureUnitModifications(groundMission, "You", false, new[] { "laser_rangefinder_lws", "120mm_britain_L27_APDSFS" });
                 BlockSpan selectiveGroundPlayer = BlkTools.UnitBlockByName(selectiveGroundMission, "You");
                 if (selectiveGroundPlayer.Text.IndexOf("crewSkillK:r=1", StringComparison.Ordinal) < 0 ||
