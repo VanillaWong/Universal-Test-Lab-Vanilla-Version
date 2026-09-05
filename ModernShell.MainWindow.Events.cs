@@ -249,6 +249,16 @@ namespace UniversalTestLab
             if (status != null) status.Text = ModernText.L("● TARGETS APPLIED — READY TO GENERATE", "● 目标已应用 — 可生成任务");
         }
 
+        private StackPanel experimentalSummaryLines;   // 左卡「当前爆改汇总」行容器（换车/APPLY 后刷新）
+        private void InvalidateExperimentalPanel()
+        {
+            // 换车 / 一键装配后：面板数据已过期——重建（若 EXPERIMENTAL 正可见则当场重绘，否则下次进入重建）
+            if (!experimentalBuilt) return;
+            experimentalBuilt = false;
+            if (tabExperimentalContent != null && tabExperimentalContent.Visibility == Visibility.Visible)
+                BuildExperimentalTab();
+        }
+
         private void BuildExperimentalTab()
         {
             if (tabExperimentalContent == null || experimentalBuilt) return;
@@ -283,9 +293,26 @@ namespace UniversalTestLab
             presetRow.Children.Add(presetHint);
             header.Children.Add(presetRow);
             layout.Children.Add(header);
-            ScrollViewer scroll = new ScrollViewer { VerticalScrollBarVisibility = ScrollBarVisibility.Auto, HorizontalScrollBarVisibility = ScrollBarVisibility.Disabled, Margin = new Thickness(16, 0, 16, 8), Padding = new Thickness(0, 0, 8, 20) };
-            Grid.SetRow(scroll, 1);
-            layout.Children.Add(scroll);
+
+            // ---- 主体：左卡 = 当前爆改汇总（只读）；右栏 = 配置面板 ----
+            Grid main = new Grid();
+            main.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(330) });
+            main.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(14) });
+            main.ColumnDefinitions.Add(new ColumnDefinition());
+            Grid.SetRow(main, 1);
+            layout.Children.Add(main);
+            Border summaryCard = new Border { CornerRadius = new CornerRadius(14), Background = ModernPalette.Brush(ModernPalette.Field), BorderBrush = ModernPalette.Brush(ModernPalette.Border), BorderThickness = new Thickness(1), Padding = new Thickness(12), Margin = new Thickness(16, 8, 0, 8), ClipToBounds = true };
+            StackPanel summaryHost = new StackPanel();
+            summaryHost.Children.Add(HeadingExperimental(ModernText.L("CURRENT MODS", "当前爆改汇总"), 15));
+            experimentalSummaryLines = new StackPanel();
+            summaryHost.Children.Add(experimentalSummaryLines);
+            summaryCard.Child = new ScrollViewer { VerticalScrollBarVisibility = ScrollBarVisibility.Auto, HorizontalScrollBarVisibility = ScrollBarVisibility.Disabled, Content = summaryHost };
+            Grid.SetColumn(summaryCard, 0);
+            main.Children.Add(summaryCard);
+            RefreshExperimentalSummary();
+            ScrollViewer scroll = new ScrollViewer { VerticalScrollBarVisibility = ScrollBarVisibility.Auto, HorizontalScrollBarVisibility = ScrollBarVisibility.Disabled, Margin = new Thickness(0, 0, 16, 8), Padding = new Thickness(0, 0, 8, 20) };
+            Grid.SetColumn(scroll, 2);
+            main.Children.Add(scroll);
             if (selectedAircraft == null)
             {
                 scroll.Content = new TextBlock { Text = ModernText.L("Select a vehicle first.", "请先选择载具。"), Foreground = ModernPalette.Brush(ModernPalette.Muted), Margin = new Thickness(8, 8, 0, 0) };
@@ -302,22 +329,122 @@ namespace UniversalTestLab
                 experimentalPanel = panel;
                 scroll.Content = panel;
             }
+            // 底部动作行（换车自动重建，REFRESH 按钮已移除——2026-09 布局重构）
             Grid buttons = new Grid { Margin = new Thickness(16, 0, 16, 14) };
-            buttons.ColumnDefinitions.Add(new ColumnDefinition { Width = GridLength.Auto });
             buttons.ColumnDefinitions.Add(new ColumnDefinition());
             buttons.ColumnDefinitions.Add(new ColumnDefinition { Width = GridLength.Auto });
-            Button refresh = new Button { Content = ModernText.L("REFRESH FOR CURRENT VEHICLE", "刷新当前载具"), Height = 34, Padding = new Thickness(16, 2, 16, 2) };
-            refresh.Style = (Style)Resources["ButtonStyle"];
-            refresh.Click += delegate { experimentalBuilt = false; BuildExperimentalTab(); };
-            buttons.Children.Add(refresh);
-            Button apply = new Button { Content = ModernText.L("APPLY CONFIGURATION", "应用配置"), Height = 34, Padding = new Thickness(24, 2, 24, 2), Margin = new Thickness(10, 0, 0, 0) };
+            Button apply = new Button { Content = ModernText.L("APPLY CONFIGURATION", "应用配置"), Height = 34, Padding = new Thickness(24, 2, 24, 2) };
             apply.Style = (Style)Resources["ButtonStyle"];
             apply.Click += delegate { ApplyExperimentalPanel(); };
-            Grid.SetColumn(apply, 2);
+            Grid.SetColumn(apply, 1);
             buttons.Children.Add(apply);
             Grid.SetRow(buttons, 2);
             layout.Children.Add(buttons);
             tabExperimentalContent.Children.Add(layout);
+        }
+
+        private TextBlock HeadingExperimental(string text, double size)
+        {
+            return new TextBlock { Text = text, Foreground = ModernPalette.Brush(ModernPalette.Cyan), FontSize = size, FontWeight = FontWeights.SemiBold, Margin = new Thickness(0, 0, 0, 8) };
+        }
+
+        private static string ExperimentalShortName(string value)
+        {
+            if (String.IsNullOrWhiteSpace(value)) return null;
+            string name = value;
+            int slash = Math.Max(name.LastIndexOf('/'), name.LastIndexOf('\\'));
+            if (slash >= 0) name = name.Substring(slash + 1);
+            if (name.EndsWith(".blk", StringComparison.OrdinalIgnoreCase)) name = name.Substring(0, name.Length - 4);
+            return name;
+        }
+
+        private void RefreshExperimentalSummary()
+        {
+            if (experimentalSummaryLines == null) return;
+            experimentalSummaryLines.Children.Clear();
+            Aircraft s = selectedAircraft;
+            if (s == null)
+            {
+                experimentalSummaryLines.Children.Add(SummaryLineExperimental(ModernText.L("No vehicle selected.", "尚未选择载具。")));
+                return;
+            }
+            AircraftSettings set = controller == null ? null : controller.WorkspaceGetSettings(s);
+            if (set == null) set = new AircraftSettings();
+            experimentalSummaryLines.Children.Add(SummaryLineExperimental(s.Display, false));
+            experimentalSummaryLines.Children.Add(SummaryLineExperimental(ModernText.L("— APPLIED CONFIGURATION —", "—— 已应用配置 ——"), false, true));
+            bool any = false;
+            if (GroundSelected)
+            {
+                // 换炮注入
+                if (!String.IsNullOrWhiteSpace(set.InjectedCannonBlk))
+                {
+                    any = true;
+                    string text = ModernText.L("CANNON INJECT", "换炮注入") + ": " + (set.InjectedCannonUnit ?? "") + " / " + ExperimentalShortName(set.InjectedCannonBlk);
+                    if (!String.IsNullOrWhiteSpace(set.InjectedCannonRound)) text += "  ·  " + ExperimentalShortName(set.InjectedCannonRound);
+                    if (set.InjectedCannonRounds > 0) text += "  ×" + set.InjectedCannonRounds.ToString(CultureInfo.InvariantCulture);
+                    else if (set.InjectNativeLauncher) text += "  (inject-shell)";
+                    experimentalSummaryLines.Children.Add(SummaryLineExperimental(text));
+                }
+                // 弹药槽
+                foreach (GroundAmmoLoadout lo in set.GroundAmmoLoadouts.OrderBy(x => x.Slot))
+                {
+                    if (lo.Slot < 0 || lo.Slot > 3) continue;
+                    any = true;
+                    experimentalSummaryLines.Children.Add(SummaryLineExperimental(ModernText.L("SLOT", "槽位") + " " + (lo.Slot + 1).ToString(CultureInfo.InvariantCulture) + ": " + (ExperimentalShortName(lo.SourceBlk) ?? lo.BulletName) + "  ×" + lo.Count.ToString(CultureInfo.InvariantCulture)));
+                }
+                if (set.UnlimitedAmmo) { any = true; experimentalSummaryLines.Children.Add(SummaryLineExperimental(ModernText.L("Unlimited ammunition", "无限弹药") + " ON")); }
+                if (set.FakeArhConversion) { any = true; experimentalSummaryLines.Children.Add(SummaryLineExperimental(ModernText.L("Fake-ARH conversion", "伪ARH转换") + " ON")); }
+                if (set.OverrideGroundBallistics)
+                {
+                    any = true;
+                    experimentalSummaryLines.Children.Add(SummaryLineExperimental(ModernText.L("Custom ballistics & mobility", "自定义弹道与机动性") + ":"));
+                    AddSummaryMultiplier("projectileMass", set.ProjectileMassMultiplier);
+                    AddSummaryMultiplier("velocity", set.MuzzleVelocityMultiplier);
+                    AddSummaryMultiplier("explosive", set.ExplosiveMassMultiplier);
+                    AddSummaryMultiplier("penetration", set.PenetrationMultiplier);
+                    AddSummaryMultiplier("recoil", set.RecoilMultiplier);
+                    AddSummaryMultiplier("engine", set.EnginePowerMultiplier);
+                    AddSummaryMultiplier("mass", set.VehicleMassMultiplier);
+                    AddSummaryMultiplier("forward", set.ForwardSpeedMultiplier);
+                    AddSummaryMultiplier("reverse", set.ReverseSpeedMultiplier);
+                    if (set.ReloadSeconds > 0) { any = true; experimentalSummaryLines.Children.Add(SummaryLineExperimental(ModernText.L("FIRE RATE OVERRIDE", "射速覆盖") + ": " + set.ReloadSeconds.ToString("0.##", CultureInfo.InvariantCulture) + "s")); }
+                }
+                if (!String.IsNullOrWhiteSpace(set.RadarSearchBlk) || !String.IsNullOrWhiteSpace(set.RadarTrackBlk))
+                {
+                    any = true;
+                    experimentalSummaryLines.Children.Add(SummaryLineExperimental(ModernText.L("RADAR SWAP", "雷达替换") + ": " + (ExperimentalShortName(set.RadarSearchBlk) ?? "native") + " / " + (ExperimentalShortName(set.RadarTrackBlk) ?? "native") + (set.RadarStripAiSensors ? "  (" + ModernText.L("strip AI pair", "移除AI雷达组") + ")" : "")));
+                }
+            }
+            else
+            {
+                // 飞行：燃油 / 弹带 / 干扰弹 / 瞄具
+                any = true;
+                experimentalSummaryLines.Children.Add(SummaryLineExperimental(set.FullFuel ? ModernText.L("Full internal fuel", "满内部燃油") : ModernText.L("Fuel", "燃油") + ": " + set.FuelMinutes.ToString(CultureInfo.InvariantCulture) + " min"));
+                if (set.GunBeltSelections.Count > 0)
+                    foreach (KeyValuePair<int, string> belt in set.GunBeltSelections.OrderBy(x => x.Key))
+                        experimentalSummaryLines.Children.Add(SummaryLineExperimental(ModernText.L("GUN GROUP", "机炮组") + " " + belt.Key.ToString(CultureInfo.InvariantCulture) + ": " + (ExperimentalShortName(belt.Value) ?? "")));
+                if (set.OverrideCountermeasures && set.CountermeasureLoadouts.Count > 0)
+                    foreach (CountermeasureLoadout cm in set.CountermeasureLoadouts)
+                        experimentalSummaryLines.Children.Add(SummaryLineExperimental(cm.Key + ": " + cm.Flares.ToString(CultureInfo.InvariantCulture) + "F " + cm.Chaff.ToString(CultureInfo.InvariantCulture) + "C"));
+                if (set.UnlimitedCountermeasures) experimentalSummaryLines.Children.Add(SummaryLineExperimental(ModernText.L("Unlimited countermeasures", "无限干扰弹") + " ON"));
+            }
+            if (!String.IsNullOrWhiteSpace(set.UserSightPath))
+            {
+                any = true;
+                experimentalSummaryLines.Children.Add(SummaryLineExperimental(ModernText.L("Sight", "瞄具") + ": " + System.IO.Path.GetFileNameWithoutExtension(set.UserSightPath)));
+            }
+            if (!any) experimentalSummaryLines.Children.Add(SummaryLineExperimental(ModernText.L("No custom modifications - native configuration.", "未做任何爆改 —— 原生配置。")));
+        }
+
+        private void AddSummaryMultiplier(string label, double value)
+        {
+            if (Math.Abs(value - 1.0) < 0.001 || value <= 0) return;
+            experimentalSummaryLines.Children.Add(SummaryLineExperimental("   " + label + "  ×" + value.ToString("0.##", CultureInfo.InvariantCulture)));
+        }
+
+        private TextBlock SummaryLineExperimental(string text, bool bullet = true, bool muted = false)
+        {
+            return new TextBlock { Text = (bullet ? "•  " : "") + text, Foreground = ModernPalette.Brush(muted ? ModernPalette.Muted : ModernPalette.Text), FontSize = 11.5, TextWrapping = TextWrapping.Wrap, Margin = new Thickness(0, 1.5, 0, 1.5) };
         }
 
         private void ApplyExperimentalPanel()
@@ -336,6 +463,7 @@ namespace UniversalTestLab
                 SetStatus("FLIGHT CONFIGURATION UPDATED — " + selectedAircraft.Display, false);
             }
             UpdateConfigurationSummary();
+            RefreshExperimentalSummary();
         }
 
         private sealed class GarageEntry
@@ -538,8 +666,7 @@ namespace UniversalTestLab
             s.RadarTrackBlk = preset.radarTrack;
             controller.WorkspaceSetSettings(target, s);
             SelectVehicleById(target.Id, null);
-            experimentalBuilt = false;
-            BuildExperimentalTab();
+            InvalidateExperimentalPanel();   // 一键装配后按需重建面板与左卡汇总（EXPERIMENTAL 可见时立即）
         }
 
         private void SelectVehicleById(string id, string kind)

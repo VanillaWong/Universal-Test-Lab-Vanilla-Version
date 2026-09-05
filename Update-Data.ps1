@@ -73,6 +73,12 @@ if (-not $SkipCatalog) {
         -WeaponsRoot 'universal_weapons_data\aces.vromfs.bin_u\gamedata\weapons' `
         -ShopPath 'universal_char_data\char.vromfs.bin_u\config\shop.blk'
     if ($LASTEXITCODE -ne 0) { throw 'Build-Catalog.ps1 failed.' }
+
+    # TSV -> JSON for the embedded resources. Build-Catalog only emits .tsv;
+    # without this step the exe keeps embedding stale JSON from the last run.
+    Write-Host 'Converting TSV catalogs to JSON ...'
+    node (Join-Path $scriptRoot 'tools\tsv2json.js')
+    if ($LASTEXITCODE -ne 0) { throw 'tsv2json.js failed.' }
 }
 
 if (-not $SkipCompile) {

@@ -306,6 +306,7 @@ namespace UniversalTestLab
             }
             RefreshPylons();
             UpdateConfigurationSummary();
+            InvalidateExperimentalPanel();   // EXPERIMENTAL 面板随当前车重建（无需手动 REFRESH）
             SetStatus("VEHICLE READY — " + selectedAircraft.Display, false);
         }
 

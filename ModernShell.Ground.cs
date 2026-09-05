@@ -128,61 +128,29 @@ namespace UniversalTestLab
             toggleStyle = toggleStyleSource;
             foreach (GroundAmmoLoadout entry in original.GroundAmmoLoadouts.Where(x => x.Slot >= 0 && x.Slot < 4)) loadouts[entry.Slot] = entry.Copy();
 
+            // ---- 标题行（EXPERIMENTAL 内嵌版带大标题；独立窗口自带标题故简化）----
             if (!simplified)
             {
-            StackPanel header = new StackPanel();
-            if (!simplified) header.Children.Add(Heading(ModernText.L("GROUND CONFIGURE", "地面配置"), 18));
-            header.Children.Add(new TextBlock { Text = item.Display, Foreground = ModernPalette.Brush(ModernPalette.Cyan), Margin = new Thickness(0, simplified ? 0 : 4, 0, 0) });
+                StackPanel header = new StackPanel();
+                header.Children.Add(Heading(ModernText.L("GROUND CONFIGURE", "地面配置"), 18));
+                header.Children.Add(new TextBlock { Text = item.Display, Foreground = ModernPalette.Brush(ModernPalette.Cyan), Margin = new Thickness(0, 4, 0, 0) });
                 Children.Add(header);
             }
 
-            Grid body = new Grid { Margin = new Thickness(0, 6, 0, 8), ClipToBounds = true };
-            body.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1.25, GridUnitType.Star) });
-            body.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(12) });
-            body.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
-            Children.Add(body);
-
-            Border ammoCard = Card(); Grid ammoGrid = new Grid { ClipToBounds = true };
-            ammoGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(38) });
-            ammoGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(44) });
-            ammoGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(48) });
-            ammoGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
-            ammoGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(simplified ? 0 : 174) });
-            ammoGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(simplified ? 0 : 48) });
-            Grid ammoHeader = new Grid(); ammoHeader.ColumnDefinitions.Add(new ColumnDefinition()); ammoHeader.ColumnDefinitions.Add(new ColumnDefinition { Width = GridLength.Auto });
-            ammoHeader.Children.Add(Heading("AMMUNITION & PROJECTILE INJECTION", 15));
-            totalAmmoText = new TextBlock { Foreground = ModernPalette.Brush(ModernPalette.Cyan), FontWeight = FontWeights.SemiBold, VerticalAlignment = VerticalAlignment.Center, HorizontalAlignment = HorizontalAlignment.Right };
-            Grid.SetColumn(totalAmmoText, 1); ammoHeader.Children.Add(totalAmmoText); ammoGrid.Children.Add(ammoHeader);
-            Grid cannonRow = new Grid { Margin = new Thickness(0, 1, 0, 1) }; cannonRow.ColumnDefinitions.Add(new ColumnDefinition { Width = GridLength.Auto }); cannonRow.ColumnDefinitions.Add(new ColumnDefinition());
-            TextBlock cannonCaption = new TextBlock { Text = ModernText.L("CANNON", "主炮"), Foreground = ModernPalette.Brush(ModernPalette.Cyan), FontWeight = FontWeights.SemiBold, FontSize = 11, VerticalAlignment = VerticalAlignment.Center, Margin = new Thickness(0, 0, 8, 0) };
-            cannonSelector = new ComboBox { Foreground = ModernPalette.Brush(ModernPalette.Text), Background = ModernPalette.Brush("#FF16283E"), BorderBrush = ModernPalette.Brush(ModernPalette.Border), Padding = new Thickness(8, 3, 8, 3), Height = 32, HorizontalAlignment = HorizontalAlignment.Stretch, IsTextSearchEnabled = true, IsTextSearchCaseSensitive = false, ItemsPanel = new ItemsPanelTemplate(new FrameworkElementFactory(typeof(VirtualizingStackPanel))) };
-            cannonSelector.SelectionChanged += delegate { CannonSelectorChanged(); };
-            cannonRow.Children.Add(cannonCaption); Grid.SetColumn(cannonSelector, 1); cannonRow.Children.Add(cannonSelector); Grid.SetRow(cannonRow, 1); ammoGrid.Children.Add(cannonRow);
-            Grid filters = new Grid(); filters.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(160) }); filters.ColumnDefinitions.Add(new ColumnDefinition()); filters.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(180) });
-            injectionToggle = new ToggleButton { Content = ModernText.L("INJECT ANY SHELL", "注入任意炮弹"), Style = toggleStyle, Margin = new Thickness(0, 3, 8, 3) };
-            searchBox = new TextBox { Margin = new Thickness(0, 3, 8, 3) }; Grid.SetColumn(searchBox, 1);
-            typeBox = new ComboBox { Margin = new Thickness(0, 3, 0, 3) }; Grid.SetColumn(typeBox, 2);
-            filters.Children.Add(injectionToggle); filters.Children.Add(searchBox); filters.Children.Add(typeBox); Grid.SetRow(filters, 2); ammoGrid.Children.Add(filters);
-            if (simplified) injectionToggle.Visibility = Visibility.Collapsed;
-            ammoList = new ListBox { Background = ModernPalette.Brush(ModernPalette.Field), BorderBrush = ModernPalette.Brush(ModernPalette.Border), BorderThickness = new Thickness(1), Margin = new Thickness(0, 4, 0, 7) };
-            Grid.SetRow(ammoList, 3); ammoGrid.Children.Add(ammoList);
-
-            UniformGrid slots = new UniformGrid { Rows = 2, Columns = 2, Margin = new Thickness(0, 0, 0, 6) };
-            for (int slot = 0; slot < 4; slot++) slots.Children.Add(CreateAmmoSlot(slot));
-            Grid.SetRow(slots, 4); ammoGrid.Children.Add(slots);
-            Grid mountRow = new Grid(); mountRow.ColumnDefinitions.Add(new ColumnDefinition()); mountRow.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(145) });
-            mountRow.Children.Add(new TextBlock { Text = ModernText.L("Choose a slot, select a round above, then mount it.", "选择槽位，先在上方选择炮弹，再装填。"), Foreground = ModernPalette.Brush(ModernPalette.Muted), VerticalAlignment = VerticalAlignment.Center, TextWrapping = TextWrapping.Wrap });
-            Button mount = new Button { Content = ModernText.L("MOUNT ROUND", "装填炮弹"), Style = buttonStyle, Padding = new Thickness(18, 2, 18, 2), Margin = new Thickness(4, 0, 0, 0) }; mount.Click += delegate { MountSelectedAmmo(); }; Grid.SetColumn(mount, 1); mountRow.Children.Add(mount); Grid.SetRow(mountRow, 5); ammoGrid.Children.Add(mountRow);
-            ammoCard.Child = ammoGrid; body.Children.Add(ammoCard);
-
-            Border tuningCard = Card();
-            ScrollViewer tuningScroll = new ScrollViewer { VerticalScrollBarVisibility = ScrollBarVisibility.Auto, HorizontalScrollBarVisibility = ScrollBarVisibility.Disabled, ClipToBounds = true };
-            StackPanel cannonPage = new StackPanel(), radarPage = new StackPanel(), ammoPage = new StackPanel(), tuningPage = new StackPanel();
-            StackPanel[] labPages = new StackPanel[] { cannonPage, radarPage, ammoPage, tuningPage };
+            // ====================================================================
+            // 单卡五页 Tab：弹药工作台 / 换炮注入 / 雷达替换 / 弹药开关 / 载具数值
+            // （2026-09 布局重构：原"左弹药工作台 + 右四页 Tab"双卡改为单卡，
+            //   弹药工作台并入第一页，页宽翻倍、不再拥挤）
+            // ====================================================================
+            Border labCard = Card();
+            ScrollViewer labScroll = new ScrollViewer { VerticalScrollBarVisibility = ScrollBarVisibility.Auto, HorizontalScrollBarVisibility = ScrollBarVisibility.Disabled, ClipToBounds = true };
+            StackPanel ammoWorkPage = new StackPanel(), cannonPage = new StackPanel(), radarPage = new StackPanel(), switchesPage = new StackPanel(), tuningPage = new StackPanel();
+            StackPanel[] labPages = new StackPanel[] { ammoWorkPage, cannonPage, radarPage, switchesPage, tuningPage };
             StackPanel labHeader = new StackPanel { Orientation = Orientation.Horizontal, Margin = new Thickness(0, 0, 0, 10) };
             ToggleButton[] labTabs = new ToggleButton[labPages.Length];
             string[] labTitles =
             {
+                ModernText.L("AMMUNITION", "弹药工作台"),
                 ModernText.L("CANNON INJECT", "换炮注入"),
                 ModernText.L("RADAR SWAP", "雷达替换"),
                 ModernText.L("AMMO SWITCHES", "弹药开关"),
@@ -281,7 +249,37 @@ namespace UniversalTestLab
             labHeader.Children.Add(resetMods);
             StackPanel labBody = new StackPanel();
             foreach (StackPanel pagePanel in labPages) labBody.Children.Add(pagePanel);
-            labTabs[0].IsChecked = true;
+
+            // ============ 页 1：弹药工作台（选弹 / 装槽 / 注入开关）============
+            Grid ammoHeader = new Grid(); ammoHeader.ColumnDefinitions.Add(new ColumnDefinition()); ammoHeader.ColumnDefinitions.Add(new ColumnDefinition { Width = GridLength.Auto });
+            ammoHeader.Children.Add(Heading("AMMUNITION & PROJECTILE INJECTION", 15));
+            totalAmmoText = new TextBlock { Foreground = ModernPalette.Brush(ModernPalette.Cyan), FontWeight = FontWeights.SemiBold, VerticalAlignment = VerticalAlignment.Center, HorizontalAlignment = HorizontalAlignment.Right };
+            Grid.SetColumn(totalAmmoText, 1); ammoHeader.Children.Add(totalAmmoText);
+            ammoWorkPage.Children.Add(ammoHeader);
+            Grid cannonRow = new Grid { Margin = new Thickness(0, 1, 0, 1) }; cannonRow.ColumnDefinitions.Add(new ColumnDefinition { Width = GridLength.Auto }); cannonRow.ColumnDefinitions.Add(new ColumnDefinition());
+            TextBlock cannonCaption = new TextBlock { Text = ModernText.L("CANNON", "主炮"), Foreground = ModernPalette.Brush(ModernPalette.Cyan), FontWeight = FontWeights.SemiBold, FontSize = 11, VerticalAlignment = VerticalAlignment.Center, Margin = new Thickness(0, 0, 8, 0) };
+            cannonSelector = new ComboBox { Foreground = ModernPalette.Brush(ModernPalette.Text), Background = ModernPalette.Brush("#FF16283E"), BorderBrush = ModernPalette.Brush(ModernPalette.Border), Padding = new Thickness(8, 3, 8, 3), Height = 32, HorizontalAlignment = HorizontalAlignment.Stretch, IsTextSearchEnabled = true, IsTextSearchCaseSensitive = false, ItemsPanel = new ItemsPanelTemplate(new FrameworkElementFactory(typeof(VirtualizingStackPanel))) };
+            cannonSelector.SelectionChanged += delegate { CannonSelectorChanged(); };
+            cannonRow.Children.Add(cannonCaption); Grid.SetColumn(cannonSelector, 1); cannonRow.Children.Add(cannonSelector);
+            ammoWorkPage.Children.Add(cannonRow);
+            Grid filters = new Grid(); filters.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(200) }); filters.ColumnDefinitions.Add(new ColumnDefinition()); filters.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(200) });
+            injectionToggle = new ToggleButton { Content = ModernText.L("INJECT ANY SHELL", "注入任意炮弹"), Style = toggleStyle, Margin = new Thickness(0, 3, 8, 3) };
+            searchBox = new TextBox { Margin = new Thickness(0, 3, 8, 3) }; Grid.SetColumn(searchBox, 1);
+            typeBox = new ComboBox { Margin = new Thickness(0, 3, 0, 3) }; Grid.SetColumn(typeBox, 2);
+            filters.Children.Add(injectionToggle); filters.Children.Add(searchBox); filters.Children.Add(typeBox);
+            ammoWorkPage.Children.Add(filters);
+            if (simplified) injectionToggle.Visibility = Visibility.Collapsed;
+            ammoList = new ListBox { Height = 260, Background = ModernPalette.Brush(ModernPalette.Field), BorderBrush = ModernPalette.Brush(ModernPalette.Border), BorderThickness = new Thickness(1), Margin = new Thickness(0, 4, 0, 7) };
+            ammoWorkPage.Children.Add(ammoList);
+            UniformGrid slots = new UniformGrid { Rows = 1, Columns = 4, Margin = new Thickness(0, 0, 0, 6) };
+            for (int slot = 0; slot < 4; slot++) slots.Children.Add(CreateAmmoSlot(slot));
+            ammoWorkPage.Children.Add(slots);
+            Grid mountRow = new Grid(); mountRow.ColumnDefinitions.Add(new ColumnDefinition()); mountRow.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(150) });
+            mountRow.Children.Add(new TextBlock { Text = ModernText.L("Choose a slot, select a round above, then mount it.", "选择槽位，先在上方选择炮弹，再装填。"), Foreground = ModernPalette.Brush(ModernPalette.Muted), VerticalAlignment = VerticalAlignment.Center, TextWrapping = TextWrapping.Wrap });
+            Button mount = new Button { Content = ModernText.L("MOUNT ROUND", "装填炮弹"), Style = buttonStyle, Padding = new Thickness(18, 2, 18, 2), Margin = new Thickness(4, 0, 0, 0) }; mount.Click += delegate { MountSelectedAmmo(); }; Grid.SetColumn(mount, 1); mountRow.Children.Add(mount);
+            ammoWorkPage.Children.Add(mountRow);
+
+            // ============ 页 2：换炮注入 ============
             cannonPage.Children.Add(Heading("CROSS-DOMAIN CANNON", 15));
             Grid domainRow = new Grid { Margin = new Thickness(0, 6, 0, 0) };
             domainRow.ColumnDefinitions.Add(new ColumnDefinition());
@@ -336,10 +334,10 @@ namespace UniversalTestLab
             injectBox.Unchecked += delegate { if (!injectSyncing) { original.InjectNativeLauncher = false; if (currentSettings != null) currentSettings.InjectNativeLauncher = false; } };
             cannonPage.Children.Add(injectBox);
             injectSyncing = false;
-            ammoUnlimitedBox = new CheckBox { Content = ModernText.L("Unlimited ammunition (9999 per slot)", "无限弹药（每槽 9999）"), IsChecked = original.UnlimitedAmmo, Foreground = ModernPalette.Brush(ModernPalette.Text), Margin = new Thickness(0, 6, 0, 0) };
-            ammoPage.Children.Add(ammoUnlimitedBox);
-            fakeArhBox = new CheckBox { Content = ModernText.L("Fake-ARH conversion (SARH missiles self-guide, TWS launch)", "伪ARH转换（半主动弹自主制导，TWS直射）"), IsChecked = original.FakeArhConversion, Foreground = ModernPalette.Brush(ModernPalette.Cyan), Margin = new Thickness(0, 6, 0, 0), ToolTip = "Injects active seeker + permanently-activated guidance into radar missiles so they launch without a pre-launch lock (SARH -> ARH). Verified on AIM-7E-2: active:b, permanentlyActivated, lockDistance, inertialNavigation+datalink, breakLockMaxTime=160, wider seeker angles, distGate, shotFreq cap." };
-            ammoPage.Children.Add(fakeArhBox);
+            cannonPage.Children.Add(new TextBlock { Text = "Pick the source unit (e.g. Yamato), then its weapon (460/155/127 mm). Ground, naval and air units are all supported; air also includes missiles and rockets. Ammunition slots and projectile tuning below then apply to the injected weapon.", Foreground = ModernPalette.Brush(ModernPalette.Muted), TextWrapping = TextWrapping.Wrap, Margin = new Thickness(0, 6, 0, 0) });
+
+
+            // ============ 页 3：雷达替换 ============
             radarStatus = new TextBlock { Foreground = ModernPalette.Brush(ModernPalette.Muted), FontSize = 12, TextWrapping = TextWrapping.Wrap, Margin = new Thickness(0, 2, 0, 0) };
             radarSearchSel = original.RadarSearchBlk; radarTrackSel = original.RadarTrackBlk;
             stripAiBox = new CheckBox { Content = ModernText.L("Radar swap strips the AI-only radar pair", "雷达替换时移除 AI 专用雷达组"), IsChecked = original.RadarStripAiSensors, Margin = new Thickness(0, 1, 0, 0) };
@@ -364,15 +362,22 @@ namespace UniversalTestLab
             radarCardStack.Children.Add(radarDetailTrack);
             radarCard.Child = radarCardStack;
             radarPage.Children.Add(radarCard);
+
+            // ============ 页 4：弹药开关 ============
+            switchesPage.Children.Add(Heading("AMMO SWITCHES", 15));
+            ammoUnlimitedBox = new CheckBox { Content = ModernText.L("Unlimited ammunition (9999 per slot)", "无限弹药（每槽 9999）"), IsChecked = original.UnlimitedAmmo, Foreground = ModernPalette.Brush(ModernPalette.Text), Margin = new Thickness(0, 6, 0, 0) };
+            switchesPage.Children.Add(ammoUnlimitedBox);
+            fakeArhBox = new CheckBox { Content = ModernText.L("Fake-ARH conversion (SARH missiles self-guide, TWS launch)", "伪ARH转换（半主动弹自主制导，TWS直射）"), IsChecked = original.FakeArhConversion, Foreground = ModernPalette.Brush(ModernPalette.Cyan), Margin = new Thickness(0, 6, 0, 0), ToolTip = "Injects active seeker + permanently-activated guidance into radar missiles so they launch without a pre-launch lock (SARH -> ARH). Verified on AIM-7E-2: active:b, permanentlyActivated, lockDistance, inertialNavigation+datalink, breakLockMaxTime=160, wider seeker angles, distGate, shotFreq cap." };
+            switchesPage.Children.Add(fakeArhBox);
             UpdateRadarStatus();
             domainBox.SelectedItem = savedDomainItem;
             RefreshCannonBox();
             BuildCannonSelector();
             SelectInitialCannon();
-            cannonPage.Children.Add(new TextBlock { Text = "Pick the source unit (e.g. Yamato), then its weapon (460/155/127 mm). Ground, naval and air units are all supported; air also includes missiles and rockets. Ammunition slots and projectile tuning below then apply to the injected weapon.", Foreground = ModernPalette.Brush(ModernPalette.Muted), TextWrapping = TextWrapping.Wrap, Margin = new Thickness(0, 6, 0, 0) });
             cannonPage.Children.Add(new Border { Height = 1, Background = ModernPalette.Brush(ModernPalette.Border), Margin = new Thickness(0, 10, 0, 10) });
-            tuningPage.Children.Add(Heading("REAL VEHICLE VALUES", 15));
 
+            // ============ 页 5：载具数值 ============
+            tuningPage.Children.Add(Heading("REAL VEHICLE VALUES", 15));
             overrideBallistics = new CheckBox { Content = ModernText.L("Override native values", "覆盖原生数值"), IsChecked = original.OverrideGroundBallistics, Foreground = ModernPalette.Brush(ModernPalette.Cyan), Margin = new Thickness(0, 12, 0, 7) }; tuningPage.Children.Add(overrideBallistics);
             tuningPage.Children.Add(new TextBlock { Text = "Projectile values follow the selected ammunition slot. Every field can be typed directly.", Foreground = ModernPalette.Brush(ModernPalette.Muted), TextWrapping = TextWrapping.Wrap, Margin = new Thickness(0, 0, 0, 6) });
             projectileReference = ResolveProjectileReference();
@@ -388,31 +393,18 @@ namespace UniversalTestLab
             AddValue(tuningPage, "VEHICLE MASS", "mass", vehicle.NativeMass, original.VehicleMassMultiplier, "kg");
             AddValue(tuningPage, "FORWARD SPEED LIMIT", "forward", vehicle.NativeForwardSpeed, original.ForwardSpeedMultiplier, "km/h");
             AddValue(tuningPage, "REVERSE SPEED LIMIT", "reverse", vehicle.NativeReverseSpeed, original.ReverseSpeedMultiplier, "km/h");
-            Button resetAll = new Button { Content = ModernText.L("RESET ALL TO CURRENT STOCK", "重置为当前默认弹"), Style = buttonStyle, Padding = new Thickness(14, 2, 14, 2), Margin = new Thickness(0, 10, 0, 4) };             
+            Button resetAll = new Button { Content = ModernText.L("RESET ALL TO CURRENT STOCK", "重置为当前默认弹"), Style = buttonStyle, Padding = new Thickness(14, 2, 14, 2), Margin = new Thickness(0, 10, 0, 4) };
             resetAll.Click += delegate { ResetAllValues(); }; tuningPage.Children.Add(resetAll);
-
             tuningPage.Children.Add(new TextBlock { Text = "Stock reset uses this vehicle's current game definition; selected research modules remain configured separately in Modules.", Foreground = ModernPalette.Brush(ModernPalette.Muted), TextWrapping = TextWrapping.Wrap, Margin = new Thickness(0, 8, 0, 4) });
-            tuningScroll.Content = labBody;
+
+            // ---- 组装单卡 ----
+            labScroll.Content = labBody;
             StackPanel labHost = new StackPanel();
             labHost.Children.Add(labHeader);
-            labHost.Children.Add(tuningScroll);
-            tuningCard.Child = labHost; Grid.SetColumn(tuningCard, 2); body.Children.Add(tuningCard);
-            if (simplified)
-            {
-                // Home panel: the right card holds the 4 ammunition slots (MOUNT + pool)
-                // instead of the cross-domain cannon / projectile tuning.
-                StackPanel slotPanel = new StackPanel();
-                slotPanel.Children.Add(Heading("AMMUNITION SLOTS", 15));
-                UniformGrid slotGrid = new UniformGrid { Rows = 2, Columns = 2, Margin = new Thickness(0, 6, 0, 6) };
-                for (int slot = 0; slot < 4; slot++) slotGrid.Children.Add(CreateAmmoSlot(slot));
-                slotPanel.Children.Add(slotGrid);
-                Grid slotMountRow = new Grid(); slotMountRow.ColumnDefinitions.Add(new ColumnDefinition()); slotMountRow.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(120) });
-                slotMountRow.Children.Add(new TextBlock { Text = ModernText.L("Select a round, pick a slot, mount it.", "选择炮弹与槽位并装填。"), Foreground = ModernPalette.Brush(ModernPalette.Muted), VerticalAlignment = VerticalAlignment.Center, TextWrapping = TextWrapping.Wrap });
-                Button slotMount = new Button { Content = ModernText.L("MOUNT ROUND", "装填炮弹"), Style = buttonStyle, Padding = new Thickness(14, 2, 14, 2), Margin = new Thickness(4, 0, 0, 0) }; slotMount.Click += delegate { MountSelectedAmmo(); }; Grid.SetColumn(slotMount, 1); slotMountRow.Children.Add(slotMount);
-                slotPanel.Children.Add(slotMountRow);
-                slotPanel.Children.Add(new TextBlock { Text = ModernText.L("STOCK = native default round (empty slot + count).", "STOCK = 原生默认弹（空槽 + 数量）。"), Foreground = ModernPalette.Brush(ModernPalette.Muted), TextWrapping = TextWrapping.Wrap, Margin = new Thickness(0, 8, 0, 0) });
-                tuningCard.Child = slotPanel;
-            }
+            labHost.Children.Add(labScroll);
+            labCard.Child = labHost;
+            Children.Add(labCard);
+            labTabs[0].IsChecked = true;
 
             typeBox.Items.Add("All Projectile Types"); foreach (string kind in catalog.Select(x => x.Type).Distinct().OrderBy(x => x)) typeBox.Items.Add(kind); typeBox.SelectedIndex = 0;
             injectionToggle.IsChecked = false; injectionToggle.Checked += delegate { RefreshAmmo(); }; injectionToggle.Unchecked += delegate { RefreshAmmo(); }; searchBox.TextChanged += delegate { RefreshAmmo(); }; typeBox.SelectionChanged += delegate { RefreshAmmo(); };
