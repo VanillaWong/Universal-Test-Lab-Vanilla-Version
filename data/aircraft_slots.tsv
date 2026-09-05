@@ -4631,6 +4631,8 @@ su_17m4	6	6	5	0	fuse_containers_right_ofab_100_120_x4
 su_17m4	7	4	4	0	wing_right_middle_ofab_100_120_x1
 su_17m4	8	8	3	0	wing_right_single_r_60
 su_17m4	9	2	2	0	wing_right_containers_ofab_100_120
+su_17m4_china_killstreak	7	4	4	0	rn_28
+su_17m4_killstreak	7	4	4	0	rn_28
 su_22m3	1	1	10	0	wing_left_containers_ofab_100_120
 su_22m3	2	2	9	0	wing_left_single_r_60
 su_22m3	3	3	8	0	wing_left_middle_ofab_100_120_x1

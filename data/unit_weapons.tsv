@@ -13989,6 +13989,18 @@ su_17m4	aircraft	Su-17M4	gameData/Weapons/containers/mbd3_u6_fuse_r_fab_250_x3.b
 su_17m4	aircraft	Su-17M4	gameData/Weapons/containers/mbd3_u6_fuse_r_fab_250sh_x3.blk	mbd3 u6 fuse r fab 250sh x3	cannon
 su_17m4	aircraft	Su-17M4	gameData/Weapons/containers/p_62_2_r_r_60m_x2.blk	p 62 2 r r 60m x2	cannon
 su_17m4	aircraft	Su-17M4	gameData/Weapons/containers/mbd3_u6_wing_r_su_ofab100_120_x5.blk	mbd3 u6 wing r su ofab100 120 x5	cannon
+su_17m4_china_killstreak	aircraft	Su-17M4	gameData/Weapons/cannonNR30.blk	cannonNR30	cannon
+su_17m4_china_killstreak	aircraft	Su-17M4	gameData/Weapons/dummy_weapon.blk	dummy weapon	cannon
+su_17m4_china_killstreak	aircraft	Su-17M4	gameData/Weapons/rocketGuns/countermeasure_large_split_launcher_jet_with_chaff.blk	countermeasure large split launcher jet with chaff	cannon
+su_17m4_china_killstreak	aircraft	Su-17M4	gameData/Weapons/BombGuns/su_rn_28.blk	su rn 28	cannon
+su_17m4_china_killstreak	aircraft	Su-17M4	gameData/Weapons/BombGuns/su_rn_28_nt.blk	su rn 28 nt	cannon
+su_17m4_china_killstreak	aircraft	Su-17M4	gameData/Weapons/bombguns/su_rn_40.blk	su rn 40	cannon
+su_17m4_killstreak	aircraft	Su-17M4	gameData/Weapons/cannonNR30.blk	cannonNR30	cannon
+su_17m4_killstreak	aircraft	Su-17M4	gameData/Weapons/dummy_weapon.blk	dummy weapon	cannon
+su_17m4_killstreak	aircraft	Su-17M4	gameData/Weapons/rocketGuns/countermeasure_large_split_launcher_jet_with_chaff.blk	countermeasure large split launcher jet with chaff	cannon
+su_17m4_killstreak	aircraft	Su-17M4	gameData/Weapons/BombGuns/su_rn_28.blk	su rn 28	cannon
+su_17m4_killstreak	aircraft	Su-17M4	gameData/Weapons/BombGuns/su_rn_28_nt.blk	su rn 28 nt	cannon
+su_17m4_killstreak	aircraft	Su-17M4	gameData/Weapons/bombguns/su_rn_40.blk	su rn 40	cannon
 su_22m3	aircraft	Su-22M3	gameData/Weapons/cannonNR30.blk	cannonNR30	cannon
 su_22m3	aircraft	Su-22M3	gameData/Weapons/dummy_weapon.blk	dummy weapon	cannon
 su_22m3	aircraft	Su-22M3	gameData/Weapons/rocketGuns/countermeasure_large_split_launcher_jet.blk	countermeasure large split launcher jet	cannon
@@ -16371,29 +16383,21 @@ j6k1	aircraft	J6K1	gameData/Weapons/BombGuns/jp_navy_type98mod25_250kg.blk	2x 25
 j7w1	aircraft	J7W1 Shinden	gameData/Weapons/BombGuns/jp_navy_type97mod6_60kg.blk	2x 60 kg Navy Type 97 Number 6 ground bomb	ordnance
 jaguar_a	aircraft	Jaguar A	gameData/Weapons/equipment/uk_atlis2_targeting_pod.blk	ATLIS II targeting pod	ordnance
 jaguar_a_germany_killstreak	aircraft	Jaguar A	gameData/Weapons/BombGuns/fr_an52.blk	AN-52 nuclear bomb	ordnance
-jaguar_a_germany_killstreak	aircraft	Jaguar A	gameData/Weapons/BombGuns/fr_an52_5kt_nt.blk	AN-52 nuclear bomb	ordnance
-jaguar_a_germany_killstreak	aircraft	Jaguar A	gameData/Weapons/BombGuns/fr_an52_30kt_nt.blk	AN-52 nuclear bomb	ordnance
+jaguar_a_germany_killstreak	aircraft	Jaguar A	gameData/Weapons/rocketGuns/countermeasure_large_split_launcher_jet_with_chaff.blk	AN-52 nuclear bomb; 2x Large caliber countermeasures	ordnance
 jaguar_a_iaf_killstreak	aircraft	Jaguar A	gameData/Weapons/BombGuns/fr_an52.blk	AN-52 nuclear bomb	ordnance
-jaguar_a_iaf_killstreak	aircraft	Jaguar A	gameData/Weapons/BombGuns/fr_an52_5kt_nt.blk	AN-52 nuclear bomb	ordnance
-jaguar_a_iaf_killstreak	aircraft	Jaguar A	gameData/Weapons/BombGuns/fr_an52_30kt_nt.blk	AN-52 nuclear bomb	ordnance
+jaguar_a_iaf_killstreak	aircraft	Jaguar A	gameData/Weapons/rocketGuns/countermeasure_large_split_launcher_jet_with_chaff.blk	AN-52 nuclear bomb; 2x Large caliber countermeasures	ordnance
 jaguar_a_italy_killstreak	aircraft	Jaguar A	gameData/Weapons/BombGuns/fr_an52.blk	AN-52 nuclear bomb	ordnance
-jaguar_a_italy_killstreak	aircraft	Jaguar A	gameData/Weapons/BombGuns/fr_an52_5kt_nt.blk	AN-52 nuclear bomb	ordnance
-jaguar_a_italy_killstreak	aircraft	Jaguar A	gameData/Weapons/BombGuns/fr_an52_30kt_nt.blk	AN-52 nuclear bomb	ordnance
+jaguar_a_italy_killstreak	aircraft	Jaguar A	gameData/Weapons/rocketGuns/countermeasure_large_split_launcher_jet_with_chaff.blk	AN-52 nuclear bomb; 2x Large caliber countermeasures	ordnance
 jaguar_a_japan_killstreak	aircraft	Jaguar A	gameData/Weapons/BombGuns/fr_an52.blk	AN-52 nuclear bomb	ordnance
-jaguar_a_japan_killstreak	aircraft	Jaguar A	gameData/Weapons/BombGuns/fr_an52_5kt_nt.blk	AN-52 nuclear bomb	ordnance
-jaguar_a_japan_killstreak	aircraft	Jaguar A	gameData/Weapons/BombGuns/fr_an52_30kt_nt.blk	AN-52 nuclear bomb	ordnance
+jaguar_a_japan_killstreak	aircraft	Jaguar A	gameData/Weapons/rocketGuns/countermeasure_large_split_launcher_jet_with_chaff.blk	AN-52 nuclear bomb; 2x Large caliber countermeasures	ordnance
 jaguar_a_killstreak	aircraft	Jaguar A	gameData/Weapons/BombGuns/fr_an52.blk	AN-52 nuclear bomb	ordnance
-jaguar_a_killstreak	aircraft	Jaguar A	gameData/Weapons/BombGuns/fr_an52_5kt_nt.blk	AN-52 nuclear bomb	ordnance
-jaguar_a_killstreak	aircraft	Jaguar A	gameData/Weapons/BombGuns/fr_an52_30kt_nt.blk	AN-52 nuclear bomb	ordnance
+jaguar_a_killstreak	aircraft	Jaguar A	gameData/Weapons/rocketGuns/countermeasure_large_split_launcher_jet_with_chaff.blk	AN-52 nuclear bomb; 2x Large caliber countermeasures	ordnance
 jaguar_a_sweden_killstreak	aircraft	Jaguar A	gameData/Weapons/BombGuns/fr_an52.blk	AN-52 nuclear bomb	ordnance
-jaguar_a_sweden_killstreak	aircraft	Jaguar A	gameData/Weapons/BombGuns/fr_an52_5kt_nt.blk	AN-52 nuclear bomb	ordnance
-jaguar_a_sweden_killstreak	aircraft	Jaguar A	gameData/Weapons/BombGuns/fr_an52_30kt_nt.blk	AN-52 nuclear bomb	ordnance
+jaguar_a_sweden_killstreak	aircraft	Jaguar A	gameData/Weapons/rocketGuns/countermeasure_large_split_launcher_jet_with_chaff.blk	AN-52 nuclear bomb; 2x Large caliber countermeasures	ordnance
 jaguar_a_uk_killstreak	aircraft	Jaguar A	gameData/Weapons/BombGuns/fr_an52.blk	AN-52 nuclear bomb	ordnance
-jaguar_a_uk_killstreak	aircraft	Jaguar A	gameData/Weapons/BombGuns/fr_an52_5kt_nt.blk	AN-52 nuclear bomb	ordnance
-jaguar_a_uk_killstreak	aircraft	Jaguar A	gameData/Weapons/BombGuns/fr_an52_30kt_nt.blk	AN-52 nuclear bomb	ordnance
+jaguar_a_uk_killstreak	aircraft	Jaguar A	gameData/Weapons/rocketGuns/countermeasure_large_split_launcher_jet_with_chaff.blk	AN-52 nuclear bomb; 2x Large caliber countermeasures	ordnance
 jaguar_a_usa_killstreak	aircraft	Jaguar A	gameData/Weapons/BombGuns/fr_an52.blk	AN-52 nuclear bomb	ordnance
-jaguar_a_usa_killstreak	aircraft	Jaguar A	gameData/Weapons/BombGuns/fr_an52_5kt_nt.blk	AN-52 nuclear bomb	ordnance
-jaguar_a_usa_killstreak	aircraft	Jaguar A	gameData/Weapons/BombGuns/fr_an52_30kt_nt.blk	AN-52 nuclear bomb	ordnance
+jaguar_a_usa_killstreak	aircraft	Jaguar A	gameData/Weapons/rocketGuns/countermeasure_large_split_launcher_jet_with_chaff.blk	AN-52 nuclear bomb; 2x Large caliber countermeasures	ordnance
 jaguar_e	aircraft	Jaguar E	gameData/Weapons/equipment/uk_atlis2_targeting_pod.blk	ATLIS II targeting pod	ordnance
 jaguar_gr1a	aircraft	Jaguar GR.1A	gameData/Weapons/equipment/uk_tiald_targeting_pod.blk	TIALD targeting pod	ordnance
 jaguar_is	aircraft	Jaguar IS	gameData/Weapons/equipment/gr_litening_pod_targeting_pod.blk	LITENING II targeting pod	ordnance

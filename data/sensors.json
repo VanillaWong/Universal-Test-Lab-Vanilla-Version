@@ -9,7 +9,7 @@
     "fsm": "",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "bl_carapace",
@@ -21,7 +21,7 @@
     "fsm": "",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "cn_antelope_ads_track",
@@ -33,7 +33,7 @@
     "fsm": "lock,track",
     "weaponTargetsMax": "",
     "irst": 1,
-    "domain": "ground"
+    "domain": ""
   },
   {
     "id": "cn_clc_1_search",
@@ -45,7 +45,7 @@
     "fsm": "search",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "ground"
+    "domain": ""
   },
   {
     "id": "cn_helicopter_z_late_rwr",
@@ -57,7 +57,7 @@
     "fsm": "",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "cn_helicopter_z_lws",
@@ -69,7 +69,7 @@
     "fsm": "",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "cn_helicopter_z_mlws",
@@ -81,7 +81,7 @@
     "fsm": "",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "cn_helicopter_z_rwr",
@@ -93,7 +93,7 @@
     "fsm": "",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "cn_hq_11_search",
@@ -105,7 +105,7 @@
     "fsm": "tws",
     "weaponTargetsMax": 4,
     "irst": "",
-    "domain": "ground"
+    "domain": ""
   },
   {
     "id": "cn_hq_11_search_ai",
@@ -117,7 +117,7 @@
     "fsm": "tws",
     "weaponTargetsMax": 4,
     "irst": "",
-    "domain": "ground"
+    "domain": ""
   },
   {
     "id": "cn_hq_17_search",
@@ -129,7 +129,7 @@
     "fsm": "search",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "ground"
+    "domain": ""
   },
   {
     "id": "cn_hq_17_track",
@@ -141,7 +141,7 @@
     "fsm": "lock,radarTrack,track",
     "weaponTargetsMax": 2,
     "irst": 1,
-    "domain": "ground"
+    "domain": ""
   },
   {
     "id": "cn_jl_10a",
@@ -150,10 +150,10 @@
     "role": "search",
     "rangeMax": 150000,
     "type": "radar",
-    "fsm": "searchModes,search,bvrLock,velocityLock,track,illumination,acmLock,tws,gtmTrack,main",
+    "fsm": "acmLock,bvrLock,gtmTrack,illumination,main,search,searchModes,track,tws,velocityLock",
     "weaponTargetsMax": 4,
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "cn_jl_10ag",
@@ -162,10 +162,10 @@
     "role": "search",
     "rangeMax": 150000,
     "type": "radar",
-    "fsm": "searchModes,search,bvrLock,velocityLock,track,illumination,acmLock,tws,gtmTrack,helmetDesignation,main",
+    "fsm": "acmLock,bvrLock,gtmTrack,helmetDesignation,illumination,main,search,searchModes,track,tws,velocityLock",
     "weaponTargetsMax": 4,
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "cn_jl_7a",
@@ -174,22 +174,10 @@
     "role": "search",
     "rangeMax": 30000,
     "type": "radar",
-    "fsm": "search,lock,track",
+    "fsm": "lock,search,track",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
-  },
-  {
-    "id": "cn_kj8602a",
-    "display": "KJ8602A",
-    "band": "",
-    "role": "",
-    "rangeMax": "",
-    "type": "rwr",
-    "fsm": "",
-    "weaponTargetsMax": "",
-    "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "cn_kj_8602",
@@ -201,7 +189,19 @@
     "fsm": "",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
+  },
+  {
+    "id": "cn_kj8602a",
+    "display": "KJ8602A",
+    "band": "",
+    "role": "",
+    "rangeMax": "",
+    "type": "rwr",
+    "fsm": "",
+    "weaponTargetsMax": "",
+    "irst": "",
+    "domain": ""
   },
   {
     "id": "cn_klj_10a",
@@ -210,10 +210,10 @@
     "role": "search",
     "rangeMax": 200000,
     "type": "radar",
-    "fsm": "sensorTypes,search,illumination,lock,radarSearchModes,irstSearchModes,tws,radarBvrLock,velocityLock,radarBvrTrack,irstTrack,radarAcmHmdTrack,helmetDesignation,track,gtmTrack,main",
+    "fsm": "gtmTrack,helmetDesignation,illumination,irstSearchModes,irstTrack,lock,main,radarAcmHmdTrack,radarBvrLock,radarBvrTrack,radarSearchModes,search,sensorTypes,track,tws,velocityLock",
     "weaponTargetsMax": 8,
     "irst": 1,
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "cn_klj_7",
@@ -222,10 +222,10 @@
     "role": "search",
     "rangeMax": 100000,
     "type": "radar",
-    "fsm": "searchModes,search,bvrLock,velocityLock,track,illumination,acmLock,tws,main",
+    "fsm": "acmLock,bvrLock,illumination,main,search,searchModes,track,tws,velocityLock",
     "weaponTargetsMax": 2,
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "cn_krkz2200",
@@ -237,7 +237,7 @@
     "fsm": "",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "cn_pgz_09_search",
@@ -249,7 +249,7 @@
     "fsm": "search",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "ground"
+    "domain": ""
   },
   {
     "id": "cn_pgz_09_track",
@@ -261,7 +261,7 @@
     "fsm": "lock,track",
     "weaponTargetsMax": "",
     "irst": 1,
-    "domain": "ground"
+    "domain": ""
   },
   {
     "id": "cn_pgz_625_search",
@@ -273,7 +273,7 @@
     "fsm": "search",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "ground"
+    "domain": ""
   },
   {
     "id": "cn_pgz_625_track",
@@ -285,7 +285,7 @@
     "fsm": "lock,radarTrack,track",
     "weaponTargetsMax": 8,
     "irst": 1,
-    "domain": "ground"
+    "domain": ""
   },
   {
     "id": "cn_rn_01_ii",
@@ -297,7 +297,7 @@
     "fsm": "mode,search",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "cn_rw_30",
@@ -309,7 +309,7 @@
     "fsm": "",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "cn_rwr_esm",
@@ -318,10 +318,10 @@
     "role": "search",
     "rangeMax": 250000,
     "type": "radar",
-    "fsm": "tws,lock,track",
+    "fsm": "lock,track,tws",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "cn_s740",
@@ -333,7 +333,7 @@
     "fsm": "",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "cn_se_2_mlws",
@@ -345,7 +345,7 @@
     "fsm": "",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "cn_type_1473",
@@ -354,10 +354,10 @@
     "role": "search",
     "rangeMax": 60000,
     "type": "radar",
-    "fsm": "searchModes,search,bvrLock,track,illumination,acmLock,tws,helmetDesignation,main",
+    "fsm": "acmLock,bvrLock,helmetDesignation,illumination,main,search,searchModes,track,tws",
     "weaponTargetsMax": 4,
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "cn_type_1492",
@@ -366,10 +366,10 @@
     "role": "search",
     "rangeMax": 150000,
     "type": "radar",
-    "fsm": "searchModes,search,bvrLock,velocityLock,track,illumination,acmLock,tws,gtmTrack,helmetDesignation,main",
+    "fsm": "acmLock,bvrLock,gtmTrack,helmetDesignation,illumination,main,search,searchModes,track,tws,velocityLock",
     "weaponTargetsMax": 6,
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "cn_type_1493_pd",
@@ -378,10 +378,10 @@
     "role": "search",
     "rangeMax": 120000,
     "type": "radar",
-    "fsm": "sensorTypes,search,illumination,lock,radarSearchModes,irstSearchModes,tws,radarBvrLock,radarBvrTrack,irstTrack,radarAcmHmdTrack,gtmTrack,helmetDesignation,main",
+    "fsm": "gtmTrack,helmetDesignation,illumination,irstSearchModes,irstTrack,lock,main,radarAcmHmdTrack,radarBvrLock,radarBvrTrack,radarSearchModes,search,sensorTypes,tws",
     "weaponTargetsMax": 6,
     "irst": 1,
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "cn_type_208a",
@@ -390,10 +390,10 @@
     "role": "search",
     "rangeMax": 60000,
     "type": "radar",
-    "fsm": "search,lock,track",
+    "fsm": "lock,search,track",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "cn_type_280",
@@ -402,10 +402,10 @@
     "role": "search",
     "rangeMax": 60000,
     "type": "radar",
-    "fsm": "search,lock,track",
+    "fsm": "lock,search,track",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "cn_type_930",
@@ -417,7 +417,7 @@
     "fsm": "",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "cn_type_930_4",
@@ -429,7 +429,7 @@
     "fsm": "",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "cn_z10_fcr",
@@ -441,7 +441,7 @@
     "fsm": "mode,search",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "de_flarakrad_fr",
@@ -453,7 +453,7 @@
     "fsm": "lock,track",
     "weaponTargetsMax": "",
     "irst": 1,
-    "domain": "ground"
+    "domain": ""
   },
   {
     "id": "de_fug_200",
@@ -465,7 +465,7 @@
     "fsm": "search",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "de_fug_202",
@@ -477,7 +477,7 @@
     "fsm": "search",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "de_fug_220",
@@ -489,7 +489,7 @@
     "fsm": "search",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "de_gepard_fr",
@@ -501,7 +501,7 @@
     "fsm": "lock,track",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "ground"
+    "domain": ""
   },
   {
     "id": "de_gepard_sr",
@@ -513,7 +513,7 @@
     "fsm": "search",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "ground"
+    "domain": ""
   },
   {
     "id": "de_hensoldt_trml_4b",
@@ -525,7 +525,7 @@
     "fsm": "tws",
     "weaponTargetsMax": 4,
     "irst": "",
-    "domain": "ground"
+    "domain": ""
   },
   {
     "id": "de_roland_fr",
@@ -537,7 +537,7 @@
     "fsm": "lock,track",
     "weaponTargetsMax": "",
     "irst": 1,
-    "domain": "ground"
+    "domain": ""
   },
   {
     "id": "de_roland_sr",
@@ -549,7 +549,7 @@
     "fsm": "search",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "ground"
+    "domain": ""
   },
   {
     "id": "esm",
@@ -558,10 +558,10 @@
     "role": "search",
     "rangeMax": 250000,
     "type": "radar",
-    "fsm": "tws,lock,track",
+    "fsm": "lock,track,tws",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "fr_aida_2",
@@ -573,7 +573,7 @@
     "fsm": "lock,track",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "fr_anemone",
@@ -582,10 +582,10 @@
     "role": "search",
     "rangeMax": 150000,
     "type": "radar",
-    "fsm": "search,lock,track",
+    "fsm": "lock,search,track",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "fr_antares_lws",
@@ -597,7 +597,7 @@
     "fsm": "",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "ground"
+    "domain": ""
   },
   {
     "id": "fr_antilope_5",
@@ -606,10 +606,10 @@
     "role": "search",
     "rangeMax": 29632,
     "type": "radar",
-    "fsm": "search,lock,track",
+    "fsm": "lock,search,track",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "fr_antilope_5_hmd",
@@ -618,10 +618,10 @@
     "role": "search",
     "rangeMax": 29632,
     "type": "radar",
-    "fsm": "search,lock,track,helmetDesignation",
+    "fsm": "helmetDesignation,lock,search,track",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "fr_arabel",
@@ -633,7 +633,7 @@
     "fsm": "tws",
     "weaponTargetsMax": 16,
     "irst": "",
-    "domain": "ground"
+    "domain": ""
   },
   {
     "id": "fr_arabel_ai",
@@ -645,7 +645,7 @@
     "fsm": "tws",
     "weaponTargetsMax": 16,
     "irst": "",
-    "domain": "ground"
+    "domain": ""
   },
   {
     "id": "fr_as37_armat_esm",
@@ -654,10 +654,10 @@
     "role": "search",
     "rangeMax": 250000,
     "type": "radar",
-    "fsm": "tws,lock,track",
+    "fsm": "lock,track,tws",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "fr_as37_c_esm",
@@ -666,10 +666,10 @@
     "role": "search",
     "rangeMax": 250000,
     "type": "radar",
-    "fsm": "tws,lock,track",
+    "fsm": "lock,track,tws",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "fr_as37_l_esm",
@@ -678,10 +678,10 @@
     "role": "search",
     "rangeMax": 250000,
     "type": "radar",
-    "fsm": "tws,lock,track",
+    "fsm": "lock,track,tws",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "fr_as37_s_esm",
@@ -690,10 +690,10 @@
     "role": "search",
     "rangeMax": 250000,
     "type": "radar",
-    "fsm": "tws,lock,track",
+    "fsm": "lock,track,tws",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "fr_crotale_search",
@@ -705,7 +705,7 @@
     "fsm": "search",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "ground"
+    "domain": ""
   },
   {
     "id": "fr_crotale_track",
@@ -717,7 +717,7 @@
     "fsm": "lock,track",
     "weaponTargetsMax": "",
     "irst": 1,
-    "domain": "ground"
+    "domain": ""
   },
   {
     "id": "fr_crotale_track_ai",
@@ -729,7 +729,7 @@
     "fsm": "lock,track",
     "weaponTargetsMax": "",
     "irst": 1,
-    "domain": "ground"
+    "domain": ""
   },
   {
     "id": "fr_cyrano",
@@ -738,10 +738,10 @@
     "role": "search",
     "rangeMax": 90000,
     "type": "radar",
-    "fsm": "search,lock,track",
+    "fsm": "lock,search,track",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "fr_cyrano_ii",
@@ -750,10 +750,10 @@
     "role": "search",
     "rangeMax": 90000,
     "type": "radar",
-    "fsm": "search,lock,track",
+    "fsm": "lock,search,track",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "fr_cyrano_iv",
@@ -762,10 +762,10 @@
     "role": "search",
     "rangeMax": 100000,
     "type": "radar",
-    "fsm": "searchModes,search,bvrLock,trackModes,acmLock,main,acmLockModesLocker,acmLockModes,track,pulseTrack",
+    "fsm": "acmLock,acmLockModes,acmLockModesLocker,bvrLock,main,pulseTrack,search,searchModes,track,trackModes",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "fr_cyrano_ivmr",
@@ -774,10 +774,10 @@
     "role": "search",
     "rangeMax": 100000,
     "type": "radar",
-    "fsm": "searchModes,search,bvrLock,trackModes,acmLock,main,acmLockModesLocker,acmLockModes,track,pulseTrack",
+    "fsm": "acmLock,acmLockModes,acmLockModesLocker,bvrLock,main,pulseTrack,search,searchModes,track,trackModes",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "fr_ddm2000",
@@ -789,7 +789,7 @@
     "fsm": "",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "fr_dr_vc_1a",
@@ -798,10 +798,10 @@
     "role": "search",
     "rangeMax": 15000,
     "type": "radar",
-    "fsm": "lock,track,standbyOrSearch,search",
+    "fsm": "lock,search,standbyOrSearch,track",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "ground"
+    "domain": ""
   },
   {
     "id": "fr_draa_3d",
@@ -810,10 +810,10 @@
     "role": "search",
     "rangeMax": 15000,
     "type": "radar",
-    "fsm": "search,lock,track",
+    "fsm": "lock,search,track",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "fr_drac_25",
@@ -822,10 +822,10 @@
     "role": "search",
     "rangeMax": 80000,
     "type": "radar",
-    "fsm": "search,lock,track",
+    "fsm": "lock,search,track",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "fr_drac_32a",
@@ -834,10 +834,10 @@
     "role": "search",
     "rangeMax": 80000,
     "type": "radar",
-    "fsm": "search,lock,track",
+    "fsm": "lock,search,track",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "fr_leclerc_auto_target_tracker",
@@ -849,7 +849,7 @@
     "fsm": "lock,track",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "ground"
+    "domain": ""
   },
   {
     "id": "fr_mirage_3e_detecteur",
@@ -861,7 +861,7 @@
     "fsm": "",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "fr_ralm01",
@@ -873,7 +873,7 @@
     "fsm": "",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "fr_rodeo_2",
@@ -882,10 +882,10 @@
     "role": "search",
     "rangeMax": 15000,
     "type": "radar",
-    "fsm": "lock,track,standbyOrSearch,search",
+    "fsm": "lock,search,standbyOrSearch,track",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "ground"
+    "domain": ""
   },
   {
     "id": "fr_serval_rwr",
@@ -897,7 +897,7 @@
     "fsm": "",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "fr_sherloc",
@@ -909,7 +909,7 @@
     "fsm": "",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "fr_spectra_lws",
@@ -921,7 +921,7 @@
     "fsm": "",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "fr_spectra_mlws",
@@ -933,7 +933,7 @@
     "fsm": "",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "fr_spectra_rwr",
@@ -945,7 +945,7 @@
     "fsm": "",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "fr_taran_18",
@@ -954,10 +954,10 @@
     "role": "search",
     "rangeMax": 100000,
     "type": "radar",
-    "fsm": "search,lock,track",
+    "fsm": "lock,search,track",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "fr_thales_rbe2",
@@ -966,10 +966,10 @@
     "role": "search",
     "rangeMax": 300000,
     "type": "radar",
-    "fsm": "sensorTypes,search,illumination,lock,radarSearchModes,irstSearchModes,tws,radarBvrLock,radarBvrTrack,irstTrack,radarAcmHmdTrack,helmetDesignation,main",
+    "fsm": "helmetDesignation,illumination,irstSearchModes,irstTrack,lock,main,radarAcmHmdTrack,radarBvrLock,radarBvrTrack,radarSearchModes,search,sensorTypes,tws",
     "weaponTargetsMax": 8,
     "irst": 1,
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "fr_thales_rdy",
@@ -978,10 +978,10 @@
     "role": "search",
     "rangeMax": 100000,
     "type": "radar",
-    "fsm": "searchModes,search,bvrLock,velocityLock,track,illumination,acmLock,tws,helmetDesignation,main,acmLockModes",
+    "fsm": "acmLock,acmLockModes,bvrLock,helmetDesignation,illumination,main,search,searchModes,track,tws,velocityLock",
     "weaponTargetsMax": 4,
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "fr_thomson-csf_rdi",
@@ -990,10 +990,10 @@
     "role": "search",
     "rangeMax": 100000,
     "type": "radar",
-    "fsm": "searchModes,search,bvrLock,velocityLock,track,illumination,acmLock,tws,main,acmLockModes",
+    "fsm": "acmLock,acmLockModes,bvrLock,illumination,main,search,searchModes,track,tws,velocityLock",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "fr_thomson-csf_rdm",
@@ -1002,10 +1002,10 @@
     "role": "search",
     "rangeMax": 100000,
     "type": "radar",
-    "fsm": "searchModes,search,bvrLock,velocityLock,track,illumination,acmLock,tws,main,acmLockModes",
+    "fsm": "acmLock,acmLockModes,bvrLock,illumination,main,search,searchModes,track,tws,velocityLock",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "il_el_m_2001b",
@@ -1017,7 +1017,7 @@
     "fsm": "lock,track",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "il_el_m_2032",
@@ -1026,10 +1026,10 @@
     "role": "search",
     "rangeMax": 130000,
     "type": "radar",
-    "fsm": "searchModes,search,bvrLock,velocityLock,track,illumination,acmLock,tws,gtmTrack,helmetDesignation,main",
+    "fsm": "acmLock,bvrLock,gtmTrack,helmetDesignation,illumination,main,search,searchModes,track,tws,velocityLock",
     "weaponTargetsMax": 4,
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "il_el_m_2052",
@@ -1038,10 +1038,10 @@
     "role": "search",
     "rangeMax": 150000,
     "type": "radar",
-    "fsm": "searchModes,search,bvrLock,track,illumination,acmLock,helmetDesignation,tws,gtmTrack,main",
+    "fsm": "acmLock,bvrLock,gtmTrack,helmetDesignation,illumination,main,search,searchModes,track,tws",
     "weaponTargetsMax": 4,
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "il_elisra_sps_200",
@@ -1053,7 +1053,7 @@
     "fsm": "",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "il_elisra_sps_3000",
@@ -1065,7 +1065,7 @@
     "fsm": "",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "il_machbet_optics",
@@ -1077,7 +1077,7 @@
     "fsm": "lock,track",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "ground"
+    "domain": ""
   },
   {
     "id": "il_paws_2",
@@ -1089,7 +1089,7 @@
     "fsm": "",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "il_sps_20v",
@@ -1101,7 +1101,7 @@
     "fsm": "",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "il_spyder_search",
@@ -1113,7 +1113,7 @@
     "fsm": "tws",
     "weaponTargetsMax": 8,
     "irst": "",
-    "domain": "ground"
+    "domain": ""
   },
   {
     "id": "il_spyder_search_ai",
@@ -1125,7 +1125,7 @@
     "fsm": "tws",
     "weaponTargetsMax": 8,
     "irst": "",
-    "domain": "ground"
+    "domain": ""
   },
   {
     "id": "ir_tracker",
@@ -1137,7 +1137,7 @@
     "fsm": "lock,track",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "ir_tracker_360",
@@ -1149,7 +1149,7 @@
     "fsm": "lock,track",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "ir_tracker_tgp",
@@ -1161,7 +1161,7 @@
     "fsm": "lock,track",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "it_elt_156",
@@ -1173,7 +1173,7 @@
     "fsm": "",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "it_grifo_346",
@@ -1182,10 +1182,10 @@
     "role": "search",
     "rangeMax": 100000,
     "type": "radar",
-    "fsm": "searchModes,search,bvrLock,velocityLock,track,illumination,acmLock,tws,gtmTrack,helmetDesignation,main",
+    "fsm": "acmLock,bvrLock,gtmTrack,helmetDesignation,illumination,main,search,searchModes,track,tws,velocityLock",
     "weaponTargetsMax": 4,
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "it_ralm-101",
@@ -1197,7 +1197,7 @@
     "fsm": "",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "ground"
+    "domain": ""
   },
   {
     "id": "it_sma_vps-a05",
@@ -1209,7 +1209,7 @@
     "fsm": "search",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "ground"
+    "domain": ""
   },
   {
     "id": "it_sma_vps-a06",
@@ -1221,7 +1221,7 @@
     "fsm": "lock,track",
     "weaponTargetsMax": "",
     "irst": 1,
-    "domain": "ground"
+    "domain": ""
   },
   {
     "id": "it_tv_tracker_3jb10",
@@ -1233,7 +1233,7 @@
     "fsm": "lock,track",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "ground"
+    "domain": ""
   },
   {
     "id": "jp_an_apg_66j",
@@ -1242,10 +1242,10 @@
     "role": "search",
     "rangeMax": 100000,
     "type": "radar",
-    "fsm": "searchModes,search,bvrLock,track,illumination,acmLock,main",
+    "fsm": "acmLock,bvrLock,illumination,main,search,searchModes,track",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "jp_awg_11",
@@ -1254,10 +1254,10 @@
     "role": "search",
     "rangeMax": 150000,
     "type": "radar",
-    "fsm": "searchModes,search,bvrLock,velocityLock,track,illumination,acmLock,main,acmLockModes",
+    "fsm": "acmLock,acmLockModes,bvrLock,illumination,main,search,searchModes,track,velocityLock",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "jp_awg_12",
@@ -1266,10 +1266,10 @@
     "role": "search",
     "rangeMax": 150000,
     "type": "radar",
-    "fsm": "searchModes,search,bvrLock,velocityLock,track,illumination,acmLock,main,acmLockModes",
+    "fsm": "acmLock,acmLockModes,bvrLock,illumination,main,search,searchModes,track,velocityLock",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "jp_j_apg_1",
@@ -1278,10 +1278,10 @@
     "role": "search",
     "rangeMax": 140000,
     "type": "radar",
-    "fsm": "searchModes,search,bvrLock,track,illumination,acmLock,tws,gtmTrack,main",
+    "fsm": "acmLock,bvrLock,gtmTrack,illumination,main,search,searchModes,track,tws",
     "weaponTargetsMax": 4,
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "jp_j_apg_2",
@@ -1290,10 +1290,10 @@
     "role": "search",
     "rangeMax": 150000,
     "type": "radar",
-    "fsm": "searchModes,search,bvrLock,track,illumination,acmLock,tws,gtmTrack,main",
+    "fsm": "acmLock,bvrLock,gtmTrack,illumination,main,search,searchModes,track,tws",
     "weaponTargetsMax": 4,
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "jp_j_apr_1",
@@ -1305,7 +1305,7 @@
     "fsm": "",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "jp_j_apr_2",
@@ -1317,7 +1317,7 @@
     "fsm": "",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "jp_j_apr_3",
@@ -1329,7 +1329,7 @@
     "fsm": "",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "jp_j_apr_4",
@@ -1341,7 +1341,7 @@
     "fsm": "",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "jp_j_apr_6",
@@ -1353,7 +1353,7 @@
     "fsm": "",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "jp_j_asq_2",
@@ -1365,7 +1365,7 @@
     "fsm": "",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "jp_type_03_search",
@@ -1377,7 +1377,7 @@
     "fsm": "tws",
     "weaponTargetsMax": 4,
     "irst": "",
-    "domain": "ground"
+    "domain": ""
   },
   {
     "id": "jp_type_81_search",
@@ -1389,7 +1389,7 @@
     "fsm": "tws",
     "weaponTargetsMax": 4,
     "irst": "",
-    "domain": "ground"
+    "domain": ""
   },
   {
     "id": "jp_type_87_track",
@@ -1401,7 +1401,7 @@
     "fsm": "lock,track",
     "weaponTargetsMax": "",
     "irst": 1,
-    "domain": "ground"
+    "domain": ""
   },
   {
     "id": "laserbeamridingsensor",
@@ -1413,7 +1413,7 @@
     "fsm": "",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "laserdesignatorsensor",
@@ -1425,7 +1425,7 @@
     "fsm": "",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "laserwarningsensor",
@@ -1437,7 +1437,7 @@
     "fsm": "",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "nw_xenta_m_5",
@@ -1449,7 +1449,7 @@
     "fsm": "tws",
     "weaponTargetsMax": 4,
     "irst": "",
-    "domain": "ground"
+    "domain": ""
   },
   {
     "id": "optic_tracker_tgp",
@@ -1461,7 +1461,7 @@
     "fsm": "lock,track",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "rooikat_aa_eot_track",
@@ -1473,7 +1473,7 @@
     "fsm": "lock,track",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "sa_d_36",
@@ -1485,7 +1485,7 @@
     "fsm": "",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "sam_tv_ir_track",
@@ -1497,7 +1497,7 @@
     "fsm": "lock,track",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "ground"
+    "domain": ""
   },
   {
     "id": "sam_tv_ir_track_rc",
@@ -1509,7 +1509,7 @@
     "fsm": "lock,track",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "ground"
+    "domain": ""
   },
   {
     "id": "slaved_radar_fsm",
@@ -1521,7 +1521,7 @@
     "fsm": "",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "su_1rl144_search",
@@ -1533,7 +1533,7 @@
     "fsm": "search",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "ground"
+    "domain": ""
   },
   {
     "id": "su_1rl144_track",
@@ -1545,7 +1545,7 @@
     "fsm": "lock,track",
     "weaponTargetsMax": "",
     "irst": 1,
-    "domain": "ground"
+    "domain": ""
   },
   {
     "id": "su_1rl33",
@@ -1554,10 +1554,10 @@
     "role": "search",
     "rangeMax": 20000,
     "type": "radar",
-    "fsm": "search,lock,track",
+    "fsm": "lock,search,track",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "ground"
+    "domain": ""
   },
   {
     "id": "su_1rl33_ai",
@@ -1566,10 +1566,10 @@
     "role": "search",
     "rangeMax": 20000,
     "type": "radar",
-    "fsm": "search,lock,track",
+    "fsm": "lock,search,track",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "ground"
+    "domain": ""
   },
   {
     "id": "su_1rl33rt",
@@ -1578,10 +1578,10 @@
     "role": "search",
     "rangeMax": 20000,
     "type": "radar",
-    "fsm": "search,lock,track",
+    "fsm": "lock,search,track",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "ground"
+    "domain": ""
   },
   {
     "id": "su_1rl34",
@@ -1590,10 +1590,10 @@
     "role": "search",
     "rangeMax": 25000,
     "type": "radar",
-    "fsm": "search,lock,track",
+    "fsm": "lock,search,track",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "ground"
+    "domain": ""
   },
   {
     "id": "su_1rs1",
@@ -1605,7 +1605,7 @@
     "fsm": "search",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "ground"
+    "domain": ""
   },
   {
     "id": "su_1rs1_4",
@@ -1617,7 +1617,7 @@
     "fsm": "search",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "ground"
+    "domain": ""
   },
   {
     "id": "su_1rs1_ai",
@@ -1629,7 +1629,7 @@
     "fsm": "search",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "ground"
+    "domain": ""
   },
   {
     "id": "su_1rs2",
@@ -1641,7 +1641,7 @@
     "fsm": "lock,radarTrack,track",
     "weaponTargetsMax": 4,
     "irst": 1,
-    "domain": "ground"
+    "domain": ""
   },
   {
     "id": "su_1rs2_3",
@@ -1653,7 +1653,7 @@
     "fsm": "lock,radarTrack,track",
     "weaponTargetsMax": 4,
     "irst": 1,
-    "domain": "ground"
+    "domain": ""
   },
   {
     "id": "su_1rs2_ai",
@@ -1665,7 +1665,7 @@
     "fsm": "lock,radarTrack,track",
     "weaponTargetsMax": 4,
     "irst": 1,
-    "domain": "ground"
+    "domain": ""
   },
   {
     "id": "su_55zh6",
@@ -1677,7 +1677,7 @@
     "fsm": "search",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "ground"
+    "domain": ""
   },
   {
     "id": "su_5n63s",
@@ -1686,10 +1686,10 @@
     "role": "track",
     "rangeMax": 180000,
     "type": "radar",
-    "fsm": "lock,track,illumination",
+    "fsm": "illumination,lock,track",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "ground"
+    "domain": ""
   },
   {
     "id": "su_5n64s",
@@ -1701,7 +1701,7 @@
     "fsm": "search",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "ground"
+    "domain": ""
   },
   {
     "id": "su_9k_330_search",
@@ -1713,7 +1713,7 @@
     "fsm": "search",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "ground"
+    "domain": ""
   },
   {
     "id": "su_9k_330_track",
@@ -1725,7 +1725,7 @@
     "fsm": "lock,radarTrack,track",
     "weaponTargetsMax": 2,
     "irst": 1,
-    "domain": "ground"
+    "domain": ""
   },
   {
     "id": "su_9k_33m3_search",
@@ -1737,7 +1737,7 @@
     "fsm": "search",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "ground"
+    "domain": ""
   },
   {
     "id": "su_9k_33m3_search_ai",
@@ -1749,7 +1749,7 @@
     "fsm": "search",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "ground"
+    "domain": ""
   },
   {
     "id": "su_9k_33m3_track",
@@ -1761,7 +1761,7 @@
     "fsm": "lock,track",
     "weaponTargetsMax": "",
     "irst": 1,
-    "domain": "ground"
+    "domain": ""
   },
   {
     "id": "su_9k_33m3_track_ai",
@@ -1773,7 +1773,7 @@
     "fsm": "lock,track",
     "weaponTargetsMax": "",
     "irst": 1,
-    "domain": "ground"
+    "domain": ""
   },
   {
     "id": "su_9s18",
@@ -1785,7 +1785,7 @@
     "fsm": "search",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "ground"
+    "domain": ""
   },
   {
     "id": "su_9s18m3",
@@ -1794,10 +1794,10 @@
     "role": "search",
     "rangeMax": 160000,
     "type": "radar",
-    "fsm": "tws,designateTarget",
+    "fsm": "designateTarget,tws",
     "weaponTargetsMax": 18,
     "irst": "",
-    "domain": "ground"
+    "domain": ""
   },
   {
     "id": "su_9s18m3_ai",
@@ -1806,10 +1806,10 @@
     "role": "search",
     "rangeMax": 60000,
     "type": "radar",
-    "fsm": "tws,designateTarget",
+    "fsm": "designateTarget,tws",
     "weaponTargetsMax": 18,
     "irst": "",
-    "domain": "ground"
+    "domain": ""
   },
   {
     "id": "su_9s35",
@@ -1818,10 +1818,10 @@
     "role": "track",
     "rangeMax": 60000,
     "type": "radar",
-    "fsm": "lock,track,illumination",
+    "fsm": "illumination,lock,track",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "ground"
+    "domain": ""
   },
   {
     "id": "su_9s86",
@@ -1833,7 +1833,7 @@
     "fsm": "lock,track",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "ground"
+    "domain": ""
   },
   {
     "id": "su_bmp_auto_target_tracker",
@@ -1845,7 +1845,7 @@
     "fsm": "lock,track",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "ground"
+    "domain": ""
   },
   {
     "id": "su_cd-30",
@@ -1854,10 +1854,10 @@
     "role": "search",
     "rangeMax": 20000,
     "type": "radar",
-    "fsm": "search,lock,track",
+    "fsm": "lock,search,track",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "su_gneys_5s",
@@ -1869,7 +1869,7 @@
     "fsm": "search",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "su_kh_27ps_viuga_esm",
@@ -1878,10 +1878,10 @@
     "role": "search",
     "rangeMax": 250000,
     "type": "radar",
-    "fsm": "tws,lock,track",
+    "fsm": "lock,track,tws",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "su_kh_31p_111_esm",
@@ -1890,10 +1890,10 @@
     "role": "search",
     "rangeMax": 250000,
     "type": "radar",
-    "fsm": "tws,lock,track",
+    "fsm": "lock,track,tws",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "su_kh_31p_112_esm",
@@ -1902,10 +1902,10 @@
     "role": "search",
     "rangeMax": 250000,
     "type": "radar",
-    "fsm": "tws,lock,track",
+    "fsm": "lock,track,tws",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "su_kh_31p_113_esm",
@@ -1914,10 +1914,10 @@
     "role": "search",
     "rangeMax": 250000,
     "type": "radar",
-    "fsm": "tws,lock,track",
+    "fsm": "lock,track,tws",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "su_kh_58_a_viuga_esm",
@@ -1926,10 +1926,10 @@
     "role": "search",
     "rangeMax": 250000,
     "type": "radar",
-    "fsm": "tws,lock,track",
+    "fsm": "lock,track,tws",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "su_kh_58_b_viuga_esm",
@@ -1938,10 +1938,10 @@
     "role": "search",
     "rangeMax": 250000,
     "type": "radar",
-    "fsm": "tws,lock,track",
+    "fsm": "lock,track,tws",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "su_kh_58_c_viuga_esm",
@@ -1950,10 +1950,10 @@
     "role": "search",
     "rangeMax": 250000,
     "type": "radar",
-    "fsm": "tws,lock,track",
+    "fsm": "lock,track,tws",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "su_kh_58_phantasmagoria_a_esm",
@@ -1962,10 +1962,10 @@
     "role": "search",
     "rangeMax": 250000,
     "type": "radar",
-    "fsm": "tws,lock,track",
+    "fsm": "lock,track,tws",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "su_kh_58_phantasmagoria_b_esm",
@@ -1974,10 +1974,10 @@
     "role": "search",
     "rangeMax": 250000,
     "type": "radar",
-    "fsm": "tws,lock,track",
+    "fsm": "lock,track,tws",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "su_kh_58_phantasmagoria_c_esm",
@@ -1986,10 +1986,10 @@
     "role": "search",
     "rangeMax": 250000,
     "type": "radar",
-    "fsm": "tws,lock,track",
+    "fsm": "lock,track,tws",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "su_khrizantema",
@@ -1998,10 +1998,10 @@
     "role": "search",
     "rangeMax": 12000,
     "type": "radar",
-    "fsm": "searchModes,lock,track,standbyOrSearch,search",
+    "fsm": "lock,search,searchModes,standbyOrSearch,track",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "ground"
+    "domain": ""
   },
   {
     "id": "su_kopio",
@@ -2010,10 +2010,10 @@
     "role": "search",
     "rangeMax": 40000,
     "type": "radar",
-    "fsm": "searchModes,search,bvrLock,track,illumination,acmLock,tws,gtmTrack,helmetDesignation,main",
+    "fsm": "acmLock,bvrLock,gtmTrack,helmetDesignation,illumination,main,search,searchModes,track,tws",
     "weaponTargetsMax": 2,
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "su_kopio_25",
@@ -2022,34 +2022,10 @@
     "role": "search",
     "rangeMax": 45000,
     "type": "radar",
-    "fsm": "searchModes,search,bvrLock,track,illumination,acmLock,tws,gtmTrack,main",
+    "fsm": "acmLock,bvrLock,gtmTrack,illumination,main,search,searchModes,track,tws",
     "weaponTargetsMax": 2,
     "irst": "",
-    "domain": "air"
-  },
-  {
-    "id": "su_l-082",
-    "display": "L-082",
-    "band": "",
-    "role": "",
-    "rangeMax": "",
-    "type": "mlws",
-    "fsm": "",
-    "weaponTargetsMax": "",
-    "irst": "",
-    "domain": "air"
-  },
-  {
-    "id": "su_l-140",
-    "display": "L-140",
-    "band": "",
-    "role": "",
-    "rangeMax": "",
-    "type": "lws",
-    "fsm": "",
-    "weaponTargetsMax": "",
-    "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "su_l_370_2",
@@ -2061,7 +2037,31 @@
     "fsm": "",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
+  },
+  {
+    "id": "su_l-082",
+    "display": "L-082",
+    "band": "",
+    "role": "",
+    "rangeMax": "",
+    "type": "mlws",
+    "fsm": "",
+    "weaponTargetsMax": "",
+    "irst": "",
+    "domain": ""
+  },
+  {
+    "id": "su_l-140",
+    "display": "L-140",
+    "band": "",
+    "role": "",
+    "rangeMax": "",
+    "type": "lws",
+    "fsm": "",
+    "weaponTargetsMax": "",
+    "irst": "",
+    "domain": ""
   },
   {
     "id": "su_mr_123",
@@ -2073,7 +2073,7 @@
     "fsm": "lock,track",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "su_n_001",
@@ -2082,10 +2082,10 @@
     "role": "search",
     "rangeMax": 50000,
     "type": "radar",
-    "fsm": "sensorTypes,search,illumination,lock,radarSearchModes,irstSearchModes,tws,radarBvrLock,radarBvrTrack,irstTrack,radarAcmHmdTrack,helmetDesignation,main",
+    "fsm": "helmetDesignation,illumination,irstSearchModes,irstTrack,lock,main,radarAcmHmdTrack,radarBvrLock,radarBvrTrack,radarSearchModes,search,sensorTypes,tws",
     "weaponTargetsMax": 1,
     "irst": 1,
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "su_n_001k",
@@ -2094,10 +2094,10 @@
     "role": "search",
     "rangeMax": 50000,
     "type": "radar",
-    "fsm": "sensorTypes,search,illumination,lock,radarSearchModes,irstSearchModes,tws,radarBvrLock,radarBvrTrack,irstTrack,radarAcmHmdTrack,helmetDesignation,main",
+    "fsm": "helmetDesignation,illumination,irstSearchModes,irstTrack,lock,main,radarAcmHmdTrack,radarBvrLock,radarBvrTrack,radarSearchModes,search,sensorTypes,tws",
     "weaponTargetsMax": 1,
     "irst": 1,
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "su_n_001ve",
@@ -2106,10 +2106,10 @@
     "role": "search",
     "rangeMax": 50000,
     "type": "radar",
-    "fsm": "sensorTypes,search,illumination,lock,radarSearchModes,irstSearchModes,tws,radarBvrLock,radarBvrTrack,irstTrack,radarAcmHmdTrack,helmetDesignation,gtmTrack,main",
+    "fsm": "gtmTrack,helmetDesignation,illumination,irstSearchModes,irstTrack,lock,main,radarAcmHmdTrack,radarBvrLock,radarBvrTrack,radarSearchModes,search,sensorTypes,tws",
     "weaponTargetsMax": 2,
     "irst": 1,
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "su_n_001vep",
@@ -2118,10 +2118,10 @@
     "role": "search",
     "rangeMax": 50000,
     "type": "radar",
-    "fsm": "sensorTypes,search,illumination,lock,radarSearchModes,irstSearchModes,tws,radarBvrLock,radarBvrTrack,irstTrack,radarAcmHmdTrack,helmetDesignation,gtmTrack,main",
+    "fsm": "gtmTrack,helmetDesignation,illumination,irstSearchModes,irstTrack,lock,main,radarAcmHmdTrack,radarBvrLock,radarBvrTrack,radarSearchModes,search,sensorTypes,tws",
     "weaponTargetsMax": 2,
     "irst": 1,
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "su_n_010",
@@ -2130,10 +2130,10 @@
     "role": "search",
     "rangeMax": 55000,
     "type": "radar",
-    "fsm": "sensorTypes,search,illumination,lock,radarSearchModes,irstSearchModes,tws,radarBvrLock,radarBvrTrack,irstTrack,radarAcmHmdTrack,helmetDesignation,main",
+    "fsm": "helmetDesignation,illumination,irstSearchModes,irstTrack,lock,main,radarAcmHmdTrack,radarBvrLock,radarBvrTrack,radarSearchModes,search,sensorTypes,tws",
     "weaponTargetsMax": 1,
     "irst": 1,
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "su_n_010m",
@@ -2142,10 +2142,10 @@
     "role": "search",
     "rangeMax": 55000,
     "type": "radar",
-    "fsm": "sensorTypes,search,illumination,lock,radarSearchModes,irstSearchModes,tws,radarBvrLock,radarBvrTrack,irstTrack,radarAcmHmdTrack,helmetDesignation,gtmTrack,main",
+    "fsm": "gtmTrack,helmetDesignation,illumination,irstSearchModes,irstTrack,lock,main,radarAcmHmdTrack,radarBvrLock,radarBvrTrack,radarSearchModes,search,sensorTypes,tws",
     "weaponTargetsMax": 4,
     "irst": 1,
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "su_n_011m",
@@ -2154,10 +2154,10 @@
     "role": "search",
     "rangeMax": 120000,
     "type": "radar",
-    "fsm": "sensorTypes,search,illumination,lock,radarSearchModes,irstSearchModes,tws,radarBvrLock,velocityLock,radarBvrTrack,irstTrack,radarAcmHmdTrack,helmetDesignation,track,gtmTrack,main",
+    "fsm": "gtmTrack,helmetDesignation,illumination,irstSearchModes,irstTrack,lock,main,radarAcmHmdTrack,radarBvrLock,radarBvrTrack,radarSearchModes,search,sensorTypes,track,tws,velocityLock",
     "weaponTargetsMax": 4,
     "irst": 1,
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "su_n_011r",
@@ -2166,10 +2166,10 @@
     "role": "search",
     "rangeMax": 120000,
     "type": "radar",
-    "fsm": "sensorTypes,search,illumination,lock,radarSearchModes,irstSearchModes,tws,radarBvrLock,velocityLock,radarBvrTrack,irstTrack,radarAcmHmdTrack,helmetDesignation,track,gtmTrack,main",
+    "fsm": "gtmTrack,helmetDesignation,illumination,irstSearchModes,irstTrack,lock,main,radarAcmHmdTrack,radarBvrLock,radarBvrTrack,radarSearchModes,search,sensorTypes,track,tws,velocityLock",
     "weaponTargetsMax": 8,
     "irst": 1,
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "su_n_019",
@@ -2178,10 +2178,10 @@
     "role": "search",
     "rangeMax": 50000,
     "type": "radar",
-    "fsm": "sensorTypes,search,illumination,lock,radarSearchModes,irstSearchModes,tws,radarBvrLock,radarBvrTrack,irstTrack,radarAcmHmdTrack,helmetDesignation,main",
+    "fsm": "helmetDesignation,illumination,irstSearchModes,irstTrack,lock,main,radarAcmHmdTrack,radarBvrLock,radarBvrTrack,radarSearchModes,search,sensorTypes,tws",
     "weaponTargetsMax": 1,
     "irst": 1,
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "su_n_019e",
@@ -2190,10 +2190,10 @@
     "role": "search",
     "rangeMax": 50000,
     "type": "radar",
-    "fsm": "sensorTypes,search,illumination,lock,radarSearchModes,irstSearchModes,tws,radarBvrLock,radarBvrTrack,irstTrack,radarAcmHmdTrack,helmetDesignation,main",
+    "fsm": "helmetDesignation,illumination,irstSearchModes,irstTrack,lock,main,radarAcmHmdTrack,radarBvrLock,radarBvrTrack,radarSearchModes,search,sensorTypes,tws",
     "weaponTargetsMax": 1,
     "irst": 1,
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "su_n_019me",
@@ -2202,10 +2202,10 @@
     "role": "search",
     "rangeMax": 50000,
     "type": "radar",
-    "fsm": "sensorTypes,search,illumination,lock,radarSearchModes,irstSearchModes,tws,radarBvrLock,radarBvrTrack,irstTrack,radarAcmHmdTrack,helmetDesignation,main",
+    "fsm": "helmetDesignation,illumination,irstSearchModes,irstTrack,lock,main,radarAcmHmdTrack,radarBvrLock,radarBvrTrack,radarSearchModes,search,sensorTypes,tws",
     "weaponTargetsMax": 2,
     "irst": 1,
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "su_n_025",
@@ -2217,7 +2217,7 @@
     "fsm": "mode,search",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "su_n_035e",
@@ -2226,10 +2226,10 @@
     "role": "search",
     "rangeMax": 300000,
     "type": "radar",
-    "fsm": "sensorTypes,search,illumination,lock,radarSearchModes,irstSearchModes,tws,radarBvrLock,velocityLock,radarBvrTrack,irstTrack,radarAcmHmdTrack,helmetDesignation,track,gtmTrack,main",
+    "fsm": "gtmTrack,helmetDesignation,illumination,irstSearchModes,irstTrack,lock,main,radarAcmHmdTrack,radarBvrLock,radarBvrTrack,radarSearchModes,search,sensorTypes,track,tws,velocityLock",
     "weaponTargetsMax": 8,
     "irst": 1,
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "su_orion",
@@ -2241,7 +2241,7 @@
     "fsm": "mode,search",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "su_orion_phantasmagoria",
@@ -2250,10 +2250,10 @@
     "role": "search",
     "rangeMax": 250000,
     "type": "radar",
-    "fsm": "tws,lock,track",
+    "fsm": "lock,track,tws",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "su_p_12ma",
@@ -2265,7 +2265,7 @@
     "fsm": "search",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "ground"
+    "domain": ""
   },
   {
     "id": "su_rn_01_arbalet",
@@ -2277,7 +2277,7 @@
     "fsm": "mode,search",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "su_rp-1_search",
@@ -2289,7 +2289,7 @@
     "fsm": "search",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "su_rp-1_track",
@@ -2301,7 +2301,7 @@
     "fsm": "lock,track",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "su_rp-5_search",
@@ -2313,7 +2313,7 @@
     "fsm": "search",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "su_rp-5_track",
@@ -2325,7 +2325,7 @@
     "fsm": "lock,track",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "su_sapphire_21",
@@ -2334,10 +2334,10 @@
     "role": "search",
     "rangeMax": 30000,
     "type": "radar",
-    "fsm": "search,lock,track",
+    "fsm": "lock,search,track",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "su_sapphire_23",
@@ -2346,10 +2346,10 @@
     "role": "search",
     "rangeMax": 100000,
     "type": "radar",
-    "fsm": "sensorTypes,search,lock,track,illumination,radarStandbySearchModes,scanZoneAzimuth,scanZoneElevation,main,radarTrackModes",
+    "fsm": "illumination,lock,main,radarStandbySearchModes,radarTrackModes,scanZoneAzimuth,scanZoneElevation,search,sensorTypes,track",
     "weaponTargetsMax": "",
     "irst": 1,
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "su_sapphire_23e",
@@ -2358,10 +2358,10 @@
     "role": "search",
     "rangeMax": 100000,
     "type": "radar",
-    "fsm": "sensorTypes,search,lock,track,illumination,radarStandbySearchModes,scanZoneAzimuth,scanZoneElevation,main,radarTrackModes",
+    "fsm": "illumination,lock,main,radarStandbySearchModes,radarTrackModes,scanZoneAzimuth,scanZoneElevation,search,sensorTypes,track",
     "weaponTargetsMax": "",
     "irst": 1,
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "su_sapphire_23ml",
@@ -2370,10 +2370,10 @@
     "role": "search",
     "rangeMax": 100000,
     "type": "radar",
-    "fsm": "sensorTypes,search,lock,track,illumination,radarStandbySearchModes,scanZoneAzimuth,scanZoneElevation,main,radarTrackModes",
+    "fsm": "illumination,lock,main,radarStandbySearchModes,radarTrackModes,scanZoneAzimuth,scanZoneElevation,search,sensorTypes,track",
     "weaponTargetsMax": "",
     "irst": 1,
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "su_sapphire_23mla",
@@ -2382,10 +2382,10 @@
     "role": "search",
     "rangeMax": 100000,
     "type": "radar",
-    "fsm": "sensorTypes,search,lock,track,illumination,radarStandbySearchModes,scanZoneAzimuth,scanZoneElevation,main,radarTrackModes",
+    "fsm": "illumination,lock,main,radarStandbySearchModes,radarTrackModes,scanZoneAzimuth,scanZoneElevation,search,sensorTypes,track",
     "weaponTargetsMax": "",
     "irst": 1,
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "su_sapphire_23mla_2",
@@ -2394,10 +2394,10 @@
     "role": "search",
     "rangeMax": 100000,
     "type": "radar",
-    "fsm": "sensorTypes,search,lock,track,illumination,radarStandbySearchModes,scanZoneAzimuth,scanZoneElevation,main,radarTrackModes",
+    "fsm": "illumination,lock,main,radarStandbySearchModes,radarTrackModes,scanZoneAzimuth,scanZoneElevation,search,sensorTypes,track",
     "weaponTargetsMax": "",
     "irst": 1,
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "su_sapphire_25",
@@ -2406,10 +2406,10 @@
     "role": "search",
     "rangeMax": 120000,
     "type": "radar",
-    "fsm": "sensorTypes,search,lock,track,illumination,radarStandbySearchModes,scanZoneAzimuth,scanZoneElevation,main,radarTrackModes",
+    "fsm": "illumination,lock,main,radarStandbySearchModes,radarTrackModes,scanZoneAzimuth,scanZoneElevation,search,sensorTypes,track",
     "weaponTargetsMax": "",
     "irst": 1,
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "su_satellite_m2",
@@ -2421,7 +2421,7 @@
     "fsm": "",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "su_snr_75",
@@ -2433,7 +2433,19 @@
     "fsm": "lock,track",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "ground"
+    "domain": ""
+  },
+  {
+    "id": "su_spo_150_esm",
+    "display": "SPO-150 ESM",
+    "band": 2,
+    "role": "search",
+    "rangeMax": 250000,
+    "type": "radar",
+    "fsm": "lock,track,tws",
+    "weaponTargetsMax": "",
+    "irst": "",
+    "domain": ""
   },
   {
     "id": "su_spo-10",
@@ -2445,7 +2457,7 @@
     "fsm": "",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "su_spo-15",
@@ -2457,91 +2469,7 @@
     "fsm": "",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
-  },
-  {
-    "id": "su_spo-150-14",
-    "display": "SPO-150-14",
-    "band": "",
-    "role": "",
-    "rangeMax": "",
-    "type": "rwr",
-    "fsm": "",
-    "weaponTargetsMax": "",
-    "irst": "",
-    "domain": "air"
-  },
-  {
-    "id": "su_spo-150-16m",
-    "display": "SPO-150-16M",
-    "band": "",
-    "role": "",
-    "rangeMax": "",
-    "type": "rwr",
-    "fsm": "",
-    "weaponTargetsMax": "",
-    "irst": "",
-    "domain": "air"
-  },
-  {
-    "id": "su_spo-150-28m",
-    "display": "SPO-150-28M",
-    "band": "",
-    "role": "",
-    "rangeMax": "",
-    "type": "rwr",
-    "fsm": "",
-    "weaponTargetsMax": "",
-    "irst": "",
-    "domain": "air"
-  },
-  {
-    "id": "su_spo-150-30",
-    "display": "SPO-150-30",
-    "band": "",
-    "role": "",
-    "rangeMax": "",
-    "type": "rwr",
-    "fsm": "",
-    "weaponTargetsMax": "",
-    "irst": "",
-    "domain": "air"
-  },
-  {
-    "id": "su_spo-150-30m",
-    "display": "SPO-150-30M",
-    "band": "",
-    "role": "",
-    "rangeMax": "",
-    "type": "rwr",
-    "fsm": "",
-    "weaponTargetsMax": "",
-    "irst": "",
-    "domain": "air"
-  },
-  {
-    "id": "su_spo-150-30m1",
-    "display": "SPO-150-30M.1",
-    "band": "",
-    "role": "",
-    "rangeMax": "",
-    "type": "rwr",
-    "fsm": "",
-    "weaponTargetsMax": "",
-    "irst": "",
-    "domain": "air"
-  },
-  {
-    "id": "su_spo-150-30sm",
-    "display": "SPO-150-30SM",
-    "band": "",
-    "role": "",
-    "rangeMax": "",
-    "type": "rwr",
-    "fsm": "",
-    "weaponTargetsMax": "",
-    "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "su_spo-150",
@@ -2553,7 +2481,91 @@
     "fsm": "",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
+  },
+  {
+    "id": "su_spo-150-14",
+    "display": "SPO-150-14",
+    "band": "",
+    "role": "",
+    "rangeMax": "",
+    "type": "rwr",
+    "fsm": "",
+    "weaponTargetsMax": "",
+    "irst": "",
+    "domain": ""
+  },
+  {
+    "id": "su_spo-150-16m",
+    "display": "SPO-150-16M",
+    "band": "",
+    "role": "",
+    "rangeMax": "",
+    "type": "rwr",
+    "fsm": "",
+    "weaponTargetsMax": "",
+    "irst": "",
+    "domain": ""
+  },
+  {
+    "id": "su_spo-150-28m",
+    "display": "SPO-150-28M",
+    "band": "",
+    "role": "",
+    "rangeMax": "",
+    "type": "rwr",
+    "fsm": "",
+    "weaponTargetsMax": "",
+    "irst": "",
+    "domain": ""
+  },
+  {
+    "id": "su_spo-150-30",
+    "display": "SPO-150-30",
+    "band": "",
+    "role": "",
+    "rangeMax": "",
+    "type": "rwr",
+    "fsm": "",
+    "weaponTargetsMax": "",
+    "irst": "",
+    "domain": ""
+  },
+  {
+    "id": "su_spo-150-30m",
+    "display": "SPO-150-30M",
+    "band": "",
+    "role": "",
+    "rangeMax": "",
+    "type": "rwr",
+    "fsm": "",
+    "weaponTargetsMax": "",
+    "irst": "",
+    "domain": ""
+  },
+  {
+    "id": "su_spo-150-30m1",
+    "display": "SPO-150-30M.1",
+    "band": "",
+    "role": "",
+    "rangeMax": "",
+    "type": "rwr",
+    "fsm": "",
+    "weaponTargetsMax": "",
+    "irst": "",
+    "domain": ""
+  },
+  {
+    "id": "su_spo-150-30sm",
+    "display": "SPO-150-30SM",
+    "band": "",
+    "role": "",
+    "rangeMax": "",
+    "type": "rwr",
+    "fsm": "",
+    "weaponTargetsMax": "",
+    "irst": "",
+    "domain": ""
   },
   {
     "id": "su_spo-15l",
@@ -2565,7 +2577,7 @@
     "fsm": "",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "su_spo-15le",
@@ -2577,7 +2589,7 @@
     "fsm": "",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "su_spo-15lm",
@@ -2589,7 +2601,7 @@
     "fsm": "",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "su_spo-15m",
@@ -2601,7 +2613,7 @@
     "fsm": "",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "su_spo-15s",
@@ -2613,7 +2625,7 @@
     "fsm": "",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "su_spo-2",
@@ -2625,19 +2637,7 @@
     "fsm": "",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
-  },
-  {
-    "id": "su_spo_150_esm",
-    "display": "SPO-150 ESM",
-    "band": 2,
-    "role": "search",
-    "rangeMax": 250000,
-    "type": "radar",
-    "fsm": "tws,lock,track",
-    "weaponTargetsMax": "",
-    "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "su_srd-1",
@@ -2649,7 +2649,7 @@
     "fsm": "lock,track",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "su_srd-5",
@@ -2661,7 +2661,7 @@
     "fsm": "lock,track",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "su_tarang",
@@ -2673,7 +2673,7 @@
     "fsm": "",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "su_thorium",
@@ -2685,7 +2685,7 @@
     "fsm": "search",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "su_tshu_1_11",
@@ -2697,7 +2697,7 @@
     "fsm": "",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "ground"
+    "domain": ""
   },
   {
     "id": "su_v_004",
@@ -2706,10 +2706,10 @@
     "role": "search",
     "rangeMax": 150000,
     "type": "radar",
-    "fsm": "searchModes,search,bvrLock,track,illumination,acmLock,tws,gtmTrack,main",
+    "fsm": "acmLock,bvrLock,gtmTrack,illumination,main,search,searchModes,track,tws",
     "weaponTargetsMax": 4,
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "su_viking",
@@ -2721,7 +2721,7 @@
     "fsm": "lock,radarTrack,track",
     "weaponTargetsMax": 6,
     "irst": 1,
-    "domain": "ground"
+    "domain": ""
   },
   {
     "id": "su_viking_ai",
@@ -2733,7 +2733,7 @@
     "fsm": "lock,radarTrack,track",
     "weaponTargetsMax": 6,
     "irst": 1,
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "su_vn_001",
@@ -2745,7 +2745,7 @@
     "fsm": "mode,search",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "su_wa316ld",
@@ -2757,7 +2757,7 @@
     "fsm": "search",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "ground"
+    "domain": ""
   },
   {
     "id": "su_wg_319",
@@ -2769,7 +2769,7 @@
     "fsm": "lock,track",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "ground"
+    "domain": ""
   },
   {
     "id": "sw_app_f9_5",
@@ -2781,7 +2781,7 @@
     "fsm": "",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "sw_asrad_search",
@@ -2793,7 +2793,7 @@
     "fsm": "search",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "ground"
+    "domain": ""
   },
   {
     "id": "sw_es_05",
@@ -2802,10 +2802,10 @@
     "role": "search",
     "rangeMax": 200000,
     "type": "radar",
-    "fsm": "sensorTypes,search,illumination,lock,radarSearchModes,irstSearchModes,tws,radarBvrLock,velocityLock,gtmTrack,radarBvrTrack,irstTrack,radarAcmHmdTrack,helmetDesignation,main",
+    "fsm": "gtmTrack,helmetDesignation,illumination,irstSearchModes,irstTrack,lock,main,radarAcmHmdTrack,radarBvrLock,radarBvrTrack,radarSearchModes,search,sensorTypes,tws,velocityLock",
     "weaponTargetsMax": 9,
     "irst": 1,
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "sw_giraffe_1x",
@@ -2817,7 +2817,7 @@
     "fsm": "tws",
     "weaponTargetsMax": 4,
     "irst": "",
-    "domain": "ground"
+    "domain": ""
   },
   {
     "id": "sw_giraffe_amb",
@@ -2829,7 +2829,7 @@
     "fsm": "tws",
     "weaponTargetsMax": 24,
     "irst": "",
-    "domain": "ground"
+    "domain": ""
   },
   {
     "id": "sw_giraffe_amb_ai",
@@ -2841,91 +2841,7 @@
     "fsm": "tws",
     "weaponTargetsMax": 24,
     "irst": "",
-    "domain": "ground"
-  },
-  {
-    "id": "sw_ps-011a_71h_ir",
-    "display": "PS-011A 71H IR",
-    "band": 8,
-    "role": "search",
-    "rangeMax": 90000,
-    "type": "radar",
-    "fsm": "search,lock,track",
-    "weaponTargetsMax": "",
-    "irst": 1,
-    "domain": "air"
-  },
-  {
-    "id": "sw_ps-03",
-    "display": "PS-03",
-    "band": 8,
-    "role": "search",
-    "rangeMax": 90000,
-    "type": "radar",
-    "fsm": "search,lock,track",
-    "weaponTargetsMax": "",
-    "irst": "",
-    "domain": "air"
-  },
-  {
-    "id": "sw_ps-371a",
-    "display": "PS-37",
-    "band": 8,
-    "role": "search",
-    "rangeMax": 150000,
-    "type": "radar",
-    "fsm": "searchModes,search,bvrLock,track,illumination,acmLock,tws,main",
-    "weaponTargetsMax": "",
-    "irst": "",
-    "domain": "air"
-  },
-  {
-    "id": "sw_ps-37a",
-    "display": "PS-37",
-    "band": 8,
-    "role": "search",
-    "rangeMax": 150000,
-    "type": "radar",
-    "fsm": "searchModes,search,bvrLock,track,illumination,acmLock,tws,main",
-    "weaponTargetsMax": "",
-    "irst": "",
-    "domain": "air"
-  },
-  {
-    "id": "sw_ps-42_search",
-    "display": "PS-42 TA",
-    "band": 8,
-    "role": "search",
-    "rangeMax": 90000,
-    "type": "radar",
-    "fsm": "search",
-    "weaponTargetsMax": "",
-    "irst": "",
-    "domain": "air"
-  },
-  {
-    "id": "sw_ps-42_track",
-    "display": "PS-42 TT",
-    "band": 8,
-    "role": "track",
-    "rangeMax": 5000,
-    "type": "radar",
-    "fsm": "lock,track",
-    "weaponTargetsMax": "",
-    "irst": "",
-    "domain": "air"
-  },
-  {
-    "id": "sw_ps-46a",
-    "display": "PS-37",
-    "band": 8,
-    "role": "search",
-    "rangeMax": 150000,
-    "type": "radar",
-    "fsm": "searchModes,search,bvrLock,track,illumination,acmLock,tws,main",
-    "weaponTargetsMax": 4,
-    "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "sw_ps_05a",
@@ -2934,10 +2850,10 @@
     "role": "search",
     "rangeMax": 150000,
     "type": "radar",
-    "fsm": "searchModes,search,bvrLock,velocityLock,track,illumination,acmLock,tws,helmetDesignation,main",
+    "fsm": "acmLock,bvrLock,helmetDesignation,illumination,main,search,searchModes,track,tws,velocityLock",
     "weaponTargetsMax": 4,
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "sw_ps_20",
@@ -2949,7 +2865,91 @@
     "fsm": "search",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
+  },
+  {
+    "id": "sw_ps-011a_71h_ir",
+    "display": "PS-011A 71H IR",
+    "band": 8,
+    "role": "search",
+    "rangeMax": 90000,
+    "type": "radar",
+    "fsm": "lock,search,track",
+    "weaponTargetsMax": "",
+    "irst": 1,
+    "domain": ""
+  },
+  {
+    "id": "sw_ps-03",
+    "display": "PS-03",
+    "band": 8,
+    "role": "search",
+    "rangeMax": 90000,
+    "type": "radar",
+    "fsm": "lock,search,track",
+    "weaponTargetsMax": "",
+    "irst": "",
+    "domain": ""
+  },
+  {
+    "id": "sw_ps-371a",
+    "display": "PS-37",
+    "band": 8,
+    "role": "search",
+    "rangeMax": 150000,
+    "type": "radar",
+    "fsm": "acmLock,bvrLock,illumination,main,search,searchModes,track,tws",
+    "weaponTargetsMax": "",
+    "irst": "",
+    "domain": ""
+  },
+  {
+    "id": "sw_ps-37a",
+    "display": "PS-37",
+    "band": 8,
+    "role": "search",
+    "rangeMax": 150000,
+    "type": "radar",
+    "fsm": "acmLock,bvrLock,illumination,main,search,searchModes,track,tws",
+    "weaponTargetsMax": "",
+    "irst": "",
+    "domain": ""
+  },
+  {
+    "id": "sw_ps-42_search",
+    "display": "PS-42 TA",
+    "band": 8,
+    "role": "search",
+    "rangeMax": 90000,
+    "type": "radar",
+    "fsm": "search",
+    "weaponTargetsMax": "",
+    "irst": "",
+    "domain": ""
+  },
+  {
+    "id": "sw_ps-42_track",
+    "display": "PS-42 TT",
+    "band": 8,
+    "role": "track",
+    "rangeMax": 5000,
+    "type": "radar",
+    "fsm": "lock,track",
+    "weaponTargetsMax": "",
+    "irst": "",
+    "domain": ""
+  },
+  {
+    "id": "sw_ps-46a",
+    "display": "PS-37",
+    "band": 8,
+    "role": "search",
+    "rangeMax": 150000,
+    "type": "radar",
+    "fsm": "acmLock,bvrLock,illumination,main,search,searchModes,track,tws",
+    "weaponTargetsMax": 4,
+    "irst": "",
+    "domain": ""
   },
   {
     "id": "sw_triad_search",
@@ -2961,7 +2961,7 @@
     "fsm": "search",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "ground"
+    "domain": ""
   },
   {
     "id": "sw_utaas_track",
@@ -2973,7 +2973,7 @@
     "fsm": "lock,track",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "ground"
+    "domain": ""
   },
   {
     "id": "swd_app_27",
@@ -2985,7 +2985,7 @@
     "fsm": "",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "swd_app_73",
@@ -2997,7 +2997,7 @@
     "fsm": "",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "swd_ar830",
@@ -3009,7 +3009,7 @@
     "fsm": "",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "swd_bow_21",
@@ -3021,7 +3021,7 @@
     "fsm": "",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "tv_tracker",
@@ -3033,7 +3033,7 @@
     "fsm": "lock,track",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "tv_tracker_tgp",
@@ -3045,7 +3045,7 @@
     "fsm": "lock,track",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "tv_tracker_tgp_mercury",
@@ -3057,7 +3057,7 @@
     "fsm": "lock,track",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "tv_tracker_tgp_platan",
@@ -3069,7 +3069,7 @@
     "fsm": "lock,track",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "uk_ai",
@@ -3078,22 +3078,10 @@
     "role": "search",
     "rangeMax": 100000,
     "type": "radar",
-    "fsm": "search,lock,track",
+    "fsm": "lock,search,track",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
-  },
-  {
-    "id": "uk_ai_mk18",
-    "display": "AI Mk.18",
-    "band": 8,
-    "role": "search",
-    "rangeMax": 100000,
-    "type": "radar",
-    "fsm": "search,lock,track",
-    "weaponTargetsMax": "",
-    "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "uk_ai_mk_4",
@@ -3105,7 +3093,19 @@
     "fsm": "search",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
+  },
+  {
+    "id": "uk_ai_mk18",
+    "display": "AI Mk.18",
+    "band": 8,
+    "role": "search",
+    "rangeMax": 100000,
+    "type": "radar",
+    "fsm": "lock,search,track",
+    "weaponTargetsMax": "",
+    "irst": "",
+    "domain": ""
   },
   {
     "id": "uk_alarm_esm",
@@ -3114,10 +3114,10 @@
     "role": "search",
     "rangeMax": 250000,
     "type": "radar",
-    "fsm": "tws,lock,track",
+    "fsm": "lock,track,tws",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "uk_ari_18223",
@@ -3129,7 +3129,7 @@
     "fsm": "",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "uk_ari_18228",
@@ -3141,7 +3141,7 @@
     "fsm": "",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "uk_ari_18228_10",
@@ -3153,7 +3153,7 @@
     "fsm": "",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "uk_ari_18228_19",
@@ -3165,7 +3165,7 @@
     "fsm": "",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "uk_ari_18241_1",
@@ -3177,7 +3177,7 @@
     "fsm": "",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "uk_ari_23274",
@@ -3189,7 +3189,7 @@
     "fsm": "lock,track",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "uk_ari_23274_ids",
@@ -3198,10 +3198,10 @@
     "role": "search",
     "rangeMax": 150000,
     "type": "radar",
-    "fsm": "search,lock,track",
+    "fsm": "lock,search,track",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "uk_ari_23284",
@@ -3213,7 +3213,7 @@
     "fsm": "",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "uk_ari_23333",
@@ -3225,7 +3225,7 @@
     "fsm": "",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "uk_ari_5390",
@@ -3234,10 +3234,10 @@
     "role": "search",
     "rangeMax": 330000,
     "type": "radar",
-    "fsm": "search,lock,track",
+    "fsm": "lock,search,track",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "uk_ari_5820",
@@ -3249,7 +3249,7 @@
     "fsm": "lock,track",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "uk_ari_5857",
@@ -3261,7 +3261,7 @@
     "fsm": "lock,track",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "uk_captor_ecrs_1_pirate",
@@ -3270,10 +3270,10 @@
     "role": "search",
     "rangeMax": 200000,
     "type": "radar",
-    "fsm": "sensorTypes,search,illumination,lock,radarSearchModes,irstSearchModes,tws,radarBvrLock,velocityLock,gtmTrack,radarBvrTrack,irstTrack,radarAcmHmdTrack,helmetDesignation,main",
+    "fsm": "gtmTrack,helmetDesignation,illumination,irstSearchModes,irstTrack,lock,main,radarAcmHmdTrack,radarBvrLock,radarBvrTrack,radarSearchModes,search,sensorTypes,tws,velocityLock",
     "weaponTargetsMax": 8,
     "irst": 1,
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "uk_captor_ecrs_2_pirate",
@@ -3282,10 +3282,10 @@
     "role": "search",
     "rangeMax": 200000,
     "type": "radar",
-    "fsm": "sensorTypes,search,illumination,lock,radarSearchModes,irstSearchModes,tws,radarBvrLock,velocityLock,gtmTrack,radarBvrTrack,irstTrack,radarAcmHmdTrack,helmetDesignation,main",
+    "fsm": "gtmTrack,helmetDesignation,illumination,irstSearchModes,irstTrack,lock,main,radarAcmHmdTrack,radarBvrLock,radarBvrTrack,radarSearchModes,search,sensorTypes,tws,velocityLock",
     "weaponTargetsMax": 8,
     "irst": 1,
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "uk_captor_m",
@@ -3294,10 +3294,10 @@
     "role": "search",
     "rangeMax": 150000,
     "type": "radar",
-    "fsm": "searchModes,search,bvrLock,velocityLock,track,illumination,acmLock,tws,gtmTrack,helmetDesignation,main",
+    "fsm": "acmLock,bvrLock,gtmTrack,helmetDesignation,illumination,main,search,searchModes,track,tws,velocityLock",
     "weaponTargetsMax": 6,
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "uk_captor_m_pirate",
@@ -3306,10 +3306,10 @@
     "role": "search",
     "rangeMax": 150000,
     "type": "radar",
-    "fsm": "sensorTypes,search,illumination,lock,radarSearchModes,irstSearchModes,tws,radarBvrLock,velocityLock,gtmTrack,radarBvrTrack,irstTrack,radarAcmHmdTrack,helmetDesignation,main",
+    "fsm": "gtmTrack,helmetDesignation,illumination,irstSearchModes,irstTrack,lock,main,radarAcmHmdTrack,radarBvrLock,radarBvrTrack,radarSearchModes,search,sensorTypes,tws,velocityLock",
     "weaponTargetsMax": 6,
     "irst": 1,
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "uk_esd_ra_20_s_search",
@@ -3321,7 +3321,7 @@
     "fsm": "search",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "ground"
+    "domain": ""
   },
   {
     "id": "uk_ferranti_blue_fox",
@@ -3330,10 +3330,10 @@
     "role": "search",
     "rangeMax": 75000,
     "type": "radar",
-    "fsm": "search,lock,track",
+    "fsm": "lock,search,track",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "uk_ferranti_blue_vixen",
@@ -3342,10 +3342,10 @@
     "role": "search",
     "rangeMax": 150000,
     "type": "radar",
-    "fsm": "searchModes,search,bvrLock,velocityLock,track,illumination,acmLock,tws,main",
+    "fsm": "acmLock,bvrLock,illumination,main,search,searchModes,track,tws,velocityLock",
     "weaponTargetsMax": 4,
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "uk_marconi_ai_mk24_stage_2g",
@@ -3354,10 +3354,10 @@
     "role": "search",
     "rangeMax": 150000,
     "type": "radar",
-    "fsm": "searchModes,search,bvrLock,velocityLock,track,illumination,acmLock,tws,main,acmLockModes",
+    "fsm": "acmLock,acmLockModes,bvrLock,illumination,main,search,searchModes,track,tws,velocityLock",
     "weaponTargetsMax": 2,
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "uk_marconi_ai_mk24_stage_3g",
@@ -3366,10 +3366,10 @@
     "role": "search",
     "rangeMax": 150000,
     "type": "radar",
-    "fsm": "searchModes,search,bvrLock,velocityLock,track,illumination,acmLock,tws,main,acmLockModes",
+    "fsm": "acmLock,acmLockModes,bvrLock,illumination,main,search,searchModes,track,tws,velocityLock",
     "weaponTargetsMax": 4,
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "uk_marconi_ai_mk24w",
@@ -3378,10 +3378,10 @@
     "role": "search",
     "rangeMax": 150000,
     "type": "radar",
-    "fsm": "searchModes,search,bvrLock,velocityLock,track,illumination,acmLock,tws,main,acmLockModes",
+    "fsm": "acmLock,acmLockModes,bvrLock,illumination,main,search,searchModes,track,tws,velocityLock",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "uk_marconi_ai_mk24z",
@@ -3390,10 +3390,10 @@
     "role": "search",
     "rangeMax": 150000,
     "type": "radar",
-    "fsm": "searchModes,search,bvrLock,velocityLock,track,illumination,acmLock,tws,main,acmLockModes",
+    "fsm": "acmLock,acmLockModes,bvrLock,illumination,main,search,searchModes,track,tws,velocityLock",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "uk_marconi_s_400",
@@ -3402,10 +3402,10 @@
     "role": "search",
     "rangeMax": 12000,
     "type": "radar",
-    "fsm": "search,lock,track",
+    "fsm": "lock,search,track",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "ground"
+    "domain": ""
   },
   {
     "id": "uk_marconi_type_226",
@@ -3417,7 +3417,7 @@
     "fsm": "lock,track",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "uk_praetorian_lws",
@@ -3429,7 +3429,7 @@
     "fsm": "",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "uk_praetorian_maw",
@@ -3441,7 +3441,7 @@
     "fsm": "",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "uk_praetorian_mlws",
@@ -3453,7 +3453,7 @@
     "fsm": "",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "uk_praetorian_rwr",
@@ -3465,7 +3465,7 @@
     "fsm": "",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "uk_pvs2000_maw",
@@ -3477,7 +3477,7 @@
     "fsm": "",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "uk_rapier_fr",
@@ -3489,7 +3489,7 @@
     "fsm": "lock,track",
     "weaponTargetsMax": "",
     "irst": 1,
-    "domain": "ground"
+    "domain": ""
   },
   {
     "id": "uk_rapier_sr",
@@ -3501,7 +3501,7 @@
     "fsm": "search",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "ground"
+    "domain": ""
   },
   {
     "id": "uk_rooikat_za_35_search_radar",
@@ -3513,7 +3513,7 @@
     "fsm": "search",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "ground"
+    "domain": ""
   },
   {
     "id": "uk_s1223",
@@ -3525,7 +3525,7 @@
     "fsm": "",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "uk_sky_guardian_200",
@@ -3537,7 +3537,7 @@
     "fsm": "",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "uk_sky_guardian_200d",
@@ -3549,7 +3549,7 @@
     "fsm": "",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "uk_sky_guardian_200d_apr_48",
@@ -3561,7 +3561,7 @@
     "fsm": "",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "uk_thales_adad_search",
@@ -3573,7 +3573,7 @@
     "fsm": "search",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "ground"
+    "domain": ""
   },
   {
     "id": "uk_thales_adad_track",
@@ -3585,7 +3585,7 @@
     "fsm": "lock,track",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "ground"
+    "domain": ""
   },
   {
     "id": "uk_type_a14d",
@@ -3594,10 +3594,10 @@
     "role": "search",
     "rangeMax": 15000,
     "type": "radar",
-    "fsm": "searchModes,lock,track,standbyOrSearch,search",
+    "fsm": "lock,search,searchModes,standbyOrSearch,track",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "ground"
+    "domain": ""
   },
   {
     "id": "uk_vinten",
@@ -3609,7 +3609,7 @@
     "fsm": "",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "us_2caws",
@@ -3621,7 +3621,7 @@
     "fsm": "",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "us_adats_search",
@@ -3633,7 +3633,7 @@
     "fsm": "search",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "ground"
+    "domain": ""
   },
   {
     "id": "us_adats_track",
@@ -3645,7 +3645,7 @@
     "fsm": "lock,track",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "ground"
+    "domain": ""
   },
   {
     "id": "us_altas_2q",
@@ -3657,7 +3657,7 @@
     "fsm": "",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "us_an_aar_32",
@@ -3669,7 +3669,7 @@
     "fsm": "",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "us_an_aar_47",
@@ -3681,7 +3681,7 @@
     "fsm": "",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "us_an_aar_47a_v2",
@@ -3693,7 +3693,7 @@
     "fsm": "",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "us_an_aar_47a_v2_lws",
@@ -3705,7 +3705,7 @@
     "fsm": "",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "us_an_aar_54v",
@@ -3717,7 +3717,7 @@
     "fsm": "",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "us_an_aar_57",
@@ -3729,7 +3729,7 @@
     "fsm": "",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "us_an_aar_57_maw_300",
@@ -3741,7 +3741,7 @@
     "fsm": "",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "us_an_aar_57_terma",
@@ -3753,7 +3753,7 @@
     "fsm": "",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "us_an_aar_60",
@@ -3765,7 +3765,7 @@
     "fsm": "",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "us_an_alq_73",
@@ -3777,7 +3777,7 @@
     "fsm": "",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "us_an_alr_2002_mlws",
@@ -3789,7 +3789,7 @@
     "fsm": "",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "us_an_alr_2002_rwr",
@@ -3801,7 +3801,7 @@
     "fsm": "",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "us_an_alr_400",
@@ -3813,7 +3813,7 @@
     "fsm": "",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "us_an_alr_45",
@@ -3825,7 +3825,7 @@
     "fsm": "",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "us_an_alr_45f_v",
@@ -3837,7 +3837,7 @@
     "fsm": "",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "us_an_alr_45v",
@@ -3849,7 +3849,7 @@
     "fsm": "",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "us_an_alr_46",
@@ -3861,7 +3861,7 @@
     "fsm": "",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "us_an_alr_46_v",
@@ -3873,7 +3873,7 @@
     "fsm": "",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "us_an_alr_46_v2",
@@ -3885,7 +3885,7 @@
     "fsm": "",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "us_an_alr_46_v3",
@@ -3897,7 +3897,7 @@
     "fsm": "",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "us_an_alr_46_v3_f_5th",
@@ -3909,7 +3909,7 @@
     "fsm": "",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "us_an_alr_56a",
@@ -3921,7 +3921,7 @@
     "fsm": "",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "us_an_alr_56c",
@@ -3933,7 +3933,7 @@
     "fsm": "",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "us_an_alr_56m",
@@ -3945,7 +3945,7 @@
     "fsm": "",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "us_an_alr_66",
@@ -3957,7 +3957,7 @@
     "fsm": "",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "us_an_alr_67",
@@ -3969,7 +3969,7 @@
     "fsm": "",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "us_an_alr_67_v_3",
@@ -3981,7 +3981,7 @@
     "fsm": "",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "us_an_alr_68_v",
@@ -3993,7 +3993,7 @@
     "fsm": "",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "us_an_alr_68_v_3",
@@ -4005,7 +4005,7 @@
     "fsm": "",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "us_an_alr_69",
@@ -4017,7 +4017,7 @@
     "fsm": "",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "us_an_alr_69a_v",
@@ -4029,7 +4029,7 @@
     "fsm": "",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "us_an_alr_87",
@@ -4041,7 +4041,7 @@
     "fsm": "",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "us_an_apg_26",
@@ -4053,7 +4053,7 @@
     "fsm": "lock,track",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "us_an_apg_30",
@@ -4065,7 +4065,7 @@
     "fsm": "lock,track",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "us_an_apg_30a",
@@ -4077,7 +4077,7 @@
     "fsm": "lock,track",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "us_an_apg_33",
@@ -4089,7 +4089,7 @@
     "fsm": "lock,track",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "us_an_apg_37",
@@ -4098,10 +4098,10 @@
     "role": "search",
     "rangeMax": 56000,
     "type": "radar",
-    "fsm": "search,lock,track",
+    "fsm": "lock,search,track",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "us_an_apg_501",
@@ -4113,7 +4113,7 @@
     "fsm": "lock,track",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "us_an_apg_59",
@@ -4122,10 +4122,10 @@
     "role": "search",
     "rangeMax": 150000,
     "type": "radar",
-    "fsm": "searchModes,search,bvrLock,velocityLock,track,illumination,acmLock,main,acmLockModes",
+    "fsm": "acmLock,acmLockModes,bvrLock,illumination,main,search,searchModes,track,velocityLock",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "us_an_apg_59_f_4j",
@@ -4134,10 +4134,10 @@
     "role": "search",
     "rangeMax": 150000,
     "type": "radar",
-    "fsm": "searchModes,search,bvrLock,velocityLock,track,illumination,acmLock,main,helmetDesignation,acmLockModes",
+    "fsm": "acmLock,acmLockModes,bvrLock,helmetDesignation,illumination,main,search,searchModes,track,velocityLock",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "us_an_apg_59u",
@@ -4146,10 +4146,10 @@
     "role": "search",
     "rangeMax": 150000,
     "type": "radar",
-    "fsm": "searchModes,search,bvrLock,velocityLock,track,illumination,acmLock,main,acmLockModes",
+    "fsm": "acmLock,acmLockModes,bvrLock,illumination,main,search,searchModes,track,velocityLock",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "us_an_apg_60",
@@ -4158,10 +4158,10 @@
     "role": "search",
     "rangeMax": 150000,
     "type": "radar",
-    "fsm": "searchModes,search,bvrLock,velocityLock,track,illumination,acmLock,main,acmLockModes",
+    "fsm": "acmLock,acmLockModes,bvrLock,illumination,main,search,searchModes,track,velocityLock",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "us_an_apg_61",
@@ -4170,10 +4170,10 @@
     "role": "search",
     "rangeMax": 150000,
     "type": "radar",
-    "fsm": "searchModes,search,bvrLock,velocityLock,track,illumination,acmLock,main,acmLockModes",
+    "fsm": "acmLock,acmLockModes,bvrLock,illumination,main,search,searchModes,track,velocityLock",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "us_an_apg_63",
@@ -4182,10 +4182,10 @@
     "role": "search",
     "rangeMax": 80000,
     "type": "radar",
-    "fsm": "searchModes,search,bvrLock,velocityLock,track,illumination,acmLock,main",
+    "fsm": "acmLock,bvrLock,illumination,main,search,searchModes,track,velocityLock",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "us_an_apg_63_baz",
@@ -4194,10 +4194,10 @@
     "role": "search",
     "rangeMax": 120000,
     "type": "radar",
-    "fsm": "searchModes,search,bvrLock,velocityLock,track,illumination,acmLock,tws,helmetDesignation,main",
+    "fsm": "acmLock,bvrLock,helmetDesignation,illumination,main,search,searchModes,track,tws,velocityLock",
     "weaponTargetsMax": 8,
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "us_an_apg_63_psp",
@@ -4206,10 +4206,10 @@
     "role": "search",
     "rangeMax": 120000,
     "type": "radar",
-    "fsm": "searchModes,search,bvrLock,velocityLock,trackRamSwitch,acmLock,main,track,illumination,ram",
+    "fsm": "acmLock,bvrLock,illumination,main,ram,search,searchModes,track,trackRamSwitch,velocityLock",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "us_an_apg_63_v_1",
@@ -4218,10 +4218,10 @@
     "role": "search",
     "rangeMax": 120000,
     "type": "radar",
-    "fsm": "searchModes,search,bvrLock,velocityLock,track,illumination,acmLock,tws,helmetDesignation,main",
+    "fsm": "acmLock,bvrLock,helmetDesignation,illumination,main,search,searchModes,track,tws,velocityLock",
     "weaponTargetsMax": 8,
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "us_an_apg_63_v_3",
@@ -4230,10 +4230,10 @@
     "role": "search",
     "rangeMax": 150000,
     "type": "radar",
-    "fsm": "searchModes,search,bvrLock,velocityLock,track,illumination,acmLock,tws,gtmTrack,helmetDesignation,main",
+    "fsm": "acmLock,bvrLock,gtmTrack,helmetDesignation,illumination,main,search,searchModes,track,tws,velocityLock",
     "weaponTargetsMax": 8,
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "us_an_apg_65",
@@ -4242,10 +4242,10 @@
     "role": "search",
     "rangeMax": 100000,
     "type": "radar",
-    "fsm": "searchModes,search,bvrLock,velocityLock,track,illumination,acmLock,tws,gtmTrack,main",
+    "fsm": "acmLock,bvrLock,gtmTrack,illumination,main,search,searchModes,track,tws,velocityLock",
     "weaponTargetsMax": 4,
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "us_an_apg_65gy",
@@ -4254,10 +4254,10 @@
     "role": "search",
     "rangeMax": 100000,
     "type": "radar",
-    "fsm": "searchModes,search,bvrLock,velocityLock,track,illumination,acmLock,tws,main",
+    "fsm": "acmLock,bvrLock,illumination,main,search,searchModes,track,tws,velocityLock",
     "weaponTargetsMax": 4,
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "us_an_apg_65q",
@@ -4266,10 +4266,10 @@
     "role": "search",
     "rangeMax": 100000,
     "type": "radar",
-    "fsm": "searchModes,search,bvrLock,velocityLock,track,illumination,acmLock,tws,main",
+    "fsm": "acmLock,bvrLock,illumination,main,search,searchModes,track,tws,velocityLock",
     "weaponTargetsMax": 4,
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "us_an_apg_66",
@@ -4278,10 +4278,10 @@
     "role": "search",
     "rangeMax": 100000,
     "type": "radar",
-    "fsm": "searchModes,search,bvrLock,track,acmLock,main",
+    "fsm": "acmLock,bvrLock,main,search,searchModes,track",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "us_an_apg_66_m_247",
@@ -4293,7 +4293,7 @@
     "fsm": "search",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "ground"
+    "domain": ""
   },
   {
     "id": "us_an_apg_66_v_1",
@@ -4302,10 +4302,10 @@
     "role": "search",
     "rangeMax": 100000,
     "type": "radar",
-    "fsm": "searchModes,search,bvrLock,track,illumination,acmLock,main",
+    "fsm": "acmLock,bvrLock,illumination,main,search,searchModes,track",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "us_an_apg_66_v_2",
@@ -4314,10 +4314,10 @@
     "role": "search",
     "rangeMax": 150000,
     "type": "radar",
-    "fsm": "searchModes,search,bvrLock,track,illumination,acmLock,tws,gtmTrack,main",
+    "fsm": "acmLock,bvrLock,gtmTrack,illumination,main,search,searchModes,track,tws",
     "weaponTargetsMax": 6,
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "us_an_apg_66_v_2_hms",
@@ -4326,10 +4326,10 @@
     "role": "search",
     "rangeMax": 150000,
     "type": "radar",
-    "fsm": "searchModes,search,bvrLock,track,illumination,acmLock,tws,gtmTrack,helmetDesignation,main",
+    "fsm": "acmLock,bvrLock,gtmTrack,helmetDesignation,illumination,main,search,searchModes,track,tws",
     "weaponTargetsMax": 6,
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "us_an_apg_66_v_3",
@@ -4338,10 +4338,10 @@
     "role": "search",
     "rangeMax": 150000,
     "type": "radar",
-    "fsm": "searchModes,search,bvrLock,track,illumination,acmLock,tws,gtmTrack,main",
+    "fsm": "acmLock,bvrLock,gtmTrack,illumination,main,search,searchModes,track,tws",
     "weaponTargetsMax": 6,
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "us_an_apg_66h",
@@ -4350,10 +4350,10 @@
     "role": "search",
     "rangeMax": 100000,
     "type": "radar",
-    "fsm": "searchModes,search,bvrLock,track,illumination,acmLock,gtmTrack,main",
+    "fsm": "acmLock,bvrLock,gtmTrack,illumination,main,search,searchModes,track",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "us_an_apg_66s",
@@ -4362,10 +4362,10 @@
     "role": "search",
     "rangeMax": 150000,
     "type": "radar",
-    "fsm": "searchModes,search,bvrLock,track,illumination,acmLock,tws,main",
+    "fsm": "acmLock,bvrLock,illumination,main,search,searchModes,track,tws",
     "weaponTargetsMax": 6,
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "us_an_apg_67",
@@ -4374,10 +4374,10 @@
     "role": "search",
     "rangeMax": 150000,
     "type": "radar",
-    "fsm": "searchModes,search,bvrLock,velocityLock,track,illumination,acmLock,tws,gtmTrack,main",
+    "fsm": "acmLock,bvrLock,gtmTrack,illumination,main,search,searchModes,track,tws,velocityLock",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "us_an_apg_68",
@@ -4386,10 +4386,10 @@
     "role": "search",
     "rangeMax": 150000,
     "type": "radar",
-    "fsm": "searchModes,search,bvrLock,track,illumination,acmLock,tws,main",
+    "fsm": "acmLock,bvrLock,illumination,main,search,searchModes,track,tws",
     "weaponTargetsMax": 6,
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "us_an_apg_68_v_5",
@@ -4398,10 +4398,10 @@
     "role": "search",
     "rangeMax": 150000,
     "type": "radar",
-    "fsm": "searchModes,search,bvrLock,velocityLock,track,illumination,acmLock,tws,gtmTrack,helmetDesignation,main",
+    "fsm": "acmLock,bvrLock,gtmTrack,helmetDesignation,illumination,main,search,searchModes,track,tws,velocityLock",
     "weaponTargetsMax": 6,
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "us_an_apg_68_v_7",
@@ -4410,10 +4410,10 @@
     "role": "search",
     "rangeMax": 150000,
     "type": "radar",
-    "fsm": "searchModes,search,bvrLock,velocityLock,track,illumination,acmLock,tws,gtmTrack,helmetDesignation,main",
+    "fsm": "acmLock,bvrLock,gtmTrack,helmetDesignation,illumination,main,search,searchModes,track,tws,velocityLock",
     "weaponTargetsMax": 6,
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "us_an_apg_68_v_9",
@@ -4422,10 +4422,10 @@
     "role": "search",
     "rangeMax": 150000,
     "type": "radar",
-    "fsm": "searchModes,search,bvrLock,velocityLock,track,illumination,acmLock,tws,gtmTrack,helmetDesignation,main",
+    "fsm": "acmLock,bvrLock,gtmTrack,helmetDesignation,illumination,main,search,searchModes,track,tws,velocityLock",
     "weaponTargetsMax": 6,
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "us_an_apg_69",
@@ -4434,10 +4434,10 @@
     "role": "search",
     "rangeMax": 150000,
     "type": "radar",
-    "fsm": "searchModes,search,bvrLock,velocityLock,track,illumination,acmLock,tws,gtmTrack,main",
+    "fsm": "acmLock,bvrLock,gtmTrack,illumination,main,search,searchModes,track,tws,velocityLock",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "us_an_apg_70",
@@ -4446,10 +4446,10 @@
     "role": "search",
     "rangeMax": 120000,
     "type": "radar",
-    "fsm": "searchModes,search,bvrLock,velocityLock,track,illumination,acmLock,tws,gtmTrack,helmetDesignation,main",
+    "fsm": "acmLock,bvrLock,gtmTrack,helmetDesignation,illumination,main,search,searchModes,track,tws,velocityLock",
     "weaponTargetsMax": 8,
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "us_an_apg_70i",
@@ -4458,10 +4458,10 @@
     "role": "search",
     "rangeMax": 120000,
     "type": "radar",
-    "fsm": "searchModes,search,bvrLock,velocityLock,track,illumination,acmLock,tws,gtmTrack,helmetDesignation,main",
+    "fsm": "acmLock,bvrLock,gtmTrack,helmetDesignation,illumination,main,search,searchModes,track,tws,velocityLock",
     "weaponTargetsMax": 8,
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "us_an_apg_71",
@@ -4470,10 +4470,10 @@
     "role": "search",
     "rangeMax": 150000,
     "type": "radar",
-    "fsm": "sensorTypes,search,illumination,lock,radarSearchModes,irstSearchModes,tws,radarBvrLock,velocityLock,gtmTrack,radarBvrTrack,irstTrack,radarAcmTrack,main",
+    "fsm": "gtmTrack,illumination,irstSearchModes,irstTrack,lock,main,radarAcmTrack,radarBvrLock,radarBvrTrack,radarSearchModes,search,sensorTypes,tws,velocityLock",
     "weaponTargetsMax": 6,
     "irst": 1,
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "us_an_apg_73",
@@ -4482,10 +4482,10 @@
     "role": "search",
     "rangeMax": 120000,
     "type": "radar",
-    "fsm": "searchModes,search,bvrLock,velocityLock,track,illumination,acmLock,tws,gtmTrack,main",
+    "fsm": "acmLock,bvrLock,gtmTrack,illumination,main,search,searchModes,track,tws,velocityLock",
     "weaponTargetsMax": 4,
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "us_an_apg_73_hms",
@@ -4494,10 +4494,10 @@
     "role": "search",
     "rangeMax": 120000,
     "type": "radar",
-    "fsm": "searchModes,search,bvrLock,velocityLock,track,illumination,acmLock,tws,gtmTrack,helmetDesignation,main",
+    "fsm": "acmLock,bvrLock,gtmTrack,helmetDesignation,illumination,main,search,searchModes,track,tws,velocityLock",
     "weaponTargetsMax": 4,
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "us_an_apg_76_an_asx_1",
@@ -4506,10 +4506,10 @@
     "role": "search",
     "rangeMax": 150000,
     "type": "radar",
-    "fsm": "search,lock,track",
+    "fsm": "lock,search,track",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "us_an_apg_78",
@@ -4521,7 +4521,7 @@
     "fsm": "mode,search",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "us_an_apg_78_v6",
@@ -4533,7 +4533,7 @@
     "fsm": "mode,search",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "us_an_apg_79",
@@ -4542,10 +4542,10 @@
     "role": "search",
     "rangeMax": 150000,
     "type": "radar",
-    "fsm": "searchModes,search,bvrLock,velocityLock,track,illumination,acmLock,tws,gtmTrack,helmetDesignation,main",
+    "fsm": "acmLock,bvrLock,gtmTrack,helmetDesignation,illumination,main,search,searchModes,track,tws,velocityLock",
     "weaponTargetsMax": 12,
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "us_an_apg_83",
@@ -4554,10 +4554,10 @@
     "role": "search",
     "rangeMax": 150000,
     "type": "radar",
-    "fsm": "searchModes,search,bvrLock,velocityLock,track,illumination,acmLock,tws,gtmTrack,helmetDesignation,main",
+    "fsm": "acmLock,bvrLock,gtmTrack,helmetDesignation,illumination,main,search,searchModes,track,tws,velocityLock",
     "weaponTargetsMax": 12,
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "us_an_apq_100",
@@ -4566,10 +4566,10 @@
     "role": "search",
     "rangeMax": 100000,
     "type": "radar",
-    "fsm": "search,lock,track,illumination",
+    "fsm": "illumination,lock,search,track",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "us_an_apq_104",
@@ -4578,10 +4578,10 @@
     "role": "search",
     "rangeMax": 75000,
     "type": "radar",
-    "fsm": "search,lock,track",
+    "fsm": "lock,search,track",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "us_an_apq_113",
@@ -4590,10 +4590,10 @@
     "role": "search",
     "rangeMax": 80000,
     "type": "radar",
-    "fsm": "search,lock,track",
+    "fsm": "lock,search,track",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "us_an_apq_120",
@@ -4602,10 +4602,10 @@
     "role": "search",
     "rangeMax": 120000,
     "type": "radar",
-    "fsm": "search,lock,track,illumination",
+    "fsm": "illumination,lock,search,track",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "us_an_apq_159",
@@ -4614,10 +4614,10 @@
     "role": "search",
     "rangeMax": 75000,
     "type": "radar",
-    "fsm": "search,lock,track",
+    "fsm": "lock,search,track",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "us_an_apq_159_hms",
@@ -4626,10 +4626,10 @@
     "role": "search",
     "rangeMax": 75000,
     "type": "radar",
-    "fsm": "search,lock,track,helmetDesignation",
+    "fsm": "helmetDesignation,lock,search,track",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "us_an_apq_159_v",
@@ -4638,10 +4638,10 @@
     "role": "search",
     "rangeMax": 75000,
     "type": "radar",
-    "fsm": "search,lock,track",
+    "fsm": "lock,search,track",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "us_an_apq_169",
@@ -4650,10 +4650,10 @@
     "role": "search",
     "rangeMax": 75000,
     "type": "radar",
-    "fsm": "search,lock,track",
+    "fsm": "lock,search,track",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "us_an_apq_50",
@@ -4662,10 +4662,10 @@
     "role": "search",
     "rangeMax": 100000,
     "type": "radar",
-    "fsm": "search,lock,track",
+    "fsm": "lock,search,track",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "us_an_apq_51",
@@ -4674,10 +4674,10 @@
     "role": "search",
     "rangeMax": 100000,
     "type": "radar",
-    "fsm": "search,lock,track,illumination",
+    "fsm": "illumination,lock,search,track",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "us_an_apq_72",
@@ -4686,10 +4686,10 @@
     "role": "search",
     "rangeMax": 100000,
     "type": "radar",
-    "fsm": "search,lock,track,illumination",
+    "fsm": "illumination,lock,search,track",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "us_an_apq_94",
@@ -4698,10 +4698,10 @@
     "role": "search",
     "rangeMax": 75000,
     "type": "radar",
-    "fsm": "sensorTypes,search,scanSide,lock,track,main",
+    "fsm": "lock,main,scanSide,search,sensorTypes,track",
     "weaponTargetsMax": "",
     "irst": 1,
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "us_an_apr_25",
@@ -4713,7 +4713,7 @@
     "fsm": "",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "us_an_apr_27",
@@ -4725,7 +4725,7 @@
     "fsm": "",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "us_an_apr_32",
@@ -4737,7 +4737,7 @@
     "fsm": "",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "us_an_apr_36",
@@ -4749,7 +4749,7 @@
     "fsm": "",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "us_an_apr_39",
@@ -4761,7 +4761,7 @@
     "fsm": "",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "us_an_apr_39_apr_48",
@@ -4773,7 +4773,7 @@
     "fsm": "",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "us_an_apr_39_v1",
@@ -4785,7 +4785,7 @@
     "fsm": "",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "us_an_apr_39_v2",
@@ -4797,7 +4797,7 @@
     "fsm": "",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "us_an_apr_39_v4_apr_48",
@@ -4809,7 +4809,7 @@
     "fsm": "",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "us_an_apr_39a_v1",
@@ -4821,7 +4821,7 @@
     "fsm": "",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "us_an_apr_39a_v1_apr_48",
@@ -4833,7 +4833,7 @@
     "fsm": "",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "us_an_apr_39a_v2",
@@ -4845,7 +4845,7 @@
     "fsm": "",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "us_an_apr_39b_v2",
@@ -4857,7 +4857,7 @@
     "fsm": "",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "us_an_aps_109",
@@ -4869,7 +4869,7 @@
     "fsm": "",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "us_an_aps_19",
@@ -4878,10 +4878,10 @@
     "role": "search",
     "rangeMax": 60000,
     "type": "radar",
-    "fsm": "search,lock,track",
+    "fsm": "lock,search,track",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "us_an_aps_21",
@@ -4893,7 +4893,7 @@
     "fsm": "search",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "us_an_aps_31",
@@ -4905,7 +4905,7 @@
     "fsm": "search",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "us_an_aps_4",
@@ -4917,7 +4917,7 @@
     "fsm": "search",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "us_an_aps_54",
@@ -4929,7 +4929,7 @@
     "fsm": "",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "us_an_aps_6",
@@ -4938,10 +4938,10 @@
     "role": "search",
     "rangeMax": 60000,
     "type": "radar",
-    "fsm": "search,lock,track",
+    "fsm": "lock,search,track",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "us_an_aps_67",
@@ -4953,7 +4953,7 @@
     "fsm": "search",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "us_an_asg_14",
@@ -4962,10 +4962,10 @@
     "role": "search",
     "rangeMax": 37000,
     "type": "radar",
-    "fsm": "search,lock,track",
+    "fsm": "lock,search,track",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "us_an_asg_19",
@@ -4974,10 +4974,10 @@
     "role": "search",
     "rangeMax": 37000,
     "type": "radar",
-    "fsm": "search,lock,track",
+    "fsm": "lock,search,track",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "us_an_asq_213_esm",
@@ -4986,10 +4986,10 @@
     "role": "search",
     "rangeMax": 250000,
     "type": "radar",
-    "fsm": "tws,lock,track",
+    "fsm": "lock,track,tws",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "us_an_avr-2",
@@ -5001,7 +5001,7 @@
     "fsm": "",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "us_an_avr-2a",
@@ -5013,7 +5013,7 @@
     "fsm": "",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "us_an_avs-2",
@@ -5025,7 +5025,7 @@
     "fsm": "",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "us_an_awg_9",
@@ -5034,10 +5034,10 @@
     "role": "search",
     "rangeMax": 150000,
     "type": "radar",
-    "fsm": "searchModes,search,bvrLock,velocityLock,track,illumination,acmLock,tws,main,acmLockModes",
+    "fsm": "acmLock,acmLockModes,bvrLock,illumination,main,search,searchModes,track,tws,velocityLock",
     "weaponTargetsMax": 6,
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "us_an_awg_9_tiseo",
@@ -5046,10 +5046,10 @@
     "role": "search",
     "rangeMax": 150000,
     "type": "radar",
-    "fsm": "searchModes,search,bvrLock,velocityLock,track,illumination,acmLock,tws,main,acmLockModes",
+    "fsm": "acmLock,acmLockModes,bvrLock,illumination,main,search,searchModes,track,tws,velocityLock",
     "weaponTargetsMax": 6,
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "us_an_mpq_50",
@@ -5061,7 +5061,7 @@
     "fsm": "search",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "ground"
+    "domain": ""
   },
   {
     "id": "us_an_mpq_53",
@@ -5070,10 +5070,10 @@
     "role": "track",
     "rangeMax": 180000,
     "type": "radar",
-    "fsm": "lock,track,illumination",
+    "fsm": "illumination,lock,track",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "ground"
+    "domain": ""
   },
   {
     "id": "us_an_mpq_61",
@@ -5082,10 +5082,10 @@
     "role": "track",
     "rangeMax": 60000,
     "type": "radar",
-    "fsm": "lock,track,illumination",
+    "fsm": "illumination,lock,track",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "ground"
+    "domain": ""
   },
   {
     "id": "us_an_mpq_64",
@@ -5097,7 +5097,7 @@
     "fsm": "tws",
     "weaponTargetsMax": 4,
     "irst": "",
-    "domain": "ground"
+    "domain": ""
   },
   {
     "id": "us_an_vps_2",
@@ -5109,7 +5109,7 @@
     "fsm": "lock,track",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "ground"
+    "domain": ""
   },
   {
     "id": "us_chaparral_track",
@@ -5121,7 +5121,7 @@
     "fsm": "lock,track",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "ground"
+    "domain": ""
   },
   {
     "id": "us_comanche_fcr",
@@ -5133,7 +5133,7 @@
     "fsm": "mode,search",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "us_flir",
@@ -5145,7 +5145,7 @@
     "fsm": "",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "us_harm_a_esm",
@@ -5154,10 +5154,10 @@
     "role": "search",
     "rangeMax": 250000,
     "type": "radar",
-    "fsm": "tws,lock,track",
+    "fsm": "lock,track,tws",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "us_harm_c_esm",
@@ -5166,10 +5166,10 @@
     "role": "search",
     "rangeMax": 250000,
     "type": "radar",
-    "fsm": "tws,lock,track",
+    "fsm": "lock,track,tws",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "us_lav_ad_track",
@@ -5181,7 +5181,7 @@
     "fsm": "lock,track",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "ground"
+    "domain": ""
   },
   {
     "id": "us_lws_310",
@@ -5193,7 +5193,7 @@
     "fsm": "",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "us_m_247_track",
@@ -5205,7 +5205,7 @@
     "fsm": "lock,track",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "ground"
+    "domain": ""
   },
   {
     "id": "us_ma_1",
@@ -5214,10 +5214,10 @@
     "role": "search",
     "rangeMax": 90000,
     "type": "radar",
-    "fsm": "sensorTypes,search,lock,track,acmLock,helmetDesignation,main",
+    "fsm": "acmLock,helmetDesignation,lock,main,search,sensorTypes,track",
     "weaponTargetsMax": "",
     "irst": 1,
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "us_md_1a",
@@ -5226,10 +5226,10 @@
     "role": "search",
     "rangeMax": 90000,
     "type": "radar",
-    "fsm": "search,lock,track",
+    "fsm": "lock,search,track",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "us_mk_x",
@@ -5241,7 +5241,7 @@
     "fsm": "search",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "us_nasarr",
@@ -5250,10 +5250,10 @@
     "role": "search",
     "rangeMax": 40000,
     "type": "radar",
-    "fsm": "search,lock,track,illumination",
+    "fsm": "illumination,lock,search,track",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "us_phalanx_search",
@@ -5265,7 +5265,7 @@
     "fsm": "search",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "ground"
+    "domain": ""
   },
   {
     "id": "us_phalanx_track",
@@ -5277,7 +5277,7 @@
     "fsm": "lock,track",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "ground"
+    "domain": ""
   },
   {
     "id": "us_r21g_m1",
@@ -5286,10 +5286,10 @@
     "role": "search",
     "rangeMax": 45000,
     "type": "radar",
-    "fsm": "searchModes,search,bvrLock,track,illumination,acmLock,main,acmLockModes",
+    "fsm": "acmLock,acmLockModes,bvrLock,illumination,main,search,searchModes,track",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "air"
+    "domain": ""
   },
   {
     "id": "us_tps_59",
@@ -5301,6 +5301,6 @@
     "fsm": "search",
     "weaponTargetsMax": "",
     "irst": "",
-    "domain": "ground"
+    "domain": ""
   }
 ]

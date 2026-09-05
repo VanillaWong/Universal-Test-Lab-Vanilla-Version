@@ -463,12 +463,20 @@ foreach ($id in ($playable.Keys | Sort-Object)) {
       $emitter = [regex]::Match($weapon, 'emitter:t\s*=\s*"([^"]+)"')
       if (-not $trigger.Success -or -not $blk.Success -or -not $emitter.Success) { continue }
       if ($trigger.Groups[1].Value -match 'fuel tanks|countermeasures|cannon') { continue }
+      # 弹数累加按"弹种基名"判定同型：同一挂点方案常把同一型弹拆成多个
+      # blk 文件（如 us_aim_120a + us_aim_120a_default，混装成 4 发），若要求
+      # blk 完全一致会把同型弹漏计（曾把 4 发 AMRAAM 算成 2 发）。
+      # 去掉 _default 后缀后基名相同即视为同型累加；真混装异型弹（不同基名）
+      # 仍按首个 weapon 计，保持原行为。
+      $blkFamily = (([IO.Path]::GetFileName(($blk.Groups[1].Value -replace '/', '\\'))) -replace '_default\.blk$', '.blk')
       $bullets = 0
       foreach ($candidateWeapon in $weaponBlocks) {
         $candidateTrigger = [regex]::Match($candidateWeapon.Text, 'trigger:t\s*=\s*"([^"]+)"')
         $candidateBlk = [regex]::Match($candidateWeapon.Text, 'blk:t\s*=\s*"([^"]+)"')
         if (-not $candidateTrigger.Success -or -not $candidateBlk.Success) { continue }
-        if ($candidateTrigger.Groups[1].Value -ne $trigger.Groups[1].Value -or $candidateBlk.Groups[1].Value -ne $blk.Groups[1].Value) { continue }
+        if ($candidateTrigger.Groups[1].Value -ne $trigger.Groups[1].Value) { continue }
+        $candidateFamily = (([IO.Path]::GetFileName(($candidateBlk.Groups[1].Value -replace '/', '\\'))) -replace '_default\.blk$', '.blk')
+        if ($candidateFamily -ne $blkFamily) { continue }
         $candidateBullets = [regex]::Match($candidateWeapon.Text, 'bullets:i\s*=\s*(\d+)')
         $bullets += if ($candidateBullets.Success) { [int]$candidateBullets.Groups[1].Value } else { 1 }
       }

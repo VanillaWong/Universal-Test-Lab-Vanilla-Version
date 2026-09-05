@@ -9098,6 +9098,14 @@ su_17m4	su_17m4_kh_58u_a	kh 58u a slot4; l 086 viuga 17 slot5; kh 58u a slot6
 su_17m4	su_17m4_kh_58u_b	kh 58u b slot4; l 086 viuga 17 slot5; kh 58u b slot6
 su_17m4	su_17m4_kh_58u_c	kh 58u c slot4; l 086 viuga 17 slot5; kh 58u c slot6
 su_17m4	su_17m4_sppu_22	4x sppu 22
+su_17m4_china_killstreak	su_17m4_killstreak_default	no suspended armament
+su_17m4_china_killstreak	su_17m4_rn28	rn 28
+su_17m4_china_killstreak	su_17m4_rn28_5kt_nt	rn 28 nt
+su_17m4_china_killstreak	su_17m4_rn40_30kt_nt	rn 40
+su_17m4_killstreak	su_17m4_killstreak_default	no suspended armament
+su_17m4_killstreak	su_17m4_rn28	rn 28
+su_17m4_killstreak	su_17m4_rn28_5kt_nt	rn 28 nt
+su_17m4_killstreak	su_17m4_rn40_30kt_nt	rn 40
 su_22m3	su_22m3_default	ptb left1; ptb left; ptb right; ptb right1
 su_22m3	su_22m3_default_r60	wing left single r 60; wing right single r 60
 su_22m3	su_22m3_rocket_r60	wing left single r 60; wing middle left rocket r 60 x2; wing middle right rocket r 60 x2; wing right single r 60

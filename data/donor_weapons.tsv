@@ -7725,7 +7725,7 @@ f_16xl	F-16XL-1	5	mk84_slot5	bombs	gameData/Weapons/BombGuns/us_2000lb_mk_84_ldg
 f_16xl	F-16XL-1	6	mk82	bombs	gameData/Weapons/BombGuns/us_500lb_mk_82_ldgp.blk	500lb_mk_82_004	1	bombs_middle	500 lb LDGP Mk 82 bomb	Bombs	240.9	240.9
 f_16xl	F-16XL-1	6	agm_65b_slot6	atgm	gameData/Weapons/rocketGuns/us_agm_65b.blk	us_lau_117a_agm_65a_003	1	missile_air_to_uni	AGM-65B air-to-ground missile	Air-to-Ground Missiles	210.467	210.467
 f_16xl	F-16XL-1	7	aim_120a_default	aam	gameData/Weapons/rocketGuns/us_aim_120a_default.blk	aim_120a_003	2	missile_type_f_air_to_air_midrange_group	AIM-120A AMRAAM air-to-air missiles	Air-to-Air Missiles	147.87	295.74
-f_16xl	F-16XL-1	7	aim_120a	aam	gameData/Weapons/rocketGuns/us_aim_120a.blk	aim_120a_001	2	missile_type_f_air_to_air_midrange_group_x4	AIM-120A AMRAAM air-to-air missiles	Air-to-Air Missiles	147.87	295.74
+f_16xl	F-16XL-1	7	aim_120a	aam	gameData/Weapons/rocketGuns/us_aim_120a.blk	aim_120a_001	4	missile_type_f_air_to_air_midrange_group_x4	AIM-120A AMRAAM air-to-air missiles	Air-to-Air Missiles	147.87	591.48
 f_16xl	F-16XL-1	8	mk82	bombs	gameData/Weapons/BombGuns/us_500lb_mk_82_ldgp.blk	500lb_mk_82_009	1	bombs_middle	500 lb LDGP Mk 82 bomb	Bombs	240.9	240.9
 f_16xl	F-16XL-1	8	agm_65b_slot8	atgm	gameData/Weapons/rocketGuns/us_agm_65b.blk	us_lau_117a_agm_65a_004	1	missile_air_to_uni	AGM-65B air-to-ground missile	Air-to-Ground Missiles	210.467	210.467
 f_16xl	F-16XL-1	9	mk82_x4	bombs	gameData/Weapons/BombGuns/us_500lb_mk_82_ldgp.blk	500lb_mk_82_011	4	bombs_middle_group_x4	500 lb LDGP Mk 82 bomb	Bombs	240.9	963.6
@@ -15412,29 +15412,29 @@ jaguar_a	Jaguar A	5	tba_100_ecc	rockets	gameData/Weapons/containers/lr_100_4_tba
 jaguar_a	Jaguar A	5	tba_100_multi_dart	rockets	gameData/Weapons/containers/lr_100_4_tba_100_multi_dart.blk	tba_type100_4_4	1	nar_ap_type_b_block	TBA Multi-Dart 100 AB rockets x4	Rockets	162	162
 jaguar_a	Jaguar A	5	secan	bombs	gameData/Weapons/BombGuns/fr_460l_secan_63.blk	400kg_type_21_a_005	1	napalm_large	SECAN 63 incendiary bomb	Bombs	420	420
 jaguar_a_germany_killstreak	Jaguar A	0	jaguar_a_1xan52	bombs	gameData/Weapons/BombGuns/fr_an52.blk	fr_nuclear_bomb_an_52	1		AN-52 nuclear bomb	Nuclear Weapons	996.3	996.3
-jaguar_a_germany_killstreak	Jaguar A	0	jaguar_a_1xan52_5kt_nt	bombs	gameData/Weapons/BombGuns/fr_an52_5kt_nt.blk	fr_nuclear_bomb_an_52	1		AN-52 nuclear bomb	Nuclear Weapons	680	680
-jaguar_a_germany_killstreak	Jaguar A	0	jaguar_a_1xan52_30kt_nt	bombs	gameData/Weapons/BombGuns/fr_an52_30kt_nt.blk	fr_nuclear_bomb_an_52	1		AN-52 nuclear bomb	Nuclear Weapons	680	680
+jaguar_a_germany_killstreak	Jaguar A	0	jaguar_a_1xan52_5kt_nt	countermeasures	gameData/Weapons/rocketGuns/countermeasure_large_split_launcher_jet_with_chaff.blk	emtr_flare3	145		AN-52 nuclear bomb; 2x Large caliber countermeasures	Other Weapons	0	0
+jaguar_a_germany_killstreak	Jaguar A	0	jaguar_a_1xan52_30kt_nt	countermeasures	gameData/Weapons/rocketGuns/countermeasure_large_split_launcher_jet_with_chaff.blk	emtr_flare3	145		AN-52 nuclear bomb; 2x Large caliber countermeasures	Other Weapons	0	0
 jaguar_a_iaf_killstreak	Jaguar A	0	jaguar_a_1xan52	bombs	gameData/Weapons/BombGuns/fr_an52.blk	fr_nuclear_bomb_an_52	1		AN-52 nuclear bomb	Nuclear Weapons	996.3	996.3
-jaguar_a_iaf_killstreak	Jaguar A	0	jaguar_a_1xan52_5kt_nt	bombs	gameData/Weapons/BombGuns/fr_an52_5kt_nt.blk	fr_nuclear_bomb_an_52	1		AN-52 nuclear bomb	Nuclear Weapons	680	680
-jaguar_a_iaf_killstreak	Jaguar A	0	jaguar_a_1xan52_30kt_nt	bombs	gameData/Weapons/BombGuns/fr_an52_30kt_nt.blk	fr_nuclear_bomb_an_52	1		AN-52 nuclear bomb	Nuclear Weapons	680	680
+jaguar_a_iaf_killstreak	Jaguar A	0	jaguar_a_1xan52_5kt_nt	countermeasures	gameData/Weapons/rocketGuns/countermeasure_large_split_launcher_jet_with_chaff.blk	emtr_flare3	145		AN-52 nuclear bomb; 2x Large caliber countermeasures	Other Weapons	0	0
+jaguar_a_iaf_killstreak	Jaguar A	0	jaguar_a_1xan52_30kt_nt	countermeasures	gameData/Weapons/rocketGuns/countermeasure_large_split_launcher_jet_with_chaff.blk	emtr_flare3	145		AN-52 nuclear bomb; 2x Large caliber countermeasures	Other Weapons	0	0
 jaguar_a_italy_killstreak	Jaguar A	0	jaguar_a_1xan52	bombs	gameData/Weapons/BombGuns/fr_an52.blk	fr_nuclear_bomb_an_52	1		AN-52 nuclear bomb	Nuclear Weapons	996.3	996.3
-jaguar_a_italy_killstreak	Jaguar A	0	jaguar_a_1xan52_5kt_nt	bombs	gameData/Weapons/BombGuns/fr_an52_5kt_nt.blk	fr_nuclear_bomb_an_52	1		AN-52 nuclear bomb	Nuclear Weapons	680	680
-jaguar_a_italy_killstreak	Jaguar A	0	jaguar_a_1xan52_30kt_nt	bombs	gameData/Weapons/BombGuns/fr_an52_30kt_nt.blk	fr_nuclear_bomb_an_52	1		AN-52 nuclear bomb	Nuclear Weapons	680	680
+jaguar_a_italy_killstreak	Jaguar A	0	jaguar_a_1xan52_5kt_nt	countermeasures	gameData/Weapons/rocketGuns/countermeasure_large_split_launcher_jet_with_chaff.blk	emtr_flare3	145		AN-52 nuclear bomb; 2x Large caliber countermeasures	Other Weapons	0	0
+jaguar_a_italy_killstreak	Jaguar A	0	jaguar_a_1xan52_30kt_nt	countermeasures	gameData/Weapons/rocketGuns/countermeasure_large_split_launcher_jet_with_chaff.blk	emtr_flare3	145		AN-52 nuclear bomb; 2x Large caliber countermeasures	Other Weapons	0	0
 jaguar_a_japan_killstreak	Jaguar A	0	jaguar_a_1xan52	bombs	gameData/Weapons/BombGuns/fr_an52.blk	fr_nuclear_bomb_an_52	1		AN-52 nuclear bomb	Nuclear Weapons	996.3	996.3
-jaguar_a_japan_killstreak	Jaguar A	0	jaguar_a_1xan52_5kt_nt	bombs	gameData/Weapons/BombGuns/fr_an52_5kt_nt.blk	fr_nuclear_bomb_an_52	1		AN-52 nuclear bomb	Nuclear Weapons	680	680
-jaguar_a_japan_killstreak	Jaguar A	0	jaguar_a_1xan52_30kt_nt	bombs	gameData/Weapons/BombGuns/fr_an52_30kt_nt.blk	fr_nuclear_bomb_an_52	1		AN-52 nuclear bomb	Nuclear Weapons	680	680
+jaguar_a_japan_killstreak	Jaguar A	0	jaguar_a_1xan52_5kt_nt	countermeasures	gameData/Weapons/rocketGuns/countermeasure_large_split_launcher_jet_with_chaff.blk	emtr_flare3	145		AN-52 nuclear bomb; 2x Large caliber countermeasures	Other Weapons	0	0
+jaguar_a_japan_killstreak	Jaguar A	0	jaguar_a_1xan52_30kt_nt	countermeasures	gameData/Weapons/rocketGuns/countermeasure_large_split_launcher_jet_with_chaff.blk	emtr_flare3	145		AN-52 nuclear bomb; 2x Large caliber countermeasures	Other Weapons	0	0
 jaguar_a_killstreak	Jaguar A	0	jaguar_a_1xan52	bombs	gameData/Weapons/BombGuns/fr_an52.blk	fr_nuclear_bomb_an_52	1		AN-52 nuclear bomb	Nuclear Weapons	996.3	996.3
-jaguar_a_killstreak	Jaguar A	0	jaguar_a_1xan52_5kt_nt	bombs	gameData/Weapons/BombGuns/fr_an52_5kt_nt.blk	fr_nuclear_bomb_an_52	1		AN-52 nuclear bomb	Nuclear Weapons	680	680
-jaguar_a_killstreak	Jaguar A	0	jaguar_a_1xan52_30kt_nt	bombs	gameData/Weapons/BombGuns/fr_an52_30kt_nt.blk	fr_nuclear_bomb_an_52	1		AN-52 nuclear bomb	Nuclear Weapons	680	680
+jaguar_a_killstreak	Jaguar A	0	jaguar_a_1xan52_5kt_nt	countermeasures	gameData/Weapons/rocketGuns/countermeasure_large_split_launcher_jet_with_chaff.blk	emtr_flare3	145		AN-52 nuclear bomb; 2x Large caliber countermeasures	Other Weapons	0	0
+jaguar_a_killstreak	Jaguar A	0	jaguar_a_1xan52_30kt_nt	countermeasures	gameData/Weapons/rocketGuns/countermeasure_large_split_launcher_jet_with_chaff.blk	emtr_flare3	145		AN-52 nuclear bomb; 2x Large caliber countermeasures	Other Weapons	0	0
 jaguar_a_sweden_killstreak	Jaguar A	0	jaguar_a_1xan52	bombs	gameData/Weapons/BombGuns/fr_an52.blk	fr_nuclear_bomb_an_52	1		AN-52 nuclear bomb	Nuclear Weapons	996.3	996.3
-jaguar_a_sweden_killstreak	Jaguar A	0	jaguar_a_1xan52_5kt_nt	bombs	gameData/Weapons/BombGuns/fr_an52_5kt_nt.blk	fr_nuclear_bomb_an_52	1		AN-52 nuclear bomb	Nuclear Weapons	680	680
-jaguar_a_sweden_killstreak	Jaguar A	0	jaguar_a_1xan52_30kt_nt	bombs	gameData/Weapons/BombGuns/fr_an52_30kt_nt.blk	fr_nuclear_bomb_an_52	1		AN-52 nuclear bomb	Nuclear Weapons	680	680
+jaguar_a_sweden_killstreak	Jaguar A	0	jaguar_a_1xan52_5kt_nt	countermeasures	gameData/Weapons/rocketGuns/countermeasure_large_split_launcher_jet_with_chaff.blk	emtr_flare3	145		AN-52 nuclear bomb; 2x Large caliber countermeasures	Other Weapons	0	0
+jaguar_a_sweden_killstreak	Jaguar A	0	jaguar_a_1xan52_30kt_nt	countermeasures	gameData/Weapons/rocketGuns/countermeasure_large_split_launcher_jet_with_chaff.blk	emtr_flare3	145		AN-52 nuclear bomb; 2x Large caliber countermeasures	Other Weapons	0	0
 jaguar_a_uk_killstreak	Jaguar A	0	jaguar_a_1xan52	bombs	gameData/Weapons/BombGuns/fr_an52.blk	fr_nuclear_bomb_an_52	1		AN-52 nuclear bomb	Nuclear Weapons	996.3	996.3
-jaguar_a_uk_killstreak	Jaguar A	0	jaguar_a_1xan52_5kt_nt	bombs	gameData/Weapons/BombGuns/fr_an52_5kt_nt.blk	fr_nuclear_bomb_an_52	1		AN-52 nuclear bomb	Nuclear Weapons	680	680
-jaguar_a_uk_killstreak	Jaguar A	0	jaguar_a_1xan52_30kt_nt	bombs	gameData/Weapons/BombGuns/fr_an52_30kt_nt.blk	fr_nuclear_bomb_an_52	1		AN-52 nuclear bomb	Nuclear Weapons	680	680
+jaguar_a_uk_killstreak	Jaguar A	0	jaguar_a_1xan52_5kt_nt	countermeasures	gameData/Weapons/rocketGuns/countermeasure_large_split_launcher_jet_with_chaff.blk	emtr_flare3	145		AN-52 nuclear bomb; 2x Large caliber countermeasures	Other Weapons	0	0
+jaguar_a_uk_killstreak	Jaguar A	0	jaguar_a_1xan52_30kt_nt	countermeasures	gameData/Weapons/rocketGuns/countermeasure_large_split_launcher_jet_with_chaff.blk	emtr_flare3	145		AN-52 nuclear bomb; 2x Large caliber countermeasures	Other Weapons	0	0
 jaguar_a_usa_killstreak	Jaguar A	0	jaguar_a_1xan52	bombs	gameData/Weapons/BombGuns/fr_an52.blk	fr_nuclear_bomb_an_52	1		AN-52 nuclear bomb	Nuclear Weapons	996.3	996.3
-jaguar_a_usa_killstreak	Jaguar A	0	jaguar_a_1xan52_5kt_nt	bombs	gameData/Weapons/BombGuns/fr_an52_5kt_nt.blk	fr_nuclear_bomb_an_52	1		AN-52 nuclear bomb	Nuclear Weapons	680	680
-jaguar_a_usa_killstreak	Jaguar A	0	jaguar_a_1xan52_30kt_nt	bombs	gameData/Weapons/BombGuns/fr_an52_30kt_nt.blk	fr_nuclear_bomb_an_52	1		AN-52 nuclear bomb	Nuclear Weapons	680	680
+jaguar_a_usa_killstreak	Jaguar A	0	jaguar_a_1xan52_5kt_nt	countermeasures	gameData/Weapons/rocketGuns/countermeasure_large_split_launcher_jet_with_chaff.blk	emtr_flare3	145		AN-52 nuclear bomb; 2x Large caliber countermeasures	Other Weapons	0	0
+jaguar_a_usa_killstreak	Jaguar A	0	jaguar_a_1xan52_30kt_nt	countermeasures	gameData/Weapons/rocketGuns/countermeasure_large_split_launcher_jet_with_chaff.blk	emtr_flare3	145		AN-52 nuclear bomb; 2x Large caliber countermeasures	Other Weapons	0	0
 jaguar_e	Jaguar E	1	r_550_magic_1	aam	gameData/Weapons/rocketGuns/fr_r_550_magic.blk	rocket_r550_magic_001	1	missile_type_b_air_to_air	Matra R550 Magic 1 air-to-air missiles	Air-to-Air Missiles	89	89
 jaguar_e	Jaguar E	1	fr_250_samp_type_25	bombs	gameData/Weapons/BombGuns/fr_250_samp_type_25.blk	250kg_type_25_001	1	bombs_middle	250 kg SAMP Type 25 bomb	Bombs	247	247
 jaguar_e	Jaguar E	1	fr_400_samp_type_21	bombs	gameData/Weapons/BombGuns/fr_400_samp_type_21.blk	400kg_type_21_a_001	1	bombs_large	400 kg SAMP Type 21 bomb	Bombs	400	400
@@ -24870,6 +24870,12 @@ su_17m4	Su-17M4	9	wing_right_rocket_s25o	rockets	gameData/Weapons/rocketGuns/su_
 su_17m4	Su-17M4	9	wing_right_rocket_kh25_ml	atgm	gameData/Weapons/rocketGuns/su_kh_25ml.blk	apu_68_kh25_002	1	missile_air_to_uni_middle	Kh-25ML missiles	Air-to-Ground Missiles	297	297
 su_17m4	Su-17M4	9	wing_right_rocket_s25l	atgm	gameData/Weapons/rocketGuns/su_s_25l_rocket.blk	su_s_25l_rocket_002	1	rockets_he_large_special_laser	S-25L missiles	Air-to-Ground Missiles	410	410
 su_17m4	Su-17M4	9	sppu_22	additional gun	gameData/Weapons/cannonGSh_23L.blk	flare6	260	doublebarreled_box	23 mm GSh-23L cannon	Other Weapons	50.5	50.5
+su_17m4_china_killstreak	Su-17M4	7	rn_28	bombs	gameData/Weapons/BombGuns/su_rn_28.blk	fab_500m_62_007	1	bombs_large_nuke	RN-28 nuclear bomb	Nuclear Weapons	2983	2983
+su_17m4_china_killstreak	Su-17M4	7	rn_28_nt	bombs	gameData/Weapons/BombGuns/su_rn_28_nt.blk	fab_500m_62_007	1	bombs_large_nuke	RN-28 nuclear bomb (5 kt)	Nuclear Weapons	480	480
+su_17m4_china_killstreak	Su-17M4	7	rn_40	bombs	gameData/Weapons/bombguns/su_rn_40.blk	fab_500m_62_007	1	bombs_heavy_middle_nuke	RN-40 nuclear bomb (30 kt)	Nuclear Weapons	370	370
+su_17m4_killstreak	Su-17M4	7	rn_28	bombs	gameData/Weapons/BombGuns/su_rn_28.blk	fab_500m_62_007	1	bombs_large_nuke	RN-28 nuclear bomb	Nuclear Weapons	2983	2983
+su_17m4_killstreak	Su-17M4	7	rn_28_nt	bombs	gameData/Weapons/BombGuns/su_rn_28_nt.blk	fab_500m_62_007	1	bombs_large_nuke	RN-28 nuclear bomb (5 kt)	Nuclear Weapons	480	480
+su_17m4_killstreak	Su-17M4	7	rn_40	bombs	gameData/Weapons/bombguns/su_rn_40.blk	fab_500m_62_007	1	bombs_heavy_middle_nuke	RN-40 nuclear bomb (30 kt)	Nuclear Weapons	370	370
 su_22m3	Su-22M3	1	wing_left_containers_ofab_100_120	bombs	gameData/Weapons/containers/mbd3_u6_wing_l_su_ofab100_120_x5.blk	mbd3_u6_68_1	1	bombs_small_group_x5	100 kg OFAB-100 bomb x5	Bombs	570	570
 su_22m3	Su-22M3	1	wing_left_fab_250	bombs	gameData/Weapons/BombGuns/su_ofab250.blk	ofab250_001	1	bombs_middle	250 kg OFAB-250sv bomb	Bombs	250	250
 su_22m3	Su-22M3	1	wing_left_fab_500	bombs	gameData/Weapons/BombGuns/su_fab_500m_62t.blk	fab_500m_62_001	1	bombs_large	500 kg FAB-500M-62 bomb	Bombs	508.3	508.3

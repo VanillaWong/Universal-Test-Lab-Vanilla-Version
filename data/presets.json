@@ -45500,6 +45500,46 @@
     "name": "4x sppu 22"
   },
   {
+    "aircraftId": "su_17m4_china_killstreak",
+    "presetId": "su_17m4_killstreak_default",
+    "name": "no suspended armament"
+  },
+  {
+    "aircraftId": "su_17m4_china_killstreak",
+    "presetId": "su_17m4_rn28",
+    "name": "rn 28"
+  },
+  {
+    "aircraftId": "su_17m4_china_killstreak",
+    "presetId": "su_17m4_rn28_5kt_nt",
+    "name": "rn 28 nt"
+  },
+  {
+    "aircraftId": "su_17m4_china_killstreak",
+    "presetId": "su_17m4_rn40_30kt_nt",
+    "name": "rn 40"
+  },
+  {
+    "aircraftId": "su_17m4_killstreak",
+    "presetId": "su_17m4_killstreak_default",
+    "name": "no suspended armament"
+  },
+  {
+    "aircraftId": "su_17m4_killstreak",
+    "presetId": "su_17m4_rn28",
+    "name": "rn 28"
+  },
+  {
+    "aircraftId": "su_17m4_killstreak",
+    "presetId": "su_17m4_rn28_5kt_nt",
+    "name": "rn 28 nt"
+  },
+  {
+    "aircraftId": "su_17m4_killstreak",
+    "presetId": "su_17m4_rn40_30kt_nt",
+    "name": "rn 40"
+  },
+  {
     "aircraftId": "su_22m3",
     "presetId": "su_22m3_default",
     "name": "ptb left1; ptb left; ptb right; ptb right1"

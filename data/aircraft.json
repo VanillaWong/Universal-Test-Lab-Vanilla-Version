@@ -13720,6 +13720,26 @@
     "kind": "Aircraft"
   },
   {
+    "id": "su_17m4_china_killstreak",
+    "display": "Su-17M4",
+    "type": "typeFighter",
+    "defaultPreset": "su_17m4_killstreak_default",
+    "nation": "Other",
+    "rank": 0,
+    "maxLoad": 4160,
+    "kind": "Aircraft"
+  },
+  {
+    "id": "su_17m4_killstreak",
+    "display": "Su-17M4",
+    "type": "typeFighter",
+    "defaultPreset": "su_17m4_killstreak_default",
+    "nation": "Other",
+    "rank": 0,
+    "maxLoad": 4160,
+    "kind": "Aircraft"
+  },
+  {
     "id": "su_22m3",
     "display": "Su-22M3",
     "type": "typeFighter",

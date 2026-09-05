@@ -1370,6 +1370,8 @@ stirling_mk3	Stirling B Mk III	typeBomber	stirling_mk3_27x250lbs	Great Britain	3
 strikemaster_mk88	Strikemaster Mk.88	typeFighter	strikemaster_mk88_default	Great Britain	4	1380	Aircraft
 su_17m2	Su-17M2	typeFighter	su_17m2_default	USSR / Russia	7	4125	Aircraft
 su_17m4	Su-17M4	typeFighter	su_17m4_default	USSR / Russia	7	4160	Aircraft
+su_17m4_china_killstreak	Su-17M4	typeFighter	su_17m4_killstreak_default	Other	0	4160	Aircraft
+su_17m4_killstreak	Su-17M4	typeFighter	su_17m4_killstreak_default	Other	0	4160	Aircraft
 su_22m3	Su-22M3	typeFighter	su_22m3_default	USSR / Russia	7	4155	Aircraft
 su_22m3_hungary	Su-22M3	typeFighter	su_22m3_default	Italy	7	4155	Aircraft
 su_22m4	Su-22M4	typeFighter	su_22m4_default	Germany	7	4160	Aircraft

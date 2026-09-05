@@ -60463,7 +60463,7 @@
   },
   {
     "aircraftId": "do_217e_4",
-    "id": "mg151_air_targets",
+    "id": "mgff_turret_ap_he",
     "display": "20 mm cannon ammunition belt for air targets",
     "tier": 0,
     "modClass": "",
@@ -60472,7 +60472,7 @@
   },
   {
     "aircraftId": "do_217e_4",
-    "id": "mgff_turret_ap_he",
+    "id": "mg151_air_targets",
     "display": "20 mm cannon ammunition belt for air targets",
     "tier": 0,
     "modClass": "",
@@ -123634,7 +123634,7 @@
   },
   {
     "aircraftId": "fw-190a-4",
-    "id": "mg151_air_targets",
+    "id": "mgff_air_targets",
     "display": "20 mm cannon ammunition belt for air targets",
     "tier": 0,
     "modClass": "",
@@ -123643,7 +123643,7 @@
   },
   {
     "aircraftId": "fw-190a-4",
-    "id": "mgff_air_targets",
+    "id": "mg151_air_targets",
     "display": "20 mm cannon ammunition belt for air targets",
     "tier": 0,
     "modClass": "",
@@ -124057,7 +124057,7 @@
   },
   {
     "aircraftId": "fw-190a-5_cannons",
-    "id": "mg151_air_targets",
+    "id": "mgff_air_targets",
     "display": "20 mm cannon ammunition belt for air targets",
     "tier": 0,
     "modClass": "",
@@ -124066,7 +124066,7 @@
   },
   {
     "aircraftId": "fw-190a-5_cannons",
-    "id": "mgff_air_targets",
+    "id": "mg151_air_targets",
     "display": "20 mm cannon ammunition belt for air targets",
     "tier": 0,
     "modClass": "",
@@ -124327,7 +124327,7 @@
   },
   {
     "aircraftId": "fw-190a-5_cannons_tutorial",
-    "id": "mg151_stealth",
+    "id": "mgff_stealth",
     "display": "20 mm cannon ammunition belt for stealth attack",
     "tier": 0,
     "modClass": "",
@@ -124336,7 +124336,7 @@
   },
   {
     "aircraftId": "fw-190a-5_cannons_tutorial",
-    "id": "mgff_stealth",
+    "id": "mg151_stealth",
     "display": "20 mm cannon ammunition belt for stealth attack",
     "tier": 0,
     "modClass": "",
@@ -124489,7 +124489,7 @@
   },
   {
     "aircraftId": "fw-190a-5_cannons_tutorial",
-    "id": "mgff_universal",
+    "id": "mg151_universal",
     "display": "Omni-purpose ammunition belt for 20 mm cannon",
     "tier": 0,
     "modClass": "",
@@ -124498,7 +124498,7 @@
   },
   {
     "aircraftId": "fw-190a-5_cannons_tutorial",
-    "id": "mg151_universal",
+    "id": "mgff_universal",
     "display": "Omni-purpose ammunition belt for 20 mm cannon",
     "tier": 0,
     "modClass": "",
@@ -124543,7 +124543,7 @@
   },
   {
     "aircraftId": "fw-190a-5_japan",
-    "id": "mgff_air_targets",
+    "id": "mg151_air_targets",
     "display": "20 mm cannon ammunition belt for air targets",
     "tier": 0,
     "modClass": "",
@@ -124552,7 +124552,7 @@
   },
   {
     "aircraftId": "fw-190a-5_japan",
-    "id": "mg151_air_targets",
+    "id": "mgff_air_targets",
     "display": "20 mm cannon ammunition belt for air targets",
     "tier": 0,
     "modClass": "",
@@ -124570,7 +124570,7 @@
   },
   {
     "aircraftId": "fw-190a-5_japan",
-    "id": "mg151_stealth",
+    "id": "mgff_stealth",
     "display": "20 mm cannon ammunition belt for stealth attack",
     "tier": 0,
     "modClass": "",
@@ -124579,7 +124579,7 @@
   },
   {
     "aircraftId": "fw-190a-5_japan",
-    "id": "mgff_stealth",
+    "id": "mg151_stealth",
     "display": "20 mm cannon ammunition belt for stealth attack",
     "tier": 0,
     "modClass": "",
@@ -177769,7 +177769,7 @@
   },
   {
     "aircraftId": "il_28",
-    "id": "nr23_turret_heit",
+    "id": "ns23_air_targets",
     "display": "23 mm cannon ammunition belt for air targets",
     "tier": 0,
     "modClass": "",
@@ -177778,7 +177778,7 @@
   },
   {
     "aircraftId": "il_28",
-    "id": "ns23_air_targets",
+    "id": "nr23_turret_heit",
     "display": "23 mm cannon ammunition belt for air targets",
     "tier": 0,
     "modClass": "",
@@ -177931,15 +177931,6 @@
   },
   {
     "aircraftId": "il_28_china",
-    "id": "nr23_turret_heit",
-    "display": "23 mm cannon ammunition belt for air targets",
-    "tier": 0,
-    "modClass": "",
-    "group": "",
-    "requires": ""
-  },
-  {
-    "aircraftId": "il_28_china",
     "id": "ns23_air_targets",
     "display": "23 mm cannon ammunition belt for air targets",
     "tier": 0,
@@ -177949,8 +177940,8 @@
   },
   {
     "aircraftId": "il_28_china",
-    "id": "nr23_turret_apit",
-    "display": "23 mm cannon ammunition belt for armored targets",
+    "id": "nr23_turret_heit",
+    "display": "23 mm cannon ammunition belt for air targets",
     "tier": 0,
     "modClass": "",
     "group": "",
@@ -177959,6 +177950,15 @@
   {
     "aircraftId": "il_28_china",
     "id": "ns23_armor_targets",
+    "display": "23 mm cannon ammunition belt for armored targets",
+    "tier": 0,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "il_28_china",
+    "id": "nr23_turret_apit",
     "display": "23 mm cannon ammunition belt for armored targets",
     "tier": 0,
     "modClass": "",
@@ -178255,15 +178255,6 @@
   },
   {
     "aircraftId": "il_28_german",
-    "id": "ns23_air_targets",
-    "display": "23 mm cannon ammunition belt for air targets",
-    "tier": 0,
-    "modClass": "",
-    "group": "",
-    "requires": ""
-  },
-  {
-    "aircraftId": "il_28_german",
     "id": "nr23_turret_heit",
     "display": "23 mm cannon ammunition belt for air targets",
     "tier": 0,
@@ -178273,8 +178264,8 @@
   },
   {
     "aircraftId": "il_28_german",
-    "id": "ns23_armor_targets",
-    "display": "23 mm cannon ammunition belt for armored targets",
+    "id": "ns23_air_targets",
+    "display": "23 mm cannon ammunition belt for air targets",
     "tier": 0,
     "modClass": "",
     "group": "",
@@ -178283,6 +178274,15 @@
   {
     "aircraftId": "il_28_german",
     "id": "nr23_turret_apit",
+    "display": "23 mm cannon ammunition belt for armored targets",
+    "tier": 0,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "il_28_german",
+    "id": "ns23_armor_targets",
     "display": "23 mm cannon ammunition belt for armored targets",
     "tier": 0,
     "modClass": "",
@@ -178597,7 +178597,7 @@
   },
   {
     "aircraftId": "il_28_killstreak",
-    "id": "ns23_armor_targets",
+    "id": "nr23_turret_apit",
     "display": "23 mm cannon ammunition belt for armored targets",
     "tier": 0,
     "modClass": "",
@@ -178606,7 +178606,7 @@
   },
   {
     "aircraftId": "il_28_killstreak",
-    "id": "nr23_turret_apit",
+    "id": "ns23_armor_targets",
     "display": "23 mm cannon ammunition belt for armored targets",
     "tier": 0,
     "modClass": "",
@@ -178759,7 +178759,7 @@
   },
   {
     "aircraftId": "il_28sh",
-    "id": "nr23_turret_apit",
+    "id": "ns23_armor_targets",
     "display": "23 mm cannon ammunition belt for armored targets",
     "tier": 0,
     "modClass": "",
@@ -178768,7 +178768,7 @@
   },
   {
     "aircraftId": "il_28sh",
-    "id": "ns23_armor_targets",
+    "id": "nr23_turret_apit",
     "display": "23 mm cannon ammunition belt for armored targets",
     "tier": 0,
     "modClass": "",
@@ -207721,7 +207721,7 @@
   },
   {
     "aircraftId": "j2m3",
-    "id": "type99mk2_all_tracers",
+    "id": "type99mk1_all_tracers",
     "display": "20 mm cannon ammunition belt with tracer shells",
     "tier": 0,
     "modClass": "",
@@ -207730,7 +207730,7 @@
   },
   {
     "aircraftId": "j2m3",
-    "id": "type99mk1_all_tracers",
+    "id": "type99mk2_all_tracers",
     "display": "20 mm cannon ammunition belt with tracer shells",
     "tier": 0,
     "modClass": "",
@@ -207793,7 +207793,7 @@
   },
   {
     "aircraftId": "j2m3",
-    "id": "type99mk2_universal",
+    "id": "type99mk1_universal",
     "display": "Omni-purpose ammunition belt for 20 mm cannon",
     "tier": 0,
     "modClass": "",
@@ -207802,7 +207802,7 @@
   },
   {
     "aircraftId": "j2m3",
-    "id": "type99mk1_universal",
+    "id": "type99mk2_universal",
     "display": "Omni-purpose ammunition belt for 20 mm cannon",
     "tier": 0,
     "modClass": "",
@@ -208018,7 +208018,7 @@
   },
   {
     "aircraftId": "j2m4_kai",
-    "id": "type99mk1_universal",
+    "id": "type99mk2_universal",
     "display": "Omni-purpose ammunition belt for 20 mm cannon",
     "tier": 0,
     "modClass": "",
@@ -208027,7 +208027,7 @@
   },
   {
     "aircraftId": "j2m4_kai",
-    "id": "type99mk2_universal",
+    "id": "type99mk1_universal",
     "display": "Omni-purpose ammunition belt for 20 mm cannon",
     "tier": 0,
     "modClass": "",
@@ -208198,7 +208198,7 @@
   },
   {
     "aircraftId": "j2m5",
-    "id": "type99mk1_universal",
+    "id": "type99mk2_universal",
     "display": "Omni-purpose ammunition belt for 20 mm cannon",
     "tier": 0,
     "modClass": "",
@@ -208207,7 +208207,7 @@
   },
   {
     "aircraftId": "j2m5",
-    "id": "type99mk2_universal",
+    "id": "type99mk1_universal",
     "display": "Omni-purpose ammunition belt for 20 mm cannon",
     "tier": 0,
     "modClass": "",
@@ -237115,7 +237115,7 @@
   },
   {
     "aircraftId": "ki-45_hei_tei",
-    "id": "ho1_stealth",
+    "id": "ho5_stealth",
     "display": "20 mm cannon ammunition belt for stealth attack",
     "tier": 0,
     "modClass": "",
@@ -237124,7 +237124,7 @@
   },
   {
     "aircraftId": "ki-45_hei_tei",
-    "id": "ho5_stealth",
+    "id": "ho1_stealth",
     "display": "20 mm cannon ammunition belt for stealth attack",
     "tier": 0,
     "modClass": "",
@@ -237241,7 +237241,7 @@
   },
   {
     "aircraftId": "ki-45_hei_tei",
-    "id": "ho1_universal",
+    "id": "ho5_universal",
     "display": "Omni-purpose ammunition belt for 20 mm cannon",
     "tier": 0,
     "modClass": "",
@@ -237250,7 +237250,7 @@
   },
   {
     "aircraftId": "ki-45_hei_tei",
-    "id": "ho5_universal",
+    "id": "ho1_universal",
     "display": "Omni-purpose ammunition belt for 20 mm cannon",
     "tier": 0,
     "modClass": "",
@@ -237367,7 +237367,7 @@
   },
   {
     "aircraftId": "ki-45_hei_tei_china",
-    "id": "ho1_ground_targets",
+    "id": "ho5_ground_targets",
     "display": "20 mm cannon ammunition belt for ground targets",
     "tier": 0,
     "modClass": "",
@@ -237376,7 +237376,7 @@
   },
   {
     "aircraftId": "ki-45_hei_tei_china",
-    "id": "ho5_ground_targets",
+    "id": "ho1_ground_targets",
     "display": "20 mm cannon ammunition belt for ground targets",
     "tier": 0,
     "modClass": "",
@@ -286354,7 +286354,7 @@
   },
   {
     "aircraftId": "p_108a_serie2",
-    "id": "breda12_7_turret_ap",
+    "id": "breda_turret_ap",
     "display": "12.7 mm machine gun ammunition belt with AP bullets",
     "tier": 0,
     "modClass": "",
@@ -286363,7 +286363,7 @@
   },
   {
     "aircraftId": "p_108a_serie2",
-    "id": "breda_turret_ap",
+    "id": "breda12_7_turret_ap",
     "display": "12.7 mm machine gun ammunition belt with AP bullets",
     "tier": 0,
     "modClass": "",
@@ -286525,7 +286525,7 @@
   },
   {
     "aircraftId": "p_108b_serie1",
-    "id": "breda_turret_ap",
+    "id": "breda12_7_turret_ap",
     "display": "12.7 mm machine gun ammunition belt with AP bullets",
     "tier": 0,
     "modClass": "",
@@ -286534,7 +286534,7 @@
   },
   {
     "aircraftId": "p_108b_serie1",
-    "id": "breda12_7_turret_ap",
+    "id": "breda_turret_ap",
     "display": "12.7 mm machine gun ammunition belt with AP bullets",
     "tier": 0,
     "modClass": "",
@@ -286714,7 +286714,7 @@
   },
   {
     "aircraftId": "p_108b_serie2",
-    "id": "breda_turret_ap",
+    "id": "breda12_7_turret_ap",
     "display": "12.7 mm machine gun ammunition belt with AP bullets",
     "tier": 0,
     "modClass": "",
@@ -286723,7 +286723,7 @@
   },
   {
     "aircraftId": "p_108b_serie2",
-    "id": "breda12_7_turret_ap",
+    "id": "breda_turret_ap",
     "display": "12.7 mm machine gun ammunition belt with AP bullets",
     "tier": 0,
     "modClass": "",
@@ -338508,6 +338508,42 @@
     "requires": "su_17_sppu_22_gunpod"
   },
   {
+    "aircraftId": "su_17m4_china_killstreak",
+    "id": "su_fab_100",
+    "display": "FAB-100",
+    "tier": 1,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "su_17m4_china_killstreak",
+    "id": "su_fab_250",
+    "display": "FAB-250",
+    "tier": 1,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "su_17m4_killstreak",
+    "id": "su_fab_100",
+    "display": "FAB-100",
+    "tier": 1,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "su_17m4_killstreak",
+    "id": "su_fab_250",
+    "display": "FAB-250",
+    "tier": 1,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
     "aircraftId": "su_22m3",
     "id": "ns23_air_targets",
     "display": "23 mm cannon ammunition belt for air targets",
@@ -368704,7 +368740,7 @@
   },
   {
     "aircraftId": "tu_14t",
-    "id": "ns23_air_targets",
+    "id": "nr23_turret_heit",
     "display": "23 mm cannon ammunition belt for air targets",
     "tier": 0,
     "modClass": "",
@@ -368713,7 +368749,7 @@
   },
   {
     "aircraftId": "tu_14t",
-    "id": "nr23_turret_heit",
+    "id": "ns23_air_targets",
     "display": "23 mm cannon ammunition belt for air targets",
     "tier": 0,
     "modClass": "",

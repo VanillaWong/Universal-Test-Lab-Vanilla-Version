@@ -111928,6 +111928,102 @@
     "kind": "cannon"
   },
   {
+    "unitId": "su_17m4_china_killstreak",
+    "domain": "aircraft",
+    "unitDisplay": "Su-17M4",
+    "weaponBlk": "gameData/Weapons/cannonNR30.blk",
+    "weaponDisplay": "cannonNR30",
+    "kind": "cannon"
+  },
+  {
+    "unitId": "su_17m4_china_killstreak",
+    "domain": "aircraft",
+    "unitDisplay": "Su-17M4",
+    "weaponBlk": "gameData/Weapons/dummy_weapon.blk",
+    "weaponDisplay": "dummy weapon",
+    "kind": "cannon"
+  },
+  {
+    "unitId": "su_17m4_china_killstreak",
+    "domain": "aircraft",
+    "unitDisplay": "Su-17M4",
+    "weaponBlk": "gameData/Weapons/rocketGuns/countermeasure_large_split_launcher_jet_with_chaff.blk",
+    "weaponDisplay": "countermeasure large split launcher jet with chaff",
+    "kind": "cannon"
+  },
+  {
+    "unitId": "su_17m4_china_killstreak",
+    "domain": "aircraft",
+    "unitDisplay": "Su-17M4",
+    "weaponBlk": "gameData/Weapons/BombGuns/su_rn_28.blk",
+    "weaponDisplay": "su rn 28",
+    "kind": "cannon"
+  },
+  {
+    "unitId": "su_17m4_china_killstreak",
+    "domain": "aircraft",
+    "unitDisplay": "Su-17M4",
+    "weaponBlk": "gameData/Weapons/BombGuns/su_rn_28_nt.blk",
+    "weaponDisplay": "su rn 28 nt",
+    "kind": "cannon"
+  },
+  {
+    "unitId": "su_17m4_china_killstreak",
+    "domain": "aircraft",
+    "unitDisplay": "Su-17M4",
+    "weaponBlk": "gameData/Weapons/bombguns/su_rn_40.blk",
+    "weaponDisplay": "su rn 40",
+    "kind": "cannon"
+  },
+  {
+    "unitId": "su_17m4_killstreak",
+    "domain": "aircraft",
+    "unitDisplay": "Su-17M4",
+    "weaponBlk": "gameData/Weapons/cannonNR30.blk",
+    "weaponDisplay": "cannonNR30",
+    "kind": "cannon"
+  },
+  {
+    "unitId": "su_17m4_killstreak",
+    "domain": "aircraft",
+    "unitDisplay": "Su-17M4",
+    "weaponBlk": "gameData/Weapons/dummy_weapon.blk",
+    "weaponDisplay": "dummy weapon",
+    "kind": "cannon"
+  },
+  {
+    "unitId": "su_17m4_killstreak",
+    "domain": "aircraft",
+    "unitDisplay": "Su-17M4",
+    "weaponBlk": "gameData/Weapons/rocketGuns/countermeasure_large_split_launcher_jet_with_chaff.blk",
+    "weaponDisplay": "countermeasure large split launcher jet with chaff",
+    "kind": "cannon"
+  },
+  {
+    "unitId": "su_17m4_killstreak",
+    "domain": "aircraft",
+    "unitDisplay": "Su-17M4",
+    "weaponBlk": "gameData/Weapons/BombGuns/su_rn_28.blk",
+    "weaponDisplay": "su rn 28",
+    "kind": "cannon"
+  },
+  {
+    "unitId": "su_17m4_killstreak",
+    "domain": "aircraft",
+    "unitDisplay": "Su-17M4",
+    "weaponBlk": "gameData/Weapons/BombGuns/su_rn_28_nt.blk",
+    "weaponDisplay": "su rn 28 nt",
+    "kind": "cannon"
+  },
+  {
+    "unitId": "su_17m4_killstreak",
+    "domain": "aircraft",
+    "unitDisplay": "Su-17M4",
+    "weaponBlk": "gameData/Weapons/bombguns/su_rn_40.blk",
+    "weaponDisplay": "su rn 40",
+    "kind": "cannon"
+  },
+  {
     "unitId": "su_22m3",
     "domain": "aircraft",
     "unitDisplay": "Su-22M3",
@@ -130987,16 +131083,8 @@
     "unitId": "jaguar_a_germany_killstreak",
     "domain": "aircraft",
     "unitDisplay": "Jaguar A",
-    "weaponBlk": "gameData/Weapons/BombGuns/fr_an52_5kt_nt.blk",
-    "weaponDisplay": "AN-52 nuclear bomb",
-    "kind": "ordnance"
-  },
-  {
-    "unitId": "jaguar_a_germany_killstreak",
-    "domain": "aircraft",
-    "unitDisplay": "Jaguar A",
-    "weaponBlk": "gameData/Weapons/BombGuns/fr_an52_30kt_nt.blk",
-    "weaponDisplay": "AN-52 nuclear bomb",
+    "weaponBlk": "gameData/Weapons/rocketGuns/countermeasure_large_split_launcher_jet_with_chaff.blk",
+    "weaponDisplay": "AN-52 nuclear bomb; 2x Large caliber countermeasures",
     "kind": "ordnance"
   },
   {
@@ -131011,16 +131099,8 @@
     "unitId": "jaguar_a_iaf_killstreak",
     "domain": "aircraft",
     "unitDisplay": "Jaguar A",
-    "weaponBlk": "gameData/Weapons/BombGuns/fr_an52_5kt_nt.blk",
-    "weaponDisplay": "AN-52 nuclear bomb",
-    "kind": "ordnance"
-  },
-  {
-    "unitId": "jaguar_a_iaf_killstreak",
-    "domain": "aircraft",
-    "unitDisplay": "Jaguar A",
-    "weaponBlk": "gameData/Weapons/BombGuns/fr_an52_30kt_nt.blk",
-    "weaponDisplay": "AN-52 nuclear bomb",
+    "weaponBlk": "gameData/Weapons/rocketGuns/countermeasure_large_split_launcher_jet_with_chaff.blk",
+    "weaponDisplay": "AN-52 nuclear bomb; 2x Large caliber countermeasures",
     "kind": "ordnance"
   },
   {
@@ -131035,16 +131115,8 @@
     "unitId": "jaguar_a_italy_killstreak",
     "domain": "aircraft",
     "unitDisplay": "Jaguar A",
-    "weaponBlk": "gameData/Weapons/BombGuns/fr_an52_5kt_nt.blk",
-    "weaponDisplay": "AN-52 nuclear bomb",
-    "kind": "ordnance"
-  },
-  {
-    "unitId": "jaguar_a_italy_killstreak",
-    "domain": "aircraft",
-    "unitDisplay": "Jaguar A",
-    "weaponBlk": "gameData/Weapons/BombGuns/fr_an52_30kt_nt.blk",
-    "weaponDisplay": "AN-52 nuclear bomb",
+    "weaponBlk": "gameData/Weapons/rocketGuns/countermeasure_large_split_launcher_jet_with_chaff.blk",
+    "weaponDisplay": "AN-52 nuclear bomb; 2x Large caliber countermeasures",
     "kind": "ordnance"
   },
   {
@@ -131059,16 +131131,8 @@
     "unitId": "jaguar_a_japan_killstreak",
     "domain": "aircraft",
     "unitDisplay": "Jaguar A",
-    "weaponBlk": "gameData/Weapons/BombGuns/fr_an52_5kt_nt.blk",
-    "weaponDisplay": "AN-52 nuclear bomb",
-    "kind": "ordnance"
-  },
-  {
-    "unitId": "jaguar_a_japan_killstreak",
-    "domain": "aircraft",
-    "unitDisplay": "Jaguar A",
-    "weaponBlk": "gameData/Weapons/BombGuns/fr_an52_30kt_nt.blk",
-    "weaponDisplay": "AN-52 nuclear bomb",
+    "weaponBlk": "gameData/Weapons/rocketGuns/countermeasure_large_split_launcher_jet_with_chaff.blk",
+    "weaponDisplay": "AN-52 nuclear bomb; 2x Large caliber countermeasures",
     "kind": "ordnance"
   },
   {
@@ -131083,16 +131147,8 @@
     "unitId": "jaguar_a_killstreak",
     "domain": "aircraft",
     "unitDisplay": "Jaguar A",
-    "weaponBlk": "gameData/Weapons/BombGuns/fr_an52_5kt_nt.blk",
-    "weaponDisplay": "AN-52 nuclear bomb",
-    "kind": "ordnance"
-  },
-  {
-    "unitId": "jaguar_a_killstreak",
-    "domain": "aircraft",
-    "unitDisplay": "Jaguar A",
-    "weaponBlk": "gameData/Weapons/BombGuns/fr_an52_30kt_nt.blk",
-    "weaponDisplay": "AN-52 nuclear bomb",
+    "weaponBlk": "gameData/Weapons/rocketGuns/countermeasure_large_split_launcher_jet_with_chaff.blk",
+    "weaponDisplay": "AN-52 nuclear bomb; 2x Large caliber countermeasures",
     "kind": "ordnance"
   },
   {
@@ -131107,16 +131163,8 @@
     "unitId": "jaguar_a_sweden_killstreak",
     "domain": "aircraft",
     "unitDisplay": "Jaguar A",
-    "weaponBlk": "gameData/Weapons/BombGuns/fr_an52_5kt_nt.blk",
-    "weaponDisplay": "AN-52 nuclear bomb",
-    "kind": "ordnance"
-  },
-  {
-    "unitId": "jaguar_a_sweden_killstreak",
-    "domain": "aircraft",
-    "unitDisplay": "Jaguar A",
-    "weaponBlk": "gameData/Weapons/BombGuns/fr_an52_30kt_nt.blk",
-    "weaponDisplay": "AN-52 nuclear bomb",
+    "weaponBlk": "gameData/Weapons/rocketGuns/countermeasure_large_split_launcher_jet_with_chaff.blk",
+    "weaponDisplay": "AN-52 nuclear bomb; 2x Large caliber countermeasures",
     "kind": "ordnance"
   },
   {
@@ -131131,16 +131179,8 @@
     "unitId": "jaguar_a_uk_killstreak",
     "domain": "aircraft",
     "unitDisplay": "Jaguar A",
-    "weaponBlk": "gameData/Weapons/BombGuns/fr_an52_5kt_nt.blk",
-    "weaponDisplay": "AN-52 nuclear bomb",
-    "kind": "ordnance"
-  },
-  {
-    "unitId": "jaguar_a_uk_killstreak",
-    "domain": "aircraft",
-    "unitDisplay": "Jaguar A",
-    "weaponBlk": "gameData/Weapons/BombGuns/fr_an52_30kt_nt.blk",
-    "weaponDisplay": "AN-52 nuclear bomb",
+    "weaponBlk": "gameData/Weapons/rocketGuns/countermeasure_large_split_launcher_jet_with_chaff.blk",
+    "weaponDisplay": "AN-52 nuclear bomb; 2x Large caliber countermeasures",
     "kind": "ordnance"
   },
   {
@@ -131155,16 +131195,8 @@
     "unitId": "jaguar_a_usa_killstreak",
     "domain": "aircraft",
     "unitDisplay": "Jaguar A",
-    "weaponBlk": "gameData/Weapons/BombGuns/fr_an52_5kt_nt.blk",
-    "weaponDisplay": "AN-52 nuclear bomb",
-    "kind": "ordnance"
-  },
-  {
-    "unitId": "jaguar_a_usa_killstreak",
-    "domain": "aircraft",
-    "unitDisplay": "Jaguar A",
-    "weaponBlk": "gameData/Weapons/BombGuns/fr_an52_30kt_nt.blk",
-    "weaponDisplay": "AN-52 nuclear bomb",
+    "weaponBlk": "gameData/Weapons/rocketGuns/countermeasure_large_split_launcher_jet_with_chaff.blk",
+    "weaponDisplay": "AN-52 nuclear bomb; 2x Large caliber countermeasures",
     "kind": "ordnance"
   },
   {

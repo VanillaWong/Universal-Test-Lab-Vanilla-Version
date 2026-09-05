@@ -160656,6 +160656,42 @@
     "item": "sppu_22"
   },
   {
+    "aircraftId": "su_17m4_china_killstreak",
+    "presetId": "su_17m4_rn28",
+    "slot": 7,
+    "item": "rn_28"
+  },
+  {
+    "aircraftId": "su_17m4_china_killstreak",
+    "presetId": "su_17m4_rn28_5kt_nt",
+    "slot": 7,
+    "item": "rn_28_nt"
+  },
+  {
+    "aircraftId": "su_17m4_china_killstreak",
+    "presetId": "su_17m4_rn40_30kt_nt",
+    "slot": 7,
+    "item": "rn_40"
+  },
+  {
+    "aircraftId": "su_17m4_killstreak",
+    "presetId": "su_17m4_rn28",
+    "slot": 7,
+    "item": "rn_28"
+  },
+  {
+    "aircraftId": "su_17m4_killstreak",
+    "presetId": "su_17m4_rn28_5kt_nt",
+    "slot": 7,
+    "item": "rn_28_nt"
+  },
+  {
+    "aircraftId": "su_17m4_killstreak",
+    "presetId": "su_17m4_rn40_30kt_nt",
+    "slot": 7,
+    "item": "rn_40"
+  },
+  {
     "aircraftId": "su_22m3",
     "presetId": "su_22m3_default",
     "slot": 1,

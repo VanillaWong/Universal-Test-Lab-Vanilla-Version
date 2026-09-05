@@ -26774,6 +26774,12 @@ su_17m4	su_17m4_sppu_22	1	sppu_22
 su_17m4	su_17m4_sppu_22	3	sppu_22
 su_17m4	su_17m4_sppu_22	7	sppu_22
 su_17m4	su_17m4_sppu_22	9	sppu_22
+su_17m4_china_killstreak	su_17m4_rn28	7	rn_28
+su_17m4_china_killstreak	su_17m4_rn28_5kt_nt	7	rn_28_nt
+su_17m4_china_killstreak	su_17m4_rn40_30kt_nt	7	rn_40
+su_17m4_killstreak	su_17m4_rn28	7	rn_28
+su_17m4_killstreak	su_17m4_rn28_5kt_nt	7	rn_28_nt
+su_17m4_killstreak	su_17m4_rn40_30kt_nt	7	rn_40
 su_22m3	su_22m3_default	1	ptb_left1
 su_22m3	su_22m3_default	4	ptb_left
 su_22m3	su_22m3_default	6	ptb_right
