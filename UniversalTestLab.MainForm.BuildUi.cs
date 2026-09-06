@@ -803,12 +803,19 @@ namespace UniversalTestLab
             Aircraft selected = SelectedAircraft;
             if (selected == null) return false;
             double total = assignments.Values.Sum(a => a.Weapon.TotalMass);
+            // maxloadMass is only a reference figure written by the vehicle data
+            // authors, not a limit the game engine enforces: official loadouts
+            // routinely exceed it (e.g. Su-33: 6500 kg reference vs a 7504 kg
+            // stock preset). Treat an over-limit loadout as a warning the user
+            // can accept, never as a hard error.
             if (selected.MaxLoad > 0 && total > selected.MaxLoad)
             {
-                const string overload = "The configured weapon mass exceeds this vehicle's external load limit. Reduce the loadout before building the mission.";
-                if (workspaceOperation) throw new InvalidOperationException(overload);
-                MessageBox.Show(this, overload, "Loadout limit exceeded", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return false;
+                string overload = "The configured weapon mass (" + total.ToString("0", CultureInfo.InvariantCulture) + " kg) exceeds the vehicle's reference load limit (" +
+                    selected.MaxLoad.ToString("0", CultureInfo.InvariantCulture) + " kg). The game does not enforce this reference value and official loadouts can exceed it, but unusual combinations may still be rejected in some modes.\r\n\r\nApply anyway?";
+                bool accepted = WorkspaceConfirmation != null
+                    ? WorkspaceConfirmation("Reference load limit exceeded", overload)
+                    : MessageBox.Show(this, overload, "Reference load limit exceeded", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes;
+                if (!accepted) return false;
             }
             List<PylonAssignment> risky = assignments.Values.Where(a => a.Injected && IsRiskyForPylon(a.Pylon, a.Weapon)).OrderBy(a => a.Pylon.Order).ToList();
             if (risky.Count == 0) return true;
