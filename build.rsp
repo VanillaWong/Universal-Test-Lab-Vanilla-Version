@@ -42,6 +42,7 @@ UniversalTestLab.Storage.cs
 UniversalTestLab.UserSights.cs
 UniversalTestLab.WinForms.cs
 UniversalTestLab.Program.cs
+UniversalTestLab.CrashGuard.cs
 UniversalTestLab.MainForm.cs
 UniversalTestLab.MainForm.BuildUi.cs
 UniversalTestLab.MainForm.Generate.cs

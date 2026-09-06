@@ -80,6 +80,19 @@ The compiled application is written to `dist\UniversalTestLab.exe`.
 
 Bug reports and feature proposals are welcome through [GitHub Issues](https://github.com/VanillaWong/Universal-Test-Lab-Vanilla-Version/issues). See [CONTRIBUTING.md](CONTRIBUTING.md) and [SECURITY.md](SECURITY.md).
 
+### Reporting a crash / 报错
+
+If the application crashes or misbehaves, it saves a crash log to
+`%LOCALAPPDATA%\UniversalTestLab\crash.log` (plus a timestamped `crash_*.log` snapshot).
+The crash dialog shows this path with Copy / Open-folder buttons. Please open a GitHub
+Issue and attach the log together with a short description of what you were doing — the
+log contains the version, OS, and the full exception stack, which is usually enough to
+pin down the bug.
+
+如果程序崩溃或行为异常,请把 `%LOCALAPPDATA%\UniversalTestLab\crash.log`(以及同目录带时间戳的
+crash_*.log 快照)随 GitHub Issue 一起发来,并简述出错前的操作——日志含版本、系统与完整异常堆栈,
+通常足以定位问题。
+
 ## Legal
 
 Universal Test Lab is an independent fan-made project and is not affiliated with or endorsed by Gaijin Entertainment.

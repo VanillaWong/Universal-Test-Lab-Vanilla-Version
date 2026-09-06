@@ -22,33 +22,11 @@ namespace UniversalTestLab
         [STAThread]
         private static void Main(string[] args)
         {
-            // Diagnostic crash log (next to the exe and under %LOCALAPPDATA%\UniversalTestLab)
-            // so players can share an exact stack trace. Built with /debug+ so line numbers appear.
-            AppDomain.CurrentDomain.UnhandledException += delegate(object sender, UnhandledExceptionEventArgs e)
-            {
-                try
-                {
-                    string detail = e.ExceptionObject == null ? "(null exception)" : e.ExceptionObject.ToString();
-                    try
-                    {
-                        detail += Environment.NewLine + "OS=" + Environment.OSVersion
-                            + " | culture=" + System.Threading.Thread.CurrentThread.CurrentUICulture.Name
-                            + " | lang=" + ConfigStore.GetString("language");
-                    }
-                    catch { }
-                    string exeDir = AppDomain.CurrentDomain.BaseDirectory;
-                    string[] targets =
-                    {
-                        Path.Combine(exeDir, "selftest_crash.log"),
-                        Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "UniversalTestLab", "crash.log")
-                    };
-                    foreach (string log in targets)
-                    {
-                        try { File.WriteAllText(log, detail); } catch { }
-                    }
-                }
-                catch { }
-            };
+            // Global crash reporting: every unhandled exception (UI, background,
+            // AppDomain) lands in a timestamped crash log under
+            // %LOCALAPPDATA%\UniversalTestLab and a bilingual dialog tells the
+            // player where it is. Built with /debug+ so stack traces carry lines.
+            CrashGuard.Install();
 
             if (args != null)
             {

@@ -1,5 +1,16 @@
 # Changelog
 
+## v0.12.0-beta.6 — 2026-09-06
+
+### Added / 新增
+
+- **Global crash reporting**: UI-thread / background-task / AppDomain exceptions write a timestamped crash log under `%LOCALAPPDATA%\UniversalTestLab\crash.log` (+ `crash_*.log` snapshot, exe-dir fallback) with version/OS/CLR and the full exception chain; a bilingual dialog shows the log path with Copy / Open-folder / GitHub Issues actions. / 全局崩溃上报:UI 线程/后台/AppDomain 异常统一写日志(%LOCALAPPDATA%\UniversalTestLab\crash.log + 时间戳快照,失败回退 exe 目录),含版本/OS/CLR/完整异常链;双语弹窗展示日志路径并提供复制/打开文件夹/GitHub Issues 入口。
+
+### Fixed / 修复
+
+- Load-limit gate removed: `ConfirmRiskyLoadout()` no longer treats the reference `maxloadMass` (Su-33 6500 kg < its stock 7504 kg FAB-250x28 preset) as an engine-enforced limit — over-limit loadouts are now an accept-able Yes/No warning. / 移除挂载上限硬拦:不再把参考值 maxloadMass(苏-33 6500 < 官方 7504kg 的 28×FAB-250 预设)当成引擎强制上限——超限组合改为可确认的 Yes/No 提示。
+- Airfield takeoff spawn moved from the runway middle (z=575.1) to near its end (z=1160) so the aircraft can use the full 1250 m roll. / 机场起飞出生点从跑道正中(z=575.1)移到末端附近(z=1160),可全跑道滑跑。
+
 ## v0.12.0-beta.5 — 2026-09-03
 
 ### Added / 新增
