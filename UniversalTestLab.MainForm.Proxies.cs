@@ -383,14 +383,25 @@ namespace UniversalTestLab
             unitBlk = "fmFile:t = \"fm/" + cleanId + ".blk\"" + Environment.NewLine + (unitBlk ?? "");
         }
 
-        internal static void RemoveFuelTankPresets(ref string fm)
+        internal static void RemoveFuelTankPresets(ref string fm, ISet<string> keepMounts = null)
         {
             List<BlockSpan> remove = new List<BlockSpan>();
             foreach (BlockSpan preset in BlkTools.Blocks(fm, "WeaponPreset"))
             {
                 bool isFuelTank = BlkTools.Blocks(preset.Text, "Weapon").Any(weapon =>
                     String.Equals(BlkTools.Field(weapon.Text, "trigger", "t"), "fuel tanks", StringComparison.OrdinalIgnoreCase));
-                if (isFuelTank) remove.Add(preset);
+                if (isFuelTank)
+                {
+                    // A fuel preset explicitly referenced by the generated loadout
+                    // (drop tank / conformal pack chosen in the mount UI) is kept;
+                    // unreferenced ones stay cleaned up as before.
+                    if (keepMounts != null && keepMounts.Count > 0)
+                    {
+                        string presetName = BlkTools.Field(preset.Text, "name", "t");
+                        if (!String.IsNullOrWhiteSpace(presetName) && keepMounts.Contains(presetName)) isFuelTank = false;
+                    }
+                    if (isFuelTank) remove.Add(preset);
+                }
             }
             foreach (BlockSpan preset in remove.OrderByDescending(x => x.Start))
                 fm = fm.Remove(preset.Start, preset.End - preset.Start + 1);

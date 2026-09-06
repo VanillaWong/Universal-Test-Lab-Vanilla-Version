@@ -457,12 +457,50 @@ foreach ($id in ($playable.Keys | Sort-Object)) {
       if (-not $mountName.Success) { continue }
       $weaponBlocks = Get-NamedBlocks $presetBlock.Text 'Weapon'
       if ($weaponBlocks.Count -eq 0) { continue }
-      $weapon = $weaponBlocks[0].Text
+      # Preset classification: the primary weapon is the first non fuel-tank /
+      # countermeasure / cannon weapon. Official presets often list BOL
+      # countermeasures or a fuel tank FIRST and the actual ordnance SECOND
+      # (aim_120a_slot1_bol = BOL + AMRAAM, mer_mk81_x6_tank_slot6 = tank +
+      # bombs), so keying on the first weapon alone used to drop every such
+      # option from the catalog.
+      $mainWeapon = $null
+      $mainTrigger = ''
+      foreach ($w in $weaponBlocks) {
+        $tr = [regex]::Match($w.Text, 'trigger:t\s*=\s*"([^"]+)"')
+        if (-not $tr.Success) { continue }
+        $tv = $tr.Groups[1].Value
+        if ($tv -match 'fuel tanks|countermeasures|cannon') { continue }
+        $mainWeapon = $w; $mainTrigger = $tv; break
+      }
+      # Pure presets carry only fuel tanks (drop tanks / conformal FAST packs)
+      # or only countermeasure dispensers (BOL / BKO pods). Keep them as their
+      # own donor options instead of filtering them away.
+      $pureKind = ''
+      if ($null -eq $mainWeapon) {
+        $tr0 = [regex]::Match($weaponBlocks[0].Text, 'trigger:t\s*=\s*"([^"]+)"')
+        if (-not $tr0.Success) { continue }
+        $t0 = $tr0.Groups[1].Value
+        if ($t0 -match 'fuel tanks') { $pureKind = 'fuel' }
+        elseif ($t0 -match 'countermeasures') { $pureKind = 'cm' }
+        else { continue }
+        $mainWeapon = $weaponBlocks[0]; $mainTrigger = $t0
+      }
+      # Mixed-preset flags for display: BOL pods riding with ordnance on the
+      # same mount, or fuel tanks sharing a mount with bombs.
+      $hasBol = $false
+      $hasFuel = $false
+      foreach ($w in $weaponBlocks) {
+        $trx = [regex]::Match($w.Text, 'trigger:t\s*=\s*"([^"]+)"')
+        if (-not $trx.Success) { continue }
+        $tx = $trx.Groups[1].Value
+        if ($tx -eq 'countermeasures' -and $w.Text -match '(?i)(^|[^a-z])bol\.blk') { $hasBol = $true }
+        elseif ($tx -match 'fuel tanks') { $hasFuel = $true }
+      }
+      $weapon = $mainWeapon.Text
       $trigger = [regex]::Match($weapon, 'trigger:t\s*=\s*"([^"]+)"')
       $blk = [regex]::Match($weapon, 'blk:t\s*=\s*"([^"]+)"')
       $emitter = [regex]::Match($weapon, 'emitter:t\s*=\s*"([^"]+)"')
       if (-not $trigger.Success -or -not $blk.Success -or -not $emitter.Success) { continue }
-      if ($trigger.Groups[1].Value -match 'fuel tanks|countermeasures|cannon') { continue }
       # 弹数累加按"弹种基名"判定同型：同一挂点方案常把同一型弹拆成多个
       # blk 文件（如 us_aim_120a + us_aim_120a_default，混装成 4 发），若要求
       # blk 完全一致会把同型弹漏计（曾把 4 发 AMRAAM 算成 2 发）。
@@ -483,17 +521,25 @@ foreach ($id in ($playable.Keys | Sort-Object)) {
       if ($bullets -le 0) { $bullets = 1 }
       $iconMatch = [regex]::Match($presetBlock.Text, 'iconType:t\s*=\s*"([^"]+)"')
       $icon = if ($iconMatch.Success) { $iconMatch.Groups[1].Value } else { '' }
-      $weaponFile = [IO.Path]::GetFileNameWithoutExtension(($blk.Groups[1].Value -replace '/', '\'))
       $meta = Get-WeaponMeta $blk.Groups[1].Value $trigger.Groups[1].Value $icon $bullets
       $mass = $meta.Mass.ToString('0.###', [Globalization.CultureInfo]::InvariantCulture)
       $totalMass = $meta.TotalMass.ToString('0.###', [Globalization.CultureInfo]::InvariantCulture)
       $label = Clean-Field $meta.Name
+      if ($pureKind -eq 'fuel' -and $label -notmatch '(?i)tank|fuel') { $label = $label + ' (Fuel Tank)' }
+      elseif ($pureKind -eq 'cm' -and $label -notmatch '(?i)bol|bko|chaff|flare|countermeasure') { $label = $label + ' (CM Pod)' }
+      elseif ($hasBol -and $label -notmatch '(?i)bol') { $label = $label + ' + BOL' }
+      elseif ($hasFuel -and $label -notmatch '(?i)tank|fuel') { $label = $label + ' + Fuel Tank' }
+      if ($mountName.Groups[1].Value -match '(?i)_tank(?:$|_)' -and $label -notmatch '(?i)tank|fuel|fast-pack') { $label = $label + ' (FAST-pack)' }
       $donorRows.Add("$id`t$display`t$slot`t$($mountName.Groups[1].Value)`t$($trigger.Groups[1].Value)`t$($blk.Groups[1].Value)`t$($emitter.Groups[1].Value)`t$bullets`t$icon`t$label`t$($meta.Category)`t$mass`t$totalMass")
       if (-not $anchorMount) { $anchorMount = $mountName.Groups[1].Value }
-      $catalogKey = "$($blk.Groups[1].Value)|$($trigger.Groups[1].Value)|$bullets"
-      if (-not $weaponCatalogSeen.ContainsKey($catalogKey)) {
-        $weaponCatalogSeen[$catalogKey] = $true
-        $weaponCatalogRows.Add("$($trigger.Groups[1].Value)`t$($blk.Groups[1].Value)`t$bullets`t$icon`t$label`t$($meta.Category)`t$mass`t$totalMass")
+      # Pure fuel / pure countermeasure-pod presets stay station-level donors;
+      # they must not pollute the global injection catalog.
+      if ($pureKind -eq '') {
+        $catalogKey = "$($blk.Groups[1].Value)|$($trigger.Groups[1].Value)|$bullets"
+        if (-not $weaponCatalogSeen.ContainsKey($catalogKey)) {
+          $weaponCatalogSeen[$catalogKey] = $true
+          $weaponCatalogRows.Add("$($trigger.Groups[1].Value)`t$($blk.Groups[1].Value)`t$bullets`t$icon`t$label`t$($meta.Category)`t$mass`t$totalMass")
+        }
       }
     }
     if ($anchorMount) { $aircraftSlotRows.Add("$id`t$slot`t$order`t$tier`t$maxload`t$anchorMount"); $legacySlotsFound = $true }

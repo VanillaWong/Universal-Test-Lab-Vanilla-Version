@@ -18,6 +18,7 @@
 | 6 | **native 直选 ≠ 换弹**：UTL 非注入模式选武器只引用原生预设名（donor 行改 blk 无效）——真正换弹走 INJECT 模式（weapon_catalog 全局列表） |
 | 7 | **UTL 运行时 UTL.exe 被锁**：编译前必须关 UTL |
 | 8 | 大改前先备份：`cp 文件 文件.bak_<标签>`（.bak 不进 git） |
+| 9 | **数据重构必须有可见进度**：Update-Data / Build-Catalog / tsv2json 等长任务禁止黑盒静默后台——要么前台实时输出，要么分离进程 + 持续轮询向用户报告进度 |
 
 ---
 

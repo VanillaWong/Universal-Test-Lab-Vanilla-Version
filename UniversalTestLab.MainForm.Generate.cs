@@ -50,7 +50,17 @@ namespace UniversalTestLab
                 ExtractGameBlk(root, "gamedata/flightmodels/fm/" + target.Id + ".blk");
                 EnsureExplicitFlightModel(ref fm, target.Id);
             }
-            RemoveFuelTankPresets(ref fm);
+            // Fuel-tank presets referenced by the mounted loadout survive cleanup;
+            // the rest ("phantom" fuel presets) are removed so a copied usermodel
+            // never silently carries drop tanks or conformal packs.
+            HashSet<string> mountedPresets = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+            foreach (PylonAssignment mounted in assignments.Values)
+            {
+                if (mounted == null) continue;
+                if (!mounted.Injected && mounted.Weapon != null && !String.IsNullOrWhiteSpace(mounted.Weapon.Mount)) mountedPresets.Add(mounted.Weapon.Mount);
+                if (mounted.Pylon != null && !String.IsNullOrWhiteSpace(mounted.Pylon.AnchorMount)) mountedPresets.Add(mounted.Pylon.AnchorMount);
+            }
+            RemoveFuelTankPresets(ref fm, mountedPresets);
             string classId = "utl_run_" + token + "_player";
             string presetId = "utl_run_" + token + "_loadout";
             string presetOut = null;
@@ -131,12 +141,15 @@ namespace UniversalTestLab
             else
             {
                 HashSet<int> assignedSlots = new HashSet<int>(assignments.Keys);
-                // Native helicopter presets contain external stations only. The turret,
+                // Generated presets contain external stations only, matching native War
+                // Thunder presets. The turret,
                 // fixed gun and countermeasure launchers remain in commonWeapons and are
                 // attached implicitly by the helicopter usermodel. Serializing them into
                 // the preset turns the common group into the selected secondary group and
                 // prevents the normal external-weapon triggers from firing.
-                AppendCommonWeaponsToLoadout(loadout, fm, assignedSlots, helicopter);
+                // Fixed-wing mirror of the 2026-08-28 helicopter lesson: serializing
+                // commonWeapons slots hid the countermeasure stations from the in-flight
+                // weapon list (no HUD CM) until OverrideCountermeasures rewrote them.
                 // Native War Thunder helicopter presets are serialized by numeric station,
                 // not by the mirrored visual order used by the loadout UI. A 1,4,2,3 file
                 // mounts the stores, but the in-flight selector only indexes part of it.

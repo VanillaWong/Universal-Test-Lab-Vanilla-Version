@@ -126451,6 +126451,30 @@
     "unitId": "a_10c",
     "domain": "aircraft",
     "unitDisplay": "A-10C Thunderbolt II",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_600_gal_a_10c_1.blk",
+    "weaponDisplay": "Drop tank (600 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "a_10c",
+    "domain": "aircraft",
+    "unitDisplay": "A-10C Thunderbolt II",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_600_gal_a_10c_3.blk",
+    "weaponDisplay": "Drop tank (600 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "a_10c",
+    "domain": "aircraft",
+    "unitDisplay": "A-10C Thunderbolt II",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_600_gal_a_10c_2.blk",
+    "weaponDisplay": "Drop tank (600 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "a_10c",
+    "domain": "aircraft",
+    "unitDisplay": "A-10C Thunderbolt II",
     "weaponBlk": "gameData/Weapons/equipment/us_sniper_atp_targeting_pod.blk",
     "weaponDisplay": "Sniper targeting pod",
     "kind": "ordnance"
@@ -126688,6 +126712,14 @@
     "kind": "ordnance"
   },
   {
+    "unitId": "a6m3_zero",
+    "domain": "aircraft",
+    "unitDisplay": "A6M3 Reisen",
+    "weaponBlk": "gameData/Weapons/drop_tank/jp_330_liters_a6m.blk",
+    "weaponDisplay": "Drop tank (330 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
     "unitId": "a6m5_zero",
     "domain": "aircraft",
     "unitDisplay": "A6M5 Reisen",
@@ -126856,6 +126888,94 @@
     "kind": "ordnance"
   },
   {
+    "unitId": "alpha_jet_a",
+    "domain": "aircraft",
+    "unitDisplay": "Alpha Jet A",
+    "weaponBlk": "gameData/Weapons/drop_tank/310l_alpha_jet_1.blk",
+    "weaponDisplay": "Drop tank (310 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "alpha_jet_a",
+    "domain": "aircraft",
+    "unitDisplay": "Alpha Jet A",
+    "weaponBlk": "gameData/Weapons/drop_tank/310l_alpha_jet_2.blk",
+    "weaponDisplay": "Drop tank (310 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "alpha_jet_a_jabog41",
+    "domain": "aircraft",
+    "unitDisplay": "Alpha Jet A, Jagdbombergeschwader 41",
+    "weaponBlk": "gameData/Weapons/drop_tank/310l_alpha_jet_1.blk",
+    "weaponDisplay": "Drop tank (310 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "alpha_jet_a_jabog41",
+    "domain": "aircraft",
+    "unitDisplay": "Alpha Jet A, Jagdbombergeschwader 41",
+    "weaponBlk": "gameData/Weapons/drop_tank/310l_alpha_jet_2.blk",
+    "weaponDisplay": "Drop tank (310 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "alpha_jet_a_thailand",
+    "domain": "aircraft",
+    "unitDisplay": "Alpha Jet A",
+    "weaponBlk": "gameData/Weapons/drop_tank/310l_alpha_jet_1.blk",
+    "weaponDisplay": "Drop tank (310 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "alpha_jet_a_thailand",
+    "domain": "aircraft",
+    "unitDisplay": "Alpha Jet A",
+    "weaponBlk": "gameData/Weapons/drop_tank/310l_alpha_jet_2.blk",
+    "weaponDisplay": "Drop tank (310 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "alpha_jet_e",
+    "domain": "aircraft",
+    "unitDisplay": "Alpha Jet E",
+    "weaponBlk": "gameData/Weapons/drop_tank/310l_alpha_jet_france_1.blk",
+    "weaponDisplay": "Drop tank (310 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "alpha_jet_e",
+    "domain": "aircraft",
+    "unitDisplay": "Alpha Jet E",
+    "weaponBlk": "gameData/Weapons/drop_tank/310l_alpha_jet_france_2.blk",
+    "weaponDisplay": "Drop tank (310 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "alpha_jet_th_phase_1",
+    "domain": "aircraft",
+    "unitDisplay": "Alpha Jet TH (Phase 1)",
+    "weaponBlk": "gameData/Weapons/drop_tank/310l_alpha_jet_1.blk",
+    "weaponDisplay": "Drop tank (310 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "alpha_jet_th_phase_1",
+    "domain": "aircraft",
+    "unitDisplay": "Alpha Jet TH (Phase 1)",
+    "weaponBlk": "gameData/Weapons/drop_tank/310l_alpha_jet_2.blk",
+    "weaponDisplay": "Drop tank (310 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "amx",
+    "domain": "aircraft",
+    "unitDisplay": "AMX Ghibli",
+    "weaponBlk": "gameData/Weapons/drop_tank/it_580l_amx_1.blk",
+    "weaponDisplay": "Drop tank (580 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
     "unitId": "amx",
     "domain": "aircraft",
     "unitDisplay": "AMX Ghibli",
@@ -126864,11 +126984,35 @@
     "kind": "ordnance"
   },
   {
+    "unitId": "amx",
+    "domain": "aircraft",
+    "unitDisplay": "AMX Ghibli",
+    "weaponBlk": "gameData/Weapons/drop_tank/it_580l_amx_2.blk",
+    "weaponDisplay": "Drop tank (580 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "amx_a_1a_brazil",
+    "domain": "aircraft",
+    "unitDisplay": "AMX A-1A Ghibli",
+    "weaponBlk": "gameData/Weapons/drop_tank/br_580l_amx_1.blk",
+    "weaponDisplay": "Drop tank (580 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
     "unitId": "amx_a_1a_brazil",
     "domain": "aircraft",
     "unitDisplay": "AMX A-1A Ghibli",
     "weaponBlk": "gameData/Weapons/equipment/gr_litening_pod_targeting_pod.blk",
     "weaponDisplay": "LITENING II targeting pod",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "amx_a_1a_brazil",
+    "domain": "aircraft",
+    "unitDisplay": "AMX A-1A Ghibli",
+    "weaponBlk": "gameData/Weapons/drop_tank/br_580l_amx_2.blk",
+    "weaponDisplay": "Drop tank (580 liters) (Fuel Tank)",
     "kind": "ordnance"
   },
   {
@@ -128259,6 +128403,14 @@
     "unitId": "buccaneer_s2b",
     "domain": "aircraft",
     "unitDisplay": "Buccaneer S.2B",
+    "weaponBlk": "gameData/Weapons/drop_tank/buccaneer_s2b_baydoor_tank.blk",
+    "weaponDisplay": "Drop tank (440 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "buccaneer_s2b",
+    "domain": "aircraft",
+    "unitDisplay": "Buccaneer S.2B",
     "weaponBlk": "gameData/Weapons/equipment/uk_data_lin_pod.blk",
     "weaponDisplay": "Data link pod",
     "kind": "ordnance"
@@ -128339,8 +128491,32 @@
     "unitId": "cf_188a_canada",
     "domain": "aircraft",
     "unitDisplay": "CF-188A Hornet",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_330gal_fa_18_drop_tank_wing_left.blk",
+    "weaponDisplay": "Drop tank (330 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "cf_188a_canada",
+    "domain": "aircraft",
+    "unitDisplay": "CF-188A Hornet",
     "weaponBlk": "gameData/Weapons/equipment/an_aas_38b.blk",
     "weaponDisplay": "AN/AAS-38B targeting pod",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "cf_188a_canada",
+    "domain": "aircraft",
+    "unitDisplay": "CF-188A Hornet",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_330gal_fa_18_drop_tank_fuse.blk",
+    "weaponDisplay": "Drop tank (330 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "cf_188a_canada",
+    "domain": "aircraft",
+    "unitDisplay": "CF-188A Hornet",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_330gal_fa_18_drop_tank_wing_right.blk",
+    "weaponDisplay": "Drop tank (330 gal.) (Fuel Tank)",
     "kind": "ordnance"
   },
   {
@@ -128507,8 +128683,40 @@
     "unitId": "ef_2000_aesa",
     "domain": "aircraft",
     "unitDisplay": "EF-2000 (AESA)",
+    "weaponBlk": "gameData/Weapons/drop_tank/uk_1000l_ef_2000_1.blk",
+    "weaponDisplay": "Drop tank (1000 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "ef_2000_aesa",
+    "domain": "aircraft",
+    "unitDisplay": "EF-2000 (AESA)",
     "weaponBlk": "gameData/Weapons/equipment/gr_litening_iii_targeting_pod.blk",
     "weaponDisplay": "LITENING III targeting pod",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "ef_2000_aesa",
+    "domain": "aircraft",
+    "unitDisplay": "EF-2000 (AESA)",
+    "weaponBlk": "gameData/Weapons/drop_tank/uk_1000l_ef_2000_2.blk",
+    "weaponDisplay": "Drop tank (1000 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "ef_2000_aesa",
+    "domain": "aircraft",
+    "unitDisplay": "EF-2000 (AESA)",
+    "weaponBlk": "gameData/Weapons/drop_tank/uk_1000l_ef_2000_3.blk",
+    "weaponDisplay": "Drop tank (1000 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "ef_2000_block_10",
+    "domain": "aircraft",
+    "unitDisplay": "EF-2000 Typhoon (Block 10 T2)",
+    "weaponBlk": "gameData/Weapons/drop_tank/uk_1000l_ef_2000_1.blk",
+    "weaponDisplay": "Drop tank (1000 liters) (Fuel Tank)",
     "kind": "ordnance"
   },
   {
@@ -128520,11 +128728,59 @@
     "kind": "ordnance"
   },
   {
+    "unitId": "ef_2000_block_10",
+    "domain": "aircraft",
+    "unitDisplay": "EF-2000 Typhoon (Block 10 T2)",
+    "weaponBlk": "gameData/Weapons/drop_tank/uk_1000l_ef_2000_2.blk",
+    "weaponDisplay": "Drop tank (1000 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "ef_2000_block_10",
+    "domain": "aircraft",
+    "unitDisplay": "EF-2000 Typhoon (Block 10 T2)",
+    "weaponBlk": "gameData/Weapons/drop_tank/uk_1000l_ef_2000_3.blk",
+    "weaponDisplay": "Drop tank (1000 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "ef_2000_fgr4",
+    "domain": "aircraft",
+    "unitDisplay": "EF-2000 Typhoon FGR.4",
+    "weaponBlk": "gameData/Weapons/drop_tank/uk_1000l_ef_2000_1.blk",
+    "weaponDisplay": "Drop tank (1000 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
     "unitId": "ef_2000_fgr4",
     "domain": "aircraft",
     "unitDisplay": "EF-2000 Typhoon FGR.4",
     "weaponBlk": "gameData/Weapons/equipment/gr_litening_iii_targeting_pod.blk",
     "weaponDisplay": "LITENING III targeting pod",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "ef_2000_fgr4",
+    "domain": "aircraft",
+    "unitDisplay": "EF-2000 Typhoon FGR.4",
+    "weaponBlk": "gameData/Weapons/drop_tank/uk_1000l_ef_2000_2.blk",
+    "weaponDisplay": "Drop tank (1000 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "ef_2000_fgr4",
+    "domain": "aircraft",
+    "unitDisplay": "EF-2000 Typhoon FGR.4",
+    "weaponBlk": "gameData/Weapons/drop_tank/uk_1000l_ef_2000_3.blk",
+    "weaponDisplay": "Drop tank (1000 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "ef_2000_typhoon_aesa",
+    "domain": "aircraft",
+    "unitDisplay": "EF-2000 Typhoon (AESA)",
+    "weaponBlk": "gameData/Weapons/drop_tank/uk_1000l_ef_2000_1.blk",
+    "weaponDisplay": "Drop tank (1000 liters) (Fuel Tank)",
     "kind": "ordnance"
   },
   {
@@ -128536,11 +128792,59 @@
     "kind": "ordnance"
   },
   {
+    "unitId": "ef_2000_typhoon_aesa",
+    "domain": "aircraft",
+    "unitDisplay": "EF-2000 Typhoon (AESA)",
+    "weaponBlk": "gameData/Weapons/drop_tank/uk_1000l_ef_2000_2.blk",
+    "weaponDisplay": "Drop tank (1000 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "ef_2000_typhoon_aesa",
+    "domain": "aircraft",
+    "unitDisplay": "EF-2000 Typhoon (AESA)",
+    "weaponBlk": "gameData/Weapons/drop_tank/uk_1000l_ef_2000_3.blk",
+    "weaponDisplay": "Drop tank (1000 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "ef_2000a",
+    "domain": "aircraft",
+    "unitDisplay": "F-2000A Typhoon",
+    "weaponBlk": "gameData/Weapons/drop_tank/uk_1000l_ef_2000_1.blk",
+    "weaponDisplay": "Drop tank (1000 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
     "unitId": "ef_2000a",
     "domain": "aircraft",
     "unitDisplay": "F-2000A Typhoon",
     "weaponBlk": "gameData/Weapons/equipment/gr_litening_iii_targeting_pod.blk",
     "weaponDisplay": "LITENING III targeting pod",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "ef_2000a",
+    "domain": "aircraft",
+    "unitDisplay": "F-2000A Typhoon",
+    "weaponBlk": "gameData/Weapons/drop_tank/uk_1000l_ef_2000_2.blk",
+    "weaponDisplay": "Drop tank (1000 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "ef_2000a",
+    "domain": "aircraft",
+    "unitDisplay": "F-2000A Typhoon",
+    "weaponBlk": "gameData/Weapons/drop_tank/uk_1000l_ef_2000_3.blk",
+    "weaponDisplay": "Drop tank (1000 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "ef_2000a_aesa",
+    "domain": "aircraft",
+    "unitDisplay": "F-2000A (AESA) Typhoon",
+    "weaponBlk": "gameData/Weapons/drop_tank/uk_1000l_ef_2000_1.blk",
+    "weaponDisplay": "Drop tank (1000 liters) (Fuel Tank)",
     "kind": "ordnance"
   },
   {
@@ -128552,6 +128856,70 @@
     "kind": "ordnance"
   },
   {
+    "unitId": "ef_2000a_aesa",
+    "domain": "aircraft",
+    "unitDisplay": "F-2000A (AESA) Typhoon",
+    "weaponBlk": "gameData/Weapons/drop_tank/uk_1000l_ef_2000_2.blk",
+    "weaponDisplay": "Drop tank (1000 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "ef_2000a_aesa",
+    "domain": "aircraft",
+    "unitDisplay": "F-2000A (AESA) Typhoon",
+    "weaponBlk": "gameData/Weapons/drop_tank/uk_1000l_ef_2000_3.blk",
+    "weaponDisplay": "Drop tank (1000 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f_106a_1972",
+    "domain": "aircraft",
+    "unitDisplay": "F-106A \"Six Shooter\"",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_358gal_f_106_1.blk",
+    "weaponDisplay": "Drop tank (358 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f_106a_1972",
+    "domain": "aircraft",
+    "unitDisplay": "F-106A \"Six Shooter\"",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_358gal_f_106_2.blk",
+    "weaponDisplay": "Drop tank (358 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f_111a",
+    "domain": "aircraft",
+    "unitDisplay": "F-111A Aardvark",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_600_gal_f_111a_2.blk",
+    "weaponDisplay": "Drop tank (600 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f_111a",
+    "domain": "aircraft",
+    "unitDisplay": "F-111A Aardvark",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_600_gal_f_111a_5.blk",
+    "weaponDisplay": "Drop tank (600 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f_111c_raaf",
+    "domain": "aircraft",
+    "unitDisplay": "F-111C Aardvark",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_600_gal_f_111a_2.blk",
+    "weaponDisplay": "Drop tank (600 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f_111c_raaf",
+    "domain": "aircraft",
+    "unitDisplay": "F-111C Aardvark",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_600_gal_f_111a_3.blk",
+    "weaponDisplay": "Drop tank (600 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
     "unitId": "f_111c_raaf",
     "domain": "aircraft",
     "unitDisplay": "F-111C Aardvark",
@@ -128560,11 +128928,139 @@
     "kind": "ordnance"
   },
   {
+    "unitId": "f_111c_raaf",
+    "domain": "aircraft",
+    "unitDisplay": "F-111C Aardvark",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_600_gal_f_111a_4.blk",
+    "weaponDisplay": "Drop tank (600 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f_111c_raaf",
+    "domain": "aircraft",
+    "unitDisplay": "F-111C Aardvark",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_600_gal_f_111a_5.blk",
+    "weaponDisplay": "Drop tank (600 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f_111f",
+    "domain": "aircraft",
+    "unitDisplay": "F-111F Aardvark",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_600_gal_f_111a_2.blk",
+    "weaponDisplay": "Drop tank (600 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f_111f",
+    "domain": "aircraft",
+    "unitDisplay": "F-111F Aardvark",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_600_gal_f_111a_3.blk",
+    "weaponDisplay": "Drop tank (600 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
     "unitId": "f_111f",
     "domain": "aircraft",
     "unitDisplay": "F-111F Aardvark",
     "weaponBlk": "gameData/Weapons/equipment/us_pave_tack_targeting_pod.blk",
     "weaponDisplay": "Pave Tack targeting pod",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f_111f",
+    "domain": "aircraft",
+    "unitDisplay": "F-111F Aardvark",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_600_gal_f_111a_4.blk",
+    "weaponDisplay": "Drop tank (600 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f_111f",
+    "domain": "aircraft",
+    "unitDisplay": "F-111F Aardvark",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_600_gal_f_111a_5.blk",
+    "weaponDisplay": "Drop tank (600 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f_111f_iaf_killstreak",
+    "domain": "aircraft",
+    "unitDisplay": "F-111F Aardvark",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_600_gal_f_111a_3.blk",
+    "weaponDisplay": "Drop tank (600 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f_111f_iaf_killstreak",
+    "domain": "aircraft",
+    "unitDisplay": "F-111F Aardvark",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_600_gal_f_111a_4.blk",
+    "weaponDisplay": "Drop tank (600 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f_111f_japan_killstreak",
+    "domain": "aircraft",
+    "unitDisplay": "F-111F Aardvark",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_600_gal_f_111a_3.blk",
+    "weaponDisplay": "Drop tank (600 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f_111f_japan_killstreak",
+    "domain": "aircraft",
+    "unitDisplay": "F-111F Aardvark",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_600_gal_f_111a_4.blk",
+    "weaponDisplay": "Drop tank (600 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f_111f_killstreak",
+    "domain": "aircraft",
+    "unitDisplay": "F-111F Aardvark",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_600_gal_f_111a_3.blk",
+    "weaponDisplay": "Drop tank (600 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f_111f_killstreak",
+    "domain": "aircraft",
+    "unitDisplay": "F-111F Aardvark",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_600_gal_f_111a_4.blk",
+    "weaponDisplay": "Drop tank (600 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f_14a_early",
+    "domain": "aircraft",
+    "unitDisplay": "F-14A Tomcat (Early)",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_280gal_drop_tank_light.blk",
+    "weaponDisplay": "Drop tank (280 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f_14a_early",
+    "domain": "aircraft",
+    "unitDisplay": "F-14A Tomcat (Early)",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_280gal_drop_tank_light_1.blk",
+    "weaponDisplay": "Drop tank (280 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f_14b",
+    "domain": "aircraft",
+    "unitDisplay": "F-14B Tomcat",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_280gal_drop_tank.blk",
+    "weaponDisplay": "Drop tank (280 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f_14b",
+    "domain": "aircraft",
+    "unitDisplay": "F-14B Tomcat",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_280gal_drop_tank_1.blk",
+    "weaponDisplay": "Drop tank (280 gal.) (Fuel Tank)",
     "kind": "ordnance"
   },
   {
@@ -128579,8 +129075,128 @@
     "unitId": "f_14d",
     "domain": "aircraft",
     "unitDisplay": "F-14D Super Tomcat",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_280gal_drop_tank.blk",
+    "weaponDisplay": "Drop tank (280 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f_14d",
+    "domain": "aircraft",
+    "unitDisplay": "F-14D Super Tomcat",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_280gal_drop_tank_1.blk",
+    "weaponDisplay": "Drop tank (280 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f_14d",
+    "domain": "aircraft",
+    "unitDisplay": "F-14D Super Tomcat",
     "weaponBlk": "gameData/Weapons/equipment/an_aaq_25_lantirn.blk",
     "weaponDisplay": "LANTIRN targeting pod",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f_15a",
+    "domain": "aircraft",
+    "unitDisplay": "F-15A Eagle",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_610_gal_f_15_left_wing.blk",
+    "weaponDisplay": "Drop tank (610 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f_15a",
+    "domain": "aircraft",
+    "unitDisplay": "F-15A Eagle",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_610_gal_f_15_fuse.blk",
+    "weaponDisplay": "Drop tank (610 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f_15a",
+    "domain": "aircraft",
+    "unitDisplay": "F-15A Eagle",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_610_gal_f_15_right_wing.blk",
+    "weaponDisplay": "Drop tank (610 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f_15a_iaf",
+    "domain": "aircraft",
+    "unitDisplay": "F-15A Baz",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_610_gal_f_15_left_wing.blk",
+    "weaponDisplay": "Drop tank (610 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f_15a_iaf",
+    "domain": "aircraft",
+    "unitDisplay": "F-15A Baz",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_610_gal_f_15_fuse.blk",
+    "weaponDisplay": "Drop tank (610 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f_15a_iaf",
+    "domain": "aircraft",
+    "unitDisplay": "F-15A Baz",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_610_gal_f_15_right_wing.blk",
+    "weaponDisplay": "Drop tank (610 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f_15c_baz_msip",
+    "domain": "aircraft",
+    "unitDisplay": "F-15C Baz (Improved) Meshupar",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_610_gal_f_15_left_wing.blk",
+    "weaponDisplay": "Drop tank (610 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f_15c_baz_msip",
+    "domain": "aircraft",
+    "unitDisplay": "F-15C Baz (Improved) Meshupar",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_750_gal_fastpack_f_15c_left.blk",
+    "weaponDisplay": "Conformal fuel tank (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f_15c_baz_msip",
+    "domain": "aircraft",
+    "unitDisplay": "F-15C Baz (Improved) Meshupar",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_610_gal_f_15_fuse.blk",
+    "weaponDisplay": "Drop tank (610 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f_15c_baz_msip",
+    "domain": "aircraft",
+    "unitDisplay": "F-15C Baz (Improved) Meshupar",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_750_gal_fastpack_f_15c_right.blk",
+    "weaponDisplay": "Conformal fuel tank (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f_15c_baz_msip",
+    "domain": "aircraft",
+    "unitDisplay": "F-15C Baz (Improved) Meshupar",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_610_gal_f_15_right_wing.blk",
+    "weaponDisplay": "Drop tank (610 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f_15c_golden_eagle",
+    "domain": "aircraft",
+    "unitDisplay": "F-15C Golden Eagle",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_610_gal_f_15_left_wing_dark.blk",
+    "weaponDisplay": "Drop tank (610 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f_15c_golden_eagle",
+    "domain": "aircraft",
+    "unitDisplay": "F-15C Golden Eagle",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_750_gal_fastpack_f_15c_left.blk",
+    "weaponDisplay": "Conformal fuel tank (Fuel Tank)",
     "kind": "ordnance"
   },
   {
@@ -128592,11 +129208,131 @@
     "kind": "ordnance"
   },
   {
+    "unitId": "f_15c_golden_eagle",
+    "domain": "aircraft",
+    "unitDisplay": "F-15C Golden Eagle",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_610_gal_f_15_fuse_dark.blk",
+    "weaponDisplay": "Drop tank (610 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f_15c_golden_eagle",
+    "domain": "aircraft",
+    "unitDisplay": "F-15C Golden Eagle",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_750_gal_fastpack_f_15c_right.blk",
+    "weaponDisplay": "Conformal fuel tank (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f_15c_golden_eagle",
+    "domain": "aircraft",
+    "unitDisplay": "F-15C Golden Eagle",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_610_gal_f_15_right_wing_dark.blk",
+    "weaponDisplay": "Drop tank (610 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f_15c_msip2",
+    "domain": "aircraft",
+    "unitDisplay": "F-15C MSIP II Eagle",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_610_gal_f_15_left_wing_dark.blk",
+    "weaponDisplay": "Drop tank (610 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f_15c_msip2",
+    "domain": "aircraft",
+    "unitDisplay": "F-15C MSIP II Eagle",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_750_gal_fastpack_f_15c_left.blk",
+    "weaponDisplay": "Conformal fuel tank (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f_15c_msip2",
+    "domain": "aircraft",
+    "unitDisplay": "F-15C MSIP II Eagle",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_610_gal_f_15_fuse_dark.blk",
+    "weaponDisplay": "Drop tank (610 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f_15c_msip2",
+    "domain": "aircraft",
+    "unitDisplay": "F-15C MSIP II Eagle",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_750_gal_fastpack_f_15c_right.blk",
+    "weaponDisplay": "Conformal fuel tank (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f_15c_msip2",
+    "domain": "aircraft",
+    "unitDisplay": "F-15C MSIP II Eagle",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_610_gal_f_15_right_wing_dark.blk",
+    "weaponDisplay": "Drop tank (610 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f_15e",
+    "domain": "aircraft",
+    "unitDisplay": "F-15E Strike Eagle",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_610_gal_f_15_left_wing_dark.blk",
+    "weaponDisplay": "Drop tank (610 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f_15e",
+    "domain": "aircraft",
+    "unitDisplay": "F-15E Strike Eagle",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_750_gal_fastpack_f_15c_left.blk",
+    "weaponDisplay": "Conformal fuel tank (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
     "unitId": "f_15e",
     "domain": "aircraft",
     "unitDisplay": "F-15E Strike Eagle",
     "weaponBlk": "gameData/Weapons/equipment/us_sniper_atp_targeting_pod.blk",
     "weaponDisplay": "Sniper targeting pod",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f_15e",
+    "domain": "aircraft",
+    "unitDisplay": "F-15E Strike Eagle",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_610_gal_f_15_fuse_dark.blk",
+    "weaponDisplay": "Drop tank (610 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f_15e",
+    "domain": "aircraft",
+    "unitDisplay": "F-15E Strike Eagle",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_750_gal_fastpack_f_15c_right.blk",
+    "weaponDisplay": "Conformal fuel tank (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f_15e",
+    "domain": "aircraft",
+    "unitDisplay": "F-15E Strike Eagle",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_610_gal_f_15_right_wing_dark.blk",
+    "weaponDisplay": "Drop tank (610 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f_15i_raam",
+    "domain": "aircraft",
+    "unitDisplay": "F-15I Ra’am",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_610_gal_f_15_left_wing_dark.blk",
+    "weaponDisplay": "Drop tank (610 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f_15i_raam",
+    "domain": "aircraft",
+    "unitDisplay": "F-15I Ra’am",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_750_gal_fastpack_f_15c_left.blk",
+    "weaponDisplay": "Conformal fuel tank (Fuel Tank)",
     "kind": "ordnance"
   },
   {
@@ -128608,11 +129344,387 @@
     "kind": "ordnance"
   },
   {
+    "unitId": "f_15i_raam",
+    "domain": "aircraft",
+    "unitDisplay": "F-15I Ra’am",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_610_gal_f_15_fuse_dark.blk",
+    "weaponDisplay": "Drop tank (610 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f_15i_raam",
+    "domain": "aircraft",
+    "unitDisplay": "F-15I Ra’am",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_750_gal_fastpack_f_15c_right.blk",
+    "weaponDisplay": "Conformal fuel tank (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f_15i_raam",
+    "domain": "aircraft",
+    "unitDisplay": "F-15I Ra’am",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_610_gal_f_15_right_wing_dark.blk",
+    "weaponDisplay": "Drop tank (610 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f_15j",
+    "domain": "aircraft",
+    "unitDisplay": "F-15J Eagle",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_610_gal_f_15_left_wing.blk",
+    "weaponDisplay": "Drop tank (610 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f_15j",
+    "domain": "aircraft",
+    "unitDisplay": "F-15J Eagle",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_610_gal_f_15_fuse.blk",
+    "weaponDisplay": "Drop tank (610 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f_15j",
+    "domain": "aircraft",
+    "unitDisplay": "F-15J Eagle",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_610_gal_f_15_right_wing.blk",
+    "weaponDisplay": "Drop tank (610 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f_15j_kai",
+    "domain": "aircraft",
+    "unitDisplay": "F-15J(M) Eagle",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_610_gal_f_15_left_wing.blk",
+    "weaponDisplay": "Drop tank (610 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f_15j_kai",
+    "domain": "aircraft",
+    "unitDisplay": "F-15J(M) Eagle",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_610_gal_f_15_fuse.blk",
+    "weaponDisplay": "Drop tank (610 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f_15j_kai",
+    "domain": "aircraft",
+    "unitDisplay": "F-15J(M) Eagle",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_610_gal_f_15_right_wing.blk",
+    "weaponDisplay": "Drop tank (610 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f_16a_block_10",
+    "domain": "aircraft",
+    "unitDisplay": "F-16A Block 10 Fighting Falcon",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_370_gal_wing_f_16.blk",
+    "weaponDisplay": "Drop tank (370 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f_16a_block_10",
+    "domain": "aircraft",
+    "unitDisplay": "F-16A Block 10 Fighting Falcon",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_300_gal_fuse_f_16_blok_10.blk",
+    "weaponDisplay": "Drop tank (300 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f_16a_block_10",
+    "domain": "aircraft",
+    "unitDisplay": "F-16A Block 10 Fighting Falcon",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_370_gal_wing_f_16_1.blk",
+    "weaponDisplay": "Drop tank (370 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f_16a_block_10_iaf",
+    "domain": "aircraft",
+    "unitDisplay": "F-16A Block 10 Netz",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_370_gal_wing_f_16.blk",
+    "weaponDisplay": "Drop tank (370 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f_16a_block_10_iaf",
+    "domain": "aircraft",
+    "unitDisplay": "F-16A Block 10 Netz",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_300_gal_fuse_f_16_blok_10.blk",
+    "weaponDisplay": "Drop tank (300 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f_16a_block_10_iaf",
+    "domain": "aircraft",
+    "unitDisplay": "F-16A Block 10 Netz",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_370_gal_wing_f_16_1.blk",
+    "weaponDisplay": "Drop tank (370 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f_16a_block_10_netz_mod",
+    "domain": "aircraft",
+    "unitDisplay": "F-16A Block 10 Netz (Mod)",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_370_gal_wing_f_16.blk",
+    "weaponDisplay": "Drop tank (370 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f_16a_block_10_netz_mod",
+    "domain": "aircraft",
+    "unitDisplay": "F-16A Block 10 Netz (Mod)",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_300_gal_fuse_f_16_blok_10.blk",
+    "weaponDisplay": "Drop tank (300 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f_16a_block_10_netz_mod",
+    "domain": "aircraft",
+    "unitDisplay": "F-16A Block 10 Netz (Mod)",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_370_gal_wing_f_16_1.blk",
+    "weaponDisplay": "Drop tank (370 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f_16a_block_10_norway",
+    "domain": "aircraft",
+    "unitDisplay": "F-16A Block 10 Fighting Falcon",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_370_gal_wing_f_16.blk",
+    "weaponDisplay": "Drop tank (370 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f_16a_block_10_norway",
+    "domain": "aircraft",
+    "unitDisplay": "F-16A Block 10 Fighting Falcon",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_300_gal_fuse_f_16_blok_10.blk",
+    "weaponDisplay": "Drop tank (300 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f_16a_block_10_norway",
+    "domain": "aircraft",
+    "unitDisplay": "F-16A Block 10 Fighting Falcon",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_370_gal_wing_f_16_1.blk",
+    "weaponDisplay": "Drop tank (370 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f_16a_block_15_adf",
+    "domain": "aircraft",
+    "unitDisplay": "F-16A Block 15 ADF Fighting Falcon",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_370_gal_wing_f_16.blk",
+    "weaponDisplay": "Drop tank (370 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f_16a_block_15_adf",
+    "domain": "aircraft",
+    "unitDisplay": "F-16A Block 15 ADF Fighting Falcon",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_300_gal_fuse_f_16_blok_10.blk",
+    "weaponDisplay": "Drop tank (300 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f_16a_block_15_adf",
+    "domain": "aircraft",
+    "unitDisplay": "F-16A Block 15 ADF Fighting Falcon",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_370_gal_wing_f_16_1.blk",
+    "weaponDisplay": "Drop tank (370 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f_16a_block_15_adf_britain_killstreak",
+    "domain": "aircraft",
+    "unitDisplay": "F-16A Block 15 ADF Fighting Falcon",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_370_gal_wing_f_16.blk",
+    "weaponDisplay": "Drop tank (370 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f_16a_block_15_adf_britain_killstreak",
+    "domain": "aircraft",
+    "unitDisplay": "F-16A Block 15 ADF Fighting Falcon",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_370_gal_wing_f_16_1.blk",
+    "weaponDisplay": "Drop tank (370 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f_16a_block_15_adf_france_killstreak",
+    "domain": "aircraft",
+    "unitDisplay": "F-16A Block 15 ADF Fighting Falcon",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_370_gal_wing_f_16.blk",
+    "weaponDisplay": "Drop tank (370 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f_16a_block_15_adf_france_killstreak",
+    "domain": "aircraft",
+    "unitDisplay": "F-16A Block 15 ADF Fighting Falcon",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_370_gal_wing_f_16_1.blk",
+    "weaponDisplay": "Drop tank (370 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f_16a_block_15_adf_germany_killstreak",
+    "domain": "aircraft",
+    "unitDisplay": "F-16A Block 15 ADF Fighting Falcon",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_370_gal_wing_f_16.blk",
+    "weaponDisplay": "Drop tank (370 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f_16a_block_15_adf_germany_killstreak",
+    "domain": "aircraft",
+    "unitDisplay": "F-16A Block 15 ADF Fighting Falcon",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_370_gal_wing_f_16_1.blk",
+    "weaponDisplay": "Drop tank (370 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f_16a_block_15_adf_italy",
+    "domain": "aircraft",
+    "unitDisplay": "F-16A Block 15 ADF Fighting Falcon",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_370_gal_wing_f_16.blk",
+    "weaponDisplay": "Drop tank (370 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f_16a_block_15_adf_italy",
+    "domain": "aircraft",
+    "unitDisplay": "F-16A Block 15 ADF Fighting Falcon",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_300_gal_fuse_f_16_blok_10.blk",
+    "weaponDisplay": "Drop tank (300 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f_16a_block_15_adf_italy",
+    "domain": "aircraft",
+    "unitDisplay": "F-16A Block 15 ADF Fighting Falcon",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_370_gal_wing_f_16_1.blk",
+    "weaponDisplay": "Drop tank (370 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f_16a_block_15_adf_italy_killstreak",
+    "domain": "aircraft",
+    "unitDisplay": "F-16A Block 15 ADF Fighting Falcon",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_370_gal_wing_f_16.blk",
+    "weaponDisplay": "Drop tank (370 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f_16a_block_15_adf_italy_killstreak",
+    "domain": "aircraft",
+    "unitDisplay": "F-16A Block 15 ADF Fighting Falcon",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_370_gal_wing_f_16_1.blk",
+    "weaponDisplay": "Drop tank (370 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f_16a_block_15_adf_killstreak",
+    "domain": "aircraft",
+    "unitDisplay": "F-16A Block 15 ADF Fighting Falcon",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_370_gal_wing_f_16.blk",
+    "weaponDisplay": "Drop tank (370 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f_16a_block_15_adf_killstreak",
+    "domain": "aircraft",
+    "unitDisplay": "F-16A Block 15 ADF Fighting Falcon",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_370_gal_wing_f_16_1.blk",
+    "weaponDisplay": "Drop tank (370 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f_16a_block_15_adf_sweden_killstreak",
+    "domain": "aircraft",
+    "unitDisplay": "F-16A Block 15 ADF Fighting Falcon",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_370_gal_wing_f_16.blk",
+    "weaponDisplay": "Drop tank (370 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f_16a_block_15_adf_sweden_killstreak",
+    "domain": "aircraft",
+    "unitDisplay": "F-16A Block 15 ADF Fighting Falcon",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_370_gal_wing_f_16_1.blk",
+    "weaponDisplay": "Drop tank (370 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f_16a_block_15_belgium",
+    "domain": "aircraft",
+    "unitDisplay": "F-16A Block 15 Fighting Falcon",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_370_gal_wing_f_16.blk",
+    "weaponDisplay": "Drop tank (370 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f_16a_block_15_belgium",
+    "domain": "aircraft",
+    "unitDisplay": "F-16A Block 15 Fighting Falcon",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_300_gal_fuse_f_16_blok_10.blk",
+    "weaponDisplay": "Drop tank (300 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f_16a_block_15_belgium",
+    "domain": "aircraft",
+    "unitDisplay": "F-16A Block 15 Fighting Falcon",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_370_gal_wing_f_16_1.blk",
+    "weaponDisplay": "Drop tank (370 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f_16a_block_15_ocu_belgium",
+    "domain": "aircraft",
+    "unitDisplay": "F-16A Block 15 OCU Fighting Falcon",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_370_gal_wing_f_16.blk",
+    "weaponDisplay": "Drop tank (370 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f_16a_block_15_ocu_belgium",
+    "domain": "aircraft",
+    "unitDisplay": "F-16A Block 15 OCU Fighting Falcon",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_300_gal_fuse_f_16_blok_10.blk",
+    "weaponDisplay": "Drop tank (300 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
     "unitId": "f_16a_block_15_ocu_belgium",
     "domain": "aircraft",
     "unitDisplay": "F-16A Block 15 OCU Fighting Falcon",
     "weaponBlk": "gameData/Weapons/equipment/uk_atlis2_targeting_pod.blk",
     "weaponDisplay": "ATLIS II targeting pod",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f_16a_block_15_ocu_belgium",
+    "domain": "aircraft",
+    "unitDisplay": "F-16A Block 15 OCU Fighting Falcon",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_370_gal_wing_f_16_1.blk",
+    "weaponDisplay": "Drop tank (370 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f_16a_block_15_ocu_thailand",
+    "domain": "aircraft",
+    "unitDisplay": "F-16A Block 15 OCU Fighting Falcon",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_370_gal_wing_f_16.blk",
+    "weaponDisplay": "Drop tank (370 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f_16a_block_15_ocu_thailand",
+    "domain": "aircraft",
+    "unitDisplay": "F-16A Block 15 OCU Fighting Falcon",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_300_gal_fuse_f_16_blok_10.blk",
+    "weaponDisplay": "Drop tank (300 gal.) (Fuel Tank)",
     "kind": "ordnance"
   },
   {
@@ -128624,11 +129736,91 @@
     "kind": "ordnance"
   },
   {
+    "unitId": "f_16a_block_15_ocu_thailand",
+    "domain": "aircraft",
+    "unitDisplay": "F-16A Block 15 OCU Fighting Falcon",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_370_gal_wing_f_16_1.blk",
+    "weaponDisplay": "Drop tank (370 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f_16a_block_20_mlu",
+    "domain": "aircraft",
+    "unitDisplay": "F-16A Block 20 MLU Fighting Falcon",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_370_gal_wing_f_16.blk",
+    "weaponDisplay": "Drop tank (370 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f_16a_block_20_mlu",
+    "domain": "aircraft",
+    "unitDisplay": "F-16A Block 20 MLU Fighting Falcon",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_300_gal_fuse_f_16_blok_10.blk",
+    "weaponDisplay": "Drop tank (300 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
     "unitId": "f_16a_block_20_mlu",
     "domain": "aircraft",
     "unitDisplay": "F-16A Block 20 MLU Fighting Falcon",
     "weaponBlk": "gameData/Weapons/equipment/an_aaq_25_lantirn.blk",
     "weaponDisplay": "LANTIRN targeting pod",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f_16a_block_20_mlu",
+    "domain": "aircraft",
+    "unitDisplay": "F-16A Block 20 MLU Fighting Falcon",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_370_gal_wing_f_16_1.blk",
+    "weaponDisplay": "Drop tank (370 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f_16a_block_20_mlu_killstreak",
+    "domain": "aircraft",
+    "unitDisplay": "F-16A Block 20 MLU Fighting Falcon",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_370_gal_wing_f_16.blk",
+    "weaponDisplay": "Drop tank (370 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f_16a_block_20_mlu_killstreak",
+    "domain": "aircraft",
+    "unitDisplay": "F-16A Block 20 MLU Fighting Falcon",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_370_gal_wing_f_16_1.blk",
+    "weaponDisplay": "Drop tank (370 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f_16a_block_5_netherlands",
+    "domain": "aircraft",
+    "unitDisplay": "F-16A Block 5 Fighting Falcon",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_370_gal_wing_f_16.blk",
+    "weaponDisplay": "Drop tank (370 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f_16a_block_5_netherlands",
+    "domain": "aircraft",
+    "unitDisplay": "F-16A Block 5 Fighting Falcon",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_300_gal_fuse_f_16_blok_10.blk",
+    "weaponDisplay": "Drop tank (300 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f_16a_block_5_netherlands",
+    "domain": "aircraft",
+    "unitDisplay": "F-16A Block 5 Fighting Falcon",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_370_gal_wing_f_16_1.blk",
+    "weaponDisplay": "Drop tank (370 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f_16a_block_72v_china",
+    "domain": "aircraft",
+    "unitDisplay": "F-16V Block 72 Fighting Falcon",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_370_gal_wing_f_16.blk",
+    "weaponDisplay": "Drop tank (370 gal.) (Fuel Tank)",
     "kind": "ordnance"
   },
   {
@@ -128643,8 +129835,64 @@
     "unitId": "f_16a_block_72v_china",
     "domain": "aircraft",
     "unitDisplay": "F-16V Block 72 Fighting Falcon",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_300_gal_fuse_f_16_blok_10.blk",
+    "weaponDisplay": "Drop tank (300 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f_16a_block_72v_china",
+    "domain": "aircraft",
+    "unitDisplay": "F-16V Block 72 Fighting Falcon",
     "weaponBlk": "gameData/Weapons/equipment/us_sniper_atp_targeting_pod.blk",
     "weaponDisplay": "Sniper targeting pod",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f_16a_block_72v_china",
+    "domain": "aircraft",
+    "unitDisplay": "F-16V Block 72 Fighting Falcon",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_370_gal_wing_f_16_1.blk",
+    "weaponDisplay": "Drop tank (370 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f_16aj",
+    "domain": "aircraft",
+    "unitDisplay": "F-16AJ Fighting Falcon",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_370_gal_wing_f_16.blk",
+    "weaponDisplay": "Drop tank (370 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f_16aj",
+    "domain": "aircraft",
+    "unitDisplay": "F-16AJ Fighting Falcon",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_300_gal_fuse_f_16_blok_10.blk",
+    "weaponDisplay": "Drop tank (300 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f_16aj",
+    "domain": "aircraft",
+    "unitDisplay": "F-16AJ Fighting Falcon",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_370_gal_wing_f_16_1.blk",
+    "weaponDisplay": "Drop tank (370 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f_16am_block_15_mlu_belgium",
+    "domain": "aircraft",
+    "unitDisplay": "F-16AM Block 15 MLU Fighting Falcon",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_370_gal_wing_f_16.blk",
+    "weaponDisplay": "Drop tank (370 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f_16am_block_15_mlu_belgium",
+    "domain": "aircraft",
+    "unitDisplay": "F-16AM Block 15 MLU Fighting Falcon",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_300_gal_fuse_f_16_blok_10.blk",
+    "weaponDisplay": "Drop tank (300 gal.) (Fuel Tank)",
     "kind": "ordnance"
   },
   {
@@ -128656,11 +129904,59 @@
     "kind": "ordnance"
   },
   {
+    "unitId": "f_16am_block_15_mlu_belgium",
+    "domain": "aircraft",
+    "unitDisplay": "F-16AM Block 15 MLU Fighting Falcon",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_370_gal_wing_f_16_1.blk",
+    "weaponDisplay": "Drop tank (370 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f_16am_block_20_mlu_netherlands",
+    "domain": "aircraft",
+    "unitDisplay": "F-16AM Block 20 MLU Fighting Falcon",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_370_gal_wing_f_16.blk",
+    "weaponDisplay": "Drop tank (370 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f_16am_block_20_mlu_netherlands",
+    "domain": "aircraft",
+    "unitDisplay": "F-16AM Block 20 MLU Fighting Falcon",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_300_gal_fuse_f_16_blok_10.blk",
+    "weaponDisplay": "Drop tank (300 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
     "unitId": "f_16am_block_20_mlu_netherlands",
     "domain": "aircraft",
     "unitDisplay": "F-16AM Block 20 MLU Fighting Falcon",
     "weaponBlk": "gameData/Weapons/equipment/gr_litening_pod_targeting_pod.blk",
     "weaponDisplay": "LITENING II targeting pod",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f_16am_block_20_mlu_netherlands",
+    "domain": "aircraft",
+    "unitDisplay": "F-16AM Block 20 MLU Fighting Falcon",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_370_gal_wing_f_16_1.blk",
+    "weaponDisplay": "Drop tank (370 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f_16am_block_20_mlu_norway",
+    "domain": "aircraft",
+    "unitDisplay": "F-16AM Block 20 MLU Fighting Falcon",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_370_gal_wing_f_16.blk",
+    "weaponDisplay": "Drop tank (370 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f_16am_block_20_mlu_norway",
+    "domain": "aircraft",
+    "unitDisplay": "F-16AM Block 20 MLU Fighting Falcon",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_300_gal_fuse_f_16_blok_10.blk",
+    "weaponDisplay": "Drop tank (300 gal.) (Fuel Tank)",
     "kind": "ordnance"
   },
   {
@@ -128672,11 +129968,35 @@
     "kind": "ordnance"
   },
   {
+    "unitId": "f_16am_block_20_mlu_norway",
+    "domain": "aircraft",
+    "unitDisplay": "F-16AM Block 20 MLU Fighting Falcon",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_370_gal_wing_f_16_1.blk",
+    "weaponDisplay": "Drop tank (370 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f_16c_block_40_barak_2",
+    "domain": "aircraft",
+    "unitDisplay": "F-16C Block 40 Barak II",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_370_gal_wing_f_16.blk",
+    "weaponDisplay": "Drop tank (370 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
     "unitId": "f_16c_block_40_barak_2",
     "domain": "aircraft",
     "unitDisplay": "F-16C Block 40 Barak II",
     "weaponBlk": "gameData/Weapons/equipment/us_an_asq_213.blk",
     "weaponDisplay": "AN/ASQ-213 R5 HARM targeting pod",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f_16c_block_40_barak_2",
+    "domain": "aircraft",
+    "unitDisplay": "F-16C Block 40 Barak II",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_300_gal_fuse_f_16_blok_10.blk",
+    "weaponDisplay": "Drop tank (300 gal.) (Fuel Tank)",
     "kind": "ordnance"
   },
   {
@@ -128688,6 +130008,22 @@
     "kind": "ordnance"
   },
   {
+    "unitId": "f_16c_block_40_barak_2",
+    "domain": "aircraft",
+    "unitDisplay": "F-16C Block 40 Barak II",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_370_gal_wing_f_16_1.blk",
+    "weaponDisplay": "Drop tank (370 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f_16c_block_50",
+    "domain": "aircraft",
+    "unitDisplay": "F-16CM Block 50 Fighting Falcon",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_370_gal_wing_f_16.blk",
+    "weaponDisplay": "Drop tank (370 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
     "unitId": "f_16c_block_50",
     "domain": "aircraft",
     "unitDisplay": "F-16CM Block 50 Fighting Falcon",
@@ -128699,8 +130035,32 @@
     "unitId": "f_16c_block_50",
     "domain": "aircraft",
     "unitDisplay": "F-16CM Block 50 Fighting Falcon",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_300_gal_fuse_f_16_blok_10.blk",
+    "weaponDisplay": "Drop tank (300 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f_16c_block_50",
+    "domain": "aircraft",
+    "unitDisplay": "F-16CM Block 50 Fighting Falcon",
     "weaponBlk": "gameData/Weapons/equipment/us_sniper_atp_targeting_pod.blk",
     "weaponDisplay": "Sniper targeting pod",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f_16c_block_50",
+    "domain": "aircraft",
+    "unitDisplay": "F-16CM Block 50 Fighting Falcon",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_370_gal_wing_f_16_1.blk",
+    "weaponDisplay": "Drop tank (370 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f_16c_block_50_missile_test",
+    "domain": "aircraft",
+    "unitDisplay": "F-16CM Block 50 Fighting Falcon",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_370_gal_wing_f_16.blk",
+    "weaponDisplay": "Drop tank (370 gal.) (Fuel Tank)",
     "kind": "ordnance"
   },
   {
@@ -128715,8 +130075,32 @@
     "unitId": "f_16c_block_50_missile_test",
     "domain": "aircraft",
     "unitDisplay": "F-16CM Block 50 Fighting Falcon",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_300_gal_fuse_f_16_blok_10.blk",
+    "weaponDisplay": "Drop tank (300 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f_16c_block_50_missile_test",
+    "domain": "aircraft",
+    "unitDisplay": "F-16CM Block 50 Fighting Falcon",
     "weaponBlk": "gameData/Weapons/equipment/us_sniper_atp_targeting_pod.blk",
     "weaponDisplay": "Sniper targeting pod",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f_16c_block_50_missile_test",
+    "domain": "aircraft",
+    "unitDisplay": "F-16CM Block 50 Fighting Falcon",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_370_gal_wing_f_16_1.blk",
+    "weaponDisplay": "Drop tank (370 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f_16c_block_52_aesa",
+    "domain": "aircraft",
+    "unitDisplay": "F-16CM Block 52 PoBIT Fighting Falcon",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_370_gal_wing_f_16.blk",
+    "weaponDisplay": "Drop tank (370 gal.) (Fuel Tank)",
     "kind": "ordnance"
   },
   {
@@ -128731,8 +130115,40 @@
     "unitId": "f_16c_block_52_aesa",
     "domain": "aircraft",
     "unitDisplay": "F-16CM Block 52 PoBIT Fighting Falcon",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_300_gal_fuse_f_16_blok_10.blk",
+    "weaponDisplay": "Drop tank (300 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f_16c_block_52_aesa",
+    "domain": "aircraft",
+    "unitDisplay": "F-16CM Block 52 PoBIT Fighting Falcon",
     "weaponBlk": "gameData/Weapons/equipment/us_sniper_atp_targeting_pod.blk",
     "weaponDisplay": "Sniper targeting pod",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f_16c_block_52_aesa",
+    "domain": "aircraft",
+    "unitDisplay": "F-16CM Block 52 PoBIT Fighting Falcon",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_370_gal_wing_f_16_1.blk",
+    "weaponDisplay": "Drop tank (370 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f_16d_block_40_barak_2",
+    "domain": "aircraft",
+    "unitDisplay": "F-16D Block 40 Barak II",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_370_gal_wing_f_16.blk",
+    "weaponDisplay": "Drop tank (370 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f_16d_block_40_barak_2",
+    "domain": "aircraft",
+    "unitDisplay": "F-16D Block 40 Barak II",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_300_gal_fuse_f_16_blok_10.blk",
+    "weaponDisplay": "Drop tank (300 gal.) (Fuel Tank)",
     "kind": "ordnance"
   },
   {
@@ -128744,11 +130160,115 @@
     "kind": "ordnance"
   },
   {
+    "unitId": "f_16d_block_40_barak_2",
+    "domain": "aircraft",
+    "unitDisplay": "F-16D Block 40 Barak II",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_370_gal_wing_f_16_1.blk",
+    "weaponDisplay": "Drop tank (370 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f_16d_block_40_barak_2_killstreak",
+    "domain": "aircraft",
+    "unitDisplay": "F-16D Block 40 Barak II",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_370_gal_wing_f_16.blk",
+    "weaponDisplay": "Drop tank (370 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f_16d_block_40_barak_2_killstreak",
+    "domain": "aircraft",
+    "unitDisplay": "F-16D Block 40 Barak II",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_370_gal_wing_f_16_1.blk",
+    "weaponDisplay": "Drop tank (370 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f_16i_sufa",
+    "domain": "aircraft",
+    "unitDisplay": "F-16I Sufa",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_370_gal_wing_f_16.blk",
+    "weaponDisplay": "Drop tank (370 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f_16i_sufa",
+    "domain": "aircraft",
+    "unitDisplay": "F-16I Sufa",
+    "weaponBlk": "gameData/Weapons/drop_tank/il_fastpack_f_16i_right.blk",
+    "weaponDisplay": "Conformal fuel tank (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f_16i_sufa",
+    "domain": "aircraft",
+    "unitDisplay": "F-16I Sufa",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_300_gal_fuse_f_16_blok_10.blk",
+    "weaponDisplay": "Drop tank (300 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f_16i_sufa",
+    "domain": "aircraft",
+    "unitDisplay": "F-16I Sufa",
+    "weaponBlk": "gameData/Weapons/drop_tank/il_fastpack_f_16i_left.blk",
+    "weaponDisplay": "Conformal fuel tank (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
     "unitId": "f_16i_sufa",
     "domain": "aircraft",
     "unitDisplay": "F-16I Sufa",
     "weaponBlk": "gameData/Weapons/equipment/gr_litening_pod_targeting_pod.blk",
     "weaponDisplay": "LITENING II targeting pod",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f_16i_sufa",
+    "domain": "aircraft",
+    "unitDisplay": "F-16I Sufa",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_370_gal_wing_f_16_1.blk",
+    "weaponDisplay": "Drop tank (370 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f_16xl",
+    "domain": "aircraft",
+    "unitDisplay": "F-16XL-1",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_370_gal_wing_f_16xl_left.blk",
+    "weaponDisplay": "Drop tank (370 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f_16xl",
+    "domain": "aircraft",
+    "unitDisplay": "F-16XL-1",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_370_gal_wing_f_16xl_right.blk",
+    "weaponDisplay": "Drop tank (370 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f_20a",
+    "domain": "aircraft",
+    "unitDisplay": "F-20A Tigershark",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_150gal_early_f_20_drop_tank_1.blk",
+    "weaponDisplay": "Drop tank (150 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f_20a",
+    "domain": "aircraft",
+    "unitDisplay": "F-20A Tigershark",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_150gal_fuse_f_20_drop_tank.blk",
+    "weaponDisplay": "Drop tank (150 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f_20a",
+    "domain": "aircraft",
+    "unitDisplay": "F-20A Tigershark",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_150gal_early_f_20_drop_tank_2.blk",
+    "weaponDisplay": "Drop tank (150 gal.) (Fuel Tank)",
     "kind": "ordnance"
   },
   {
@@ -128763,8 +130283,48 @@
     "unitId": "f_2a",
     "domain": "aircraft",
     "unitDisplay": "F-2A",
+    "weaponBlk": "gameData/Weapons/drop_tank/jp_600gal_drop_tank_1.blk",
+    "weaponDisplay": "Drop tank (600 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f_2a",
+    "domain": "aircraft",
+    "unitDisplay": "F-2A",
+    "weaponBlk": "gameData/Weapons/drop_tank/jp_300_gal_fuse_f_2.blk",
+    "weaponDisplay": "Drop tank (300 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f_2a",
+    "domain": "aircraft",
+    "unitDisplay": "F-2A",
     "weaponBlk": "gameData/Weapons/equipment/us_sniper_atp_targeting_pod.blk",
     "weaponDisplay": "Sniper targeting pod",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f_2a",
+    "domain": "aircraft",
+    "unitDisplay": "F-2A",
+    "weaponBlk": "gameData/Weapons/drop_tank/jp_600gal_drop_tank_2.blk",
+    "weaponDisplay": "Drop tank (600 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f_2a_adtw",
+    "domain": "aircraft",
+    "unitDisplay": "F-2A ADTW",
+    "weaponBlk": "gameData/Weapons/drop_tank/jp_600gal_drop_tank_1.blk",
+    "weaponDisplay": "Drop tank (600 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f_2a_adtw",
+    "domain": "aircraft",
+    "unitDisplay": "F-2A ADTW",
+    "weaponBlk": "gameData/Weapons/drop_tank/jp_300_gal_fuse_f_2.blk",
+    "weaponDisplay": "Drop tank (300 gal.) (Fuel Tank)",
     "kind": "ordnance"
   },
   {
@@ -128773,6 +130333,62 @@
     "unitDisplay": "F-2A ADTW",
     "weaponBlk": "gameData/Weapons/equipment/jp_i_aaq2_targeting_pod.blk",
     "weaponDisplay": "J/AAQ-2 targeting pod",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f_2a_adtw",
+    "domain": "aircraft",
+    "unitDisplay": "F-2A ADTW",
+    "weaponBlk": "gameData/Weapons/drop_tank/jp_600gal_drop_tank_2.blk",
+    "weaponDisplay": "Drop tank (600 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f_2a_killstreak",
+    "domain": "aircraft",
+    "unitDisplay": "F-2A",
+    "weaponBlk": "gameData/Weapons/drop_tank/jp_600gal_drop_tank_1.blk",
+    "weaponDisplay": "Drop tank (600 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f_2a_killstreak",
+    "domain": "aircraft",
+    "unitDisplay": "F-2A",
+    "weaponBlk": "gameData/Weapons/drop_tank/jp_600gal_drop_tank_2.blk",
+    "weaponDisplay": "Drop tank (600 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f_4e_event",
+    "domain": "aircraft",
+    "unitDisplay": "F-4E Phantom II",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_600_gal_fuse_f_4.blk",
+    "weaponDisplay": "Drop tank (600 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f_6c_pakistan",
+    "domain": "aircraft",
+    "unitDisplay": "F-6C",
+    "weaponBlk": "gameData/Weapons/drop_tank/cn_760l_f_6c_drop_tank_l.blk",
+    "weaponDisplay": "Drop tank (760 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f_6c_pakistan",
+    "domain": "aircraft",
+    "unitDisplay": "F-6C",
+    "weaponBlk": "gameData/Weapons/drop_tank/f_6c_pakistan_fuse_tank.blk",
+    "weaponDisplay": "Drop tank (1140 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f_6c_pakistan",
+    "domain": "aircraft",
+    "unitDisplay": "F-6C",
+    "weaponBlk": "gameData/Weapons/drop_tank/cn_760l_f_6c_drop_tank_r.blk",
+    "weaponDisplay": "Drop tank (760 liters) (Fuel Tank)",
     "kind": "ordnance"
   },
   {
@@ -128856,6 +130472,22 @@
     "kind": "ordnance"
   },
   {
+    "unitId": "f2h-2",
+    "domain": "aircraft",
+    "unitDisplay": "F2H-2 Banshee",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_200_gal_wing_f2h_2_left.blk",
+    "weaponDisplay": "Drop tank (200 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f2h-2",
+    "domain": "aircraft",
+    "unitDisplay": "F2H-2 Banshee",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_200_gal_wing_f2h_2_right.blk",
+    "weaponDisplay": "Drop tank (200 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
     "unitId": "f3d_1",
     "domain": "aircraft",
     "unitDisplay": "F3D-1",
@@ -128896,11 +130528,91 @@
     "kind": "ordnance"
   },
   {
+    "unitId": "f-4c",
+    "domain": "aircraft",
+    "unitDisplay": "F-4C Phantom II",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_600_gal_fuse_f_4.blk",
+    "weaponDisplay": "Drop tank (600 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f-4e",
+    "domain": "aircraft",
+    "unitDisplay": "F-4E Phantom II",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_600_gal_fuse_f_4.blk",
+    "weaponDisplay": "Drop tank (600 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f-4e_iaf",
+    "domain": "aircraft",
+    "unitDisplay": "F-4E Kurnass",
+    "weaponBlk": "gameData/Weapons/drop_tank/il_600_gal_fuse_f_4.blk",
+    "weaponDisplay": "Drop tank (600 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
     "unitId": "f-4e_kurnass_2000",
     "domain": "aircraft",
     "unitDisplay": "F-4E Kurnass 2000",
     "weaponBlk": "gameData/Weapons/equipment/us_pave_spike_targeting_pod.blk",
     "weaponDisplay": "Pave Spike targeting pod",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f-4e_kurnass_2000",
+    "domain": "aircraft",
+    "unitDisplay": "F-4E Kurnass 2000",
+    "weaponBlk": "gameData/Weapons/drop_tank/il_600_gal_fuse_f_4.blk",
+    "weaponDisplay": "Drop tank (600 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f-4ej",
+    "domain": "aircraft",
+    "unitDisplay": "F-4EJ Phantom II",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_600_gal_fuse_f_4.blk",
+    "weaponDisplay": "Drop tank (600 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f-4ej_adtw",
+    "domain": "aircraft",
+    "unitDisplay": "F-4EJ Phantom II ADTW",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_600_gal_fuse_f_4.blk",
+    "weaponDisplay": "Drop tank (600 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f-4ej_kai",
+    "domain": "aircraft",
+    "unitDisplay": "F-4EJ Kai Phantom II",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_600_gal_fuse_f_4.blk",
+    "weaponDisplay": "Drop tank (600 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f-4f",
+    "domain": "aircraft",
+    "unitDisplay": "F-4F Phantom II (Early)",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_600_gal_fuse_f_4.blk",
+    "weaponDisplay": "Drop tank (600 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f-4f_kws_lv",
+    "domain": "aircraft",
+    "unitDisplay": "F-4F KWS LV (ICE) Phantom II",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_600_gal_fuse_f_4.blk",
+    "weaponDisplay": "Drop tank (600 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f-4f_late",
+    "domain": "aircraft",
+    "unitDisplay": "F-4F Phantom II",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_600_gal_fuse_f_4.blk",
+    "weaponDisplay": "Drop tank (600 gal.) (Fuel Tank)",
     "kind": "ordnance"
   },
   {
@@ -128925,6 +130637,46 @@
     "unitDisplay": "F4F-4 Wildcat",
     "weaponBlk": "gameData/Weapons/BombGuns/us_100lb_anm30.blk",
     "weaponDisplay": "2x 100 lb AN-M30A1 bomb",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f-4j",
+    "domain": "aircraft",
+    "unitDisplay": "F-4J Phantom II",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_600_gal_fuse_f_4.blk",
+    "weaponDisplay": "Drop tank (600 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f-4jk",
+    "domain": "aircraft",
+    "unitDisplay": "F-4J(UK) Phantom II",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_600_gal_fuse_f_4.blk",
+    "weaponDisplay": "Drop tank (600 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f-4k",
+    "domain": "aircraft",
+    "unitDisplay": "Phantom FG.1",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_600_gal_fuse_f_4.blk",
+    "weaponDisplay": "Drop tank (600 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f-4m_fgr2",
+    "domain": "aircraft",
+    "unitDisplay": "Phantom FGR.2",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_600_gal_fuse_f_4.blk",
+    "weaponDisplay": "Drop tank (600 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f-4s",
+    "domain": "aircraft",
+    "unitDisplay": "F-4S Phantom II",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_600_gal_fuse_f_4.blk",
+    "weaponDisplay": "Drop tank (600 gal.) (Fuel Tank)",
     "kind": "ordnance"
   },
   {
@@ -128968,11 +130720,259 @@
     "kind": "ordnance"
   },
   {
+    "unitId": "f-5a",
+    "domain": "aircraft",
+    "unitDisplay": "F-5A Freedom Fighter",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_150gal_early_drop_tank_1.blk",
+    "weaponDisplay": "Drop tank (150 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f-5a",
+    "domain": "aircraft",
+    "unitDisplay": "F-5A Freedom Fighter",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_150gal_fuse_drop_tank.blk",
+    "weaponDisplay": "Drop tank (150 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f-5a",
+    "domain": "aircraft",
+    "unitDisplay": "F-5A Freedom Fighter",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_150gal_early_drop_tank_2.blk",
+    "weaponDisplay": "Drop tank (150 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f-5a_china",
+    "domain": "aircraft",
+    "unitDisplay": "F-5A Freedom Fighter",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_150gal_early_drop_tank_1.blk",
+    "weaponDisplay": "Drop tank (150 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f-5a_china",
+    "domain": "aircraft",
+    "unitDisplay": "F-5A Freedom Fighter",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_150gal_fuse_drop_tank.blk",
+    "weaponDisplay": "Drop tank (150 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f-5a_china",
+    "domain": "aircraft",
+    "unitDisplay": "F-5A Freedom Fighter",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_150gal_early_drop_tank_2.blk",
+    "weaponDisplay": "Drop tank (150 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f-5a_thailand",
+    "domain": "aircraft",
+    "unitDisplay": "F-5A Freedom Fighter",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_150gal_early_drop_tank_1.blk",
+    "weaponDisplay": "Drop tank (150 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f-5a_thailand",
+    "domain": "aircraft",
+    "unitDisplay": "F-5A Freedom Fighter",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_150gal_fuse_drop_tank.blk",
+    "weaponDisplay": "Drop tank (150 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f-5a_thailand",
+    "domain": "aircraft",
+    "unitDisplay": "F-5A Freedom Fighter",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_150gal_early_drop_tank_2.blk",
+    "weaponDisplay": "Drop tank (150 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f-5ag_norway",
+    "domain": "aircraft",
+    "unitDisplay": "F-5A(G) Tiger-PAWS",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_150gal_early_drop_tank_1.blk",
+    "weaponDisplay": "Drop tank (150 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f-5ag_norway",
+    "domain": "aircraft",
+    "unitDisplay": "F-5A(G) Tiger-PAWS",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_150gal_early_fuse_drop_tank.blk",
+    "weaponDisplay": "Drop tank (150 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f-5ag_norway",
+    "domain": "aircraft",
+    "unitDisplay": "F-5A(G) Tiger-PAWS",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_150gal_early_drop_tank_2.blk",
+    "weaponDisplay": "Drop tank (150 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f-5c",
+    "domain": "aircraft",
+    "unitDisplay": "F-5C Skoshi Tiger",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_150gal_early_drop_tank_1.blk",
+    "weaponDisplay": "Drop tank (150 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f-5c",
+    "domain": "aircraft",
+    "unitDisplay": "F-5C Skoshi Tiger",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_150gal_fuse_drop_tank.blk",
+    "weaponDisplay": "Drop tank (150 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f-5c",
+    "domain": "aircraft",
+    "unitDisplay": "F-5C Skoshi Tiger",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_150gal_early_drop_tank_2.blk",
+    "weaponDisplay": "Drop tank (150 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f-5e",
+    "domain": "aircraft",
+    "unitDisplay": "F-5E Tiger II",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_150gal_early_drop_tank_1.blk",
+    "weaponDisplay": "Drop tank (150 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f-5e",
+    "domain": "aircraft",
+    "unitDisplay": "F-5E Tiger II",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_150gal_fuse_drop_tank.blk",
+    "weaponDisplay": "Drop tank (150 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f-5e",
+    "domain": "aircraft",
+    "unitDisplay": "F-5E Tiger II",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_150gal_early_drop_tank_2.blk",
+    "weaponDisplay": "Drop tank (150 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f-5e_aidc",
+    "domain": "aircraft",
+    "unitDisplay": "AIDC F-5E",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_150gal_early_drop_tank_1.blk",
+    "weaponDisplay": "Drop tank (150 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f-5e_aidc",
+    "domain": "aircraft",
+    "unitDisplay": "AIDC F-5E",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_150gal_fuse_drop_tank.blk",
+    "weaponDisplay": "Drop tank (150 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f-5e_aidc",
+    "domain": "aircraft",
+    "unitDisplay": "AIDC F-5E",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_150gal_early_drop_tank_2.blk",
+    "weaponDisplay": "Drop tank (150 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f-5e_fcu_thailand",
+    "domain": "aircraft",
+    "unitDisplay": "F-5E FCU",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_150gal_early_drop_tank_1.blk",
+    "weaponDisplay": "Drop tank (150 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f-5e_fcu_thailand",
+    "domain": "aircraft",
+    "unitDisplay": "F-5E FCU",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_150gal_fuse_drop_tank.blk",
+    "weaponDisplay": "Drop tank (150 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f-5e_fcu_thailand",
+    "domain": "aircraft",
+    "unitDisplay": "F-5E FCU",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_150gal_early_drop_tank_2.blk",
+    "weaponDisplay": "Drop tank (150 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f-5e_switzerland",
+    "domain": "aircraft",
+    "unitDisplay": "F-5E Tiger II",
+    "weaponBlk": "gameData/Weapons/drop_tank/sw_275gal_drop_tank_1.blk",
+    "weaponDisplay": "Drop tank (275 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f-5e_switzerland",
+    "domain": "aircraft",
+    "unitDisplay": "F-5E Tiger II",
+    "weaponBlk": "gameData/Weapons/drop_tank/sw_275gal_fuse_drop_tank.blk",
+    "weaponDisplay": "Drop tank (275 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f-5e_switzerland",
+    "domain": "aircraft",
+    "unitDisplay": "F-5E Tiger II",
+    "weaponBlk": "gameData/Weapons/drop_tank/sw_275gal_drop_tank_2.blk",
+    "weaponDisplay": "Drop tank (275 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f-5t_thailand",
+    "domain": "aircraft",
+    "unitDisplay": "F-5T Tigris SCU",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_150gal_early_drop_tank_1.blk",
+    "weaponDisplay": "Drop tank (150 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f-5t_thailand",
+    "domain": "aircraft",
+    "unitDisplay": "F-5T Tigris SCU",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_150gal_fuse_drop_tank.blk",
+    "weaponDisplay": "Drop tank (150 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f-5t_thailand",
+    "domain": "aircraft",
+    "unitDisplay": "F-5T Tigris SCU",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_150gal_early_drop_tank_2.blk",
+    "weaponDisplay": "Drop tank (150 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
     "unitId": "f-5th_thailand",
     "domain": "aircraft",
     "unitDisplay": "F-5TH Super Tigris TCU",
     "weaponBlk": "gameData/Weapons/equipment/gr_litening_iii_targeting_pod.blk",
     "weaponDisplay": "LITENING III targeting pod",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "f-5th_thailand",
+    "domain": "aircraft",
+    "unitDisplay": "F-5TH Super Tigris TCU",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_275gal_fuse_clip_drop_tank_1.blk",
+    "weaponDisplay": "Drop tank (275 gal.) (Fuel Tank)",
     "kind": "ordnance"
   },
   {
@@ -129267,8 +131267,48 @@
     "unitId": "fa_18a",
     "domain": "aircraft",
     "unitDisplay": "F/A-18A Hornet",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_330gal_fa_18_drop_tank_wing_left.blk",
+    "weaponDisplay": "Drop tank (330 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "fa_18a",
+    "domain": "aircraft",
+    "unitDisplay": "F/A-18A Hornet",
     "weaponBlk": "gameData/Weapons/equipment/an_aas_38.blk",
     "weaponDisplay": "AN/AAS-38 optical pod",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "fa_18a",
+    "domain": "aircraft",
+    "unitDisplay": "F/A-18A Hornet",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_330gal_fa_18_drop_tank_fuse.blk",
+    "weaponDisplay": "Drop tank (330 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "fa_18a",
+    "domain": "aircraft",
+    "unitDisplay": "F/A-18A Hornet",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_330gal_fa_18_drop_tank_wing_right.blk",
+    "weaponDisplay": "Drop tank (330 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "fa_18a_hug_2_raaf",
+    "domain": "aircraft",
+    "unitDisplay": "AF/A-18A (HUG 2.4) Hornet",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_330gal_fa_18_drop_tank_wing_left.blk",
+    "weaponDisplay": "Drop tank (330 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "fa_18a_hug_2_raaf",
+    "domain": "aircraft",
+    "unitDisplay": "AF/A-18A (HUG 2.4) Hornet",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_330gal_fa_18_drop_tank_fuse.blk",
+    "weaponDisplay": "Drop tank (330 gal.) (Fuel Tank)",
     "kind": "ordnance"
   },
   {
@@ -129280,11 +131320,107 @@
     "kind": "ordnance"
   },
   {
+    "unitId": "fa_18a_hug_2_raaf",
+    "domain": "aircraft",
+    "unitDisplay": "AF/A-18A (HUG 2.4) Hornet",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_330gal_fa_18_drop_tank_wing_right.blk",
+    "weaponDisplay": "Drop tank (330 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "fa_18a_raaf",
+    "domain": "aircraft",
+    "unitDisplay": "F/A-18A Hornet",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_330gal_fa_18_drop_tank_wing_left.blk",
+    "weaponDisplay": "Drop tank (330 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "fa_18a_raaf",
+    "domain": "aircraft",
+    "unitDisplay": "F/A-18A Hornet",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_330gal_fa_18_drop_tank_fuse.blk",
+    "weaponDisplay": "Drop tank (330 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "fa_18a_raaf",
+    "domain": "aircraft",
+    "unitDisplay": "F/A-18A Hornet",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_330gal_fa_18_drop_tank_wing_right.blk",
+    "weaponDisplay": "Drop tank (330 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "fa_18c_early",
+    "domain": "aircraft",
+    "unitDisplay": "F/A-18C (Early) Hornet",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_330gal_fa_18_drop_tank_wing_left.blk",
+    "weaponDisplay": "Drop tank (330 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
     "unitId": "fa_18c_early",
     "domain": "aircraft",
     "unitDisplay": "F/A-18C (Early) Hornet",
     "weaponBlk": "gameData/Weapons/equipment/an_aas_38a.blk",
     "weaponDisplay": "AN/AAS-38A targeting pod",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "fa_18c_early",
+    "domain": "aircraft",
+    "unitDisplay": "F/A-18C (Early) Hornet",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_330gal_fa_18_drop_tank_fuse.blk",
+    "weaponDisplay": "Drop tank (330 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "fa_18c_early",
+    "domain": "aircraft",
+    "unitDisplay": "F/A-18C (Early) Hornet",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_330gal_fa_18_drop_tank_wing_right.blk",
+    "weaponDisplay": "Drop tank (330 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "fa_18c_finland",
+    "domain": "aircraft",
+    "unitDisplay": "F-18C Hornet",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_330gal_fa_18_drop_tank_wing_left.blk",
+    "weaponDisplay": "Drop tank (330 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "fa_18c_finland",
+    "domain": "aircraft",
+    "unitDisplay": "F-18C Hornet",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_330gal_fa_18_drop_tank_fuse.blk",
+    "weaponDisplay": "Drop tank (330 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "fa_18c_finland",
+    "domain": "aircraft",
+    "unitDisplay": "F-18C Hornet",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_330gal_fa_18_drop_tank_wing_right.blk",
+    "weaponDisplay": "Drop tank (330 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "fa_18c_late",
+    "domain": "aircraft",
+    "unitDisplay": "F/A-18C (Late) Hornet",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_330gal_fa_18_drop_tank_wing_left.blk",
+    "weaponDisplay": "Drop tank (330 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "fa_18c_late",
+    "domain": "aircraft",
+    "unitDisplay": "F/A-18C (Late) Hornet",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_330gal_fa_18_drop_tank_fuse.blk",
+    "weaponDisplay": "Drop tank (330 gal.) (Fuel Tank)",
     "kind": "ordnance"
   },
   {
@@ -129296,11 +131432,59 @@
     "kind": "ordnance"
   },
   {
+    "unitId": "fa_18c_late",
+    "domain": "aircraft",
+    "unitDisplay": "F/A-18C (Late) Hornet",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_330gal_fa_18_drop_tank_wing_right.blk",
+    "weaponDisplay": "Drop tank (330 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "fa_18c_late_switzerland",
+    "domain": "aircraft",
+    "unitDisplay": "F/A-18C (Late) Hornet",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_330gal_fa_18_drop_tank_wing_left.blk",
+    "weaponDisplay": "Drop tank (330 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
     "unitId": "fa_18c_late_switzerland",
     "domain": "aircraft",
     "unitDisplay": "F/A-18C (Late) Hornet",
     "weaponBlk": "gameData/Weapons/equipment/an_asq_228_pod.blk",
     "weaponDisplay": "ATFLIR targeting pod",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "fa_18c_late_switzerland",
+    "domain": "aircraft",
+    "unitDisplay": "F/A-18C (Late) Hornet",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_330gal_fa_18_drop_tank_fuse.blk",
+    "weaponDisplay": "Drop tank (330 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "fa_18c_late_switzerland",
+    "domain": "aircraft",
+    "unitDisplay": "F/A-18C (Late) Hornet",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_330gal_fa_18_drop_tank_wing_right.blk",
+    "weaponDisplay": "Drop tank (330 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "fa_18c_mlu_2_finland",
+    "domain": "aircraft",
+    "unitDisplay": "F/A-18C MLU 2 Hornet",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_330gal_fa_18_drop_tank_wing_left.blk",
+    "weaponDisplay": "Drop tank (330 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "fa_18c_mlu_2_finland",
+    "domain": "aircraft",
+    "unitDisplay": "F/A-18C MLU 2 Hornet",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_330gal_fa_18_drop_tank_fuse.blk",
+    "weaponDisplay": "Drop tank (330 gal.) (Fuel Tank)",
     "kind": "ordnance"
   },
   {
@@ -129312,11 +131496,51 @@
     "kind": "ordnance"
   },
   {
+    "unitId": "fa_18c_mlu_2_finland",
+    "domain": "aircraft",
+    "unitDisplay": "F/A-18C MLU 2 Hornet",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_330gal_fa_18_drop_tank_wing_right.blk",
+    "weaponDisplay": "Drop tank (330 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "fa_18c_switzerland",
+    "domain": "aircraft",
+    "unitDisplay": "F/A-18C Hornet",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_330gal_fa_18_drop_tank_wing_left.blk",
+    "weaponDisplay": "Drop tank (330 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
     "unitId": "fa_18c_switzerland",
     "domain": "aircraft",
     "unitDisplay": "F/A-18C Hornet",
     "weaponBlk": "gameData/Weapons/equipment/an_aas_38b.blk",
     "weaponDisplay": "AN/AAS-38B targeting pod",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "fa_18c_switzerland",
+    "domain": "aircraft",
+    "unitDisplay": "F/A-18C Hornet",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_330gal_fa_18_drop_tank_fuse.blk",
+    "weaponDisplay": "Drop tank (330 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "fa_18c_switzerland",
+    "domain": "aircraft",
+    "unitDisplay": "F/A-18C Hornet",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_330gal_fa_18_drop_tank_wing_right.blk",
+    "weaponDisplay": "Drop tank (330 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "fa_18d_late_malaysia",
+    "domain": "aircraft",
+    "unitDisplay": "F/A-18D (Late) Hornet",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_330gal_fa_18_drop_tank_wing_left.blk",
+    "weaponDisplay": "Drop tank (330 gal.) (Fuel Tank)",
     "kind": "ordnance"
   },
   {
@@ -129328,6 +131552,38 @@
     "kind": "ordnance"
   },
   {
+    "unitId": "fa_18d_late_malaysia",
+    "domain": "aircraft",
+    "unitDisplay": "F/A-18D (Late) Hornet",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_330gal_fa_18_drop_tank_fuse.blk",
+    "weaponDisplay": "Drop tank (330 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "fa_18d_late_malaysia",
+    "domain": "aircraft",
+    "unitDisplay": "F/A-18D (Late) Hornet",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_330gal_fa_18_drop_tank_wing_right.blk",
+    "weaponDisplay": "Drop tank (330 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "fa_18e_block_2",
+    "domain": "aircraft",
+    "unitDisplay": "F/A-18E (Block 2) Super Hornet",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_480gal_fa_18e_drop_tank_wing_right_1.blk",
+    "weaponDisplay": "Drop tank (480 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "fa_18e_block_2",
+    "domain": "aircraft",
+    "unitDisplay": "F/A-18E (Block 2) Super Hornet",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_480gal_fa_18e_drop_tank_wing_right_2.blk",
+    "weaponDisplay": "Drop tank (480 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
     "unitId": "fa_18e_block_2",
     "domain": "aircraft",
     "unitDisplay": "F/A-18E (Block 2) Super Hornet",
@@ -129336,11 +131592,75 @@
     "kind": "ordnance"
   },
   {
+    "unitId": "fa_18e_block_2",
+    "domain": "aircraft",
+    "unitDisplay": "F/A-18E (Block 2) Super Hornet",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_480gal_fa_18e_drop_tank_centr.blk",
+    "weaponDisplay": "Drop tank (480 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "fa_18e_block_2",
+    "domain": "aircraft",
+    "unitDisplay": "F/A-18E (Block 2) Super Hornet",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_480gal_fa_18e_drop_tank_wing_left_2.blk",
+    "weaponDisplay": "Drop tank (480 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "fa_18e_block_2",
+    "domain": "aircraft",
+    "unitDisplay": "F/A-18E (Block 2) Super Hornet",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_480gal_fa_18e_drop_tank_wing_left_1.blk",
+    "weaponDisplay": "Drop tank (480 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "fa_18f_block_2_raaf",
+    "domain": "aircraft",
+    "unitDisplay": "F/A-18F (Block 2) Super Hornet",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_480gal_fa_18e_drop_tank_wing_right_1.blk",
+    "weaponDisplay": "Drop tank (480 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "fa_18f_block_2_raaf",
+    "domain": "aircraft",
+    "unitDisplay": "F/A-18F (Block 2) Super Hornet",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_480gal_fa_18e_drop_tank_wing_right_2.blk",
+    "weaponDisplay": "Drop tank (480 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
     "unitId": "fa_18f_block_2_raaf",
     "domain": "aircraft",
     "unitDisplay": "F/A-18F (Block 2) Super Hornet",
     "weaponBlk": "gameData/Weapons/equipment/an_asq_228_pod.blk",
     "weaponDisplay": "ATFLIR targeting pod",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "fa_18f_block_2_raaf",
+    "domain": "aircraft",
+    "unitDisplay": "F/A-18F (Block 2) Super Hornet",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_480gal_fa_18e_drop_tank_centr.blk",
+    "weaponDisplay": "Drop tank (480 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "fa_18f_block_2_raaf",
+    "domain": "aircraft",
+    "unitDisplay": "F/A-18F (Block 2) Super Hornet",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_480gal_fa_18e_drop_tank_wing_left_2.blk",
+    "weaponDisplay": "Drop tank (480 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "fa_18f_block_2_raaf",
+    "domain": "aircraft",
+    "unitDisplay": "F/A-18F (Block 2) Super Hornet",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_480gal_fa_18e_drop_tank_wing_left_1.blk",
+    "weaponDisplay": "Drop tank (480 gal.) (Fuel Tank)",
     "kind": "ordnance"
   },
   {
@@ -129421,6 +131741,38 @@
     "unitDisplay": "FJ-4B VMF-232 Fury",
     "weaponBlk": "gameData/Weapons/equipment/us_agm_12b_station.blk",
     "weaponDisplay": "Targeting pod",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "fr_1_fireball",
+    "domain": "aircraft",
+    "unitDisplay": "FR-1 Fireball",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_100gal_drop_tank_1.blk",
+    "weaponDisplay": "Drop tank (100 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "fr_1_fireball",
+    "domain": "aircraft",
+    "unitDisplay": "FR-1 Fireball",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_130gal_drop_tank_1.blk",
+    "weaponDisplay": "Drop tank (130 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "fr_1_fireball",
+    "domain": "aircraft",
+    "unitDisplay": "FR-1 Fireball",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_100gal_drop_tank_2.blk",
+    "weaponDisplay": "Drop tank (100 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "fr_1_fireball",
+    "domain": "aircraft",
+    "unitDisplay": "FR-1 Fireball",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_130gal_drop_tank_2.blk",
+    "weaponDisplay": "Drop tank (130 gal.) (Fuel Tank)",
     "kind": "ordnance"
   },
   {
@@ -129864,6 +132216,54 @@
     "kind": "ordnance"
   },
   {
+    "unitId": "hawk_200",
+    "domain": "aircraft",
+    "unitDisplay": "Hawk 200",
+    "weaponBlk": "gameData/Weapons/drop_tank/uk_130gal_hawk_drop_tank_1.blk",
+    "weaponDisplay": "Drop tank (130 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "hawk_200",
+    "domain": "aircraft",
+    "unitDisplay": "Hawk 200",
+    "weaponBlk": "gameData/Weapons/drop_tank/uk_130gal_hawk_drop_tank_2.blk",
+    "weaponDisplay": "Drop tank (130 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "hawk_200_rda",
+    "domain": "aircraft",
+    "unitDisplay": "Hawk 200 RDA",
+    "weaponBlk": "gameData/Weapons/drop_tank/uk_130gal_hawk_drop_tank_1.blk",
+    "weaponDisplay": "Drop tank (130 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "hawk_200_rda",
+    "domain": "aircraft",
+    "unitDisplay": "Hawk 200 RDA",
+    "weaponBlk": "gameData/Weapons/drop_tank/uk_130gal_hawk_drop_tank_2.blk",
+    "weaponDisplay": "Drop tank (130 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "hawk_209_indonesia",
+    "domain": "aircraft",
+    "unitDisplay": "Hawk 209",
+    "weaponBlk": "gameData/Weapons/drop_tank/uk_130gal_hawk_drop_tank_1.blk",
+    "weaponDisplay": "Drop tank (130 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "hawk_209_indonesia",
+    "domain": "aircraft",
+    "unitDisplay": "Hawk 209",
+    "weaponBlk": "gameData/Weapons/drop_tank/uk_130gal_hawk_drop_tank_2.blk",
+    "weaponDisplay": "Drop tank (130 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
     "unitId": "hawk_iii",
     "domain": "aircraft",
     "unitDisplay": "Hawk III",
@@ -130213,6 +132613,102 @@
     "unitDisplay": "Hudson Mk V",
     "weaponBlk": "gameData/Weapons/rocketGuns/uk_25lb_ap_mk1.blk",
     "weaponDisplay": "8x AP Mk I rockets",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "hunter_f50_sweden",
+    "domain": "aircraft",
+    "unitDisplay": "J34",
+    "weaponBlk": "gameData/Weapons/drop_tank/sws_675l_hunter_f58_1.blk",
+    "weaponDisplay": "Drop tank (150 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "hunter_f50_sweden",
+    "domain": "aircraft",
+    "unitDisplay": "J34",
+    "weaponBlk": "gameData/Weapons/drop_tank/sws_675l_hunter_f58_2.blk",
+    "weaponDisplay": "Drop tank (150 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "hunter_f58_switzerland",
+    "domain": "aircraft",
+    "unitDisplay": "Hunter F.58",
+    "weaponBlk": "gameData/Weapons/drop_tank/sws_675l_hunter_f58_1.blk",
+    "weaponDisplay": "Drop tank (150 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "hunter_f58_switzerland",
+    "domain": "aircraft",
+    "unitDisplay": "Hunter F.58",
+    "weaponBlk": "gameData/Weapons/drop_tank/sws_675l_hunter_f58_2.blk",
+    "weaponDisplay": "Drop tank (150 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "hunter_f58a_1971_switzerland",
+    "domain": "aircraft",
+    "unitDisplay": "Hunter F.58A (1971)",
+    "weaponBlk": "gameData/Weapons/drop_tank/sws_675l_hunter_f58_1.blk",
+    "weaponDisplay": "Drop tank (150 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "hunter_f58a_1971_switzerland",
+    "domain": "aircraft",
+    "unitDisplay": "Hunter F.58A (1971)",
+    "weaponBlk": "gameData/Weapons/drop_tank/sws_675l_hunter_f58_2.blk",
+    "weaponDisplay": "Drop tank (150 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "hunter_f6",
+    "domain": "aircraft",
+    "unitDisplay": "Hunter F.6",
+    "weaponBlk": "gameData/Weapons/drop_tank/sws_675l_hunter_f58_1.blk",
+    "weaponDisplay": "Drop tank (150 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "hunter_f6",
+    "domain": "aircraft",
+    "unitDisplay": "Hunter F.6",
+    "weaponBlk": "gameData/Weapons/drop_tank/sws_675l_hunter_f58_2.blk",
+    "weaponDisplay": "Drop tank (150 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "hunter_f6_holland",
+    "domain": "aircraft",
+    "unitDisplay": "Hunter F.6",
+    "weaponBlk": "gameData/Weapons/drop_tank/sws_675l_hunter_f58_1.blk",
+    "weaponDisplay": "Drop tank (150 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "hunter_f6_holland",
+    "domain": "aircraft",
+    "unitDisplay": "Hunter F.6",
+    "weaponBlk": "gameData/Weapons/drop_tank/sws_675l_hunter_f58_2.blk",
+    "weaponDisplay": "Drop tank (150 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "hunter_f9_rhodesia",
+    "domain": "aircraft",
+    "unitDisplay": "Hunter FGA.9",
+    "weaponBlk": "gameData/Weapons/drop_tank/sws_675l_hunter_f58_1.blk",
+    "weaponDisplay": "Drop tank (150 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "hunter_f9_rhodesia",
+    "domain": "aircraft",
+    "unitDisplay": "Hunter FGA.9",
+    "weaponBlk": "gameData/Weapons/drop_tank/sws_675l_hunter_f58_2.blk",
+    "weaponDisplay": "Drop tank (150 gal.) (Fuel Tank)",
     "kind": "ordnance"
   },
   {
@@ -130720,6 +133216,14 @@
     "kind": "ordnance"
   },
   {
+    "unitId": "iar_93b",
+    "domain": "aircraft",
+    "unitDisplay": "IAR-93B",
+    "weaponBlk": "gameData/Weapons/drop_tank/ro_540l_iar_93_drop_tank.blk",
+    "weaponDisplay": "Drop tank (540 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
     "unitId": "il_2_37_1943",
     "domain": "aircraft",
     "unitDisplay": "IL-2-37",
@@ -130931,8 +133435,48 @@
     "unitId": "j_10a",
     "domain": "aircraft",
     "unitDisplay": "J-10A (Early)",
+    "weaponBlk": "gameData/Weapons/drop_tank/cn_1600l_drop_tank_1.blk",
+    "weaponDisplay": "Drop tank (1600 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "j_10a",
+    "domain": "aircraft",
+    "unitDisplay": "J-10A (Early)",
+    "weaponBlk": "gameData/Weapons/drop_tank/cn_800l_fyx800_j_10_drop_tank_2.blk",
+    "weaponDisplay": "Drop tank (800 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "j_10a",
+    "domain": "aircraft",
+    "unitDisplay": "J-10A (Early)",
     "weaponBlk": "gameData/Weapons/equipment/cn_k_adc03a_targeting_pod.blk",
     "weaponDisplay": "K/ADC03A targeting pod",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "j_10a",
+    "domain": "aircraft",
+    "unitDisplay": "J-10A (Early)",
+    "weaponBlk": "gameData/Weapons/drop_tank/cn_1600l_drop_tank_2.blk",
+    "weaponDisplay": "Drop tank (1600 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "j_10a_killstreak",
+    "domain": "aircraft",
+    "unitDisplay": "J-10A",
+    "weaponBlk": "gameData/Weapons/drop_tank/cn_800l_fyx800_j_10_drop_tank_2.blk",
+    "weaponDisplay": "Drop tank (800 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "j_10c",
+    "domain": "aircraft",
+    "unitDisplay": "J-10C",
+    "weaponBlk": "gameData/Weapons/drop_tank/cn_1600l_drop_tank_1.blk",
+    "weaponDisplay": "Drop tank (1600 liters) (Fuel Tank)",
     "kind": "ordnance"
   },
   {
@@ -130947,8 +133491,24 @@
     "unitId": "j_10c",
     "domain": "aircraft",
     "unitDisplay": "J-10C",
+    "weaponBlk": "gameData/Weapons/drop_tank/cn_800l_fyx800_j_10_drop_tank_2.blk",
+    "weaponDisplay": "Drop tank (800 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "j_10c",
+    "domain": "aircraft",
+    "unitDisplay": "J-10C",
     "weaponBlk": "gameData/Weapons/equipment/cn_yings_3a_targeting_pod.blk",
     "weaponDisplay": "YINGS-III targeting pod",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "j_10c",
+    "domain": "aircraft",
+    "unitDisplay": "J-10C",
+    "weaponBlk": "gameData/Weapons/drop_tank/cn_1600l_drop_tank_2.blk",
+    "weaponDisplay": "Drop tank (1600 liters) (Fuel Tank)",
     "kind": "ordnance"
   },
   {
@@ -130973,6 +133533,118 @@
     "unitDisplay": "J-15T",
     "weaponBlk": "gameData/Weapons/equipment/cn_k_adc03a_targeting_pod.blk",
     "weaponDisplay": "K/ADC03A targeting pod",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "j_22m1a",
+    "domain": "aircraft",
+    "unitDisplay": "J-22M1A",
+    "weaponBlk": "gameData/Weapons/drop_tank/rs_500l_j_22.blk",
+    "weaponDisplay": "Drop tank (500 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "j_7_mk2",
+    "domain": "aircraft",
+    "unitDisplay": "J-7II",
+    "weaponBlk": "gameData/Weapons/drop_tank/su_490l_mig_21.blk",
+    "weaponDisplay": "Drop tank (490 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "j_7d",
+    "domain": "aircraft",
+    "unitDisplay": "J-7D",
+    "weaponBlk": "gameData/Weapons/drop_tank/su_490l_mig_21_left_wing_1.blk",
+    "weaponDisplay": "Drop tank (490 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "j_7d",
+    "domain": "aircraft",
+    "unitDisplay": "J-7D",
+    "weaponBlk": "gameData/Weapons/drop_tank/su_490l_mig_21_fuse.blk",
+    "weaponDisplay": "Drop tank (490 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "j_7d",
+    "domain": "aircraft",
+    "unitDisplay": "J-7D",
+    "weaponBlk": "gameData/Weapons/drop_tank/su_490l_mig_21_right_wing_1.blk",
+    "weaponDisplay": "Drop tank (490 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "j_7e",
+    "domain": "aircraft",
+    "unitDisplay": "J-7E",
+    "weaponBlk": "gameData/Weapons/drop_tank/su_490l_j_7_left_wing.blk",
+    "weaponDisplay": "Drop tank (490 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "j_7e",
+    "domain": "aircraft",
+    "unitDisplay": "J-7E",
+    "weaponBlk": "gameData/Weapons/drop_tank/cn_720l_drop_tank.blk",
+    "weaponDisplay": "Drop tank (720 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "j_7e",
+    "domain": "aircraft",
+    "unitDisplay": "J-7E",
+    "weaponBlk": "gameData/Weapons/drop_tank/su_490l_j_7_right_wing.blk",
+    "weaponDisplay": "Drop tank (490 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "j_8b",
+    "domain": "aircraft",
+    "unitDisplay": "J-8B",
+    "weaponBlk": "gameData/Weapons/drop_tank/cn_800l_fyx800_drop_tank_1.blk",
+    "weaponDisplay": "Drop tank (800 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "j_8b",
+    "domain": "aircraft",
+    "unitDisplay": "J-8B",
+    "weaponBlk": "gameData/Weapons/drop_tank/cn_1400l_fyx1400_j_8_fuse_drop_tank.blk",
+    "weaponDisplay": "Drop tank (1400 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "j_8b",
+    "domain": "aircraft",
+    "unitDisplay": "J-8B",
+    "weaponBlk": "gameData/Weapons/drop_tank/cn_800l_fyx800_drop_tank_2.blk",
+    "weaponDisplay": "Drop tank (800 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "j_8f",
+    "domain": "aircraft",
+    "unitDisplay": "J-8F",
+    "weaponBlk": "gameData/Weapons/drop_tank/cn_800l_fyx800_drop_tank_1.blk",
+    "weaponDisplay": "Drop tank (800 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "j_8f",
+    "domain": "aircraft",
+    "unitDisplay": "J-8F",
+    "weaponBlk": "gameData/Weapons/drop_tank/cn_1400l_fyx1400_j_8_fuse_drop_tank.blk",
+    "weaponDisplay": "Drop tank (1400 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "j_8f",
+    "domain": "aircraft",
+    "unitDisplay": "J-8F",
+    "weaponBlk": "gameData/Weapons/drop_tank/cn_800l_fyx800_drop_tank_2.blk",
+    "weaponDisplay": "Drop tank (800 liters) (Fuel Tank)",
     "kind": "ordnance"
   },
   {
@@ -131067,8 +133739,32 @@
     "unitId": "jaguar_a",
     "domain": "aircraft",
     "unitDisplay": "Jaguar A",
+    "weaponBlk": "gameData/Weapons/drop_tank/fr_1200l_rp36_drop_tank_1.blk",
+    "weaponDisplay": "Drop tank (1200 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "jaguar_a",
+    "domain": "aircraft",
+    "unitDisplay": "Jaguar A",
     "weaponBlk": "gameData/Weapons/equipment/uk_atlis2_targeting_pod.blk",
     "weaponDisplay": "ATLIS II targeting pod",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "jaguar_a",
+    "domain": "aircraft",
+    "unitDisplay": "Jaguar A",
+    "weaponBlk": "gameData/Weapons/drop_tank/fr_1200l_rp36_drop_tank_3.blk",
+    "weaponDisplay": "Drop tank (1200 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "jaguar_a",
+    "domain": "aircraft",
+    "unitDisplay": "Jaguar A",
+    "weaponBlk": "gameData/Weapons/drop_tank/fr_1200l_rp36_drop_tank_2.blk",
+    "weaponDisplay": "Drop tank (1200 liters) (Fuel Tank)",
     "kind": "ordnance"
   },
   {
@@ -131203,8 +133899,64 @@
     "unitId": "jaguar_e",
     "domain": "aircraft",
     "unitDisplay": "Jaguar E",
+    "weaponBlk": "gameData/Weapons/drop_tank/fr_1200l_rp36_drop_tank_desert_1.blk",
+    "weaponDisplay": "Drop tank (1200 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "jaguar_e",
+    "domain": "aircraft",
+    "unitDisplay": "Jaguar E",
     "weaponBlk": "gameData/Weapons/equipment/uk_atlis2_targeting_pod.blk",
     "weaponDisplay": "ATLIS II targeting pod",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "jaguar_e",
+    "domain": "aircraft",
+    "unitDisplay": "Jaguar E",
+    "weaponBlk": "gameData/Weapons/drop_tank/fr_1200l_rp36_drop_tank_desert_3.blk",
+    "weaponDisplay": "Drop tank (1200 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "jaguar_e",
+    "domain": "aircraft",
+    "unitDisplay": "Jaguar E",
+    "weaponBlk": "gameData/Weapons/drop_tank/fr_1200l_rp36_drop_tank_desert_2.blk",
+    "weaponDisplay": "Drop tank (1200 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "jaguar_gr1",
+    "domain": "aircraft",
+    "unitDisplay": "Jaguar GR.1",
+    "weaponBlk": "gameData/Weapons/drop_tank/uk_264gal_drop_tank_1.blk",
+    "weaponDisplay": "Drop tank (264 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "jaguar_gr1",
+    "domain": "aircraft",
+    "unitDisplay": "Jaguar GR.1",
+    "weaponBlk": "gameData/Weapons/drop_tank/uk_264gal_drop_tank_3.blk",
+    "weaponDisplay": "Drop tank (264 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "jaguar_gr1",
+    "domain": "aircraft",
+    "unitDisplay": "Jaguar GR.1",
+    "weaponBlk": "gameData/Weapons/drop_tank/uk_264gal_drop_tank_2.blk",
+    "weaponDisplay": "Drop tank (264 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "jaguar_gr1a",
+    "domain": "aircraft",
+    "unitDisplay": "Jaguar GR.1A",
+    "weaponBlk": "gameData/Weapons/drop_tank/uk_264gal_drop_tank_1.blk",
+    "weaponDisplay": "Drop tank (264 gal.) (Fuel Tank)",
     "kind": "ordnance"
   },
   {
@@ -131216,11 +133968,59 @@
     "kind": "ordnance"
   },
   {
+    "unitId": "jaguar_gr1a",
+    "domain": "aircraft",
+    "unitDisplay": "Jaguar GR.1A",
+    "weaponBlk": "gameData/Weapons/drop_tank/uk_264gal_drop_tank_3.blk",
+    "weaponDisplay": "Drop tank (264 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "jaguar_gr1a",
+    "domain": "aircraft",
+    "unitDisplay": "Jaguar GR.1A",
+    "weaponBlk": "gameData/Weapons/drop_tank/uk_264gal_drop_tank_2.blk",
+    "weaponDisplay": "Drop tank (264 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "jaguar_is",
+    "domain": "aircraft",
+    "unitDisplay": "Jaguar IS",
+    "weaponBlk": "gameData/Weapons/drop_tank/uk_264gal_drop_tank_1.blk",
+    "weaponDisplay": "Drop tank (264 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "jaguar_is",
+    "domain": "aircraft",
+    "unitDisplay": "Jaguar IS",
+    "weaponBlk": "gameData/Weapons/drop_tank/uk_264gal_drop_tank_3.blk",
+    "weaponDisplay": "Drop tank (264 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
     "unitId": "jaguar_is",
     "domain": "aircraft",
     "unitDisplay": "Jaguar IS",
     "weaponBlk": "gameData/Weapons/equipment/gr_litening_pod_targeting_pod.blk",
     "weaponDisplay": "LITENING II targeting pod",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "jaguar_is",
+    "domain": "aircraft",
+    "unitDisplay": "Jaguar IS",
+    "weaponBlk": "gameData/Weapons/drop_tank/uk_264gal_drop_tank_2.blk",
+    "weaponDisplay": "Drop tank (264 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "jf_17",
+    "domain": "aircraft",
+    "unitDisplay": "JF-17 Thunder",
+    "weaponBlk": "gameData/Weapons/drop_tank/cn_1100l_rx3_drop_tank_2.blk",
+    "weaponDisplay": "Drop tank (1100 liters) (Fuel Tank)",
     "kind": "ordnance"
   },
   {
@@ -131232,11 +134032,99 @@
     "kind": "ordnance"
   },
   {
+    "unitId": "jf_17",
+    "domain": "aircraft",
+    "unitDisplay": "JF-17 Thunder",
+    "weaponBlk": "gameData/Weapons/drop_tank/cn_800l_rx3_drop_tank.blk",
+    "weaponDisplay": "Drop tank (800 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "jf_17",
+    "domain": "aircraft",
+    "unitDisplay": "JF-17 Thunder",
+    "weaponBlk": "gameData/Weapons/drop_tank/cn_1100l_rx3_drop_tank_1.blk",
+    "weaponDisplay": "Drop tank (1100 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "jh_7",
+    "domain": "aircraft",
+    "unitDisplay": "JH-7 Block 02 Flying Leopard",
+    "weaponBlk": "gameData/Weapons/drop_tank/cn_1400l_fyx1400_drop_tank_1.blk",
+    "weaponDisplay": "Drop tank (1400 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "jh_7",
+    "domain": "aircraft",
+    "unitDisplay": "JH-7 Block 02 Flying Leopard",
+    "weaponBlk": "gameData/Weapons/drop_tank/cn_1400l_fyx1400_drop_tank_3.blk",
+    "weaponDisplay": "Drop tank (1400 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "jh_7",
+    "domain": "aircraft",
+    "unitDisplay": "JH-7 Block 02 Flying Leopard",
+    "weaponBlk": "gameData/Weapons/drop_tank/cn_1400l_fyx1400_drop_tank_2.blk",
+    "weaponDisplay": "Drop tank (1400 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "jh_7a",
+    "domain": "aircraft",
+    "unitDisplay": "JH-7A Flying Leopard",
+    "weaponBlk": "gameData/Weapons/drop_tank/cn_1400l_fyx1400_drop_tank_1.blk",
+    "weaponDisplay": "Drop tank (1400 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
     "unitId": "jh_7a",
     "domain": "aircraft",
     "unitDisplay": "JH-7A Flying Leopard",
     "weaponBlk": "gameData/Weapons/equipment/cn_k_adc03a_targeting_pod.blk",
     "weaponDisplay": "K/ADC03A targeting pod",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "jh_7a",
+    "domain": "aircraft",
+    "unitDisplay": "JH-7A Flying Leopard",
+    "weaponBlk": "gameData/Weapons/drop_tank/cn_1400l_fyx1400_drop_tank_3.blk",
+    "weaponDisplay": "Drop tank (1400 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "jh_7a",
+    "domain": "aircraft",
+    "unitDisplay": "JH-7A Flying Leopard",
+    "weaponBlk": "gameData/Weapons/drop_tank/cn_1400l_fyx1400_drop_tank_2.blk",
+    "weaponDisplay": "Drop tank (1400 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "jh_7a_killstreak",
+    "domain": "aircraft",
+    "unitDisplay": "JH-7A Flying Leopard",
+    "weaponBlk": "gameData/Weapons/drop_tank/cn_1400l_fyx1400_drop_tank_1.blk",
+    "weaponDisplay": "Drop tank (1400 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "jh_7a_killstreak",
+    "domain": "aircraft",
+    "unitDisplay": "JH-7A Flying Leopard",
+    "weaponBlk": "gameData/Weapons/drop_tank/cn_1400l_fyx1400_drop_tank_2.blk",
+    "weaponDisplay": "Drop tank (1400 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "jh_7a_prototype",
+    "domain": "aircraft",
+    "unitDisplay": "JH-7A (Prototype) Flying Leopard",
+    "weaponBlk": "gameData/Weapons/drop_tank/cn_1400l_fyx1400_drop_tank_1.blk",
+    "weaponDisplay": "Drop tank (1400 liters) (Fuel Tank)",
     "kind": "ordnance"
   },
   {
@@ -131248,11 +134136,51 @@
     "kind": "ordnance"
   },
   {
+    "unitId": "jh_7a_prototype",
+    "domain": "aircraft",
+    "unitDisplay": "JH-7A (Prototype) Flying Leopard",
+    "weaponBlk": "gameData/Weapons/drop_tank/cn_1400l_fyx1400_drop_tank_3.blk",
+    "weaponDisplay": "Drop tank (1400 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "jh_7a_prototype",
+    "domain": "aircraft",
+    "unitDisplay": "JH-7A (Prototype) Flying Leopard",
+    "weaponBlk": "gameData/Weapons/drop_tank/cn_1400l_fyx1400_drop_tank_2.blk",
+    "weaponDisplay": "Drop tank (1400 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "jh_7a2",
+    "domain": "aircraft",
+    "unitDisplay": "JH-7A2 Flying Leopard",
+    "weaponBlk": "gameData/Weapons/drop_tank/cn_1400l_fyx1400_drop_tank_1.blk",
+    "weaponDisplay": "Drop tank (1400 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
     "unitId": "jh_7a2",
     "domain": "aircraft",
     "unitDisplay": "JH-7A2 Flying Leopard",
     "weaponBlk": "gameData/Weapons/equipment/cn_k_adc03a_targeting_pod.blk",
     "weaponDisplay": "K/ADC03A targeting pod",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "jh_7a2",
+    "domain": "aircraft",
+    "unitDisplay": "JH-7A2 Flying Leopard",
+    "weaponBlk": "gameData/Weapons/drop_tank/cn_1400l_fyx1400_drop_tank_3.blk",
+    "weaponDisplay": "Drop tank (1400 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "jh_7a2",
+    "domain": "aircraft",
+    "unitDisplay": "JH-7A2 Flying Leopard",
+    "weaponBlk": "gameData/Weapons/drop_tank/cn_1400l_fyx1400_drop_tank_2.blk",
+    "weaponDisplay": "Drop tank (1400 liters) (Fuel Tank)",
     "kind": "ordnance"
   },
   {
@@ -131267,8 +134195,40 @@
     "unitId": "kfir_c10_colombia",
     "domain": "aircraft",
     "unitDisplay": "Kfir C.10 (Block 60)",
+    "weaponBlk": "gameData/Weapons/drop_tank/il_880l_rp825_drop_tank_ghost_grey_mirage_3cj.blk",
+    "weaponDisplay": "Drop tank (880 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "kfir_c10_colombia",
+    "domain": "aircraft",
+    "unitDisplay": "Kfir C.10 (Block 60)",
     "weaponBlk": "gameData/Weapons/equipment/gr_litening_iii_targeting_pod.blk",
     "weaponDisplay": "LITENING III targeting pod",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "kfir_c2",
+    "domain": "aircraft",
+    "unitDisplay": "Kfir C.2",
+    "weaponBlk": "gameData/Weapons/drop_tank/il_880l_rp825_drop_tank_ghost_grey_mirage_3cj.blk",
+    "weaponDisplay": "Drop tank (880 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "kfir_c7",
+    "domain": "aircraft",
+    "unitDisplay": "Kfir C.7",
+    "weaponBlk": "gameData/Weapons/drop_tank/il_880l_rp825_drop_tank_mirage_3cj.blk",
+    "weaponDisplay": "Drop tank (880 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "kfir_canard",
+    "domain": "aircraft",
+    "unitDisplay": "Kfir Canard",
+    "weaponBlk": "gameData/Weapons/drop_tank/il_880l_rp825_drop_tank_mirage_3cj.blk",
+    "weaponDisplay": "Drop tank (880 liters) (Fuel Tank)",
     "kind": "ordnance"
   },
   {
@@ -132363,8 +135323,32 @@
     "unitId": "m_346fa",
     "domain": "aircraft",
     "unitDisplay": "M-346FA Master",
+    "weaponBlk": "gameData/Weapons/drop_tank/it_630l_drop_tank_1.blk",
+    "weaponDisplay": "Drop tank (630 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "m_346fa",
+    "domain": "aircraft",
+    "unitDisplay": "M-346FA Master",
     "weaponBlk": "gameData/Weapons/equipment/us_sniper_atp_targeting_pod.blk",
     "weaponDisplay": "Sniper targeting pod",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "m_346fa",
+    "domain": "aircraft",
+    "unitDisplay": "M-346FA Master",
+    "weaponBlk": "gameData/Weapons/drop_tank/it_630l_drop_tank_3.blk",
+    "weaponDisplay": "Drop tank (630 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "m_346fa",
+    "domain": "aircraft",
+    "unitDisplay": "M-346FA Master",
+    "weaponBlk": "gameData/Weapons/drop_tank/it_630l_drop_tank_2.blk",
+    "weaponDisplay": "Drop tank (630 liters) (Fuel Tank)",
     "kind": "ordnance"
   },
   {
@@ -132397,6 +135381,38 @@
     "unitDisplay": "Martin 139WC",
     "weaponBlk": "gameData/Weapons/BombGuns/it_250kg_gp.blk",
     "weaponDisplay": "2x 250 kg GP 250 bomb",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "marut_mk1",
+    "domain": "aircraft",
+    "unitDisplay": "HF-24 Marut",
+    "weaponBlk": "gameData/Weapons/drop_tank/in_100gal_marut_drop_tank_l_2.blk",
+    "weaponDisplay": "Drop tank (100 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "marut_mk1",
+    "domain": "aircraft",
+    "unitDisplay": "HF-24 Marut",
+    "weaponBlk": "gameData/Weapons/drop_tank/in_100gal_marut_drop_tank_l.blk",
+    "weaponDisplay": "Drop tank (100 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "marut_mk1",
+    "domain": "aircraft",
+    "unitDisplay": "HF-24 Marut",
+    "weaponBlk": "gameData/Weapons/drop_tank/in_100gal_marut_drop_tank_r.blk",
+    "weaponDisplay": "Drop tank (100 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "marut_mk1",
+    "domain": "aircraft",
+    "unitDisplay": "HF-24 Marut",
+    "weaponBlk": "gameData/Weapons/drop_tank/in_100gal_marut_drop_tank_r_2.blk",
+    "weaponDisplay": "Drop tank (100 gal.) (Fuel Tank)",
     "kind": "ordnance"
   },
   {
@@ -132437,6 +135453,38 @@
     "unitDisplay": "M.B.175T",
     "weaponBlk": "gameData/Weapons/torpedoes/de_f5w_torpedo.blk",
     "weaponDisplay": "F5W torpedo",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "mb_326b",
+    "domain": "aircraft",
+    "unitDisplay": "MB-326B",
+    "weaponBlk": "gameData/Weapons/drop_tank/it_330l_drop_tank_1.blk",
+    "weaponDisplay": "Drop tank (330 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "mb_326b",
+    "domain": "aircraft",
+    "unitDisplay": "MB-326B",
+    "weaponBlk": "gameData/Weapons/drop_tank/it_330l_drop_tank_2.blk",
+    "weaponDisplay": "Drop tank (330 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "mb_326k",
+    "domain": "aircraft",
+    "unitDisplay": "MB-326K",
+    "weaponBlk": "gameData/Weapons/drop_tank/it_330l_drop_tank_1.blk",
+    "weaponDisplay": "Drop tank (330 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "mb_326k",
+    "domain": "aircraft",
+    "unitDisplay": "MB-326K",
+    "weaponBlk": "gameData/Weapons/drop_tank/it_330l_drop_tank_2.blk",
+    "weaponDisplay": "Drop tank (330 liters) (Fuel Tank)",
     "kind": "ordnance"
   },
   {
@@ -132643,8 +135691,64 @@
     "unitId": "mig_21_2000_iaf",
     "domain": "aircraft",
     "unitDisplay": "MiG-21 2000",
+    "weaponBlk": "gameData/Weapons/drop_tank/su_490l_mig_21_left_wing_1.blk",
+    "weaponDisplay": "Drop tank (490 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "mig_21_2000_iaf",
+    "domain": "aircraft",
+    "unitDisplay": "MiG-21 2000",
     "weaponBlk": "gameData/Weapons/equipment/gr_litening_pod_targeting_pod.blk",
     "weaponDisplay": "LITENING II targeting pod",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "mig_21_2000_iaf",
+    "domain": "aircraft",
+    "unitDisplay": "MiG-21 2000",
+    "weaponBlk": "gameData/Weapons/drop_tank/su_490l_mig_21_fuse.blk",
+    "weaponDisplay": "Drop tank (490 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "mig_21_2000_iaf",
+    "domain": "aircraft",
+    "unitDisplay": "MiG-21 2000",
+    "weaponBlk": "gameData/Weapons/drop_tank/su_800l_mig_21_silver_fuse.blk",
+    "weaponDisplay": "Drop tank (820 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "mig_21_2000_iaf",
+    "domain": "aircraft",
+    "unitDisplay": "MiG-21 2000",
+    "weaponBlk": "gameData/Weapons/drop_tank/su_490l_mig_21_right_wing_1.blk",
+    "weaponDisplay": "Drop tank (490 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "mig_21_bis_finland",
+    "domain": "aircraft",
+    "unitDisplay": "MiG-21bis",
+    "weaponBlk": "gameData/Weapons/drop_tank/su_800l_mig_21_silver_fuse.blk",
+    "weaponDisplay": "Drop tank (820 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "mig_23bn",
+    "domain": "aircraft",
+    "unitDisplay": "MiG-23BN",
+    "weaponBlk": "gameData/Weapons/drop_tank/su_800l_mig_23_27_silver_fuse.blk",
+    "weaponDisplay": "Drop tank (820 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "mig_23m",
+    "domain": "aircraft",
+    "unitDisplay": "MiG-23M",
+    "weaponBlk": "gameData/Weapons/drop_tank/su_800l_mig_23m_silver_fuse.blk",
+    "weaponDisplay": "Drop tank (820 liters) (Fuel Tank)",
     "kind": "ordnance"
   },
   {
@@ -132659,8 +135763,24 @@
     "unitId": "mig_23mf_germany",
     "domain": "aircraft",
     "unitDisplay": "MiG-23MF",
+    "weaponBlk": "gameData/Weapons/drop_tank/su_800l_mig_23m_silver_fuse.blk",
+    "weaponDisplay": "Drop tank (820 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "mig_23mf_germany",
+    "domain": "aircraft",
+    "unitDisplay": "MiG-23MF",
     "weaponBlk": "gameData/Weapons/equipment/su_delta_ng_station.blk",
     "weaponDisplay": "Delta-NG targeting pod",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "mig_23mf_hungary",
+    "domain": "aircraft",
+    "unitDisplay": "MiG-23MF",
+    "weaponBlk": "gameData/Weapons/drop_tank/su_800l_mig_23m_silver_fuse.blk",
+    "weaponDisplay": "Drop tank (820 liters) (Fuel Tank)",
     "kind": "ordnance"
   },
   {
@@ -132675,8 +135795,24 @@
     "unitId": "mig_23ml",
     "domain": "aircraft",
     "unitDisplay": "MiG-23ML",
+    "weaponBlk": "gameData/Weapons/drop_tank/su_800l_mig_23ml_silver_fuse.blk",
+    "weaponDisplay": "Drop tank (820 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "mig_23ml",
+    "domain": "aircraft",
+    "unitDisplay": "MiG-23ML",
     "weaponBlk": "gameData/Weapons/equipment/su_delta_ng_station.blk",
     "weaponDisplay": "Delta-NG targeting pod",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "mig_23mla",
+    "domain": "aircraft",
+    "unitDisplay": "MiG-23MLA",
+    "weaponBlk": "gameData/Weapons/drop_tank/su_800l_mig_23ml_silver_fuse.blk",
+    "weaponDisplay": "Drop tank (820 liters) (Fuel Tank)",
     "kind": "ordnance"
   },
   {
@@ -132691,8 +135827,32 @@
     "unitId": "mig_23mld",
     "domain": "aircraft",
     "unitDisplay": "MiG-23MLD",
+    "weaponBlk": "gameData/Weapons/drop_tank/su_800l_mig_23ml_silver_fuse.blk",
+    "weaponDisplay": "Drop tank (820 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "mig_23mld",
+    "domain": "aircraft",
+    "unitDisplay": "MiG-23MLD",
     "weaponBlk": "gameData/Weapons/equipment/su_delta_ng_station.blk",
     "weaponDisplay": "Delta-NG targeting pod",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "mig_25pd",
+    "domain": "aircraft",
+    "unitDisplay": "MiG-25PD",
+    "weaponBlk": "gameData/Weapons/drop_tank/su_5280l_mig_25pd_drop_tank_central.blk",
+    "weaponDisplay": "Drop tank (5280 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "mig_27k",
+    "domain": "aircraft",
+    "unitDisplay": "MiG-27K",
+    "weaponBlk": "gameData/Weapons/drop_tank/su_800l_mig_23_27_silver_fuse.blk",
+    "weaponDisplay": "Drop tank (820 liters) (Fuel Tank)",
     "kind": "ordnance"
   },
   {
@@ -132715,6 +135875,14 @@
     "unitId": "mig_27m",
     "domain": "aircraft",
     "unitDisplay": "MiG-27M",
+    "weaponBlk": "gameData/Weapons/drop_tank/su_800l_mig_23_27_silver_fuse.blk",
+    "weaponDisplay": "Drop tank (820 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "mig_27m",
+    "domain": "aircraft",
+    "unitDisplay": "MiG-27M",
     "weaponBlk": "gameData/Weapons/equipment/su_delta_ng_station.blk",
     "weaponDisplay": "Delta-NG targeting pod",
     "kind": "ordnance"
@@ -132725,6 +135893,126 @@
     "unitDisplay": "MiG-27M",
     "weaponBlk": "gameData/Weapons/equipment/su_l_066_viuga.blk",
     "weaponDisplay": "L-066 \"Viuga\" targeting pod",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "mig_29_9_12",
+    "domain": "aircraft",
+    "unitDisplay": "MiG-29 (9-12)",
+    "weaponBlk": "gameData/Weapons/drop_tank/su_1500_liters_fuse_mig_29.blk",
+    "weaponDisplay": "Drop tank (1520 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "mig_29_9_12_germany",
+    "domain": "aircraft",
+    "unitDisplay": "MiG-29 (9-12A)",
+    "weaponBlk": "gameData/Weapons/drop_tank/su_1500_liters_fuse_mig_29.blk",
+    "weaponDisplay": "Drop tank (1520 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "mig_29_9_12_sniper",
+    "domain": "aircraft",
+    "unitDisplay": "MiG-29 Sniper",
+    "weaponBlk": "gameData/Weapons/drop_tank/su_1500_liters_fuse_mig_29.blk",
+    "weaponDisplay": "Drop tank (1520 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "mig_29_9_12b_hungary",
+    "domain": "aircraft",
+    "unitDisplay": "MiG-29 (9-12B)",
+    "weaponBlk": "gameData/Weapons/drop_tank/su_1500_liters_fuse_mig_29.blk",
+    "weaponDisplay": "Drop tank (1520 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "mig_29_9_12g",
+    "domain": "aircraft",
+    "unitDisplay": "MiG-29 (9-12G)",
+    "weaponBlk": "gameData/Weapons/drop_tank/su_1500_liters_fuse_mig_29.blk",
+    "weaponDisplay": "Drop tank (1520 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "mig_29_9_13",
+    "domain": "aircraft",
+    "unitDisplay": "MiG-29 (9-13)",
+    "weaponBlk": "gameData/Weapons/drop_tank/su_1500_liters_fuse_mig_29.blk",
+    "weaponDisplay": "Drop tank (1520 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "mig_29kr_9_41r",
+    "domain": "aircraft",
+    "unitDisplay": "MiG-29KR (9-41R)",
+    "weaponBlk": "gameData/Weapons/drop_tank/su_1150l_mig_29kr_left_wing.blk",
+    "weaponDisplay": "Drop tank (1150 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "mig_29kr_9_41r",
+    "domain": "aircraft",
+    "unitDisplay": "MiG-29KR (9-41R)",
+    "weaponBlk": "gameData/Weapons/drop_tank/su_1150l_mig_29kr_left_wing1.blk",
+    "weaponDisplay": "Drop tank (1150 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "mig_29kr_9_41r",
+    "domain": "aircraft",
+    "unitDisplay": "MiG-29KR (9-41R)",
+    "weaponBlk": "gameData/Weapons/drop_tank/su_2150_liters_fuse_mig_29kr.blk",
+    "weaponDisplay": "Drop tank (2150 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "mig_29kr_9_41r",
+    "domain": "aircraft",
+    "unitDisplay": "MiG-29KR (9-41R)",
+    "weaponBlk": "gameData/Weapons/drop_tank/su_1150l_mig_29kr_right_wing.blk",
+    "weaponDisplay": "Drop tank (1150 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "mig_29kr_9_41r",
+    "domain": "aircraft",
+    "unitDisplay": "MiG-29KR (9-41R)",
+    "weaponBlk": "gameData/Weapons/drop_tank/su_1150l_mig_29kr_right_wing1.blk",
+    "weaponDisplay": "Drop tank (1150 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "mig_29m_9_15",
+    "domain": "aircraft",
+    "unitDisplay": "MiG-29M (9-15)",
+    "weaponBlk": "gameData/Weapons/drop_tank/su_1500_liters_fuse_mig_29.blk",
+    "weaponDisplay": "Drop tank (1520 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "mig_29n",
+    "domain": "aircraft",
+    "unitDisplay": "MiG-29N (9-12SD)",
+    "weaponBlk": "gameData/Weapons/drop_tank/su_1500_liters_fuse_mig_29.blk",
+    "weaponDisplay": "Drop tank (1520 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "mig_29smt_9_19",
+    "domain": "aircraft",
+    "unitDisplay": "MiG-29SMT (9-19)",
+    "weaponBlk": "gameData/Weapons/drop_tank/su_2000_liters_fuse_mig_29smt.blk",
+    "weaponDisplay": "Drop tank (2000 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "mig_29smt_9_19_killstreak",
+    "domain": "aircraft",
+    "unitDisplay": "MiG-29SMT (9-19)",
+    "weaponBlk": "gameData/Weapons/drop_tank/su_2000_liters_fuse_mig_29smt.blk",
+    "weaponDisplay": "Drop tank (2000 liters) (Fuel Tank)",
     "kind": "ordnance"
   },
   {
@@ -133016,11 +136304,299 @@
     "kind": "ordnance"
   },
   {
+    "unitId": "mig-21_bis",
+    "domain": "aircraft",
+    "unitDisplay": "MiG-21bis",
+    "weaponBlk": "gameData/Weapons/drop_tank/su_490l_mig_21_left_wing_1.blk",
+    "weaponDisplay": "Drop tank (490 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "mig-21_bis",
+    "domain": "aircraft",
+    "unitDisplay": "MiG-21bis",
+    "weaponBlk": "gameData/Weapons/drop_tank/su_490l_mig_21_fuse.blk",
+    "weaponDisplay": "Drop tank (490 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "mig-21_bis",
+    "domain": "aircraft",
+    "unitDisplay": "MiG-21bis",
+    "weaponBlk": "gameData/Weapons/drop_tank/su_490l_mig_21_right_wing_1.blk",
+    "weaponDisplay": "Drop tank (490 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "mig-21_bis_event",
+    "domain": "aircraft",
+    "unitDisplay": "MiG-21bis",
+    "weaponBlk": "gameData/Weapons/drop_tank/su_490l_mig_21_fuse.blk",
+    "weaponDisplay": "Drop tank (490 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "mig-21_bis_lazur",
+    "domain": "aircraft",
+    "unitDisplay": "MiG-21bis \"Lazur-M\"",
+    "weaponBlk": "gameData/Weapons/drop_tank/su_490l_mig_21_left_wing_1.blk",
+    "weaponDisplay": "Drop tank (490 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "mig-21_bis_lazur",
+    "domain": "aircraft",
+    "unitDisplay": "MiG-21bis \"Lazur-M\"",
+    "weaponBlk": "gameData/Weapons/drop_tank/su_490l_mig_21_fuse.blk",
+    "weaponDisplay": "Drop tank (490 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "mig-21_bis_lazur",
+    "domain": "aircraft",
+    "unitDisplay": "MiG-21bis \"Lazur-M\"",
+    "weaponBlk": "gameData/Weapons/drop_tank/su_490l_mig_21_right_wing_1.blk",
+    "weaponDisplay": "Drop tank (490 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "mig-21_bis_sau",
+    "domain": "aircraft",
+    "unitDisplay": "MiG-21bis-SAU",
+    "weaponBlk": "gameData/Weapons/drop_tank/su_490l_mig_21_left_wing_1.blk",
+    "weaponDisplay": "Drop tank (490 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "mig-21_bis_sau",
+    "domain": "aircraft",
+    "unitDisplay": "MiG-21bis-SAU",
+    "weaponBlk": "gameData/Weapons/drop_tank/su_490l_mig_21_fuse.blk",
+    "weaponDisplay": "Drop tank (490 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "mig-21_bis_sau",
+    "domain": "aircraft",
+    "unitDisplay": "MiG-21bis-SAU",
+    "weaponBlk": "gameData/Weapons/drop_tank/su_490l_mig_21_right_wing_1.blk",
+    "weaponDisplay": "Drop tank (490 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "mig-21_bis_sau_hungary",
+    "domain": "aircraft",
+    "unitDisplay": "MiG-21bis-SAU",
+    "weaponBlk": "gameData/Weapons/drop_tank/su_490l_mig_21_left_wing_1.blk",
+    "weaponDisplay": "Drop tank (490 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "mig-21_bis_sau_hungary",
+    "domain": "aircraft",
+    "unitDisplay": "MiG-21bis-SAU",
+    "weaponBlk": "gameData/Weapons/drop_tank/su_490l_mig_21_fuse.blk",
+    "weaponDisplay": "Drop tank (490 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "mig-21_bis_sau_hungary",
+    "domain": "aircraft",
+    "unitDisplay": "MiG-21bis-SAU",
+    "weaponBlk": "gameData/Weapons/drop_tank/su_490l_mig_21_right_wing_1.blk",
+    "weaponDisplay": "Drop tank (490 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "mig-21_bison",
+    "domain": "aircraft",
+    "unitDisplay": "MiG-21 Bison",
+    "weaponBlk": "gameData/Weapons/drop_tank/su_490l_mig_21_bison_left_wing.blk",
+    "weaponDisplay": "Drop tank (490 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "mig-21_bison",
+    "domain": "aircraft",
+    "unitDisplay": "MiG-21 Bison",
+    "weaponBlk": "gameData/Weapons/drop_tank/su_490l_mig_21_bison_fuse.blk",
+    "weaponDisplay": "Drop tank (490 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "mig-21_bison",
+    "domain": "aircraft",
+    "unitDisplay": "MiG-21 Bison",
+    "weaponBlk": "gameData/Weapons/drop_tank/su_490l_mig_21_bison_right_wing.blk",
+    "weaponDisplay": "Drop tank (490 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "mig-21_f13",
+    "domain": "aircraft",
+    "unitDisplay": "MiG-21F-13",
+    "weaponBlk": "gameData/Weapons/drop_tank/su_490l_mig_21.blk",
+    "weaponDisplay": "Drop tank (490 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "mig-21_mf",
+    "domain": "aircraft",
+    "unitDisplay": "MiG-21MF",
+    "weaponBlk": "gameData/Weapons/drop_tank/su_490l_mig_21_left_wing_1.blk",
+    "weaponDisplay": "Drop tank (490 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "mig-21_mf",
+    "domain": "aircraft",
+    "unitDisplay": "MiG-21MF",
+    "weaponBlk": "gameData/Weapons/drop_tank/su_490l_mig_21_fuse.blk",
+    "weaponDisplay": "Drop tank (490 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "mig-21_mf",
+    "domain": "aircraft",
+    "unitDisplay": "MiG-21MF",
+    "weaponBlk": "gameData/Weapons/drop_tank/su_490l_mig_21_right_wing_1.blk",
+    "weaponDisplay": "Drop tank (490 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "mig-21_mf_hungary",
+    "domain": "aircraft",
+    "unitDisplay": "MiG-21MF",
+    "weaponBlk": "gameData/Weapons/drop_tank/su_490l_mig_21_left_wing_1.blk",
+    "weaponDisplay": "Drop tank (490 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "mig-21_mf_hungary",
+    "domain": "aircraft",
+    "unitDisplay": "MiG-21MF",
+    "weaponBlk": "gameData/Weapons/drop_tank/su_490l_mig_21_fuse.blk",
+    "weaponDisplay": "Drop tank (490 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "mig-21_mf_hungary",
+    "domain": "aircraft",
+    "unitDisplay": "MiG-21MF",
+    "weaponBlk": "gameData/Weapons/drop_tank/su_490l_mig_21_right_wing_1.blk",
+    "weaponDisplay": "Drop tank (490 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "mig-21_pfm",
+    "domain": "aircraft",
+    "unitDisplay": "MiG-21PFM",
+    "weaponBlk": "gameData/Weapons/drop_tank/su_490l_mig_21.blk",
+    "weaponDisplay": "Drop tank (490 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "mig-21_s",
+    "domain": "aircraft",
+    "unitDisplay": "MiG-21S (R-13-300)",
+    "weaponBlk": "gameData/Weapons/drop_tank/su_490l_mig_21_left_wing_1.blk",
+    "weaponDisplay": "Drop tank (490 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "mig-21_s",
+    "domain": "aircraft",
+    "unitDisplay": "MiG-21S (R-13-300)",
+    "weaponBlk": "gameData/Weapons/drop_tank/su_490l_mig_21_fuse.blk",
+    "weaponDisplay": "Drop tank (490 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "mig-21_s",
+    "domain": "aircraft",
+    "unitDisplay": "MiG-21S (R-13-300)",
+    "weaponBlk": "gameData/Weapons/drop_tank/su_490l_mig_21_right_wing_1.blk",
+    "weaponDisplay": "Drop tank (490 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "mig-21_smt",
+    "domain": "aircraft",
+    "unitDisplay": "MiG-21SMT",
+    "weaponBlk": "gameData/Weapons/drop_tank/su_490l_j_7_left_wing.blk",
+    "weaponDisplay": "Drop tank (490 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "mig-21_smt",
+    "domain": "aircraft",
+    "unitDisplay": "MiG-21SMT",
+    "weaponBlk": "gameData/Weapons/drop_tank/su_490l_mig_21_fuse_1.blk",
+    "weaponDisplay": "Drop tank (490 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "mig-21_smt",
+    "domain": "aircraft",
+    "unitDisplay": "MiG-21SMT",
+    "weaponBlk": "gameData/Weapons/drop_tank/su_490l_j_7_right_wing.blk",
+    "weaponDisplay": "Drop tank (490 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "mig-21_sps_k",
+    "domain": "aircraft",
+    "unitDisplay": "MiG-21 SPS-K",
+    "weaponBlk": "gameData/Weapons/drop_tank/su_490l_mig_21.blk",
+    "weaponDisplay": "Drop tank (490 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "mirage_2000_5ei",
+    "domain": "aircraft",
+    "unitDisplay": "Mirage 2000-5Ei",
+    "weaponBlk": "gameData/Weapons/drop_tank/fr_1300l_rp522_mirage_2000d_r1.blk",
+    "weaponDisplay": "Drop tank (1300 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "mirage_2000_5f",
+    "domain": "aircraft",
+    "unitDisplay": "Mirage 2000-5F",
+    "weaponBlk": "gameData/Weapons/drop_tank/fr_1300l_rp522_mirage_2000d_r1.blk",
+    "weaponDisplay": "Drop tank (1300 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
     "unitId": "mirage_2000_5f",
     "domain": "aircraft",
     "unitDisplay": "Mirage 2000-5F",
     "weaponBlk": "gameData/Weapons/equipment/fr_damocles_pod_targeting_pod.blk",
     "weaponDisplay": "DAMOCLES targeting pod",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "mirage_2000c_s4",
+    "domain": "aircraft",
+    "unitDisplay": "Mirage 2000C-S4",
+    "weaponBlk": "gameData/Weapons/drop_tank/fr_1300l_rp522_mirage_2000d_r1.blk",
+    "weaponDisplay": "Drop tank (1300 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "mirage_2000c_s5",
+    "domain": "aircraft",
+    "unitDisplay": "Mirage 2000C-S5",
+    "weaponBlk": "gameData/Weapons/drop_tank/fr_1300l_rp522_mirage_2000d_r1.blk",
+    "weaponDisplay": "Drop tank (1300 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "mirage_2000d_r1",
+    "domain": "aircraft",
+    "unitDisplay": "Mirage 2000D-R1",
+    "weaponBlk": "gameData/Weapons/drop_tank/fr_1300l_rp522_mirage_2000d_r1.blk",
+    "weaponDisplay": "Drop tank (1300 liters) (Fuel Tank)",
     "kind": "ordnance"
   },
   {
@@ -133035,8 +136611,64 @@
     "unitId": "mirage_2000d_rmv",
     "domain": "aircraft",
     "unitDisplay": "Mirage 2000D-RMV",
+    "weaponBlk": "gameData/Weapons/drop_tank/fr_1300l_rp522_mirage_2000d_r1.blk",
+    "weaponDisplay": "Drop tank (1300 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "mirage_2000d_rmv",
+    "domain": "aircraft",
+    "unitDisplay": "Mirage 2000D-RMV",
     "weaponBlk": "gameData/Weapons/equipment/fr_damocles_pod_targeting_pod.blk",
     "weaponDisplay": "DAMOCLES targeting pod",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "mirage_3c",
+    "domain": "aircraft",
+    "unitDisplay": "Mirage IIIC",
+    "weaponBlk": "gameData/Weapons/drop_tank/il_1300l_rp62_drop_tank_ghost_grey_1.blk",
+    "weaponDisplay": "Drop tank (1300 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "mirage_3c",
+    "domain": "aircraft",
+    "unitDisplay": "Mirage IIIC",
+    "weaponBlk": "gameData/Weapons/drop_tank/il_1300l_rp62_drop_tank_ghost_grey_2.blk",
+    "weaponDisplay": "Drop tank (1300 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "mirage_3cj",
+    "domain": "aircraft",
+    "unitDisplay": "Mirage IIICJ (Shahak)",
+    "weaponBlk": "gameData/Weapons/drop_tank/il_880l_rp825_drop_tank_mirage_3cj.blk",
+    "weaponDisplay": "Drop tank (880 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "mirage_3e",
+    "domain": "aircraft",
+    "unitDisplay": "Mirage IIIE",
+    "weaponBlk": "gameData/Weapons/drop_tank/fr_1700l_rp30_mirage_3e_drop_tank_1.blk",
+    "weaponDisplay": "Drop tank (1700 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "mirage_3e",
+    "domain": "aircraft",
+    "unitDisplay": "Mirage IIIE",
+    "weaponBlk": "gameData/Weapons/drop_tank/fr_1700l_rp30_mirage_3e_drop_tank_2.blk",
+    "weaponDisplay": "Drop tank (1700 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "mirage_3s_c70_switzerland",
+    "domain": "aircraft",
+    "unitDisplay": "Mirage IIIS C.70",
+    "weaponBlk": "gameData/Weapons/drop_tank/sw_880l_rp825_drop_tank_mirage_iiis.blk",
+    "weaponDisplay": "Drop tank (730 liters) (Fuel Tank)",
     "kind": "ordnance"
   },
   {
@@ -133045,6 +136677,14 @@
     "unitDisplay": "Mirage 4000",
     "weaponBlk": "gameData/Weapons/containers/fr_500l_m4000_drop_tank_r_550_2_x2_left_wing.blk",
     "weaponDisplay": "Matra R550 Magic 2 air-to-air missiles x2",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "mirage_4000",
+    "domain": "aircraft",
+    "unitDisplay": "Mirage 4000",
+    "weaponBlk": "gameData/Weapons/drop_tank/fr_2500l_m4000_drop_tank_1.blk",
+    "weaponDisplay": "Drop tank (2500 liters) (Fuel Tank)",
     "kind": "ordnance"
   },
   {
@@ -133061,6 +136701,118 @@
     "unitDisplay": "Mirage 4000",
     "weaponBlk": "gameData/Weapons/containers/fr_500l_m4000_drop_tank_r_550_2_x2_right_wing.blk",
     "weaponDisplay": "Matra R550 Magic 2 air-to-air missiles x2",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "mirage_4000",
+    "domain": "aircraft",
+    "unitDisplay": "Mirage 4000",
+    "weaponBlk": "gameData/Weapons/drop_tank/fr_2500l_m4000_drop_tank_2.blk",
+    "weaponDisplay": "Drop tank (2500 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "mirage_5ba",
+    "domain": "aircraft",
+    "unitDisplay": "Mirage 5BA",
+    "weaponBlk": "gameData/Weapons/drop_tank/bl_1700l_rp30_drop_tank_1.blk",
+    "weaponDisplay": "Drop tank (1700 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "mirage_5ba",
+    "domain": "aircraft",
+    "unitDisplay": "Mirage 5BA",
+    "weaponBlk": "gameData/Weapons/drop_tank/bl_1700l_rp30_drop_tank_2.blk",
+    "weaponDisplay": "Drop tank (1700 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "mirage_5f",
+    "domain": "aircraft",
+    "unitDisplay": "Mirage 5F",
+    "weaponBlk": "gameData/Weapons/drop_tank/fr_1700l_rp30_drop_tank_1.blk",
+    "weaponDisplay": "Drop tank (1700 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "mirage_5f",
+    "domain": "aircraft",
+    "unitDisplay": "Mirage 5F",
+    "weaponBlk": "gameData/Weapons/drop_tank/fr_1700l_rp30_drop_tank_2.blk",
+    "weaponDisplay": "Drop tank (1700 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "mirage_f1c",
+    "domain": "aircraft",
+    "unitDisplay": "Mirage F1C",
+    "weaponBlk": "gameData/Weapons/drop_tank/fr_1200l_rp35_drop_tank_aluminium_1.blk",
+    "weaponDisplay": "Drop tank (1200 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "mirage_f1c",
+    "domain": "aircraft",
+    "unitDisplay": "Mirage F1C",
+    "weaponBlk": "gameData/Weapons/drop_tank/fr_1200l_rp35_drop_tank_aluminium_fuse.blk",
+    "weaponDisplay": "Drop tank (1200 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "mirage_f1c",
+    "domain": "aircraft",
+    "unitDisplay": "Mirage F1C",
+    "weaponBlk": "gameData/Weapons/drop_tank/fr_1200l_rp35_drop_tank_aluminium_2.blk",
+    "weaponDisplay": "Drop tank (1200 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "mirage_f1c_200",
+    "domain": "aircraft",
+    "unitDisplay": "Mirage F1C-200",
+    "weaponBlk": "gameData/Weapons/drop_tank/fr_1200l_rp35_drop_tank_aluminium_1.blk",
+    "weaponDisplay": "Drop tank (1200 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "mirage_f1c_200",
+    "domain": "aircraft",
+    "unitDisplay": "Mirage F1C-200",
+    "weaponBlk": "gameData/Weapons/drop_tank/fr_1200l_rp35_drop_tank_aluminium_fuse.blk",
+    "weaponDisplay": "Drop tank (1200 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "mirage_f1c_200",
+    "domain": "aircraft",
+    "unitDisplay": "Mirage F1C-200",
+    "weaponBlk": "gameData/Weapons/drop_tank/fr_1200l_rp35_drop_tank_aluminium_2.blk",
+    "weaponDisplay": "Drop tank (1200 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "mirage_f1ct",
+    "domain": "aircraft",
+    "unitDisplay": "Mirage F1CT",
+    "weaponBlk": "gameData/Weapons/drop_tank/fr_1200l_rp35_drop_tank_1.blk",
+    "weaponDisplay": "Drop tank (1200 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "mirage_f1ct",
+    "domain": "aircraft",
+    "unitDisplay": "Mirage F1CT",
+    "weaponBlk": "gameData/Weapons/drop_tank/fr_1200l_rp35_drop_tank_fuse.blk",
+    "weaponDisplay": "Drop tank (1200 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "mirage_f1ct",
+    "domain": "aircraft",
+    "unitDisplay": "Mirage F1CT",
+    "weaponBlk": "gameData/Weapons/drop_tank/fr_1200l_rp35_drop_tank_2.blk",
+    "weaponDisplay": "Drop tank (1200 liters) (Fuel Tank)",
     "kind": "ordnance"
   },
   {
@@ -133256,6 +137008,54 @@
     "kind": "ordnance"
   },
   {
+    "unitId": "nesher",
+    "domain": "aircraft",
+    "unitDisplay": "Nesher",
+    "weaponBlk": "gameData/Weapons/drop_tank/il_880l_rp825_drop_tank_mirage_3cj.blk",
+    "weaponDisplay": "Drop tank (880 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "nf_5a_netherlands",
+    "domain": "aircraft",
+    "unitDisplay": "NF-5A Freedom Fighter",
+    "weaponBlk": "gameData/Weapons/drop_tank/nl_50gal_wingtip_tank_1.blk",
+    "weaponDisplay": "Drop tank (50 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "nf_5a_netherlands",
+    "domain": "aircraft",
+    "unitDisplay": "NF-5A Freedom Fighter",
+    "weaponBlk": "gameData/Weapons/drop_tank/nl_150gal_early_drop_tank_1.blk",
+    "weaponDisplay": "Drop tank (150 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "nf_5a_netherlands",
+    "domain": "aircraft",
+    "unitDisplay": "NF-5A Freedom Fighter",
+    "weaponBlk": "gameData/Weapons/drop_tank/nl_150gal_early_fuse_drop_tank.blk",
+    "weaponDisplay": "Drop tank (150 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "nf_5a_netherlands",
+    "domain": "aircraft",
+    "unitDisplay": "NF-5A Freedom Fighter",
+    "weaponBlk": "gameData/Weapons/drop_tank/nl_150gal_early_drop_tank_2.blk",
+    "weaponDisplay": "Drop tank (150 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "nf_5a_netherlands",
+    "domain": "aircraft",
+    "unitDisplay": "NF-5A Freedom Fighter",
+    "weaponBlk": "gameData/Weapons/drop_tank/nl_50gal_wingtip_tank_2.blk",
+    "weaponDisplay": "Drop tank (50 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
     "unitId": "nt_a_7e",
     "domain": "aircraft",
     "unitDisplay": "A-7E Corsair II (Nuclear Escalation)",
@@ -133272,11 +137072,43 @@
     "kind": "ordnance"
   },
   {
+    "unitId": "nt_f_4e",
+    "domain": "aircraft",
+    "unitDisplay": "F-4E Phantom II (Nuclear Escalation)",
+    "weaponBlk": "gameData/Weapons/drop_tank/us_600_gal_fuse_f_4.blk",
+    "weaponDisplay": "Drop tank (600 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "nt_mig_23mld",
+    "domain": "aircraft",
+    "unitDisplay": "MiG-23MLD (Nuclear Escalation)",
+    "weaponBlk": "gameData/Weapons/drop_tank/su_800l_mig_23ml_silver_fuse.blk",
+    "weaponDisplay": "Drop tank (820 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
     "unitId": "nt_mig_23mld",
     "domain": "aircraft",
     "unitDisplay": "MiG-23MLD (Nuclear Escalation)",
     "weaponBlk": "gameData/Weapons/equipment/su_delta_ng_station.blk",
     "weaponDisplay": "Delta-NG targeting pod",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "nt_su_24m",
+    "domain": "aircraft",
+    "unitDisplay": "Su-24M (Nuclear Escalation)",
+    "weaponBlk": "gameData/Weapons/drop_tank/su_su24m_3000l_drop_tank_left.blk",
+    "weaponDisplay": "Drop tank (3050 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "nt_su_24m",
+    "domain": "aircraft",
+    "unitDisplay": "Su-24M (Nuclear Escalation)",
+    "weaponBlk": "gameData/Weapons/drop_tank/su_su24m_2000l_drop_tank.blk",
+    "weaponDisplay": "Drop tank (1860 liters) (Fuel Tank)",
     "kind": "ordnance"
   },
   {
@@ -133312,11 +137144,51 @@
     "kind": "ordnance"
   },
   {
+    "unitId": "nt_su_24m",
+    "domain": "aircraft",
+    "unitDisplay": "Su-24M (Nuclear Escalation)",
+    "weaponBlk": "gameData/Weapons/drop_tank/su_su24m_3000l_drop_tank_right.blk",
+    "weaponDisplay": "Drop tank (3050 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "nt_su_25t",
+    "domain": "aircraft",
+    "unitDisplay": "Su-25T (Nuclear Escalation)",
+    "weaponBlk": "gameData/Weapons/drop_tank/su_800l_su_25t_left_wing_1.blk",
+    "weaponDisplay": "Drop tank (820 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "nt_su_25t",
+    "domain": "aircraft",
+    "unitDisplay": "Su-25T (Nuclear Escalation)",
+    "weaponBlk": "gameData/Weapons/drop_tank/su_800l_su_25t_left_wing.blk",
+    "weaponDisplay": "Drop tank (820 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
     "unitId": "nt_su_25t",
     "domain": "aircraft",
     "unitDisplay": "Su-25T (Nuclear Escalation)",
     "weaponBlk": "gameData/Weapons/equipment/ntps_mercury.blk",
     "weaponDisplay": "Mercury targeting pod",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "nt_su_25t",
+    "domain": "aircraft",
+    "unitDisplay": "Su-25T (Nuclear Escalation)",
+    "weaponBlk": "gameData/Weapons/drop_tank/su_800l_su_25t_right_wing.blk",
+    "weaponDisplay": "Drop tank (820 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "nt_su_25t",
+    "domain": "aircraft",
+    "unitDisplay": "Su-25T (Nuclear Escalation)",
+    "weaponBlk": "gameData/Weapons/drop_tank/su_800l_su_25t_right_wing_1.blk",
+    "weaponDisplay": "Drop tank (820 liters) (Fuel Tank)",
     "kind": "ordnance"
   },
   {
@@ -134387,8 +138259,40 @@
     "unitId": "rafale_c_f3",
     "domain": "aircraft",
     "unitDisplay": "Rafale C F3-R",
+    "weaponBlk": "gameData/Weapons/drop_tank/fr_2000l_rpl_741_rafale_drop_tank_left.blk",
+    "weaponDisplay": "Drop tank (2000 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "rafale_c_f3",
+    "domain": "aircraft",
+    "unitDisplay": "Rafale C F3-R",
     "weaponBlk": "gameData/Weapons/equipment/fr_damocles_pod_targeting_pod.blk",
     "weaponDisplay": "DAMOCLES targeting pod",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "rafale_c_f3",
+    "domain": "aircraft",
+    "unitDisplay": "Rafale C F3-R",
+    "weaponBlk": "gameData/Weapons/drop_tank/fr_2000l_rpl_741_rafale_drop_tank_fuse.blk",
+    "weaponDisplay": "Drop tank (2000 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "rafale_c_f3",
+    "domain": "aircraft",
+    "unitDisplay": "Rafale C F3-R",
+    "weaponBlk": "gameData/Weapons/drop_tank/fr_2000l_rpl_741_rafale_drop_tank_right.blk",
+    "weaponDisplay": "Drop tank (2000 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "rafale_m_f3r",
+    "domain": "aircraft",
+    "unitDisplay": "Rafale M F3-R",
+    "weaponBlk": "gameData/Weapons/drop_tank/fr_2000l_rpl_741_rafale_drop_tank_left.blk",
+    "weaponDisplay": "Drop tank (2000 liters) (Fuel Tank)",
     "kind": "ordnance"
   },
   {
@@ -134397,6 +138301,22 @@
     "unitDisplay": "Rafale M F3-R",
     "weaponBlk": "gameData/Weapons/equipment/fr_talios_pod_targeting_pod.blk",
     "weaponDisplay": "TALIOS targeting pod",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "rafale_m_f3r",
+    "domain": "aircraft",
+    "unitDisplay": "Rafale M F3-R",
+    "weaponBlk": "gameData/Weapons/drop_tank/fr_2000l_rpl_741_rafale_drop_tank_fuse.blk",
+    "weaponDisplay": "Drop tank (2000 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "rafale_m_f3r",
+    "domain": "aircraft",
+    "unitDisplay": "Rafale M F3-R",
+    "weaponBlk": "gameData/Weapons/drop_tank/fr_2000l_rpl_741_rafale_drop_tank_right.blk",
+    "weaponDisplay": "Drop tank (2000 liters) (Fuel Tank)",
     "kind": "ordnance"
   },
   {
@@ -134520,6 +138440,62 @@
     "kind": "ordnance"
   },
   {
+    "unitId": "saab_a21a_3",
+    "domain": "aircraft",
+    "unitDisplay": "A21A-3",
+    "weaponBlk": "gameData/Weapons/drop_tank/sw_a21_drop_tank_l.blk",
+    "weaponDisplay": "Drop tank (400 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "saab_a21a_3",
+    "domain": "aircraft",
+    "unitDisplay": "A21A-3",
+    "weaponBlk": "gameData/Weapons/drop_tank/sw_a21_drop_tank_r.blk",
+    "weaponDisplay": "Drop tank (400 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "saab_a21rb",
+    "domain": "aircraft",
+    "unitDisplay": "A21RB",
+    "weaponBlk": "gameData/Weapons/drop_tank/sw_a21rb_drop_tank_l.blk",
+    "weaponDisplay": "Drop tank (400 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "saab_a21rb",
+    "domain": "aircraft",
+    "unitDisplay": "A21RB",
+    "weaponBlk": "gameData/Weapons/drop_tank/sw_a21rb_drop_tank_r.blk",
+    "weaponDisplay": "Drop tank (400 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "saab_aj37",
+    "domain": "aircraft",
+    "unitDisplay": "AJ37 Viggen",
+    "weaponBlk": "gameData/Weapons/drop_tank/sw_1250l_late_saab_ja37d.blk",
+    "weaponDisplay": "Drop tank (1250 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "saab_ajs37",
+    "domain": "aircraft",
+    "unitDisplay": "AJS37 Viggen",
+    "weaponBlk": "gameData/Weapons/drop_tank/sw_1250l_late_saab_ja37d.blk",
+    "weaponDisplay": "Drop tank (1250 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "saab_ajs37_early",
+    "domain": "aircraft",
+    "unitDisplay": "AJS37 Viggen (Early)",
+    "weaponBlk": "gameData/Weapons/drop_tank/sw_1250l_late_saab_ja37d.blk",
+    "weaponDisplay": "Drop tank (1250 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
     "unitId": "saab_b17bs",
     "domain": "aircraft",
     "unitDisplay": "S17BS",
@@ -134544,11 +138520,139 @@
     "kind": "ordnance"
   },
   {
+    "unitId": "saab_f35_wdns",
+    "domain": "aircraft",
+    "unitDisplay": "Saab F-35 Draken",
+    "weaponBlk": "gameData/Weapons/drop_tank/sw_510l_wdns_drop_tank.blk",
+    "weaponDisplay": "Drop tank (510 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "saab_f35_wdns",
+    "domain": "aircraft",
+    "unitDisplay": "Saab F-35 Draken",
+    "weaponBlk": "gameData/Weapons/drop_tank/sw_510l_wdns_drop_tank_x2.blk",
+    "weaponDisplay": "Drop tank (510 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "saab_j35a",
+    "domain": "aircraft",
+    "unitDisplay": "J35A Draken",
+    "weaponBlk": "gameData/Weapons/drop_tank/sw_510l_drop_tank.blk",
+    "weaponDisplay": "Drop tank (510 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "saab_j35d",
+    "domain": "aircraft",
+    "unitDisplay": "J35D Draken",
+    "weaponBlk": "gameData/Weapons/drop_tank/sw_510l_drop_tank.blk",
+    "weaponDisplay": "Drop tank (510 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "saab_j35d",
+    "domain": "aircraft",
+    "unitDisplay": "J35D Draken",
+    "weaponBlk": "gameData/Weapons/drop_tank/sw_510l_drop_tank_x2.blk",
+    "weaponDisplay": "Drop tank (510 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "saab_j35xs",
+    "domain": "aircraft",
+    "unitDisplay": "Saab J35XS Draken",
+    "weaponBlk": "gameData/Weapons/drop_tank/sw_510l_drop_tank.blk",
+    "weaponDisplay": "Drop tank (510 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "saab_j35xs",
+    "domain": "aircraft",
+    "unitDisplay": "Saab J35XS Draken",
+    "weaponBlk": "gameData/Weapons/drop_tank/sw_510l_drop_tank_x2.blk",
+    "weaponDisplay": "Drop tank (510 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "saab_ja37",
+    "domain": "aircraft",
+    "unitDisplay": "JA37C Jaktviggen",
+    "weaponBlk": "gameData/Weapons/drop_tank/sw_1250l_late_saab_ja37d.blk",
+    "weaponDisplay": "Drop tank (1250 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "saab_ja37d",
+    "domain": "aircraft",
+    "unitDisplay": "JA37D Viggen",
+    "weaponBlk": "gameData/Weapons/drop_tank/sw_1250l_late_saab_ja37d.blk",
+    "weaponDisplay": "Drop tank (1250 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "saab_ja37di",
+    "domain": "aircraft",
+    "unitDisplay": "JA37DI Viggen",
+    "weaponBlk": "gameData/Weapons/drop_tank/sw_1250l_late_saab_ja37d.blk",
+    "weaponDisplay": "Drop tank (1250 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "saab_ja37di_f21",
+    "domain": "aircraft",
+    "unitDisplay": "JA37DI Viggen F21",
+    "weaponBlk": "gameData/Weapons/drop_tank/sw_1250l_late_saab_ja37d.blk",
+    "weaponDisplay": "Drop tank (1250 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "saab_jas39a",
+    "domain": "aircraft",
+    "unitDisplay": "JAS39A Gripen",
+    "weaponBlk": "gameData/Weapons/drop_tank/sw_1100_gal_fuse_saab_jas39_left_wing.blk",
+    "weaponDisplay": "Drop tank (1100 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "saab_jas39a",
+    "domain": "aircraft",
+    "unitDisplay": "JAS39A Gripen",
+    "weaponBlk": "gameData/Weapons/drop_tank/sw_1100_gal_fuse_saab_jas39.blk",
+    "weaponDisplay": "Drop tank (1100 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
     "unitId": "saab_jas39a",
     "domain": "aircraft",
     "unitDisplay": "JAS39A Gripen",
     "weaponBlk": "gameData/Weapons/equipment/gr_litening_pod_targeting_pod.blk",
     "weaponDisplay": "LITENING II targeting pod",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "saab_jas39a",
+    "domain": "aircraft",
+    "unitDisplay": "JAS39A Gripen",
+    "weaponBlk": "gameData/Weapons/drop_tank/sw_1100_gal_fuse_saab_jas39_right_wing.blk",
+    "weaponDisplay": "Drop tank (1100 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "saab_jas39c",
+    "domain": "aircraft",
+    "unitDisplay": "JAS39C Gripen",
+    "weaponBlk": "gameData/Weapons/drop_tank/sw_1100_gal_fuse_saab_jas39_left_wing.blk",
+    "weaponDisplay": "Drop tank (1100 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "saab_jas39c",
+    "domain": "aircraft",
+    "unitDisplay": "JAS39C Gripen",
+    "weaponBlk": "gameData/Weapons/drop_tank/sw_1100_gal_fuse_saab_jas39.blk",
+    "weaponDisplay": "Drop tank (1100 liters) (Fuel Tank)",
     "kind": "ordnance"
   },
   {
@@ -134560,11 +138664,59 @@
     "kind": "ordnance"
   },
   {
+    "unitId": "saab_jas39c",
+    "domain": "aircraft",
+    "unitDisplay": "JAS39C Gripen",
+    "weaponBlk": "gameData/Weapons/drop_tank/sw_1100_gal_fuse_saab_jas39_right_wing.blk",
+    "weaponDisplay": "Drop tank (1100 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "saab_jas39c_hungary",
+    "domain": "aircraft",
+    "unitDisplay": "JAS39EBS HU C Gripen",
+    "weaponBlk": "gameData/Weapons/drop_tank/sw_1100_gal_fuse_saab_jas39_left_wing_puma.blk",
+    "weaponDisplay": "Drop tank (1100 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "saab_jas39c_hungary",
+    "domain": "aircraft",
+    "unitDisplay": "JAS39EBS HU C Gripen",
+    "weaponBlk": "gameData/Weapons/drop_tank/sw_1100_gal_fuse_saab_jas39.blk",
+    "weaponDisplay": "Drop tank (1100 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
     "unitId": "saab_jas39c_hungary",
     "domain": "aircraft",
     "unitDisplay": "JAS39EBS HU C Gripen",
     "weaponBlk": "gameData/Weapons/equipment/gr_litening_pod_targeting_pod.blk",
     "weaponDisplay": "LITENING II targeting pod",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "saab_jas39c_hungary",
+    "domain": "aircraft",
+    "unitDisplay": "JAS39EBS HU C Gripen",
+    "weaponBlk": "gameData/Weapons/drop_tank/sw_1100_gal_fuse_saab_jas39_right_wing_puma.blk",
+    "weaponDisplay": "Drop tank (1100 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "saab_jas39c_south_africa",
+    "domain": "aircraft",
+    "unitDisplay": "JAS39C Gripen",
+    "weaponBlk": "gameData/Weapons/drop_tank/sw_1100_gal_fuse_saab_jas39_left_wing.blk",
+    "weaponDisplay": "Drop tank (1100 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "saab_jas39c_south_africa",
+    "domain": "aircraft",
+    "unitDisplay": "JAS39C Gripen",
+    "weaponBlk": "gameData/Weapons/drop_tank/sw_1100_gal_fuse_saab_jas39.blk",
+    "weaponDisplay": "Drop tank (1100 liters) (Fuel Tank)",
     "kind": "ordnance"
   },
   {
@@ -134576,11 +138728,59 @@
     "kind": "ordnance"
   },
   {
+    "unitId": "saab_jas39c_south_africa",
+    "domain": "aircraft",
+    "unitDisplay": "JAS39C Gripen",
+    "weaponBlk": "gameData/Weapons/drop_tank/sw_1100_gal_fuse_saab_jas39_right_wing.blk",
+    "weaponDisplay": "Drop tank (1100 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "saab_jas39c_thailand",
+    "domain": "aircraft",
+    "unitDisplay": "JAS39C Gripen",
+    "weaponBlk": "gameData/Weapons/drop_tank/sw_1100_gal_fuse_saab_jas39_left_wing_puma.blk",
+    "weaponDisplay": "Drop tank (1100 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "saab_jas39c_thailand",
+    "domain": "aircraft",
+    "unitDisplay": "JAS39C Gripen",
+    "weaponBlk": "gameData/Weapons/drop_tank/sw_1100_gal_fuse_saab_jas39.blk",
+    "weaponDisplay": "Drop tank (1100 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
     "unitId": "saab_jas39c_thailand",
     "domain": "aircraft",
     "unitDisplay": "JAS39C Gripen",
     "weaponBlk": "gameData/Weapons/equipment/gr_litening_pod_targeting_pod.blk",
     "weaponDisplay": "LITENING II targeting pod",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "saab_jas39c_thailand",
+    "domain": "aircraft",
+    "unitDisplay": "JAS39C Gripen",
+    "weaponBlk": "gameData/Weapons/drop_tank/sw_1100_gal_fuse_saab_jas39_right_wing_puma.blk",
+    "weaponDisplay": "Drop tank (1100 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "saab_jas39d",
+    "domain": "aircraft",
+    "unitDisplay": "JAS39D Gripen",
+    "weaponBlk": "gameData/Weapons/drop_tank/sw_1100_gal_fuse_saab_jas39_left_wing.blk",
+    "weaponDisplay": "Drop tank (1100 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "saab_jas39d",
+    "domain": "aircraft",
+    "unitDisplay": "JAS39D Gripen",
+    "weaponBlk": "gameData/Weapons/drop_tank/sw_1100_gal_fuse_saab_jas39.blk",
+    "weaponDisplay": "Drop tank (1100 liters) (Fuel Tank)",
     "kind": "ordnance"
   },
   {
@@ -134592,11 +138792,43 @@
     "kind": "ordnance"
   },
   {
+    "unitId": "saab_jas39d",
+    "domain": "aircraft",
+    "unitDisplay": "JAS39D Gripen",
+    "weaponBlk": "gameData/Weapons/drop_tank/sw_1100_gal_fuse_saab_jas39_right_wing.blk",
+    "weaponDisplay": "Drop tank (1100 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "saab_jas39e",
+    "domain": "aircraft",
+    "unitDisplay": "JAS39E Gripen",
+    "weaponBlk": "gameData/Weapons/drop_tank/sw_1100_gal_fuse_saab_jas39_left_wing.blk",
+    "weaponDisplay": "Drop tank (1100 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "saab_jas39e",
+    "domain": "aircraft",
+    "unitDisplay": "JAS39E Gripen",
+    "weaponBlk": "gameData/Weapons/drop_tank/sw_1100_gal_fuse_saab_jas39.blk",
+    "weaponDisplay": "Drop tank (1100 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
     "unitId": "saab_jas39e",
     "domain": "aircraft",
     "unitDisplay": "JAS39E Gripen",
     "weaponBlk": "gameData/Weapons/equipment/gr_litening_iii_targeting_pod.blk",
     "weaponDisplay": "LITENING III targeting pod",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "saab_jas39e",
+    "domain": "aircraft",
+    "unitDisplay": "JAS39E Gripen",
+    "weaponBlk": "gameData/Weapons/drop_tank/sw_1100_gal_fuse_saab_jas39_right_wing.blk",
+    "weaponDisplay": "Drop tank (1100 liters) (Fuel Tank)",
     "kind": "ordnance"
   },
   {
@@ -135395,8 +139627,32 @@
     "unitId": "su_17m2",
     "domain": "aircraft",
     "unitDisplay": "Su-17M2",
+    "weaponBlk": "gameData/Weapons/drop_tank/su_800l_su_17_silver_left_wing_1.blk",
+    "weaponDisplay": "Drop tank (820 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "su_17m2",
+    "domain": "aircraft",
+    "unitDisplay": "Su-17M2",
+    "weaponBlk": "gameData/Weapons/drop_tank/su_800l_su_17_silver_left_wing.blk",
+    "weaponDisplay": "Drop tank (820 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "su_17m2",
+    "domain": "aircraft",
+    "unitDisplay": "Su-17M2",
     "weaponBlk": "gameData/Weapons/equipment/su_projector_1.blk",
     "weaponDisplay": "Projector-1 targeting pod",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "su_17m2",
+    "domain": "aircraft",
+    "unitDisplay": "Su-17M2",
+    "weaponBlk": "gameData/Weapons/drop_tank/su_800l_su_17_silver_right_wing.blk",
+    "weaponDisplay": "Drop tank (820 liters) (Fuel Tank)",
     "kind": "ordnance"
   },
   {
@@ -135408,6 +139664,30 @@
     "kind": "ordnance"
   },
   {
+    "unitId": "su_17m2",
+    "domain": "aircraft",
+    "unitDisplay": "Su-17M2",
+    "weaponBlk": "gameData/Weapons/drop_tank/su_800l_su_17_silver_right_wing_1.blk",
+    "weaponDisplay": "Drop tank (820 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "su_17m4",
+    "domain": "aircraft",
+    "unitDisplay": "Su-17M4",
+    "weaponBlk": "gameData/Weapons/drop_tank/su_800l_su_17_left_wing_1.blk",
+    "weaponDisplay": "Drop tank (820 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "su_17m4",
+    "domain": "aircraft",
+    "unitDisplay": "Su-17M4",
+    "weaponBlk": "gameData/Weapons/drop_tank/su_800l_su_17_left_wing.blk",
+    "weaponDisplay": "Drop tank (820 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
     "unitId": "su_17m4",
     "domain": "aircraft",
     "unitDisplay": "Su-17M4",
@@ -135416,6 +139696,70 @@
     "kind": "ordnance"
   },
   {
+    "unitId": "su_17m4",
+    "domain": "aircraft",
+    "unitDisplay": "Su-17M4",
+    "weaponBlk": "gameData/Weapons/drop_tank/su_800l_su_17_right_wing.blk",
+    "weaponDisplay": "Drop tank (820 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "su_17m4",
+    "domain": "aircraft",
+    "unitDisplay": "Su-17M4",
+    "weaponBlk": "gameData/Weapons/drop_tank/su_800l_su_17_right_wing_1.blk",
+    "weaponDisplay": "Drop tank (820 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "su_17m4_china_killstreak",
+    "domain": "aircraft",
+    "unitDisplay": "Su-17M4",
+    "weaponBlk": "gameData/Weapons/drop_tank/su_800l_su_17_left_wing.blk",
+    "weaponDisplay": "Drop tank (820 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "su_17m4_china_killstreak",
+    "domain": "aircraft",
+    "unitDisplay": "Su-17M4",
+    "weaponBlk": "gameData/Weapons/drop_tank/su_800l_su_17_right_wing.blk",
+    "weaponDisplay": "Drop tank (820 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "su_17m4_killstreak",
+    "domain": "aircraft",
+    "unitDisplay": "Su-17M4",
+    "weaponBlk": "gameData/Weapons/drop_tank/su_800l_su_17_left_wing.blk",
+    "weaponDisplay": "Drop tank (820 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "su_17m4_killstreak",
+    "domain": "aircraft",
+    "unitDisplay": "Su-17M4",
+    "weaponBlk": "gameData/Weapons/drop_tank/su_800l_su_17_right_wing.blk",
+    "weaponDisplay": "Drop tank (820 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "su_22m3",
+    "domain": "aircraft",
+    "unitDisplay": "Su-22M3",
+    "weaponBlk": "gameData/Weapons/drop_tank/su_800l_su_17_left_wing_1.blk",
+    "weaponDisplay": "Drop tank (820 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "su_22m3",
+    "domain": "aircraft",
+    "unitDisplay": "Su-22M3",
+    "weaponBlk": "gameData/Weapons/drop_tank/su_800l_su_17_left_wing.blk",
+    "weaponDisplay": "Drop tank (820 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
     "unitId": "su_22m3",
     "domain": "aircraft",
     "unitDisplay": "Su-22M3",
@@ -135427,8 +139771,40 @@
     "unitId": "su_22m3",
     "domain": "aircraft",
     "unitDisplay": "Su-22M3",
+    "weaponBlk": "gameData/Weapons/drop_tank/su_800l_su_17_right_wing.blk",
+    "weaponDisplay": "Drop tank (820 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "su_22m3",
+    "domain": "aircraft",
+    "unitDisplay": "Su-22M3",
     "weaponBlk": "gameData/Weapons/equipment/su_delta_ng_station.blk",
     "weaponDisplay": "Delta-NG targeting pod",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "su_22m3",
+    "domain": "aircraft",
+    "unitDisplay": "Su-22M3",
+    "weaponBlk": "gameData/Weapons/drop_tank/su_800l_su_17_right_wing_1.blk",
+    "weaponDisplay": "Drop tank (820 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "su_22m3_hungary",
+    "domain": "aircraft",
+    "unitDisplay": "Su-22M3",
+    "weaponBlk": "gameData/Weapons/drop_tank/su_800l_su_17_left_wing_1.blk",
+    "weaponDisplay": "Drop tank (820 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "su_22m3_hungary",
+    "domain": "aircraft",
+    "unitDisplay": "Su-22M3",
+    "weaponBlk": "gameData/Weapons/drop_tank/su_800l_su_17_left_wing.blk",
+    "weaponDisplay": "Drop tank (820 liters) (Fuel Tank)",
     "kind": "ordnance"
   },
   {
@@ -135443,8 +139819,40 @@
     "unitId": "su_22m3_hungary",
     "domain": "aircraft",
     "unitDisplay": "Su-22M3",
+    "weaponBlk": "gameData/Weapons/drop_tank/su_800l_su_17_right_wing.blk",
+    "weaponDisplay": "Drop tank (820 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "su_22m3_hungary",
+    "domain": "aircraft",
+    "unitDisplay": "Su-22M3",
     "weaponBlk": "gameData/Weapons/equipment/su_delta_ng_station.blk",
     "weaponDisplay": "Delta-NG targeting pod",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "su_22m3_hungary",
+    "domain": "aircraft",
+    "unitDisplay": "Su-22M3",
+    "weaponBlk": "gameData/Weapons/drop_tank/su_800l_su_17_right_wing_1.blk",
+    "weaponDisplay": "Drop tank (820 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "su_22m4",
+    "domain": "aircraft",
+    "unitDisplay": "Su-22M4",
+    "weaponBlk": "gameData/Weapons/drop_tank/su_800l_su_17_left_wing_1.blk",
+    "weaponDisplay": "Drop tank (820 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "su_22m4",
+    "domain": "aircraft",
+    "unitDisplay": "Su-22M4",
+    "weaponBlk": "gameData/Weapons/drop_tank/su_800l_su_17_left_wing.blk",
+    "weaponDisplay": "Drop tank (820 liters) (Fuel Tank)",
     "kind": "ordnance"
   },
   {
@@ -135456,6 +139864,38 @@
     "kind": "ordnance"
   },
   {
+    "unitId": "su_22m4",
+    "domain": "aircraft",
+    "unitDisplay": "Su-22M4",
+    "weaponBlk": "gameData/Weapons/drop_tank/su_800l_su_17_right_wing.blk",
+    "weaponDisplay": "Drop tank (820 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "su_22m4",
+    "domain": "aircraft",
+    "unitDisplay": "Su-22M4",
+    "weaponBlk": "gameData/Weapons/drop_tank/su_800l_su_17_right_wing_1.blk",
+    "weaponDisplay": "Drop tank (820 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "su_22m4_de_wtd61",
+    "domain": "aircraft",
+    "unitDisplay": "Su-22M4 WTD61",
+    "weaponBlk": "gameData/Weapons/drop_tank/su_800l_su_17_left_wing_1.blk",
+    "weaponDisplay": "Drop tank (820 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "su_22m4_de_wtd61",
+    "domain": "aircraft",
+    "unitDisplay": "Su-22M4 WTD61",
+    "weaponBlk": "gameData/Weapons/drop_tank/su_800l_su_17_left_wing.blk",
+    "weaponDisplay": "Drop tank (820 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
     "unitId": "su_22m4_de_wtd61",
     "domain": "aircraft",
     "unitDisplay": "Su-22M4 WTD61",
@@ -135464,11 +139904,67 @@
     "kind": "ordnance"
   },
   {
+    "unitId": "su_22m4_de_wtd61",
+    "domain": "aircraft",
+    "unitDisplay": "Su-22M4 WTD61",
+    "weaponBlk": "gameData/Weapons/drop_tank/su_800l_su_17_right_wing.blk",
+    "weaponDisplay": "Drop tank (820 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "su_22m4_de_wtd61",
+    "domain": "aircraft",
+    "unitDisplay": "Su-22M4 WTD61",
+    "weaponBlk": "gameData/Weapons/drop_tank/su_800l_su_17_right_wing_1.blk",
+    "weaponDisplay": "Drop tank (820 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "su_22um3k",
+    "domain": "aircraft",
+    "unitDisplay": "Su-22UM3K",
+    "weaponBlk": "gameData/Weapons/drop_tank/su_800l_su_17_left_wing_1.blk",
+    "weaponDisplay": "Drop tank (820 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "su_22um3k",
+    "domain": "aircraft",
+    "unitDisplay": "Su-22UM3K",
+    "weaponBlk": "gameData/Weapons/drop_tank/su_800l_su_17_left_wing.blk",
+    "weaponDisplay": "Drop tank (820 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "su_22um3k",
+    "domain": "aircraft",
+    "unitDisplay": "Su-22UM3K",
+    "weaponBlk": "gameData/Weapons/drop_tank/su_800l_su_17_right_wing.blk",
+    "weaponDisplay": "Drop tank (820 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
     "unitId": "su_22um3k",
     "domain": "aircraft",
     "unitDisplay": "Su-22UM3K",
     "weaponBlk": "gameData/Weapons/equipment/su_delta_ng_station.blk",
     "weaponDisplay": "Delta-NG targeting pod",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "su_22um3k",
+    "domain": "aircraft",
+    "unitDisplay": "Su-22UM3K",
+    "weaponBlk": "gameData/Weapons/drop_tank/su_800l_su_17_right_wing_1.blk",
+    "weaponDisplay": "Drop tank (820 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "su_24m",
+    "domain": "aircraft",
+    "unitDisplay": "Su-24M",
+    "weaponBlk": "gameData/Weapons/drop_tank/su_su24m_3000l_drop_tank_left.blk",
+    "weaponDisplay": "Drop tank (3050 liters) (Fuel Tank)",
     "kind": "ordnance"
   },
   {
@@ -135499,8 +139995,200 @@
     "unitId": "su_24m",
     "domain": "aircraft",
     "unitDisplay": "Su-24M",
+    "weaponBlk": "gameData/Weapons/drop_tank/su_su24m_2000l_drop_tank.blk",
+    "weaponDisplay": "Drop tank (1860 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "su_24m",
+    "domain": "aircraft",
+    "unitDisplay": "Su-24M",
     "weaponBlk": "gameData/Weapons/equipment/su_apk_9.blk",
     "weaponDisplay": "APK-9 targeting pod",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "su_24m",
+    "domain": "aircraft",
+    "unitDisplay": "Su-24M",
+    "weaponBlk": "gameData/Weapons/drop_tank/su_su24m_3000l_drop_tank_right.blk",
+    "weaponDisplay": "Drop tank (3050 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "su_24m_china_killstreak",
+    "domain": "aircraft",
+    "unitDisplay": "Su-24M",
+    "weaponBlk": "gameData/Weapons/drop_tank/su_su24m_3000l_drop_tank_left.blk",
+    "weaponDisplay": "Drop tank (3050 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "su_24m_china_killstreak",
+    "domain": "aircraft",
+    "unitDisplay": "Su-24M",
+    "weaponBlk": "gameData/Weapons/drop_tank/su_su24m_3000l_drop_tank_right.blk",
+    "weaponDisplay": "Drop tank (3050 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "su_24m_killstreak",
+    "domain": "aircraft",
+    "unitDisplay": "Su-24M",
+    "weaponBlk": "gameData/Weapons/drop_tank/su_su24m_3000l_drop_tank_left.blk",
+    "weaponDisplay": "Drop tank (3050 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "su_24m_killstreak",
+    "domain": "aircraft",
+    "unitDisplay": "Su-24M",
+    "weaponBlk": "gameData/Weapons/drop_tank/su_su24m_3000l_drop_tank_right.blk",
+    "weaponDisplay": "Drop tank (3050 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "su_25",
+    "domain": "aircraft",
+    "unitDisplay": "Su-25",
+    "weaponBlk": "gameData/Weapons/drop_tank/su_800l_su_25_left_wing_1.blk",
+    "weaponDisplay": "Drop tank (820 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "su_25",
+    "domain": "aircraft",
+    "unitDisplay": "Su-25",
+    "weaponBlk": "gameData/Weapons/drop_tank/su_800l_su_25_left_wing.blk",
+    "weaponDisplay": "Drop tank (820 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "su_25",
+    "domain": "aircraft",
+    "unitDisplay": "Su-25",
+    "weaponBlk": "gameData/Weapons/drop_tank/su_800l_su_25_right_wing.blk",
+    "weaponDisplay": "Drop tank (820 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "su_25",
+    "domain": "aircraft",
+    "unitDisplay": "Su-25",
+    "weaponBlk": "gameData/Weapons/drop_tank/su_800l_su_25_right_wing_1.blk",
+    "weaponDisplay": "Drop tank (820 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "su_25_558arz",
+    "domain": "aircraft",
+    "unitDisplay": "Su-25BM 558 ARZ",
+    "weaponBlk": "gameData/Weapons/drop_tank/su_800l_su_25_left_wing_1.blk",
+    "weaponDisplay": "Drop tank (820 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "su_25_558arz",
+    "domain": "aircraft",
+    "unitDisplay": "Su-25BM 558 ARZ",
+    "weaponBlk": "gameData/Weapons/drop_tank/su_800l_su_25_left_wing.blk",
+    "weaponDisplay": "Drop tank (820 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "su_25_558arz",
+    "domain": "aircraft",
+    "unitDisplay": "Su-25BM 558 ARZ",
+    "weaponBlk": "gameData/Weapons/drop_tank/su_800l_su_25_right_wing.blk",
+    "weaponDisplay": "Drop tank (820 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "su_25_558arz",
+    "domain": "aircraft",
+    "unitDisplay": "Su-25BM 558 ARZ",
+    "weaponBlk": "gameData/Weapons/drop_tank/su_800l_su_25_right_wing_1.blk",
+    "weaponDisplay": "Drop tank (820 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "su_25k",
+    "domain": "aircraft",
+    "unitDisplay": "Su-25K",
+    "weaponBlk": "gameData/Weapons/drop_tank/su_800l_su_25_left_wing_1.blk",
+    "weaponDisplay": "Drop tank (820 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "su_25k",
+    "domain": "aircraft",
+    "unitDisplay": "Su-25K",
+    "weaponBlk": "gameData/Weapons/drop_tank/su_800l_su_25_left_wing.blk",
+    "weaponDisplay": "Drop tank (820 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "su_25k",
+    "domain": "aircraft",
+    "unitDisplay": "Su-25K",
+    "weaponBlk": "gameData/Weapons/drop_tank/su_800l_su_25_right_wing.blk",
+    "weaponDisplay": "Drop tank (820 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "su_25k",
+    "domain": "aircraft",
+    "unitDisplay": "Su-25K",
+    "weaponBlk": "gameData/Weapons/drop_tank/su_800l_su_25_right_wing_1.blk",
+    "weaponDisplay": "Drop tank (820 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "su_25sm3",
+    "domain": "aircraft",
+    "unitDisplay": "Su-25SM3",
+    "weaponBlk": "gameData/Weapons/drop_tank/su_800l_su_25_left_wing_1.blk",
+    "weaponDisplay": "Drop tank (820 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "su_25sm3",
+    "domain": "aircraft",
+    "unitDisplay": "Su-25SM3",
+    "weaponBlk": "gameData/Weapons/drop_tank/su_800l_su_25_left_wing.blk",
+    "weaponDisplay": "Drop tank (820 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "su_25sm3",
+    "domain": "aircraft",
+    "unitDisplay": "Su-25SM3",
+    "weaponBlk": "gameData/Weapons/drop_tank/su_800l_su_25_right_wing.blk",
+    "weaponDisplay": "Drop tank (820 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "su_25sm3",
+    "domain": "aircraft",
+    "unitDisplay": "Su-25SM3",
+    "weaponBlk": "gameData/Weapons/drop_tank/su_800l_su_25_right_wing_1.blk",
+    "weaponDisplay": "Drop tank (820 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "su_25t",
+    "domain": "aircraft",
+    "unitDisplay": "Su-25T",
+    "weaponBlk": "gameData/Weapons/drop_tank/su_800l_su_25t_left_wing_1.blk",
+    "weaponDisplay": "Drop tank (820 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "su_25t",
+    "domain": "aircraft",
+    "unitDisplay": "Su-25T",
+    "weaponBlk": "gameData/Weapons/drop_tank/su_800l_su_25t_left_wing.blk",
+    "weaponDisplay": "Drop tank (820 liters) (Fuel Tank)",
     "kind": "ordnance"
   },
   {
@@ -135509,6 +140197,38 @@
     "unitDisplay": "Su-25T",
     "weaponBlk": "gameData/Weapons/equipment/ntps_mercury.blk",
     "weaponDisplay": "Mercury targeting pod",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "su_25t",
+    "domain": "aircraft",
+    "unitDisplay": "Su-25T",
+    "weaponBlk": "gameData/Weapons/drop_tank/su_800l_su_25t_right_wing.blk",
+    "weaponDisplay": "Drop tank (820 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "su_25t",
+    "domain": "aircraft",
+    "unitDisplay": "Su-25T",
+    "weaponBlk": "gameData/Weapons/drop_tank/su_800l_su_25t_right_wing_1.blk",
+    "weaponDisplay": "Drop tank (820 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "su_25tm",
+    "domain": "aircraft",
+    "unitDisplay": "Su-39",
+    "weaponBlk": "gameData/Weapons/drop_tank/su_800l_su_25tm_silver_left_wing_1.blk",
+    "weaponDisplay": "Drop tank (820 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "su_25tm",
+    "domain": "aircraft",
+    "unitDisplay": "Su-39",
+    "weaponBlk": "gameData/Weapons/drop_tank/su_800l_su_25tm_silver_left_wing.blk",
+    "weaponDisplay": "Drop tank (820 liters) (Fuel Tank)",
     "kind": "ordnance"
   },
   {
@@ -135525,6 +140245,22 @@
     "unitDisplay": "Su-39",
     "weaponBlk": "gameData/Weapons/equipment/rls_kopio_25.blk",
     "weaponDisplay": "Kopyo-25 radar pod",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "su_25tm",
+    "domain": "aircraft",
+    "unitDisplay": "Su-39",
+    "weaponBlk": "gameData/Weapons/drop_tank/su_800l_su_25tm_silver_right_wing.blk",
+    "weaponDisplay": "Drop tank (820 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "su_25tm",
+    "domain": "aircraft",
+    "unitDisplay": "Su-39",
+    "weaponBlk": "gameData/Weapons/drop_tank/su_800l_su_25tm_silver_right_wing_1.blk",
+    "weaponDisplay": "Drop tank (820 liters) (Fuel Tank)",
     "kind": "ordnance"
   },
   {
@@ -135595,8 +140331,32 @@
     "unitId": "su_34",
     "domain": "aircraft",
     "unitDisplay": "Su-34",
+    "weaponBlk": "gameData/Weapons/drop_tank/su_su34_3000l_drop_tank_left.blk",
+    "weaponDisplay": "Drop tank (3000 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "su_34",
+    "domain": "aircraft",
+    "unitDisplay": "Su-34",
     "weaponBlk": "gameData/Weapons/equipment/su_apk_9.blk",
     "weaponDisplay": "APK-9 targeting pod",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "su_34",
+    "domain": "aircraft",
+    "unitDisplay": "Su-34",
+    "weaponBlk": "gameData/Weapons/drop_tank/su_su34_3000l_drop_tank.blk",
+    "weaponDisplay": "Drop tank (3000 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "su_34",
+    "domain": "aircraft",
+    "unitDisplay": "Su-34",
+    "weaponBlk": "gameData/Weapons/drop_tank/su_su34_3000l_drop_tank_right.blk",
+    "weaponDisplay": "Drop tank (3000 liters) (Fuel Tank)",
     "kind": "ordnance"
   },
   {
@@ -135616,6 +140376,54 @@
     "kind": "ordnance"
   },
   {
+    "unitId": "su-7b",
+    "domain": "aircraft",
+    "unitDisplay": "Su-7B",
+    "weaponBlk": "gameData/Weapons/drop_tank/su_800l_su_7b_silver_fuse_1.blk",
+    "weaponDisplay": "Drop tank (820 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "su-7b",
+    "domain": "aircraft",
+    "unitDisplay": "Su-7B",
+    "weaponBlk": "gameData/Weapons/drop_tank/su_800l_su_7b_silver_fuse_2.blk",
+    "weaponDisplay": "Drop tank (820 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "su-7bkl",
+    "domain": "aircraft",
+    "unitDisplay": "Su-7BKL",
+    "weaponBlk": "gameData/Weapons/drop_tank/su_800l_su_7b_silver_wing_1.blk",
+    "weaponDisplay": "Drop tank (820 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "su-7bkl",
+    "domain": "aircraft",
+    "unitDisplay": "Su-7BKL",
+    "weaponBlk": "gameData/Weapons/drop_tank/su_800l_su_7b_silver_fuse_1.blk",
+    "weaponDisplay": "Drop tank (820 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "su-7bkl",
+    "domain": "aircraft",
+    "unitDisplay": "Su-7BKL",
+    "weaponBlk": "gameData/Weapons/drop_tank/su_800l_su_7b_silver_fuse_2.blk",
+    "weaponDisplay": "Drop tank (820 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "su-7bkl",
+    "domain": "aircraft",
+    "unitDisplay": "Su-7BKL",
+    "weaponBlk": "gameData/Weapons/drop_tank/su_800l_su_7b_silver_wing_2.blk",
+    "weaponDisplay": "Drop tank (820 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
     "unitId": "su-7bkl_china_killstreak",
     "domain": "aircraft",
     "unitDisplay": "Su-7BKL",
@@ -135661,6 +140469,38 @@
     "unitDisplay": "Su-7BKL",
     "weaponBlk": "gameData/Weapons/BombGuns/su_rds4_30kt_nt.blk",
     "weaponDisplay": "RDS-4 nuclear bomb",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "su-7bmk",
+    "domain": "aircraft",
+    "unitDisplay": "Su-7BMK",
+    "weaponBlk": "gameData/Weapons/drop_tank/su_800l_su_7b_silver_wing_1.blk",
+    "weaponDisplay": "Drop tank (820 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "su-7bmk",
+    "domain": "aircraft",
+    "unitDisplay": "Su-7BMK",
+    "weaponBlk": "gameData/Weapons/drop_tank/su_800l_su_7b_silver_fuse_1.blk",
+    "weaponDisplay": "Drop tank (820 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "su-7bmk",
+    "domain": "aircraft",
+    "unitDisplay": "Su-7BMK",
+    "weaponBlk": "gameData/Weapons/drop_tank/su_800l_su_7b_silver_fuse_2.blk",
+    "weaponDisplay": "Drop tank (820 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "su-7bmk",
+    "domain": "aircraft",
+    "unitDisplay": "Su-7BMK",
+    "weaponBlk": "gameData/Weapons/drop_tank/su_800l_su_7b_silver_wing_2.blk",
+    "weaponDisplay": "Drop tank (820 liters) (Fuel Tank)",
     "kind": "ordnance"
   },
   {
@@ -135928,11 +140768,99 @@
     "kind": "ordnance"
   },
   {
+    "unitId": "tornado_adv",
+    "domain": "aircraft",
+    "unitDisplay": "Tornado ADV",
+    "weaponBlk": "gameData/Weapons/drop_tank/gr_1500l_tornado_f3_1.blk",
+    "weaponDisplay": "Drop tank (330 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "tornado_adv",
+    "domain": "aircraft",
+    "unitDisplay": "Tornado ADV",
+    "weaponBlk": "gameData/Weapons/drop_tank/gr_1500l_tornado_f3_2.blk",
+    "weaponDisplay": "Drop tank (330 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "tornado_f3",
+    "domain": "aircraft",
+    "unitDisplay": "Tornado F.3",
+    "weaponBlk": "gameData/Weapons/drop_tank/gr_1500l_tornado_f3_1.blk",
+    "weaponDisplay": "Drop tank (330 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "tornado_f3",
+    "domain": "aircraft",
+    "unitDisplay": "Tornado F.3",
+    "weaponBlk": "gameData/Weapons/drop_tank/gr_1500l_tornado_f3_2.blk",
+    "weaponDisplay": "Drop tank (330 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "tornado_f3_late",
+    "domain": "aircraft",
+    "unitDisplay": "Tornado F.3 Late",
+    "weaponBlk": "gameData/Weapons/drop_tank/gr_1500l_tornado_f3_1.blk",
+    "weaponDisplay": "Drop tank (330 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "tornado_f3_late",
+    "domain": "aircraft",
+    "unitDisplay": "Tornado F.3 Late",
+    "weaponBlk": "gameData/Weapons/drop_tank/gr_2250l_tornado_f3_1.blk",
+    "weaponDisplay": "Drop tank «Hindenburg» (495 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "tornado_f3_late",
+    "domain": "aircraft",
+    "unitDisplay": "Tornado F.3 Late",
+    "weaponBlk": "gameData/Weapons/drop_tank/gr_1500l_tornado_f3_2.blk",
+    "weaponDisplay": "Drop tank (330 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "tornado_f3_late",
+    "domain": "aircraft",
+    "unitDisplay": "Tornado F.3 Late",
+    "weaponBlk": "gameData/Weapons/drop_tank/gr_2250l_tornado_f3_2.blk",
+    "weaponDisplay": "Drop tank (495 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "tornado_gr1",
+    "domain": "aircraft",
+    "unitDisplay": "Tornado GR.1",
+    "weaponBlk": "gameData/Weapons/drop_tank/uk_1500l_tornado_gr1_1.blk",
+    "weaponDisplay": "Drop tank (330 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
     "unitId": "tornado_gr1",
     "domain": "aircraft",
     "unitDisplay": "Tornado GR.1",
     "weaponBlk": "gameData/Weapons/equipment/uk_tiald_targeting_pod.blk",
     "weaponDisplay": "TIALD targeting pod",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "tornado_gr1",
+    "domain": "aircraft",
+    "unitDisplay": "Tornado GR.1",
+    "weaponBlk": "gameData/Weapons/drop_tank/uk_1500l_tornado_gr1_2.blk",
+    "weaponDisplay": "Drop tank (330 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "tornado_gr4",
+    "domain": "aircraft",
+    "unitDisplay": "Tornado GR.4",
+    "weaponBlk": "gameData/Weapons/drop_tank/uk_1500l_tornado_gr4_1.blk",
+    "weaponDisplay": "Drop tank (330 gal.) (Fuel Tank)",
     "kind": "ordnance"
   },
   {
@@ -135944,11 +140872,123 @@
     "kind": "ordnance"
   },
   {
+    "unitId": "tornado_gr4",
+    "domain": "aircraft",
+    "unitDisplay": "Tornado GR.4",
+    "weaponBlk": "gameData/Weapons/drop_tank/uk_1500l_tornado_gr4_2.blk",
+    "weaponDisplay": "Drop tank (330 gal.) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "tornado_ids_de_assta1",
+    "domain": "aircraft",
+    "unitDisplay": "Tornado IDS ASSTA1",
+    "weaponBlk": "gameData/Weapons/drop_tank/gr_1500l_tornado_assta1_1.blk",
+    "weaponDisplay": "Drop tank (1500 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
     "unitId": "tornado_ids_de_assta1",
     "domain": "aircraft",
     "unitDisplay": "Tornado IDS ASSTA1",
     "weaponBlk": "gameData/Weapons/equipment/gr_litening_pod_targeting_pod.blk",
     "weaponDisplay": "LITENING II targeting pod",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "tornado_ids_de_assta1",
+    "domain": "aircraft",
+    "unitDisplay": "Tornado IDS ASSTA1",
+    "weaponBlk": "gameData/Weapons/drop_tank/gr_1500l_tornado_assta1_2.blk",
+    "weaponDisplay": "Drop tank (1500 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "tornado_ids_de_assta1_britain_killstreak",
+    "domain": "aircraft",
+    "unitDisplay": "Tornado IDS ASSTA1",
+    "weaponBlk": "gameData/Weapons/drop_tank/gr_1500l_tornado_assta1_1.blk",
+    "weaponDisplay": "Drop tank (1500 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "tornado_ids_de_assta1_britain_killstreak",
+    "domain": "aircraft",
+    "unitDisplay": "Tornado IDS ASSTA1",
+    "weaponBlk": "gameData/Weapons/drop_tank/gr_1500l_tornado_assta1_2.blk",
+    "weaponDisplay": "Drop tank (1500 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "tornado_ids_de_assta1_france_killstreak",
+    "domain": "aircraft",
+    "unitDisplay": "Tornado IDS ASSTA1",
+    "weaponBlk": "gameData/Weapons/drop_tank/gr_1500l_tornado_assta1_1.blk",
+    "weaponDisplay": "Drop tank (1500 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "tornado_ids_de_assta1_france_killstreak",
+    "domain": "aircraft",
+    "unitDisplay": "Tornado IDS ASSTA1",
+    "weaponBlk": "gameData/Weapons/drop_tank/gr_1500l_tornado_assta1_2.blk",
+    "weaponDisplay": "Drop tank (1500 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "tornado_ids_de_assta1_italy_killstreak",
+    "domain": "aircraft",
+    "unitDisplay": "Tornado IDS ASSTA1",
+    "weaponBlk": "gameData/Weapons/drop_tank/gr_1500l_tornado_assta1_1.blk",
+    "weaponDisplay": "Drop tank (1500 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "tornado_ids_de_assta1_italy_killstreak",
+    "domain": "aircraft",
+    "unitDisplay": "Tornado IDS ASSTA1",
+    "weaponBlk": "gameData/Weapons/drop_tank/gr_1500l_tornado_assta1_2.blk",
+    "weaponDisplay": "Drop tank (1500 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "tornado_ids_de_assta1_killstreak",
+    "domain": "aircraft",
+    "unitDisplay": "Tornado IDS ASSTA1",
+    "weaponBlk": "gameData/Weapons/drop_tank/gr_1500l_tornado_assta1_1.blk",
+    "weaponDisplay": "Drop tank (1500 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "tornado_ids_de_assta1_killstreak",
+    "domain": "aircraft",
+    "unitDisplay": "Tornado IDS ASSTA1",
+    "weaponBlk": "gameData/Weapons/drop_tank/gr_1500l_tornado_assta1_2.blk",
+    "weaponDisplay": "Drop tank (1500 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "tornado_ids_de_assta1_sweden_killstreak",
+    "domain": "aircraft",
+    "unitDisplay": "Tornado IDS ASSTA1",
+    "weaponBlk": "gameData/Weapons/drop_tank/gr_1500l_tornado_assta1_1.blk",
+    "weaponDisplay": "Drop tank (1500 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "tornado_ids_de_assta1_sweden_killstreak",
+    "domain": "aircraft",
+    "unitDisplay": "Tornado IDS ASSTA1",
+    "weaponBlk": "gameData/Weapons/drop_tank/gr_1500l_tornado_assta1_2.blk",
+    "weaponDisplay": "Drop tank (1500 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "tornado_ids_de_assta3_sle",
+    "domain": "aircraft",
+    "unitDisplay": "Tornado IDS SLE",
+    "weaponBlk": "gameData/Weapons/drop_tank/gr_1500l_tornado_ids_mfg_1.blk",
+    "weaponDisplay": "Drop tank (1500 liters) (Fuel Tank)",
     "kind": "ordnance"
   },
   {
@@ -135960,6 +141000,62 @@
     "kind": "ordnance"
   },
   {
+    "unitId": "tornado_ids_de_assta3_sle",
+    "domain": "aircraft",
+    "unitDisplay": "Tornado IDS SLE",
+    "weaponBlk": "gameData/Weapons/drop_tank/gr_1500l_tornado_ids_mfg_2.blk",
+    "weaponDisplay": "Drop tank (1500 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "tornado_ids_de_mfg",
+    "domain": "aircraft",
+    "unitDisplay": "Tornado IDS Marineflieger",
+    "weaponBlk": "gameData/Weapons/drop_tank/gr_1500l_tornado_ids_mfg_1.blk",
+    "weaponDisplay": "Drop tank (1500 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "tornado_ids_de_mfg",
+    "domain": "aircraft",
+    "unitDisplay": "Tornado IDS Marineflieger",
+    "weaponBlk": "gameData/Weapons/drop_tank/gr_1500l_tornado_ids_mfg_2.blk",
+    "weaponDisplay": "Drop tank (1500 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "tornado_ids_de_wtd61",
+    "domain": "aircraft",
+    "unitDisplay": "Tornado IDS WTD61",
+    "weaponBlk": "gameData/Weapons/drop_tank/gr_1500l_tornado_ids_mfg_1.blk",
+    "weaponDisplay": "Drop tank (1500 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "tornado_ids_de_wtd61",
+    "domain": "aircraft",
+    "unitDisplay": "Tornado IDS WTD61",
+    "weaponBlk": "gameData/Weapons/drop_tank/gr_1500l_tornado_ids_mfg_2.blk",
+    "weaponDisplay": "Drop tank (1500 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "tornado_ids_it",
+    "domain": "aircraft",
+    "unitDisplay": "Tornado IDS",
+    "weaponBlk": "gameData/Weapons/drop_tank/it_1500l_tornado_ids_mod_95_2.blk",
+    "weaponDisplay": "Drop tank (1500 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "tornado_ids_it_mod95",
+    "domain": "aircraft",
+    "unitDisplay": "Tornado IDS (1995)",
+    "weaponBlk": "gameData/Weapons/drop_tank/it_1500l_tornado_ids_mod_95_2.blk",
+    "weaponDisplay": "Drop tank (1500 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
     "unitId": "tornado_ids_it_mod95",
     "domain": "aircraft",
     "unitDisplay": "Tornado IDS (1995)",
@@ -135968,11 +141064,43 @@
     "kind": "ordnance"
   },
   {
+    "unitId": "tornado_ids_it_mod95_killstreak",
+    "domain": "aircraft",
+    "unitDisplay": "Tornado IDS (1995)",
+    "weaponBlk": "gameData/Weapons/drop_tank/gr_1500l_tornado_assta1_1.blk",
+    "weaponDisplay": "Drop tank (1500 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "tornado_ids_it_mod95_killstreak",
+    "domain": "aircraft",
+    "unitDisplay": "Tornado IDS (1995)",
+    "weaponBlk": "gameData/Weapons/drop_tank/gr_1500l_tornado_assta1_2.blk",
+    "weaponDisplay": "Drop tank (1500 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "tornado_ids_it_ret8",
+    "domain": "aircraft",
+    "unitDisplay": "Tornado IDS MLU (RET.8)",
+    "weaponBlk": "gameData/Weapons/drop_tank/it_1500l_tornado_ids_mod_95_1.blk",
+    "weaponDisplay": "Drop tank (1500 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
     "unitId": "tornado_ids_it_ret8",
     "domain": "aircraft",
     "unitDisplay": "Tornado IDS MLU (RET.8)",
     "weaponBlk": "gameData/Weapons/equipment/gr_litening_iii_targeting_pod.blk",
     "weaponDisplay": "LITENING III targeting pod",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "tornado_ids_it_ret8",
+    "domain": "aircraft",
+    "unitDisplay": "Tornado IDS MLU (RET.8)",
+    "weaponBlk": "gameData/Weapons/drop_tank/it_1500l_tornado_ids_mod_95_2.blk",
+    "weaponDisplay": "Drop tank (1500 liters) (Fuel Tank)",
     "kind": "ordnance"
   },
   {
@@ -136477,6 +141605,22 @@
     "unitDisplay": "Yak-1 Litvyak",
     "weaponBlk": "gameData/Weapons/BombGuns/su_fab100_short_fin.blk",
     "weaponDisplay": "2x 100 kg FAB-100sv bomb",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "yak_130_early",
+    "domain": "aircraft",
+    "unitDisplay": "Yak-130",
+    "weaponBlk": "gameData/Weapons/drop_tank/su_500l_yak_130_drop_tank_1.blk",
+    "weaponDisplay": "Drop tank (500 liters) (Fuel Tank)",
+    "kind": "ordnance"
+  },
+  {
+    "unitId": "yak_130_early",
+    "domain": "aircraft",
+    "unitDisplay": "Yak-130",
+    "weaponBlk": "gameData/Weapons/drop_tank/su_500l_yak_130_drop_tank_2.blk",
+    "weaponDisplay": "Drop tank (500 liters) (Fuel Tank)",
     "kind": "ordnance"
   },
   {

@@ -503,7 +503,11 @@ public IList<GroundAmmo> WorkspaceResolveCannonAmmo(string cannonBlk)
             IEnumerable<DonorWeapon> source = injected
                 ? globalWeapons
                 : nativeWeapons.Where(w => w.AircraftId.Equals(aircraftId ?? "", StringComparison.OrdinalIgnoreCase) && w.Slot == slot)
-                    .GroupBy(w => w.Blk + "|" + w.Bullets).Select(g => g.First());
+                    // Keep distinct native mounts: the same ordnance can exist both
+                    // plain and riding with a BOL pod / fuel tank on different
+                    // presets (aim_120a_slot1 vs aim_120a_slot1_bol), and the
+                    // mount name is what the generated preset references.
+                    .GroupBy(w => w.Blk + "|" + w.Bullets + "|" + w.Mount).Select(g => g.First());
             if (!String.IsNullOrWhiteSpace(search))
                 source = source.Where(w => w.Name.IndexOf(search, StringComparison.CurrentCultureIgnoreCase) >= 0 || w.Category.IndexOf(search, StringComparison.CurrentCultureIgnoreCase) >= 0 || w.Blk.IndexOf(search, StringComparison.OrdinalIgnoreCase) >= 0);
             if (!String.IsNullOrWhiteSpace(category) && !category.Equals("All Weapon Types", StringComparison.OrdinalIgnoreCase))

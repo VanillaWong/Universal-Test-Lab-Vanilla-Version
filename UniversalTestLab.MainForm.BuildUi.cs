@@ -620,15 +620,28 @@ namespace UniversalTestLab
         internal static string ApplyPlayerFuel(string mission, AircraftSettings settings)
         {
             if (String.IsNullOrEmpty(mission)) throw new ArgumentException("Mission text is required.", "mission");
-            int percent = settings == null || settings.FullFuel ? 100 : Math.Max(8, Math.Min(100, (int)Math.Round(settings.FuelMinutes * 100.0 / 60.0)));
+            bool limited = !(settings == null || settings.FullFuel);
+            int percent = limited ? Math.Max(8, Math.Min(100, (int)Math.Round(settings.FuelMinutes * 100.0 / 60.0))) : 100;
             Regex marker = new Regex(@"(?m)^(\s*)fuel:r=100\s*$");
             if (!marker.IsMatch(mission)) throw new InvalidOperationException("Player fuel markers are missing from the mission template.");
-            return marker.Replace(mission, delegate(Match match)
+            mission = marker.Replace(mission, delegate(Match match)
             {
                 return match.Groups[1].Value + "fuel:r=" + percent.ToString(CultureInfo.InvariantCulture);
             });
+            // A finite fuel setting only matters when the mission actually burns fuel:
+            // without the limited-fuel flag War Thunder keeps the tank topped up
+            // forever and the chosen minutes are purely cosmetic.
+            if (limited)
+            {
+                Regex limitedFlag = new Regex(@"(?m)^(\s*)isLimitedFuel:b\s*=\s*false\s*$");
+                if (!limitedFlag.IsMatch(mission)) throw new InvalidOperationException("Limited-fuel mission flag is missing from the template.");
+                mission = limitedFlag.Replace(mission, delegate(Match match)
+                {
+                    return match.Groups[1].Value + "isLimitedFuel:b=true";
+                });
+            }
+            return mission;
         }
-
         internal static string ApplyPlayerGunBelts(string mission, AircraftSettings settings)
         {
             if (String.IsNullOrEmpty(mission)) throw new ArgumentException("Mission text is required.", "mission");
