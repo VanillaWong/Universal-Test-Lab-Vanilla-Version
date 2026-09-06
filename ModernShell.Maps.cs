@@ -208,8 +208,6 @@ namespace UniversalTestLab
         private ComboBox shipRank;
         private ToggleButton passiveShipBox;
 
-        private static EraPreset[] EraPresets = LoadEraPresets();
-
         private static readonly EraPreset[] BuiltinEraPresets = new[]
         {
             new EraPreset("WWI - 1916",
@@ -229,6 +227,12 @@ namespace UniversalTestLab
                 new[] { "f_16c_block_50", "j_10c", "ka_52", "mi_28nm" }, new[] { 2, 2, 2, 2 },
                 "ussr_cruiser_kirov", 1)
         };
+
+        // Declared AFTER BuiltinEraPresets: static field initializers run in declaration order,
+        // and LoadEraPresets() falls back to BuiltinEraPresets when the user has no saved
+        // presets. If this ran first it would capture null and crash every MapPanel /
+        // ModernMapWindow constructor with a bare NullReferenceException on fresh installs.
+        private static EraPreset[] EraPresets = LoadEraPresets();
 
         private static EraPreset[] LoadEraPresets()
         {
@@ -772,8 +776,6 @@ namespace UniversalTestLab
         public bool PassiveShip { get; private set; }
         public CombinedScenarioSettings Scenario { get; private set; }
 
-        private static EraPreset[] EraPresets = LoadEraPresets();
-
         private static readonly EraPreset[] BuiltinEraPresets = new[]
         {
             new EraPreset("WWI - 1916",
@@ -793,6 +795,12 @@ namespace UniversalTestLab
                 new[] { "f_16c_block_50", "j_10c", "ka_52", "mi_28nm" }, new[] { 2, 2, 2, 2 },
                 "ussr_cruiser_kirov", 1)
         };
+
+        // Declared AFTER BuiltinEraPresets: static field initializers run in declaration order,
+        // and LoadEraPresets() falls back to BuiltinEraPresets when the user has no saved
+        // presets. If this ran first it would capture null and crash every MapPanel /
+        // ModernMapWindow constructor with a bare NullReferenceException on fresh installs.
+        private static EraPreset[] EraPresets = LoadEraPresets();
 
         private static EraPreset[] LoadEraPresets()
         {

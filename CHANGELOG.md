@@ -1,5 +1,12 @@
 # Changelog
 
+## v0.12.0-beta.7 — 2026-09-06
+
+### Fixed / 修复
+
+- Fresh-install startup crash on Map & Targets: `EraPresets` (static) initialized before `BuiltinEraPresets` while its loader falls back to the built-in array on machines without saved presets, so the fallback returned null and every MapPanel/ModernMapWindow constructor threw a bare NullReferenceException. Declarations reordered (built-in array first) in both classes. / 全新安装启动崩溃:静态字段 EraPresets 先于 BuiltinEraPresets 初始化,而加载器在无已存预设时回退到内置数组——回退到尚未初始化的 null,MapPanel/ModernMapWindow 构造即抛 NullReferenceException;两个类均已调整声明顺序(内置数组在前)。
+- Release ZIP now ships the PDB so player crash logs carry exact source line numbers. / 发布包现在附带 PDB,玩家崩溃日志带精确源码行号。
+
 ## v0.12.0-beta.6 — 2026-09-06
 
 ### Added / 新增

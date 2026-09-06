@@ -23,6 +23,10 @@ if (Test-Path -LiteralPath $staging) { Remove-Item -LiteralPath $staging -Recurs
 New-Item -ItemType Directory -Force -Path $staging | Out-Null
 try {
   Copy-Item -LiteralPath $executable -Destination $staging
+  # Ship the PDB: the crash logger then reports exact source line numbers, which
+  # turns player crash reports into pinpointable stacks instead of bare methods.
+  $pdb = [IO.Path]::ChangeExtension($executable, ".pdb")
+  if (Test-Path -LiteralPath $pdb) { Copy-Item -LiteralPath $pdb -Destination $staging }
   foreach ($file in @("README.md", "CHANGELOG.md", "LICENSE", "THIRD_PARTY_NOTICES.md")) {
     Copy-Item -LiteralPath (Join-Path $projectRoot $file) -Destination $staging
   }
@@ -42,10 +46,15 @@ finally {
 
 $exeHash = (Get-FileHash -Algorithm SHA256 -LiteralPath $executable).Hash
 $zipHash = (Get-FileHash -Algorithm SHA256 -LiteralPath $zip).Hash
-@(
+$pdbHash = ""
+$pdb = [IO.Path]::ChangeExtension($executable, ".pdb")
+if (Test-Path -LiteralPath $pdb) { $pdbHash = (Get-FileHash -Algorithm SHA256 -LiteralPath $pdb).Hash }
+$rows = @(
   "$exeHash  UniversalTestLab.exe",
   "$zipHash  $([IO.Path]::GetFileName($zip))"
-) | Set-Content -LiteralPath $checksums -Encoding ascii
+)
+if ($pdbHash) { $rows += "$pdbHash  UniversalTestLab.pdb" }
+$rows | Set-Content -LiteralPath $checksums -Encoding ascii
 
 Write-Output "Release package: $zip"
 Write-Output "Checksums: $checksums"
