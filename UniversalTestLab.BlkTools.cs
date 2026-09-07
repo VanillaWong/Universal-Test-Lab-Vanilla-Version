@@ -1012,7 +1012,14 @@ namespace UniversalTestLab
             BlockSpan mission = FirstBlock(text, "mission", 0);
             if (mission == null) throw new InvalidOperationException("Mission settings block is missing.");
             string missionBlock = mission.Text;
-            string restoreTypeValue = airportTakeoff ? "manual" : "attempts";
+            // Always let the mission's own respawn trigger drive recovery. The
+            // engine's "attempts" restore model (the old air-spawn value) takes
+            // over after the player dies and, in a user mission with no recovery
+            // UI of its own, leaves the player stuck (ground tanks could not
+            // respawn at all; air spawns were killed off after a few deaths).
+            // manual leaves recovery entirely to our unitRespawn/spawnOnAirfield
+            // triggers below.
+            string restoreTypeValue = "manual";
             if (Regex.IsMatch(missionBlock, @"(?m)^\s*restoreType:t\s*="))
                 missionBlock = new Regex(@"(?m)^(\s*)restoreType:t\s*=\s*""[^""]*""").Replace(missionBlock, "$1restoreType:t=\"" + restoreTypeValue + "\"", 1);
             else missionBlock = missionBlock.Insert(missionBlock.IndexOf('{') + 1, Environment.NewLine + "    restoreType:t=\"" + restoreTypeValue + "\"");

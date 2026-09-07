@@ -497,7 +497,7 @@ namespace UniversalTestLab
                     groundPlayer.Text.IndexOf("crewSkillK:r=1", StringComparison.Ordinal) < 0 ||
                     groundPlayer.Text.IndexOf("applyAllMods:b=no", StringComparison.Ordinal) < 0 ||
                     groundMission.IndexOf("UTL Ground Weapon Initialization", StringComparison.Ordinal) >= 0 ||
-                    groundMission.IndexOf("restoreType:t=\"attempts\"", StringComparison.Ordinal) < 0 ||
+                    groundMission.IndexOf("restoreType:t=\"manual\"", StringComparison.Ordinal) < 0 ||
                     
                     
                                                             (MissionSettings.Current.RearmOverride
@@ -510,7 +510,7 @@ namespace UniversalTestLab
                     groundSpeedTrigger == null || groundSpeedTrigger.Text.IndexOf("is_enabled:b=no", StringComparison.Ordinal) < 0 ||
                     groundMission.IndexOf("UTL APS Carrier Recovery Compatible", StringComparison.Ordinal) < 0 ||
                     groundMission.IndexOf("UTL Target Ammunition Restore Compatible", StringComparison.Ordinal) >= 0 ||
-                    groundMission.IndexOf("restoreType:t=\"attempts\"", StringComparison.Ordinal) < 0 ||
+                    groundMission.IndexOf("restoreType:t=\"manual\"", StringComparison.Ordinal) < 0 ||
                     groundMission.IndexOf("attack_type:t=\"fire_at_will\"", StringComparison.Ordinal) < 0 ||
                     groundMission.IndexOf("UTL_Player_Ground_Spawn", StringComparison.Ordinal) < 0)
                     throw new InvalidOperationException("Ground vehicle and unlimited-respawn self-test failed.");
