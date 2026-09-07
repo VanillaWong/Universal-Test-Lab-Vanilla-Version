@@ -582,6 +582,12 @@ public bool FakeArhConversion;
         // presets and any other value is a custom site. Airport takeoff, ground
         // and helicopter missions ignore this (they keep their own positions).
         public int SpawnAltitude = 1500;
+        // After-death behaviour for air spawns: "air" (default) = engine attempts
+        // respawn near the spawn height with the limit raised once at mission start
+        // (unlimited); "runway" = legacy manual respawn back onto the runway via
+        // spawnOnAirfield. Ground, helicopter, airport-takeoff and combined-map
+        // missions always keep their own recovery and ignore this.
+        public string AirDeathMode = "air";
 
         public static MissionSettings Current = new MissionSettings();
 
@@ -606,6 +612,7 @@ public bool FakeArhConversion;
                 SpawnSpeedAuto = SpawnSpeedAuto,
                 SpawnSpeedKmh = SpawnSpeedKmh,
                 SpawnAltitude = SpawnAltitude,
+                AirDeathMode = AirDeathMode,
                 InjectedCannonBlk = InjectedCannonBlk,
                 InjectedCannonDomain = InjectedCannonDomain,
                 InjectedCannonUnit = InjectedCannonUnit,
@@ -629,6 +636,7 @@ public bool FakeArhConversion;
                 mo.Add("spawn_speed_auto", SpawnSpeedAuto);
                 mo.Add("spawn_speed_kmh", SpawnSpeedKmh);
                 mo.Add("spawn_altitude", SpawnAltitude);
+                mo.Add("air_death_mode", String.IsNullOrWhiteSpace(AirDeathMode) ? "air" : AirDeathMode);
                 if (!String.IsNullOrWhiteSpace(InjectedCannonBlk)) mo.Add("inject_cannon_blk", InjectedCannonBlk);
                 if (!String.IsNullOrWhiteSpace(InjectedCannonDomain)) mo.Add("inject_cannon_domain", InjectedCannonDomain);
                 if (!String.IsNullOrWhiteSpace(InjectedCannonUnit)) mo.Add("inject_cannon_unit", InjectedCannonUnit);
@@ -659,6 +667,7 @@ public bool FakeArhConversion;
                 if (mo.TryGetValue("spawn_speed_auto", out v) && v != null) Current.SpawnSpeedAuto = Convert.ToBoolean(v, CultureInfo.InvariantCulture);
                 if (mo.TryGetValue("spawn_speed_kmh", out v) && v != null) { int kmh; if (Int32.TryParse(Convert.ToString(v, CultureInfo.InvariantCulture), NumberStyles.Integer, CultureInfo.InvariantCulture, out kmh)) Current.SpawnSpeedKmh = Math.Max(0, Math.Min(1100, kmh)); }
                 if (mo.TryGetValue("spawn_altitude", out v) && v != null) { int alt; if (Int32.TryParse(Convert.ToString(v, CultureInfo.InvariantCulture), NumberStyles.Integer, CultureInfo.InvariantCulture, out alt)) Current.SpawnAltitude = Math.Max(50, Math.Min(12000, alt)); }
+                if (mo.TryGetValue("air_death_mode", out v) && v != null) { string s = Convert.ToString(v, CultureInfo.InvariantCulture); if (s.Equals("air", StringComparison.OrdinalIgnoreCase) || s.Equals("runway", StringComparison.OrdinalIgnoreCase)) Current.AirDeathMode = s.Equals("air", StringComparison.OrdinalIgnoreCase) ? "air" : "runway"; }
                 if (mo.TryGetValue("inject_cannon_blk", out v) && v != null) Current.InjectedCannonBlk = Convert.ToString(v, CultureInfo.InvariantCulture);
                 if (mo.TryGetValue("inject_cannon_domain", out v) && v != null) Current.InjectedCannonDomain = Convert.ToString(v, CultureInfo.InvariantCulture);
                 if (mo.TryGetValue("inject_cannon_unit", out v) && v != null) Current.InjectedCannonUnit = Convert.ToString(v, CultureInfo.InvariantCulture);

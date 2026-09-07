@@ -36,6 +36,8 @@ namespace UniversalTestLab
         private ComboBox ammoMode;
         private ComboBox spawnMode;
         private ComboBox spawnSiteBox;
+        private ComboBox airDeathBox;
+        private StackPanel deathRow;
         private StackPanel siteRow;
         private StackPanel siteCustomRow;
         private TextBox siteCustomBox;
@@ -106,8 +108,20 @@ namespace UniversalTestLab
             siteCustomGrid.Children.Add(siteCustomSuffix);
             siteCustomRow.Children.Add(siteCustomGrid);
             siteRow.Children.Add(siteCustomRow);
-            siteRow.Children.Add(new TextBlock { Text = ModernText.L("Air spawn only: altitude above map zero. After death you still return to the runway.", "仅空中出生模式:开局海拔（米）。死后仍回跑道重生。"), Foreground = ModernPalette.Brush(ModernPalette.Muted), TextWrapping = TextWrapping.Wrap, Margin = new Thickness(0, 8, 0, 0) });
+            siteRow.Children.Add(new TextBlock { Text = ModernText.L("Air spawn only: starting altitude above map zero.", "仅空中出生模式:开局海拔（米）。"), Foreground = ModernPalette.Brush(ModernPalette.Muted), TextWrapping = TextWrapping.Wrap, Margin = new Thickness(0, 8, 0, 0) });
             spawnStack.Children.Add(siteRow);
+            // After-death mode for air spawns: unlimited engine air respawn (default)
+            // or legacy return to the runway. The engine fixes the attempts limit at
+            // mission start (runtime refills do not work), so the unlimited variant
+            // raises it once to 999 via initMission.
+            deathRow = new StackPanel { Margin = new Thickness(0, 8, 0, 0) };
+            airDeathBox = new ComboBox { Foreground = ModernPalette.Brush(ModernPalette.Text), Background = ModernPalette.Brush("#FF16283E"), BorderBrush = ModernPalette.Brush(ModernPalette.Border), Padding = new Thickness(8, 4, 8, 4), HorizontalAlignment = HorizontalAlignment.Left, MinWidth = 260 };
+            airDeathBox.Items.Add(new ComboBoxItem { Content = ModernText.L("After death: respawn in air (unlimited)", "死后:空中无限重生"), Tag = "air" });
+            airDeathBox.Items.Add(new ComboBoxItem { Content = ModernText.L("After death: return to the runway", "死后:回跑道重生"), Tag = "runway" });
+            airDeathBox.SelectedIndex = "runway".Equals(original.AirDeathMode, StringComparison.OrdinalIgnoreCase) ? 1 : 0;
+            deathRow.Children.Add(airDeathBox);
+            deathRow.Children.Add(new TextBlock { Text = ModernText.L("Air spawns only. In-air respawn uses the engine attempts flow: after death press the prompt to return near your spawn height (the ~5-death cap is lifted at mission start). Runway mode keeps the spawnOnAirfield return. Airport takeoff, helicopter and tank missions always keep their own recovery.", "仅空中出生模式。空中重生走引擎 attempts 流程:死后按提示返回出生高度附近,上限已开局提到 999。回跑道模式保留 spawnOnAirfield。机场起飞/直升机/坦克不受影响。"), Foreground = ModernPalette.Brush(ModernPalette.Muted), TextWrapping = TextWrapping.Wrap, Margin = new Thickness(0, 8, 0, 0) });
+            spawnStack.Children.Add(deathRow);
             spawnSiteBox.SelectionChanged += delegate
             {
                 ComboBoxItem siteItem = spawnSiteBox.SelectedItem as ComboBoxItem;
@@ -141,11 +155,13 @@ namespace UniversalTestLab
                 bool airport = item != null && "airport".Equals(item.Tag as string, StringComparison.OrdinalIgnoreCase);
                 speedRow.IsEnabled = !airport;
                 siteRow.IsEnabled = !airport;
+                deathRow.IsEnabled = !airport;
             };
             ComboBoxItem initial = spawnMode.SelectedItem as ComboBoxItem;
             bool initialAirport = initial != null && "airport".Equals(initial.Tag as string, StringComparison.OrdinalIgnoreCase);
             speedRow.IsEnabled = !initialAirport;
             siteRow.IsEnabled = !initialAirport;
+            deathRow.IsEnabled = !initialAirport;
             Children.Add(spawnCard);
             Border rapidCard = Card("RAPID FIRE (AUTO REPAIR + REARM)");
             StackPanel rapidStack = rapidCard.Child as StackPanel;
@@ -243,6 +259,9 @@ namespace UniversalTestLab
                     siteAltitude = (int)Math.Max(50, Math.Min(12000, Math.Round(parsed)));
             }
             updated.SpawnAltitude = siteAltitude;
+            ComboBoxItem death = airDeathBox.SelectedItem as ComboBoxItem;
+            string deathTag = death != null && death.Tag is string ? (string)death.Tag : "air";
+            updated.AirDeathMode = "runway".Equals(deathTag, StringComparison.OrdinalIgnoreCase) ? "runway" : "air";
             updated.RapidFireEnabled = rapidToggle.IsChecked ?? false;
             updated.RapidFireInterval = rapidIntervalSlider.Value;
             updated.RapidFireFullRestore = rapidFullBox.IsChecked ?? true;
@@ -259,6 +278,8 @@ namespace UniversalTestLab
         private readonly ComboBox ammoMode;
         private readonly ComboBox spawnMode;
         private readonly ComboBox spawnSiteBox;
+        private readonly ComboBox airDeathBox;
+        private readonly StackPanel deathRow;
         private readonly StackPanel siteRow;
         private readonly StackPanel siteCustomRow;
         private readonly TextBox siteCustomBox;
@@ -336,8 +357,20 @@ namespace UniversalTestLab
             siteCustomGrid.Children.Add(siteCustomSuffix);
             siteCustomRow.Children.Add(siteCustomGrid);
             siteRow.Children.Add(siteCustomRow);
-            siteRow.Children.Add(new TextBlock { Text = ModernText.L("Air spawn only: altitude above map zero. After death you still return to the runway.", "仅空中出生模式:开局海拔（米）。死后仍回跑道重生。"), Foreground = ModernPalette.Brush(ModernPalette.Muted), TextWrapping = TextWrapping.Wrap, Margin = new Thickness(0, 8, 0, 0) });
+            siteRow.Children.Add(new TextBlock { Text = ModernText.L("Air spawn only: starting altitude above map zero.", "仅空中出生模式:开局海拔（米）。"), Foreground = ModernPalette.Brush(ModernPalette.Muted), TextWrapping = TextWrapping.Wrap, Margin = new Thickness(0, 8, 0, 0) });
             spawnStack.Children.Add(siteRow);
+            // After-death mode for air spawns: unlimited engine air respawn (default)
+            // or legacy return to the runway. The engine fixes the attempts limit at
+            // mission start (runtime refills do not work), so the unlimited variant
+            // raises it once to 999 via initMission.
+            deathRow = new StackPanel { Margin = new Thickness(0, 8, 0, 0) };
+            airDeathBox = new ComboBox { Foreground = ModernPalette.Brush(ModernPalette.Text), Background = ModernPalette.Brush("#FF16283E"), BorderBrush = ModernPalette.Brush(ModernPalette.Border), Padding = new Thickness(8, 4, 8, 4), HorizontalAlignment = HorizontalAlignment.Left, MinWidth = 260 };
+            airDeathBox.Items.Add(new ComboBoxItem { Content = ModernText.L("After death: respawn in air (unlimited)", "死后:空中无限重生"), Tag = "air" });
+            airDeathBox.Items.Add(new ComboBoxItem { Content = ModernText.L("After death: return to the runway", "死后:回跑道重生"), Tag = "runway" });
+            airDeathBox.SelectedIndex = "runway".Equals(original.AirDeathMode, StringComparison.OrdinalIgnoreCase) ? 1 : 0;
+            deathRow.Children.Add(airDeathBox);
+            deathRow.Children.Add(new TextBlock { Text = ModernText.L("Air spawns only. In-air respawn uses the engine attempts flow: after death press the prompt to return near your spawn height (the ~5-death cap is lifted at mission start). Runway mode keeps the spawnOnAirfield return. Airport takeoff, helicopter and tank missions always keep their own recovery.", "仅空中出生模式。空中重生走引擎 attempts 流程:死后按提示返回出生高度附近,上限已开局提到 999。回跑道模式保留 spawnOnAirfield。机场起飞/直升机/坦克不受影响。"), Foreground = ModernPalette.Brush(ModernPalette.Muted), TextWrapping = TextWrapping.Wrap, Margin = new Thickness(0, 8, 0, 0) });
+            spawnStack.Children.Add(deathRow);
             spawnSiteBox.SelectionChanged += delegate
             {
                 ComboBoxItem siteItem = spawnSiteBox.SelectedItem as ComboBoxItem;
@@ -371,11 +404,13 @@ namespace UniversalTestLab
                 bool airport = item != null && "airport".Equals(item.Tag as string, StringComparison.OrdinalIgnoreCase);
                 speedRow.IsEnabled = !airport;
                 siteRow.IsEnabled = !airport;
+                deathRow.IsEnabled = !airport;
             };
             ComboBoxItem initial = spawnMode.SelectedItem as ComboBoxItem;
             bool initialAirport = initial != null && "airport".Equals(initial.Tag as string, StringComparison.OrdinalIgnoreCase);
             speedRow.IsEnabled = !initialAirport;
             siteRow.IsEnabled = !initialAirport;
+            deathRow.IsEnabled = !initialAirport;
             content.Children.Add(spawnCard);
             Border rapidCard = Card("RAPID FIRE (AUTO REPAIR + REARM)");
             StackPanel rapidStack = rapidCard.Child as StackPanel;
@@ -486,6 +521,9 @@ namespace UniversalTestLab
                     siteAltitude = (int)Math.Max(50, Math.Min(12000, Math.Round(parsed)));
             }
             updated.SpawnAltitude = siteAltitude;
+            ComboBoxItem death = airDeathBox.SelectedItem as ComboBoxItem;
+            string deathTag = death != null && death.Tag is string ? (string)death.Tag : "air";
+            updated.AirDeathMode = "runway".Equals(deathTag, StringComparison.OrdinalIgnoreCase) ? "runway" : "air";
             updated.RapidFireEnabled = rapidToggle.IsChecked ?? false;
             updated.RapidFireInterval = rapidIntervalSlider.Value;
             updated.RapidFireFullRestore = rapidFullBox.IsChecked ?? true;

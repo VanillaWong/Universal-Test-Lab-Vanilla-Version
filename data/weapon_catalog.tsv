@@ -2202,3 +2202,8 @@ torpedoes	gameData/Weapons/torpedoes/it_f200_450_torpedo.blk	2		2x 450 mm W 170/
 torpedoes	gameData/Weapons/torpedoes/de_f5w_torpedo.blk	2		2x F5W torpedo	Torpedoes	905	1810
 torpedoes	gameData/Weapons/torpedoes/us_mk13_torpedo.blk	2	air_torpedo_x2	Mk.13-6 Case Torpedo (2216 lbs)	Torpedoes	964.79	1929.58
 torpedoes	gameData/Weapons/torpedoes/it_f200_450_torpedo.blk	3		3x 450 mm W 170/450/5.46 torpedo	Torpedoes	905	2715
+aam	utl-sam:gamedata/weapons/groundmodels_weapons/400mm_buk_9m38_rocket_launcher.blk#400mm_9m38m1	1	missile_type_b_air_to_air	9M38 (AI Buk SAM)	Ground SAM Missiles	690	690	USSR
+aam	utl-sam:gamedata/weapons/groundmodels_weapons/410mm_patriot_mim_104_rocket_launcher.blk#410mm_mim104b	1	missile_type_b_air_to_air	MIM-104B (Patriot SAM)	Ground SAM Missiles	900	900	USA
+aam	utl-sam:gamedata/weapons/groundmodels_weapons/508mm_s300ps_5v55_rocket_launcher.blk#508mm_5v55r	1	missile_type_b_air_to_air	5V55R (S-300 SAM)	Ground SAM Missiles	1664	1664	USSR
+aam	utl-sam:gamedata/weapons/groundmodels_weapons/370mm_i_hawk_rocket_launcher.blk#us_mim_23b	1	missile_type_b_air_to_air	MIM-23B (Hawk SAM)	Ground SAM Missiles	625	625	USA
+aam	utl-sam:gamedata/weapons/groundmodels_weapons/654mm_s_75_v_755_20ds_rocket_launcher.blk#V_759	1	missile_type_b_air_to_air	V-759 (S-75 SAM)	Ground SAM Missiles	2397.9	2397.9	USSR

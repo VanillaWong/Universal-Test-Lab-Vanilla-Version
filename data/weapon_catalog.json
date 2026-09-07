@@ -22038,5 +22038,55 @@
     "category": "Torpedoes",
     "unitMass": 905,
     "totalMass": 2715
+  },
+  {
+    "trigger": "aam",
+    "blk": "utl-sam:gamedata/weapons/groundmodels_weapons/400mm_buk_9m38_rocket_launcher.blk#400mm_9m38m1",
+    "bullets": 1,
+    "icon": "missile_type_b_air_to_air",
+    "name": "9M38 (AI Buk SAM)",
+    "category": "Ground SAM Missiles",
+    "unitMass": 690,
+    "totalMass": 690
+  },
+  {
+    "trigger": "aam",
+    "blk": "utl-sam:gamedata/weapons/groundmodels_weapons/410mm_patriot_mim_104_rocket_launcher.blk#410mm_mim104b",
+    "bullets": 1,
+    "icon": "missile_type_b_air_to_air",
+    "name": "MIM-104B (Patriot SAM)",
+    "category": "Ground SAM Missiles",
+    "unitMass": 900,
+    "totalMass": 900
+  },
+  {
+    "trigger": "aam",
+    "blk": "utl-sam:gamedata/weapons/groundmodels_weapons/508mm_s300ps_5v55_rocket_launcher.blk#508mm_5v55r",
+    "bullets": 1,
+    "icon": "missile_type_b_air_to_air",
+    "name": "5V55R (S-300 SAM)",
+    "category": "Ground SAM Missiles",
+    "unitMass": 1664,
+    "totalMass": 1664
+  },
+  {
+    "trigger": "aam",
+    "blk": "utl-sam:gamedata/weapons/groundmodels_weapons/370mm_i_hawk_rocket_launcher.blk#us_mim_23b",
+    "bullets": 1,
+    "icon": "missile_type_b_air_to_air",
+    "name": "MIM-23B (Hawk SAM)",
+    "category": "Ground SAM Missiles",
+    "unitMass": 625,
+    "totalMass": 625
+  },
+  {
+    "trigger": "aam",
+    "blk": "utl-sam:gamedata/weapons/groundmodels_weapons/654mm_s_75_v_755_20ds_rocket_launcher.blk#V_759",
+    "bullets": 1,
+    "icon": "missile_type_b_air_to_air",
+    "name": "V-759 (S-75 SAM)",
+    "category": "Ground SAM Missiles",
+    "unitMass": 2397.9,
+    "totalMass": 2397.9
   }
 ]

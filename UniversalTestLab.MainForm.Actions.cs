@@ -118,16 +118,23 @@ namespace UniversalTestLab
                 if (MissionSettings.Current.LimitedAmmo)
                     text = Regex.Replace(text, @"(?m)^(\s*isLimitedAmmo:b\s*=\s*)(?:true|false)\s*$", "$1true", RegexOptions.IgnoreCase);
                 text = BlkTools.AccelerateRangeRecovery(text, combinedMap == null, MissionSettings.Current.TargetRespawnDelaySeconds, MissionSettings.Current.RearmOverride ? (double?)MissionSettings.Current.RearmSeconds : null);
-                // Air-spawn site altitude only applies to fixed-wing "air spawn" missions:
-                // airport takeoff starts on the runway, helicopters hover stationary and
-                // combined-map spawns place the player at the picked spawn transform.
+                // Air-spawn site altitude and the after-death respawn mode only apply
+                // to fixed-wing "air spawn" missions: airport takeoff starts on the
+                // runway (and returns there after death), helicopters hover stationary
+                // and combined-map spawns place the player at the picked spawn
+                // transform. AirDeathMode "air" = unlimited engine air respawn
+                // (default), "runway" = legacy spawnOnAirfield return.
                 bool airportTakeoffMode = MissionSettings.Current.SpawnMode != null && MissionSettings.Current.SpawnMode.Equals("airport", StringComparison.OrdinalIgnoreCase);
                 int airSpawnAltitude = 1500;
+                bool airDeathInAir = false;
                 if (!groundPlayer && !helicopterPlayer && combinedSpawn == null && !airportTakeoffMode)
+                {
                     airSpawnAltitude = MissionSettings.Current.SpawnAltitude;
+                    airDeathInAir = !MissionSettings.Current.AirDeathMode.Equals("runway", StringComparison.OrdinalIgnoreCase);
+                }
                 text = BlkTools.ConfigureInstantPlayerRespawn(text, groundPlayer, generated.SpawnSpeedKmh,
                     combinedSpawn == null ? null : BlkTools.CombinedRespawnTransform(combinedSpawn), MissionSettings.Current.PlayerRespawnDelaySeconds,
-                    airportTakeoffMode, airSpawnAltitude);
+                    airportTakeoffMode, airSpawnAltitude, airDeathInAir);
                 bool nuclear = assignments.Values.Any(a => a.Weapon.Category == "Nuclear Weapons");
                 if (IsFpvDrone(selected)) text = BlkTools.AddFpvDetonationTriggers(text);
                 string title = combinedMap != null

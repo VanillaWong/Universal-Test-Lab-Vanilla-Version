@@ -1005,7 +1005,7 @@ namespace UniversalTestLab
             return ConfigureInstantPlayerRespawn(text, ground, airSpeedKmh, null);
         }
 
-        public static string ConfigureInstantPlayerRespawn(string text, bool ground, int airSpeedKmh, string customSpawnTransform, double respawnDelay = 0, bool airportTakeoff = false, int airSpawnAltitude = 1500)
+        public static string ConfigureInstantPlayerRespawn(string text, bool ground, int airSpeedKmh, string customSpawnTransform, double respawnDelay = 0, bool airportTakeoff = false, int airSpawnAltitude = 1500, bool respawnInAir = true)
         {
             // The template's "Player Respawn Flight Profile" trigger kicks the
             // player to speed:1100 shortly after EVERY respawn (unitWhenRespawn).
@@ -1022,19 +1022,25 @@ namespace UniversalTestLab
             // transform (the template starts it at 1500 m). Airport takeoff, combined
             // scenario spawns and ground missions keep their own fixed positions, so
             // the rewrite only runs for a plain air spawn with a non-stock height.
-            bool applySpawnAltitude = !ground && !airportTakeoff && String.IsNullOrWhiteSpace(customSpawnTransform);
-            if (applySpawnAltitude && airSpawnAltitude != 1500)
+            bool plainAirSpawn = !ground && !airportTakeoff && String.IsNullOrWhiteSpace(customSpawnTransform);
+            // After-death behaviour of air spawns: unlimited engine air respawn
+            // (attempts raised once at mission start) or legacy runway return via
+            // spawnOnAirfield. Runtime refills do not work - the engine fixes the
+            // limit when initMission runs.
+            bool useAttemptsAirRespawn = plainAirSpawn && respawnInAir;
+            if (plainAirSpawn && airSpawnAltitude != 1500)
                 text = SetPlayerSpawnAltitude(text, airSpawnAltitude);
             BlockSpan mission = FirstBlock(text, "mission", 0);
             if (mission == null) throw new InvalidOperationException("Mission settings block is missing.");
             string missionBlock = mission.Text;
-            // All modes use manual recovery driven by the single respawn trigger
-            // injected below (action chosen per mode further down). manual keeps
-            // the engine out of the death flow: its attempts model has a hard
-            // 5-death limit for aircraft in user missions and its post-death
-            // "press space" prompt hangs when no destination exists. Our trigger
-            // fires first, so respawn is instant and unlimited.
-            string restoreTypeValue = "manual";
+            // restoreType: manual keeps the engine out of the death flow so the
+            // recovery trigger injected below (unitRespawn for ground, spawnOnAirfield
+            // for aircraft) fires before the engine post-death prompt can stall.
+            // Air spawns may instead use the engine's own attempts respawn (player
+            // reappears near the spawn position after the death prompt): user missions
+            // cap that at ~5 deaths, so the cap is lifted once with missionAttempts
+            // (set_max) at mission start - making the air respawn unlimited.
+            string restoreTypeValue = useAttemptsAirRespawn ? "attempts" : "manual";
             if (Regex.IsMatch(missionBlock, @"(?m)^\s*restoreType:t\s*="))
                 missionBlock = new Regex(@"(?m)^(\s*)restoreType:t\s*=\s*""[^""]*""").Replace(missionBlock, "$1restoreType:t=\"" + restoreTypeValue + "\"", 1);
             else missionBlock = missionBlock.Insert(missionBlock.IndexOf('{') + 1, Environment.NewLine + "    restoreType:t=\"" + restoreTypeValue + "\"");
@@ -1105,11 +1111,48 @@ string trigger = @"
     else_actions{}
   }
 ";
-            // One recovery trigger for every mode; its action is spawnOnAirfield
-            // for aircraft (air spawn + airfield takeoff) and unitRespawn for
-            // ground, as built above. No respawn-point registration: the engine
-            // ignores missionMarkAsRespawnPoint for air areas inside user missions.
-            text = text.Insert(triggers.End, trigger);
+            if (useAttemptsAirRespawn)
+            {
+                // Unlimited engine air respawn: no recovery trigger - the engine
+                // respawns the player after the post-death prompt. The attempts cap
+                // must be raised once, before the mission starts (initMission);
+                // later refills are ignored because the engine fixes the limit early.
+                string boostTrigger = @"
+  ""UTL Attempts Boost""{
+    is_enabled:b=yes
+    comments:t=""Attempts raised to 999 so the engine air respawn is unlimited in user missions (the limit is fixed at mission start)""
+
+    props{
+      actionsType:t=""PERFORM_ONE_BY_ONE""
+      conditionsType:t=""ALL""
+      enableAfterComplete:b=no
+    }
+
+    events{
+      initMission{}
+    }
+
+    conditions{}
+    actions{
+      missionAttempts{
+        action:t=""set_max""
+        value:i=999
+      }
+    }
+
+    else_actions{}
+  }
+";
+                text = text.Insert(triggers.End, boostTrigger);
+            }
+            else
+            {
+                // Recovery trigger: spawnOnAirfield for aircraft (runway return) and
+                // unitRespawn for ground, as built above. No respawn-point
+                // registration: the engine ignores missionMarkAsRespawnPoint for air
+                // areas inside user missions.
+                text = text.Insert(triggers.End, trigger);
+            }
             BlockSpan areas = FirstBlock(text, "areas", 0);
             if (areas == null) throw new InvalidOperationException("Mission areas block is missing.");
             string positions = !String.IsNullOrWhiteSpace(customSpawnTransform)

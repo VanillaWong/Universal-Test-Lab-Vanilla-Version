@@ -476,6 +476,20 @@ namespace UniversalTestLab
                     BlkTools.UnitBlockByName(siteLow, "You") == null ||
                     BlkTools.UnitBlockByName(siteLow, "You").Text.IndexOf(", 300, 577]", StringComparison.Ordinal) < 0)
                     throw new InvalidOperationException("Air-spawn site altitude self-test failed.");
+                // After-death respawn mode for air spawns: default = unlimited engine
+                // air respawn (attempts raised once at mission start); disabled =
+                // legacy manual runway return via spawnOnAirfield.
+                string airAttemptsMission = BlkTools.ConfigureInstantPlayerRespawn(text, false, 0, null, 2.1, false, 1500, true);
+                string airRunwayMission = BlkTools.ConfigureInstantPlayerRespawn(text, false, 0, null, 2.1, false, 1500, false);
+                if (airAttemptsMission.IndexOf("restoreType:t=\"attempts\"", StringComparison.Ordinal) < 0 ||
+                    airAttemptsMission.IndexOf("\"UTL Attempts Boost\"", StringComparison.Ordinal) < 0 ||
+                    airAttemptsMission.IndexOf("action:t=\"set_max\"", StringComparison.Ordinal) < 0 ||
+                    airAttemptsMission.IndexOf("value:i=999", StringComparison.Ordinal) < 0 ||
+                    airAttemptsMission.IndexOf("UTL Player Respawn Compatible", StringComparison.Ordinal) >= 0 ||
+                    airRunwayMission.IndexOf("restoreType:t=\"manual\"", StringComparison.Ordinal) < 0 ||
+                    airRunwayMission.IndexOf("UTL Player Respawn Compatible", StringComparison.Ordinal) < 0 ||
+                    airRunwayMission.IndexOf("UTL Attempts Boost", StringComparison.Ordinal) >= 0)
+                    throw new InvalidOperationException("Air after-death respawn mode self-test failed.");
                 AircraftSettings moduleEffectsSettings = new AircraftSettings();
                 StringBuilder moduleEffectsProxy = new StringBuilder("include \"native.blk\"\r\n");
                 string moduleEffectsNative = "modifications {\r\n  laser_rangefinder_lws {\r\n    effects {\r\n      rangefinderMounted:b=true\r\n      isLaser:b=true\r\n      sensors { sensor { blk:t=\"laser.blk\" } }\r\n    }\r\n  }\r\n}\r\n";
