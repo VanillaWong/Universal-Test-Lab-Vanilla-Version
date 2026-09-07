@@ -465,6 +465,17 @@ namespace UniversalTestLab
                     MainForm.ResolveAmmoSlotId(groupedCannon, "120mm_us_m829a3") != "120mm_us_M829A3_APDSFS" ||
                     MainForm.ResolveAmmoSlotId(groupedCannon, "120mm_us_M829A3_APDSFS") != "120mm_us_M829A3_APDSFS")
                     throw new InvalidOperationException("Ground ammo-slot id resolution self-test failed.");
+                // Air-spawn site: the default (1500) must stay byte-identical to the
+                // template; an explicit site rewrites both the player "You" armada
+                // transform and the injected UTL_Player_Air_Spawn area to that height.
+                string siteDefault = BlkTools.ConfigureInstantPlayerRespawn(text, false, 0, null, 2.1, false, 1500);
+                string siteLow = BlkTools.ConfigureInstantPlayerRespawn(text, false, 0, null, 2.1, false, 300);
+                if (siteDefault.IndexOf("[531.8, 1500, 577]", StringComparison.Ordinal) < 0 ||
+                    siteLow.IndexOf("[531.8, 300, 577]", StringComparison.Ordinal) < 0 ||
+                    siteLow.IndexOf("[531.8, 1500, 577]", StringComparison.Ordinal) >= 0 ||
+                    BlkTools.UnitBlockByName(siteLow, "You") == null ||
+                    BlkTools.UnitBlockByName(siteLow, "You").Text.IndexOf(", 300, 577]", StringComparison.Ordinal) < 0)
+                    throw new InvalidOperationException("Air-spawn site altitude self-test failed.");
                 AircraftSettings moduleEffectsSettings = new AircraftSettings();
                 StringBuilder moduleEffectsProxy = new StringBuilder("include \"native.blk\"\r\n");
                 string moduleEffectsNative = "modifications {\r\n  laser_rangefinder_lws {\r\n    effects {\r\n      rangefinderMounted:b=true\r\n      isLaser:b=true\r\n      sensors { sensor { blk:t=\"laser.blk\" } }\r\n    }\r\n  }\r\n}\r\n";

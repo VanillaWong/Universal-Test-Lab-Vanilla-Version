@@ -1005,7 +1005,7 @@ namespace UniversalTestLab
             return ConfigureInstantPlayerRespawn(text, ground, airSpeedKmh, null);
         }
 
-        public static string ConfigureInstantPlayerRespawn(string text, bool ground, int airSpeedKmh, string customSpawnTransform, double respawnDelay = 0, bool airportTakeoff = false)
+        public static string ConfigureInstantPlayerRespawn(string text, bool ground, int airSpeedKmh, string customSpawnTransform, double respawnDelay = 0, bool airportTakeoff = false, int airSpawnAltitude = 1500)
         {
             // The template's "Player Respawn Flight Profile" trigger kicks the
             // player to speed:1100 shortly after EVERY respawn (unitWhenRespawn).
@@ -1018,6 +1018,13 @@ namespace UniversalTestLab
                 text = RemoveNamedBlockAnywhere(text, "\"Player Respawn Flight Profile\"");
             if (ground)
                 text = RemoveAirfieldContent(text);
+            // Air-spawn site: an explicit height rewrites the player "You" armada
+            // transform (the template starts it at 1500 m). Airport takeoff, combined
+            // scenario spawns and ground missions keep their own fixed positions, so
+            // the rewrite only runs for a plain air spawn with a non-stock height.
+            bool applySpawnAltitude = !ground && !airportTakeoff && String.IsNullOrWhiteSpace(customSpawnTransform);
+            if (applySpawnAltitude && airSpawnAltitude != 1500)
+                text = SetPlayerSpawnAltitude(text, airSpawnAltitude);
             BlockSpan mission = FirstBlock(text, "mission", 0);
             if (mission == null) throw new InvalidOperationException("Mission settings block is missing.");
             string missionBlock = mission.Text;
@@ -1138,7 +1145,7 @@ string trigger = @"
                 : @"
   UTL_Player_Air_Spawn{
     type:t=""Sphere""
-    tm:m=[[0, 0, -10] [0, 10, 0] [10, 0, 0] [531.8, 1500, 577]]
+    tm:m=[[0, 0, -10] [0, 10, 0] [10, 0, 0] [531.8, " + airSpawnAltitude.ToString(CultureInfo.InvariantCulture) + @", 577]]
     objLayer:i=0
 
     props{}
@@ -1150,6 +1157,32 @@ string trigger = @"
             // spawnOnAirfield action and must never be stripped, so both legacy
             // passes are gone.
             return text.Insert(areas.End, positions);
+        }
+
+        private static string SetPlayerSpawnAltitude(string text, int altitude)
+        {
+            // The template air "You" armada transform ends with [531.8, 1500, 577];
+            // only the translation Y (last bracket group on the tm:m line) is rewritten
+            // so the player starts at the chosen altitude above map zero.
+            BlockSpan player = UnitBlockByName(text, "You");
+            if (player == null) return text;
+            string block = player.Text;
+            int idx = block.IndexOf("tm:m=", StringComparison.Ordinal);
+            if (idx < 0) return text;
+            int lineEnd = block.IndexOf('\n', idx);
+            if (lineEnd < 0) lineEnd = block.Length;
+            string line = block.Substring(idx, lineEnd - idx).TrimEnd('\r');
+            int groupOpen = line.LastIndexOf('[');
+            if (groupOpen < 0) return text;
+            string inner = line.Substring(groupOpen).TrimEnd(']').TrimStart('[');
+            string[] cells = inner.Split(',');
+            if (cells.Length != 3) return text;
+            double current;
+            if (!Double.TryParse(cells[1].Trim(), NumberStyles.Float, CultureInfo.InvariantCulture, out current)) return text;
+            string rebuilt = line.Substring(0, groupOpen) + "[" + cells[0].Trim() + ", " +
+                altitude.ToString(CultureInfo.InvariantCulture) + ", " + cells[2].Trim() + "]]";
+            block = block.Substring(0, idx) + rebuilt + block.Substring(lineEnd);
+            return ReplaceSpan(text, player, block);
         }
 
         public static string RemoveAirfieldContent(string text)

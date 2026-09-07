@@ -35,6 +35,10 @@ namespace UniversalTestLab
         private CheckBox rearmOverrideBox;
         private ComboBox ammoMode;
         private ComboBox spawnMode;
+        private ComboBox spawnSiteBox;
+        private StackPanel siteRow;
+        private StackPanel siteCustomRow;
+        private TextBox siteCustomBox;
         private Slider spawnSpeedSlider;
         private CheckBox spawnSpeedAuto;
         private TextBox spawnSpeedBox;
@@ -77,6 +81,39 @@ namespace UniversalTestLab
             spawnMode.Items.Add(new ComboBoxItem { Content = ModernText.L("Airport takeoff (stationary)", "机场起飞（静止）"), Tag = "airport" });
             spawnMode.SelectedIndex = (original.SpawnMode ?? "air").Equals("airport", StringComparison.OrdinalIgnoreCase) ? 1 : 0;
             spawnStack.Children.Add(spawnMode);
+            // Air-spawn site: starting altitude above map zero for "Air spawn (with
+            // speed)". Airport takeoff always begins on the runway, and ground or
+            // helicopter missions keep their own fixed positions - so this row only
+            // enables while an air spawn is selected.
+            siteRow = new StackPanel { Margin = new Thickness(0, 8, 0, 0) };
+            spawnSiteBox = new ComboBox { Foreground = ModernPalette.Brush(ModernPalette.Text), Background = ModernPalette.Brush("#FF16283E"), BorderBrush = ModernPalette.Brush(ModernPalette.Border), Padding = new Thickness(8, 4, 8, 4), HorizontalAlignment = HorizontalAlignment.Left, MinWidth = 260 };
+            spawnSiteBox.Items.Add(new ComboBoxItem { Content = ModernText.L("Standard 1500 m", "标准 1500 米"), Tag = "standard" });
+            spawnSiteBox.Items.Add(new ComboBoxItem { Content = ModernText.L("Low 300 m", "低空 300 米"), Tag = "low" });
+            spawnSiteBox.Items.Add(new ComboBoxItem { Content = ModernText.L("High 3000 m", "高空 3000 米"), Tag = "high" });
+            spawnSiteBox.Items.Add(new ComboBoxItem { Content = ModernText.L("Custom…", "自定义…"), Tag = "custom" });
+            int siteIndex = original.SpawnAltitude == 300 ? 1 : original.SpawnAltitude == 3000 ? 2 : original.SpawnAltitude != 1500 ? 3 : 0;
+            spawnSiteBox.SelectedIndex = siteIndex;
+            siteRow.Children.Add(spawnSiteBox);
+            siteCustomRow = new StackPanel { Margin = new Thickness(0, 8, 0, 0), Visibility = siteIndex == 3 ? Visibility.Visible : Visibility.Collapsed };
+            Grid siteCustomGrid = new Grid();
+            siteCustomGrid.ColumnDefinitions.Add(new ColumnDefinition());
+            siteCustomGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(120) });
+            siteCustomBox = ModernNumericBox.Create();
+            siteCustomBox.Text = original.SpawnAltitude.ToString(CultureInfo.InvariantCulture);
+            TextBlock siteCustomSuffix = new TextBlock { Text = "m", Foreground = ModernPalette.Brush(ModernPalette.Cyan), FontSize = 15, FontWeight = FontWeights.SemiBold, VerticalAlignment = VerticalAlignment.Center };
+            siteCustomGrid.Children.Add(siteCustomBox);
+            Grid.SetColumn(siteCustomSuffix, 1);
+            siteCustomGrid.Children.Add(siteCustomSuffix);
+            siteCustomRow.Children.Add(siteCustomGrid);
+            siteRow.Children.Add(siteCustomRow);
+            siteRow.Children.Add(new TextBlock { Text = ModernText.L("Air spawn only: altitude above map zero. After death you still return to the runway.", "仅空中出生模式:开局海拔（米）。死后仍回跑道重生。"), Foreground = ModernPalette.Brush(ModernPalette.Muted), TextWrapping = TextWrapping.Wrap, Margin = new Thickness(0, 8, 0, 0) });
+            spawnStack.Children.Add(siteRow);
+            spawnSiteBox.SelectionChanged += delegate
+            {
+                ComboBoxItem siteItem = spawnSiteBox.SelectedItem as ComboBoxItem;
+                bool customSite = siteItem != null && "custom".Equals(siteItem.Tag as string, StringComparison.OrdinalIgnoreCase);
+                siteCustomRow.Visibility = customSite ? Visibility.Visible : Visibility.Collapsed;
+            };
             speedRow = new StackPanel { Margin = new Thickness(0, 8, 0, 0) };
             Grid speedGrid = new Grid();
             speedGrid.ColumnDefinitions.Add(new ColumnDefinition());
@@ -103,9 +140,12 @@ namespace UniversalTestLab
                 ComboBoxItem item = spawnMode.SelectedItem as ComboBoxItem;
                 bool airport = item != null && "airport".Equals(item.Tag as string, StringComparison.OrdinalIgnoreCase);
                 speedRow.IsEnabled = !airport;
+                siteRow.IsEnabled = !airport;
             };
             ComboBoxItem initial = spawnMode.SelectedItem as ComboBoxItem;
-            speedRow.IsEnabled = !(initial != null && "airport".Equals(initial.Tag as string, StringComparison.OrdinalIgnoreCase));
+            bool initialAirport = initial != null && "airport".Equals(initial.Tag as string, StringComparison.OrdinalIgnoreCase);
+            speedRow.IsEnabled = !initialAirport;
+            siteRow.IsEnabled = !initialAirport;
             Children.Add(spawnCard);
             Border rapidCard = Card("RAPID FIRE (AUTO REPAIR + REARM)");
             StackPanel rapidStack = rapidCard.Child as StackPanel;
@@ -191,6 +231,18 @@ namespace UniversalTestLab
             updated.SpawnMode = spawn != null && spawn.Tag is string ? (string)spawn.Tag : "air";
             updated.SpawnSpeedAuto = spawnSpeedAuto.IsChecked ?? true;
             updated.SpawnSpeedKmh = (int)Math.Round(spawnSpeedSlider.Value);
+            ComboBoxItem site = spawnSiteBox.SelectedItem as ComboBoxItem;
+            string siteTag = site != null && site.Tag is string ? (string)site.Tag : "standard";
+            int siteAltitude = 1500;
+            if (siteTag == "low") siteAltitude = 300;
+            else if (siteTag == "high") siteAltitude = 3000;
+            else if (siteTag == "custom")
+            {
+                double parsed;
+                if (Double.TryParse((siteCustomBox.Text ?? "").Trim(), NumberStyles.Float, CultureInfo.InvariantCulture, out parsed))
+                    siteAltitude = (int)Math.Max(50, Math.Min(12000, Math.Round(parsed)));
+            }
+            updated.SpawnAltitude = siteAltitude;
             updated.RapidFireEnabled = rapidToggle.IsChecked ?? false;
             updated.RapidFireInterval = rapidIntervalSlider.Value;
             updated.RapidFireFullRestore = rapidFullBox.IsChecked ?? true;
@@ -206,6 +258,10 @@ namespace UniversalTestLab
         private readonly CheckBox rearmOverrideBox;
         private readonly ComboBox ammoMode;
         private readonly ComboBox spawnMode;
+        private readonly ComboBox spawnSiteBox;
+        private readonly StackPanel siteRow;
+        private readonly StackPanel siteCustomRow;
+        private readonly TextBox siteCustomBox;
         private readonly Slider spawnSpeedSlider;
         private readonly CheckBox spawnSpeedAuto;
         private readonly TextBox spawnSpeedBox;
@@ -255,6 +311,39 @@ namespace UniversalTestLab
             spawnMode.Items.Add(new ComboBoxItem { Content = ModernText.L("Airport takeoff (stationary)", "机场起飞（静止）"), Tag = "airport" });
             spawnMode.SelectedIndex = (original.SpawnMode ?? "air").Equals("airport", StringComparison.OrdinalIgnoreCase) ? 1 : 0;
             spawnStack.Children.Add(spawnMode);
+            // Air-spawn site: starting altitude above map zero for "Air spawn (with
+            // speed)". Airport takeoff always begins on the runway, and ground or
+            // helicopter missions keep their own fixed positions - so this row only
+            // enables while an air spawn is selected.
+            siteRow = new StackPanel { Margin = new Thickness(0, 8, 0, 0) };
+            spawnSiteBox = new ComboBox { Foreground = ModernPalette.Brush(ModernPalette.Text), Background = ModernPalette.Brush("#FF16283E"), BorderBrush = ModernPalette.Brush(ModernPalette.Border), Padding = new Thickness(8, 4, 8, 4), HorizontalAlignment = HorizontalAlignment.Left, MinWidth = 260 };
+            spawnSiteBox.Items.Add(new ComboBoxItem { Content = ModernText.L("Standard 1500 m", "标准 1500 米"), Tag = "standard" });
+            spawnSiteBox.Items.Add(new ComboBoxItem { Content = ModernText.L("Low 300 m", "低空 300 米"), Tag = "low" });
+            spawnSiteBox.Items.Add(new ComboBoxItem { Content = ModernText.L("High 3000 m", "高空 3000 米"), Tag = "high" });
+            spawnSiteBox.Items.Add(new ComboBoxItem { Content = ModernText.L("Custom…", "自定义…"), Tag = "custom" });
+            int siteIndex = original.SpawnAltitude == 300 ? 1 : original.SpawnAltitude == 3000 ? 2 : original.SpawnAltitude != 1500 ? 3 : 0;
+            spawnSiteBox.SelectedIndex = siteIndex;
+            siteRow.Children.Add(spawnSiteBox);
+            siteCustomRow = new StackPanel { Margin = new Thickness(0, 8, 0, 0), Visibility = siteIndex == 3 ? Visibility.Visible : Visibility.Collapsed };
+            Grid siteCustomGrid = new Grid();
+            siteCustomGrid.ColumnDefinitions.Add(new ColumnDefinition());
+            siteCustomGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(120) });
+            siteCustomBox = ModernNumericBox.Create();
+            siteCustomBox.Text = original.SpawnAltitude.ToString(CultureInfo.InvariantCulture);
+            TextBlock siteCustomSuffix = new TextBlock { Text = "m", Foreground = ModernPalette.Brush(ModernPalette.Cyan), FontSize = 15, FontWeight = FontWeights.SemiBold, VerticalAlignment = VerticalAlignment.Center };
+            siteCustomGrid.Children.Add(siteCustomBox);
+            Grid.SetColumn(siteCustomSuffix, 1);
+            siteCustomGrid.Children.Add(siteCustomSuffix);
+            siteCustomRow.Children.Add(siteCustomGrid);
+            siteRow.Children.Add(siteCustomRow);
+            siteRow.Children.Add(new TextBlock { Text = ModernText.L("Air spawn only: altitude above map zero. After death you still return to the runway.", "仅空中出生模式:开局海拔（米）。死后仍回跑道重生。"), Foreground = ModernPalette.Brush(ModernPalette.Muted), TextWrapping = TextWrapping.Wrap, Margin = new Thickness(0, 8, 0, 0) });
+            spawnStack.Children.Add(siteRow);
+            spawnSiteBox.SelectionChanged += delegate
+            {
+                ComboBoxItem siteItem = spawnSiteBox.SelectedItem as ComboBoxItem;
+                bool customSite = siteItem != null && "custom".Equals(siteItem.Tag as string, StringComparison.OrdinalIgnoreCase);
+                siteCustomRow.Visibility = customSite ? Visibility.Visible : Visibility.Collapsed;
+            };
             speedRow = new StackPanel { Margin = new Thickness(0, 8, 0, 0) };
             Grid speedGrid = new Grid();
             speedGrid.ColumnDefinitions.Add(new ColumnDefinition());
@@ -281,9 +370,12 @@ namespace UniversalTestLab
                 ComboBoxItem item = spawnMode.SelectedItem as ComboBoxItem;
                 bool airport = item != null && "airport".Equals(item.Tag as string, StringComparison.OrdinalIgnoreCase);
                 speedRow.IsEnabled = !airport;
+                siteRow.IsEnabled = !airport;
             };
             ComboBoxItem initial = spawnMode.SelectedItem as ComboBoxItem;
-            speedRow.IsEnabled = !(initial != null && "airport".Equals(initial.Tag as string, StringComparison.OrdinalIgnoreCase));
+            bool initialAirport = initial != null && "airport".Equals(initial.Tag as string, StringComparison.OrdinalIgnoreCase);
+            speedRow.IsEnabled = !initialAirport;
+            siteRow.IsEnabled = !initialAirport;
             content.Children.Add(spawnCard);
             Border rapidCard = Card("RAPID FIRE (AUTO REPAIR + REARM)");
             StackPanel rapidStack = rapidCard.Child as StackPanel;
@@ -382,6 +474,18 @@ namespace UniversalTestLab
             updated.SpawnMode = spawn != null && spawn.Tag is string ? (string)spawn.Tag : "air";
             updated.SpawnSpeedAuto = spawnSpeedAuto.IsChecked ?? true;
             updated.SpawnSpeedKmh = (int)Math.Round(spawnSpeedSlider.Value);
+            ComboBoxItem site = spawnSiteBox.SelectedItem as ComboBoxItem;
+            string siteTag = site != null && site.Tag is string ? (string)site.Tag : "standard";
+            int siteAltitude = 1500;
+            if (siteTag == "low") siteAltitude = 300;
+            else if (siteTag == "high") siteAltitude = 3000;
+            else if (siteTag == "custom")
+            {
+                double parsed;
+                if (Double.TryParse((siteCustomBox.Text ?? "").Trim(), NumberStyles.Float, CultureInfo.InvariantCulture, out parsed))
+                    siteAltitude = (int)Math.Max(50, Math.Min(12000, Math.Round(parsed)));
+            }
+            updated.SpawnAltitude = siteAltitude;
             updated.RapidFireEnabled = rapidToggle.IsChecked ?? false;
             updated.RapidFireInterval = rapidIntervalSlider.Value;
             updated.RapidFireFullRestore = rapidFullBox.IsChecked ?? true;

@@ -577,6 +577,11 @@ public string InjectedCannonUnit;
 public bool FakeArhConversion;
         public bool SpawnSpeedAuto = true;
         public int SpawnSpeedKmh = 450;
+        // Air-spawn site: metres above map zero where "Air spawn (with speed)"
+        // starts. 1500 = the stock template altitude; 300/3000 are low/high
+        // presets and any other value is a custom site. Airport takeoff, ground
+        // and helicopter missions ignore this (they keep their own positions).
+        public int SpawnAltitude = 1500;
 
         public static MissionSettings Current = new MissionSettings();
 
@@ -600,6 +605,7 @@ public bool FakeArhConversion;
                 SpawnMode = SpawnMode,
                 SpawnSpeedAuto = SpawnSpeedAuto,
                 SpawnSpeedKmh = SpawnSpeedKmh,
+                SpawnAltitude = SpawnAltitude,
                 InjectedCannonBlk = InjectedCannonBlk,
                 InjectedCannonDomain = InjectedCannonDomain,
                 InjectedCannonUnit = InjectedCannonUnit,
@@ -622,6 +628,7 @@ public bool FakeArhConversion;
                 mo.Add("spawn_mode", String.IsNullOrWhiteSpace(SpawnMode) ? "air" : SpawnMode);
                 mo.Add("spawn_speed_auto", SpawnSpeedAuto);
                 mo.Add("spawn_speed_kmh", SpawnSpeedKmh);
+                mo.Add("spawn_altitude", SpawnAltitude);
                 if (!String.IsNullOrWhiteSpace(InjectedCannonBlk)) mo.Add("inject_cannon_blk", InjectedCannonBlk);
                 if (!String.IsNullOrWhiteSpace(InjectedCannonDomain)) mo.Add("inject_cannon_domain", InjectedCannonDomain);
                 if (!String.IsNullOrWhiteSpace(InjectedCannonUnit)) mo.Add("inject_cannon_unit", InjectedCannonUnit);
@@ -651,6 +658,7 @@ public bool FakeArhConversion;
                 if (mo.TryGetValue("spawn_mode", out v) && v != null) { string s = Convert.ToString(v, CultureInfo.InvariantCulture); if (!String.IsNullOrWhiteSpace(s)) Current.SpawnMode = s; }
                 if (mo.TryGetValue("spawn_speed_auto", out v) && v != null) Current.SpawnSpeedAuto = Convert.ToBoolean(v, CultureInfo.InvariantCulture);
                 if (mo.TryGetValue("spawn_speed_kmh", out v) && v != null) { int kmh; if (Int32.TryParse(Convert.ToString(v, CultureInfo.InvariantCulture), NumberStyles.Integer, CultureInfo.InvariantCulture, out kmh)) Current.SpawnSpeedKmh = Math.Max(0, Math.Min(1100, kmh)); }
+                if (mo.TryGetValue("spawn_altitude", out v) && v != null) { int alt; if (Int32.TryParse(Convert.ToString(v, CultureInfo.InvariantCulture), NumberStyles.Integer, CultureInfo.InvariantCulture, out alt)) Current.SpawnAltitude = Math.Max(50, Math.Min(12000, alt)); }
                 if (mo.TryGetValue("inject_cannon_blk", out v) && v != null) Current.InjectedCannonBlk = Convert.ToString(v, CultureInfo.InvariantCulture);
                 if (mo.TryGetValue("inject_cannon_domain", out v) && v != null) Current.InjectedCannonDomain = Convert.ToString(v, CultureInfo.InvariantCulture);
                 if (mo.TryGetValue("inject_cannon_unit", out v) && v != null) Current.InjectedCannonUnit = Convert.ToString(v, CultureInfo.InvariantCulture);
