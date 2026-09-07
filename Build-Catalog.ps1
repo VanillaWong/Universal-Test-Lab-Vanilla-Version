@@ -1036,18 +1036,32 @@ function Build-TargetCatalog([string]$directory, [string]$presetPathNeedle, [str
     $mainCannon = ''
     $maxAmmo = 0; $nativeReload = 0; $nativeRecoil = 0
     if ($includeGroundDetails) {
+      # Main weapon: prefer a non-dummy gunner0 Weapon; fall back to the first
+      # non-dummy Weapon of any trigger (missile launchers keep their real mount
+      # on gunner1+ while a dummy camera may occupy gunner0). Radar/command
+      # vehicles without a real weapon keep an empty main weapon and 0 ammo.
+      $best = $null
       foreach ($weapon in (Get-NamedBlocks $text 'Weapon')) {
-        if ($weapon.Text -notmatch '(?m)^\s*trigger:t\s*=\s*"gunner0"') { continue }
         $blkMatch = [regex]::Match($weapon.Text, '(?m)^\s*blk:t\s*=\s*"([^"]+)"')
+        if (-not $blkMatch.Success) { continue }
+        $blkPath = $blkMatch.Groups[1].Value
+        $isDummy = ($blkPath -match '(?i)dummy') -or ($weapon.Text -match '(?m)^\s*dummy:b\s*=\s*(?:yes|true)')
+        if ($isDummy) { continue }
+        $trMatch = [regex]::Match($weapon.Text, '(?m)^\s*trigger:t\s*=\s*"([^"]+)"')
+        $tr = if ($trMatch.Success) { $trMatch.Groups[1].Value } else { '' }
+        if ($null -eq $best) { $best = $weapon }
+        if ($tr -eq 'gunner0') { $best = $weapon; break }
+      }
+      if ($null -ne $best) {
+        $blkMatch = [regex]::Match($best.Text, '(?m)^\s*blk:t\s*=\s*"([^"]+)"')
         if ($blkMatch.Success) {
           $mainCannon = $blkMatch.Groups[1].Value
-          $ammoMatch = [regex]::Match($weapon.Text, '(?m)^\s*bullets:i\s*=\s*(\d+)')
-          $freqMatch = [regex]::Match($weapon.Text, '(?m)^\s*shotFreq:r\s*=\s*([0-9.eE+-]+)')
-          $recoilMatch = [regex]::Match($weapon.Text, '(?m)^\s*recoilOffset:r\s*=\s*([0-9.eE+-]+)')
+          $ammoMatch = [regex]::Match($best.Text, '(?m)^\s*bullets:i\s*=\s*(\d+)')
+          $freqMatch = [regex]::Match($best.Text, '(?m)^\s*shotFreq:r\s*=\s*([0-9.eE+-]+)')
+          $recoilMatch = [regex]::Match($best.Text, '(?m)^\s*recoilOffset:r\s*=\s*([0-9.eE+-]+)')
           if ($ammoMatch.Success) { $maxAmmo = [int]$ammoMatch.Groups[1].Value }
           if ($freqMatch.Success -and [double]$freqMatch.Groups[1].Value -gt 0) { $nativeReload = 1.0 / [double]$freqMatch.Groups[1].Value }
           if ($recoilMatch.Success) { $nativeRecoil = [double]$recoilMatch.Groups[1].Value }
-          break
         }
       }
       Add-GroundModifications $id $text
@@ -1077,6 +1091,18 @@ Write-Output "[catalog] $(Get-Date -Format HH:mm:ss) writing output files"
 [IO.File]::WriteAllLines((Join-Path $OutputRoot 'donor_weapons.tsv'), $donorRows, [Text.UTF8Encoding]::new($false))
 [IO.File]::WriteAllLines((Join-Path $OutputRoot 'aircraft_slots.tsv'), $aircraftSlotRows, [Text.UTF8Encoding]::new($false))
 [IO.File]::WriteAllLines((Join-Path $OutputRoot 'weapon_catalog.tsv'), ($weaponCatalogRows | Sort-Object { ($_ -split "`t")[5] }, { [double](($_ -split "`t")[7]) }, { ($_ -split "`t")[4] }), [Text.UTF8Encoding]::new($false))
+
+# Extra ground-SAM air-inject entries (utl-sam mechanism). A full rebuild
+# regenerates weapon_catalog.tsv from scratch, so these hand-maintained rows
+# are re-appended here after every run.
+$groundSamRows = @(
+"aam`tutl-sam:gamedata/weapons/groundmodels_weapons/400mm_buk_9m38_rocket_launcher.blk#400mm_9m38m1`t1`tmissile_type_b_air_to_air`t9M38 (AI Buk SAM)`tGround SAM Missiles`t690`t690`tUSSR",
+"aam`tutl-sam:gamedata/weapons/groundmodels_weapons/410mm_patriot_mim_104_rocket_launcher.blk#410mm_mim104b`t1`tmissile_type_b_air_to_air`tMIM-104B (Patriot SAM)`tGround SAM Missiles`t900`t900`tUSA",
+"aam`tutl-sam:gamedata/weapons/groundmodels_weapons/508mm_s300ps_5v55_rocket_launcher.blk#508mm_5v55r`t1`tmissile_type_b_air_to_air`t5V55R (S-300 SAM)`tGround SAM Missiles`t1664`t1664`tUSSR",
+"aam`tutl-sam:gamedata/weapons/groundmodels_weapons/370mm_i_hawk_rocket_launcher.blk#us_mim_23b`t1`tmissile_type_b_air_to_air`tMIM-23B (Hawk SAM)`tGround SAM Missiles`t625`t625`tUSA",
+"aam`tutl-sam:gamedata/weapons/groundmodels_weapons/654mm_s_75_v_755_20ds_rocket_launcher.blk#V_759`t1`tmissile_type_b_air_to_air`tV-759 (S-75 SAM)`tGround SAM Missiles`t2397.9`t2397.9`tUSSR"
+)
+[IO.File]::AppendAllText((Join-Path $OutputRoot 'weapon_catalog.tsv'), (($groundSamRows -join "`n") + "`n"), [Text.UTF8Encoding]::new($false))
 
 # Naval cannons (for cross-domain cannon injection into ground vehicles)
 $navalCannonRows = New-Object System.Collections.Generic.List[string]

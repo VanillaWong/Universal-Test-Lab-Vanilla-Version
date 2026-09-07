@@ -950,6 +950,81 @@ namespace UniversalTestLab
             return result;
         }
 
+        // Deployable carrier vehicles (NASAMS TADS, CLAWS and similar radar/launcher
+        // trucks) carry their missiles as named weapon groups on the unit (e.g.
+        // 127mm_aim_9x_aam / 178mm_aim_120c_aam / 254mm_amraam_er_aam plus an
+        // *_ammo_pack group). A regular shell loadout makes no sense there: Ask3lad's
+        // working mission writes all non-pack groups with 9999 rounds, which arms the
+        // deployed launcher trucks (6 rounds each for NASAMS) and lets the player pick
+        // the group in-game. This only fires when the player block actually carries an
+        // *_ammo_pack modification, so normal tanks are untouched.
+        public static string InjectCarrierGroupAmmo(string text)
+        {
+            BlockSpan you = UnitBlockByName(text, "You");
+            if (you == null) return text;
+            string block = you.Text;
+            bool carrier = Regex.IsMatch(block, @"(?m)^\s*modification:t\s*=\s*""[^""]*_ammo_pack""\s*$");
+            if (!carrier) return text;
+            List<string> groups = new List<string>();
+            foreach (Match match in Regex.Matches(block, @"(?m)^\s*modification:t\s*=\s*""([^""]+)""\s*$"))
+            {
+                string name = match.Groups[1].Value;
+                if (!Regex.IsMatch(name, @"^\d+mm_") || name.EndsWith("_ammo_pack", StringComparison.OrdinalIgnoreCase)) continue;
+                if (!groups.Contains(name)) groups.Add(name);
+            }
+            if (groups.Count == 0) return text;
+            // Respect a group the ammunition UI already picked (it was written as
+            // bulletsN earlier by ConfigureGroundPlayer) - that group must be the
+            // loaded one. Otherwise prefer the platform main missiles (aim_120 /
+            // amraam) over the AIM-9X fallback instead of the alphabetical order
+            // which used to put the 9X first.
+            string preferred = null;
+            foreach (Match match in Regex.Matches(block, @"(?m)^\s*bullets\d+:t\s*=\s*""([^""]+)""\s*$"))
+            {
+                if (groups.Contains(match.Groups[1].Value)) { preferred = match.Groups[1].Value; break; }
+            }
+            groups.Sort(StringComparer.OrdinalIgnoreCase);
+            if (preferred != null)
+            {
+                groups.Remove(preferred);
+                groups.Insert(0, preferred);
+            }
+            else
+            {
+                List<string> main = groups.Where(g => g.Contains("aim_120") || g.Contains("amraam")).ToList();
+                List<string> nineX = groups.Where(g => g.Contains("aim_9x")).ToList();
+                List<string> other = groups.Where(g => !main.Contains(g) && !nineX.Contains(g)).ToList();
+                groups = new List<string>();
+                groups.AddRange(main);
+                groups.AddRange(other);
+                groups.AddRange(nineX);
+            }
+            if (groups.Count > 4) groups = groups.GetRange(0, 4);
+            string[] lines = block.Replace("\r\n", "\n").Split('\n');
+            StringBuilder rebuilt = new StringBuilder();
+            bool inserted = false;
+            for (int i = 0; i < lines.Length; i++)
+            {
+                string line = lines[i];
+                if (Regex.IsMatch(line, @"^\s*bullets\d+:t\s*=") || Regex.IsMatch(line, @"^\s*bulletsCount\d+:i\s*="))
+                    continue;
+                if (!inserted && Regex.IsMatch(line, @"^\s*crewSkillK:r\s*="))
+                {
+                    for (int s = 0; s < 4; s++)
+                    {
+                        string group = s < groups.Count ? groups[s] : "";
+                        rebuilt.AppendLine("    bullets" + s.ToString(CultureInfo.InvariantCulture) + ":t=\"" + group + "\"");
+                    }
+                    for (int s = 0; s < 4; s++)
+                        rebuilt.AppendLine("    bulletsCount" + s.ToString(CultureInfo.InvariantCulture) + ":i=" + (s < groups.Count ? "9999" : "0"));
+                    inserted = true;
+                }
+                rebuilt.AppendLine(line);
+            }
+            if (!inserted) return text;
+            return ReplaceSpan(text, you, rebuilt.ToString().TrimEnd());
+        }
+
         public static List<BlockSpan> DirectChildBlocks(string containerText)
         {
             List<BlockSpan> result = new List<BlockSpan>();

@@ -118,7 +118,7 @@ namespace UniversalTestLab
             currentSettings = current;
             original = (current ?? new AircraftSettings()).Copy();
             catalog = (ammo ?? Enumerable.Empty<GroundAmmo>()).ToList();
-            this.groundVehicles = (groundVehicles ?? Enumerable.Empty<TargetUnit>()).Where(v => !String.IsNullOrWhiteSpace(v.MainWeaponBlk)).ToList();
+            this.groundVehicles = (groundVehicles ?? Enumerable.Empty<TargetUnit>()).ToList();
             this.unitWeapons = (unitWeapons ?? Enumerable.Empty<UnitWeapon>()).ToList();
             this.groundWeapons = (groundWeapons ?? Enumerable.Empty<GroundWeaponInfo>()).ToList();
             this.injectedCannonAmmo = (injectedCannonAmmo ?? Enumerable.Empty<GroundAmmo>()).ToList();
@@ -1166,7 +1166,7 @@ namespace UniversalTestLab
             // Fall back to the globally remembered cannon injection so the last
             // domain/unit/weapon choice is reused across vehicles and sessions.
             catalog = (ammo ?? Enumerable.Empty<GroundAmmo>()).ToList();
-            this.groundVehicles = (groundVehicles ?? Enumerable.Empty<TargetUnit>()).Where(v => !String.IsNullOrWhiteSpace(v.MainWeaponBlk)).ToList();
+            this.groundVehicles = (groundVehicles ?? Enumerable.Empty<TargetUnit>()).ToList();
             this.unitWeapons = (unitWeapons ?? Enumerable.Empty<UnitWeapon>()).ToList();
             this.groundWeapons = (groundWeapons ?? Enumerable.Empty<GroundWeaponInfo>()).ToList();
             this.injectedCannonAmmo = (injectedCannonAmmo ?? Enumerable.Empty<GroundAmmo>()).ToList();

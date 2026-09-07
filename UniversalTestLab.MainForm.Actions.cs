@@ -71,6 +71,11 @@ namespace UniversalTestLab
                 // vehicles, however, must receive their requested research state too;
                 // skipping this call forced every player tank to a stock configuration.
                 text = BlkTools.ConfigureUnitModifications(text, "You", helicopterPlayer || settings.UseAllModifications, helicopterPlayer ? Enumerable.Empty<string>() : settings.EnabledModifications);
+                // Deployable radar/launcher trucks (NASAMS TADS, CLAWS, ...) carry
+                // missile weapon groups instead of a cannon; arm them Ask3lad-style
+                // (all non-pack groups, 9999 rounds) so deployed launchers have ammo.
+                if (groundPlayer)
+                    text = BlkTools.InjectCarrierGroupAmmo(text);
                 if (combinedMap != null && combinedSpawn != null)
                 {
                     text = BlkTools.ConfigureCombinedScenario(text, combinedMap, combinedSpawn);

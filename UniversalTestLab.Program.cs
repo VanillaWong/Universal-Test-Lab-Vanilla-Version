@@ -490,6 +490,24 @@ namespace UniversalTestLab
                     airRunwayMission.IndexOf("UTL Player Respawn Compatible", StringComparison.Ordinal) < 0 ||
                     airRunwayMission.IndexOf("UTL Attempts Boost", StringComparison.Ordinal) >= 0)
                     throw new InvalidOperationException("Air after-death respawn mode self-test failed.");
+                // Deployable carrier ammo (NASAMS-style): a player block carrying an
+                // *_ammo_pack modification gets all non-pack \d+mm_ weapon groups with
+                // 9999 rounds; ordinary tanks (no pack) are left untouched.
+                string carrierBlock = "  tankModels{\n    name:t=\"You\"\n    modification:t=\"tank_tool_kit\"\n    modification:t=\"127mm_aim_9x_aam\"\n    modification:t=\"178mm_aim_120c_aam\"\n    modification:t=\"254mm_amraam_er_aam\"\n    modification:t=\"254mm_amraam_er_aam_ammo_pack\"\n    bullets0:t=\"254mm_amraam_er_aam\"\n    bulletsCount0:i=1\n    crewSkillK:r=1\n  }\n";
+                string carrierMission = BlkTools.InjectCarrierGroupAmmo(carrierBlock);
+                string carrierNoPref = BlkTools.InjectCarrierGroupAmmo(carrierBlock.Replace("bullets0:t=\"254mm_amraam_er_aam\"\n    bulletsCount0:i=1", "bullets0:t=\"\"\n    bulletsCount0:i=0"));
+                string plainTankBlock = "  tankModels{\n    name:t=\"You\"\n    modification:t=\"tank_tool_kit\"\n    bullets0:t=\"120mm_us_M829A3_APDSFS\"\n    bulletsCount0:i=30\n    crewSkillK:r=1\n  }\n";
+                string plainTankAfter = BlkTools.InjectCarrierGroupAmmo(plainTankBlock);
+                // A group the ammunition UI picked stays the loaded one; without a pick
+                // the AIM-120/AMRAAM group leads; plain tanks are untouched.
+                if (carrierMission.IndexOf("bullets0:t=\"254mm_amraam_er_aam\"", StringComparison.Ordinal) < 0 ||
+                    carrierMission.IndexOf("bulletsCount0:i=9999", StringComparison.Ordinal) < 0 ||
+                    carrierMission.IndexOf("bulletsCount0:i=1", StringComparison.Ordinal) >= 0 ||
+                    carrierNoPref.IndexOf("bullets0:t=\"178mm_aim_120c_aam\"", StringComparison.Ordinal) < 0 ||
+                    carrierNoPref.IndexOf("bulletsCount2:i=9999", StringComparison.Ordinal) < 0 ||
+                    plainTankAfter.IndexOf("120mm_us_M829A3_APDSFS", StringComparison.Ordinal) < 0 ||
+                    plainTankAfter.IndexOf("bulletsCount0:i=30", StringComparison.Ordinal) < 0)
+                    throw new InvalidOperationException("Deployable carrier ammunition self-test failed.");
                 AircraftSettings moduleEffectsSettings = new AircraftSettings();
                 StringBuilder moduleEffectsProxy = new StringBuilder("include \"native.blk\"\r\n");
                 string moduleEffectsNative = "modifications {\r\n  laser_rangefinder_lws {\r\n    effects {\r\n      rangefinderMounted:b=true\r\n      isLaser:b=true\r\n      sensors { sensor { blk:t=\"laser.blk\" } }\r\n    }\r\n  }\r\n}\r\n";
