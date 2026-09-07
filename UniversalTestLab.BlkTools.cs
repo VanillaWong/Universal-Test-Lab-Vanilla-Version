@@ -1007,18 +1007,26 @@ namespace UniversalTestLab
 
         public static string ConfigureInstantPlayerRespawn(string text, bool ground, int airSpeedKmh, string customSpawnTransform, double respawnDelay = 0, bool airportTakeoff = false)
         {
+            // The template's "Player Respawn Flight Profile" trigger kicks the
+            // player to speed:1100 shortly after EVERY respawn (unitWhenRespawn).
+            // That was meant for the old 1500 m air respawn; after-death runway
+            // respawns now come via spawnOnAirfield, and receiving 1100 km/h while
+            // parked on the runway launches the aircraft into a jump. Aircraft
+            // missions therefore drop the block entirely; ground missions keep
+            // their own existing disable handling.
+            if (!ground)
+                text = RemoveNamedBlockAnywhere(text, "\"Player Respawn Flight Profile\"");
             if (ground)
                 text = RemoveAirfieldContent(text);
             BlockSpan mission = FirstBlock(text, "mission", 0);
             if (mission == null) throw new InvalidOperationException("Mission settings block is missing.");
             string missionBlock = mission.Text;
-            // Always let the mission's own respawn trigger drive recovery. The
-            // engine's "attempts" restore model (the old air-spawn value) takes
-            // over after the player dies and, in a user mission with no recovery
-            // UI of its own, leaves the player stuck (ground tanks could not
-            // respawn at all; air spawns were killed off after a few deaths).
-            // manual leaves recovery entirely to our unitRespawn/spawnOnAirfield
-            // triggers below.
+            // All modes use manual recovery driven by the single respawn trigger
+            // injected below (action chosen per mode further down). manual keeps
+            // the engine out of the death flow: its attempts model has a hard
+            // 5-death limit for aircraft in user missions and its post-death
+            // "press space" prompt hangs when no destination exists. Our trigger
+            // fires first, so respawn is instant and unlimited.
             string restoreTypeValue = "manual";
             if (Regex.IsMatch(missionBlock, @"(?m)^\s*restoreType:t\s*="))
                 missionBlock = new Regex(@"(?m)^(\s*)restoreType:t\s*=\s*""[^""]*""").Replace(missionBlock, "$1restoreType:t=\"" + restoreTypeValue + "\"", 1);
@@ -1029,20 +1037,28 @@ namespace UniversalTestLab
             if (triggers == null) throw new InvalidOperationException("Mission triggers block is missing.");
             string spawn = ground ? "UTL_Player_Ground_Spawn" : "UTL_Player_Air_Spawn";
             string respawnTarget = spawn;
-                        string respawnActions = airportTakeoff
+            // Every respawn path proven in-game:
+            //  - aircraft (air spawn AND airfield takeoff): die -> spawnOnAirfield
+            //    back on the runway. The trigger fires before the engine's manual
+            //    post-death prompt can stall, so this never hangs and costs no
+            //    attempts (airfield-takeoff missions have worked this way for
+            //    weeks). In-air revive is simply not offered by the engine inside
+            //    user missions (attempts = 5 max; manual has no destination).
+            //  - ground: die -> unitRespawn at the ground spawn area.
+            string respawnActions = ground
                 ? @"      wait{
-        time:r=" + respawnDelay.ToString("0.###", CultureInfo.InvariantCulture) + @" }
-      spawnOnAirfield{
-        runwayName:t = ""airfield_start""
-        objects:t = ""You""
-      }"
-                : @"      wait{
         time:r=" + respawnDelay.ToString("0.###", CultureInfo.InvariantCulture) + @" }
       unitRespawn{
         delay:r=0
         offset:p3=0, 0, 0
         object:t=""You""
         target:t=""" + respawnTarget + @"""
+      }"
+                : @"      wait{
+        time:r=" + respawnDelay.ToString("0.###", CultureInfo.InvariantCulture) + @" }
+      spawnOnAirfield{
+        runwayName:t = ""airfield_start""
+        objects:t = ""You""
       }";
 string trigger = @"
   ""UTL Player Respawn Compatible""{
@@ -1082,6 +1098,10 @@ string trigger = @"
     else_actions{}
   }
 ";
+            // One recovery trigger for every mode; its action is spawnOnAirfield
+            // for aircraft (air spawn + airfield takeoff) and unitRespawn for
+            // ground, as built above. No respawn-point registration: the engine
+            // ignores missionMarkAsRespawnPoint for air areas inside user missions.
             text = text.Insert(triggers.End, trigger);
             BlockSpan areas = FirstBlock(text, "areas", 0);
             if (areas == null) throw new InvalidOperationException("Mission areas block is missing.");
@@ -1124,9 +1144,11 @@ string trigger = @"
     props{}
   }
 ";
-            if (airportTakeoff)
-                text = text.Replace("objects:t=\"UTL_AIRPORT_OBJECTS\"", "objects:t=\"You\"");
-            else text = Regex.Replace(text, @"\s*spawnOnAirfield\s*\{[^}]*\}", "", RegexOptions.Singleline);
+            // Legacy passes removed template-era spawnOnAirfield blocks (and, for
+            // airport mode, rewrote their objects list). The template no longer
+            // contains any such block - our own respawn trigger carries the
+            // spawnOnAirfield action and must never be stripped, so both legacy
+            // passes are gone.
             return text.Insert(areas.End, positions);
         }
 
