@@ -89,12 +89,27 @@ namespace UniversalTestLab
                 // engine reports ammunition exhausted. A player loadout that belongs to
                 // the donor gun wins; otherwise the gun fires its own first container
                 // (stock behaviour: whatever the donor carries, in file order).
-                if (groundPlayer && !String.IsNullOrWhiteSpace(settings.InjectedCannonBlk))
+                if (groundPlayer && (!String.IsNullOrWhiteSpace(settings.InjectedCannonBlk) || (settings.CannonSwaps != null && settings.CannonSwaps.Count > 0)))
                 {
                     try
                     {
-                        string cannonPath = settings.InjectedCannonBlk.Replace('\\', '/');
-                        string donorSource = File.ReadAllText(ExtractGameBlk(root, cannonPath), Encoding.UTF8);
+                        string cannonPath = settings.InjectedCannonBlk ?? "";
+                        string donorSource = String.IsNullOrWhiteSpace(cannonPath) ? "" : File.ReadAllText(ExtractGameBlk(root, cannonPath.Replace('\\', '/')), Encoding.UTF8);
+                        // Extra slot swaps contribute their own containers and bullets,
+                        // so merge every mapped donor weapon before resolving the slots.
+                        if (settings.CannonSwaps != null)
+                        {
+                            foreach (CannonSwap extraSwap in settings.CannonSwaps)
+                            {
+                                if (extraSwap == null || String.IsNullOrWhiteSpace(extraSwap.WeaponBlk)) continue;
+                                try
+                                {
+                                    string extraText = File.ReadAllText(ExtractGameBlk(root, extraSwap.WeaponBlk.Replace('\\', '/').TrimStart('/')), Encoding.UTF8);
+                                    if (!String.IsNullOrWhiteSpace(extraText)) donorSource = donorSource + "\n" + extraText;
+                                }
+                                catch { }
+                            }
+                        }
                         List<string> containers = BlkTools.CollectCannonContainers(donorSource);
                         // The workbench loadout is authoritative: every configured slot
                         // maps to the donor container it names (AmmoGroup directly, else

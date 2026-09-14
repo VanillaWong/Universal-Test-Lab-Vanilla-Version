@@ -53,6 +53,20 @@ namespace UniversalTestLab
             return tier + Display + "   [" + Id + "]";
         }
     }
+    // One extra weapon slot swapped onto the host: host trigger + donor weapon blk.
+    internal sealed class CannonSwap
+    {
+        public string HostSlot;
+        public string WeaponBlk;
+        public string Round;
+        public int Rounds;
+
+        public CannonSwap Copy()
+        {
+            return new CannonSwap { HostSlot = HostSlot, WeaponBlk = WeaponBlk, Round = Round, Rounds = Rounds };
+        }
+    }
+
     internal sealed class AircraftSettings
     {
         public bool UseAllModifications = true;
@@ -89,6 +103,12 @@ namespace UniversalTestLab
         public string RadarTrackBlk;    // sensor blk to install as the player track radar (e.g. su_snr_75)
         public bool RadarStripAiSensors; // remove the AI-only *_ai sensor pair from the proxy
         public string InjectedCannonUnit;
+        // Host weapon slot (trigger, e.g. "gunner1") the swapped-in weapon replaces.
+        // Empty = the classic behaviour (primary mount, dummy slots included).
+        public string InjectedCannonHostSlot;
+        // Additional per-slot swaps: each entry replaces one more host weapon slot
+        // with a donor weapon (main gun + machine gun + ... in one go).
+        public List<CannonSwap> CannonSwaps = new List<CannonSwap>();
 
         public AircraftSettings Copy()
         {
@@ -121,6 +141,7 @@ namespace UniversalTestLab
                 InjectedCannonRound = InjectedCannonRound,
                 InjectNativeLauncher = InjectNativeLauncher,
                 InjectedCannonRounds = InjectedCannonRounds,
+                InjectedCannonHostSlot = InjectedCannonHostSlot,
                 UnlimitedAmmo = UnlimitedAmmo,
                 FakeArhConversion = FakeArhConversion,
                 RadarSearchBlk = RadarSearchBlk,
@@ -131,6 +152,7 @@ namespace UniversalTestLab
             foreach (CountermeasureLoadout loadout in CountermeasureLoadouts) copy.CountermeasureLoadouts.Add(loadout.Copy());
             foreach (KeyValuePair<int, string> belt in GunBeltSelections) copy.GunBeltSelections[belt.Key] = belt.Value;
             foreach (GroundAmmoLoadout loadout in GroundAmmoLoadouts) copy.GroundAmmoLoadouts.Add(loadout.Copy());
+            foreach (CannonSwap swap in CannonSwaps) copy.CannonSwaps.Add(swap.Copy());
             return copy;
         }
     }

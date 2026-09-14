@@ -484,7 +484,8 @@ namespace UniversalTestLab
             // proxy's native gun BLK so the game resolves the ammo slots against the
             // vehicle's real cannons (putting foreign rounds like ATGMs into a custom
             // BLK makes the main gun fire them uncontrollably).
-            bool customCannonNeeded = !String.IsNullOrWhiteSpace(settings.InjectedCannonBlk) || settings.OverrideGroundBallistics;
+            bool hasExtraSwaps = settings.CannonSwaps != null && settings.CannonSwaps.Count > 0;
+            bool customCannonNeeded = !String.IsNullOrWhiteSpace(settings.InjectedCannonBlk) || settings.OverrideGroundBallistics || hasExtraSwaps;
             bool hasEditableCannon = !String.IsNullOrWhiteSpace(target.MainWeaponBlk);
             string nativeCannonPath = hasEditableCannon ? target.MainWeaponBlk.Replace('\\', '/').TrimStart('/') : "";
             // Cross-vehicle cannon injection (Ask3lad-style): swap the entire gun
@@ -759,6 +760,31 @@ string cannon = ((customCannonNeeded || moduleShipsWeapons) && hasEditableCannon
             List<string> donorCannonContainers = null;
             if (useCustomCannon && cannon != null)
                 donorCannonContainers = BlkTools.CollectCannonContainers(cannon);
+            // Extra host-slot swaps (main gun + machine gun + ... at once): every
+            // mapped donor weapon gets its own copy of its cannon file, and its
+            // ammunition containers join the proxy ammo packs like the main gun's.
+            List<CannonSwap> extraSwaps = new List<CannonSwap>();
+            List<string> extraSwapTexts = new List<string>();
+            List<string> extraSwapPaths = new List<string>();
+            if (useCustomCannon && settings.CannonSwaps != null && settings.CannonSwaps.Count > 0)
+            {
+                foreach (CannonSwap swap in settings.CannonSwaps)
+                {
+                    if (swap == null || String.IsNullOrWhiteSpace(swap.HostSlot) || String.IsNullOrWhiteSpace(swap.WeaponBlk)) continue;
+                    string extraPath = NormalizeGameResourcePath(swap.WeaponBlk);
+                    if (String.IsNullOrWhiteSpace(extraPath)) continue;
+                    string extraText = null;
+                    try { extraText = File.ReadAllText(ExtractGameBlk(root, extraPath), Encoding.UTF8); } catch { }
+                    if (String.IsNullOrWhiteSpace(extraText)) continue;
+                    extraSwaps.Add(swap);
+                    extraSwapTexts.Add(extraText);
+                    extraSwapPaths.Add("gameData/Weapons/groundModels_weapons/utl_ground/utl_ground_cannon_slot" + (extraSwaps.Count).ToString(CultureInfo.InvariantCulture) + ".blk");
+                    if (donorCannonContainers == null) donorCannonContainers = new List<string>();
+                    foreach (string extraContainer in BlkTools.CollectCannonContainers(extraText))
+                        if (!donorCannonContainers.Contains(extraContainer, StringComparer.OrdinalIgnoreCase))
+                            donorCannonContainers.Add(extraContainer);
+                }
+            }
             if (useCustomCannon && settings.ReloadSeconds > 0)
                 cannon = SetOrInsertNumber(cannon, "shotFreq", 1.0 / settings.ReloadSeconds);
 
@@ -887,12 +913,21 @@ string cannon = ((customCannonNeeded || moduleShipsWeapons) && hasEditableCannon
                 // slot: many vehicles only expose a dummy weapon on gunner0 (missile
                 // carriers, some SPGs), and users want the swapped-in gun to fill that
                 // empty slot instead of hijacking an unrelated machine gun mount.
-                BlockSpan mainWeapon = weapons.FirstOrDefault(x => String.Equals(BlkTools.Field(x.Text, "trigger", "t"), "gunner0", StringComparison.OrdinalIgnoreCase))
-                    ?? weapons.FirstOrDefault(x => !IsDummyWeapon(x))
-                    ?? weapons.FirstOrDefault();
+                BlockSpan mainWeapon = null;
+                // An explicitly chosen host slot wins: the user can swap any weapon of
+                // the host vehicle (main gun, machine gun, empty/dummy slot, ...), and
+                // the selected donor weapon replaces exactly that slot.
+                if (!String.IsNullOrWhiteSpace(settings.InjectedCannonHostSlot))
+                    mainWeapon = weapons.FirstOrDefault(x => String.Equals(BlkTools.Field(x.Text, "trigger", "t"), settings.InjectedCannonHostSlot, StringComparison.OrdinalIgnoreCase));
+                if (mainWeapon == null)
+                    mainWeapon = weapons.FirstOrDefault(x => String.Equals(BlkTools.Field(x.Text, "trigger", "t"), "gunner0", StringComparison.OrdinalIgnoreCase))
+                        ?? weapons.FirstOrDefault(x => !IsDummyWeapon(x))
+                        ?? weapons.FirstOrDefault();
                 if (mainWeapon == null) throw new InvalidOperationException("Primary gun mount was not found in the ground vehicle.");
                 string weaponBlock = mainWeapon.Text;
-                if (customCannonNeeded)
+                // Only the main-gun injection repoints the primary mount; when the user
+                // asked for extra swaps only ("SKIP" host slot) the main weapon stays native.
+                if (customCannonNeeded && !String.IsNullOrWhiteSpace(settings.InjectedCannonBlk))
                     weaponBlock = BlkTools.ReplaceStringField(weaponBlock, "blk", "gameData/Weapons/groundModels_weapons/utl_ground/utl_ground_cannon.blk");
                 // The native gun's ammo rack capacity (bullets:i, e.g. 42) is what the
                 // game actually uses for the carried ammunition; the mission-level
@@ -914,6 +949,22 @@ string cannon = ((customCannonNeeded || moduleShipsWeapons) && hasEditableCannon
                 else weaponBlock = Regex.Replace(weaponBlock, @"(?m)^\s*shotFreq:r\s*=\s*[0-9.]+\s*$", "", RegexOptions.IgnoreCase);
                 if (settings.OverrideGroundBallistics) weaponBlock = ReplaceFirstScaledNumber(weaponBlock, "recoilOffset", settings.RecoilMultiplier);
                 commonOverride = BlkTools.ReplaceSpan(commonOverride, mainWeapon, weaponBlock);
+                // Replace the additional host mounts the user mapped (machine gun,
+                // spare mount, dummy slot, ...). Re-resolve each mount on the current
+                // text so earlier replacements cannot shift later spans.
+                for (int extraIndex = 0; extraIndex < extraSwaps.Count; extraIndex++)
+                {
+                    CannonSwap extraSwap = extraSwaps[extraIndex];
+                    BlockSpan extraHost = BlkTools.Blocks(commonOverride, "Weapon").FirstOrDefault(x => String.Equals(BlkTools.Field(x.Text, "trigger", "t"), extraSwap.HostSlot, StringComparison.OrdinalIgnoreCase));
+                    if (extraHost == null) continue;
+                    string extraBlock = BlkTools.ReplaceStringField(extraHost.Text, "blk", extraSwapPaths[extraIndex]);
+                    Regex extraBullets = new Regex(@"(?m)^(\s*)bullets:i\s*=\s*-?[0-9]+\s*$", RegexOptions.IgnoreCase);
+                    if (extraBullets.IsMatch(extraBlock))
+                        extraBlock = extraBullets.Replace(extraBlock, delegate(Match match) { return match.Groups[1].Value + "bullets:i =9999"; });
+                    else
+                        extraBlock = extraBlock.TrimEnd() + "\n bullets:i =9999\n";
+                    commonOverride = BlkTools.ReplaceSpan(commonOverride, extraHost, extraBlock);
+                }
                 // The include proxy inherits the vehicle's native commonWeapons.
                 // "@override:commonWeapons" merges with the inherited block instead
                 // of replacing it, which leaves both the native gunner0 mount and the
@@ -1058,11 +1109,18 @@ string cannon = ((customCannonNeeded || moduleShipsWeapons) && hasEditableCannon
 
             // Publish dependencies first. The game must never observe a playable unit
             // whose gun BLK is still absent or was deleted with the previous token.
-            if (useCustomCannon) WriteBytes(cannonOut, new UTF8Encoding(false).GetBytes(cannon));
+            if (useCustomCannon && !String.IsNullOrWhiteSpace(settings.InjectedCannonBlk)) WriteBytes(cannonOut, new UTF8Encoding(false).GetBytes(cannon));
+            for (int extraWrite = 0; extraWrite < extraSwaps.Count; extraWrite++)
+            {
+                string extraOut = Path.Combine(root, @"content\pkg_local\gameData\Weapons\groundModels_weapons\utl_ground", "utl_ground_cannon_slot" + (extraWrite + 1).ToString(CultureInfo.InvariantCulture) + ".blk");
+                WriteBytes(extraOut, new UTF8Encoding(false).GetBytes(extraSwapTexts[extraWrite]));
+            }
             WriteBytes(unitOut, new UTF8Encoding(false).GetBytes(unit));
             GeneratedAircraft generated = new GeneratedAircraft { ClassId = classId, PresetId = !String.IsNullOrWhiteSpace(stockPreset) ? stockPreset : target.DefaultPreset, ModelId = BlkTools.Field(nativeUnit, "model", "t") ?? target.Id, FlightModelPath = unitOut, PresetPath = useCustomCannon ? cannonOut : unitOut, SpawnSpeedKmh = 0, IsGround = true, UserSightFolder = generatedSightFolder, MissileOnlyCarrier = !hasEditableCannon };
             foreach (GroundAmmoLoadout loadout in missionAmmo) generated.GroundAmmoLoadouts.Add(loadout.Copy());
-            if (useCustomCannon) generated.AuxiliaryPaths.Add(cannonOut);
+            if (useCustomCannon && !String.IsNullOrWhiteSpace(settings.InjectedCannonBlk)) generated.AuxiliaryPaths.Add(cannonOut);
+            for (int extraReg = 0; extraReg < extraSwaps.Count; extraReg++)
+                generated.AuxiliaryPaths.Add(Path.Combine(root, @"content\pkg_local\gameData\Weapons\groundModels_weapons\utl_ground", "utl_ground_cannon_slot" + (extraReg + 1).ToString(CultureInfo.InvariantCulture) + ".blk"));
             return generated;
         }
 

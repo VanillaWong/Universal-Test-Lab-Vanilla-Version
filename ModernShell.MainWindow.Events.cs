@@ -375,15 +375,33 @@ namespace UniversalTestLab
             bool any = false;
             if (GroundSelected)
             {
-                // 换炮注入
-                if (!String.IsNullOrWhiteSpace(set.InjectedCannonBlk))
+                // 换炮注入（主武器 + 额外槽位替换）
+                bool hasMainInjection = !String.IsNullOrWhiteSpace(set.InjectedCannonBlk);
+                bool hasExtraSwaps = set.CannonSwaps != null && set.CannonSwaps.Count > 0;
+                if (hasMainInjection || hasExtraSwaps)
                 {
                     any = true;
-                    string text = ModernText.L("CANNON INJECT", "换炮注入") + ": " + (set.InjectedCannonUnit ?? "") + " / " + ExperimentalShortName(set.InjectedCannonBlk);
-                    if (!String.IsNullOrWhiteSpace(set.InjectedCannonRound)) text += "  ·  " + ExperimentalShortName(set.InjectedCannonRound);
-                    if (set.InjectedCannonRounds > 0) text += "  ×" + set.InjectedCannonRounds.ToString(CultureInfo.InvariantCulture);
-                    else if (set.InjectNativeLauncher) text += "  (inject-shell)";
-                    experimentalSummaryLines.Children.Add(SummaryLineExperimental(text));
+                    if (hasMainInjection)
+                    {
+                        string text = ModernText.L("CANNON INJECT", "换炮注入") + ": " + (set.InjectedCannonUnit ?? "") + " / " + ExperimentalShortName(set.InjectedCannonBlk);
+                        if (!String.IsNullOrWhiteSpace(set.InjectedCannonRound)) text += "  ·  " + ExperimentalShortName(set.InjectedCannonRound);
+                        if (set.InjectedCannonRounds > 0) text += "  ×" + set.InjectedCannonRounds.ToString(CultureInfo.InvariantCulture);
+                        else if (set.InjectNativeLauncher) text += "  (inject-shell)";
+                        text += "   →  " + (String.IsNullOrWhiteSpace(set.InjectedCannonHostSlot) ? ModernText.L("AUTO", "自动槽") : set.InjectedCannonHostSlot);
+                        experimentalSummaryLines.Children.Add(SummaryLineExperimental(text));
+                    }
+                    else
+                    {
+                        experimentalSummaryLines.Children.Add(SummaryLineExperimental(ModernText.L("CANNON INJECT", "换炮注入") + ": " + ModernText.L("main mount kept (only extra swaps)", "主武器保持原样（仅额外替换）")));
+                    }
+                    if (hasExtraSwaps)
+                    {
+                        foreach (CannonSwap swapEntry in set.CannonSwaps)
+                        {
+                            if (swapEntry == null || String.IsNullOrWhiteSpace(swapEntry.WeaponBlk)) continue;
+                            experimentalSummaryLines.Children.Add(SummaryLineExperimental("      " + ModernText.L("EXTRA SLOT", "额外替换") + ": " + (String.IsNullOrWhiteSpace(swapEntry.HostSlot) ? "?" : swapEntry.HostSlot) + "  ←  " + ExperimentalShortName(swapEntry.WeaponBlk)));
+                        }
+                    }
                 }
                 // 弹药槽
                 foreach (GroundAmmoLoadout lo in set.GroundAmmoLoadouts.OrderBy(x => x.Slot))

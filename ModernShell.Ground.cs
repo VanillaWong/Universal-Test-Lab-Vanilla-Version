@@ -61,6 +61,17 @@ namespace UniversalTestLab
         private readonly ComboBox domainBox;
         private readonly ComboBox unitBox;
         private readonly ComboBox cannonBox;
+        // Which weapon of the HOST vehicle the donor weapon replaces (trigger name).
+        private ComboBox hostSlotBox;
+        // Extra slot swaps: each row replaces one more host weapon with a donor weapon.
+        private StackPanel swapRowsPanel;
+        private readonly List<SwapRowWidgets> swapRowWidgets = new List<SwapRowWidgets>();
+
+        private sealed class SwapRowWidgets
+        {
+            public ComboBox HostField;
+            public ComboBox DonorField;
+        }
         private readonly ComboBox roundBox;
         private readonly Func<string, IList<GroundAmmo>> resolveCannonAmmo;
         private readonly CheckBox ammoUnlimitedBox;
@@ -304,6 +315,44 @@ namespace UniversalTestLab
             cannonPage.Children.Add(domainRow);
             cannonPage.Children.Add(unitBox);
             cannonPage.Children.Add(cannonBox);
+            cannonPage.Children.Add(new TextBlock { Text = ModernText.L("HOST SLOT — which weapon of THIS vehicle is replaced", "宿主槽位 — 替换本车的哪一门武器"), Foreground = ModernPalette.Brush(ModernPalette.Cyan), FontSize = 11, FontWeight = FontWeights.SemiBold, Margin = new Thickness(0, 10, 0, 0) });
+            hostSlotBox = new ComboBox { Foreground = ModernPalette.Brush(ModernPalette.Text), Background = ModernPalette.Brush("#FF16283E"), BorderBrush = ModernPalette.Brush(ModernPalette.Border), Padding = new Thickness(8, 4, 8, 4), Height = 32, Margin = new Thickness(0, 4, 0, 0), HorizontalAlignment = HorizontalAlignment.Stretch };
+            hostSlotBox.Items.Add(new ComboBoxItem { Content = ModernText.L("AUTO — primary mount (old behaviour)", "自动 — 主武器位（原行为）"), Tag = "" });
+            hostSlotBox.Items.Add(new ComboBoxItem { Content = ModernText.L("SKIP — keep the main mount, only apply the extra swaps below", "跳过 — 不替换主武器，只应用下方额外替换"), Tag = "__skip__" });
+            foreach (GroundWeaponInfo hostWeapon in groundWeapons.Where(x => !String.IsNullOrWhiteSpace(x.Blk)))
+            {
+                string hostLabel = (hostWeapon.Trigger ?? "") + "  \u2022  " + CannonShortName(hostWeapon) + (hostWeapon.NativeAmmo > 0 ? "" : "  " + ModernText.L("(empty slot)", "（空槽）"));
+                hostSlotBox.Items.Add(new ComboBoxItem { Content = hostLabel, Tag = hostWeapon.Trigger ?? "" });
+            }
+            if (!String.IsNullOrWhiteSpace(original.InjectedCannonHostSlot))
+            {
+                ComboBoxItem savedHostSlot = hostSlotBox.Items.OfType<ComboBoxItem>().FirstOrDefault(x => String.Equals(x.Tag as string, original.InjectedCannonHostSlot, StringComparison.OrdinalIgnoreCase));
+                if (savedHostSlot != null) hostSlotBox.SelectedItem = savedHostSlot;
+            }
+            if (hostSlotBox.SelectedItem == null)
+            {
+                ComboBoxItem skipItem = String.IsNullOrWhiteSpace(original.InjectedCannonBlk) && original.CannonSwaps != null && original.CannonSwaps.Count > 0
+                    ? hostSlotBox.Items.OfType<ComboBoxItem>().FirstOrDefault(x => String.Equals(x.Tag as string, "__skip__", StringComparison.OrdinalIgnoreCase))
+                    : null;
+                if (skipItem != null) hostSlotBox.SelectedItem = skipItem; else hostSlotBox.SelectedIndex = 0;
+            }
+            hostSlotBox.SelectionChanged += delegate
+            {
+                if (currentSettings == null) return;
+                ComboBoxItem chosenHostSlot = hostSlotBox.SelectedItem as ComboBoxItem;
+                string chosenTrigger = chosenHostSlot == null ? "" : (chosenHostSlot.Tag as string ?? "");
+                currentSettings.InjectedCannonHostSlot = String.IsNullOrWhiteSpace(chosenTrigger) ? null : chosenTrigger;
+            };
+            cannonPage.Children.Add(hostSlotBox);
+            cannonPage.Children.Add(new TextBlock { Text = ModernText.L("EXTRA SLOT SWAPS — replace more host weapons at once (from the same source vehicle)", "额外替换 — 一次替换更多宿主武器（来源同一辆载具）"), Foreground = ModernPalette.Brush(ModernPalette.Cyan), FontSize = 11, FontWeight = FontWeights.SemiBold, Margin = new Thickness(0, 12, 0, 0) });
+            swapRowsPanel = new StackPanel { Margin = new Thickness(0, 4, 0, 0) };
+            cannonPage.Children.Add(swapRowsPanel);
+            Button addSwapRowButton = new Button { Content = ModernText.L("+ ADD SLOT SWAP", "+ 添加槽位替换"), Style = buttonStyle, Padding = new Thickness(10, 2, 10, 2), Margin = new Thickness(0, 6, 0, 0), HorizontalAlignment = HorizontalAlignment.Left };
+            addSwapRowButton.Click += delegate { AddSwapRow("", ""); };
+            cannonPage.Children.Add(addSwapRowButton);
+            if (original.CannonSwaps != null)
+                foreach (CannonSwap savedSwap in original.CannonSwaps)
+                    AddSwapRow(savedSwap.HostSlot, savedSwap.WeaponBlk);
             roundBox = new ComboBox { Foreground = ModernPalette.Brush(ModernPalette.Text), Background = ModernPalette.Brush("#FF16283E"), BorderBrush = ModernPalette.Brush(ModernPalette.Border), Padding = new Thickness(8, 4, 8, 4), Height = 32, Margin = new Thickness(0, 6, 0, 0), HorizontalAlignment = HorizontalAlignment.Stretch };
             roundBox.Items.Add(new ComboBoxItem { Content = ModernText.L("ALL (native rounds)", "全部（原生炮弹）"), Tag = "" });
             foreach (GroundAmmo injectedRound in injectedCannonAmmo)
@@ -813,6 +862,54 @@ namespace UniversalTestLab
             }
         }
 
+        private void AddSwapRow(string hostSlot, string weaponBlk)
+        {
+            if (swapRowsPanel == null) return;
+            StackPanel row = new StackPanel { Orientation = Orientation.Horizontal, Margin = new Thickness(0, 3, 0, 0) };
+            ComboBox hostField = new ComboBox { Width = 170, Height = 30, Foreground = ModernPalette.Brush(ModernPalette.Text), Background = ModernPalette.Brush("#FF16283E"), BorderBrush = ModernPalette.Brush(ModernPalette.Border) };
+            hostField.Items.Add(new ComboBoxItem { Content = ModernText.L("(pick slot)", "（选择槽位）"), Tag = "" });
+            foreach (GroundWeaponInfo hostWeapon in groundWeapons.Where(x => !String.IsNullOrWhiteSpace(x.Blk)))
+                hostField.Items.Add(new ComboBoxItem { Content = (hostWeapon.Trigger ?? "") + "  •  " + CannonShortName(hostWeapon), Tag = hostWeapon.Trigger ?? "" });
+            ComboBoxItem hostMatch = hostField.Items.OfType<ComboBoxItem>().FirstOrDefault(x => String.Equals(x.Tag as string, hostSlot ?? "", StringComparison.OrdinalIgnoreCase));
+            if (hostMatch != null) hostField.SelectedItem = hostMatch;
+            if (hostField.SelectedItem == null) hostField.SelectedIndex = 0;
+            row.Children.Add(hostField);
+            row.Children.Add(new TextBlock { Text = "→", Foreground = ModernPalette.Brush(ModernPalette.Muted), VerticalAlignment = VerticalAlignment.Center, Margin = new Thickness(6, 0, 6, 0) });
+            ComboBox donorField = new ComboBox { Width = 300, Height = 30, Foreground = ModernPalette.Brush(ModernPalette.Text), Background = ModernPalette.Brush("#FF16283E"), BorderBrush = ModernPalette.Brush(ModernPalette.Border) };
+            string domainTag = domainBox != null && domainBox.SelectedItem != null ? ((domainBox.SelectedItem as ComboBoxItem).Tag as string ?? "ground") : "ground";
+            string unitTag = unitBox != null && unitBox.SelectedItem != null ? (unitBox.SelectedItem as ComboBoxItem).Tag as string : null;
+            foreach (UnitWeapon unitWeapon in unitWeapons.Where(x => x != null && String.Equals(x.Domain, domainTag, StringComparison.OrdinalIgnoreCase) && String.Equals(x.UnitId, unitTag, StringComparison.OrdinalIgnoreCase)))
+                donorField.Items.Add(new ComboBoxItem { Content = (String.IsNullOrWhiteSpace(unitWeapon.Trigger) ? "" : unitWeapon.Trigger + "  •  ") + unitWeapon.WeaponDisplay, Tag = unitWeapon.WeaponBlk });
+            ComboBoxItem donorMatch = donorField.Items.OfType<ComboBoxItem>().FirstOrDefault(x => String.Equals(x.Tag as string, weaponBlk ?? "", StringComparison.OrdinalIgnoreCase));
+            if (donorMatch != null) donorField.SelectedItem = donorMatch;
+            if (donorField.SelectedItem == null && donorField.Items.Count > 0) donorField.SelectedIndex = 0;
+            row.Children.Add(donorField);
+            SwapRowWidgets widgets = new SwapRowWidgets { HostField = hostField, DonorField = donorField };
+            swapRowWidgets.Add(widgets);
+            hostField.SelectionChanged += delegate { PushSwapRows(); };
+            donorField.SelectionChanged += delegate { PushSwapRows(); };
+            Button removeButton = new Button { Content = "✕", Style = buttonStyle, Padding = new Thickness(8, 0, 8, 0), Margin = new Thickness(6, 0, 0, 0) };
+            removeButton.Click += delegate { swapRowWidgets.Remove(widgets); swapRowsPanel.Children.Remove(row); PushSwapRows(); };
+            row.Children.Add(removeButton);
+            swapRowsPanel.Children.Add(row);
+            PushSwapRows();
+        }
+
+        private void PushSwapRows()
+        {
+            if (currentSettings == null) return;
+            List<CannonSwap> swaps = new List<CannonSwap>();
+            foreach (SwapRowWidgets widgets in swapRowWidgets)
+            {
+                ComboBoxItem hostChoice = widgets.HostField.SelectedItem as ComboBoxItem;
+                ComboBoxItem donorChoice = widgets.DonorField.SelectedItem as ComboBoxItem;
+                string hostTrigger = hostChoice == null ? "" : (hostChoice.Tag as string ?? "");
+                string donorWeapon = donorChoice == null ? "" : (donorChoice.Tag as string ?? "");
+                if (String.IsNullOrWhiteSpace(hostTrigger) || String.IsNullOrWhiteSpace(donorWeapon)) continue;
+                swaps.Add(new CannonSwap { HostSlot = hostTrigger, WeaponBlk = donorWeapon });
+            }
+            currentSettings.CannonSwaps = swaps;
+        }
         private void SyncRoundToSlot()
         {
             if (syncingCannon || roundBox == null || currentCannon == null || currentCannon.IsNative) return;
@@ -1099,6 +1196,25 @@ namespace UniversalTestLab
                 ComboBoxItem roundSelection = roundBox == null ? null : roundBox.SelectedItem as ComboBoxItem;
                 result.InjectedCannonRound = roundSelection == null || !(roundSelection.Tag is string) ? null : (string)roundSelection.Tag;
             }
+            ComboBoxItem hostSlotSelection = hostSlotBox == null ? null : hostSlotBox.SelectedItem as ComboBoxItem;
+            string hostSlotTrigger = hostSlotSelection == null ? "" : (hostSlotSelection.Tag as string ?? "");
+            if (String.Equals(hostSlotTrigger, "__skip__", StringComparison.OrdinalIgnoreCase))
+            {
+                // Keep the main mount untouched: clear the main injection but keep the
+                // extra slot swaps so the vehicle only receives the mapped weapons.
+                result.InjectedCannonBlk = null;
+                result.InjectedCannonRound = null;
+                result.InjectedCannonHostSlot = null;
+            }
+            else
+            {
+                result.InjectedCannonHostSlot = String.IsNullOrWhiteSpace(hostSlotTrigger) ? null : hostSlotTrigger;
+            }
+            PushSwapRows();
+            result.CannonSwaps = new List<CannonSwap>();
+            if (currentSettings != null && currentSettings.CannonSwaps != null)
+                foreach (CannonSwap swapEntry in currentSettings.CannonSwaps)
+                    result.CannonSwaps.Add(swapEntry.Copy());
             result.UnlimitedAmmo = ammoUnlimitedBox == null ? original.UnlimitedAmmo : ammoUnlimitedBox.IsChecked == true;
             result.FakeArhConversion = fakeArhBox == null ? original.FakeArhConversion : fakeArhBox.IsChecked == true;
             result.RadarSearchBlk = radarSearchSel;

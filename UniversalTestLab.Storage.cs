@@ -212,6 +212,30 @@ namespace UniversalTestLab
             if (settings.ForwardSpeedMultiplier != 1.0) o.Add("forward_speed_multiplier", settings.ForwardSpeedMultiplier);
             if (settings.ReverseSpeedMultiplier != 1.0) o.Add("reverse_speed_multiplier", settings.ReverseSpeedMultiplier);
             if (!String.IsNullOrWhiteSpace(settings.UserSightPath)) o.Add("user_sight_path", settings.UserSightPath);
+            // Cannon-swap settings used to be forgotten on restart (only the global
+            // mission_options copy was saved, never the per-vehicle one).
+            if (!String.IsNullOrWhiteSpace(settings.InjectedCannonBlk)) o.Add("inject_cannon_blk", settings.InjectedCannonBlk);
+            if (!String.IsNullOrWhiteSpace(settings.InjectedCannonDomain)) o.Add("inject_cannon_domain", settings.InjectedCannonDomain);
+            if (!String.IsNullOrWhiteSpace(settings.InjectedCannonUnit)) o.Add("inject_cannon_unit", settings.InjectedCannonUnit);
+            if (!String.IsNullOrWhiteSpace(settings.InjectedCannonRound)) o.Add("inject_cannon_round", settings.InjectedCannonRound);
+            if (settings.InjectedCannonRounds > 0) o.Add("inject_cannon_rounds", settings.InjectedCannonRounds);
+            if (settings.InjectNativeLauncher) o.Add("inject_native_launcher", true);
+            if (!String.IsNullOrWhiteSpace(settings.InjectedCannonHostSlot)) o.Add("inject_cannon_slot", settings.InjectedCannonHostSlot);
+            if (settings.CannonSwaps != null && settings.CannonSwaps.Count > 0)
+            {
+                List<object> swaps = new List<object>();
+                foreach (CannonSwap swap in settings.CannonSwaps)
+                {
+                    if (swap == null || String.IsNullOrWhiteSpace(swap.WeaponBlk)) continue;
+                    Dictionary<string, object> sub = new Dictionary<string, object>();
+                    if (!String.IsNullOrWhiteSpace(swap.HostSlot)) sub.Add("host_slot", swap.HostSlot);
+                    sub.Add("weapon_blk", swap.WeaponBlk);
+                    if (!String.IsNullOrWhiteSpace(swap.Round)) sub.Add("round", swap.Round);
+                    if (swap.Rounds > 0) sub.Add("rounds", swap.Rounds);
+                    swaps.Add(sub);
+                }
+                if (swaps.Count > 0) o.Add("cannon_swaps", swaps);
+            }
             return o;
         }
 
@@ -288,6 +312,35 @@ namespace UniversalTestLab
             s.ForwardSpeedMultiplier = JsonDouble(o, "forward_speed_multiplier", 1.0);
             s.ReverseSpeedMultiplier = JsonDouble(o, "reverse_speed_multiplier", 1.0);
             s.UserSightPath = JsonStr(o, "user_sight_path");
+            s.InjectedCannonBlk = JsonStr(o, "inject_cannon_blk");
+            s.InjectedCannonDomain = JsonStr(o, "inject_cannon_domain");
+            s.InjectedCannonUnit = JsonStr(o, "inject_cannon_unit");
+            s.InjectedCannonRound = JsonStr(o, "inject_cannon_round");
+            s.InjectedCannonRounds = JsonInt(o, "inject_cannon_rounds", 0);
+            s.InjectNativeLauncher = JsonBool(o, "inject_native_launcher", false);
+            s.InjectedCannonHostSlot = JsonStr(o, "inject_cannon_slot");
+            s.CannonSwaps = new List<CannonSwap>();
+            object swapValue;
+            if (o.TryGetValue("cannon_swaps", out swapValue) && swapValue != null)
+            {
+                List<object> swapList = AsList(swapValue);
+                if (swapList != null)
+                {
+                    foreach (object swapItem in swapList)
+                    {
+                        Dictionary<string, object> swapFields = swapItem as Dictionary<string, object>;
+                        if (swapFields == null) continue;
+                        CannonSwap swap = new CannonSwap
+                        {
+                            HostSlot = JsonStr(swapFields, "host_slot"),
+                            WeaponBlk = JsonStr(swapFields, "weapon_blk"),
+                            Round = JsonStr(swapFields, "round"),
+                            Rounds = JsonInt(swapFields, "rounds", 0)
+                        };
+                        if (!String.IsNullOrWhiteSpace(swap.WeaponBlk) || !String.IsNullOrWhiteSpace(swap.HostSlot)) s.CannonSwaps.Add(swap);
+                    }
+                }
+            }
             return s;
         }
 
