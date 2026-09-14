@@ -1002,7 +1002,7 @@ namespace UniversalTestLab
                 return;
             }
             foreach (UnitWeapon uw in unitWeapons.Where(x => String.Equals(x.Domain, domain, StringComparison.OrdinalIgnoreCase) && String.Equals(x.UnitId, unitId, StringComparison.OrdinalIgnoreCase)).OrderBy(x => x.WeaponDisplay))
-                cannonBox.Items.Add(new ComboBoxItem { Content = uw.WeaponDisplay, Tag = uw.WeaponBlk });
+                cannonBox.Items.Add(new ComboBoxItem { Content = (String.IsNullOrWhiteSpace(uw.Trigger) ? "" : uw.Trigger + "  \u2022  ") + uw.WeaponDisplay, Tag = uw.WeaponBlk });
             if (!String.IsNullOrWhiteSpace(original.InjectedCannonBlk))
             {
                 string saved = NormalizeBlk(original.InjectedCannonBlk);
@@ -1840,7 +1840,7 @@ tuningPanel.Children.Add(Heading("REAL VEHICLE VALUES", 15));
                 return;
             }
             foreach (UnitWeapon uw in unitWeapons.Where(x => String.Equals(x.Domain, domain, StringComparison.OrdinalIgnoreCase) && String.Equals(x.UnitId, unitId, StringComparison.OrdinalIgnoreCase)).OrderBy(x => x.WeaponDisplay))
-                cannonBox.Items.Add(new ComboBoxItem { Content = uw.WeaponDisplay, Tag = uw.WeaponBlk });
+                cannonBox.Items.Add(new ComboBoxItem { Content = (String.IsNullOrWhiteSpace(uw.Trigger) ? "" : uw.Trigger + "  \u2022  ") + uw.WeaponDisplay, Tag = uw.WeaponBlk });
             if (!String.IsNullOrWhiteSpace(original.InjectedCannonBlk))
             {
                 string saved = NormalizeBlk(original.InjectedCannonBlk);

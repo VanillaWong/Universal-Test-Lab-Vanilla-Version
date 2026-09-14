@@ -438,6 +438,32 @@ private void RefreshGroundWorkspace()
             return Int32.TryParse(m.Groups[1].Value, NumberStyles.Integer, CultureInfo.InvariantCulture, out value) ? value : 0;
         }
 
+        // Keywords used to match an ammunition container to the weapon that fires it
+        // when their calibres differ (152mm_us_tow_2 -> ["tow_2", "tow"]).
+        private static string[] ContainerKeywords(string container)
+        {
+            if (String.IsNullOrWhiteSpace(container)) return new string[0];
+            string core = System.Text.RegularExpressions.Regex.Replace(container, @"^\d+(?:_\d+)?mm_", "");
+            List<string> keys = new List<string>();
+            foreach (string part in core.Split(new[] { '_' }, StringSplitOptions.RemoveEmptyEntries))
+            {
+                if (part.Length < 3) continue;
+                bool digitsOnly = true;
+                foreach (char c in part) if (!Char.IsDigit(c)) { digitsOnly = false; break; }
+                if (digitsOnly) continue;
+                if (!keys.Contains(part, StringComparer.OrdinalIgnoreCase)) keys.Add(part);
+            }
+            // "tow_2" style names: also keep the plain leading word ("tow").
+            if (keys.Count > 1)
+            {
+                string first = keys[0];
+                bool tailNumeric = true;
+                for (int i = 1; i < keys.Count; i++) { if (keys[i].Length > 2 || !Char.IsDigit(keys[i][0])) { tailNumeric = false; break; } }
+                if (tailNumeric && !keys.Contains(first, StringComparer.OrdinalIgnoreCase)) keys.Insert(0, first);
+            }
+            return keys.ToArray();
+        }
+
         internal static bool IsSecondaryGroundWeapon(string blk)
         {
             if (String.IsNullOrWhiteSpace(blk)) return false;
@@ -633,7 +659,9 @@ private void RefreshGroundWorkspace()
                     if (count <= 0) continue; // 0 = empty slot (mission slot omitted)
                     GroundAmmoSlotGroup group = GroundSlotGroupFor(i);
                     int max = group != null && group.MaxTotal > 0 ? group.MaxTotal : 9999;
+                    int rawCount = count;
                     count = Math.Min(max, count);
+                    MainForm.LogTiming("[ammo-save] slot=" + i.ToString(CultureInfo.InvariantCulture) + " entry=" + (entry.Ammo.BulletName ?? "(stock)") + " raw=" + rawCount.ToString(CultureInfo.InvariantCulture) + " max=" + max.ToString(CultureInfo.InvariantCulture) + " -> " + count.ToString(CultureInfo.InvariantCulture));
                     string saveBlk = entry.Ammo.SourceBlk;
                     if (String.IsNullOrWhiteSpace(entry.Ammo.BulletName))
                         saveBlk = "stock:" + GroundCalibre(entry.Ammo.Display).ToString(CultureInfo.InvariantCulture);
@@ -828,6 +856,61 @@ private void RefreshGroundWorkspace()
                 groups.Add(group);
                 nextSlot += slots;
             }
+            // Some ammunition containers carry a different calibre than the launcher that
+            // fires them (Bradley: 152mm_us_tow_2 / 152mm_us_tow_2a are fired by the 127mm
+            // TOW launcher). Grouping strictly by calibre dropped those containers, so the
+            // TOW ammunition was impossible to select ("different calibre" refuses to load).
+            // Attach every unused container to the weapon whose block name shares a keyword
+            // (e.g. "tow"), keeping the group's own capacity as the limit.
+            if (cache.BeltOptions != null && groups.Count > 0)
+            {
+                HashSet<string> usedContainers = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+                foreach (GroundAmmoSlotGroup g in groups)
+                    foreach (GroundAmmoEntry e in g.Options)
+                        if (e != null && e.Ammo != null && !String.IsNullOrWhiteSpace(e.Ammo.BulletName)) usedContainers.Add(e.Ammo.BulletName);
+                foreach (GroundWeaponBeltOption option in cache.BeltOptions)
+                {
+                    if (option == null || String.IsNullOrWhiteSpace(option.Name)) continue;
+                    if (option.Name.IndexOf("_ammo_pack", StringComparison.OrdinalIgnoreCase) >= 0) continue;
+                    if (usedContainers.Contains(option.Name)) continue;
+                    string[] keywords = ContainerKeywords(option.Name);
+                    if (keywords.Length == 0) continue;
+                    GroundAmmoSlotGroup target = null;
+                    foreach (GroundAmmoSlotGroup g in groups)
+                    {
+                        string weaponName = g.WeaponBlk ?? "";
+                        int slash = weaponName.LastIndexOf('/');
+                        if (slash >= 0) weaponName = weaponName.Substring(slash + 1);
+                        foreach (string keyword in keywords)
+                            if (weaponName.IndexOf(keyword, StringComparison.OrdinalIgnoreCase) >= 0) { target = g; break; }
+                        if (target != null) break;
+                    }
+                    if (target == null) continue;
+                    IList<GroundAmmo> extraRounds = null;
+                    if (roundsByContainer != null) roundsByContainer.TryGetValue(option.Name, out extraRounds);
+                    if (extraRounds != null && extraRounds.Count > 0)
+                    {
+                        foreach (GroundAmmo round in extraRounds)
+                            target.Options.Add(new GroundAmmoEntry
+                            {
+                                Ammo = new GroundAmmo { SourceBlk = null, BulletName = option.Name, Display = round.BulletName, Type = round.Type },
+                                Native = target.MaxTotal,
+                                Text = round.BulletName.Replace('_', ' ').Trim() + " \u2022 " + target.MaxTotal.ToString(CultureInfo.InvariantCulture) + (target.IsBelt ? " chains" : " rds")
+                            });
+                    }
+                    else
+                    {
+                        string display = option.Name.Replace('_', ' ').Trim();
+                        target.Options.Add(new GroundAmmoEntry
+                        {
+                            Ammo = new GroundAmmo { SourceBlk = null, BulletName = option.Name, Display = display, Type = target.IsBelt ? "Belt" : "Shell" },
+                            Native = target.MaxTotal,
+                            Text = display + " \u2022 " + target.MaxTotal.ToString(CultureInfo.InvariantCulture) + (target.IsBelt ? " chains" : " rds")
+                        });
+                    }
+                    usedContainers.Add(option.Name);
+                }
+            }
             // Fallback: vehicles whose weapons have no modification modules at all still
             // get one STOCK-only slot so the ammunition panel stays usable.
             if (groups.Count == 0 && cache.Weapons != null)
@@ -859,6 +942,17 @@ private void RefreshGroundWorkspace()
                     break;
                 }
             }
+            try
+            {
+                System.Text.StringBuilder dbg = new System.Text.StringBuilder("[ammo-groups] vehicle=" + (selectedAircraft == null ? "?" : selectedAircraft.Id));
+                foreach (GroundAmmoSlotGroup g in groups)
+                    dbg.Append(" | slot").Append(g.FirstSlot).Append(" x").Append(g.SlotCount)
+                       .Append(" cal").Append(g.Calibre).Append(" belt=").Append(g.IsBelt ? 1 : 0)
+                       .Append(" max=").Append(g.MaxTotal).Append(" opts=").Append(g.Options.Count)
+                       .Append(" (").Append(g.Display).Append(")");
+                MainForm.LogTiming(dbg.ToString());
+            }
+            catch { }
             return groups;
         }
 

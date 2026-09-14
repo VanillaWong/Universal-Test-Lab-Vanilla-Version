@@ -1,0 +1,78 @@
+Rebuilding data catalog ...
+[catalog] 13:07:23 Phase 1/4: aircraft flight models
+[catalog] 13:08:06 aircraft 100 / 1623
+[catalog] 13:08:40 aircraft 200 / 1623
+[catalog] 13:09:22 aircraft 300 / 1623
+[catalog] 13:10:44 aircraft 400 / 1623
+[catalog] 13:11:30 aircraft 500 / 1623
+[catalog] 13:12:08 aircraft 600 / 1623
+[catalog] 13:12:43 aircraft 700 / 1623
+[catalog] 13:13:39 aircraft 800 / 1623
+[catalog] 13:14:03 aircraft 900 / 1623
+[catalog] 13:14:50 aircraft 1000 / 1623
+[catalog] 13:15:30 aircraft 1100 / 1623
+[catalog] 13:15:58 aircraft 1200 / 1623
+[catalog] 13:16:37 aircraft 1300 / 1623
+[catalog] 13:17:42 aircraft 1400 / 1623
+[catalog] 13:18:20 aircraft 1500 / 1623
+[catalog] 13:18:42 Phase 2/4: pylon slots & weapon donors (1579 aircraft)
+[catalog] 13:19:31 slots 100 / 1579
+[catalog] 13:19:58 slots 200 / 1579
+[catalog] 13:20:55 slots 300 / 1579
+[catalog] 13:22:17 slots 400 / 1579
+[catalog] 13:22:56 slots 500 / 1579
+[catalog] 13:23:12 slots 600 / 1579
+[catalog] 13:23:31 slots 700 / 1579
+[catalog] 13:24:12 slots 800 / 1579
+[catalog] 13:24:26 slots 900 / 1579
+[catalog] 13:25:08 slots 1000 / 1579
+[catalog] 13:25:37 slots 1100 / 1579
+[catalog] 13:25:50 slots 1200 / 1579
+[catalog] 13:26:17 slots 1300 / 1579
+[catalog] 13:27:09 slots 1400 / 1579
+[catalog] 13:27:36 slots 1500 / 1579
+[catalog] 13:28:43 writing output files
+[catalog] 13:28:46 Phase 3/4: ground.tsv
+[catalog] 13:33:59 Phase 3/4: ships.tsv
+[catalog] 13:34:56 Phase 4/4: ground ammunition catalog
+GroundAmmo=2504
+Sensors=442
+[catalog] 13:45:02 Phase 5/5: vehicle weapons json (prebuilt ammo data)
+[catalog] 13:45:27 vehicle-weapons 100 / 1338
+[catalog] 13:45:45 vehicle-weapons 200 / 1338
+[catalog] 13:46:11 vehicle-weapons 300 / 1338
+[catalog] 13:46:38 vehicle-weapons 400 / 1338
+[catalog] 13:47:03 vehicle-weapons 500 / 1338
+[catalog] 13:47:22 vehicle-weapons 600 / 1338
+[catalog] 13:47:38 vehicle-weapons 700 / 1338
+[catalog] 13:48:05 vehicle-weapons 800 / 1338
+[catalog] 13:48:24 vehicle-weapons 900 / 1338
+[catalog] 13:48:47 vehicle-weapons 1000 / 1338
+[catalog] 13:49:08 vehicle-weapons 1100 / 1338
+[catalog] 13:49:31 vehicle-weapons 1200 / 1338
+VehicleWeapons=1284
+[catalog] 13:50:11 done
+Aircraft=1579 Presets=10631 Slots=32011 Pylons=5495 DonorMounts=30897 Weapons=2204 Modifications=51262
+Converting TSV catalogs to JSON ...
+OK   aircraft.tsv               1579 rows    124KB -> aircraft.json
+OK   ground.tsv                 1282 rows    212KB -> ground.json
+OK   ships.tsv                   623 rows     48KB -> ships.json
+OK   donor_weapons.tsv         30897 rows   5626KB -> donor_weapons.json
+OK   weapon_catalog.tsv         2209 rows    284KB -> weapon_catalog.json
+OK   naval_cannons.tsv           324 rows     32KB -> naval_cannons.json
+OK   unit_weapons.tsv          16445 rows   1945KB -> unit_weapons.json
+OK   air_ordnance.tsv            982 rows     68KB -> air_ordnance.json
+OK   aircraft_slots.tsv         5495 rows    180KB -> aircraft_slots.json
+OK   modifications.tsv         51262 rows   2911KB -> modifications.json
+OK   combined_maps.tsv           720 rows    134KB -> combined_maps.json
+OK   belt_type_limits.tsv        158 rows      3KB -> belt_type_limits.json
+OK   nuclear.tsv                   8 rows      0KB -> nuclear.json
+OK   presets.tsv               10631 rows    719KB -> presets.json
+OK   preset_slots.tsv          32011 rows   1585KB -> preset_slots.json
+OK   era_presets.tsv               4 rows      1KB -> era_presets.json
+OK   sensors.tsv                 442 rows     32KB -> sensors.json
+
+done: 17 converted, 0 skipped
+
+Done. Data catalog and exe are up to date.
+Close any running UniversalTestLab before starting the new dist\UniversalTestLab.exe.

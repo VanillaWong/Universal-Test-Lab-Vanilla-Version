@@ -1025,6 +1025,162 @@ namespace UniversalTestLab
             return ReplaceSpan(text, you, rebuilt.ToString().TrimEnd());
         }
 
+        // ---- Cannon-swap ammunition helpers ----
+        // The swapped-in donor gun must drive the mission ammo: when the player did
+        // not pick a round the gun fires its own first container (whatever the donor
+        // carries, in file order); a picked round resolves to its container. Without
+        // this the host preset (e.g. M1's 105 mm groups) references ammunition the
+        // donor gun does not carry and the engine reports ammunition exhausted.
+        public static List<string> CollectCannonContainers(string cannonText)
+        {
+            List<string> containers = new List<string>();
+            if (String.IsNullOrWhiteSpace(cannonText)) return containers;
+            foreach (BlockSpan block in RootBlocks(cannonText))
+            {
+                string name = BlockName(block);
+                if (String.IsNullOrEmpty(name)) continue;
+                if (!Regex.IsMatch(name, @"^\d+mm_")) continue;
+                if (name.EndsWith("_ammo_pack", StringComparison.OrdinalIgnoreCase)) continue;
+                if (!containers.Contains(name)) containers.Add(name);
+            }
+            return containers;
+        }
+
+        // round may be a container name or a projectile bulletName; returns the
+        // owning container name, or empty when nothing in the gun matches.
+        public static string ResolveCannonContainer(string cannonText, string round, IEnumerable<string> knownContainers)
+        {
+            if (String.IsNullOrWhiteSpace(round)) return "";
+            if (knownContainers != null && knownContainers.Any(x => String.Equals(x, round, StringComparison.OrdinalIgnoreCase)))
+                return round;
+            if (String.IsNullOrWhiteSpace(cannonText)) return "";
+            foreach (BlockSpan block in RootBlocks(cannonText))
+            {
+                string name = BlockName(block);
+                if (String.IsNullOrEmpty(name)) continue;
+                if (knownContainers != null && !knownContainers.Any(x => String.Equals(x, name, StringComparison.OrdinalIgnoreCase))) continue;
+                foreach (Match bullet in Regex.Matches(block.Text, @"(?m)^\s*bulletName:t\s*=\s*""([^""]+)""\s*$"))
+                {
+                    if (String.Equals(bullet.Groups[1].Value, round, StringComparison.OrdinalIgnoreCase))
+                        return name;
+                }
+            }
+            return "";
+        }
+
+        // True when the gun file itself defines this projectile. Such a "stock" /
+        // default round (e.g. 125mm_3bk_12m) has no ammo container in the vehicle:
+        // the mission slot must stay empty (bulletsN:t="") with a count, and the
+        // engine then loads its native default round.
+        public static bool CannonHasBullet(string cannonText, string bulletName)
+        {
+            if (String.IsNullOrWhiteSpace(cannonText) || String.IsNullOrWhiteSpace(bulletName)) return false;
+            return Blocks(cannonText, "bullet").Any(x =>
+                String.Equals(Field(x.Text, "bulletName", "t"), bulletName, StringComparison.OrdinalIgnoreCase));
+        }
+
+        // Rewrites the mission player block so slot 0 carries the chosen container
+        // (effectively unlimited) and the remaining slots are empty.
+        public static string ForcePlayerAmmoSlot(string text, string container, int rounds = 9999)
+        {
+            if (String.IsNullOrWhiteSpace(container)) return text;
+            BlockSpan you = UnitBlockByName(text, "You");
+            if (you == null) return text;
+            string[] lines = you.Text.Replace("\r\n", "\n").Split('\n');
+            StringBuilder rebuilt = new StringBuilder();
+            bool inserted = false;
+            for (int i = 0; i < lines.Length; i++)
+            {
+                string line = lines[i];
+                if (Regex.IsMatch(line, @"^\s*bullets\d+:t\s*=") || Regex.IsMatch(line, @"^\s*bulletsCount\d+:i\s*="))
+                    continue;
+                if (!inserted && Regex.IsMatch(line, @"^\s*crewSkillK:r\s*="))
+                {
+                    rebuilt.AppendLine("    bullets0:t=\"" + container.Replace("\"", "") + "\"");
+                    rebuilt.AppendLine("    bullets1:t=\"\"");
+                    rebuilt.AppendLine("    bullets2:t=\"\"");
+                    rebuilt.AppendLine("    bullets3:t=\"\"");
+                    rebuilt.AppendLine("    bulletsCount0:i=" + rounds.ToString(CultureInfo.InvariantCulture));
+                    rebuilt.AppendLine("    bulletsCount1:i=0");
+                    rebuilt.AppendLine("    bulletsCount2:i=0");
+                    rebuilt.AppendLine("    bulletsCount3:i=0");
+                    inserted = true;
+                }
+                rebuilt.AppendLine(line);
+            }
+            if (!inserted) return text;
+            return ReplaceSpan(text, you, rebuilt.ToString().TrimEnd());
+        }
+
+        // Loads the mission player like a native tank: several shell types are
+        // carried (slot per type) so the in-game selector can switch between them.
+        // Slot order follows the given containers; slots past them stay empty.
+        public static string ForcePlayerAmmoSlots(string text, IList<string> containers, int rounds = 9999)
+        {
+            if (containers == null || containers.Count == 0) return text;
+            BlockSpan you = UnitBlockByName(text, "You");
+            if (you == null) return text;
+            string[] lines = you.Text.Replace("\r\n", "\n").Split('\n');
+            StringBuilder rebuilt = new StringBuilder();
+            bool inserted = false;
+            for (int i = 0; i < lines.Length; i++)
+            {
+                string line = lines[i];
+                if (Regex.IsMatch(line, @"^\s*bullets\d+:t\s*=") || Regex.IsMatch(line, @"^\s*bulletsCount\d+:i\s*="))
+                    continue;
+                if (!inserted && Regex.IsMatch(line, @"^\s*crewSkillK:r\s*="))
+                {
+                    for (int s = 0; s < 4; s++)
+                    {
+                        bool has = s < containers.Count && !String.IsNullOrWhiteSpace(containers[s]);
+                        rebuilt.AppendLine("    bullets" + s.ToString(CultureInfo.InvariantCulture) + ":t=\"" + (has ? containers[s].Replace("\"", "") : "") + "\"");
+                        rebuilt.AppendLine("    bulletsCount" + s.ToString(CultureInfo.InvariantCulture) + ":i=" + (has ? rounds : 0).ToString(CultureInfo.InvariantCulture));
+                    }
+                    inserted = true;
+                }
+                rebuilt.AppendLine(line);
+            }
+            if (!inserted) return text;
+            return ReplaceSpan(text, you, rebuilt.ToString().TrimEnd());
+        }
+
+        // Quantity variant of ForcePlayerAmmoSlots: each slot keeps its own round
+        // count (the per-slot Count configured in the ammunition workbench). A slot
+        // is written empty when its container is blank or its count is <= 0; blank
+        // slots are still emitted so the player slot numbers stay stable.
+        public static string ForcePlayerAmmoSlots(string text, IList<string> containers, IList<int> counts)
+        {
+            if (containers == null || containers.Count == 0) return text;
+            BlockSpan you = UnitBlockByName(text, "You");
+            if (you == null) return text;
+            string[] lines = you.Text.Replace("\r\n", "\n").Split('\n');
+            StringBuilder rebuilt = new StringBuilder();
+            bool inserted = false;
+            for (int i = 0; i < lines.Length; i++)
+            {
+                string line = lines[i];
+                if (Regex.IsMatch(line, @"^\s*bullets\d+:t\s*=") || Regex.IsMatch(line, @"^\s*bulletsCount\d+:i\s*="))
+                    continue;
+                if (!inserted && Regex.IsMatch(line, @"^\s*crewSkillK:r\s*="))
+                {
+                    for (int s = 0; s < 4; s++)
+                    {
+                        // Empty container with a count = STOCK slot: the engine loads the
+                        // vehicle's native default round (used after a cannon swap, where
+                        // the default shell lives in the preset redirect, not the cannon).
+                        bool has = s < containers.Count && (counts == null || s >= counts.Count || counts[s] > 0);
+                        int rounds = counts != null && s < counts.Count ? Math.Max(0, counts[s]) : 9999;
+                        rebuilt.AppendLine("    bullets" + s.ToString(CultureInfo.InvariantCulture) + ":t=\"" + (has ? containers[s].Replace("\"", "") : "") + "\"");
+                        rebuilt.AppendLine("    bulletsCount" + s.ToString(CultureInfo.InvariantCulture) + ":i=" + (has ? rounds : 0).ToString(CultureInfo.InvariantCulture));
+                    }
+                    inserted = true;
+                }
+                rebuilt.AppendLine(line);
+            }
+            if (!inserted) return text;
+            return ReplaceSpan(text, you, rebuilt.ToString().TrimEnd());
+        }
+
         public static List<BlockSpan> DirectChildBlocks(string containerText)
         {
             List<BlockSpan> result = new List<BlockSpan>();
@@ -1093,6 +1249,14 @@ namespace UniversalTestLab
                 text = RemoveNamedBlockAnywhere(text, "\"Player Respawn Flight Profile\"");
             if (ground)
                 text = RemoveAirfieldContent(text);
+            // Airport takeoff must start the player ON the runway. The template's
+            // "You" armada parks at 1500 m for the air-spawn modes, and spawning
+            // happens at the unit transform, so an airport mission otherwise drops
+            // the player 1500 m above the asphalt. Park the unit on spawn01 - the
+            // runway-end spot tuned by f0c03b7 so the aircraft rolls toward the
+            // start threshold for the full takeoff run.
+            if (!ground && airportTakeoff)
+                text = SetPlayerSpawnPosition(text, 551.7, 30, 950.0);
             // Air-spawn site: an explicit height rewrites the player "You" armada
             // transform (the template starts it at 1500 m). Airport takeoff, combined
             // scenario spawns and ground missions keep their own fixed positions, so
@@ -1299,6 +1463,32 @@ string trigger = @"
             if (!Double.TryParse(cells[1].Trim(), NumberStyles.Float, CultureInfo.InvariantCulture, out current)) return text;
             string rebuilt = line.Substring(0, groupOpen) + "[" + cells[0].Trim() + ", " +
                 altitude.ToString(CultureInfo.InvariantCulture) + ", " + cells[2].Trim() + "]]";
+            block = block.Substring(0, idx) + rebuilt + block.Substring(lineEnd);
+            return ReplaceSpan(text, player, block);
+        }
+
+        private static string SetPlayerSpawnPosition(string text, double x, double y, double z)
+        {
+            // Rewrites the translation (the last [x, y, z] bracket group) of the
+            // player "You" armada tm:m line; rotation is preserved. Used by the
+            // airport-takeoff mode to park the unit on the runway.
+            BlockSpan player = UnitBlockByName(text, "You");
+            if (player == null) return text;
+            string block = player.Text;
+            int idx = block.IndexOf("tm:m=", StringComparison.Ordinal);
+            if (idx < 0) return text;
+            int lineEnd = block.IndexOf('\n', idx);
+            if (lineEnd < 0) lineEnd = block.Length;
+            string line = block.Substring(idx, lineEnd - idx).TrimEnd('\r');
+            int groupOpen = line.LastIndexOf('[');
+            if (groupOpen < 0) return text;
+            string inner = line.Substring(groupOpen).TrimEnd(']').TrimStart('[');
+            string[] cells = inner.Split(',');
+            if (cells.Length != 3) return text;
+            string rebuilt = line.Substring(0, groupOpen) + "[" +
+                x.ToString("0.####", CultureInfo.InvariantCulture) + ", " +
+                y.ToString("0.####", CultureInfo.InvariantCulture) + ", " +
+                z.ToString("0.####", CultureInfo.InvariantCulture) + "]]";
             block = block.Substring(0, idx) + rebuilt + block.Substring(lineEnd);
             return ReplaceSpan(text, player, block);
         }

@@ -955,8 +955,27 @@ namespace UniversalTestLab
             return relative.Trim().Replace('\\', '/').TrimStart('/').ToLowerInvariant();
         }
 
+        private static readonly object extractLogLock = new object();
+
+        // Lightweight timing log (LocalAppData\UniversalTestLab\extract_timing.log).
+        // Used to find which game resources still take the slow wt_ext_cli path so
+        // the weapon-swap stall can be pre-warmed or pre-extracted.
+        internal static void LogTiming(string message)
+        {
+            try
+            {
+                string dir = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "UniversalTestLab");
+                Directory.CreateDirectory(dir);
+                lock (extractLogLock)
+                    File.AppendAllText(Path.Combine(dir, "extract_timing.log"),
+                        DateTime.Now.ToString("HH:mm:ss.fff", CultureInfo.InvariantCulture) + "  " + message + Environment.NewLine);
+            }
+            catch { }
+        }
+
         internal static string ExtractGameBlk(string root, string relative)
         {
+            System.Diagnostics.Stopwatch watch = System.Diagnostics.Stopwatch.StartNew();
             string normalizedRelative = NormalizeGameResourcePath(relative);
             // Zero-extract fast path: a full pre-extracted game-data tree laid out as
             // <tree>/aces.vromfs.bin_u/gamedata/... (the project's universal_units_data /
@@ -965,7 +984,12 @@ namespace UniversalTestLab
             foreach (string tree in FindPreExtractedTrees())
             {
                 string candidate = Path.Combine(tree, "aces.vromfs.bin_u", normalizedRelative.Replace('/', Path.DirectorySeparatorChar));
-                if (File.Exists(candidate)) return candidate;
+                if (File.Exists(candidate))
+                {
+                    watch.Stop();
+                    LogTiming("FAST    " + watch.ElapsedMilliseconds.ToString(CultureInfo.InvariantCulture).PadLeft(5) + " ms  " + normalizedRelative);
+                    return candidate;
+                }
             }
             // Deterministic per-resource cache directory (stable across calls
             // and sessions) so selecting vehicles / building missions does not
@@ -973,7 +997,12 @@ namespace UniversalTestLab
             string cacheRoot = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "UniversalTestLab", "cache");
             string cacheDir = Path.Combine(cacheRoot, "r" + GetStableHash(normalizedRelative).ToString("x8"));
             string resultPath = Path.Combine(cacheDir, "aces.vromfs.bin_u", normalizedRelative.Replace('/', Path.DirectorySeparatorChar));
-            if (File.Exists(resultPath)) return resultPath;
+            if (File.Exists(resultPath))
+            {
+                watch.Stop();
+                LogTiming("CACHE   " + watch.ElapsedMilliseconds.ToString(CultureInfo.InvariantCulture).PadLeft(5) + " ms  " + normalizedRelative);
+                return resultPath;
+            }
             Directory.CreateDirectory(cacheDir);
             ProcessStartInfo psi = new ProcessStartInfo
             {
@@ -993,6 +1022,8 @@ namespace UniversalTestLab
             }
             if (!File.Exists(resultPath))
                 throw new FileNotFoundException("The War Thunder folder is valid, but this game resource was not found after extraction:" + Environment.NewLine + normalizedRelative, resultPath);
+            watch.Stop();
+            LogTiming("UNPACK  " + watch.ElapsedMilliseconds.ToString(CultureInfo.InvariantCulture).PadLeft(5) + " ms  " + normalizedRelative);
             return resultPath;
         }
 

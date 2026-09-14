@@ -409,9 +409,73 @@ namespace UniversalTestLab
             {
                 System.Web.Script.Serialization.JavaScriptSerializer s = new System.Web.Script.Serialization.JavaScriptSerializer();
                 s.MaxJsonLength = int.MaxValue;
-                return s.Serialize(value);
+                return Indent(s.Serialize(value));
             }
             catch { return "{}"; }
+        }
+
+        // Pretty-prints the single-line output of JavaScriptSerializer so the config
+        // file stays readable/editable by hand. The reader does not care about
+        // whitespace, so this is presentation only.
+        private static string Indent(string json)
+        {
+            if (String.IsNullOrEmpty(json)) return json;
+            System.Text.StringBuilder sb = new System.Text.StringBuilder(json.Length * 2);
+            int depth = 0;
+            bool inString = false;
+            bool escaped = false;
+            for (int i = 0; i < json.Length; i++)
+            {
+                char c = json[i];
+                if (inString)
+                {
+                    sb.Append(c);
+                    if (escaped) escaped = false;
+                    else if (c == '\\') escaped = true;
+                    else if (c == '"') inString = false;
+                    continue;
+                }
+                switch (c)
+                {
+                    case '"':
+                        inString = true;
+                        sb.Append(c);
+                        break;
+                    case '{':
+                    case '[':
+                        sb.Append(c);
+                        if (i + 1 < json.Length && (json[i + 1] == '}' || json[i + 1] == ']'))
+                        {
+                            sb.Append(json[++i]);
+                            break;
+                        }
+                        depth++;
+                        sb.Append('\n');
+                        AppendPad(sb, depth);
+                        break;
+                    case '}':
+                    case ']':
+                        depth--;
+                        sb.Append('\n');
+                        AppendPad(sb, depth);
+                        sb.Append(c);
+                        break;
+                    case ',':
+                        sb.Append(c);
+                        sb.Append('\n');
+                        AppendPad(sb, depth);
+                        break;
+                    default:
+                        sb.Append(c);
+                        break;
+                }
+            }
+            return sb.ToString();
+        }
+
+        private static void AppendPad(System.Text.StringBuilder sb, int depth)
+        {
+            for (int i = 0; i < depth; i++) sb.Append("  ");
         }
 
         public static T Deserialize<T>(string text)

@@ -224,6 +224,7 @@ namespace UniversalTestLab
         public string weaponBlk { get; set; }
         public string weaponDisplay { get; set; }
         public string kind { get; set; }
+        public string trigger { get; set; }
     }
     internal sealed class PylonSlotRowJson
     {
@@ -431,6 +432,7 @@ namespace UniversalTestLab
     public string WeaponBlk;
     public string WeaponDisplay;
     public string Kind;
+    public string Trigger;
 }
 internal sealed class DonorWeapon
     {
@@ -475,6 +477,13 @@ internal sealed class DonorWeapon
         public int SpawnSpeedKmh;
         public bool IsGround;
         public string UserSightFolder;
+        // True only for missile-only deployable carriers (NASAMS TADS, CLAWS, ...):
+        // they carry no editable cannon and are armed Ask3lad-style (all non-pack
+        // weapon groups at 9999). Vehicles with a real cannon (BMD-4, Bradley, ...)
+        // must NOT be treated this way - the old unconditional call filled the four
+        // mission slots with their first containers (all 30 mm on BMD-4) and left the
+        // 100 mm gun with no slot at all.
+        public bool MissileOnlyCarrier;
         public readonly List<GroundAmmoLoadout> GroundAmmoLoadouts = new List<GroundAmmoLoadout>();
                 public readonly List<string> AuxiliaryPaths = new List<string>();
     }

@@ -43,7 +43,7 @@ const SCHEMAS = {
     cols: ['key', 'value']
   },
   'unit_weapons.tsv': {
-    cols: ['unitId', 'domain', 'unitDisplay', 'weaponBlk', 'weaponDisplay', 'kind']
+    cols: ['unitId', 'domain', 'unitDisplay', 'weaponBlk', 'weaponDisplay', 'kind', 'trigger']
   },
   'air_ordnance.tsv': {
     cols: ['blk', 'display', 'kind']

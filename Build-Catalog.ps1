@@ -1155,22 +1155,46 @@ $nuclearRows = @(
 # Unit -> weapon mapping (ground / naval / air) for cross-domain cannon injection
 $unitWeaponRows = New-Object System.Collections.Generic.List[string]
 $unitWeaponSeen = @{}
-function Add-UnitWeaponRow([string]$uid, [string]$domain, [string]$udisplay, [string]$wblk, [string]$wdisplay, [string]$kind) {
-    $key = "$uid|$domain|$wblk"
+function Add-UnitWeaponRow([string]$uid, [string]$domain, [string]$udisplay, [string]$wblk, [string]$wdisplay, [string]$kind, [string]$trigger) {
+    $key = "$uid|$domain|$trigger|$wblk"
     if ($unitWeaponSeen.ContainsKey($key)) { return }
     $unitWeaponSeen[$key] = $true
-    $unitWeaponRows.Add("$uid`t$domain`t$udisplay`t$wblk`t$wdisplay`t$kind")
+    $unitWeaponRows.Add("$uid`t$domain`t$udisplay`t$wblk`t$wdisplay`t$kind`t$trigger")
 }
 function Get-BlkDisplayName([string]$blkPath) {
     $name = [IO.Path]::GetFileNameWithoutExtension(($blkPath -replace '/', '\'))
     return (($name -replace '[_\\.]', ' ') -replace '\s+', ' ').Trim()
 }
-# GROUND: every ground vehicle's main cannon (from ground.tsv)
+# GROUND: EVERY weapon of every ground vehicle (main gun, secondaries, machine
+# guns and empty/dummy slots) so the cannon swap can install any of them - the
+# old version only listed the main cannon from ground.tsv.
+$groundIds = @{}
 if (Test-Path -LiteralPath (Join-Path $OutputRoot 'ground.tsv')) {
     foreach ($g in [IO.File]::ReadAllLines((Join-Path $OutputRoot 'ground.tsv'))) {
         $p = $g -split "`t"
-        if ($p.Count -lt 7 -or -not $p[6]) { continue }
-        Add-UnitWeaponRow $p[0] 'ground' $p[1] $p[6] (Get-BlkDisplayName $p[6]) 'cannon'
+        if ($p.Count -lt 1 -or -not $p[0]) { continue }
+        $groundIds[$p[0]] = $p[1]
+    }
+}
+$tankModelsRoot = Join-Path $UnitsRoot 'tankmodels'
+if (Test-Path -LiteralPath $tankModelsRoot) {
+    foreach ($tfile in (Get-ChildItem -LiteralPath $tankModelsRoot -File -Filter '*.blk' | Sort-Object Name)) {
+        $tid = [IO.Path]::GetFileNameWithoutExtension($tfile.Name)
+        if (-not $groundIds.ContainsKey($tid)) { continue }
+        $ttext = [IO.File]::ReadAllText($tfile.FullName)
+        $tdisplay = $groundIds[$tid]
+        foreach ($w in (Get-NamedBlocks $ttext 'Weapon')) {
+            $wblk = [regex]::Match($w.Text, '(?m)^\s*blk:t\s*=\s*"([^"]+)"')
+            if (-not $wblk.Success) { continue }
+            $bpath = $wblk.Groups[1].Value
+            $trig = [regex]::Match($w.Text, '(?m)^\s*trigger:t\s*=\s*"([^"]+)"')
+            $trigger = if ($trig.Success) { $trig.Groups[1].Value } else { '' }
+            if ($bpath -match '(?i)dummy_weapon') {
+                Add-UnitWeaponRow $tid 'ground' $tdisplay $bpath ('(empty slot)') 'dummy' $trigger
+            } else {
+                Add-UnitWeaponRow $tid 'ground' $tdisplay $bpath (Get-BlkDisplayName $bpath) 'cannon' $trigger
+            }
+        }
     }
 }
 # NAVAL: every ship's guns (from ship unit files)
@@ -1186,7 +1210,9 @@ if (Test-Path -LiteralPath $shipsRoot) {
             if (-not $wblk.Success) { continue }
             $bpath = $wblk.Groups[1].Value
             if ($bpath -notmatch '(?i)navalmodels_weapons') { continue }
-            Add-UnitWeaponRow $sid 'naval' $sdisplay $bpath (Get-BlkDisplayName $bpath) 'cannon'
+            $ntrig = [regex]::Match($w.Text, '(?m)^\s*trigger:t\s*=\s*"([^"]+)"')
+            $ntrigger = if ($ntrig.Success) { $ntrig.Groups[1].Value } else { '' }
+            Add-UnitWeaponRow $sid 'naval' $sdisplay $bpath (Get-BlkDisplayName $bpath) 'cannon' $ntrigger
         }
     }
 }
@@ -1202,7 +1228,9 @@ foreach ($afile in (Get-ChildItem -LiteralPath $FlightModelsRoot -File -Filter '
         $bpath = $wblk.Groups[1].Value
         if ($bpath -notmatch '(?i)^gameData/Weapons/' -or $bpath -match '(?i)groundmodels|navalmodels|equipment|drop_tank') { continue }
         $airDomain = if ($playable.ContainsKey($aid) -and $playable[$aid].Kind -match '(?i)hel') { 'helicopter' } else { 'aircraft' }
-        Add-UnitWeaponRow $aid $airDomain $adisplay $bpath (Get-BlkDisplayName $bpath) 'cannon'
+        $atrig = [regex]::Match($w.Text, '(?m)^\s*trigger:t\s*=\s*"([^"]+)"')
+        $atrigger = if ($atrig.Success) { $atrig.Groups[1].Value } else { '' }
+        Add-UnitWeaponRow $aid $airDomain $adisplay $bpath (Get-BlkDisplayName $bpath) 'cannon' $atrigger
     }
 }
 # AIR: external stores from donor weapons
@@ -1213,7 +1241,7 @@ foreach ($d in $donorRows) {
     if (-not $bpath -or $bpath -match '(?i)groundmodels|navalmodels') { continue }
     $label = if ($p.Count -gt 9 -and $p[9]) { $p[9] } else { Get-BlkDisplayName $bpath }
     $airDomain2 = if ($playable.ContainsKey($p[0]) -and $playable[$p[0]].Kind -match '(?i)hel') { 'helicopter' } else { 'aircraft' }
-    Add-UnitWeaponRow $p[0] $airDomain2 $p[1] $bpath $label 'ordnance'
+    Add-UnitWeaponRow $p[0] $airDomain2 $p[1] $bpath $label 'ordnance' ''
 }
 [IO.File]::WriteAllLines((Join-Path $OutputRoot 'unit_weapons.tsv'), $unitWeaponRows, [Text.UTF8Encoding]::new($false))
 }

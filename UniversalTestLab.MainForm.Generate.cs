@@ -545,8 +545,19 @@ string cannon = ((customCannonNeeded || moduleShipsWeapons) && hasEditableCannon
                         foreach (GroundAmmoLoadout unlimited in missionAmmo) unlimited.Count = 9999;
                     foreach (GroundAmmoLoadout loadout in missionAmmo)
                     {
-                        if (!String.IsNullOrEmpty(cannon))
-                            loadout.AmmoGroup = ResolveAmmoSlotId(cannon, loadout.BulletName);
+                        if (String.IsNullOrEmpty(cannon)) continue;
+                        loadout.AmmoGroup = ResolveAmmoSlotId(cannon, loadout.BulletName);
+                        if (String.IsNullOrWhiteSpace(loadout.AmmoGroup) && !String.IsNullOrWhiteSpace(loadout.BulletName))
+                        {
+                            // A stock / "default" round of the injected gun (e.g.
+                            // 125mm_3bk_12m): the gun defines the projectile but the
+                            // vehicle keeps no matching ammo container, so the mission
+                            // slot must stay empty (bullets:t="") with the user's count
+                            // and the engine loads its native default round. Clearing
+                            // BulletName keeps ConfigureGroundPlayer from writing the
+                            // bare projectile name into the slot.
+                            if (BlkTools.CannonHasBullet(cannon, loadout.BulletName)) loadout.BulletName = "";
+                        }
                     }
                 }
             }
@@ -741,6 +752,13 @@ string cannon = ((customCannonNeeded || moduleShipsWeapons) && hasEditableCannon
                 }
             }
 
+            // Collect the donor gun's own ammunition containers (full text, before
+            // any later per-round trimming); they drive the proxy ammo-pack rebuild
+            // below so the engine - and with it UTL/in-game ammo lists - follows the
+            // swapped-in cannon instead of the host vehicle's 105 mm packs.
+            List<string> donorCannonContainers = null;
+            if (useCustomCannon && cannon != null)
+                donorCannonContainers = BlkTools.CollectCannonContainers(cannon);
             if (useCustomCannon && settings.ReloadSeconds > 0)
                 cannon = SetOrInsertNumber(cannon, "shotFreq", 1.0 / settings.ReloadSeconds);
 
@@ -865,8 +883,13 @@ string cannon = ((customCannonNeeded || moduleShipsWeapons) && hasEditableCannon
                 // a non-dummy gunner0 (normal tank gun), else the first non-dummy
                 // Weapon (missile launcher like Buk/Osa/Tor is gunner1).
                 List<BlockSpan> weapons = BlkTools.Blocks(commonOverride, "Weapon").ToList();
-                BlockSpan mainWeapon = weapons.FirstOrDefault(x => String.Equals(BlkTools.Field(x.Text, "trigger", "t"), "gunner0", StringComparison.OrdinalIgnoreCase) && !IsDummyWeapon(x))
-                    ?? weapons.FirstOrDefault(x => !IsDummyWeapon(x));
+                // Prefer the primary mount (gunner0) even when it is a dummy / empty
+                // slot: many vehicles only expose a dummy weapon on gunner0 (missile
+                // carriers, some SPGs), and users want the swapped-in gun to fill that
+                // empty slot instead of hijacking an unrelated machine gun mount.
+                BlockSpan mainWeapon = weapons.FirstOrDefault(x => String.Equals(BlkTools.Field(x.Text, "trigger", "t"), "gunner0", StringComparison.OrdinalIgnoreCase))
+                    ?? weapons.FirstOrDefault(x => !IsDummyWeapon(x))
+                    ?? weapons.FirstOrDefault();
                 if (mainWeapon == null) throw new InvalidOperationException("Primary gun mount was not found in the ground vehicle.");
                 string weaponBlock = mainWeapon.Text;
                 if (customCannonNeeded)
@@ -901,7 +924,80 @@ string cannon = ((customCannonNeeded || moduleShipsWeapons) && hasEditableCannon
                 commonOverride = Regex.Replace(commonOverride, @"^\s*commonWeapons\s*\{", "commonWeapons {", RegexOptions.IgnoreCase);
                 
                 proxy.AppendLine(commonOverride);
+                // The engine's selectable ammunition comes from the vehicle's
+                // modifications ammo packs (empty blocks named after cannon
+                // containers) plus the weapons preset - not from the cannon file.
+                // The proxy still inherits the host packs (e.g. M1's 105 mm), so
+                // rebuild them: drop host ammunition blocks, append the donor
+                // cannon's own containers, keep every research modification.
+                if (donorCannonContainers != null && donorCannonContainers.Count > 0)
+                {
+                    BlockSpan modsNative = BlkTools.FirstBlock(nativeUnit, "modifications", 0);
+                    if (modsNative != null)
+                    {
+                        List<BlockSpan> hostAmmo = new List<BlockSpan>();
+                        foreach (BlockSpan modBlock in BlkTools.DirectChildBlocks(modsNative.Text))
+                        {
+                            string modName = BlkTools.BlockName(modBlock);
+                            if (String.IsNullOrEmpty(modName)) continue;
+                            if (Regex.IsMatch(modName, @"^\d+mm_") || modName.EndsWith("_ammo_pack", StringComparison.OrdinalIgnoreCase))
+                                hostAmmo.Add(modBlock);
+                        }
+                        string rebuiltMods = modsNative.Text;
+                        // Delete from the back forwards: spans were measured on the
+                        // original text, and removing a later block never shifts the
+                        // offsets of earlier ones.
+                        // Keep the mission-side modification enables in sync with the
+                        // rebuilt packs: drop every removed host ammunition id and enable
+                        // each donor container plus its _ammo_pack twin (those blocks now
+                        // exist on the proxy; the host 105 ids no longer do).
+                        HashSet<string> hostPackIds = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+                        foreach (BlockSpan ammo in hostAmmo)
+                        {
+                            string packId = BlkTools.BlockName(ammo);
+                            if (!String.IsNullOrEmpty(packId)) hostPackIds.Add(packId);
+                        }
+                        foreach (string id in settings.EnabledModifications.Where(x => hostPackIds.Contains(x)).ToList())
+                            settings.EnabledModifications.Remove(id);
+                        foreach (string container in donorCannonContainers)
+                        {
+                            settings.EnabledModifications.Add(container);
+                            settings.EnabledModifications.Add(container + "_ammo_pack");
+                        }
+                        foreach (BlockSpan ammo in hostAmmo.OrderByDescending(x => x.Start))
+                            rebuiltMods = BlkTools.ReplaceSpan(rebuiltMods, ammo, "");
+                        StringBuilder donorPacks = new StringBuilder();
+                        foreach (string container in donorCannonContainers)
+                        {
+                            // Native tank files carry each shell type as a pair: the
+                            // container block plus its _ammo_pack twin. Mirror that so
+                            // the engine's ammo selector lists every donor shell.
+                            donorPacks.AppendLine("  " + container + " {}");
+                            donorPacks.AppendLine("  " + container + "_ammo_pack {}");
+                        }
+                        if (donorPacks.Length > 0)
+                        {
+                            rebuiltMods = rebuiltMods.TrimEnd();
+                            int closeAt = rebuiltMods.LastIndexOf('}');
+                            if (closeAt > 0)
+                                rebuiltMods = rebuiltMods.Substring(0, closeAt) + donorPacks.ToString() + rebuiltMods.Substring(closeAt);
+                        }
+                        proxy.AppendLine("\"@delete:modifications\"{}");
+                        proxy.AppendLine(rebuiltMods.TrimEnd());
+                    }
+                }
             }
+
+                // Weapon-preset redirect (Ask3lad's us_m2a4 recipe): keep the host's
+                // default preset name but point its payload at the source vehicle, so the
+                // engine's "default ammunition" - the stock shell the source tank carries
+                // (e.g. T-72M1 3BK18M), which exists only inside that preset and never in
+                // the cannon file - resolves through the swapped gun instead of the deleted
+                // host 105 mm packs. This is also what makes a bare bulletsN:t="" with a
+                // bulletsCountN:i slot load the source vehicle's native default round after
+                // a cannon swap.
+                if (useCustomCannon && !String.IsNullOrWhiteSpace(settings.InjectedCannonUnit) && !String.IsNullOrWhiteSpace(target.DefaultPreset))
+                    proxy.AppendLine("\"@override:weapon_presets\" { \"@override:preset[1]\" { \"@override:name\":t = \"" + target.DefaultPreset + "\" \"@override:blk\":t = \"gameData/units/tankModels/" + NormalizeGameResourcePath(settings.InjectedCannonUnit) + ".blk\" } }");
 
                 // Radar swap: rebuild the sensors block (@delete + re-define like commonWeapons)
                 // installing the requested search/track radars and optionally dropping the AI pair.
@@ -920,7 +1016,32 @@ string cannon = ((customCannonNeeded || moduleShipsWeapons) && hasEditableCannon
                 else
                 {
                     BlockSpan round = BlkTools.Blocks(cannon, "bullet").FirstOrDefault(x => String.Equals(BlkTools.Field(x.Text, "bulletName", "t"), settings.InjectedCannonRound, StringComparison.OrdinalIgnoreCase));
-                    if (round != null) cannon = round.Text;
+                    if (round != null)
+                    {
+                        // A bare selected projectile is NOT a weapon: without the cannon
+                        // shell (cannon:b / shotFreq / rack) the engine auto-fires with
+                        // no rhythm (endless burst) and shows no ammunition on the HUD.
+                        // Keep the real shell and embed the single bullet back into it.
+                        List<BlockSpan> shellBullets = BlkTools.RootBlocks(cannon)
+                            .Where(x => String.Equals(BlkTools.BlockName(x), "bullet", StringComparison.OrdinalIgnoreCase))
+                            .OrderBy(x => x.Start).ToList();
+                        if (shellBullets.Count == 0)
+                        {
+                            cannon = round.Text;
+                        }
+                        else
+                        {
+                            StringBuilder shell = new StringBuilder();
+                            int cursor = 0;
+                            foreach (BlockSpan bullet in shellBullets)
+                            {
+                                if (bullet.Start > cursor) shell.Append(cannon.Substring(cursor, bullet.Start - cursor));
+                                cursor = bullet.End + 1;
+                            }
+                            if (cursor < cannon.Length) shell.Append(cannon.Substring(cursor));
+                            cannon = shell.ToString().TrimEnd() + Environment.NewLine + Environment.NewLine + round.Text;
+                        }
+                    }
                 }
             }
 
@@ -939,7 +1060,7 @@ string cannon = ((customCannonNeeded || moduleShipsWeapons) && hasEditableCannon
             // whose gun BLK is still absent or was deleted with the previous token.
             if (useCustomCannon) WriteBytes(cannonOut, new UTF8Encoding(false).GetBytes(cannon));
             WriteBytes(unitOut, new UTF8Encoding(false).GetBytes(unit));
-            GeneratedAircraft generated = new GeneratedAircraft { ClassId = classId, PresetId = !String.IsNullOrWhiteSpace(stockPreset) ? stockPreset : target.DefaultPreset, ModelId = BlkTools.Field(nativeUnit, "model", "t") ?? target.Id, FlightModelPath = unitOut, PresetPath = useCustomCannon ? cannonOut : unitOut, SpawnSpeedKmh = 0, IsGround = true, UserSightFolder = generatedSightFolder };
+            GeneratedAircraft generated = new GeneratedAircraft { ClassId = classId, PresetId = !String.IsNullOrWhiteSpace(stockPreset) ? stockPreset : target.DefaultPreset, ModelId = BlkTools.Field(nativeUnit, "model", "t") ?? target.Id, FlightModelPath = unitOut, PresetPath = useCustomCannon ? cannonOut : unitOut, SpawnSpeedKmh = 0, IsGround = true, UserSightFolder = generatedSightFolder, MissileOnlyCarrier = !hasEditableCannon };
             foreach (GroundAmmoLoadout loadout in missionAmmo) generated.GroundAmmoLoadouts.Add(loadout.Copy());
             if (useCustomCannon) generated.AuxiliaryPaths.Add(cannonOut);
             return generated;

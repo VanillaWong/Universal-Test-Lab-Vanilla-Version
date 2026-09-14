@@ -29,6 +29,8 @@ namespace UniversalTestLab
                 string root = ValidGameRoot();
                 InstallBase(root, false);
                 string token = DateTime.UtcNow.ToString("yyyyMMddHHmmssfff", CultureInfo.InvariantCulture) + "_" + Process.GetCurrentProcess().Id;
+                System.Diagnostics.Stopwatch applyWatch = System.Diagnostics.Stopwatch.StartNew();
+                LogTiming("=== APPLY START  vehicle=" + selected.Id + " ===");
                 bool groundPlayer = IsGroundVehicle(selected);
                 bool helicopterPlayer = !groundPlayer && IsHelicopter(selected, null);
                 CombinedMap combinedMap = null;
@@ -74,8 +76,85 @@ namespace UniversalTestLab
                 // Deployable radar/launcher trucks (NASAMS TADS, CLAWS, ...) carry
                 // missile weapon groups instead of a cannon; arm them Ask3lad-style
                 // (all non-pack groups, 9999 rounds) so deployed launchers have ammo.
-                if (groundPlayer)
+                // Only missile-only deployable carriers get the Ask3lad-style group fill.
+                // Vehicles with a real cannon (BMD-4, Bradley, ...) would otherwise have
+                // their four mission slots consumed by the first containers (e.g. four
+                // 30 mm rounds on BMD-4), leaving the second gun with no slot and 1 round.
+                // A user-configured loadout always wins over the carrier fill.
+                if (groundPlayer && generated.MissileOnlyCarrier && generated.GroundAmmoLoadouts.Count == 0)
                     text = BlkTools.InjectCarrierGroupAmmo(text);
+                // Cannon-swap ammo: the mission ammo slots must reference containers
+                // that exist in the swapped-in gun - the host preset (e.g. M1's native
+                // 105 mm groups) references shells the donor gun does not carry and the
+                // engine reports ammunition exhausted. A player loadout that belongs to
+                // the donor gun wins; otherwise the gun fires its own first container
+                // (stock behaviour: whatever the donor carries, in file order).
+                if (groundPlayer && !String.IsNullOrWhiteSpace(settings.InjectedCannonBlk))
+                {
+                    try
+                    {
+                        string cannonPath = settings.InjectedCannonBlk.Replace('\\', '/');
+                        string donorSource = File.ReadAllText(ExtractGameBlk(root, cannonPath), Encoding.UTF8);
+                        List<string> containers = BlkTools.CollectCannonContainers(donorSource);
+                        // The workbench loadout is authoritative: every configured slot
+                        // maps to the donor container it names (AmmoGroup directly, else
+                        // its round resolved inside the donor gun) and keeps the user's
+                        // Count. Slots that cannot be mapped (host 105 mm shells, rounds
+                        // the donor does not carry) are skipped; when nothing maps at all
+                        // the gun still fires its own first container with 9999 rounds as
+                        // a fallback so the tank is never left with zero ammunition.
+                        List<string> slotQueue = new List<string>();
+                        List<int> slotCounts = new List<int>();
+                        foreach (GroundAmmoLoadout loadout in settings.GroundAmmoLoadouts.OrderBy(x => x.Slot))
+                        {
+                            if (loadout == null || loadout.Slot < 0 || loadout.Slot > 3 || loadout.Count <= 0) continue;
+                            // A STOCK slot (no round chosen, SourceBlk "stock:...") stays an
+                            // empty container: the engine then loads the vehicle's native
+                            // default round (the source tank's stock shell via the preset
+                            // redirect above), exactly like a stock tank in a user mission.
+                            bool stockSlot = String.IsNullOrWhiteSpace(loadout.BulletName)
+                                || (loadout.SourceBlk != null && loadout.SourceBlk.StartsWith("stock:", StringComparison.OrdinalIgnoreCase));
+                            string container = "";
+                            if (!stockSlot)
+                            {
+                                if (!String.IsNullOrWhiteSpace(loadout.AmmoGroup) && containers.Any(x => String.Equals(x, loadout.AmmoGroup, StringComparison.OrdinalIgnoreCase)))
+                                    container = loadout.AmmoGroup;
+                                else if (!String.IsNullOrWhiteSpace(loadout.BulletName))
+                                    container = BlkTools.ResolveCannonContainer(donorSource, loadout.BulletName, containers);
+                                if (String.IsNullOrWhiteSpace(container))
+                                {
+                                    // No ammo container for this round. Two cases:
+                                    //  - the gun itself defines the projectile (a stock
+                                    //    "default" round such as 125mm_3bk_12m): keep the
+                                    //    slot, leave bullets empty so the engine loads its
+                                    //    native default round with the user's count;
+                                    //  - it belongs to the host gun only (e.g. 105 mm
+                                    //    rounds after a cannon swap): drop the slot.
+                                    if (!BlkTools.CannonHasBullet(donorSource, loadout.BulletName)) continue;
+                                    container = "";
+                                }
+                            }
+                            slotQueue.Add(container);
+                            slotCounts.Add(loadout.Count);
+                        }
+                        if (slotQueue.Count == 0)
+                        {
+                            // No workbench loadout at all: one empty slot with a big count,
+                            // so the game fills the rack with the source vehicle's native
+                            // default ammunition (engine clamps to the actual rack).
+                            slotQueue.Add("");
+                            slotCounts.Add(9999);
+                        }
+                        if (slotQueue.Count > 4) slotQueue.RemoveRange(4, slotQueue.Count - 4);
+                        if (slotQueue.Count > 0)
+                            text = BlkTools.ForcePlayerAmmoSlots(text, slotQueue, slotCounts);
+                    }
+                    catch
+                    {
+                        // Donor gun ammo could not be resolved (custom launcher paths) -
+                        // keep the previous mission ammo behaviour.
+                    }
+                }
                 if (combinedMap != null && combinedSpawn != null)
                 {
                     text = BlkTools.ConfigureCombinedScenario(text, combinedMap, combinedSpawn);
@@ -172,6 +251,7 @@ namespace UniversalTestLab
                     : "Mission generated successfully.\r\n\r\nIn War Thunder:\r\n1. Close the User Missions tab.\r\n2. Open User Missions again to refresh the mission list.\r\n3. Launch the current HOT UTL mission.";
                 SetStatus(groundPlayer ? "Ground mission generated. Restart War Thunder once to reload the tank proxy." : "Mission generated. Close and reopen the User Missions tab in War Thunder to refresh it.", false);
                 lastGenerationSucceeded = true;
+                LogTiming("=== APPLY END  " + applyWatch.ElapsedMilliseconds.ToString(CultureInfo.InvariantCulture) + " ms  ===");
                 if (!suppressSuccessDialog) MessageBox.Show(this, refreshInstructions, "Mission generated", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)

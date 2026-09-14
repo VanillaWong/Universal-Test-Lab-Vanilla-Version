@@ -847,7 +847,7 @@ public IList<GroundAmmo> WorkspaceResolveCannonAmmo(string cannonBlk)
             foreach (UnitWeaponRowJson r in JsonRows<UnitWeaponRowJson>("UTL.unit_weapons.json"))
             {
                 if (r == null || String.IsNullOrWhiteSpace(r.unitId) || String.IsNullOrWhiteSpace(r.weaponBlk)) continue;
-                unitWeaponsBacking.Add(new UnitWeapon { UnitId = r.unitId, Domain = r.domain, UnitDisplay = r.unitDisplay, WeaponBlk = r.weaponBlk, WeaponDisplay = r.weaponDisplay, Kind = r.kind });
+                unitWeaponsBacking.Add(new UnitWeapon { UnitId = r.unitId, Domain = r.domain, UnitDisplay = r.unitDisplay, WeaponBlk = r.weaponBlk, WeaponDisplay = r.weaponDisplay, Kind = r.kind, Trigger = r.trigger });
             }
         }
 
