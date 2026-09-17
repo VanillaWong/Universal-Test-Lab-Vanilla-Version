@@ -4,10 +4,11 @@ cn_bt_5	BT-5	ussr_bt_5_default	China	1	typeLightTank	gameData/Weapons/groundMode
 cn_cm_25	CM25	cn_cm_25_default	China	6	typeTankDestroyer	gameData/Weapons/groundModels_weapons/127mm_BGM_71_tow_launcher_user_cannon.blk	10	17550	215	75	10	0	0
 cn_cm_34	CM34	cn_cm_34_default	China	6	typeLightTank	gameData/Weapons/groundModels_weapons/30mm_Bushmaster_2_Mk_44_user_cannon.blk	420	5500	450	75	30	0	0.09
 cn_cm11	CM11	cn_cm11_default	China	6	typeMediumTank	gameData/Weapons/groundModels_weapons/105mm_M68A1_user_cannon.blk	56	43650	750	75	10	0	0
+cn_fk_2000	FK-2000	tank_weapon_preset_default	China	8	typeSPAA	gameData/Weapons/groundModels_weapons/30mm_pgz_625_user_cannon.blk	500	5500	550	75	30	0	0.02
 cn_gmc_cckw_353_m45_quad	CCKW 353 (M45)	cn_gmc_cckw_353_m45_quad_default	China	2	typeSPAA	gameData/Weapons/groundModels_weapons/12_7mm_M2_HB_user_machinegun_for_M15.blk	800	11050	94	75	30	0	0.03
 cn_hj_9	AFT09	cn_hj_9_default	China	6	typeTankDestroyer	gameData/Weapons/groundModels_weapons/152mm_hj_9_launcher_user_cannon.blk	12	5500	320	75	30	0	0
 cn_hq_11	HQ11	cn_hq_11_default	China	8	typeSPAA	gameData/Weapons/groundModels_weapons/250mm_FM_3000_user_cannon.blk	8	50000	550	60	10	0	0
-cn_hq_17	HQ17	cn_hq_17_default	China	8	typeSPAA	gameData/Weapons/groundModels_weapons/239mm_HQ_17_user_cannon.blk	8	31800	780	75	10	0	0
+cn_hq_17	HQ17	cn_hq_17_default	China	7	typeSPAA	gameData/Weapons/groundModels_weapons/239mm_HQ_17_user_cannon.blk	8	31800	780	75	10	0	0
 cn_is_2_1943	IS-2	ussr_is_2_default	China	4	typeHeavyTank	gameData/Weapons/groundModels_weapons/122mm_D25T_user_cannon.blk	28	44000	520	75	10	0	0
 cn_is_2_1943_no402	IS-2 No.402	ussr_is_2_default	China	4	typeHeavyTank	gameData/Weapons/groundModels_weapons/122mm_D25T_user_cannon.blk	28	44000	520	75	10	0	0
 cn_is_2_1944	IS-2 (1944)	cn_is_2_1944_default	China	4	typeHeavyTank	gameData/Weapons/groundModels_weapons/122mm_D25T_user_cannon.blk	28	44000	520	75	10	0	0
@@ -44,6 +45,7 @@ cn_pgz_09	PGZ09	cn_pgz_09_default	China	6	typeSPAA	gameData/Weapons/groundModels
 cn_pgz_625_fb10	CS/SA5	cn_pgz_625_fb10_default	China	8	typeSPAA	gameData/Weapons/groundModels_weapons/30mm_pgz_625_user_cannon.blk	800	5500	485	75	30	0	0
 cn_pgz_88	PGZ88	cn_pgz_88_default	China	5	typeSPAA	gameData/Weapons/groundModels_weapons/37mm_type_76_user_cannon.blk	250	46000	580	75	10	0	0.3
 cn_plz_05	PLZ05	cn_plz_05_default	China	5	typeTankDestroyer	gameData/Weapons/groundModels_weapons/155mm_PL05_user_cannon.blk	30	31800	800	75	10	0	1
+cn_plz_45	PLZ45	tank_weapon_preset_default	China	4	typeTankDestroyer	gameData/Weapons/groundModels_weapons/155mm_plz45_user_cannon.blk	30	31800	525	75	10	0	0
 cn_plz_83	PLZ83	cn_plz_83_default	China	4	typeTankDestroyer	gameData/Weapons/groundModels_weapons/152mm_pl_66_gai_user_cannon.blk	30	31800	520	75	10	0	0
 cn_plz_83_130	PLZ83-130	cn_plz_83_130_default	China	5	typeTankDestroyer	gameData/Weapons/groundModels_weapons/130mm_pl_59a_gai_user_cannon.blk	38	31800	520	75	10	0	0
 cn_pt_76	PT-76	cn_pt_76_default	China	3	typeLightTank	gameData/Weapons/groundModels_weapons/76mm_D56_T_user_cannon.blk	40	26500	240	75	10	0	0
@@ -60,7 +62,7 @@ cn_t_34_85_d_5t	T-34-85 (S-53)	ussr_t_34_85_zis_53_default	China	3	typeMediumTan
 cn_t_34_85_zis_53_no215	T-34-85 No.215	ussr_t_34_85_zis_53_default	China	4	typeMediumTank	gameData/Weapons/groundModels_weapons/85mm_ZiS_S_53_user_cannon.blk	60	30000	500	75	10	0	0
 cn_t_62	T-62 N545	t_62_default	China	6	typeMediumTank	gameData/Weapons/groundModels_weapons/115mm_U5TS_user_cannon.blk	40	37000	580	75	10	0	0
 cn_t_80ud_478be	T-80UD/BE	cn_t_80ud_478be_default	China	7	typeMediumTank	gameData/Weapons/groundModels_weapons/125mm_2A46_M1_T_80UD_user_cannon.blk	45	50000	1000	75	10	0	0
-cn_tor_m1	Tor-M1	cn_tor_m1_default	China	8	typeSPAA	gameData/Weapons/groundModels_weapons/239mm_9M331_user_cannon.blk	8	31800	780	75	10	0	0
+cn_tor_m1	Tor-M1	cn_tor_m1_default	China	7	typeSPAA	gameData/Weapons/groundModels_weapons/239mm_9M331_user_cannon.blk	8	31800	780	75	10	0	0
 cn_type_58	T-34-85 Gai	cn_type_58_default	China	3	typeMediumTank	gameData/Weapons/groundModels_weapons/85mm_Type_56_user_cannon.blk	55	30000	520	75	10	0	0
 cn_type_59	Type 59	cn_type_59_default	China	5	typeMediumTank	gameData/Weapons/groundModels_weapons/100mm_Type59_user_cannon.blk	34	35500	520	75	10	7.496252	0
 cn_type_59d	ZTZ59D1	cn_type_59_default	China	6	typeMediumTank	gameData/Weapons/groundModels_weapons/105mm_Type_83_user_cannon.blk	37	35500	520	75	10	7.496252	0
@@ -85,7 +87,7 @@ cn_wz_305	WZ305	cn_wz_305_default	China	5	typeSPAA	gameData/Weapons/groundModels
 cn_zbd_04a	ZBD04A	cn_zbd_04a_default	China	7	typeLightTank	gameData/Weapons/groundModels_weapons/30mm_zpt_99_user_cannon.blk	500	13200	600	75	10	0	0.045
 cn_zsd63_pg87	ZSD63/PG87	cn_zsd63_pg87_default	China	4	typeSPAA	gameData/Weapons/groundModels_weapons/25mm_PG87_user_cannon.blk	240	46000	260	75	10	0	0.045
 cn_zsl_92	ZSL92	cn_zsl_92_default	China	4	typeSPAA	gameData/Weapons/groundModels_weapons/25mm_zpt90_user_cannon.blk	400	5500	320	75	30	0	0.3
-cn_ztl_11	ZTL11	cn_ztl_11_default	China	7	typeLightTank	gameData/Weapons/groundModels_weapons/105mm_ZPL98A_user_cannon.blk	40	5500	450	75	30	0	0
+cn_ztl_11	ZLT11	cn_ztl_11_default	China	7	typeLightTank	gameData/Weapons/groundModels_weapons/105mm_ZPL98A_user_cannon.blk	40	5500	450	75	30	0	0
 cn_zts_63_1980	ZTS63	cn_zts_63_1980_default	China	5	typeLightTank	gameData/Weapons/groundModels_weapons/85mm_Type_63_user_cannon.blk	47	20500	400	75	10	0	0
 cn_ztz_59a	ZTZ59A	cn_ztz_59a_default	China	5	typeMediumTank	gameData/Weapons/groundModels_weapons/100mm_Type59_user_cannon.blk	34	35500	520	75	10	7.496252	0
 cn_ztz_88a	ZTZ88A	cn_ztz_88a_default	China	6	typeMediumTank	gameData/Weapons/groundModels_weapons/105mm_ZPL94_user_cannon.blk	45	50000	730	75	10	0	0
@@ -138,6 +140,7 @@ fr_amx_m4	AMX M4	fr_amx_m4_default	France	4	typeMediumTank	gameData/Weapons/grou
 fr_amx_vtt_dca	VTT DCA	fr_amx_vtt_dca_default	France	2	typeSPAA	gameData/Weapons/groundModels_weapons/12_7mm_M2_HB_user_machinegun_for_M15.blk	800	18400	270	75	10	0	0.03
 fr_arl_44	ARL-44	fr_arl_44_default	France	3	typeHeavyTank	gameData/Weapons/groundModels_weapons/90mm_SA45_ARL_user_cannon.blk	37	31800	600	75	10	0	0
 fr_arl_44_acl1	ARL-44 (ACL-1)	fr_arl_44_acl1_default	France	3	typeHeavyTank	gameData/Weapons/groundModels_weapons/75mm_SA_46_user_cannon.blk	37	31800	600	75	10	0	0
+fr_arl_44_mod	ARL-44 Bayard	tank_weapon_preset_default	France	3	typeHeavyTank	gameData/Weapons/groundModels_weapons/90mm_SA45_ARL_user_cannon.blk	37	31800	600	75	10	0	0
 fr_b1_bis	B1 bis	fr_b1_bis_default	France	2	typeHeavyTank	gameData/Weapons/groundModels_weapons/47mm_SA_35_user_cannon.blk	50	31800	307	75	10	4	0
 fr_b1_ter	B1 ter	fr_b1_ter_default	France	2	typeHeavyTank	gameData/Weapons/groundModels_weapons/47mm_SA_35_user_cannon.blk	60	31800	350	75	10	4	0
 fr_bat_chat_25t	Char 25t	fr_bat_chat_25t_default	France	5	typeLightTank	gameData/Weapons/groundModels_weapons/90mm_Char_25t_user_cannon.blk	52	18400	500	75	10	0	0
@@ -148,6 +151,7 @@ fr_citroen_kegresse_p4t	P.7.T AA	fr_citroen_kegresse_p4t_default	France	1	typeSP
 fr_crotale_ng	ItO 90M	fr_crotale_ng_default	France	8	typeSPAA	gameData/Weapons/groundModels_weapons/163mm_vt_1_launcher_user_cannon.blk	8	5500	251	75	30	0	0
 fr_crusader_mk_2	Crusader Mk.II	uk_crusader_mk_2_default	France	2	typeLightTank	gameData/Weapons/groundModels_weapons/40mm_QF_2pdr_user_cannon.blk	110	31800	340	75	10	0	0
 fr_cv_9035_nl	CV 9035NL	fr_cv_9035_nl_default	France	7	typeLightTank	gameData/Weapons/groundModels_weapons/35mm_bushmaster_3_user_cannon.blk	210	47000	815	75	10	0	0.15
+fr_embt	EMBT	tank_weapon_preset_default	France	8	typeMediumTank	gameData/Weapons/groundModels_weapons/120mm_GIAT_CN120_26_F1_user_cannon.blk	44	50000	1500	75	10	0	0
 fr_fcm_36	FCM.36	fr_fcm_36_default	France	1	typeLightTank	gameData/Weapons/groundModels_weapons/37mm_SA_18_user_cannon.blk	102	54000	105	75	10	0	0
 fr_hotchkiss_h35	H.35	fr_hotchkiss_h35_default	France	1	typeLightTank	gameData/Weapons/groundModels_weapons/37mm_SA_18_user_cannon.blk	100	9700	75	75	10	0	0
 fr_hotchkiss_h39	H.39	fr_hotchkiss_h39_default	France	1	typeLightTank	gameData/Weapons/groundModels_weapons/37mm_SA_38_user_cannon.blk	100	9700	120	75	10	0	0
@@ -157,7 +161,7 @@ fr_leclerc_azur	Leclerc AZUR	fr_leclerc_azur_default	France	8	typeMediumTank	gam
 fr_leclerc_s1	Leclerc	fr_leclerc_s1_default	France	8	typeMediumTank	gameData/Weapons/groundModels_weapons/120mm_GIAT_CN120_26_F1_user_cannon.blk	40	47000	1500	75	10	0	0.37
 fr_leclerc_s2	Leclerc S2	fr_leclerc_s2_default	France	8	typeMediumTank	gameData/Weapons/groundModels_weapons/120mm_GIAT_CN120_26_F1_user_cannon.blk	40	47000	1500	75	10	0	0.37
 fr_leclerc_sxxi	Leclerc SXXI	fr_leclerc_sxxi_default	France	8	typeMediumTank	gameData/Weapons/groundModels_weapons/120mm_GIAT_CN120_26_F1_user_cannon.blk	40	47000	1500	75	10	0	0.37
-fr_leopard_1a5be	Leopard 1A5BE	fr_leopard_1a5be_default	France	6	typeMediumTank	gameData/Weapons/groundModels_weapons/105mm_L7A3_Radpanzer_user_cannon.blk	60	47000	830	75	10	0	0
+fr_leopard_1a5be	Leopard 1A5BE	fr_leopard_1a5be_default	France	6	typeMediumTank	gameData/Weapons/groundModels_weapons/105mm_L7A3_leopard_1a5be_user_cannon.blk	60	47000	830	75	10	0	0
 fr_leopard_2a4nl	Leopard 2A4NL	fr_leopard_2a4nl_default	France	7	typeMediumTank	gameData/Weapons/groundModels_weapons/120mm_Rheinmetall_L44_user_cannon.blk	42	47000	1500	75	10	5.9988	0.37
 fr_leopard_2a4nl_les	Leopard 2 (OTCo)	germ_leopard_2a4_default	France	7	typeMediumTank	gameData/Weapons/groundModels_weapons/120mm_Rheinmetall_L44_user_cannon.blk	42	47000	1500	75	10	5.9988	0.37
 fr_leopard_2a5nl	Leopard 2A5NL	fr_leopard_2a5nl_default	France	8	typeMediumTank	gameData/Weapons/groundModels_weapons/120mm_Rheinmetall_L44_2A5_user_cannon.blk	42	47000	1500	75	10	5.9988	0.37
@@ -220,6 +224,7 @@ germ_beutepanzer_mk_iv_event	Beutepanzer IV	germ_beutepanzer_mk_iv_default	Event
 germ_bmp_1_ddr	SPz BMP-1	ussr_bmp_1_default	Germany	5	typeLightTank	gameData/Weapons/groundModels_weapons/73mm_2A28_user_cannon.blk	40	13200	300	75	10	0	0.1
 germ_boxer_3105	Boxer MGS	germ_boxer_3105_default	Germany	7	typeLightTank	gameData/Weapons/groundModels_weapons/105mm_cockerill_hp_user_cannon.blk	42	5500	720	75	30	0	0.5
 germ_boxer_swatrinf	sWaTrgInf	germ_boxer_swatrinf_default	Germany	7	typeLightTank	gameData/Weapons/groundModels_weapons/30mm_Rheinmetall_MK_30_2_ABM_KF41_user_cannon.blk	348	5500	815	75	30	0	0.05
+germ_embt	EMBT	tank_weapon_preset_default	Germany	8	typeMediumTank	gameData/Weapons/groundModels_weapons/120mm_GIAT_CN120_26_F1_user_cannon.blk	44	50000	1500	75	10	0	0
 germ_erprobungstrager_3_achs_turm	Turm III	germ_erprobungstrager_3_achs_turm_default	Germany	5	typeMediumTank	gameData/Weapons/groundModels_weapons/105mm_L7A3_user_cannon.blk	47	47000	856	75	10	5	0
 germ_flakpanzer_38t_gepard	Flakpanzer 38	germ_flakpanzer_38t_Gepard_default	Germany	1	typeSPAA	gameData/Weapons/groundModels_weapons/20mm_FlaK38_user_cannon.blk	1080	9800	150	75	10	0	0.045
 germ_flakpanzer_i_ausf_a	Flakpanzer I	germ_flakpanzer_I_ausf_A_default	Germany	1	typeSPAA	gameData/Weapons/groundModels_weapons/20mm_FlaK38_user_cannon.blk	320	5500	60	75	10	0	0.045
@@ -265,13 +270,13 @@ germ_leopard_2a7v	Leopard 2A7V	germ_leopard_2a7v_default	Germany	8	typeMediumTan
 germ_leopard_2av	Leopard 2AV	germ_leopard_2av_default	Germany	7	typeMediumTank	gameData/Weapons/groundModels_weapons/105mm_L7A3_Radpanzer_user_cannon.blk	40	47000	1500	75	10	5.9988	0.37
 germ_leopard_2k	Leopard 2K	germ_leopard_2k_default	Germany	7	typeMediumTank	gameData/Weapons/groundModels_weapons/120mm_Rheinmetall_L44_user_cannon.blk	41	31800	1500	75	10	6.666667	0
 germ_leopard_2pl	Leopard 2PL	germ_leopard_2pl_default	Germany	8	typeMediumTank	gameData/Weapons/groundModels_weapons/120mm_Rheinmetall_L44_2PL_user_cannon.blk	42	47000	1500	75	10	5.9988	0.37
-germ_leopard_a1a1_120	Leopard A1A1 (L/44)	germ_leopard_a1a1_120_default	Germany	6	typeMediumTank	gameData/Weapons/groundModels_weapons/120mm_Rheinmetall_L44_user_cannon.blk	42	47000	830	75	10	6.666667	0
+germ_leopard_a1a1_120	Leopard 1 MPI	germ_leopard_a1a1_120_default	Germany	6	typeMediumTank	gameData/Weapons/groundModels_weapons/120mm_Rheinmetall_L44_user_cannon.blk	42	47000	830	75	10	6.666667	0
 germ_leopard_c2_mexas	C2A1	germ_leopard_c2_mexas_default	Germany	6	typeMediumTank	gameData/Weapons/groundModels_weapons/105mm_L7A3_Radpanzer_user_cannon.blk	60	47000	830	75	10	0	0
 germ_leopard_i	Leopard I	germ_leopard_I_default	Germany	5	typeMediumTank	gameData/Weapons/groundModels_weapons/105mm_L7A3_user_cannon.blk	60	47000	830	75	10	0	0
 germ_leopard_i_a1	Leopard A1A1	germ_leopard_I_a1_default	Germany	6	typeMediumTank	gameData/Weapons/groundModels_weapons/105mm_L7A3_GA_2_user_cannon.blk	60	47000	830	75	10	0	0
 germ_m109g	M109G	germ_m109g_default	Germany	4	typeTankDestroyer	gameData/Weapons/groundModels_weapons/155mm_m126e1_user_cannon.blk	28	47000	405	75	10	0	0.4
-germ_m44	M44	us_m44_default	Germany	3	typeTankDestroyer	gameData/Weapons/groundModels_weapons/155mm_m45_user_cannon.blk	24	7000	500	75	10	0	0.25
-germ_m55	M55	us_m55_default	Germany	3	typeTankDestroyer	gameData/Weapons/groundModels_weapons/203mm_m47_user_cannon.blk	10	50000	810	60	10	0	0.25
+germ_m44	M44	us_m44_default	Germany	2	typeTankDestroyer	gameData/Weapons/groundModels_weapons/155mm_m45_user_cannon.blk	24	7000	500	75	10	0	0.25
+germ_m55	M55	us_m55_default	Germany	2	typeTankDestroyer	gameData/Weapons/groundModels_weapons/203mm_m47_user_cannon.blk	10	50000	810	60	10	0	0.25
 germ_machinegun_mg_08	MG08	germ_machinegun_mg_08_default	Event / Experimental	0	typeLightTank	gameData/Weapons/groundModels_weapons/7_92mm_mg08_user_machinegun.blk	5000	9700	1	0	0	0	0
 germ_marder_1a1	Marder A1-	germ_marder_1a1_default	Germany	5	typeLightTank	gameData/Weapons/groundModels_weapons/20mm_Rh_202_Marder_user_cannon.blk	1200	29200	600	75	10	0	0.02
 germ_marder_1a3	Marder 1A3	germ_marder_1a3_default	Germany	5	typeLightTank	gameData/Weapons/groundModels_weapons/20mm_Rh_202_Marder_user_cannon.blk	1200	54000	600	75	10	0	0.02
@@ -375,7 +380,7 @@ germ_spz_12_3	SPz 12-3 LGS	germ_spz_12_3_default	Germany	4	typeLightTank	gameDat
 germ_spz_oerlikon_raketenautomat	Raketenautomat	germ_spz_oerlikon_raketenautomat_default	Germany	5	typeTankDestroyer	gameData/Weapons/groundModels_weapons/81mm_Oerlikon_Typ_3Z_8Dla_Raketenautomat_user_cannon.blk	18	5800	240	75	10	0	0.045
 germ_stug_iii_ausf_a	StuG III A	germ_stug_III_ausf_A_default	Germany	1	typeTankDestroyer	gameData/Weapons/groundModels_weapons/75mm_StuK37_user_cannon.blk	44	19600	300	75	10	0	0
 germ_stug_iii_ausf_f	StuG III F	germ_stug_III_ausf_F_default	Germany	2	typeTankDestroyer	gameData/Weapons/groundModels_weapons/75mm_StuK40_L43_user_cannon.blk	44	23200	300	75	10	5	0
-germ_stug_iii_ausf_g	StuG III G	germ_stug_III_ausf_G_default	Germany	2	typeTankDestroyer	gameData/Weapons/groundModels_weapons/75mm_StuK40_L48_user_cannon.blk	54	23200	300	75	10	5	0
+germ_stug_iii_ausf_g	StuG III G	germ_stug_III_ausf_G_default	Germany	3	typeTankDestroyer	gameData/Weapons/groundModels_weapons/75mm_StuK40_L48_user_cannon.blk	54	23200	300	75	10	5	0
 germ_stuh_iii_ausf_g	StuH 42 G	germ_stuh_III_ausf_G_default	Germany	2	typeTankDestroyer	gameData/Weapons/groundModels_weapons/105mm_StuH42_user_cannon.blk	36	23200	300	75	10	0	0
 germ_sturmmorser_sturmtiger	38 cm Sturmmörser	germ_sturmmorser_sturmtiger_default	Germany	4	typeTankDestroyer	gameData/Weapons/groundModels_weapons/380mm_RW_61_user_cannon.blk	14	28200	700	75	10	0	0
 germ_sturmmorser_sturmtiger_event	38 cm Sturmmörser	germ_sturmmorser_sturmtiger_default	Event / Experimental	0	typeTankDestroyer	gameData/Weapons/groundModels_weapons/380mm_RW_61_user_cannon.blk	14	28200	700	75	10	0	0
@@ -396,6 +401,7 @@ germ_waffentrager_krupp_steyr	Waffenträger	germ_waffentrager_krupp_steyr_defaul
 germ_wiesel_1_mk20	Wiesel 1A4	germ_wiesel_1_mk20_default	Germany	5	typeSPAA	gameData/Weapons/groundModels_weapons/20mm_Rh_202_Wiesel_user_cannon.blk	400	29200	87	75	10	0	0.02
 germ_wiesel_1_tow	Wiesel 1A2	germ_wiesel_1_tow_default	Germany	7	typeTankDestroyer	gameData/Weapons/groundModels_weapons/127mm_BGM_71_tow_Wiesel_launcher_user_cannon.blk	8	29200	87	75	10	0	0
 germ_wiesel_2_adwc	Ozelot	germ_wiesel_2_adwc_default	Germany	6	typeSPAA	gameData/Weapons/groundModels_weapons/70mm_FIM_92E_Stinger_launcher_user_cannon.blk	8	29200	110	75	10	0	0
+il_9a33bm3	Osa-AKM	ussr_9a33bm3_default	Israel	7	typeSPAA	gameData/Weapons/groundModels_weapons/209mm_9M33A3_launcher_user_cannon.blk	6	5500	300	75	30	0	0
 il_aml_90	AML-90	fr_aml_90_default	Israel	4	typeLightTank	gameData/Weapons/groundModels_weapons/90mm_DEFA_D921_user_cannon.blk	20	5500	90	75	30	0	0.2
 il_amx_13_75	AMX-13	fr_amx_13_75_default	Israel	4	typeLightTank	gameData/Weapons/groundModels_weapons/75mm_SA_50_user_cannon.blk	36	18400	270	75	10	0	0
 il_centurion_mk_5_shot	Sho't	il_centurion_mk_5_shot_default	Israel	4	typeMediumTank	gameData/Weapons/groundModels_weapons/84mm_QQF_20pdr_Mk_I_user_cannon.blk	64	47000	650	75	10	6.25	0
@@ -404,6 +410,7 @@ il_centurion_shot_kal_d	Sho't Kal Dalet	uk_centurion_shot_kal_d_default	Israel	6
 il_centurion_shot_kal_gimel	Sho't Kal Gimel	il_centurion_shot_kal_gimel_default	Israel	6	typeMediumTank	gameData/Weapons/groundModels_weapons/105mm_L7_Shot_user_cannon.blk	72	47000	750	75	10	0	0
 il_eitan	Eitan (P)	il_eitan_default	Israel	7	typeLightTank	gameData/Weapons/groundModels_weapons/30mm_Bushmaster_2_Mk_44_NAMER_user_cannon.blk	400	5500	816	75	30	0	0.02
 il_hunter_afv	Hunter AFV	il_hunter_afv_default	Israel	7	typeLightTank	gameData/Weapons/groundModels_weapons/30mm_Bushmaster_2_Mk_44_NAMER_user_cannon.blk	200	54000	815	75	10	0	0.05
+il_leopard_2a6_hel	Leopard 2HEL	tank_weapon_preset_default	Israel	8	typeMediumTank	gameData/Weapons/groundModels_weapons/120mm_Rheinmetall_L55_user_cannon.blk	42	47000	1500	75	10	5.9988	0.37
 il_m_51	M-51	il_m_51_w_default	Israel	4	typeMediumTank	gameData/Weapons/groundModels_weapons/105mm_M_51_user_cannon.blk	56	31800	460	75	10	7.496252	0
 il_m_51_w	M-51 (W)	il_m_51_w_default	Israel	4	typeMediumTank	gameData/Weapons/groundModels_weapons/105mm_M_51_user_cannon.blk	56	31800	460	75	10	7.496252	0
 il_m109	M109	il_m109_default	Israel	4	typeTankDestroyer	gameData/Weapons/groundModels_weapons/155mm_m126_user_cannon.blk	28	47000	405	75	10	0	0
@@ -437,9 +444,9 @@ il_merkava_mk_3c	Merkava Mk.3C	il_merkava_mk_3c_default	Israel	7	typeMediumTank	
 il_merkava_mk_4_lic	Merkava Mk.4 LIC	il_merkava_mk_4b_default	Israel	8	typeMediumTank	gameData/Weapons/groundModels_weapons/120mm_IMI_MG251_LR_user_cannon.blk	46	43650	1500	75	10	5	0
 il_merkava_mk_4b	Merkava Mk.4B	il_merkava_mk_4b_default	Israel	8	typeMediumTank	gameData/Weapons/groundModels_weapons/120mm_IMI_MG251_LR_user_cannon.blk	46	43650	1500	75	10	5	0
 il_merkava_mk_4m	Merkava Mk.4M	il_merkava_mk_4m_default	Israel	8	typeMediumTank	gameData/Weapons/groundModels_weapons/120mm_IMI_MG251_LR_user_cannon.blk	46	43650	1500	75	10	5	0
-il_mim_72_chaparral	Imp.Chaparral	us_mim_72_chaparral_default	Israel	7	typeSPAA	gameData/Weapons/groundModels_weapons/127mm_MIM_72G_launcher_user_cannon.blk	12	5500	275	75	10	0	0
+il_mim_72_chaparral	Imp.Chaparral	us_mim_72_chaparral_default	Israel	6	typeSPAA	gameData/Weapons/groundModels_weapons/127mm_MIM_72G_launcher_user_cannon.blk	12	5500	275	75	10	0	0
 il_namer_rcws_30	Namer 30	il_namer_rcws_30_default	Israel	7	typeMediumTank	gameData/Weapons/groundModels_weapons/30mm_Bushmaster_2_Mk_44_NAMER_user_cannon.blk	200	43650	1200	75	10	0	0.02
-il_namer_tsrikhon	Namer Tsrikhon	il_namer_tsrikhon_default	Israel	8	typeMediumTank	gameData/Weapons/groundModels_weapons/30mm_Bushmaster_2_Mk_44_NAMER_user_cannon.blk	400	43650	1200	75	10	0	0.02
+il_namer_tsrikhon	Namer Tsrikhon	il_namer_tsrikhon_default	Israel	7	typeMediumTank	gameData/Weapons/groundModels_weapons/30mm_Bushmaster_2_Mk_44_NAMER_user_cannon.blk	400	43650	1200	75	10	0	0.02
 il_sabra_mk1	Sabra Mk.I	il_sabra_mk1_default	Israel	7	typeMediumTank	gameData/Weapons/groundModels_weapons/120mm_IMI_MG253_user_cannon.blk	40	43650	908	75	10	0	0
 il_sholef	Sholef	il_sholef_default	Israel	4	typeTankDestroyer	gameData/Weapons/groundModels_weapons/155mm_soltam_user_cannon.blk	75	47000	900	75	10	0	0
 il_spyder_aio	SPYDER	il_spyder_aio_default	Israel	8	typeSPAA	gameData/Weapons/groundModels_weapons/160mm_spyder_launcher_user_cannon.blk	8	5500	450	75	30	0	0
@@ -448,6 +455,7 @@ il_tcm_20	TCM-20	il_tcm_20_default	Israel	4	typeSPAA	gameData/Weapons/groundMode
 il_tiran_4	Tiran 4	il_tiran_4_default	Israel	5	typeMediumTank	gameData/Weapons/groundModels_weapons/100mm_D10T_user_cannon.blk	34	35500	520	75	10	7.496252	0
 il_tiran_4_sh	Tiran 4S	il_tiran_4_sh_default	Israel	5	typeMediumTank	gameData/Weapons/groundModels_weapons/105mm_M68_Magach_user_cannon.blk	34	35500	520	75	10	7.496252	0
 il_tiran_6	Tiran 6	il_tiran_6_default	Israel	6	typeMediumTank	gameData/Weapons/groundModels_weapons/115mm_U5TS_user_cannon.blk	40	35500	580	75	10	0	0
+il_tor_m1	Tor-M1	cn_tor_m1_default	Israel	7	typeSPAA	gameData/Weapons/groundModels_weapons/239mm_9M331_user_cannon.blk	8	31800	780	75	10	0	0
 il_zsu_23_4	ZSU-23-4V	ussr_zsu_23_4_default	Israel	5	typeSPAA	gameData/Weapons/groundModels_weapons/23mm_2A7_user_cannon.blk	500	37000	280	75	10	0	0.01
 il_zsu_57_2	ZSU-57-2	ussr_zsu_57_2_default	Israel	4	typeSPAA	gameData/Weapons/groundModels_weapons/57mm_S_68_user_cannon.blk	148	28000	520	60	10	0	0
 it_2s1	2S1	ussr_2s1_default	Italy	4	typeTankDestroyer	gameData/Weapons/groundModels_weapons/122mm_2A31_user_cannon.blk	40	31800	300	75	10	0	0
@@ -528,7 +536,8 @@ it_otomatic	OTOMATIC	it_otomatic_default	Italy	7	typeSPAA	gameData/Weapons/groun
 it_p_26_40	P40 "G.C. Leoncello"	it_p_26_40_default	Italy	2	typeMediumTank	gameData/Weapons/groundModels_weapons/75mm_Ansaldo_75_34_user_cannon.blk	63	31800	330	75	10	0	0
 it_p_40	P40	it_p_26_40_default	Italy	2	typeMediumTank	gameData/Weapons/groundModels_weapons/75mm_Ansaldo_75_34_user_cannon.blk	63	31800	330	75	10	0	0
 it_palmaria	Palmaria	it_palmaria_default	Italy	4	typeTankDestroyer	gameData/Weapons/groundModels_weapons/155mm_FH70_L_39_user_cannon.blk	30	47000	750	75	10	0	0.4
-it_pzh_2000_hu	PzH 2000HU	germ_pzh_2000_default	Italy	5	typeTankDestroyer	gameData/Weapons/groundModels_weapons/155mm_l52_user_cannon.blk	60	47000	1000	75	10	0	0.4
+it_pzh_2000	PzH 2000	germ_pzh_2000_default	Italy	5	typeTankDestroyer	gameData/Weapons/groundModels_weapons/155mm_l52_user_cannon.blk	60	47000	1000	75	10	0	0.4
+it_pzh_2000_hu	PzH 2000HU	tank_weapon_preset_default	Italy	5	typeTankDestroyer	gameData/Weapons/groundModels_weapons/155mm_l52_user_cannon.blk	60	47000	1000	75	10	0	0.4
 it_pzkpfw_iii_ausf_n	Pz.III N	it_pzkpfw_III_ausf_N_default	Italy	2	typeMediumTank	gameData/Weapons/groundModels_weapons/75mm_KwK37_user_cannon.blk	64	26500	300	75	10	0	0
 it_pzkpfw_iv_ausf_g	Pz.IV G	it_pzkpfw_IV_ausf_G_default	Italy	3	typeMediumTank	gameData/Weapons/groundModels_weapons/75mm_KwK40_L48_user_cannon.blk	87	22300	300	75	10	5	0
 it_pzkpfw_vi_ausf_e_tiger	Tigris	germ_pzkpfw_VI_ausf_e_tiger_default	Italy	4	typeHeavyTank	gameData/Weapons/groundModels_weapons/88mm_Kwk36_user_cannon.blk	92	56500	700	75	10	0	0
@@ -560,6 +569,7 @@ it_zsu_57_2	ZSU-57-2	ussr_zsu_57_2_default	Italy	5	typeSPAA	gameData/Weapons/gro
 jp_at_37mm_type_1	37 mm AT Type 1	germ_at_gun_pak36_default	Event / Experimental	0	typeLightTank	gameData/Weapons/groundModels_weapons/37mm_KwK36_user_cannon.blk	318	9700	1	0	0	0	0.25
 jp_btr_3e1	BTR-3E1	jp_btr_3e1_default	Japan	6	typeLightTank	gameData/Weapons/groundModels_weapons/30mm_ztm1_BTR_user_cannon.blk	400	5500	326	75	30	0	0.3
 jp_halftrack_m16	M16 MGMC	us_halftrack_m16_default	Japan	2	typeSPAA	gameData/Weapons/groundModels_weapons/12_7mm_M2_HB_user_machinegun_for_M15.blk	1200	11050	148	75	10	0	0.03
+jp_harimau	Harimau	tank_weapon_preset_default	Japan	7	typeMediumTank	gameData/Weapons/groundModels_weapons/105mm_cockerill_hp_user_cannon.blk	42	50000	711	60	10	0	0.5
 jp_hiro_sha	Ro-Go Exp.	jp_hiro_sha_default	Japan	1	typeTankDestroyer	gameData/Weapons/groundModels_weapons/120mm_Schneider_Canet_1898_user_cannon.blk	16	9700	290	75	10	0	0
 jp_icv_ifv_prototype	Type 24 ICV (P)	jp_icv_prototype_default	Japan	7	typeLightTank	gameData/Weapons/groundModels_weapons/30mm_Bushmaster_2_Mk_44_user_cannon.blk	360	5500	570	75	30	0	0.09
 jp_icv_prototype	Type 25 RCV (P)	jp_icv_prototype_default	Japan	7	typeLightTank	gameData/Weapons/groundModels_weapons/30mm_Bushmaster_2_Mk_44_user_cannon.blk	360	5500	570	75	30	0	0.7
@@ -682,7 +692,7 @@ sw_m24_chaffee_dk	M24DK	us_m24_chaffee_default	Sweden	3	typeLightTank	gameData/W
 sw_nasams_fcs	NASAMS 3 (TADS)	sw_nasams_launcher_default	Sweden	8	typeSPAA		0	5500	113	75	30	0	0
 sw_nasams_launcher	NASAMS 3 (TEL)	sw_nasams_launcher_default	Sweden	8	typeSPAA	gameData/Weapons/groundModels_weapons/178mm_nasams_user_cannon.blk	6	5500	380	75	30	0	0
 sw_nomads	NOMADS	sw_nomads_default	Sweden	8	typeSPAA	gameData/Weapons/groundModels_weapons/127mm_aim_9x_nomads_user_cannon.blk	4	29000	625	60	10	0	0
-sw_patria_amv_ctcv_105	CT-CV 105HP	sw_patria_amv_ctcv_105_default	Sweden	7	typeLightTank	gameData/Weapons/groundModels_weapons/105mm_XC8_L50_user_cannon.blk	42	5500	550	75	30	0	0
+sw_patria_amv_ctcv_105	CT-CV 105HP	sw_patria_amv_ctcv_105_default	Sweden	7	typeLightTank	gameData/Weapons/groundModels_weapons/105mm_XC8_L50_user_cannon.blk	42	5500	550	75	30	7.462687	0
 sw_pbil_m40	Pbil m/40	sw_pbil_m40_default	Sweden	1	typeLightTank	gameData/Weapons/groundModels_weapons/20mm_Pvlv_kan_m40_user_cannon.blk	252	5500	135	75	30	0	0
 sw_pbv_301	Pbv 301	sw_pbv_301_default	Sweden	2	typeSPAA	gameData/Weapons/groundModels_weapons/20mm_akan_m45_B_user_cannon.blk	480	31800	150	75	10	0	0
 sw_pbv_302_bill	Pbv 302 (BILL)	sw_pbv_302_bill_default	Sweden	6	typeTankDestroyer	gameData/Weapons/groundModels_weapons/20mm_akan_m47_D_user_cannon.blk	540	31800	270	75	10	0	0.04
@@ -763,8 +773,8 @@ uk_a17_mk_1_tetrarch	Tetrarch I	uk_a17_mk_1_tetrarch_default	Great Britain	1	typ
 uk_a1e1_independent	Independent	uk_a1e1_independent_default	Great Britain	1	typeHeavyTank	gameData/Weapons/groundModels_weapons/47mm_OQF_3pdr_user_cannon.blk	201	32000	370	75	10	0	0
 uk_a25_mk_8	Harry Hopkins I	uk_a25_mk_8_default	Great Britain	2	typeLightTank	gameData/Weapons/groundModels_weapons/40mm_QF_2pdr_user_cannon.blk	50	31800	165	75	10	0	0
 uk_a27m_cromwell_1	Cromwell I	uk_a27m_cromwell_I_default	Great Britain	2	typeMediumTank	gameData/Weapons/groundModels_weapons/57mm_6pdr_QQF_Mk_3_L43_user_cannon.blk	75	47000	600	75	10	0	0
-uk_a27m_cromwell_5	Cromwell V	uk_a27m_cromwell_5_default	Great Britain	2	typeMediumTank	gameData/Weapons/groundModels_weapons/75mm_QQF_MkV_user_cannon.blk	64	47000	600	75	10	0	0
-uk_a27m_cromwell_5_rp3	Cromwell V (RP-3)	uk_a27m_cromwell_5_rp3_default	Great Britain	2	typeMediumTank	gameData/Weapons/groundModels_weapons/75mm_QQF_MkV_user_cannon.blk	64	28400	600	75	10	0	0
+uk_a27m_cromwell_5	Cromwell V	uk_a27m_cromwell_5_default	Great Britain	3	typeMediumTank	gameData/Weapons/groundModels_weapons/75mm_QQF_MkV_user_cannon.blk	64	47000	600	75	10	0	0
+uk_a27m_cromwell_5_rp3	Cromwell V (RP-3)	uk_a27m_cromwell_5_rp3_default	Great Britain	3	typeMediumTank	gameData/Weapons/groundModels_weapons/75mm_QQF_MkV_user_cannon.blk	64	28400	600	75	10	0	0
 uk_a30_challenger	Challenger	uk_a30_challenger_default	Great Britain	3	typeMediumTank	gameData/Weapons/groundModels_weapons/76mm_17pdr_QF_user_cannon.blk	48	31800	600	75	10	5.128205	0
 uk_a30_sp_avenger	Avenger	uk_a30_sp_avenger_default	Great Britain	3	typeMediumTank	gameData/Weapons/groundModels_weapons/76mm_17pdr_QF_user_cannon.blk	55	30000	600	75	10	5.555556	0
 uk_a30_sp_avenger_kit_3rank	Avenger (Overlord)	uk_a30_sp_avenger_default	Great Britain	3	typeMediumTank	gameData/Weapons/groundModels_weapons/76mm_17pdr_QF_user_cannon.blk	55	30000	600	75	10	5.555556	0
@@ -775,6 +785,7 @@ uk_adats_m113a3	ADATS (M113)	uk_adats_m113a3_default	Great Britain	8	typeSPAA	ga
 uk_ai_sam_rapier	Rapier	uk_ai_sam_rapier_default	Event / Experimental	0	typeLightTank	gameData/Weapons/groundModels_weapons/130mm_rapier_launcher_user_cannon.blk	4	5000	1	0	0	0	0
 uk_ajax	Ajax	uk_ajax_default	Great Britain	7	typeLightTank	gameData/Weapons/groundModels_weapons/40mm_CTC_user_cannon.blk	191	13200	816	75	10	0	0
 uk_alecto_mk_1	Alecto I	uk_alecto_mk_1_default	Great Britain	1	typeTankDestroyer	gameData/Weapons/groundModels_weapons/95mm_QF_Mk1_user_cannon.blk	48	30000	164.25	75	10	0	0
+uk_arjun_mk1	Arjun Mk 1	tank_weapon_preset_default	Great Britain	7	typeMediumTank	gameData/Weapons/groundModels_weapons/120mm_arjun_mk1_user_cannon.blk	39	54000	1400	75	10	5.9988	0
 uk_armored_car_aec_mk_2	AEC Mk II	uk_armored_car_aec_mk_2_default	Great Britain	2	typeLightTank	gameData/Weapons/groundModels_weapons/57mm_6pdr_QQF_Mk_5_L50_user_cannon.blk	60	5500	160	75	30	0	0
 uk_armored_car_mk_2_aa	AEC AA	uk_armored_car_mk_2_aa_default	Great Britain	2	typeSPAA	gameData/Weapons/groundModels_weapons/20mm_Oerlikon_user_cannon.blk	300	5500	160	75	30	0	-0.03
 uk_as_90_mk_2	AS90	uk_as_90_mk_2_default	Great Britain	4	typeTankDestroyer	gameData/Weapons/groundModels_weapons/155mm_L_31_user_cannon.blk	48	50000	660	60	10	5	1
@@ -840,7 +851,7 @@ uk_g6_spg	G6	uk_g6_spg_default	Great Britain	4	typeTankDestroyer	gameData/Weapon
 uk_garford_putilov_event	Garford	ussr_garford_putilov_default	Event / Experimental	1	typeLightTank	gameData/Weapons/groundModels_weapons/76mm_1910_16_user_cannon.blk	44	5500	135	75	30	0	0.3
 uk_khalid	Khalid	uk_khalid_default	Great Britain	6	typeMediumTank	gameData/Weapons/groundModels_weapons/120mm_OBL_Tk_L11_user_cannon.blk	54	54000	1314	75	10	0	0
 uk_m109a1	M109A1	us_m109a1_default	Great Britain	4	typeTankDestroyer	gameData/Weapons/groundModels_weapons/155mm_M185_user_cannon.blk	28	47000	405	75	10	0	0
-uk_m1a1_aim_abrams	M1A1	us_m1a1_aim_abrams_default	Great Britain	7	typeMediumTank	gameData/Weapons/groundModels_weapons/120mm_M256_KE_W_user_cannon.blk	40	54000	1519	75	10	5	0.5
+uk_m1a1_aim_abrams	M1A1 SA	us_m1a1_aim_abrams_default	Great Britain	7	typeMediumTank	gameData/Weapons/groundModels_weapons/120mm_M256_KE_W_user_cannon.blk	40	54000	1519	75	10	5	0.5
 uk_m1a2_sep3_abrams	M1A2	us_m1a2_sep3_abrams_default	Great Britain	8	typeMediumTank	gameData/Weapons/groundModels_weapons/120mm_m256_m1a2t_user_cannon.blk	42	54000	1519	75	10	5	0.5
 uk_m3_stuart	Stuart I	uk_m3_stuart_default	Great Britain	1	typeLightTank	gameData/Weapons/groundModels_weapons/37mm_M5_early_user_cannon.blk	103	11520	262	75	10	0	0
 uk_m3a1_stuart	Stuart III	uk_m3a1_stuart_default	Great Britain	1	typeLightTank	gameData/Weapons/groundModels_weapons/37mm_M6_user_cannon.blk	106	11520	262	75	10	0	0
@@ -860,7 +871,7 @@ uk_ratel_20	Ratel 20	uk_ratel_20_default	Great Britain	4	typeLightTank	gameData/
 uk_ratel_90	Ratel 90	uk_ratel_90_default	Great Britain	4	typeLightTank	gameData/Weapons/groundModels_weapons/90mm_GT_2_user_cannon.blk	53	5500	310	75	30	0	1
 uk_ratel_zt3	ZT3A2	uk_ratel_zt3_default	Great Britain	6	typeTankDestroyer	gameData/Weapons/groundModels_weapons/127mm_ZT_3_launcher_user_cannon.blk	15	5500	310	75	30	0	0
 uk_rooikat_105_td	Rooikat 105	uk_rooikat_105_td_default	Great Britain	6	typeLightTank	gameData/Weapons/groundModels_weapons/105mm_GT_7_user_cannon.blk	32	5500	567	75	30	0	0
-uk_rooikat_76	Rooikat Mk.1D	uk_rooikat_76_default	Great Britain	6	typeLightTank	gameData/Weapons/groundModels_weapons/76mm_GT_4_user_cannon.blk	48	5500	567	75	30	0	0
+uk_rooikat_76	Rooikat Mk.1D	uk_rooikat_76_default	Great Britain	6	typeLightTank	gameData/Weapons/groundModels_weapons/76mm_GT_4_user_cannon.blk	49	5500	567	75	30	0	0
 uk_rooikat_mttd	Rooikat MTTD	uk_rooikat_mttd_default	Great Britain	6	typeLightTank	gameData/Weapons/groundModels_weapons/105mm_GT_7_user_cannon.blk	32	5500	567	75	30	0	0
 uk_rooikat_za_35	ZA-35	uk_rooikat_za_35_default	Great Britain	6	typeSPAA	gameData/Weapons/groundModels_weapons/35mm_GA_35_user_cannon.blk	230	5500	567	75	30	0	0.045
 uk_saint_chamond_event	St-Chamond	fr_saint_chamond_default	Event / Experimental	1	typeMediumTank	gameData/Weapons/groundModels_weapons/75mm_1897_user_cannon.blk	106	46000	250	75	10	0	0
@@ -899,9 +910,12 @@ us_adats_bradley	ADATS	us_adats_bradley_default	USA	8	typeSPAA	gameData/Weapons/
 us_ags_teledyne	AGS	us_ags_teledyne_default	USA	7	typeLightTank	gameData/Weapons/groundModels_weapons/105mm_M68A1_AGS_user_cannon.blk	30	23040	600	75	10	0	0
 us_ai_aew_radar_tps_59	AN/TPS-59 radar	us_ai_aew_radar_tps_59_default	Event / Experimental	0	typeLightTank		0	5000	1	0	0	0	0
 us_ai_mlrs_m270	M270 MLRS	us_ai_mlrs_m270_default	Event / Experimental	0	typeTankDestroyer	gameData/Weapons/groundModels_weapons/227mm_m270_rocket_launcher.blk	12	24756	600	75	10	0	0
-us_ai_sam_launcher_m192	HAWK" launcher	us_ai_sam_launcher_m192_default	Event / Experimental	0	typeLightTank	gameData/Weapons/groundModels_weapons/370mm_I_HAWK_rocket_launcher.blk	3	5000	1	0	0	0	0
+us_ai_sam_launcher_m192	I-HAWK" launcher	us_ai_sam_launcher_m192_default	Event / Experimental	0	typeLightTank	gameData/Weapons/groundModels_weapons/370mm_I_HAWK_rocket_launcher.blk	3	5000	1	0	0	0	0
+us_ai_sam_launcher_m192_early	HAWK" launcher	us_ai_sam_launcher_m192_early_default	Event / Experimental	0	typeLightTank	gameData/Weapons/groundModels_weapons/370mm_MIM_23A_HAWK_rocket_launcher.blk	3	5000	1	0	0	0	0
 us_ai_sam_launcher_m901	Patriot" launcher	us_ai_sam_launcher_m901_default	Event / Experimental	0	typeLightTank	gameData/Weapons/groundModels_weapons/410mm_patriot_mim_104_rocket_launcher.blk	4	36000	1	0	0	0	0
-us_ai_sam_radar_an_mpq_46	HAWK" radar	us_ai_sam_radar_an_mpq_46_default	Event / Experimental	0	typeLightTank		0	5000	1	0	0	0	0
+us_ai_sam_radar_an_mpq_33	HAWK" radar	us_ai_sam_radar_an_mpq_33_default	Event / Experimental	0	typeLightTank		0	5000	1	0	0	0	0
+us_ai_sam_radar_an_mpq_34_cwar	AN/MPQ-34 radar	us_ai_sam_radar_an_mpq_34_cwar_default	Event / Experimental	0	typeLightTank		0	5000	1	0	0	0	0
+us_ai_sam_radar_an_mpq_46	I-HAWK" radar	us_ai_sam_radar_an_mpq_46_default	Event / Experimental	0	typeLightTank		0	5000	1	0	0	0	0
 us_ai_sam_radar_an_mpq_53	Patriot" radar	us_ai_sam_radar_an_mpq_53_default	Event / Experimental	0	typeLightTank		0	5000	1	0	0	0	0
 us_ai_sam_radar_cwar	CWAR" radar	us_ai_sam_radar_cwar_default	Event / Experimental	0	typeLightTank		0	5000	1	0	0	0	0
 us_ai_tbm_m752_lance	Lance" TBM	us_ai_tbm_m752_lance_default	Event / Experimental	0	typeLightTank	gameData/Weapons/groundModels_weapons/557mm_mgm_52_rocket_launcher.blk	1	18145	300	75	10	0	0
@@ -943,13 +957,13 @@ us_m18_super_hellcat	Super Hellcat	us_m18_super_hellcat_default	USA	4	typeLightT
 us_m19	M19A1	us_m19_default	USA	3	typeSPAA	gameData/Weapons/groundModels_weapons/40mm_M2_user_cannon.blk	176	17550	296	75	10	0	0.25
 us_m1a1_abrams	M1A1	us_m1a1_abrams_default	USA	7	typeMediumTank	gameData/Weapons/groundModels_weapons/120mm_M256_user_cannon.blk	40	54000	1519	75	10	5	0.5
 us_m1a1_abrams_yt_cup_2019	M1A1	us_m1a1_abrams_default	USA	7	typeMediumTank	gameData/Weapons/groundModels_weapons/120mm_M256_user_cannon.blk	40	54000	1519	75	10	5	0.5
-us_m1a1_aim_abrams	M1A1 AIM	us_m1a1_aim_abrams_default	USA	7	typeMediumTank	gameData/Weapons/groundModels_weapons/120mm_M256_KE_W_user_cannon.blk	40	54000	1519	75	10	5	0.5
+us_m1a1_aim_abrams	M1A1 SA	us_m1a1_aim_abrams_default	USA	7	typeMediumTank	gameData/Weapons/groundModels_weapons/120mm_M256_KE_W_user_cannon.blk	40	54000	1519	75	10	5	0.5
 us_m1a1_hc_abrams	M1A1 HC	us_m1a1_hc_abrams_default	USA	7	typeMediumTank	gameData/Weapons/groundModels_weapons/120mm_M256_M1A2_user_cannon.blk	40	54000	1519	75	10	5	0.5
 us_m1a1_hc_usmc	M1A1 Click-Bait	us_m1a1_hc_usmc_default	USA	7	typeMediumTank	gameData/Weapons/groundModels_weapons/120mm_M256_M1A2_user_cannon.blk	40	54000	1519	75	10	5	0.5
 us_m1a1_hc_usmc_sm	M1A1 HC	us_m1a1_hc_usmc_default	USA	7	typeMediumTank	gameData/Weapons/groundModels_weapons/120mm_M256_M1A2_user_cannon.blk	40	54000	1519	75	10	5	0.5
 us_m1a2_abrams	M1A2 Abrams	us_m1a2_abrams_default	USA	7	typeMediumTank	gameData/Weapons/groundModels_weapons/120mm_M256_M1A2_user_cannon.blk	42	54000	1519	75	10	5	0.5
 us_m1a2_sep_abrams	M1A2 SEP	us_m1a2_sep_abrams_default	USA	8	typeMediumTank	gameData/Weapons/groundModels_weapons/120mm_M256_M1A3_user_cannon.blk	42	54000	1519	75	10	5	0.5
-us_m1a2_sep2_abrams	M1A2 SEP V2	us_m1a2_sep2_abrams_default	USA	8	typeMediumTank	gameData/Weapons/groundModels_weapons/120mm_M256_M1A3_user_cannon.blk	42	54000	1519	75	10	5	0.5
+us_m1a2_sep2_abrams	M1A2 SEPv2	us_m1a2_sep2_abrams_default	USA	8	typeMediumTank	gameData/Weapons/groundModels_weapons/120mm_M256_M1A3_user_cannon.blk	42	54000	1519	75	10	5	0.5
 us_m1a2_sep2_abrams_trophy	M1A2 (Trophy-HV)	us_m1a2_sep2_abrams_trophy_default	USA	8	typeMediumTank	gameData/Weapons/groundModels_weapons/120mm_M256_M1A3_user_cannon.blk	42	54000	1519	75	10	5	0.5
 us_m1a2_sep3_abrams	M1A2 SEP V3	us_m1a2_sep3_abrams_default	USA	8	typeMediumTank	gameData/Weapons/groundModels_weapons/120mm_M256_M1A3_user_cannon.blk	42	54000	1519	75	10	5	0.5
 us_m2_medium	M2	us_m2_medium_default	USA	1	typeMediumTank	gameData/Weapons/groundModels_weapons/37mm_M3_user_cannon.blk	200	17246	350	75	10	0	0
@@ -1015,6 +1029,7 @@ us_m60a3_slep	M60 AMBT	us_m60a3_slep_default	USA	7	typeMediumTank	gameData/Weapo
 us_m60a3_tts	M60A3 TTS	us_m60a3_tts_default	USA	6	typeMediumTank	gameData/Weapons/groundModels_weapons/105mm_M68_TTS_user_cannon.blk	63	43650	750	75	10	0	0
 us_m6a1	M6A1	us_m6a1_default	USA	3	typeHeavyTank	gameData/Weapons/groundModels_weapons/76mm_M7_user_cannon.blk	75	56835	800	75	10	0	0
 us_m6a2e1	M6A2E1	us_m6a2e1_default	USA	4	typeHeavyTank	gameData/Weapons/groundModels_weapons/105mm_T15E2_user_cannon.blk	60	56835	800	75	10	0	0
+us_m7	M7	tank_weapon_preset_default	USA	2	typeMediumTank	gameData/Weapons/groundModels_weapons/75mm_m3_user_cannon.blk	71	31800	400	75	10	0	0
 us_m728	M728 CEV	us_m60_default	USA	5	typeMediumTank	gameData/Weapons/groundModels_weapons/165mm_M135_user_cannon.blk	30	43650	750	75	10	0	0
 us_m8_greyhound	M8 LAC	us_m8_greyhound_default	USA	1	typeLightTank	gameData/Weapons/groundModels_weapons/37mm_M6_user_cannon.blk	80	5500	110	75	30	3.528582	0.25
 us_m8_scott	M8 HMC	us_m8_scott_default	USA	1	typeTankDestroyer	gameData/Weapons/groundModels_weapons/75mm_M2_howitzer_user_cannon.blk	46	15615	296	75	10	0	0
@@ -1065,7 +1080,7 @@ us_truck_us6_studebaker_board	Studebaker US6	us_truck_us6_studebaker_board_defau
 us_truck_us6_studebaker_tent	Studebaker US6	us_truck_us6_studebaker_tent_default	Event / Experimental	0	typeLightTank		0	5500	94	75	10	0	0
 us_xm_8	XM8	us_xm_8_default	USA	6	typeLightTank	gameData/Weapons/groundModels_weapons/105mm_XM_35_user_cannon.blk	30	54000	550	75	10	0	1.2
 us_xm_800t	XM800T	us_xm_800t_default	USA	6	typeLightTank	gameData/Weapons/groundModels_weapons/20mm_m139_user_cannon.blk	500	23040	285	75	10	0	0
-us_xm_803	XM803	us_xm_803_default	USA	6	typeMediumTank	gameData/Weapons/groundModels_weapons/152mm_XM150E6_user_cannon.blk	53	54000	1250	75	10	7.496252	0.5
+us_xm_803	XM803	us_xm_803_default	USA	6	typeMediumTank	gameData/Weapons/groundModels_weapons/152mm_XM150E6_user_cannon.blk	54	54000	1250	75	10	7.496252	0.5
 us_xm_975_roland	XM975	us_xm_975_roland_default	USA	7	typeSPAA	gameData/Weapons/groundModels_weapons/163mm_roland_launcher_user_cannon.blk	10	31800	405	75	10	0	0
 us_xm1_chrysler	XM1 (Chrysler)	us_xm1_chrysler_default	USA	6	typeMediumTank	gameData/Weapons/groundModels_weapons/105mm_M68_XM_user_cannon.blk	55	54000	1521	75	10	0	0.5
 us_xm1_gm	XM1 (GM)	us_xm1_gm_default	USA	6	typeMediumTank	gameData/Weapons/groundModels_weapons/105mm_M68_XM_user_cannon.blk	55	54000	1521	75	10	0	0.2
@@ -1080,16 +1095,18 @@ ussr_2s3m	2S3M	ussr_2s3m_default	USSR / Russia	4	typeTankDestroyer	gameData/Weap
 ussr_9a33bm3	Osa-AKM	ussr_9a33bm3_default	USSR / Russia	7	typeSPAA	gameData/Weapons/groundModels_weapons/209mm_9M33A3_launcher_user_cannon.blk	6	5500	300	75	30	0	0
 ussr_9a35_m2	Strela-10M2	ussr_9a35_m2_default	USSR / Russia	7	typeSPAA	gameData/Weapons/groundModels_weapons/120mm_9m37m_rocket_launcher.blk	8	12300	240	75	10	0	0
 ussr_9p149	Shturm-S	ussr_9p149_default	USSR / Russia	6	typeTankDestroyer	gameData/Weapons/groundModels_weapons/130mm_9M114_launcher_user_cannon.blk	12	16500	240	75	10	0	0
-ussr_9p157	Khrizantema-S	ussr_9p157_default	USSR / Russia	7	typeTankDestroyer	gameData/Weapons/groundModels_weapons/152mm_9M123_launcher_user_cannon.blk	16	24000	500	75	10	0	0
+ussr_9p157	Khrizantema-S	ussr_9p157_default	USSR / Russia	6	typeTankDestroyer	gameData/Weapons/groundModels_weapons/152mm_9M123_launcher_user_cannon.blk	16	24000	500	75	10	0	0
 ussr_a_12_mk_2_matilda_2a_f96	MK-II "Matilda"	ussr_a_12_mk_2_matilda_2A_F96_default	USSR / Russia	2	typeHeavyTank	gameData/Weapons/groundModels_weapons/76mm_F96_user_cannon.blk	54	50000	190	75	10	0	0
 ussr_ai_aew_radar_55j6	Nebo" radar	ussr_ai_aew_radar_55j6_default	Event / Experimental	0	typeLightTank		0	5000	1	0	0	0	0
 ussr_ai_mlrs_9a52_2_smerch	Smerch" MLRS	ussr_ai_mlrs_9a52_2_smerch_default	Event / Experimental	0	typeLightTank	gameData/Weapons/groundModels_weapons/300mm_9k58_rocket_launcher.blk	12	43700	525	75	10	0	0
 ussr_ai_sam_launcher_5p85se	S-300" launcher	ussr_ai_sam_launcher_5p85se_default	Event / Experimental	0	typeLightTank	gameData/Weapons/groundModels_weapons/508mm_s300ps_5v55_rocket_launcher.blk	4	43240	1	0	0	0	0
-ussr_ai_sam_launcher_9a310	BUK" TELAR	ussr_ai_sam_launcher_9a310_default	Event / Experimental	0	typeSPAA	gameData/Weapons/groundModels_weapons/400mm_buk_9m38_rocket_launcher.blk	4	40400	840	75	10	0	0
+ussr_ai_sam_launcher_9a310	BUK" TELAR	ussr_ai_sam_launcher_9a310_default	Event / Experimental	0	typeSPAA	gameData/Weapons/groundModels_weapons/400mm_buk_9m38_early_rocket_launcher.blk	4	40400	840	75	10	0	0
+ussr_ai_sam_launcher_9a310m1	BUK-M1" TELAR	ussr_ai_sam_launcher_9a310m1_default	Event / Experimental	0	typeSPAA	gameData/Weapons/groundModels_weapons/400mm_buk_9m38_rocket_launcher.blk	4	40400	840	75	10	0	0
 ussr_ai_sam_launcher_s_75	SM-90 launcher	ussr_ai_sam_launcher_s_75_default	Event / Experimental	0	typeLightTank	gameData/Weapons/groundModels_weapons/654mm_S_75_V_755_20DS_rocket_launcher.blk	10	5000	1	0	0	0	0
 ussr_ai_sam_radar_5n63s	S-300" radar	ussr_ai_sam_radar_5n63s_default	Event / Experimental	0	typeLightTank		0	5000	1	0	0	0	0
 ussr_ai_sam_radar_5n64s	S-300" radar	ussr_ai_sam_radar_5n64s_default	Event / Experimental	0	typeLightTank		0	5000	1	0	0	0	0
 ussr_ai_sam_radar_9s18	BUK" TADS	ussr_ai_sam_radar_9s18_default	Event / Experimental	0	typeSPAA		0	40400	840	75	10	0	0
+ussr_ai_sam_radar_9s18m1	BUK-M1" TADS	ussr_ai_sam_radar_9s18m1_default	Event / Experimental	0	typeSPAA		0	40400	840	75	10	0	0
 ussr_ai_sam_radar_p_12	P-12 radar	ussr_ai_sam_radar_p_12_default	Event / Experimental	0	typeLightTank		0	5000	1	0	0	0	0
 ussr_ai_sam_radar_snr_75	SNR-75 radar	ussr_ai_sam_radar_snr_75_default	Event / Experimental	0	typeLightTank		0	5000	1	0	0	0	0
 ussr_ai_tbm_9k79_tochka	Tochka" TBM	ussr_ai_tbm_9k79_tochka_default	Event / Experimental	0	typeLightTank	gameData/Weapons/groundModels_weapons/650mm_9k79_rocket_launcher.blk	1	18145	300	75	10	0	0
@@ -1135,6 +1152,7 @@ ussr_is_2_1943	IS-2	ussr_is_2_default	USSR / Russia	4	typeHeavyTank	gameData/Wea
 ussr_is_2_1944	IS-2 (1944)	ussr_is_2_1944_default	USSR / Russia	4	typeHeavyTank	gameData/Weapons/groundModels_weapons/122mm_D25T_user_cannon.blk	28	44000	520	75	10	0	0
 ussr_is_2_1944_321	IS-2 No.321	ussr_is_2_1944_default	USSR / Russia	4	typeHeavyTank	gameData/Weapons/groundModels_weapons/122mm_D25T_user_cannon.blk	28	44000	520	75	10	0	0
 ussr_is_2_1944_revenge	IS-2 "Revenge"	ussr_is_2_1944_revenge_default	USSR / Russia	4	typeHeavyTank	gameData/Weapons/groundModels_weapons/122mm_D25T_user_cannon.blk	28	44000	520	75	10	0	0
+ussr_is_2m_kit_4rank	IS-2M (Be Prepared!)	tank_weapon_preset_default	USSR / Russia	4	typeHeavyTank	gameData/Weapons/groundModels_weapons/122mm_D25T_user_cannon.blk	35	44000	520	75	10	0	0
 ussr_is_3	IS-3	ussr_is_3_default	USSR / Russia	5	typeHeavyTank	gameData/Weapons/groundModels_weapons/122mm_D25T_user_cannon.blk	28	44000	520	75	10	20	0
 ussr_is_4m	IS-4M	ussr_is_4m_default	USSR / Russia	5	typeHeavyTank	gameData/Weapons/groundModels_weapons/122mm_D25T_user_cannon.blk	30	44000	750	75	10	0	0
 ussr_is_4m_tutorial	IS-4M	ussr_is_4m_default	Event / Experimental	0	typeHeavyTank	gameData/Weapons/groundModels_weapons/122mm_D25T_user_cannon.blk	30	44000	750	75	10	0	0
@@ -1143,7 +1161,7 @@ ussr_is_7	IS-7	ussr_is_7_default	USSR / Russia	6	typeHeavyTank	gameData/Weapons/
 ussr_isu_122	ISU-122	ussr_isu_122_default	USSR / Russia	3	typeTankDestroyer	gameData/Weapons/groundModels_weapons/122mm_A19_user_cannon.blk	30	46000	520	75	10	0	0
 ussr_isu_122s	ISU-122S	ussr_isu_122s_default	USSR / Russia	3	typeTankDestroyer	gameData/Weapons/groundModels_weapons/122mm_D25S_user_cannon.blk	30	46000	520	75	10	0	0
 ussr_isu_152	ISU-152	ussr_isu_152_default	USSR / Russia	3	typeTankDestroyer	gameData/Weapons/groundModels_weapons/152mm_ML20S_user_cannon.blk	20	46000	520	75	10	0	0
-ussr_it_1	IT-1	it_1_default	USSR / Russia	6	typeMediumTank	gameData/Weapons/groundModels_weapons/180mm_2k4_launcher_user_cannon.blk	15	37000	580	75	10	0	0
+ussr_it_1	IT-1	it_1_default	USSR / Russia	6	typeMediumTank	gameData/Weapons/groundModels_weapons/180mm_2k4_launcher_user_cannon.blk	16	37000	580	75	10	0	0
 ussr_kv_1_l_11	KV-1 (L-11)	ussr_kv_1_L_11_default	USSR / Russia	2	typeHeavyTank	gameData/Weapons/groundModels_weapons/76mm_L11_user_cannon.blk	111	44000	600	75	10	0	0
 ussr_kv_1_zis_5	KV-1 (ZiS-5)	ussr_kv_1_zis_5_default	USSR / Russia	3	typeHeavyTank	gameData/Weapons/groundModels_weapons/76mm_ZIS5_user_cannon.blk	135	44000	600	75	10	0	0
 ussr_kv_122	KV-122	ussr_kv_122_default	USSR / Russia	4	typeHeavyTank	gameData/Weapons/groundModels_weapons/122mm_D25T_user_cannon.blk	28	44000	520	75	10	0	0
@@ -1159,12 +1177,14 @@ ussr_kv_85	KV-85	ussr_kv_85_default	USSR / Russia	3	typeHeavyTank	gameData/Weapo
 ussr_m3c	M3 Medium	us_m3_lee_default	USSR / Russia	2	typeMediumTank	gameData/Weapons/groundModels_weapons/37mm_M5_user_cannon_for_M3_Lee.blk	179	31800	400	75	10	0	0
 ussr_m4a2_76w_sherman	M4A2	us_m4a2_76w_sherman_default	USSR / Russia	3	typeMediumTank	gameData/Weapons/groundModels_weapons/76mm_M1_user_cannon.blk	71	33390	410	75	10	0	0
 ussr_m53_59	M53/59	ussr_m53_59_default	USSR / Russia	4	typeSPAA	gameData/Weapons/groundModels_weapons/30mm_ZK_453_user_cannon.blk	200	5500	110	75	30	0	0.01
+ussr_m53_59_kit_4rank	M53/59 (Be Prepared!)	tank_weapon_preset_default	USSR / Russia	4	typeSPAA	gameData/Weapons/groundModels_weapons/30mm_ZK_453_user_cannon.blk	200	5500	110	75	30	0	0.01
 ussr_object_120	Object 120	ussr_object_120_default	USSR / Russia	5	typeTankDestroyer	gameData/Weapons/groundModels_weapons/152mm_M69_user_cannon.blk	22	64000	480	75	10	0	0
 ussr_object_140	Object 140	ussr_object_140_default	USSR / Russia	6	typeMediumTank	gameData/Weapons/groundModels_weapons/100mm_D54TS_user_cannon.blk	50	35500	580	75	10	8.547009	0
 ussr_object_248	Object 248	ussr_object_248_default	USSR / Russia	4	typeHeavyTank	gameData/Weapons/groundModels_weapons/100mm_C34_user_cannon.blk	31	44000	520	75	10	0	0
 ussr_object_268	Object 268	ussr_object_268_default	USSR / Russia	5	typeTankDestroyer	gameData/Weapons/groundModels_weapons/152mm_M64_user_cannon.blk	35	50000	750	75	10	0	0
 ussr_object_279	Object 279	ussr_object_279_default	USSR / Russia	6	typeHeavyTank	gameData/Weapons/groundModels_weapons/130mm_M65_user_cannon.blk	40	50000	1000	75	10	0	0
 ussr_object_292	Object 292	object_292_default	USSR / Russia	7	typeMediumTank	gameData/Weapons/groundModels_weapons/152mm_LP83_user_cannon.blk	30	37000	1100	60	10	0	0.325
+ussr_object_416	Object 416	tank_weapon_preset_default	USSR / Russia	5	typeTankDestroyer	gameData/Weapons/groundModels_weapons/100mm_D10T_416_user_cannon.blk	35	50000	400	60	10	0	0
 ussr_object_435	Object 435	ussr_object_435_default	USSR / Russia	6	typeMediumTank	gameData/Weapons/groundModels_weapons/115mm_U5TS_user_cannon.blk	37	44000	580	75	10	0	0
 ussr_object_685	Object 685	ussr_object_685_default	USSR / Russia	6	typeLightTank	gameData/Weapons/groundModels_weapons/100mm_2A48_user_cannon.blk	40	16500	455	75	10	0	0
 ussr_object_775	Object 775	ussr_object_775_default	USSR / Russia	6	typeMediumTank	gameData/Weapons/groundModels_weapons/125mm_D_126_user_cannon.blk	24	44000	700	75	10	0	0
@@ -1224,6 +1244,7 @@ ussr_t_35	T-35	ussr_t_35_default	USSR / Russia	1	typeHeavyTank	gameData/Weapons/
 ussr_t_44	T-44	ussr_t_44_default	USSR / Russia	4	typeMediumTank	gameData/Weapons/groundModels_weapons/85mm_ZiS_S_53_user_cannon.blk	58	31800	520	75	10	0	0
 ussr_t_44_100	T-44-100	ussr_t_44_100_default	USSR / Russia	5	typeMediumTank	gameData/Weapons/groundModels_weapons/100mm_D10T_user_cannon.blk	36	31800	520	75	10	0	0
 ussr_t_44_122	T-44-122	ussr_t_44_122_default	USSR / Russia	4	typeMediumTank	gameData/Weapons/groundModels_weapons/122mm_D25_44T_user_cannon.blk	24	31800	520	75	10	0	0
+ussr_t_44_kit_4rank	T-44 (Be Prepared!)	tank_weapon_preset_default	USSR / Russia	4	typeMediumTank	gameData/Weapons/groundModels_weapons/85mm_ZiS_S_53_user_cannon.blk	58	31800	520	75	10	0	0
 ussr_t_44_po	T-44 (FM)	ussr_t_44_default	USSR / Russia	4	typeMediumTank	gameData/Weapons/groundModels_weapons/85mm_D5T_user_cannon.blk	54	31800	500	75	10	0	0
 ussr_t_50	T-50	ussr_t_50_default	USSR / Russia	2	typeLightTank	gameData/Weapons/groundModels_weapons/45mm_20K_user_cannon.blk	150	9800	300	75	10	0	0
 ussr_t_50_for_tutorial	T-50	ussr_t_50_for_tutorial_default	Event / Experimental	0	typeLightTank	gameData/Weapons/groundModels_weapons/45mm_20K_for_tutorial_user_cannon.blk	150	9800	300	75	10	0	0

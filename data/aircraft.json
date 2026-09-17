@@ -150,6 +150,16 @@
     "kind": "Aircraft"
   },
   {
+    "id": "a_4ptm_malaysia",
+    "display": "A-4PTM Skyhawk",
+    "type": "typeFighter",
+    "defaultPreset": "a_4ptm_malaysia_default",
+    "nation": "Japan",
+    "rank": 6,
+    "maxLoad": 3720,
+    "kind": "Aircraft"
+  },
+  {
     "id": "a_5c",
     "display": "A-5C",
     "type": "typeFighter",
@@ -186,7 +196,17 @@
     "defaultPreset": "a_7e_default",
     "nation": "USA",
     "rank": 7,
-    "maxLoad": 7260,
+    "maxLoad": 8150,
+    "kind": "Aircraft"
+  },
+  {
+    "id": "a_7e_greece",
+    "display": "A-7E Corsair II",
+    "type": "typeBomber",
+    "defaultPreset": "a_7e_default",
+    "nation": "Israel",
+    "rank": 7,
+    "maxLoad": 8150,
     "kind": "Aircraft"
   },
   {
@@ -196,7 +216,17 @@
     "defaultPreset": "a_7e_default",
     "nation": "Japan",
     "rank": 7,
-    "maxLoad": 7260,
+    "maxLoad": 8150,
+    "kind": "Aircraft"
+  },
+  {
+    "id": "a_7h_greece",
+    "display": "A-7H Corsair II",
+    "type": "typeBomber",
+    "defaultPreset": "a_7h_default",
+    "nation": "Israel",
+    "rank": 7,
+    "maxLoad": 8150,
     "kind": "Aircraft"
   },
   {
@@ -920,6 +950,16 @@
     "kind": "Aircraft"
   },
   {
+    "id": "arado_234b_2_mt",
+    "display": "Ar 234 B-2 (WB 151)",
+    "type": "typeBomber",
+    "defaultPreset": "arado_234b_2_mt_default",
+    "nation": "Germany",
+    "rank": 5,
+    "maxLoad": 1600,
+    "kind": "Aircraft"
+  },
+  {
     "id": "arado-196a-3",
     "display": "Ar 196 A-3",
     "type": "typeFighter",
@@ -956,7 +996,7 @@
     "defaultPreset": "arado234_default",
     "nation": "Germany",
     "rank": 5,
-    "maxLoad": 1600,
+    "maxLoad": 2000,
     "kind": "Aircraft"
   },
   {
@@ -1070,6 +1110,16 @@
     "kind": "Aircraft"
   },
   {
+    "id": "aw_159",
+    "display": "AW159 Wildcat HMA2",
+    "type": "typeFighter",
+    "defaultPreset": "aw_159_default",
+    "nation": "Great Britain",
+    "rank": 7,
+    "maxLoad": 570,
+    "kind": "Helicopter"
+  },
+  {
     "id": "b_10b",
     "display": "B-10B",
     "type": "typeBomber",
@@ -1177,6 +1227,16 @@
     "nation": "USA",
     "rank": 3,
     "maxLoad": 0,
+    "kind": "Aircraft"
+  },
+  {
+    "id": "b_26b_indonesia_kalong",
+    "display": "B-26B Invader",
+    "type": "typeStormovik",
+    "defaultPreset": "b_26b_indonesia_kalong_gun_pod",
+    "nation": "Japan",
+    "rank": 3,
+    "maxLoad": 2500,
     "kind": "Aircraft"
   },
   {
@@ -1511,7 +1571,7 @@
   },
   {
     "id": "beaufighter_mk1_40mm",
-    "display": "Beaufighter Mk I Prototype (40-mm)",
+    "display": "Beaufighter Mk I Prototype (40 mm)",
     "type": "typeFighter",
     "defaultPreset": "beaufighter_mk1_40mm_default",
     "nation": "Great Britain",
@@ -2127,6 +2187,26 @@
     "nation": "Other",
     "rank": 0,
     "maxLoad": 0,
+    "kind": "Aircraft"
+  },
+  {
+    "id": "ca_27_mk32_malaysia",
+    "display": "CA-27 Sabre Mk.32",
+    "type": "typeFighter",
+    "defaultPreset": "ca_27_default",
+    "nation": "Japan",
+    "rank": 6,
+    "maxLoad": 1100,
+    "kind": "Aircraft"
+  },
+  {
+    "id": "ca_27_mk32_raaf",
+    "display": "CA-27 Sabre Mk.32",
+    "type": "typeFighter",
+    "defaultPreset": "ca_27_default",
+    "nation": "Great Britain",
+    "rank": 6,
+    "maxLoad": 1100,
     "kind": "Aircraft"
   },
   {
@@ -2860,6 +2940,26 @@
     "kind": "Aircraft"
   },
   {
+    "id": "f_102a_greece",
+    "display": "F-102A \"Delta Dagger\"",
+    "type": "typeFighter",
+    "defaultPreset": "f_102a_late_default",
+    "nation": "Israel",
+    "rank": 6,
+    "maxLoad": 3000,
+    "kind": "Aircraft"
+  },
+  {
+    "id": "f_102a_late",
+    "display": "F-102A \"Delta Dagger\"",
+    "type": "typeFighter",
+    "defaultPreset": "f_102a_late_default",
+    "nation": "USA",
+    "rank": 6,
+    "maxLoad": 3000,
+    "kind": "Aircraft"
+  },
+  {
     "id": "f_105d_japan_killstreak",
     "display": "F-105D Thunderchief",
     "type": "typeFighter",
@@ -2994,6 +3094,16 @@
     "display": "F-14D Super Tomcat",
     "type": "typeFighter",
     "defaultPreset": "f_14d_default",
+    "nation": "USA",
+    "rank": 8,
+    "maxLoad": 6580,
+    "kind": "Aircraft"
+  },
+  {
+    "id": "f_14d_vf_11",
+    "display": "F-14D (VF-11) Super Tomcat",
+    "type": "typeFighter",
+    "defaultPreset": "f_14b_default",
     "nation": "USA",
     "rank": 8,
     "maxLoad": 6580,
@@ -3431,7 +3541,7 @@
   },
   {
     "id": "f_2a",
-    "display": "F-2A",
+    "display": "F-2A Viper Zero",
     "type": "typeFighter",
     "defaultPreset": "f_2a_default",
     "nation": "Japan",
@@ -3441,7 +3551,7 @@
   },
   {
     "id": "f_2a_adtw",
-    "display": "F-2A ADTW",
+    "display": "F-2A ADTW Viper Zero",
     "type": "typeFighter",
     "defaultPreset": "f_2a_adtw_default",
     "nation": "Japan",
@@ -3451,7 +3561,7 @@
   },
   {
     "id": "f_2a_killstreak",
-    "display": "F-2A",
+    "display": "F-2A Viper Zero",
     "type": "typeFighter",
     "defaultPreset": "f_2a_killstreak_default",
     "nation": "Other",
@@ -3467,6 +3577,16 @@
     "nation": "China",
     "rank": 3,
     "maxLoad": 1970,
+    "kind": "Aircraft"
+  },
+  {
+    "id": "f_4e_aup_greece",
+    "display": "F-4E AUP Phantom II",
+    "type": "typeFighter",
+    "defaultPreset": "f_4e_aup_greece_default",
+    "nation": "Israel",
+    "rank": 8,
+    "maxLoad": 7257,
     "kind": "Aircraft"
   },
   {
@@ -3487,6 +3607,16 @@
     "nation": "China",
     "rank": 6,
     "maxLoad": 1600,
+    "kind": "Aircraft"
+  },
+  {
+    "id": "f_86em_greece",
+    "display": "F-86E(M)",
+    "type": "typeFighter",
+    "defaultPreset": "f_86em_greece_default",
+    "nation": "Israel",
+    "rank": 6,
+    "maxLoad": 1300,
     "kind": "Aircraft"
   },
   {
@@ -4345,6 +4475,16 @@
     "type": "typeFighter",
     "defaultPreset": "f_84g_default",
     "nation": "France",
+    "rank": 5,
+    "maxLoad": 2710,
+    "kind": "Aircraft"
+  },
+  {
+    "id": "f-84g_greece",
+    "display": "F-84G-16-RE Thunderjet",
+    "type": "typeFighter",
+    "defaultPreset": "f_84g_default",
+    "nation": "Israel",
     "rank": 5,
     "maxLoad": 2710,
     "kind": "Aircraft"
@@ -5560,6 +5700,16 @@
     "kind": "Helicopter"
   },
   {
+    "id": "h145m",
+    "display": "H145M",
+    "type": "typeFighter",
+    "defaultPreset": "h145m_default",
+    "nation": "Germany",
+    "rank": 7,
+    "maxLoad": 1839,
+    "kind": "Helicopter"
+  },
+  {
     "id": "h6k4",
     "display": "H6K4",
     "type": "typeBomber",
@@ -5887,6 +6037,26 @@
     "nation": "China",
     "rank": 1,
     "maxLoad": 0,
+    "kind": "Aircraft"
+  },
+  {
+    "id": "hawk_t1a",
+    "display": "Hawk T Mk 1A (Fuselage Replacement Programme)",
+    "type": "typeFighter",
+    "defaultPreset": "hawk_t1a_default",
+    "nation": "Great Britain",
+    "rank": 5,
+    "maxLoad": 1500,
+    "kind": "Aircraft"
+  },
+  {
+    "id": "hawk_t1a_early",
+    "display": "Hawk T Mk 1A",
+    "type": "typeFighter",
+    "defaultPreset": "hawk_t1a_default",
+    "nation": "Great Britain",
+    "rank": 5,
+    "maxLoad": 1500,
     "kind": "Aircraft"
   },
   {
@@ -6896,7 +7066,7 @@
     "defaultPreset": "il_28sh_12xfab100",
     "nation": "USSR / Russia",
     "rank": 5,
-    "maxLoad": 3010,
+    "maxLoad": 3100,
     "kind": "Aircraft"
   },
   {
@@ -7021,7 +7191,7 @@
   },
   {
     "id": "j_10a",
-    "display": "J-10A (Early)",
+    "display": "J-10A (Early) Vigorous Dragon",
     "type": "typeFighter",
     "defaultPreset": "j_10a_default",
     "nation": "China",
@@ -7031,7 +7201,7 @@
   },
   {
     "id": "j_10a_killstreak",
-    "display": "J-10A",
+    "display": "J-10A Vigorous Dragon",
     "type": "typeFighter",
     "defaultPreset": "j_10a_default",
     "nation": "Other",
@@ -7041,7 +7211,7 @@
   },
   {
     "id": "j_10c",
-    "display": "J-10C",
+    "display": "J-10C Vigorous Dragon",
     "type": "typeFighter",
     "defaultPreset": "j_10c_default",
     "nation": "China",
@@ -7051,7 +7221,7 @@
   },
   {
     "id": "j_11",
-    "display": "J-11",
+    "display": "J-11 Responsive Dragon",
     "type": "typeFighter",
     "defaultPreset": "j_11_default",
     "nation": "China",
@@ -7061,7 +7231,7 @@
   },
   {
     "id": "j_11a",
-    "display": "J-11A",
+    "display": "J-11A Responsive Dragon",
     "type": "typeFighter",
     "defaultPreset": "j_11a_default",
     "nation": "China",
@@ -7071,7 +7241,7 @@
   },
   {
     "id": "j_11b",
-    "display": "J-11B",
+    "display": "J-11B Responsive Dragon",
     "type": "typeFighter",
     "defaultPreset": "j_11b_default",
     "nation": "China",
@@ -7081,12 +7251,22 @@
   },
   {
     "id": "j_15t",
-    "display": "J-15T",
+    "display": "J-15T Flying Shark",
     "type": "typeFighter",
     "defaultPreset": "j_15t_default",
     "nation": "China",
     "rank": 9,
     "maxLoad": 6500,
+    "kind": "Aircraft"
+  },
+  {
+    "id": "j_16",
+    "display": "J-16 Hidden Dragon",
+    "type": "typeFighter",
+    "defaultPreset": "j_16_default",
+    "nation": "China",
+    "rank": 9,
+    "maxLoad": 8040,
     "kind": "Aircraft"
   },
   {
@@ -7296,7 +7476,7 @@
     "defaultPreset": "jaguar_a_killstreak_default",
     "nation": "Other",
     "rank": 0,
-    "maxLoad": 0,
+    "maxLoad": 4000,
     "kind": "Aircraft"
   },
   {
@@ -7306,7 +7486,7 @@
     "defaultPreset": "jaguar_a_killstreak_default",
     "nation": "Other",
     "rank": 0,
-    "maxLoad": 0,
+    "maxLoad": 4000,
     "kind": "Aircraft"
   },
   {
@@ -7316,7 +7496,7 @@
     "defaultPreset": "jaguar_a_killstreak_default",
     "nation": "Other",
     "rank": 0,
-    "maxLoad": 0,
+    "maxLoad": 4000,
     "kind": "Aircraft"
   },
   {
@@ -7326,7 +7506,7 @@
     "defaultPreset": "jaguar_a_killstreak_default",
     "nation": "Other",
     "rank": 0,
-    "maxLoad": 0,
+    "maxLoad": 4000,
     "kind": "Aircraft"
   },
   {
@@ -7336,7 +7516,7 @@
     "defaultPreset": "jaguar_a_killstreak_default",
     "nation": "Other",
     "rank": 0,
-    "maxLoad": 0,
+    "maxLoad": 4000,
     "kind": "Aircraft"
   },
   {
@@ -7346,7 +7526,7 @@
     "defaultPreset": "jaguar_a_killstreak_default",
     "nation": "Other",
     "rank": 0,
-    "maxLoad": 0,
+    "maxLoad": 4000,
     "kind": "Aircraft"
   },
   {
@@ -7356,7 +7536,7 @@
     "defaultPreset": "jaguar_a_killstreak_default",
     "nation": "Other",
     "rank": 0,
-    "maxLoad": 0,
+    "maxLoad": 4000,
     "kind": "Aircraft"
   },
   {
@@ -7366,7 +7546,7 @@
     "defaultPreset": "jaguar_a_killstreak_default",
     "nation": "Other",
     "rank": 0,
-    "maxLoad": 0,
+    "maxLoad": 4000,
     "kind": "Aircraft"
   },
   {
@@ -8110,6 +8290,16 @@
     "kind": "Aircraft"
   },
   {
+    "id": "ki_93_1_ko",
+    "display": "Ki-93-I Ko",
+    "type": "typeStormovik",
+    "defaultPreset": "ki_93_1_ko_default",
+    "nation": "Japan",
+    "rank": 3,
+    "maxLoad": 0,
+    "kind": "Aircraft"
+  },
+  {
     "id": "ki_94_2",
     "display": "Ki-94-II",
     "type": "typeFighter",
@@ -8621,7 +8811,7 @@
   },
   {
     "id": "leo_451_late",
-    "display": "LeO 451 late",
+    "display": "LeO 451 Late",
     "type": "typeBomber",
     "defaultPreset": "leo_451_default",
     "nation": "France",
@@ -9366,7 +9556,7 @@
     "defaultPreset": "meteor_fmk8_default",
     "nation": "Great Britain",
     "rank": 5,
-    "maxLoad": 0,
+    "maxLoad": 1950,
     "kind": "Aircraft"
   },
   {
@@ -9666,7 +9856,7 @@
     "defaultPreset": "mig_23bn_default",
     "nation": "Germany",
     "rank": 6,
-    "maxLoad": 3050,
+    "maxLoad": 3100,
     "kind": "Aircraft"
   },
   {
@@ -9676,7 +9866,7 @@
     "defaultPreset": "mig_23m_default",
     "nation": "USSR / Russia",
     "rank": 7,
-    "maxLoad": 2000,
+    "maxLoad": 2100,
     "kind": "Aircraft"
   },
   {
@@ -9686,7 +9876,7 @@
     "defaultPreset": "mig_23mf_default",
     "nation": "Germany",
     "rank": 7,
-    "maxLoad": 2000,
+    "maxLoad": 2100,
     "kind": "Aircraft"
   },
   {
@@ -9696,7 +9886,7 @@
     "defaultPreset": "mig_23mf_default",
     "nation": "Italy",
     "rank": 7,
-    "maxLoad": 2000,
+    "maxLoad": 2100,
     "kind": "Aircraft"
   },
   {
@@ -9706,7 +9896,7 @@
     "defaultPreset": "mig_23ml_default",
     "nation": "USSR / Russia",
     "rank": 7,
-    "maxLoad": 2000,
+    "maxLoad": 2100,
     "kind": "Aircraft"
   },
   {
@@ -9716,7 +9906,7 @@
     "defaultPreset": "mig_23mla_default",
     "nation": "Germany",
     "rank": 7,
-    "maxLoad": 2000,
+    "maxLoad": 2100,
     "kind": "Aircraft"
   },
   {
@@ -9726,7 +9916,7 @@
     "defaultPreset": "mig_23mld_default",
     "nation": "USSR / Russia",
     "rank": 7,
-    "maxLoad": 2000,
+    "maxLoad": 2100,
     "kind": "Aircraft"
   },
   {
@@ -9907,6 +10097,16 @@
     "nation": "USSR / Russia",
     "rank": 2,
     "maxLoad": 0,
+    "kind": "Aircraft"
+  },
+  {
+    "id": "mig_35",
+    "display": "MiG-35",
+    "type": "typeFighter",
+    "defaultPreset": "mig_35_default",
+    "nation": "USSR / Russia",
+    "rank": 9,
+    "maxLoad": 6500,
     "kind": "Aircraft"
   },
   {
@@ -10231,7 +10431,7 @@
   },
   {
     "id": "mig-9_late_china",
-    "display": "MiG-9 late",
+    "display": "MiG-9 Late",
     "type": "typeFighter",
     "defaultPreset": "mig_9_ussr_default",
     "nation": "China",
@@ -10247,6 +10447,16 @@
     "nation": "USSR / Russia",
     "rank": 5,
     "maxLoad": 0,
+    "kind": "Aircraft"
+  },
+  {
+    "id": "mirage_2000_5eg_mk2_greece",
+    "display": "Mirage 2000-5EG",
+    "type": "typeFighter",
+    "defaultPreset": "mirage_2000_5eg_mk2_greece_default",
+    "nation": "Israel",
+    "rank": 8,
+    "maxLoad": 6200,
     "kind": "Aircraft"
   },
   {
@@ -10410,6 +10620,16 @@
     "kind": "Aircraft"
   },
   {
+    "id": "mirage_f1cg_greece",
+    "display": "Mirage F1CG",
+    "type": "typeFighter",
+    "defaultPreset": "mirage_f1cg_greece_default",
+    "nation": "Israel",
+    "rank": 7,
+    "maxLoad": 4000,
+    "kind": "Aircraft"
+  },
+  {
     "id": "mirage_f1ct",
     "display": "Mirage F1CT",
     "type": "typeFighter",
@@ -10476,7 +10696,7 @@
     "defaultPreset": "mosquito_fb_mk6_default",
     "nation": "China",
     "rank": 3,
-    "maxLoad": 0,
+    "maxLoad": 2000,
     "kind": "Aircraft"
   },
   {
@@ -10486,7 +10706,7 @@
     "defaultPreset": "mosquito_fb_mk6_default",
     "nation": "Great Britain",
     "rank": 3,
-    "maxLoad": 0,
+    "maxLoad": 2000,
     "kind": "Aircraft"
   },
   {
@@ -10496,7 +10716,7 @@
     "defaultPreset": "mosquito_fb_mk6_default",
     "nation": "Sweden",
     "rank": 3,
-    "maxLoad": 0,
+    "maxLoad": 2000,
     "kind": "Aircraft"
   },
   {
@@ -10506,7 +10726,7 @@
     "defaultPreset": "mosquito_fb_mk6_default",
     "nation": "Sweden",
     "rank": 3,
-    "maxLoad": 0,
+    "maxLoad": 2000,
     "kind": "Aircraft"
   },
   {
@@ -10536,7 +10756,7 @@
     "defaultPreset": "mosquito_fb_mk6_default",
     "nation": "Great Britain",
     "rank": 3,
-    "maxLoad": 0,
+    "maxLoad": 2000,
     "kind": "Aircraft"
   },
   {
@@ -11756,7 +11976,7 @@
     "defaultPreset": "PBM-3_default",
     "nation": "USA",
     "rank": 2,
-    "maxLoad": 0,
+    "maxLoad": 5800,
     "kind": "Aircraft"
   },
   {
@@ -11826,7 +12046,7 @@
     "defaultPreset": "pe_2_1_default",
     "nation": "USSR / Russia",
     "rank": 2,
-    "maxLoad": 1065,
+    "maxLoad": 1600,
     "kind": "Aircraft"
   },
   {
@@ -11836,7 +12056,7 @@
     "defaultPreset": "pe_2_31_default",
     "nation": "USSR / Russia",
     "rank": 3,
-    "maxLoad": 1050,
+    "maxLoad": 1600,
     "kind": "Aircraft"
   },
   {
@@ -11846,7 +12066,7 @@
     "defaultPreset": "pe_2_31_default",
     "nation": "USSR / Russia",
     "rank": 3,
-    "maxLoad": 1050,
+    "maxLoad": 1600,
     "kind": "Aircraft"
   },
   {
@@ -11856,7 +12076,7 @@
     "defaultPreset": "pe_2_31_default",
     "nation": "USSR / Russia",
     "rank": 2,
-    "maxLoad": 1065,
+    "maxLoad": 1600,
     "kind": "Aircraft"
   },
   {
@@ -11866,7 +12086,7 @@
     "defaultPreset": "pe_2_31_default",
     "nation": "USSR / Russia",
     "rank": 3,
-    "maxLoad": 1050,
+    "maxLoad": 1600,
     "kind": "Aircraft"
   },
   {
@@ -11876,7 +12096,7 @@
     "defaultPreset": "pe_2_31_default",
     "nation": "China",
     "rank": 4,
-    "maxLoad": 1050,
+    "maxLoad": 1600,
     "kind": "Aircraft"
   },
   {
@@ -11886,7 +12106,7 @@
     "defaultPreset": "pe_2_31_default",
     "nation": "USSR / Russia",
     "rank": 2,
-    "maxLoad": 1065,
+    "maxLoad": 1600,
     "kind": "Aircraft"
   },
   {
@@ -12095,6 +12315,16 @@
     "type": "typeFighter",
     "defaultPreset": "rafale_c_f3_default",
     "nation": "France",
+    "rank": 9,
+    "maxLoad": 9500,
+    "kind": "Aircraft"
+  },
+  {
+    "id": "rafale_eg_greece",
+    "display": "Rafale EG",
+    "type": "typeFighter",
+    "defaultPreset": "rafale_c_f3_default",
+    "nation": "Israel",
     "rank": 9,
     "maxLoad": 9500,
     "kind": "Aircraft"
@@ -12620,6 +12850,16 @@
     "kind": "Aircraft"
   },
   {
+    "id": "saab_j35j",
+    "display": "J35J Draken",
+    "type": "typeFighter",
+    "defaultPreset": "saab_j35j_default",
+    "nation": "Sweden",
+    "rank": 7,
+    "maxLoad": 1500,
+    "kind": "Aircraft"
+  },
+  {
     "id": "saab_j35xs",
     "display": "Saab J35XS Draken",
     "type": "typeFighter",
@@ -12920,6 +13160,16 @@
     "kind": "Aircraft"
   },
   {
+    "id": "sb2c_5_greece",
+    "display": "SB2C-5 Helldiver",
+    "type": "typeBomber",
+    "defaultPreset": "sb2c_5_5in_rockets",
+    "nation": "Israel",
+    "rank": 4,
+    "maxLoad": 2260,
+    "kind": "Aircraft"
+  },
+  {
     "id": "sb2c_5_thailand",
     "display": "SB2C-5 Helldiver",
     "type": "typeBomber",
@@ -12976,7 +13226,7 @@
     "defaultPreset": "scimitar_f1_default",
     "nation": "Great Britain",
     "rank": 6,
-    "maxLoad": 1920,
+    "maxLoad": 2000,
     "kind": "Aircraft"
   },
   {
@@ -12988,6 +13238,16 @@
     "rank": 5,
     "maxLoad": 0,
     "kind": "Helicopter"
+  },
+  {
+    "id": "se_203",
+    "display": "SE.203 Aquilon 203",
+    "type": "typeFighter",
+    "defaultPreset": "se_203_default",
+    "nation": "France",
+    "rank": 5,
+    "maxLoad": 3100,
+    "kind": "Aircraft"
   },
   {
     "id": "sea_fury_fb11",
@@ -13063,20 +13323,20 @@
     "id": "seafire_fr47",
     "display": "Seafire FR 47",
     "type": "typeFighter",
-    "defaultPreset": "default",
+    "defaultPreset": "seafire_fr47_default",
     "nation": "Great Britain",
     "rank": 4,
-    "maxLoad": 0,
+    "maxLoad": 700,
     "kind": "Aircraft"
   },
   {
     "id": "seafire_mk17",
     "display": "Seafire F Mk XVII",
     "type": "typeFighter",
-    "defaultPreset": "default",
+    "defaultPreset": "seafire_mk17_default",
     "nation": "Great Britain",
     "rank": 4,
-    "maxLoad": 0,
+    "maxLoad": 500,
     "kind": "Aircraft"
   },
   {
@@ -13086,14 +13346,14 @@
     "defaultPreset": "seafire_mk3_default",
     "nation": "Great Britain",
     "rank": 3,
-    "maxLoad": 0,
+    "maxLoad": 500,
     "kind": "Aircraft"
   },
   {
     "id": "seafire_mk3_france",
     "display": "Seafire LF Mk.III",
     "type": "typeFighter",
-    "defaultPreset": "seafire_mk3_default",
+    "defaultPreset": "seafiremk3_france_default",
     "nation": "France",
     "rank": 4,
     "maxLoad": 0,
@@ -13543,17 +13803,17 @@
     "id": "spitfire_mk5b",
     "display": "Spitfire Mk Vb/trop",
     "type": "typeFighter",
-    "defaultPreset": "Spitfire_mk5b_default",
+    "defaultPreset": "spitfire_v_default",
     "nation": "Great Britain",
     "rank": 2,
-    "maxLoad": 0,
+    "maxLoad": 500,
     "kind": "Aircraft"
   },
   {
     "id": "spitfire_mk5b_float",
     "display": "Spitfire Mk Vb (Float)",
     "type": "typeFighter",
-    "defaultPreset": "Spitfire_mk5b_default",
+    "defaultPreset": "spitfire_v_default",
     "nation": "Great Britain",
     "rank": 2,
     "maxLoad": 0,
@@ -13563,40 +13823,40 @@
     "id": "spitfire_mk5b_italy",
     "display": "Spitfire Mk Vb/trop",
     "type": "typeFighter",
-    "defaultPreset": "Spitfire_mk5b_default",
+    "defaultPreset": "spitfire_v_default",
     "nation": "Italy",
     "rank": 3,
-    "maxLoad": 0,
+    "maxLoad": 500,
     "kind": "Aircraft"
   },
   {
     "id": "spitfire_mk5b_notrop",
     "display": "Spitfire Mk Vb",
     "type": "typeFighter",
-    "defaultPreset": "Spitfire_mk5b_default",
+    "defaultPreset": "spitfire_v_default",
     "nation": "Great Britain",
     "rank": 2,
-    "maxLoad": 0,
+    "maxLoad": 500,
     "kind": "Aircraft"
   },
   {
     "id": "spitfire_mk5c",
     "display": "Spitfire Mk Vc/trop",
     "type": "typeFighter",
-    "defaultPreset": "Spitfire_mk5c_default",
+    "defaultPreset": "spitfire_v_default",
     "nation": "Great Britain",
     "rank": 3,
-    "maxLoad": 0,
+    "maxLoad": 500,
     "kind": "Aircraft"
   },
   {
     "id": "spitfire_mk5c_notrop",
     "display": "Spitfire Mk Vc",
     "type": "typeFighter",
-    "defaultPreset": "Spitfire_mk5c_default",
+    "defaultPreset": "spitfire_v_default",
     "nation": "Great Britain",
     "rank": 3,
-    "maxLoad": 0,
+    "maxLoad": 500,
     "kind": "Aircraft"
   },
   {
@@ -13633,10 +13893,10 @@
     "id": "spitfire_xvi",
     "display": "Spitfire F Mk XVI",
     "type": "typeFighter",
-    "defaultPreset": "spitfire_xvi_default",
+    "defaultPreset": "SpitfireIX_default",
     "nation": "Great Britain",
     "rank": 3,
-    "maxLoad": 0,
+    "maxLoad": 500,
     "kind": "Aircraft"
   },
   {
@@ -14661,7 +14921,7 @@
   },
   {
     "id": "tu-2",
-    "display": "Tu-2S",
+    "display": "Tu-2S (7 series) factory No.23",
     "type": "typeBomber",
     "defaultPreset": "tu-2_default",
     "nation": "USSR / Russia",
@@ -14671,7 +14931,7 @@
   },
   {
     "id": "tu-2_early",
-    "display": "Tu-2",
+    "display": "Tu-2 (5 series) factory No.166",
     "type": "typeBomber",
     "defaultPreset": "tu-2_default",
     "nation": "USSR / Russia",
@@ -14681,7 +14941,7 @@
   },
   {
     "id": "tu-2_postwar",
-    "display": "Tu-2S-44",
+    "display": "Tu-2S (1 series) factory No.166",
     "type": "typeBomber",
     "defaultPreset": "tu-2_default",
     "nation": "USSR / Russia",
@@ -14691,7 +14951,7 @@
   },
   {
     "id": "tu-2_postwar_china",
-    "display": "Tu-2S-44",
+    "display": "Tu-2S (1 series) factory No.166",
     "type": "typeBomber",
     "defaultPreset": "tu-2_default",
     "nation": "China",
@@ -14701,7 +14961,7 @@
   },
   {
     "id": "tu-2_postwar_late",
-    "display": "Tu-2S-59",
+    "display": "Tu-2S (8 series) factory No.39",
     "type": "typeBomber",
     "defaultPreset": "tu-2_default",
     "nation": "USSR / Russia",
@@ -14711,7 +14971,7 @@
   },
   {
     "id": "tu-2_postwar_late_hungary",
-    "display": "Tu-2S-59",
+    "display": "Tu-2S (8 series) factory No.39",
     "type": "typeBomber",
     "defaultPreset": "tu-2_default",
     "nation": "Italy",

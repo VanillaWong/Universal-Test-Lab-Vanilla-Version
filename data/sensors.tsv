@@ -2,6 +2,8 @@ an_aps_54a	SPO-2				rwr
 bl_carapace	CARAPACE				rwr			
 cn_antelope_ads_track	Antelope	9	track	16000	radar	lock,track		1
 cn_clc_1_search	CLC-1	4	search	10000	radar	search		
+cn_fk_2000_search	FK-2000 TA	6	search	70000	radar	search		
+cn_fk_2000_track	FK-2000 TT	9	track	70000	radar	lock,radarTrack,track	8	1
 cn_helicopter_z_late_rwr	YH-96ME				rwr			
 cn_helicopter_z_lws	CN-LWS				lws			
 cn_helicopter_z_mlws	CN-MLWS				mlws			
@@ -17,6 +19,7 @@ cn_kj_8602	KJ8602				rwr
 cn_kj8602a	KJ8602A				rwr			
 cn_klj_10a	KLJ-10A	8	search	200000	radar	gtmTrack,helmetDesignation,illumination,irstSearchModes,irstTrack,lock,main,radarAcmHmdTrack,radarBvrLock,radarBvrTrack,radarSearchModes,search,sensorTypes,track,tws,velocityLock	8	1
 cn_klj_7	KLJ-7	8	search	100000	radar	acmLock,bvrLock,illumination,main,search,searchModes,track,tws,velocityLock	2	
+cn_klj_j16	KLJ-16	8	search	200000	radar	gtmTrack,helmetDesignation,illumination,irstSearchModes,irstTrack,lock,main,radarAcmHmdTrack,radarBvrLock,radarBvrTrack,radarSearchModes,search,sensorTypes,track,tws,velocityLock	8	1
 cn_krkz2200	K/RKZ				rwr			
 cn_pgz_09_search	PGZ-09 TA	8	search	20000	radar	search		
 cn_pgz_09_track	PGZ-09 TT	8	track	20000	radar	lock,track		1
@@ -57,6 +60,7 @@ fr_as37_c_esm	AS-37 Martel C ESM	2	search	250000	radar	lock,track,tws
 fr_as37_l_esm	AS-37 Martel L ESM	5	search	250000	radar	lock,track,tws		
 fr_as37_s_esm	AS-37 Martel S ESM	8	search	250000	radar	lock,track,tws		
 fr_crotale_search	Crotale TA	4	search	20000	radar	search		
+fr_crotale_search_ai	Crotale TA	4	search	10	radar	search		
 fr_crotale_track	Crotale TT	9	track	20000	radar	lock,track		1
 fr_crotale_track_ai	Crotale TT	9	track	20000	radar	lock,track		1
 fr_cyrano	Cyrano Ibis	8	search	90000	radar	lock,search,track		
@@ -78,8 +82,9 @@ fr_spectra_lws	Thales SPECTRA DAL				lws
 fr_spectra_mlws	Thales SPECTRA DDM-NG				mlws			
 fr_spectra_rwr	Thales SPECTRA DAR				rwr			
 fr_taran_18	TARAN 18	8	search	100000	radar	lock,search,track		
-fr_thales_rbe2	Thales RBE2 AESA	8	search	300000	radar	helmetDesignation,illumination,irstSearchModes,irstTrack,lock,main,radarAcmHmdTrack,radarBvrLock,radarBvrTrack,radarSearchModes,search,sensorTypes,tws	8	1
+fr_thales_rbe2	Thales RBE2 AESA	8	search	300000	radar	gtmTrack,helmetDesignation,illumination,irstSearchModes,irstTrack,lock,main,radarAcmHmdTrack,radarBvrLock,radarBvrTrack,radarSearchModes,search,sensorTypes,tws	8	1
 fr_thales_rdy	Thales RDY	8	search	100000	radar	acmLock,acmLockModes,bvrLock,helmetDesignation,illumination,main,search,searchModes,track,tws,velocityLock	4	
+fr_thales_rdy_2	Thales RDY-2	8	search	120000	radar	acmLock,acmLockModes,bvrLock,gtmTrack,helmetDesignation,illumination,main,search,searchModes,track,tws,velocityLock	4	
 fr_thomson-csf_rdi	Thomson-CSF RDI	8	search	100000	radar	acmLock,acmLockModes,bvrLock,illumination,main,search,searchModes,track,tws,velocityLock		
 fr_thomson-csf_rdm	Thomson-CSF RDI	8	search	100000	radar	acmLock,acmLockModes,bvrLock,illumination,main,search,searchModes,track,tws,velocityLock		
 il_el_m_2001b	ELTA EL/M-2001B	8	track	10000	radar	lock,track		
@@ -99,6 +104,7 @@ it_elt_156	ELT/156				rwr
 it_grifo_346	GRIFO 346	8	search	100000	radar	acmLock,bvrLock,gtmTrack,helmetDesignation,illumination,main,search,searchModes,track,tws,velocityLock	4	
 it_ralm-101	it_ralm-101				lws			
 it_sma_vps-a05	SMA VPS-A05	4	search	20000	radar	search		
+it_sma_vps-a05_ai	SMA VPS-A05	4	search	10	radar	search		
 it_sma_vps-a06	SMA VPS-A06	10	track	10000	radar	lock,track		1
 it_tv_tracker_3jb10	3JB10	-1	track	10000	radar	lock,track		
 jp_an_apg_66j	AN/APG-66	8	search	100000	radar	acmLock,bvrLock,illumination,main,search,searchModes,track		
@@ -126,6 +132,7 @@ sam_tv_ir_track	TV/IR tracker	-1	track	12000	radar	lock,track
 sam_tv_ir_track_rc	Roland TT	-1	track	12000	radar	lock,track		
 slaved_radar_fsm	slaved_radar_fsm							
 su_1rl144_search	1RL114 TA	4	search	25000	radar	search		
+su_1rl144_search_ai	1RL114 TA	4	search	10	radar	search		
 su_1rl144_track	1RL114 TT	9	track	16000	radar	lock,track		1
 su_1rl33	1RL33	9	search	20000	radar	lock,search,track		
 su_1rl33_ai	1RL33	9	search	20000	radar	lock,search,track		
@@ -133,11 +140,11 @@ su_1rl33rt	1RL33	9	search	20000	radar	lock,search,track
 su_1rl34	1RL34	8	search	25000	radar	lock,search,track		
 su_1rs1	1RS1	5	search	50000	radar	search		
 su_1rs1_4	1RS1-4	8	search	140000	radar	search		
-su_1rs1_ai	1RS1	5	search	30000	radar	search		
+su_1rs1_ai	1RS1	5	search	10	radar	search		
 su_1rs2	1RS2	10	track	40000	radar	lock,radarTrack,track	4	1
 su_1rs2_3	1RS2-3	10	track	90000	radar	lock,radarTrack,track	4	1
 su_1rs2_ai	1RS2	10	track	30000	radar	lock,radarTrack,track	4	1
-su_55zh6	55ZH6	5	search	180000	radar	search		
+su_55zh6	55ZH6	5	search	2	radar	search		
 su_5n63s	5N63S	8	track	180000	radar	illumination,lock,track		
 su_5n64s	5N64S	5	search	180000	radar	search		
 su_9k_330_search	9K330 TA	6	search	35000	radar	search		
@@ -147,9 +154,11 @@ su_9k_33m3_search_ai	9K33 TA	7	search	30000	radar	search
 su_9k_33m3_track	9K33 TT	9	track	30000	radar	lock,track		1
 su_9k_33m3_track_ai	9K33 TT	9	track	25000	radar	lock,track		1
 su_9s18	9S18	5	search	180000	radar	search		
+su_9s18m1	9S18M1	5	search	180000	radar	search		
 su_9s18m3	9S18M3	5	search	160000	radar	designateTarget,tws	18	
 su_9s18m3_ai	9S18M3	5	search	60000	radar	designateTarget,tws	18	
 su_9s35	9S35	8	track	60000	radar	illumination,lock,track		
+su_9s35m1	9S35M1	8	track	60000	radar	illumination,lock,track		
 su_9s86	9S86	8	track	12000	radar	lock,track		
 su_bmp_auto_target_tracker	Auto tracker	-1	track	12000	radar	lock,track		
 su_cd-30	CD-30	8	search	20000	radar	lock,search,track		
@@ -170,13 +179,17 @@ su_kopio_25	N019	8	search	45000	radar	acmLock,bvrLock,gtmTrack,illumination,main
 su_l_370_2	L-370-2				mlws			
 su_l-082	L-082				mlws			
 su_l-140	L-140				lws			
+su_mig_35_lws	LWS				lws			
+su_mig_35_mlws	MLWS				mlws			
 su_mr_123	MR-123	8	track	45000	radar	lock,track		
 su_n_001	N001	8	search	50000	radar	helmetDesignation,illumination,irstSearchModes,irstTrack,lock,main,radarAcmHmdTrack,radarBvrLock,radarBvrTrack,radarSearchModes,search,sensorTypes,tws	1	1
 su_n_001k	N001	8	search	50000	radar	helmetDesignation,illumination,irstSearchModes,irstTrack,lock,main,radarAcmHmdTrack,radarBvrLock,radarBvrTrack,radarSearchModes,search,sensorTypes,tws	1	1
 su_n_001ve	N001	8	search	50000	radar	gtmTrack,helmetDesignation,illumination,irstSearchModes,irstTrack,lock,main,radarAcmHmdTrack,radarBvrLock,radarBvrTrack,radarSearchModes,search,sensorTypes,tws	2	1
 su_n_001vep	N001	8	search	50000	radar	gtmTrack,helmetDesignation,illumination,irstSearchModes,irstTrack,lock,main,radarAcmHmdTrack,radarBvrLock,radarBvrTrack,radarSearchModes,search,sensorTypes,tws	2	1
 su_n_010	N010	8	search	55000	radar	helmetDesignation,illumination,irstSearchModes,irstTrack,lock,main,radarAcmHmdTrack,radarBvrLock,radarBvrTrack,radarSearchModes,search,sensorTypes,tws	1	1
+su_n_010a	N010A	8	search	200000	radar	gtmTrack,helmetDesignation,illumination,irstSearchModes,irstTrack,lock,main,radarAcmHmdTrack,radarBvrLock,radarBvrTrack,radarSearchModes,search,sensorTypes,track,tws,velocityLock	6	1
 su_n_010m	N010	8	search	55000	radar	gtmTrack,helmetDesignation,illumination,irstSearchModes,irstTrack,lock,main,radarAcmHmdTrack,radarBvrLock,radarBvrTrack,radarSearchModes,search,sensorTypes,tws	4	1
+su_n_010m_ols_ue	N010	8	search	55000	radar	gtmTrack,helmetDesignation,illumination,irstSearchModes,irstTrack,lock,main,radarAcmHmdTrack,radarBvrLock,radarBvrTrack,radarSearchModes,search,sensorTypes,tws	4	1
 su_n_011m	N011M	8	search	120000	radar	gtmTrack,helmetDesignation,illumination,irstSearchModes,irstTrack,lock,main,radarAcmHmdTrack,radarBvrLock,radarBvrTrack,radarSearchModes,search,sensorTypes,track,tws,velocityLock	4	1
 su_n_011r	N011R	8	search	120000	radar	gtmTrack,helmetDesignation,illumination,irstSearchModes,irstTrack,lock,main,radarAcmHmdTrack,radarBvrLock,radarBvrTrack,radarSearchModes,search,sensorTypes,track,tws,velocityLock	8	1
 su_n_019	N019	8	search	50000	radar	helmetDesignation,illumination,irstSearchModes,irstTrack,lock,main,radarAcmHmdTrack,radarBvrLock,radarBvrTrack,radarSearchModes,search,sensorTypes,tws	1	1
@@ -187,7 +200,7 @@ su_n_035e	N035	8	search	300000	radar	gtmTrack,helmetDesignation,illumination,irs
 su_orion	Orion	8	search	15000	radar	mode,search		
 su_orion_phantasmagoria	ESM	2	search	250000	radar	lock,track,tws		
 su_p_12ma	S75 P12MA	6	search	200000	radar	search		
-su_rn_01_arbalet	RN-01 Arbalet	10	search	12000	radar	mode,search		
+su_rn_01_arbalet	RN-01 Arbalet	10	search	32000	radar	mode,tws		
 su_rp-1_search	RP-1 TA	8	search	15000	radar	search		
 su_rp-1_track	RP-1 TT	8	track	6000	radar	lock,track		
 su_rp-5_search	RP-5 TA	8	search	15000	radar	search		
@@ -212,6 +225,7 @@ su_spo-150-30	SPO-150-30				rwr
 su_spo-150-30m	SPO-150-30M				rwr			
 su_spo-150-30m1	SPO-150-30M.1				rwr			
 su_spo-150-30sm	SPO-150-30SM				rwr			
+su_spo-150m_02	SPO-150M-02				rwr			
 su_spo-15l	SPO-15				rwr			
 su_spo-15le	SPO-15LM				rwr			
 su_spo-15lm	SPO-15LM				rwr			
@@ -235,15 +249,15 @@ sw_es_05	ES-05	8	search	200000	radar	gtmTrack,helmetDesignation,illumination,irs
 sw_giraffe_1x	Giraffe 1X	8	search	75000	radar	tws	4	
 sw_giraffe_amb	Giraffe AMB	6	search	180000	radar	tws	24	
 sw_giraffe_amb_ai	Giraffe AMB	6	search	45000	radar	tws	24	
-sw_ps_05a	PS-05	8	search	150000	radar	acmLock,bvrLock,helmetDesignation,illumination,main,search,searchModes,track,tws,velocityLock	4	
+sw_ps_05a	PS-05	8	search	150000	radar	acmLock,bvrLock,gtmTrack,helmetDesignation,illumination,main,search,searchModes,track,tws,velocityLock	4	
 sw_ps_20	PS-20	5	search	14000	radar	search		
 sw_ps-011a_71h_ir	PS-011A 71H IR	8	search	90000	radar	lock,search,track		1
 sw_ps-03	PS-03	8	search	90000	radar	lock,search,track		
-sw_ps-371a	PS-37	8	search	150000	radar	acmLock,bvrLock,illumination,main,search,searchModes,track,tws		
-sw_ps-37a	PS-37	8	search	150000	radar	acmLock,bvrLock,illumination,main,search,searchModes,track,tws		
+sw_ps-371a	PS-37	8	search	150000	radar	acmLock,bvrLock,gtmTrack,illumination,main,search,searchModes,track,tws		
+sw_ps-37a	PS-37	8	search	150000	radar	acmLock,bvrLock,gtmTrack,illumination,main,search,searchModes,track,tws		
 sw_ps-42_search	PS-42 TA	8	search	90000	radar	search		
 sw_ps-42_track	PS-42 TT	8	track	5000	radar	lock,track		
-sw_ps-46a	PS-37	8	search	150000	radar	acmLock,bvrLock,illumination,main,search,searchModes,track,tws	4	
+sw_ps-46a	PS-37	8	search	150000	radar	acmLock,bvrLock,gtmTrack,illumination,main,search,searchModes,track,tws	4	
 sw_triad_search	TriAD TA	8	search	15000	radar	search		
 sw_utaas_track	UTAAS	-1	track	14000	radar	lock,track		
 swd_app_27	APP-27				rwr			
@@ -292,6 +306,8 @@ uk_rapier_fr	Rapier TT	9	track	15000	radar	lock,track		1
 uk_rapier_sr	Rapier TA	5	search	16000	radar	search		
 uk_rooikat_za_35_search_radar	EDR 110	3	search	12000	radar	search		
 uk_s1223	UK S1223				lws			
+uk_seaspray_7000e	Seaspray 7000E	8	search	370000	radar	mode,tws		
+uk_seaspray_7400e	Seaspray 7400E	8	search	370000	radar	mode,tws		
 uk_sky_guardian_200	Sky Guardian 200				rwr			
 uk_sky_guardian_200d	Sky Guardian 200-D				rwr			
 uk_sky_guardian_200d_apr_48	Sky Guardian 200-D				rwr			
@@ -309,6 +325,7 @@ us_an_aar_47a_v2	AN/AAR-47A(V)2				mlws
 us_an_aar_47a_v2_lws	AN/AAR-47A(V)2				lws			
 us_an_aar_54v	AN/AAR-54(V)				mlws			
 us_an_aar_57	AN/AAR-57				mlws			
+us_an_aar_57_aw_159	AN/AAR-57				mlws			
 us_an_aar_57_maw_300	MAW-300				mlws			
 us_an_aar_57_terma	AN/AAR-57				mlws			
 us_an_aar_60	AN/AAR-60				mlws			
@@ -324,6 +341,7 @@ us_an_alr_46_v	AN/ALR-46(V)				rwr
 us_an_alr_46_v2	AN/ALR-46(V)2				rwr			
 us_an_alr_46_v3	AN/ALR-46(V)3				rwr			
 us_an_alr_46_v3_f_5th	AN/ALR-46(V)3				rwr			
+us_an_alr_46_v4	AN/ALR-46(V)4				rwr			
 us_an_alr_56a	AN/ALR-56A				rwr			
 us_an_alr_56c	AN/ALR-56C				rwr			
 us_an_alr_56m	AN/ALR-56M				rwr			
@@ -360,6 +378,7 @@ us_an_apg_66_v_1	AN/APG-66	8	search	100000	radar	acmLock,bvrLock,illumination,ma
 us_an_apg_66_v_2	AN/APG-66	8	search	150000	radar	acmLock,bvrLock,gtmTrack,illumination,main,search,searchModes,track,tws	6	
 us_an_apg_66_v_2_hms	AN/APG-66	8	search	150000	radar	acmLock,bvrLock,gtmTrack,helmetDesignation,illumination,main,search,searchModes,track,tws	6	
 us_an_apg_66_v_3	AN/APG-66	8	search	150000	radar	acmLock,bvrLock,gtmTrack,illumination,main,search,searchModes,track,tws	6	
+us_an_apg_66_v_3_hms	AN/APG-66	8	search	150000	radar	acmLock,bvrLock,gtmTrack,helmetDesignation,illumination,main,search,searchModes,track,tws	6	
 us_an_apg_66h	AN/APG-66	8	search	100000	radar	acmLock,bvrLock,gtmTrack,illumination,main,search,searchModes,track		
 us_an_apg_66s	AN/APG-66S	8	search	150000	radar	acmLock,bvrLock,illumination,main,search,searchModes,track,tws	6	
 us_an_apg_67	AN/APG-67	8	search	150000	radar	acmLock,bvrLock,gtmTrack,illumination,main,search,searchModes,track,tws,velocityLock		
@@ -388,6 +407,7 @@ us_an_apq_159_v	AN/APQ-159	8	search	75000	radar	lock,search,track
 us_an_apq_169	AN/APQ-159	8	search	75000	radar	lock,search,track		
 us_an_apq_50	AN/APQ-50	8	search	100000	radar	lock,search,track		
 us_an_apq_51	AN/APQ-51	8	search	100000	radar	illumination,lock,search,track		
+us_an_apq_65	AN/APQ-65	8	search	100000	radar	illumination,lock,search,track		
 us_an_apq_72	AN/APQ-72	8	search	100000	radar	illumination,lock,search,track		
 us_an_apq_94	AN/APQ-94	8	search	75000	radar	lock,main,scanSide,search,sensorTypes,track		1
 us_an_apr_25	AN/APR-25				rwr			
@@ -416,6 +436,8 @@ us_an_asg_19	AN/ASG-19	8	search	37000	radar	lock,search,track
 us_an_asq_213_esm	AN/ASQ-213	2	search	250000	radar	lock,track,tws		
 us_an_avr-2	AN/AVR-2				lws			
 us_an_avr-2a	AN/AVR-2A				lws			
+us_an_avr-2a_v1	AN/AVR-2A(V)1				lws			
+us_an_avr-2b_v	AN/AVR-2B(V)				lws			
 us_an_avs-2	AN/AVS-2				lws			
 us_an_awg_9	AN/AWG-9	8	search	150000	radar	acmLock,acmLockModes,bvrLock,illumination,main,search,searchModes,track,tws,velocityLock	6	
 us_an_awg_9_tiseo	AN/AWG-9	8	search	150000	radar	acmLock,acmLockModes,bvrLock,illumination,main,search,searchModes,track,tws,velocityLock	6	
@@ -434,9 +456,11 @@ us_lws_310	LWS-310				lws
 us_m_247_track	AN/APG-66	8	track	20000	radar	lock,track		
 us_ma_1	MA-1	8	search	90000	radar	acmLock,helmetDesignation,lock,main,search,sensorTypes,track		1
 us_md_1a	MD-1A	8	search	90000	radar	lock,search,track		
+us_mg_10	MG-10	8	search	74000	radar	lock,search,track		
+us_mg_10_irst	MG-10	8	search	74000	radar	acmLock,lock,main,search,sensorTypes,track		1
 us_mk_x	Mk.X	5	search	14000	radar	search		
 us_nasarr	NASARR	8	search	40000	radar	illumination,lock,search,track		
 us_phalanx_search	Phalanx Search Radar	9	search	120000	radar	search		
 us_phalanx_track	Phalanx Track Radar	9	track	20000	radar	lock,track		
 us_r21g_m1	US R21G M1	8	search	45000	radar	acmLock,acmLockModes,bvrLock,illumination,main,search,searchModes,track		
-us_tps_59	AN/TPS-59	5	search	180000	radar	search		
+us_tps_59	AN/TPS-59	5	search	2	radar	search		

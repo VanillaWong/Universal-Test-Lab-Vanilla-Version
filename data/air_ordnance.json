@@ -650,6 +650,16 @@
     "kind": "rocket"
   },
   {
+    "blk": "gamedata/weapons/rocketguns/fr_exocet_am39_block_2.blk",
+    "display": "fr exocet am39 block 2",
+    "kind": "rocket"
+  },
+  {
+    "blk": "gamedata/weapons/rocketguns/fr_fz275_lgr.blk",
+    "display": "fr fz275 lgr",
+    "kind": "rocket"
+  },
+  {
     "blk": "gamedata/weapons/rocketguns/fr_fz49.blk",
     "display": "fr fz49",
     "kind": "rocket"
@@ -870,6 +880,11 @@
     "kind": "rocket"
   },
   {
+    "blk": "gamedata/weapons/rocketguns/gr_as34_kormoran_mk_2.blk",
+    "display": "gr as34 kormoran mk 2",
+    "kind": "rocket"
+  },
+  {
     "blk": "gamedata/weapons/rocketguns/ijnaf_60kg.blk",
     "display": "ijnaf 60kg",
     "kind": "rocket"
@@ -940,6 +955,21 @@
     "kind": "rocket"
   },
   {
+    "blk": "gamedata/weapons/rocketguns/is_delilah.blk",
+    "display": "is delilah",
+    "kind": "rocket"
+  },
+  {
+    "blk": "gamedata/weapons/rocketguns/is_delilah_arm.blk",
+    "display": "is delilah arm",
+    "kind": "rocket"
+  },
+  {
+    "blk": "gamedata/weapons/rocketguns/is_delilah_ir.blk",
+    "display": "is delilah ir",
+    "kind": "rocket"
+  },
+  {
     "blk": "gamedata/weapons/rocketguns/it_aspide_1a.blk",
     "display": "it aspide 1a",
     "kind": "rocket"
@@ -977,6 +1007,11 @@
   {
     "blk": "gamedata/weapons/rocketguns/jp_asm2.blk",
     "display": "jp asm2",
+    "kind": "rocket"
+  },
+  {
+    "blk": "gamedata/weapons/rocketguns/jp_asm3.blk",
+    "display": "jp asm3",
     "kind": "rocket"
   },
   {
@@ -1137,6 +1172,21 @@
   {
     "blk": "gamedata/weapons/rocketguns/spike_er.blk",
     "display": "spike er",
+    "kind": "rocket"
+  },
+  {
+    "blk": "gamedata/weapons/rocketguns/spike_er_default.blk",
+    "display": "spike er default",
+    "kind": "rocket"
+  },
+  {
+    "blk": "gamedata/weapons/rocketguns/spike_nlos.blk",
+    "display": "spike nlos",
+    "kind": "rocket"
+  },
+  {
+    "blk": "gamedata/weapons/rocketguns/spike_nlos_default.blk",
+    "display": "spike nlos default",
     "kind": "rocket"
   },
   {
@@ -1375,6 +1425,16 @@
     "kind": "rocket"
   },
   {
+    "blk": "gamedata/weapons/rocketguns/su_kh_35u.blk",
+    "display": "su kh 35u",
+    "kind": "rocket"
+  },
+  {
+    "blk": "gamedata/weapons/rocketguns/su_kh_35ue.blk",
+    "display": "su kh 35ue",
+    "kind": "rocket"
+  },
+  {
     "blk": "gamedata/weapons/rocketguns/su_kh_38ml.blk",
     "display": "su kh 38ml",
     "kind": "rocket"
@@ -1422,6 +1482,11 @@
   {
     "blk": "gamedata/weapons/rocketguns/su_kh_58ushk.blk",
     "display": "su kh 58ushk",
+    "kind": "rocket"
+  },
+  {
+    "blk": "gamedata/weapons/rocketguns/su_kh_58ushke.blk",
+    "display": "su kh 58ushke",
     "kind": "rocket"
   },
   {
@@ -1955,6 +2020,11 @@
     "kind": "rocket"
   },
   {
+    "blk": "gamedata/weapons/rocketguns/swd_rb_15f.blk",
+    "display": "swd rb 15f",
+    "kind": "rocket"
+  },
+  {
     "blk": "gamedata/weapons/rocketguns/swd_rb24.blk",
     "display": "swd rb24",
     "kind": "rocket"
@@ -1972,6 +2042,16 @@
   {
     "blk": "gamedata/weapons/rocketguns/swd_rb24j_default.blk",
     "display": "swd rb24j default",
+    "kind": "rocket"
+  },
+  {
+    "blk": "gamedata/weapons/rocketguns/swd_rb27.blk",
+    "display": "swd rb27",
+    "kind": "rocket"
+  },
+  {
+    "blk": "gamedata/weapons/rocketguns/swd_rb28.blk",
+    "display": "swd rb28",
     "kind": "rocket"
   },
   {
@@ -2240,6 +2320,16 @@
     "kind": "rocket"
   },
   {
+    "blk": "gamedata/weapons/rocketguns/uk_martlet.blk",
+    "display": "uk martlet",
+    "kind": "rocket"
+  },
+  {
+    "blk": "gamedata/weapons/rocketguns/uk_martlet_default.blk",
+    "display": "uk martlet default",
+    "kind": "rocket"
+  },
+  {
     "blk": "gamedata/weapons/rocketguns/uk_redtop.blk",
     "display": "uk redtop",
     "kind": "rocket"
@@ -2397,6 +2487,11 @@
   {
     "blk": "gamedata/weapons/rocketguns/us_2_75_in_ffar_mighty_mouse_fn_m3p_cwp.blk",
     "display": "us 2 75 in ffar mighty mouse fn m3p cwp",
+    "kind": "rocket"
+  },
+  {
+    "blk": "gamedata/weapons/rocketguns/us_2_75_in_ffar_mighty_mouse_m151.blk",
+    "display": "us 2 75 in ffar mighty mouse m151",
     "kind": "rocket"
   },
   {
@@ -2680,6 +2775,11 @@
     "kind": "rocket"
   },
   {
+    "blk": "gamedata/weapons/rocketguns/us_agm_88g.blk",
+    "display": "us agm 88g",
+    "kind": "rocket"
+  },
+  {
     "blk": "gamedata/weapons/rocketguns/us_aim_120a.blk",
     "display": "us aim 120a",
     "kind": "rocket"
@@ -2792,6 +2892,11 @@
   {
     "blk": "gamedata/weapons/rocketguns/us_aim_54c_plus_default.blk",
     "display": "us aim 54c plus default",
+    "kind": "rocket"
+  },
+  {
+    "blk": "gamedata/weapons/rocketguns/us_aim4d_falcon.blk",
+    "display": "us aim4d falcon",
     "kind": "rocket"
   },
   {
@@ -3315,6 +3420,11 @@
     "kind": "cannon"
   },
   {
+    "blk": "gamedata/weapons/cannon404_modele50.blk",
+    "display": "cannon404 modele50",
+    "kind": "cannon"
+  },
+  {
     "blk": "gamedata/weapons/cannonaden.blk",
     "display": "cannonaden",
     "kind": "cannon"
@@ -3495,6 +3605,11 @@
     "kind": "cannon"
   },
   {
+    "blk": "gamedata/weapons/cannondefa553_jaguar.blk",
+    "display": "cannondefa553 jaguar",
+    "kind": "cannon"
+  },
+  {
     "blk": "gamedata/weapons/cannondefa554.blk",
     "display": "cannondefa554",
     "kind": "cannon"
@@ -3620,6 +3735,11 @@
     "kind": "cannon"
   },
   {
+    "blk": "gamedata/weapons/cannonhispano_hs825_l_53.blk",
+    "display": "cannonhispano hs825 l 53",
+    "kind": "cannon"
+  },
+  {
     "blk": "gamedata/weapons/cannonhispano_hs9.blk",
     "display": "cannonhispano hs9",
     "kind": "cannon"
@@ -3675,6 +3795,11 @@
     "kind": "cannon"
   },
   {
+    "blk": "gamedata/weapons/cannonho155-ii.blk",
+    "display": "cannonho155 ii",
+    "kind": "cannon"
+  },
+  {
     "blk": "gamedata/weapons/cannonho203.blk",
     "display": "cannonho203",
     "kind": "cannon"
@@ -3697,6 +3822,11 @@
   {
     "blk": "gamedata/weapons/cannonho401.blk",
     "display": "cannonho401",
+    "kind": "cannon"
+  },
+  {
+    "blk": "gamedata/weapons/cannonho402.blk",
+    "display": "cannonho402",
     "kind": "cannon"
   },
   {
@@ -4212,6 +4342,11 @@
   {
     "blk": "gamedata/weapons/cannontype99mk2.blk",
     "display": "cannontype99mk2",
+    "kind": "cannon"
+  },
+  {
+    "blk": "gamedata/weapons/cannontype99mk2_kai.blk",
+    "display": "cannontype99mk2 kai",
     "kind": "cannon"
   },
   {

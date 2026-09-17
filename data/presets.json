@@ -1045,6 +1045,51 @@
     "name": "3x mk11"
   },
   {
+    "aircraftId": "a_4ptm_malaysia",
+    "presetId": "a_4ptm_malaysia_default",
+    "name": "2x aim 9p default"
+  },
+  {
+    "aircraftId": "a_4ptm_malaysia",
+    "presetId": "a_4ptm_malaysia_rockets_aim_9p",
+    "name": "2x aim 9p default; 2x aim 9p"
+  },
+  {
+    "aircraftId": "a_4ptm_malaysia",
+    "presetId": "a_4ptm_malaysia_rockets_lau3",
+    "name": "2x ffar x1; ffar left x2; ffar central; ffar right x2"
+  },
+  {
+    "aircraftId": "a_4ptm_malaysia",
+    "presetId": "a_4ptm_malaysia_rockets_zuni",
+    "name": "2x zuni x1; zuni left x2; zuni central; zuni right x2"
+  },
+  {
+    "aircraftId": "a_4ptm_malaysia",
+    "presetId": "a_4ptm_malaysia_bomb_mk82",
+    "name": "2x mk82 x1; 2x mk82 x3; mk82 x6"
+  },
+  {
+    "aircraftId": "a_4ptm_malaysia",
+    "presetId": "a_4ptm_malaysia_bomb_mk83",
+    "name": "2x mk83 x1; mk83 x1 central"
+  },
+  {
+    "aircraftId": "a_4ptm_malaysia",
+    "presetId": "a_4ptm_malaysia_bomb_mk84",
+    "name": "mk84 x1 central"
+  },
+  {
+    "aircraftId": "a_4ptm_malaysia",
+    "presetId": "a_4ptm_malaysia_bomb_mk82_sn",
+    "name": "2x mk82 x1 snakeye; 2x mk82 x3 snakeye; mk82 x6 snakeye"
+  },
+  {
+    "aircraftId": "a_4ptm_malaysia",
+    "presetId": "a_4ptm_malaysia_bomb_mk77",
+    "name": "2x mk77 x1; mk77 left x2; mk77 x3 central; mk77 right x2"
+  },
+  {
     "aircraftId": "a_5c",
     "presetId": "a_5c_default",
     "name": "no suspended armament"
@@ -1425,6 +1470,111 @@
     "name": "agm 45b 10 slot1; agm 45b 10 slot2; agm 45b 10 slot7; agm 45b 10 slot8"
   },
   {
+    "aircraftId": "a_7e_greece",
+    "presetId": "a_7e_default",
+    "name": "no suspended armament"
+  },
+  {
+    "aircraftId": "a_7e_greece",
+    "presetId": "a_7e_default_aim9d",
+    "name": "2x aim 9d"
+  },
+  {
+    "aircraftId": "a_7e_greece",
+    "presetId": "a_7e_rockets_aim9e",
+    "name": "2x aim 9g"
+  },
+  {
+    "aircraftId": "a_7e_greece",
+    "presetId": "a_7e_rockets_lau18",
+    "name": "lau 3a slot1; lau 3a slot2; lau 3a slot3; lau 3a slot6; lau 3a slot7; lau 3a slot8"
+  },
+  {
+    "aircraftId": "a_7e_greece",
+    "presetId": "a_7e_rockets_zuni",
+    "name": "lau 10a slot1; lau 10a slot2; lau 10a slot3; lau 10a slot6; lau 10a slot7; lau 10a slot8"
+  },
+  {
+    "aircraftId": "a_7e_greece",
+    "presetId": "a_7e_bomb_mk81",
+    "name": "4x mer mk81 x6; mer mk81 x4 left wing; mer mk81 x4 right wing"
+  },
+  {
+    "aircraftId": "a_7e_greece",
+    "presetId": "a_7e_bomb_mk82",
+    "name": "4x mer mk82 x6; mer mk82 x4 left wing; mer mk82 x4 right wing"
+  },
+  {
+    "aircraftId": "a_7e_greece",
+    "presetId": "a_7e_bomb_mk81_snakeye",
+    "name": "4x mer mk81 x6 snakeye; mer mk81 x4 left wing snakeye; mer mk81 x4 right wing snakeye"
+  },
+  {
+    "aircraftId": "a_7e_greece",
+    "presetId": "a_7e_bomb_mk82_snakeye",
+    "name": "4x mer mk82 x6 snakeye; mer mk82 x4 left wing snakeye; mer mk82 x4 right wing snakeye"
+  },
+  {
+    "aircraftId": "a_7e_greece",
+    "presetId": "a_7e_bomb_m117",
+    "name": "2x us 750lb m117; us 750lb m117 x4 left wing; 2x us 750lb m117 x2; us 750lb m117 x4 right wing"
+  },
+  {
+    "aircraftId": "a_7e_greece",
+    "presetId": "a_7e_bomb_blu_27b",
+    "name": "6x blu 27b"
+  },
+  {
+    "aircraftId": "a_7e_greece",
+    "presetId": "a_7e_bomb_mk83",
+    "name": "4x ter mk83; ter mk83 x2 left wing; ter mk83 x2 right wing"
+  },
+  {
+    "aircraftId": "a_7e_greece",
+    "presetId": "a_7e_bomb_mk84",
+    "name": "6x us mk84"
+  },
+  {
+    "aircraftId": "a_7e_greece",
+    "presetId": "a_7e_rocket_agm_62",
+    "name": "6x agm 62a"
+  },
+  {
+    "aircraftId": "a_7e_greece",
+    "presetId": "a_7e_rocket_agm_62_walleye_2_erdl",
+    "name": "2x agm 62a walleye 2 erdl"
+  },
+  {
+    "aircraftId": "a_7e_greece",
+    "presetId": "a_7e_guns_suu_23",
+    "name": "2x suu 23a gunpod wing"
+  },
+  {
+    "aircraftId": "a_7e_greece",
+    "presetId": "a_7e_guns_gpu_5a",
+    "name": "2x gpu 5a gunpod"
+  },
+  {
+    "aircraftId": "a_7e_greece",
+    "presetId": "a_7e_lana_flir",
+    "name": "lana"
+  },
+  {
+    "aircraftId": "a_7e_greece",
+    "presetId": "a_7e_bomb_mk84_air",
+    "name": "6x us mk84 air"
+  },
+  {
+    "aircraftId": "a_7e_greece",
+    "presetId": "a_7e_agm_45b_9",
+    "name": "agm 45b 9 slot1; agm 45b 9 slot2; agm 45b 9 slot7; agm 45b 9 slot8"
+  },
+  {
+    "aircraftId": "a_7e_greece",
+    "presetId": "a_7e_agm_45b_10",
+    "name": "agm 45b 10 slot1; agm 45b 10 slot2; agm 45b 10 slot7; agm 45b 10 slot8"
+  },
+  {
     "aircraftId": "a_7e_thailand",
     "presetId": "a_7e_default",
     "name": "no suspended armament"
@@ -1528,6 +1678,86 @@
     "aircraftId": "a_7e_thailand",
     "presetId": "a_7e_agm_45b_10",
     "name": "agm 45b 10 slot1; agm 45b 10 slot2; agm 45b 10 slot7; agm 45b 10 slot8"
+  },
+  {
+    "aircraftId": "a_7h_greece",
+    "presetId": "a_7h_default",
+    "name": "ptb left; ptb right"
+  },
+  {
+    "aircraftId": "a_7h_greece",
+    "presetId": "a_7e_default_aim9d",
+    "name": "2x aim 9d"
+  },
+  {
+    "aircraftId": "a_7h_greece",
+    "presetId": "a_7e_rockets_aim9e",
+    "name": "2x aim 9g"
+  },
+  {
+    "aircraftId": "a_7h_greece",
+    "presetId": "a_7e_rockets_lau18",
+    "name": "lau 3a slot1; lau 3a slot2; lau 3a slot3; lau 3a slot6; lau 3a slot7; lau 3a slot8"
+  },
+  {
+    "aircraftId": "a_7h_greece",
+    "presetId": "a_7e_rockets_zuni",
+    "name": "lau 10a slot1; lau 10a slot2; lau 10a slot3; lau 10a slot6; lau 10a slot7; lau 10a slot8"
+  },
+  {
+    "aircraftId": "a_7h_greece",
+    "presetId": "a_7e_bomb_mk81",
+    "name": "4x mer mk81 x6; mer mk81 x4 left wing; mer mk81 x4 right wing"
+  },
+  {
+    "aircraftId": "a_7h_greece",
+    "presetId": "a_7e_bomb_mk82",
+    "name": "4x mer mk82 x6; mer mk82 x4 left wing; mer mk82 x4 right wing"
+  },
+  {
+    "aircraftId": "a_7h_greece",
+    "presetId": "a_7e_bomb_mk81_snakeye",
+    "name": "4x mer mk81 x6 snakeye; mer mk81 x4 left wing snakeye; mer mk81 x4 right wing snakeye"
+  },
+  {
+    "aircraftId": "a_7h_greece",
+    "presetId": "a_7e_bomb_mk82_snakeye",
+    "name": "4x mer mk82 x6 snakeye; mer mk82 x4 left wing snakeye; mer mk82 x4 right wing snakeye"
+  },
+  {
+    "aircraftId": "a_7h_greece",
+    "presetId": "a_7e_bomb_m117",
+    "name": "2x us 750lb m117; us 750lb m117 x4 left wing; 2x us 750lb m117 x2; us 750lb m117 x4 right wing"
+  },
+  {
+    "aircraftId": "a_7h_greece",
+    "presetId": "a_7e_bomb_blu_27b",
+    "name": "6x blu 27b"
+  },
+  {
+    "aircraftId": "a_7h_greece",
+    "presetId": "a_7e_bomb_mk83",
+    "name": "4x ter mk83; ter mk83 x2 left wing; ter mk83 x2 right wing"
+  },
+  {
+    "aircraftId": "a_7h_greece",
+    "presetId": "a_7e_bomb_mk84",
+    "name": "6x us mk84"
+  },
+  {
+    "aircraftId": "a_7h_greece",
+    "presetId": "a_7e_guns_suu_23",
+    "name": "2x suu 23a gunpod wing"
+  },
+  {
+    "aircraftId": "a_7h_greece",
+    "presetId": "a_7e_guns_gpu_5a",
+    "name": "2x gpu 5a gunpod"
+  },
+  {
+    "aircraftId": "a_7h_greece",
+    "presetId": "a_7e_bomb_mk84_air",
+    "name": "6x us mk84 air"
   },
   {
     "aircraftId": "a_7k",
@@ -1812,7 +2042,7 @@
   {
     "aircraftId": "a2d",
     "presetId": "a2d_10x500lbs",
-    "name": "10x 500lbs; 500lbs slot7; 500lbs slot9"
+    "name": "8x 500lbs; 2x500lbs slot5; 500lbs slot7; 500lbs slot9; 2x500lbs slot11"
   },
   {
     "aircraftId": "a2d",
@@ -1832,7 +2062,7 @@
   {
     "aircraftId": "a2d",
     "presetId": "a2d_torpedoes",
-    "name": "2x torpedo"
+    "name": "3x torpedo"
   },
   {
     "aircraftId": "a-35b",
@@ -1905,6 +2135,11 @@
     "name": "no suspended armament"
   },
   {
+    "aircraftId": "a6m2_zero",
+    "presetId": "a6m2_2x60_1x250",
+    "name": "no suspended armament"
+  },
+  {
     "aircraftId": "a6m2_zero_china",
     "presetId": "a6m2_default",
     "name": "no suspended armament"
@@ -1917,6 +2152,11 @@
   {
     "aircraftId": "a6m2_zero_china",
     "presetId": "a6m2_250kg",
+    "name": "no suspended armament"
+  },
+  {
+    "aircraftId": "a6m2_zero_china",
+    "presetId": "a6m2_2x60_1x250",
     "name": "no suspended armament"
   },
   {
@@ -1951,6 +2191,11 @@
   },
   {
     "aircraftId": "a6m3_zero",
+    "presetId": "a6m3_zero_ptb",
+    "name": "2x type97mod6 60kg; ptb"
+  },
+  {
+    "aircraftId": "a6m3_zero",
     "presetId": "A6M3_2x60kg",
     "name": "2x type97mod6 60kg"
   },
@@ -1970,6 +2215,11 @@
     "name": "no suspended armament"
   },
   {
+    "aircraftId": "a6m5_zero",
+    "presetId": "a6m5_2x60_1x250",
+    "name": "no suspended armament"
+  },
+  {
     "aircraftId": "a6m5_zero_china",
     "presetId": "a6m5_default",
     "name": "no suspended armament"
@@ -1985,6 +2235,11 @@
     "name": "no suspended armament"
   },
   {
+    "aircraftId": "a6m5_zero_china",
+    "presetId": "a6m5_2x60_1x250",
+    "name": "no suspended armament"
+  },
+  {
     "aircraftId": "a6m5hei",
     "presetId": "A6M5_default",
     "name": "no suspended armament"
@@ -1997,6 +2252,16 @@
   {
     "aircraftId": "a6m5hei",
     "presetId": "a6m5_bombs",
+    "name": "no suspended armament"
+  },
+  {
+    "aircraftId": "a6m5hei",
+    "presetId": "a6m5hei_2x60_1x250",
+    "name": "no suspended armament"
+  },
+  {
+    "aircraftId": "a6m5hei",
+    "presetId": "a6m5hei_bombs_mod50",
     "name": "no suspended armament"
   },
   {
@@ -2025,6 +2290,11 @@
     "name": "no suspended armament"
   },
   {
+    "aircraftId": "a6m5ko",
+    "presetId": "a6m5_2x60_1x250",
+    "name": "no suspended armament"
+  },
+  {
     "aircraftId": "a6m5otsu",
     "presetId": "A6M5_default",
     "name": "no suspended armament"
@@ -2040,6 +2310,11 @@
     "name": "no suspended armament"
   },
   {
+    "aircraftId": "a6m5otsu",
+    "presetId": "a6m5_2x60_1x250",
+    "name": "no suspended armament"
+  },
+  {
     "aircraftId": "a6m6c",
     "presetId": "A6M6c_default",
     "name": "no suspended armament"
@@ -2052,6 +2327,16 @@
   {
     "aircraftId": "a6m6c",
     "presetId": "A6M6c_bombs",
+    "name": "no suspended armament"
+  },
+  {
+    "aircraftId": "a6m6c",
+    "presetId": "a6m6_2x60_1x250",
+    "name": "no suspended armament"
+  },
+  {
+    "aircraftId": "a6m6c",
+    "presetId": "a6m6_bombs_mod50",
     "name": "no suspended armament"
   },
   {
@@ -2911,6 +3196,11 @@
   },
   {
     "aircraftId": "ah_64d_i_saraph",
+    "presetId": "ah_64d_i_saraph_spike_nlos",
+    "name": "4x spike nlos x4; spike nlos targeting pod"
+  },
+  {
+    "aircraftId": "ah_64d_i_saraph",
     "presetId": "ah_64d_i_saraph_aim92",
     "name": "atas left; atas right"
   },
@@ -3070,6 +3360,11 @@
     "name": "4x agm 179 ir x4"
   },
   {
+    "aircraftId": "ah_64e",
+    "presetId": "ah_64e_spike_nlos",
+    "name": "spike nlos targeting pod; 3x spike nlos x4"
+  },
+  {
     "aircraftId": "ah_64e_britain",
     "presetId": "ah_64e_default",
     "name": "2x 114b x2 default; 2x m247"
@@ -3108,6 +3403,11 @@
     "aircraftId": "ah_64e_britain",
     "presetId": "ah_64e_agm_179_ir",
     "name": "4x agm 179 ir x4"
+  },
+  {
+    "aircraftId": "ah_64e_britain",
+    "presetId": "ah_64e_spike_nlos",
+    "name": "spike nlos targeting pod; 3x spike nlos x4"
   },
   {
     "aircraftId": "ah_64e_china",
@@ -3150,6 +3450,11 @@
     "name": "ldircm l; 4x agm 179 ir x4; ldircm r"
   },
   {
+    "aircraftId": "ah_64e_china",
+    "presetId": "ah_64e_china_spike_nlos",
+    "name": "ldircm l; spike nlos targeting pod; 3x spike nlos x4; ldircm r"
+  },
+  {
     "aircraftId": "ah_64e_indonesia",
     "presetId": "ah_64e_default",
     "name": "2x 114b x2 default; 2x m247"
@@ -3190,6 +3495,11 @@
     "name": "4x agm 179 ir x4"
   },
   {
+    "aircraftId": "ah_64e_indonesia",
+    "presetId": "ah_64e_spike_nlos",
+    "name": "spike nlos targeting pod; 3x spike nlos x4"
+  },
+  {
     "aircraftId": "ah_64e_netherlands",
     "presetId": "ah_64e_default",
     "name": "2x 114b x2 default; 2x m247"
@@ -3228,6 +3538,11 @@
     "aircraftId": "ah_64e_netherlands",
     "presetId": "ah_64e_agm_179_ir",
     "name": "4x agm 179 ir x4"
+  },
+  {
+    "aircraftId": "ah_64e_netherlands",
+    "presetId": "ah_64e_spike_nlos",
+    "name": "spike nlos targeting pod; 3x spike nlos x4"
   },
   {
     "aircraftId": "ah_6m",
@@ -3790,6 +4105,31 @@
     "name": "2x fab500"
   },
   {
+    "aircraftId": "arado_234b_2_mt",
+    "presetId": "arado_234b_2_mt_default",
+    "name": "2x sc250; cannon"
+  },
+  {
+    "aircraftId": "arado_234b_2_mt",
+    "presetId": "arado_234b_2_mt_2x500",
+    "name": "2x sc500; cannon"
+  },
+  {
+    "aircraftId": "arado_234b_2_mt",
+    "presetId": "arado_234b_2_mt_3x250",
+    "name": "2x sc250; sc250 slot2"
+  },
+  {
+    "aircraftId": "arado_234b_2_mt",
+    "presetId": "arado_234b_2_mt_3x500",
+    "name": "2x sc500; sc500 slot2"
+  },
+  {
+    "aircraftId": "arado_234b_2_mt",
+    "presetId": "arado_234b_2_mt_1x1000_2x250",
+    "name": "2x sc250; sc1000"
+  },
+  {
     "aircraftId": "arado-196a-3",
     "presetId": "ar_196a_3_default",
     "name": "no suspended armament"
@@ -3996,8 +4336,18 @@
   },
   {
     "aircraftId": "av_8b_na",
+    "presetId": "av_8b_plus_gbu_32",
+    "name": "2x us gbu 32; us gbu 32 x2 left wing; us gbu 32 x2 right wing"
+  },
+  {
+    "aircraftId": "av_8b_na",
     "presetId": "av_8b_plus_gbu_38",
     "name": "2x us gbu 38 x2; 2x us gbu 38 x3"
+  },
+  {
+    "aircraftId": "av_8b_na",
+    "presetId": "av_8b_plus_gbu_54",
+    "name": "2x us gbu 54; 2x us gbu 54 x2; litening pod"
   },
   {
     "aircraftId": "av_8b_na",
@@ -4540,6 +4890,21 @@
     "name": "mk13"
   },
   {
+    "aircraftId": "aw_159",
+    "presetId": "aw_159_default",
+    "name": "spike nlos x2 default; spike nlos targeting pod; martlet default"
+  },
+  {
+    "aircraftId": "aw_159",
+    "presetId": "aw_159_martel",
+    "name": "3x martlet; martlet default"
+  },
+  {
+    "aircraftId": "aw_159",
+    "presetId": "aw_159_spike",
+    "name": "spike nlos x2 default; spike nlos targeting pod; spike nlos x2"
+  },
+  {
     "aircraftId": "b_10b",
     "presetId": "b_10b_250lb",
     "name": "250lb slot2"
@@ -4930,6 +5295,46 @@
     "name": "no suspended armament"
   },
   {
+    "aircraftId": "b_26b_indonesia_kalong",
+    "presetId": "b_26b_indonesia_kalong_gun_pod",
+    "name": "gun pod slot4; gun pod slot6"
+  },
+  {
+    "aircraftId": "b_26b_indonesia_kalong",
+    "presetId": "b_26b_indonesia_kalong_mk82",
+    "name": "mk82 slot5"
+  },
+  {
+    "aircraftId": "b_26b_indonesia_kalong",
+    "presetId": "b_26b_indonesia_kalong_ofab_250",
+    "name": "ofab 250 slot5"
+  },
+  {
+    "aircraftId": "b_26b_indonesia_kalong",
+    "presetId": "b_26b_indonesia_kalong_5in_rockets",
+    "name": "hvar slot1; hvar slot2; hvar slot3; hvar slot4; hvar slot6; hvar slot7; hvar slot8; hvar slot9"
+  },
+  {
+    "aircraftId": "b_26b_indonesia_kalong",
+    "presetId": "b_26b_indonesia_kalong_sura_he",
+    "name": "sura he slot1; sura he slot2; sura he slot3; sura he slot4; sura he slot6; sura he slot7; sura he slot8; sura he slot9"
+  },
+  {
+    "aircraftId": "b_26b_indonesia_kalong",
+    "presetId": "b_26b_indonesia_kalong_sura_heat",
+    "name": "sura heat slot1; sura heat slot2; sura heat slot3; sura heat slot4; sura heat slot6; sura heat slot7; sura heat slot8; sura heat slot9"
+  },
+  {
+    "aircraftId": "b_26b_indonesia_kalong",
+    "presetId": "b_26b_indonesia_kalong_mk82_mixed",
+    "name": "hvar slot1; hvar slot2; hvar slot3; gun pod slot4; mk82 slot5; gun pod slot6; hvar slot7; hvar slot8; hvar slot9"
+  },
+  {
+    "aircraftId": "b_26b_indonesia_kalong",
+    "presetId": "b_26b_indonesia_kalong_ofab_250_mixed",
+    "name": "sura heat slot1; sura heat slot2; sura heat slot3; gun pod slot4; ofab 250 slot5; gun pod slot6; sura heat slot7; sura heat slot8; sura heat slot9"
+  },
+  {
     "aircraftId": "b_26c_france",
     "presetId": "b_26b_c_default",
     "name": "no suspended armament"
@@ -4991,8 +5396,33 @@
   },
   {
     "aircraftId": "b_48_firecrest",
-    "presetId": "b_48_firecrest_500lbs_bombs",
-    "name": "2x 500lb"
+    "presetId": "b_48_firecrest_x2_rp3",
+    "name": "x2 rp3 slot1; x2 rp3 slot5"
+  },
+  {
+    "aircraftId": "b_48_firecrest",
+    "presetId": "b_48_firecrest_250lbs_gp_bombs",
+    "name": "2x 250lb gp"
+  },
+  {
+    "aircraftId": "b_48_firecrest",
+    "presetId": "b_48_firecrest_500lb_gp_bombs",
+    "name": "2x 500lb gp"
+  },
+  {
+    "aircraftId": "b_48_firecrest",
+    "presetId": "b_48_firecrest_250lbs_mc_bombs",
+    "name": "2x 250lb mc"
+  },
+  {
+    "aircraftId": "b_48_firecrest",
+    "presetId": "b_48_firecrest_500lb_mc_bombs",
+    "name": "2x 500lb mc"
+  },
+  {
+    "aircraftId": "b_48_firecrest",
+    "presetId": "b_48_firecrest_500lbs_ap_bombs",
+    "name": "2x 500lb ap"
   },
   {
     "aircraftId": "b_48_firecrest",
@@ -7015,6 +7445,86 @@
     "name": "no suspended armament"
   },
   {
+    "aircraftId": "ca_27_mk32_malaysia",
+    "presetId": "ca_27_default",
+    "name": "no suspended armament"
+  },
+  {
+    "aircraftId": "ca_27_mk32_malaysia",
+    "presetId": "ca_27_ptb_100gal",
+    "name": "ptb slot2; ptb slot11"
+  },
+  {
+    "aircraftId": "ca_27_mk32_malaysia",
+    "presetId": "ca_27_ptb_167gal",
+    "name": "ptb slot3; ptb slot10"
+  },
+  {
+    "aircraftId": "ca_27_mk32_malaysia",
+    "presetId": "ca_27_aim9b",
+    "name": "2x aim9b"
+  },
+  {
+    "aircraftId": "ca_27_mk32_malaysia",
+    "presetId": "ca_27_rokets_60lb",
+    "name": "10x 60lb x2"
+  },
+  {
+    "aircraftId": "ca_27_mk32_malaysia",
+    "presetId": "ca_27_rokets_25lb",
+    "name": "10x 25lb x3"
+  },
+  {
+    "aircraftId": "ca_27_mk32_malaysia",
+    "presetId": "ca_27_bombs_500lb",
+    "name": "2x 500lb"
+  },
+  {
+    "aircraftId": "ca_27_mk32_malaysia",
+    "presetId": "ca_27_bombs_1000lb",
+    "name": "2x 1000lb"
+  },
+  {
+    "aircraftId": "ca_27_mk32_raaf",
+    "presetId": "ca_27_default",
+    "name": "no suspended armament"
+  },
+  {
+    "aircraftId": "ca_27_mk32_raaf",
+    "presetId": "ca_27_ptb_100gal",
+    "name": "ptb slot2; ptb slot11"
+  },
+  {
+    "aircraftId": "ca_27_mk32_raaf",
+    "presetId": "ca_27_ptb_167gal",
+    "name": "ptb slot3; ptb slot10"
+  },
+  {
+    "aircraftId": "ca_27_mk32_raaf",
+    "presetId": "ca_27_aim9b",
+    "name": "2x aim9b"
+  },
+  {
+    "aircraftId": "ca_27_mk32_raaf",
+    "presetId": "ca_27_rokets_60lb",
+    "name": "10x 60lb x2"
+  },
+  {
+    "aircraftId": "ca_27_mk32_raaf",
+    "presetId": "ca_27_rokets_25lb",
+    "name": "10x 25lb x3"
+  },
+  {
+    "aircraftId": "ca_27_mk32_raaf",
+    "presetId": "ca_27_bombs_500lb",
+    "name": "2x 500lb"
+  },
+  {
+    "aircraftId": "ca_27_mk32_raaf",
+    "presetId": "ca_27_bombs_1000lb",
+    "name": "2x 1000lb"
+  },
+  {
     "aircraftId": "canberra_bimk6",
     "presetId": "canberra_500lb_mc",
     "name": "500lb mc slot1; 500lb mc slot2; 500lb mc slot3"
@@ -7780,6 +8290,41 @@
     "name": "no suspended armament"
   },
   {
+    "aircraftId": "do_217j_1",
+    "presetId": "do_217j_1_2xsc250",
+    "name": "no suspended armament"
+  },
+  {
+    "aircraftId": "do_217j_1",
+    "presetId": "do_217j_1_2xsc500",
+    "name": "no suspended armament"
+  },
+  {
+    "aircraftId": "do_217j_1",
+    "presetId": "do_217j_1_1xsc1000",
+    "name": "no suspended armament"
+  },
+  {
+    "aircraftId": "do_217j_1",
+    "presetId": "do_217j_1_2xfl250",
+    "name": "no suspended armament"
+  },
+  {
+    "aircraftId": "do_217j_1",
+    "presetId": "do_217j_1_2xfl500",
+    "name": "no suspended armament"
+  },
+  {
+    "aircraftId": "do_217j_1",
+    "presetId": "do_217j_1_2xpc500",
+    "name": "no suspended armament"
+  },
+  {
+    "aircraftId": "do_217j_1",
+    "presetId": "do_217j_1_1xpc1000",
+    "name": "no suspended armament"
+  },
+  {
     "aircraftId": "do_217j_2",
     "presetId": "do_217j_2_default",
     "name": "no suspended armament"
@@ -7892,6 +8437,31 @@
   {
     "aircraftId": "do_217n_1",
     "presetId": "do_217n_1_8xsc50",
+    "name": "no suspended armament"
+  },
+  {
+    "aircraftId": "do_217n_1",
+    "presetId": "do_217n_1_2xsc250",
+    "name": "no suspended armament"
+  },
+  {
+    "aircraftId": "do_217n_1",
+    "presetId": "do_217n_1_1xsc500",
+    "name": "no suspended armament"
+  },
+  {
+    "aircraftId": "do_217n_1",
+    "presetId": "do_217n_1_2xfl250",
+    "name": "no suspended armament"
+  },
+  {
+    "aircraftId": "do_217n_1",
+    "presetId": "do_217n_1_2xfl500",
+    "name": "no suspended armament"
+  },
+  {
+    "aircraftId": "do_217n_1",
+    "presetId": "do_217n_1_1xpc500",
     "name": "no suspended armament"
   },
   {
@@ -8021,8 +8591,23 @@
   },
   {
     "aircraftId": "douglas_a_1h",
+    "presetId": "douglas_a_1h_3xmk79",
+    "name": "3x us mk 79"
+  },
+  {
+    "aircraftId": "douglas_a_1h",
     "presetId": "douglas_a_1h_2xblu1",
     "name": "2x us blu 1"
+  },
+  {
+    "aircraftId": "douglas_a_1h",
+    "presetId": "douglas_a_1h_14xblu10",
+    "name": "14x blu 10"
+  },
+  {
+    "aircraftId": "douglas_a_1h",
+    "presetId": "douglas_a_1h_3xm116",
+    "name": "3x us m116"
   },
   {
     "aircraftId": "douglas_a_1h",
@@ -8047,7 +8632,7 @@
   {
     "aircraftId": "douglas_ad_2",
     "presetId": "douglas_ad_2_250lb",
-    "name": "us 250 anm57a1 slot7; us 250 anm57a1 slot9"
+    "name": "12x us 250 anm57a1; us 250 anm57a1 slot7; us 250 anm57a1 slot8; us 250 anm57a1 slot9"
   },
   {
     "aircraftId": "douglas_ad_2",
@@ -9105,6 +9690,46 @@
     "name": "no suspended armament"
   },
   {
+    "aircraftId": "f_102a_greece",
+    "presetId": "f_102a_late_default",
+    "name": "ptb slot1; aim 4g default slot2; aim 4g default slot6; ptb slot7"
+  },
+  {
+    "aircraftId": "f_102a_greece",
+    "presetId": "f_102a_late_aim_4g",
+    "name": "aim 4g x2 slot2; aim 4g x2 slot4; aim 4g x2 slot6"
+  },
+  {
+    "aircraftId": "f_102a_greece",
+    "presetId": "f_102a_late_aim_4f",
+    "name": "aim 4f x2 slot2; aim 4f x2 slot4; aim 4f x2 slot6"
+  },
+  {
+    "aircraftId": "f_102a_greece",
+    "presetId": "f_102a_late_ffar",
+    "name": "ffar x12 slot3; ffar x12 slot5"
+  },
+  {
+    "aircraftId": "f_102a_late",
+    "presetId": "f_102a_late_default",
+    "name": "ptb slot1; aim 4g default slot2; aim 4g default slot6; ptb slot7"
+  },
+  {
+    "aircraftId": "f_102a_late",
+    "presetId": "f_102a_late_aim_4g",
+    "name": "aim 4g x2 slot2; aim 4g x2 slot4; aim 4g x2 slot6"
+  },
+  {
+    "aircraftId": "f_102a_late",
+    "presetId": "f_102a_late_aim_4f",
+    "name": "aim 4f x2 slot2; aim 4f x2 slot4; aim 4f x2 slot6"
+  },
+  {
+    "aircraftId": "f_102a_late",
+    "presetId": "f_102a_late_ffar",
+    "name": "ffar x12 slot3; ffar x12 slot5"
+  },
+  {
     "aircraftId": "f_105d_japan_killstreak",
     "presetId": "f_105d_killstreak_default",
     "name": "no suspended armament"
@@ -9692,7 +10317,7 @@
   {
     "aircraftId": "f_14b",
     "presetId": "f_14b_aim_9m_bol",
-    "name": "4x aim9m bol"
+    "name": "2x aim9m bol default; 2x aim9m bol"
   },
   {
     "aircraftId": "f_14b",
@@ -9777,7 +10402,7 @@
   {
     "aircraftId": "f_14d",
     "presetId": "f_14d_default",
-    "name": "2x aim9m bol; 2x aim 54c; ptb slot3; aim 54c x2 fuse; aim 54c x2; ptb slot6"
+    "name": "2x aim9m bol default; 2x aim 54c; ptb slot3; aim 54c x2 fuse; aim 54c x2; ptb slot6"
   },
   {
     "aircraftId": "f_14d",
@@ -9787,72 +10412,72 @@
   {
     "aircraftId": "f_14d",
     "presetId": "f_14d_mk82",
-    "name": "4x aim9m bol; us mk82 x6; us mk82 x8"
+    "name": "2x aim9m bol default; 2x aim9m bol; us mk82 x6; us mk82 x8"
   },
   {
     "aircraftId": "f_14d",
     "presetId": "f_14d_mk83",
-    "name": "4x aim9m bol; 2x us mk83 x2"
+    "name": "2x aim9m bol default; 2x aim9m bol; 2x us mk83 x2"
   },
   {
     "aircraftId": "f_14d",
     "presetId": "f_14d_mk84",
-    "name": "4x aim9m bol; 2x us mk84 x2"
+    "name": "2x aim9m bol default; 2x aim9m bol; 2x us mk84 x2"
   },
   {
     "aircraftId": "f_14d",
     "presetId": "f_14d_mk82_air",
-    "name": "4x aim9m bol; us mk82 air x6; us mk82 air x8"
+    "name": "2x aim9m bol default; 2x aim9m bol; us mk82 air x6; us mk82 air x8"
   },
   {
     "aircraftId": "f_14d",
     "presetId": "f_14d_mk83_air",
-    "name": "4x aim9m bol; 2x us mk83 air x2"
+    "name": "2x aim9m bol default; 2x aim9m bol; 2x us mk83 air x2"
   },
   {
     "aircraftId": "f_14d",
     "presetId": "f_14d_gbu_12_combo",
-    "name": "3x aim9m bol; 2x us gbu 12 x2; lantirn"
+    "name": "2x aim9m bol default; aim9m bol; 2x us gbu 12 x2; lantirn"
   },
   {
     "aircraftId": "f_14d",
     "presetId": "f_14d_gbu_16_combo",
-    "name": "3x aim9m bol; 2x us gbu 16 x2; lantirn"
+    "name": "2x aim9m bol default; aim9m bol; 2x us gbu 16 x2; lantirn"
   },
   {
     "aircraftId": "f_14d",
     "presetId": "f_14d_gbu_10_combo",
-    "name": "3x aim9m bol; us gbu 10 x2; lantirn"
+    "name": "2x aim9m bol default; aim9m bol; us gbu 10 x2; lantirn"
   },
   {
     "aircraftId": "f_14d",
     "presetId": "f_14d_gbu_24_combo",
-    "name": "3x aim9m bol; us gbu 24 slot4; us gbu 24; lantirn"
+    "name": "2x aim9m bol default; aim9m bol; us gbu 24 slot4; us gbu 24; lantirn"
   },
   {
     "aircraftId": "f_14d",
     "presetId": "f_14d_lau_10a",
-    "name": "2x aim9m bol; ter lau 10a left wing; ter lau 10a right wing"
+    "name": "2x aim9m bol default; ter lau 10a left wing; ter lau 10a right wing"
   },
   {
     "aircraftId": "f_14d",
     "presetId": "f_14d_gbu31_combo",
-    "name": "3x aim9m bol; us gbu 31 x2 slot4; us gbu 31 x2 slot5; lantirn"
+    "name": "2x aim9m bol default; aim9m bol; us gbu 31 x2 slot4; us gbu 31 x2 slot5; lantirn"
   },
   {
     "aircraftId": "f_14d",
     "presetId": "f_14d_gbu38_combo",
-    "name": "3x aim9m bol; us gbu 38 x2 slot4; us gbu 38 x2 slot5; lantirn"
+    "name": "2x aim9m bol default; aim9m bol; us gbu 38 x2 slot4; us gbu 38 x2 slot5; lantirn"
   },
   {
     "aircraftId": "f_14d",
     "presetId": "f_14d_mk84_air",
-    "name": "4x aim9m bol; 2x us mk84 air x2"
+    "name": "2x aim9m bol default; 2x aim9m bol; 2x us mk84 air x2"
   },
   {
     "aircraftId": "f_14d",
     "presetId": "f_14d_aim_9m_bol",
-    "name": "4x aim9m bol"
+    "name": "2x aim9m bol default; 2x aim9m bol"
   },
   {
     "aircraftId": "f_14d",
@@ -9893,6 +10518,116 @@
     "aircraftId": "f_14d",
     "presetId": "f_14d_gbu_24",
     "name": "us gbu 24 slot4; us gbu 24; lantirn"
+  },
+  {
+    "aircraftId": "f_14d_vf_11",
+    "presetId": "f_14b_default",
+    "name": "ptb slot3; ptb slot6"
+  },
+  {
+    "aircraftId": "f_14d_vf_11",
+    "presetId": "f_14b_aim_9m_default",
+    "name": "2x aim 9m default; aim 54c x2"
+  },
+  {
+    "aircraftId": "f_14d_vf_11",
+    "presetId": "f_14b_aim_9l",
+    "name": "4x aim 9l"
+  },
+  {
+    "aircraftId": "f_14d_vf_11",
+    "presetId": "f_14b_aim_9l_bol",
+    "name": "4x aim9l bol"
+  },
+  {
+    "aircraftId": "f_14d_vf_11",
+    "presetId": "f_14b_aim_9m",
+    "name": "2x aim 9m default; 2x aim 9m"
+  },
+  {
+    "aircraftId": "f_14d_vf_11",
+    "presetId": "f_14b_aim_9m_bol",
+    "name": "2x aim9m bol default; 2x aim9m bol"
+  },
+  {
+    "aircraftId": "f_14d_vf_11",
+    "presetId": "f_14b_aim_7m",
+    "name": "2x aim 7m; aim 7m x2 fuse; aim 7m x2"
+  },
+  {
+    "aircraftId": "f_14d_vf_11",
+    "presetId": "f_14b_aim_54a",
+    "name": "2x aim 54a; aim 54a x2 fuse; aim 54a x2"
+  },
+  {
+    "aircraftId": "f_14d_vf_11",
+    "presetId": "f_14b_aim_54c",
+    "name": "2x aim 54c; aim 54c x2 fuse; aim 54c x2"
+  },
+  {
+    "aircraftId": "f_14d_vf_11",
+    "presetId": "f_14b_mk82",
+    "name": "us mk82 x6; us mk82 x8"
+  },
+  {
+    "aircraftId": "f_14d_vf_11",
+    "presetId": "f_14b_mk83",
+    "name": "2x us mk83 x2"
+  },
+  {
+    "aircraftId": "f_14d_vf_11",
+    "presetId": "f_14b_mk84",
+    "name": "2x us mk84 x2"
+  },
+  {
+    "aircraftId": "f_14d_vf_11",
+    "presetId": "f_14b_mk82_air",
+    "name": "us mk82 air x6; us mk82 air x8"
+  },
+  {
+    "aircraftId": "f_14d_vf_11",
+    "presetId": "f_14b_mk83_air",
+    "name": "2x us mk83 air x2"
+  },
+  {
+    "aircraftId": "f_14d_vf_11",
+    "presetId": "f_14b_gbu_12",
+    "name": "2x us gbu 12 x2; lantirn"
+  },
+  {
+    "aircraftId": "f_14d_vf_11",
+    "presetId": "f_14b_gbu_16",
+    "name": "2x us gbu 16 x2; lantirn"
+  },
+  {
+    "aircraftId": "f_14d_vf_11",
+    "presetId": "f_14b_gbu_10",
+    "name": "us gbu 10 x2; lantirn"
+  },
+  {
+    "aircraftId": "f_14d_vf_11",
+    "presetId": "f_14b_gbu_24",
+    "name": "us gbu 24 slot4; us gbu 24; lantirn"
+  },
+  {
+    "aircraftId": "f_14d_vf_11",
+    "presetId": "f_14b_lau_10a",
+    "name": "ter lau 10a left wing; ter lau 10a right wing"
+  },
+  {
+    "aircraftId": "f_14d_vf_11",
+    "presetId": "f_14b_gbu31",
+    "name": "us gbu 31 x2 slot4; us gbu 31 x2 slot5"
+  },
+  {
+    "aircraftId": "f_14d_vf_11",
+    "presetId": "f_14b_gbu38",
+    "name": "us gbu 38 x2 slot4; us gbu 38 x2 slot5"
+  },
+  {
+    "aircraftId": "f_14d_vf_11",
+    "presetId": "f_14b_mk84_air",
+    "name": "2x us mk84 air x2"
   },
   {
     "aircraftId": "f_15a",
@@ -10392,12 +11127,12 @@
   {
     "aircraftId": "f_15e",
     "presetId": "f_15e_mk82",
-    "name": "us mk82 x6 tank slot5; ltc left; ltc right; us mk82 x6 tank slot9"
+    "name": "mer mk82 x6 slot2; us mk82 x6 tank slot5; ltc left; ltc right; us mk82 x6 tank slot9; mer mk82 x6 slot12"
   },
   {
     "aircraftId": "f_15e",
     "presetId": "f_15e_mk82_snakeye",
-    "name": "us mk82 x6 snakeye tank slot5; ltc left; ltc right; us mk82 x6 snakeye tank slot9"
+    "name": "mer mk82 snakeye x6 slot2; us mk82 x6 snakeye tank slot5; ltc left; ltc right; us mk82 x6 snakeye tank slot9; mer mk82 snakeye x6 slot12"
   },
   {
     "aircraftId": "f_15e",
@@ -10507,7 +11242,12 @@
   {
     "aircraftId": "f_15e",
     "presetId": "f_15e_gbu_15v2",
-    "name": "2x gbu15v2; ltc left; ltc right"
+    "name": "2x gbu15v2; ltc left; is asw 55 pod; ltc right"
+  },
+  {
+    "aircraftId": "f_15e",
+    "presetId": "f_15e_gbu_15v2_tutorial",
+    "name": "2x gbu15v2; is asw 55 pod"
   },
   {
     "aircraftId": "f_15e",
@@ -10567,12 +11307,12 @@
   {
     "aircraftId": "f_15i_raam",
     "presetId": "f_15i_raam_mk82",
-    "name": "us mk82 x6 tank slot5; ltc left; ltc right; us mk82 x6 tank slot9"
+    "name": "mer mk82 x6 slot2; us mk82 x6 tank slot5; ltc left; ltc right; us mk82 x6 tank slot9; mer mk82 x6 slot12"
   },
   {
     "aircraftId": "f_15i_raam",
     "presetId": "f_15i_raam_mk82_snakeye",
-    "name": "us mk82 x6 snakeye tank slot5; ltc left; ltc right; us mk82 x6 snakeye tank slot9"
+    "name": "mer mk82 snakeye x6 slot2; us mk82 x6 snakeye tank slot5; ltc left; ltc right; us mk82 x6 snakeye tank slot9; mer mk82 snakeye x6 slot12"
   },
   {
     "aircraftId": "f_15i_raam",
@@ -10637,7 +11377,12 @@
   {
     "aircraftId": "f_15i_raam",
     "presetId": "f_15i_raam_gbu_15v2",
-    "name": "2x gbu15v2; ltc left; ltc right"
+    "name": "2x gbu15v2; ltc left; is asw 55 pod; ltc right"
+  },
+  {
+    "aircraftId": "f_15i_raam",
+    "presetId": "f_15i_raam_gbu_15v2_tutorial",
+    "name": "2x gbu15v2; is asw 55 pod"
   },
   {
     "aircraftId": "f_15i_raam",
@@ -11443,6 +12188,11 @@
     "aircraftId": "f_16a_block_20_mlu",
     "presetId": "f_16a_block_20_mlu_agm_65b",
     "name": "2x agm 65b x3"
+  },
+  {
+    "aircraftId": "f_16a_block_20_mlu",
+    "presetId": "f_16a_block_20_mlu_agm_65b_x1",
+    "name": "2x agm 65b; agm 65b slot4; agm 65b slot7"
   },
   {
     "aircraftId": "f_16a_block_20_mlu",
@@ -12497,7 +13247,7 @@
   {
     "aircraftId": "f_16c_block_40_barak_2",
     "presetId": "f_16c_block_40_barak_2_agm_88",
-    "name": "2x agm 88; asq 213"
+    "name": "4x agm 88; asq 213"
   },
   {
     "aircraftId": "f_16c_block_50",
@@ -13121,6 +13871,16 @@
   },
   {
     "aircraftId": "f_16d_block_40_barak_2",
+    "presetId": "f_16d_block_40_barak_2_delilah",
+    "name": "4x delilah; is asw 55 pod"
+  },
+  {
+    "aircraftId": "f_16d_block_40_barak_2",
+    "presetId": "f_16d_block_40_barak_2_delilah_ir",
+    "name": "4x delilah ir; is asw 55 pod"
+  },
+  {
+    "aircraftId": "f_16d_block_40_barak_2",
     "presetId": "f_16d_block_40_barak_2_gbu_31",
     "name": "us gbu 31 slot3; us gbu 31 slot4; us gbu 31 slot7; us gbu 31 slot8"
   },
@@ -13257,7 +14017,17 @@
   {
     "aircraftId": "f_16i_sufa",
     "presetId": "f_16i_sufa_gbu_15v1",
-    "name": "2x gbu15v1"
+    "name": "2x gbu15v1; is asw 55 pod"
+  },
+  {
+    "aircraftId": "f_16i_sufa",
+    "presetId": "f_16i_sufa_delilah",
+    "name": "4x delilah; is asw 55 pod"
+  },
+  {
+    "aircraftId": "f_16i_sufa",
+    "presetId": "f_16i_sufa_delilah_ir",
+    "name": "4x delilah ir; is asw 55 pod"
   },
   {
     "aircraftId": "f_16i_sufa",
@@ -13328,6 +14098,16 @@
     "aircraftId": "f_16xl",
     "presetId": "f_16xl_agm_65b",
     "name": "4x agm 65b; agm 65b slot6; agm 65b slot8"
+  },
+  {
+    "aircraftId": "f_16xl",
+    "presetId": "f_16xl_video_agm_65b",
+    "name": "2x aim 9l wingtip default; 4x agm 65b; agm 65b slot6; aim 120a default; agm 65b slot8"
+  },
+  {
+    "aircraftId": "f_16xl",
+    "presetId": "f_16xl_video_mk82",
+    "name": "2x aim 9l wingtip default; 8x mk82; 2x mk82 x4; aim 120a default"
   },
   {
     "aircraftId": "f_20a",
@@ -13431,6 +14211,16 @@
   },
   {
     "aircraftId": "f_2a",
+    "presetId": "f_2a_aim_9l",
+    "name": "aim 9l slot1; aim 9l slot2; aim 9l slot11; aim 9l slot12"
+  },
+  {
+    "aircraftId": "f_2a",
+    "presetId": "f_2a_aim_9m",
+    "name": "aim 9m slot1; aim 9m slot2; aim 9m slot11; aim 9m slot12"
+  },
+  {
+    "aircraftId": "f_2a",
     "presetId": "f_2a_aam_3",
     "name": "2x jp aam3 default; 2x jp aam3"
   },
@@ -13515,9 +14305,24 @@
     "name": "6x jp asm2"
   },
   {
+    "aircraftId": "f_2a",
+    "presetId": "f_2a_asm_3",
+    "name": "4x jp asm3"
+  },
+  {
     "aircraftId": "f_2a_adtw",
     "presetId": "f_2a_adtw_default",
     "name": "2x jp aam3 default; 2x jp aam3; 2x aim 7m default; 2x aim 7m; ptb slot5; ptb slot6; j aaq 2 pod; ptb slot8"
+  },
+  {
+    "aircraftId": "f_2a_adtw",
+    "presetId": "f_2a_adtw_aim_9l",
+    "name": "aim 9l slot1; aim 9l slot2; aim 9l slot11; aim 9l slot12"
+  },
+  {
+    "aircraftId": "f_2a_adtw",
+    "presetId": "f_2a_adtw_aim_9m",
+    "name": "aim 9m slot1; aim 9m slot2; aim 9m slot11; aim 9m slot12"
   },
   {
     "aircraftId": "f_2a_adtw",
@@ -13611,6 +14416,11 @@
   },
   {
     "aircraftId": "f_2a_adtw",
+    "presetId": "f_2a_adtw_asm_3",
+    "name": "2x jp aam3 default; 2x jp aam3; 4x jp asm3; j aaq 2 pod"
+  },
+  {
+    "aircraftId": "f_2a_adtw",
     "presetId": "f_2a_adtw_aim_7m_single",
     "name": "2x aim 7m"
   },
@@ -13653,6 +14463,121 @@
     "aircraftId": "f_47n_25_re_china",
     "presetId": "f_47n_25_re_china_1000lbs_bomb",
     "name": "2x 1000lbs; 1000lbs slot7"
+  },
+  {
+    "aircraftId": "f_4e_aup_greece",
+    "presetId": "f_4e_aup_greece_default",
+    "name": "aim 9m default slot3; aim 120a slot4 default; ptb slot6; aim 120a slot8 default; aim 9m default slot9"
+  },
+  {
+    "aircraftId": "f_4e_aup_greece",
+    "presetId": "f_4e_aup_greece_suu_23a",
+    "name": "suu 23a gunpod wing slot1; suu 23a gunpod slot6; suu 23a gunpod wing slot11"
+  },
+  {
+    "aircraftId": "f_4e_aup_greece",
+    "presetId": "f_4e_aup_greece_aim_9l",
+    "name": "aim 9l slot3; aim 9l slot9"
+  },
+  {
+    "aircraftId": "f_4e_aup_greece",
+    "presetId": "f_4e_aup_greece_aim_9m",
+    "name": "aim 9m slot3; aim 9m slot9"
+  },
+  {
+    "aircraftId": "f_4e_aup_greece",
+    "presetId": "f_4e_aup_greece_aim_120a",
+    "name": "aim 120a slot4 default; aim 120a slot5; aim 120a slot7; aim 120a slot8 default"
+  },
+  {
+    "aircraftId": "f_4e_aup_greece",
+    "presetId": "f_4e_aup_greece_bomb_mk81",
+    "name": "mer mk81 x6 slot1; ter mk81 slot2; mer mk81 x6 slot6; ter mk81 slot10; mer mk81 x6 slot11"
+  },
+  {
+    "aircraftId": "f_4e_aup_greece",
+    "presetId": "f_4e_aup_greece_bomb_mk82",
+    "name": "mer mk82 x6 slot1; ter mk82 slot2; mer mk82 x6 slot6; ter mk82 slot10; mer mk82 x6 slot11"
+  },
+  {
+    "aircraftId": "f_4e_aup_greece",
+    "presetId": "f_4e_aup_greece_bomb_mk82_snakeye",
+    "name": "mer mk82 x6 snakeye slot1; ter mk82 snakeye slot2; mer mk82 x6 snakeye slot6; ter mk82 snakeye slot10; mer mk82 x6 snakeye slot11"
+  },
+  {
+    "aircraftId": "f_4e_aup_greece",
+    "presetId": "f_4e_aup_greece_bomb_m117",
+    "name": "mer m117 x3 left wing slot1; ter m117 slot2; mer m117 x5 slot6; ter m117 slot10; mer m117 x3 right wing slot11"
+  },
+  {
+    "aircraftId": "f_4e_aup_greece",
+    "presetId": "f_4e_aup_greece_blu_27",
+    "name": "2x mer blu 27 x1; mer blu 27 x2"
+  },
+  {
+    "aircraftId": "f_4e_aup_greece",
+    "presetId": "f_4e_aup_greece_blu_1",
+    "name": "mer blu 1 x2 left; 2x ter blu 1 x2; mer blu 1 x3; mer blu 1 x2 right"
+  },
+  {
+    "aircraftId": "f_4e_aup_greece",
+    "presetId": "f_4e_aup_greece_bomb_mk83",
+    "name": "mer mk83 x2 slot1; ter mk83 slot2; mer mk83 x3 slot6; ter mk83 slot10; mer mk83 x2 slot11"
+  },
+  {
+    "aircraftId": "f_4e_aup_greece",
+    "presetId": "f_4e_aup_greece_bomb_mk84",
+    "name": "us mk84 slot1; us mk84 slot6; us mk84 slot11"
+  },
+  {
+    "aircraftId": "f_4e_aup_greece",
+    "presetId": "f_4e_aup_greece_bomb_m118",
+    "name": "us m118 slot6"
+  },
+  {
+    "aircraftId": "f_4e_aup_greece",
+    "presetId": "f_4e_aup_greece_rockets_lau18",
+    "name": "mer lau 3a slot1; ter lau 3a slot2; mer lau 3a slot6; ter lau 3a slot10; mer lau 3a slot11"
+  },
+  {
+    "aircraftId": "f_4e_aup_greece",
+    "presetId": "f_4e_aup_greece_rockets_zuni",
+    "name": "mer lau 10a slot1; ter lau 10a slot2; mer lau 10a slot6; ter lau 10a slot10; mer lau 10a slot11"
+  },
+  {
+    "aircraftId": "f_4e_aup_greece",
+    "presetId": "f_4e_aup_greece_agm_65d",
+    "name": "2x agm 65d x3"
+  },
+  {
+    "aircraftId": "f_4e_aup_greece",
+    "presetId": "f_4e_aup_greece_agm_65g",
+    "name": "agm 65g slot2; agm 65g slot10"
+  },
+  {
+    "aircraftId": "f_4e_aup_greece",
+    "presetId": "f_4e_aup_greece_gbu_12",
+    "name": "2x us gbu 12 external; 2x us gbu 12 x2; litening pod"
+  },
+  {
+    "aircraftId": "f_4e_aup_greece",
+    "presetId": "f_4e_aup_greece_gbu_10",
+    "name": "2x us gbu 10 external; 2x us gbu 10; litening pod"
+  },
+  {
+    "aircraftId": "f_4e_aup_greece",
+    "presetId": "f_4e_aup_greece_gbu_24",
+    "name": "2x us gbu 24 external; 2x us gbu 24 interanl; litening pod"
+  },
+  {
+    "aircraftId": "f_4e_aup_greece",
+    "presetId": "f_4e_aup_greece_agm_45b_10",
+    "name": "agm 45b 10 slot1; agm 45b 10 slot2; agm 45b 10 slot10; agm 45b 10 slot11"
+  },
+  {
+    "aircraftId": "f_4e_aup_greece",
+    "presetId": "f_4e_aup_greece_agm_45b_9",
+    "name": "agm 45b 9 slot1; agm 45b 9 slot2; agm 45b 9 slot10; agm 45b 9 slot11"
   },
   {
     "aircraftId": "f_4e_event",
@@ -13748,6 +14673,41 @@
     "aircraftId": "f_6c_pakistan",
     "presetId": "f_6c_pakistan_ofab250",
     "name": "2x 250 2"
+  },
+  {
+    "aircraftId": "f_86em_greece",
+    "presetId": "f_86em_greece_default",
+    "name": "no suspended armament"
+  },
+  {
+    "aircraftId": "f_86em_greece",
+    "presetId": "f_86em_greece_ptb_100gal",
+    "name": "ptb slot2; ptb slot11"
+  },
+  {
+    "aircraftId": "f_86em_greece",
+    "presetId": "f_86em_greece_ptb_167gal",
+    "name": "ptb slot3; ptb slot10"
+  },
+  {
+    "aircraftId": "f_86em_greece",
+    "presetId": "f_86em_greece_aim9b",
+    "name": "2x aim9b"
+  },
+  {
+    "aircraftId": "f_86em_greece",
+    "presetId": "f_86em_greece_rokets_hvar",
+    "name": "hvar x2 slot1; hvar x2 slot2; hvar x2 slot3; hvar x2 slot4; hvar x2 slot5; hvar x2 slot8; hvar x2 slot9; hvar x2 slot10; hvar x2 slot11; hvar x2 slot12"
+  },
+  {
+    "aircraftId": "f_86em_greece",
+    "presetId": "f_86em_greece_bombs_750lb",
+    "name": "2x 750lb"
+  },
+  {
+    "aircraftId": "f_86em_greece",
+    "presetId": "f_86em_greece_bombs_1000lb",
+    "name": "2x 1000lb"
   },
   {
     "aircraftId": "f1",
@@ -15401,6 +16361,16 @@
   },
   {
     "aircraftId": "f-4e_kurnass_2000",
+    "presetId": "kurnass_2000_delilah",
+    "name": "2x delilah; is asw 55 pod"
+  },
+  {
+    "aircraftId": "f-4e_kurnass_2000",
+    "presetId": "kurnass_2000_delilah_ir",
+    "name": "2x delilah ir; is asw 55 pod"
+  },
+  {
+    "aircraftId": "f-4e_kurnass_2000",
     "presetId": "kurnass_2000_agm_45b_9",
     "name": "agm 45b 9 slot1; agm 45b 9 slot2; agm 45b 9 slot10; agm 45b 9 slot11"
   },
@@ -15408,6 +16378,11 @@
     "aircraftId": "f-4e_kurnass_2000",
     "presetId": "kurnass_2000_agm_45b_10",
     "name": "agm 45b 10 slot1; agm 45b 10 slot2; agm 45b 10 slot10; agm 45b 10 slot11"
+  },
+  {
+    "aircraftId": "f-4e_kurnass_2000",
+    "presetId": "kurnass_2000_delilah_arm",
+    "name": "2x delilah arm; is asw 55 pod"
   },
   {
     "aircraftId": "f-4ej",
@@ -15892,11 +16867,6 @@
   {
     "aircraftId": "f4f-3",
     "presetId": "f4f-3_bombs",
-    "name": "no suspended armament"
-  },
-  {
-    "aircraftId": "f4f-3",
-    "presetId": "f4f-3_bombs_hidden",
     "name": "no suspended armament"
   },
   {
@@ -17925,6 +18895,51 @@
     "name": "hvar slot1; hvar slot2; hvar slot3; 2x 500lbs; hvar slot6; hvar slot7; hvar slot8"
   },
   {
+    "aircraftId": "f-84g_greece",
+    "presetId": "f_84g_default",
+    "name": "no suspended armament"
+  },
+  {
+    "aircraftId": "f-84g_greece",
+    "presetId": "f_84g_24hvar",
+    "name": "hvar slot2; hvar slot3; hvar slot6; hvar slot7"
+  },
+  {
+    "aircraftId": "f-84g_greece",
+    "presetId": "f_84g_32hvar",
+    "name": "hvar slot1; hvar slot2; hvar slot3; hvar slot4; hvar slot5; hvar slot6; hvar slot7; hvar slot8"
+  },
+  {
+    "aircraftId": "f-84g_greece",
+    "presetId": "f_84g_2xtiny_tim_rockets",
+    "name": "2x tiny timm"
+  },
+  {
+    "aircraftId": "f-84g_greece",
+    "presetId": "f_84g_2x100lb",
+    "name": "2x 100lbs"
+  },
+  {
+    "aircraftId": "f-84g_greece",
+    "presetId": "f_84g_2x250lb",
+    "name": "2x 250lbs"
+  },
+  {
+    "aircraftId": "f-84g_greece",
+    "presetId": "f_84g_2x500lb",
+    "name": "2x 500lbs"
+  },
+  {
+    "aircraftId": "f-84g_greece",
+    "presetId": "f_84g_2x1000lb",
+    "name": "2x 1000lbs"
+  },
+  {
+    "aircraftId": "f-84g_greece",
+    "presetId": "f_84g_2x500lb_24hvar",
+    "name": "hvar slot1; hvar slot2; hvar slot3; 2x 500lbs; hvar slot6; hvar slot7; hvar slot8"
+  },
+  {
     "aircraftId": "f-84g_italy",
     "presetId": "f_84g_default",
     "name": "no suspended armament"
@@ -18836,6 +19851,11 @@
   },
   {
     "aircraftId": "fa_18a",
+    "presetId": "fa_18a_an_aas_38",
+    "name": "2x aim 9l default; 2x us mk84; an aas 38; ptb fuse; aim 7m default slot6"
+  },
+  {
+    "aircraftId": "fa_18a",
     "presetId": "fa_18a_mk82_snakeye",
     "name": "us mk82 x2 snakeye slot2; us mk82 x2 snakeye slot3; us mk82 x2 snakeye slot5; us mk82 x2 snakeye slot7; us mk82 x2 snakeye slot8"
   },
@@ -18868,6 +19888,11 @@
     "aircraftId": "fa_18a",
     "presetId": "fa_18a_agm_88",
     "name": "4x agm 88"
+  },
+  {
+    "aircraftId": "fa_18a",
+    "presetId": "fa_18a_agm_84",
+    "name": "4x agm 84"
   },
   {
     "aircraftId": "fa_18a",
@@ -19093,6 +20118,11 @@
     "aircraftId": "fa_18a_raaf",
     "presetId": "fa_18a_agm_88",
     "name": "4x agm 88"
+  },
+  {
+    "aircraftId": "fa_18a_raaf",
+    "presetId": "fa_18a_agm_84",
+    "name": "4x agm 84"
   },
   {
     "aircraftId": "fa_18a_raaf",
@@ -20086,6 +21116,11 @@
   },
   {
     "aircraftId": "fa_18e_block_2",
+    "presetId": "fa_18e_block_2_aargm_er",
+    "name": "6x agm 88g"
+  },
+  {
+    "aircraftId": "fa_18e_block_2",
     "presetId": "fa_18e_block_2_agm_84",
     "name": "4x agm 84"
   },
@@ -20243,6 +21278,11 @@
     "aircraftId": "fa_18f_block_2_raaf",
     "presetId": "fa_18f_block_2_raaf_agm_88",
     "name": "6x agm 88"
+  },
+  {
+    "aircraftId": "fa_18f_block_2_raaf",
+    "presetId": "fa_18f_block_2_raaf_aargm_er",
+    "name": "6x agm 88g"
   },
   {
     "aircraftId": "fa_18f_block_2_raaf",
@@ -20930,6 +21970,11 @@
     "name": "2x 2000lb"
   },
   {
+    "aircraftId": "fj_4b",
+    "presetId": "fj_4b_mk77",
+    "name": "6x mk77"
+  },
+  {
     "aircraftId": "fj_4b_agm_12b",
     "presetId": "fj_4b_default",
     "name": "no suspended armament"
@@ -20978,6 +22023,11 @@
     "aircraftId": "fj_4b_agm_12b",
     "presetId": "fj_4b_2000lb_mk_84",
     "name": "2x 2000lb"
+  },
+  {
+    "aircraftId": "fj_4b_agm_12b",
+    "presetId": "fj_4b_mk77",
+    "name": "6x mk77"
   },
   {
     "aircraftId": "fokker_d21_mod20",
@@ -21743,6 +22793,41 @@
     "aircraftId": "h_34_france",
     "presetId": "h_34_fr_v1",
     "name": "no suspended armament"
+  },
+  {
+    "aircraftId": "h145m",
+    "presetId": "h145m_default",
+    "name": "2x spike x2"
+  },
+  {
+    "aircraftId": "h145m",
+    "presetId": "h145m_gun_fn_m3p",
+    "name": "2x hmp 400"
+  },
+  {
+    "aircraftId": "h145m",
+    "presetId": "h145m_gun_fn_m3p_hvar",
+    "name": "2x rmp lc"
+  },
+  {
+    "aircraftId": "h145m",
+    "presetId": "h145m_gun_m261",
+    "name": "2x m261 nexter"
+  },
+  {
+    "aircraftId": "h145m",
+    "presetId": "h145m_fz207",
+    "name": "2x fz207"
+  },
+  {
+    "aircraftId": "h145m",
+    "presetId": "h145m_fz275",
+    "name": "2x fz275"
+  },
+  {
+    "aircraftId": "h145m",
+    "presetId": "h145m_8_spike",
+    "name": "2x spike x4"
   },
   {
     "aircraftId": "h6k4",
@@ -22628,6 +23713,46 @@
     "aircraftId": "hawk_iii",
     "presetId": "hawk_iii_bombs_500",
     "name": "no suspended armament"
+  },
+  {
+    "aircraftId": "hawk_t1a",
+    "presetId": "hawk_t1a_default",
+    "name": "30mm gunpod"
+  },
+  {
+    "aircraftId": "hawk_t1a",
+    "presetId": "hawk_t1a_sneb",
+    "name": "2x matra sneb; 30mm gunpod"
+  },
+  {
+    "aircraftId": "hawk_t1a",
+    "presetId": "hawk_t1a_540lb_30mm",
+    "name": "2x 540lb; 30mm gunpod"
+  },
+  {
+    "aircraftId": "hawk_t1a",
+    "presetId": "hawk_t1a_1000lb_30mm",
+    "name": "2x 1000lb ld; 30mm gunpod"
+  },
+  {
+    "aircraftId": "hawk_t1a_early",
+    "presetId": "hawk_t1a_default",
+    "name": "30mm gunpod"
+  },
+  {
+    "aircraftId": "hawk_t1a_early",
+    "presetId": "hawk_t1a_sneb",
+    "name": "2x matra sneb; 30mm gunpod"
+  },
+  {
+    "aircraftId": "hawk_t1a_early",
+    "presetId": "hawk_t1a_540lb_30mm",
+    "name": "2x 540lb; 30mm gunpod"
+  },
+  {
+    "aircraftId": "hawk_t1a_early",
+    "presetId": "hawk_t1a_1000lb_30mm",
+    "name": "2x 1000lb ld; 30mm gunpod"
   },
   {
     "aircraftId": "he_100d_1",
@@ -25426,6 +26551,11 @@
   },
   {
     "aircraftId": "j_11b",
+    "presetId": "j_11b_hf20_ap",
+    "name": "type90 ap slot3 x2; type90 ap slot8 x2"
+  },
+  {
+    "aircraftId": "j_11b",
     "presetId": "j_11b_b13l",
     "name": "s13 slot3 x2; s13 slot8 x2"
   },
@@ -25507,12 +26637,12 @@
   {
     "aircraftId": "j_15t",
     "presetId": "j_15t_default",
-    "name": "2x pl8b default; pl12a default slot4; pl12a default slot9"
+    "name": "pl8b default slot1; pl12a default slot4; pl12a default slot9; pl8b default slot12"
   },
   {
     "aircraftId": "j_15t",
     "presetId": "j_15t_pl8b",
-    "name": "2x pl8b default; pl8b slot2; pl8b slot3; pl8b slot10; pl8b slot11"
+    "name": "pl8b default slot1; pl8b slot2; pl8b slot3; pl8b slot10; pl8b slot11; pl8b default slot12"
   },
   {
     "aircraftId": "j_15t",
@@ -25618,6 +26748,136 @@
     "aircraftId": "j_15t",
     "presetId": "j_15t_gb3",
     "name": "gb3 slot2; gb3 x3 slot3; gb3 slot6; gb3 slot7; gb3 x3 slot10; gb3 slot11"
+  },
+  {
+    "aircraftId": "j_16",
+    "presetId": "j_16_default",
+    "name": "pl8b default slot1; pl12a default slot4; pl12a default slot9; pl8b default slot12"
+  },
+  {
+    "aircraftId": "j_16",
+    "presetId": "j_16_pl8b",
+    "name": "pl8b default slot1; pl8b slot2; pl8b slot3; pl8b slot10; pl8b slot11; pl8b default slot12"
+  },
+  {
+    "aircraftId": "j_16",
+    "presetId": "j_16_pl12",
+    "name": "pl12 slot2; pl12 slot3; pl12 slot4; pl12 slot5; pl12 slot6; pl12 slot7; pl12 slot8; pl12 slot9; pl12 slot10; pl12 slot11"
+  },
+  {
+    "aircraftId": "j_16",
+    "presetId": "j_16_pl12a",
+    "name": "pl12a slot2; pl12a slot3; pl12a default slot4; pl12a slot5; pl12a slot6; pl12a slot7; pl12a slot8; pl12a default slot9; pl12a slot10; pl12a slot11"
+  },
+  {
+    "aircraftId": "j_16",
+    "presetId": "j_16_90_1",
+    "name": "type 90 1 slot3; type 90 1 slot10"
+  },
+  {
+    "aircraftId": "j_16",
+    "presetId": "j_16_s13",
+    "name": "s13 x2 slot3; s13 x2 slot10"
+  },
+  {
+    "aircraftId": "j_16",
+    "presetId": "j_16_kh29t",
+    "name": "kh 29t slot3; kh 29t slot4; kh 29t slot5; kh 29t slot8; kh 29t slot9; kh 29t slot10"
+  },
+  {
+    "aircraftId": "j_16",
+    "presetId": "j_16_kd_88_tv",
+    "name": "kd 88 tv slot3; kd 88 tv slot4; ch kd88 datalink pod slot5; kd 88 tv slot9; kd 88 tv slot10"
+  },
+  {
+    "aircraftId": "j_16",
+    "presetId": "j_16_kd_88_ir",
+    "name": "kd 88 ir slot3; kd 88 ir slot4; ch kd88 datalink pod slot5; kd 88 ir slot9; kd 88 ir slot10"
+  },
+  {
+    "aircraftId": "j_16",
+    "presetId": "j_16_yj_83k",
+    "name": "yj 83k slot3; yj 83k slot4; yj 83k slot9; yj 83k slot10"
+  },
+  {
+    "aircraftId": "j_16",
+    "presetId": "j_16_yj91as",
+    "name": "yj91as slot3; yj91as slot4; yj91as slot5; yj91as slot8; yj91as slot9; yj91as slot10"
+  },
+  {
+    "aircraftId": "j_16",
+    "presetId": "j_16_yj91a",
+    "name": "yj91a slot3; yj91a slot4; yj91a slot5; yj91a slot8; yj91a slot9; yj91a slot10"
+  },
+  {
+    "aircraftId": "j_16",
+    "presetId": "j_16_cm_102",
+    "name": "cm 102 slot3; cm 102 slot4; cm 102 slot5; cm 102 slot6; cm 102 slot7; cm 102 slot8; cm 102 slot9; cm 102 slot10"
+  },
+  {
+    "aircraftId": "j_16",
+    "presetId": "j_16_ld10",
+    "name": "ld10 slot2; ld10 slot3; ld10 slot4; ld10 slot5; ld10 slot6; ld10 slot7; ld10 slot8; ld10 slot9; ld10 slot10; ld10 slot11"
+  },
+  {
+    "aircraftId": "j_16",
+    "presetId": "j_16_250_3",
+    "name": "250 3 x2 slot3; 250 3 x2 slot5; 250 3 slot6; 250 3 slot7; 250 3 x2 slot8; 250 3 x2 slot10"
+  },
+  {
+    "aircraftId": "j_16",
+    "presetId": "j_16_500_3",
+    "name": "500 3 slot3; 500 3 slot5; 500 3 slot6; 500 3 slot7; 500 3 slot8; 500 3 slot10"
+  },
+  {
+    "aircraftId": "j_16",
+    "presetId": "j_16_250_4",
+    "name": "250 4 x2 slot3; 250 4 x2 slot5; 250 4 slot6; 250 4 slot7; 250 4 x2 slot8; 250 4 x2 slot10"
+  },
+  {
+    "aircraftId": "j_16",
+    "presetId": "j_16_500_4",
+    "name": "500 4 slot3; 500 4 slot5; 500 4 slot6; 500 4 slot7; 500 4 slot8; 500 4 slot10"
+  },
+  {
+    "aircraftId": "j_16",
+    "presetId": "j_16_gb1000",
+    "name": "ls1000 slot4; yings 3a slot5; ls1000 slot7; ls1000 slot9"
+  },
+  {
+    "aircraftId": "j_16",
+    "presetId": "j_16_ls_500j",
+    "name": "ls 500j slot3; yings 3a slot5; ls 500j slot6; ls 500j slot7; ls 500j slot8; ls 500j slot10"
+  },
+  {
+    "aircraftId": "j_16",
+    "presetId": "j_16_ts_250",
+    "name": "ts 250 x2 slot3; yings 3a slot5; ts 250 slot6; ts 250 slot7; ts 250 x2 slot8; ts 250 x2 slot10"
+  },
+  {
+    "aircraftId": "j_16",
+    "presetId": "j_16_ls6_250",
+    "name": "ls6 250 x2 slot3; ls6 250 x2 slot5; ls6 250 slot6; ls6 250 slot7; ls6 250 x2 slot8; ls6 250 x2 slot10"
+  },
+  {
+    "aircraftId": "j_16",
+    "presetId": "j_16_ls6_250_ir",
+    "name": "ls6 250 ir x2 slot3; ls6 250 ir x2 slot5; ls6 250 ir slot6; ls6 250 ir slot7; ls6 250 ir x2 slot8; ls6 250 ir x2 slot10"
+  },
+  {
+    "aircraftId": "j_16",
+    "presetId": "j_16_ls6_500",
+    "name": "ls6 500 slot3; ls6 500 slot5; ls6 500 slot6; ls6 500 slot7; ls6 500 slot8; ls6 500 slot10"
+  },
+  {
+    "aircraftId": "j_16",
+    "presetId": "j_16_ls6_500_ir",
+    "name": "ls6 500 ir slot3; ls6 500 ir slot5; ls6 500 ir slot6; ls6 500 ir slot7; ls6 500 ir slot8; ls6 500 ir slot10"
+  },
+  {
+    "aircraftId": "j_16",
+    "presetId": "j_16_gb3",
+    "name": "gb3 x2 slot3; gb3 x2 slot5; gb3 slot6; gb3 slot7; gb3 x2 slot8; gb3 x2 slot10"
   },
   {
     "aircraftId": "j_22m1a",
@@ -25768,6 +27028,11 @@
     "aircraftId": "j_7d",
     "presetId": "j_7d_2x500_4_bombs",
     "name": "2x pl7; 2x 500 4"
+  },
+  {
+    "aircraftId": "j_7d",
+    "presetId": "j_7d_4x250_2_fire_bombs",
+    "name": "4x 250 2"
   },
   {
     "aircraftId": "j_7d",
@@ -26227,17 +27492,32 @@
   {
     "aircraftId": "jaguar_a_germany_killstreak",
     "presetId": "jaguar_a_1xan52",
-    "name": "no suspended armament"
+    "name": "an52"
   },
   {
     "aircraftId": "jaguar_a_germany_killstreak",
     "presetId": "jaguar_a_1xan52_5kt_nt",
-    "name": "no suspended armament"
+    "name": "an52 5kt; 2x ltc"
   },
   {
     "aircraftId": "jaguar_a_germany_killstreak",
     "presetId": "jaguar_a_1xan52_30kt_nt",
-    "name": "no suspended armament"
+    "name": "an52 30kt; 2x ltc"
+  },
+  {
+    "aircraftId": "jaguar_a_germany_killstreak",
+    "presetId": "jaguar_a_1xan52_without_countermeasures",
+    "name": "an52"
+  },
+  {
+    "aircraftId": "jaguar_a_germany_killstreak",
+    "presetId": "jaguar_a_1xan52_5kt_nt_without_countermeasures",
+    "name": "an52 5kt"
+  },
+  {
+    "aircraftId": "jaguar_a_germany_killstreak",
+    "presetId": "jaguar_a_1xan52_30kt_nt_without_countermeasures",
+    "name": "an52 30kt"
   },
   {
     "aircraftId": "jaguar_a_iaf_killstreak",
@@ -26247,17 +27527,32 @@
   {
     "aircraftId": "jaguar_a_iaf_killstreak",
     "presetId": "jaguar_a_1xan52",
-    "name": "no suspended armament"
+    "name": "an52"
   },
   {
     "aircraftId": "jaguar_a_iaf_killstreak",
     "presetId": "jaguar_a_1xan52_5kt_nt",
-    "name": "no suspended armament"
+    "name": "an52 5kt; 2x ltc"
   },
   {
     "aircraftId": "jaguar_a_iaf_killstreak",
     "presetId": "jaguar_a_1xan52_30kt_nt",
-    "name": "no suspended armament"
+    "name": "an52 30kt; 2x ltc"
+  },
+  {
+    "aircraftId": "jaguar_a_iaf_killstreak",
+    "presetId": "jaguar_a_1xan52_without_countermeasures",
+    "name": "an52"
+  },
+  {
+    "aircraftId": "jaguar_a_iaf_killstreak",
+    "presetId": "jaguar_a_1xan52_5kt_nt_without_countermeasures",
+    "name": "an52 5kt"
+  },
+  {
+    "aircraftId": "jaguar_a_iaf_killstreak",
+    "presetId": "jaguar_a_1xan52_30kt_nt_without_countermeasures",
+    "name": "an52 30kt"
   },
   {
     "aircraftId": "jaguar_a_italy_killstreak",
@@ -26267,17 +27562,32 @@
   {
     "aircraftId": "jaguar_a_italy_killstreak",
     "presetId": "jaguar_a_1xan52",
-    "name": "no suspended armament"
+    "name": "an52"
   },
   {
     "aircraftId": "jaguar_a_italy_killstreak",
     "presetId": "jaguar_a_1xan52_5kt_nt",
-    "name": "no suspended armament"
+    "name": "an52 5kt; 2x ltc"
   },
   {
     "aircraftId": "jaguar_a_italy_killstreak",
     "presetId": "jaguar_a_1xan52_30kt_nt",
-    "name": "no suspended armament"
+    "name": "an52 30kt; 2x ltc"
+  },
+  {
+    "aircraftId": "jaguar_a_italy_killstreak",
+    "presetId": "jaguar_a_1xan52_without_countermeasures",
+    "name": "an52"
+  },
+  {
+    "aircraftId": "jaguar_a_italy_killstreak",
+    "presetId": "jaguar_a_1xan52_5kt_nt_without_countermeasures",
+    "name": "an52 5kt"
+  },
+  {
+    "aircraftId": "jaguar_a_italy_killstreak",
+    "presetId": "jaguar_a_1xan52_30kt_nt_without_countermeasures",
+    "name": "an52 30kt"
   },
   {
     "aircraftId": "jaguar_a_japan_killstreak",
@@ -26287,17 +27597,32 @@
   {
     "aircraftId": "jaguar_a_japan_killstreak",
     "presetId": "jaguar_a_1xan52",
-    "name": "no suspended armament"
+    "name": "an52"
   },
   {
     "aircraftId": "jaguar_a_japan_killstreak",
     "presetId": "jaguar_a_1xan52_5kt_nt",
-    "name": "no suspended armament"
+    "name": "an52 5kt; 2x ltc"
   },
   {
     "aircraftId": "jaguar_a_japan_killstreak",
     "presetId": "jaguar_a_1xan52_30kt_nt",
-    "name": "no suspended armament"
+    "name": "an52 30kt; 2x ltc"
+  },
+  {
+    "aircraftId": "jaguar_a_japan_killstreak",
+    "presetId": "jaguar_a_1xan52_without_countermeasures",
+    "name": "an52"
+  },
+  {
+    "aircraftId": "jaguar_a_japan_killstreak",
+    "presetId": "jaguar_a_1xan52_5kt_nt_without_countermeasures",
+    "name": "an52 5kt"
+  },
+  {
+    "aircraftId": "jaguar_a_japan_killstreak",
+    "presetId": "jaguar_a_1xan52_30kt_nt_without_countermeasures",
+    "name": "an52 30kt"
   },
   {
     "aircraftId": "jaguar_a_killstreak",
@@ -26307,17 +27632,32 @@
   {
     "aircraftId": "jaguar_a_killstreak",
     "presetId": "jaguar_a_1xan52",
-    "name": "no suspended armament"
+    "name": "an52"
   },
   {
     "aircraftId": "jaguar_a_killstreak",
     "presetId": "jaguar_a_1xan52_5kt_nt",
-    "name": "no suspended armament"
+    "name": "an52 5kt; 2x ltc"
   },
   {
     "aircraftId": "jaguar_a_killstreak",
     "presetId": "jaguar_a_1xan52_30kt_nt",
-    "name": "no suspended armament"
+    "name": "an52 30kt; 2x ltc"
+  },
+  {
+    "aircraftId": "jaguar_a_killstreak",
+    "presetId": "jaguar_a_1xan52_without_countermeasures",
+    "name": "an52"
+  },
+  {
+    "aircraftId": "jaguar_a_killstreak",
+    "presetId": "jaguar_a_1xan52_5kt_nt_without_countermeasures",
+    "name": "an52 5kt"
+  },
+  {
+    "aircraftId": "jaguar_a_killstreak",
+    "presetId": "jaguar_a_1xan52_30kt_nt_without_countermeasures",
+    "name": "an52 30kt"
   },
   {
     "aircraftId": "jaguar_a_sweden_killstreak",
@@ -26327,17 +27667,32 @@
   {
     "aircraftId": "jaguar_a_sweden_killstreak",
     "presetId": "jaguar_a_1xan52",
-    "name": "no suspended armament"
+    "name": "an52"
   },
   {
     "aircraftId": "jaguar_a_sweden_killstreak",
     "presetId": "jaguar_a_1xan52_5kt_nt",
-    "name": "no suspended armament"
+    "name": "an52 5kt; 2x ltc"
   },
   {
     "aircraftId": "jaguar_a_sweden_killstreak",
     "presetId": "jaguar_a_1xan52_30kt_nt",
-    "name": "no suspended armament"
+    "name": "an52 30kt; 2x ltc"
+  },
+  {
+    "aircraftId": "jaguar_a_sweden_killstreak",
+    "presetId": "jaguar_a_1xan52_without_countermeasures",
+    "name": "an52"
+  },
+  {
+    "aircraftId": "jaguar_a_sweden_killstreak",
+    "presetId": "jaguar_a_1xan52_5kt_nt_without_countermeasures",
+    "name": "an52 5kt"
+  },
+  {
+    "aircraftId": "jaguar_a_sweden_killstreak",
+    "presetId": "jaguar_a_1xan52_30kt_nt_without_countermeasures",
+    "name": "an52 30kt"
   },
   {
     "aircraftId": "jaguar_a_uk_killstreak",
@@ -26347,17 +27702,32 @@
   {
     "aircraftId": "jaguar_a_uk_killstreak",
     "presetId": "jaguar_a_1xan52",
-    "name": "no suspended armament"
+    "name": "an52"
   },
   {
     "aircraftId": "jaguar_a_uk_killstreak",
     "presetId": "jaguar_a_1xan52_5kt_nt",
-    "name": "no suspended armament"
+    "name": "an52 5kt; 2x ltc"
   },
   {
     "aircraftId": "jaguar_a_uk_killstreak",
     "presetId": "jaguar_a_1xan52_30kt_nt",
-    "name": "no suspended armament"
+    "name": "an52 30kt; 2x ltc"
+  },
+  {
+    "aircraftId": "jaguar_a_uk_killstreak",
+    "presetId": "jaguar_a_1xan52_without_countermeasures",
+    "name": "an52"
+  },
+  {
+    "aircraftId": "jaguar_a_uk_killstreak",
+    "presetId": "jaguar_a_1xan52_5kt_nt_without_countermeasures",
+    "name": "an52 5kt"
+  },
+  {
+    "aircraftId": "jaguar_a_uk_killstreak",
+    "presetId": "jaguar_a_1xan52_30kt_nt_without_countermeasures",
+    "name": "an52 30kt"
   },
   {
     "aircraftId": "jaguar_a_usa_killstreak",
@@ -26367,17 +27737,32 @@
   {
     "aircraftId": "jaguar_a_usa_killstreak",
     "presetId": "jaguar_a_1xan52",
-    "name": "no suspended armament"
+    "name": "an52"
   },
   {
     "aircraftId": "jaguar_a_usa_killstreak",
     "presetId": "jaguar_a_1xan52_5kt_nt",
-    "name": "no suspended armament"
+    "name": "an52 5kt; 2x ltc"
   },
   {
     "aircraftId": "jaguar_a_usa_killstreak",
     "presetId": "jaguar_a_1xan52_30kt_nt",
-    "name": "no suspended armament"
+    "name": "an52 30kt; 2x ltc"
+  },
+  {
+    "aircraftId": "jaguar_a_usa_killstreak",
+    "presetId": "jaguar_a_1xan52_without_countermeasures",
+    "name": "an52"
+  },
+  {
+    "aircraftId": "jaguar_a_usa_killstreak",
+    "presetId": "jaguar_a_1xan52_5kt_nt_without_countermeasures",
+    "name": "an52 5kt"
+  },
+  {
+    "aircraftId": "jaguar_a_usa_killstreak",
+    "presetId": "jaguar_a_1xan52_30kt_nt_without_countermeasures",
+    "name": "an52 30kt"
   },
   {
     "aircraftId": "jaguar_e",
@@ -26905,6 +28290,16 @@
     "name": "4x yj91 l 113"
   },
   {
+    "aircraftId": "jh_7a",
+    "presetId": "jh_7a_yj_83k",
+    "name": "4x yj 83k"
+  },
+  {
+    "aircraftId": "jh_7a",
+    "presetId": "jh_7a_yj91as",
+    "name": "4x yj91as"
+  },
+  {
     "aircraftId": "jh_7a_killstreak",
     "presetId": "jh_7a_default",
     "name": "no suspended armament"
@@ -27046,6 +28441,11 @@
   },
   {
     "aircraftId": "jh_7a_prototype",
+    "presetId": "jh_7a_kd_88",
+    "name": "kd 88 tv slot3; kd 88 tv slot4; kd 88 tv slot7; kd 88 tv slot8"
+  },
+  {
+    "aircraftId": "jh_7a_prototype",
     "presetId": "jh_7a_yj91_l_111",
     "name": "4x yj91 l 111"
   },
@@ -27058,6 +28458,16 @@
     "aircraftId": "jh_7a_prototype",
     "presetId": "jh_7a_yj91_l_113",
     "name": "4x yj91 l 113"
+  },
+  {
+    "aircraftId": "jh_7a_prototype",
+    "presetId": "jh_7a_yj_83k",
+    "name": "4x yj 83k"
+  },
+  {
+    "aircraftId": "jh_7a_prototype",
+    "presetId": "jh_7a_yj91as",
+    "name": "4x yj91as"
   },
   {
     "aircraftId": "jh_7a2",
@@ -27683,6 +29093,11 @@
     "aircraftId": "ka_29",
     "presetId": "ka_29_default",
     "name": "no suspended armament"
+  },
+  {
+    "aircraftId": "ka_29",
+    "presetId": "ka_29_rocket_s5kp",
+    "name": "4x s5kp"
   },
   {
     "aircraftId": "ka_29",
@@ -28707,6 +30122,16 @@
   {
     "aircraftId": "ki_87",
     "presetId": "ki_87_250kg_bomb",
+    "name": "no suspended armament"
+  },
+  {
+    "aircraftId": "ki_93_1_ko",
+    "presetId": "ki_93_1_ko_default",
+    "name": "no suspended armament"
+  },
+  {
+    "aircraftId": "ki_93_1_ko",
+    "presetId": "ki_93_1_ko_250kg",
     "name": "no suspended armament"
   },
   {
@@ -30836,7 +32261,17 @@
   },
   {
     "aircraftId": "me-410a-1",
-    "presetId": "Me_410A-1_2xSC500",
+    "presetId": "Me_410A-1_SC500",
+    "name": "no suspended armament"
+  },
+  {
+    "aircraftId": "me-410a-1",
+    "presetId": "Me_410A-1_2xPD500",
+    "name": "no suspended armament"
+  },
+  {
+    "aircraftId": "me-410a-1",
+    "presetId": "Me_410A-1_PC1000",
     "name": "no suspended armament"
   },
   {
@@ -30871,7 +32306,17 @@
   },
   {
     "aircraftId": "me-410b-1",
-    "presetId": "Me_410A-1_2xSC500",
+    "presetId": "Me_410A-1_SC500",
+    "name": "no suspended armament"
+  },
+  {
+    "aircraftId": "me-410b-1",
+    "presetId": "Me_410A-1_2xPD500",
+    "name": "no suspended armament"
+  },
+  {
+    "aircraftId": "me-410b-1",
+    "presetId": "Me_410A-1_PC1000",
     "name": "no suspended armament"
   },
   {
@@ -31007,37 +32452,37 @@
   {
     "aircraftId": "meteor_fmk8_reaper",
     "presetId": "meteor_fmk8_4x500lb_mc_bombs",
-    "name": "no suspended armament"
+    "name": "500lb gp slot2; 500lb gp slot3; 500lb gp slot4; 500lb gp slot5"
   },
   {
     "aircraftId": "meteor_fmk8_reaper",
     "presetId": "meteor_fmk8_4x1000lb_gp_bombs",
-    "name": "no suspended armament"
+    "name": "1000lb gp slot2; 1000lb gp slot3; 1000lb gp slot4; 1000lb gp slot5"
   },
   {
     "aircraftId": "meteor_fmk8_reaper",
     "presetId": "meteor_fmk8_4x1000lb_mc_bombs",
-    "name": "no suspended armament"
+    "name": "1000lb mc slot2; 1000lb mc slot3; 1000lb mc slot4; 1000lb mc slot5"
   },
   {
     "aircraftId": "meteor_fmk8_reaper",
     "presetId": "meteor_fmk8_24x60lb_rockets",
-    "name": "no suspended armament"
+    "name": "rp3 slot1; rp3 slot2; rp3 slot3; rp3 slot4; rp3 slot5; rp3 slot6"
   },
   {
     "aircraftId": "meteor_fmk8_reaper",
     "presetId": "meteor_fmk8_2x500lb_mc_16x60lb",
-    "name": "no suspended armament"
+    "name": "rp3 slot1; rp3 slot2; 500lb gp slot3; 500lb gp slot4; rp3 slot5; rp3 slot6"
   },
   {
     "aircraftId": "meteor_fmk8_reaper",
     "presetId": "meteor_fmk8_2x1000lb_gp_16x60lb",
-    "name": "no suspended armament"
+    "name": "rp3 slot1; rp3 slot2; 1000lb gp slot3; 1000lb gp slot4; rp3 slot5; rp3 slot6"
   },
   {
     "aircraftId": "meteor_fmk8_reaper",
     "presetId": "meteor_fmk8_2x1000lb_mc_16x60lb",
-    "name": "no suspended armament"
+    "name": "rp3 slot1; rp3 slot2; 1000lb mc slot3; 1000lb mc slot4; rp3 slot5; rp3 slot6"
   },
   {
     "aircraftId": "meteor_frmk9_iaf",
@@ -31311,6 +32756,11 @@
   },
   {
     "aircraftId": "mi_24p",
+    "presetId": "mi_24p_rocket_s5kp",
+    "name": "4x s5kp"
+  },
+  {
+    "aircraftId": "mi_24p",
     "presetId": "mi_24p_rocket_9M114",
     "name": "2x 9m114"
   },
@@ -31368,6 +32818,16 @@
     "aircraftId": "mi_24p_german",
     "presetId": "mi_24p_german_rocket_c_8_ko",
     "name": "4x b8m1"
+  },
+  {
+    "aircraftId": "mi_24p_german",
+    "presetId": "mi_24p_s_24",
+    "name": "4x s24"
+  },
+  {
+    "aircraftId": "mi_24p_german",
+    "presetId": "mi_24p_rocket_s5kp",
+    "name": "4x s5kp"
   },
   {
     "aircraftId": "mi_24p_german",
@@ -31433,6 +32893,26 @@
     "aircraftId": "mi_24p_german_hfs80",
     "presetId": "mi_24p_hsf80_german_rocket_c_8_ko_9m114",
     "name": "2x 9m114; 4x b8m1"
+  },
+  {
+    "aircraftId": "mi_24p_german_hfs80",
+    "presetId": "mi_24p_s_24",
+    "name": "4x s24"
+  },
+  {
+    "aircraftId": "mi_24p_german_hfs80",
+    "presetId": "mi_24p_hungary_s_24_9M114",
+    "name": "2x 9m114; 4x s24"
+  },
+  {
+    "aircraftId": "mi_24p_german_hfs80",
+    "presetId": "mi_24p_rocket_s5kp",
+    "name": "4x s5kp"
+  },
+  {
+    "aircraftId": "mi_24p_german_hfs80",
+    "presetId": "mi_24p_rocket_s5kp_9M114",
+    "name": "2x 9m114; 4x s5kp"
   },
   {
     "aircraftId": "mi_24p_german_hfs80",
@@ -31531,6 +33011,16 @@
   },
   {
     "aircraftId": "mi_24p_hungary",
+    "presetId": "mi_24p_rocket_s5kp",
+    "name": "4x s5kp"
+  },
+  {
+    "aircraftId": "mi_24p_hungary",
+    "presetId": "mi_24p_rocket_s5kp_9M114",
+    "name": "2x 9m114; 4x s5kp"
+  },
+  {
+    "aircraftId": "mi_24p_hungary",
     "presetId": "mi_24p_rocket_9M114",
     "name": "2x 9m114"
   },
@@ -31616,6 +33106,11 @@
   },
   {
     "aircraftId": "mi_24v",
+    "presetId": "mi_24v_rocket_s5kp",
+    "name": "4x s5kp"
+  },
+  {
+    "aircraftId": "mi_24v",
     "presetId": "mi_24v_rocket_9M114",
     "name": "2x 9m114"
   },
@@ -31678,6 +33173,11 @@
     "aircraftId": "mi_24v_hungary",
     "presetId": "mi_24v_s_24",
     "name": "4x s24"
+  },
+  {
+    "aircraftId": "mi_24v_hungary",
+    "presetId": "mi_24v_rocket_s5kp",
+    "name": "4x s5kp"
   },
   {
     "aircraftId": "mi_24v_hungary",
@@ -31960,6 +33460,16 @@
     "name": "9m39; 2x upk250; 9m114 x8"
   },
   {
+    "aircraftId": "mi_35m_pakistan",
+    "presetId": "mi_35m_pakistan_9m114_c_13",
+    "name": "9m39; 2x c13; 9m114 x8"
+  },
+  {
+    "aircraftId": "mi_35m_pakistan",
+    "presetId": "mi_35m_pakistan_9m114_upk_23_250",
+    "name": "9m39; 2x upk250; 9m114 x8"
+  },
+  {
     "aircraftId": "mi_35p",
     "presetId": "mi_35p_default",
     "name": "9m120 x4 left; b8m1 slot2; b8m1 slot3"
@@ -32043,6 +33553,11 @@
     "aircraftId": "mi_35p_indonesia",
     "presetId": "mi_24p_s_24",
     "name": "4x s24"
+  },
+  {
+    "aircraftId": "mi_35p_indonesia",
+    "presetId": "mi_24p_rocket_s5kp",
+    "name": "4x s5kp"
   },
   {
     "aircraftId": "mi_35p_indonesia",
@@ -32501,6 +34016,16 @@
   },
   {
     "aircraftId": "mig_23bn",
+    "presetId": "mig_23bn_bomb_ofab250sh",
+    "name": "6x ofab 250sh"
+  },
+  {
+    "aircraftId": "mig_23bn",
+    "presetId": "mig_23bn_bomb_fab500sh",
+    "name": "6x fab 500sh"
+  },
+  {
+    "aircraftId": "mig_23bn",
     "presetId": "mig_23bn_fire_bomb_zb_500",
     "name": "2x zb 500; zb 500 slot3; zb 500 slot5"
   },
@@ -32587,12 +34112,22 @@
   {
     "aircraftId": "mig_23m",
     "presetId": "mig_23m_bomb_fab500m_62",
-    "name": "2x fab 500m 62t"
+    "name": "4x fab 500m 62t"
+  },
+  {
+    "aircraftId": "mig_23m",
+    "presetId": "mig_23m_bomb_ofab250sh",
+    "name": "4x ofab 250sh"
+  },
+  {
+    "aircraftId": "mig_23m",
+    "presetId": "mig_23m_bomb_fab500sh",
+    "name": "4x fab 500sh"
   },
   {
     "aircraftId": "mig_23m",
     "presetId": "mig_23m_fire_bomb_zb_500",
-    "name": "2x zb 500"
+    "name": "4x zb 500"
   },
   {
     "aircraftId": "mig_23mf_germany",
@@ -32667,12 +34202,22 @@
   {
     "aircraftId": "mig_23mf_germany",
     "presetId": "mig_23mf_bomb_fab500m_62",
-    "name": "2x fab 500m 62t"
+    "name": "4x fab 500m 62t"
+  },
+  {
+    "aircraftId": "mig_23mf_germany",
+    "presetId": "mig_23mf_bomb_ofab250sh",
+    "name": "4x ofab 250sh"
+  },
+  {
+    "aircraftId": "mig_23mf_germany",
+    "presetId": "mig_23mf_bomb_fab500sh",
+    "name": "4x fab 500sh"
   },
   {
     "aircraftId": "mig_23mf_germany",
     "presetId": "mig_23mf_fire_bomb_zb_500",
-    "name": "2x zb 500"
+    "name": "4x zb 500"
   },
   {
     "aircraftId": "mig_23mf_hungary",
@@ -32747,17 +34292,27 @@
   {
     "aircraftId": "mig_23mf_hungary",
     "presetId": "mig_23mf_bomb_fab500m_62",
-    "name": "2x fab 500m 62t"
+    "name": "4x fab 500m 62t"
+  },
+  {
+    "aircraftId": "mig_23mf_hungary",
+    "presetId": "mig_23mf_bomb_ofab250sh",
+    "name": "4x ofab 250sh"
+  },
+  {
+    "aircraftId": "mig_23mf_hungary",
+    "presetId": "mig_23mf_bomb_fab500sh",
+    "name": "4x fab 500sh"
   },
   {
     "aircraftId": "mig_23mf_hungary",
     "presetId": "mig_23mf_fire_bomb_zb_500",
-    "name": "2x zb 500"
+    "name": "4x zb 500"
   },
   {
     "aircraftId": "mig_23ml",
     "presetId": "mig_23ml_default",
-    "name": "2x r 24r; r 60m x2 l; ptb; r 60m x2 r"
+    "name": "2x r 24r; 2x r 60m; ptb"
   },
   {
     "aircraftId": "mig_23ml",
@@ -32767,12 +34322,12 @@
   {
     "aircraftId": "mig_23ml",
     "presetId": "mig_23ml_rocket_r13m",
-    "name": "2x default r 13m1; 2x r 13m1"
+    "name": "2x default r 13m1; 2x r 13m1; ltc"
   },
   {
     "aircraftId": "mig_23ml",
     "presetId": "mig_23ml_rocket_r60m_6",
-    "name": "2x r 60m; r 60m x2 l; r 60m x2 r"
+    "name": "2x r 60m; r 60m x2 l; ltc; r 60m x2 r"
   },
   {
     "aircraftId": "mig_23ml",
@@ -32811,18 +34366,28 @@
   },
   {
     "aircraftId": "mig_23ml",
+    "presetId": "mig_23ml_bomb_ofab250sh",
+    "name": "4x ofab 250sh; ltc"
+  },
+  {
+    "aircraftId": "mig_23ml",
     "presetId": "mig_23ml_bomb_fab250m_62_r60m",
     "name": "2x fab 250m 62; r 60m x2 l; ltc; r 60m x2 r"
   },
   {
     "aircraftId": "mig_23ml",
     "presetId": "mig_23ml_bomb_fab500m_62",
-    "name": "2x fab 500m 62t; ltc"
+    "name": "4x fab 500m 62t; ltc"
+  },
+  {
+    "aircraftId": "mig_23ml",
+    "presetId": "mig_23ml_bomb_fab500sh",
+    "name": "4x fab 500sh; ltc"
   },
   {
     "aircraftId": "mig_23ml",
     "presetId": "mig_23ml_fire_bomb_zb_500",
-    "name": "2x r 60m; zb 500 slot2; ltc; zb 500 slot4"
+    "name": "2x r 60m; 2x zb 500; ltc"
   },
   {
     "aircraftId": "mig_23ml",
@@ -32837,7 +34402,7 @@
   {
     "aircraftId": "mig_23ml",
     "presetId": "mig_23ml_rocket_b8m",
-    "name": "2x b8m1 s 8ko; zb 500 slot2; ltc; zb 500 slot4"
+    "name": "2x b8m1 s 8ko; 2x zb 500; ltc"
   },
   {
     "aircraftId": "mig_23ml",
@@ -32852,7 +34417,7 @@
   {
     "aircraftId": "mig_23ml",
     "presetId": "mig_23ml_upk_23_250",
-    "name": "2x upk23 gunpod; zb 500 slot2; ltc; zb 500 slot4"
+    "name": "2x upk23 gunpod; 2x zb 500; ltc"
   },
   {
     "aircraftId": "mig_23ml",
@@ -32942,12 +34507,22 @@
   {
     "aircraftId": "mig_23mla",
     "presetId": "mig_23mla_bomb_fab500m_62",
-    "name": "2x fab 500m 62t"
+    "name": "4x fab 500m 62t"
+  },
+  {
+    "aircraftId": "mig_23mla",
+    "presetId": "mig_23mla_bomb_ofab250sh",
+    "name": "4x ofab 250sh"
+  },
+  {
+    "aircraftId": "mig_23mla",
+    "presetId": "mig_23mla_bomb_fab500sh",
+    "name": "4x fab 500sh"
   },
   {
     "aircraftId": "mig_23mla",
     "presetId": "mig_23mla_fire_bomb_zb_500",
-    "name": "2x zb 500"
+    "name": "4x zb 500"
   },
   {
     "aircraftId": "mig_23mla",
@@ -33061,13 +34636,23 @@
   },
   {
     "aircraftId": "mig_23mld",
+    "presetId": "mig_23mld_bomb_ofab250sh",
+    "name": "4x ofab 250sh"
+  },
+  {
+    "aircraftId": "mig_23mld",
     "presetId": "mig_23mld_bomb_fab500m_62",
-    "name": "2x fab 500m 62t"
+    "name": "4x fab 500m 62t"
+  },
+  {
+    "aircraftId": "mig_23mld",
+    "presetId": "mig_23mld_bomb_fab500sh",
+    "name": "4x fab 500sh"
   },
   {
     "aircraftId": "mig_23mld",
     "presetId": "mig_23mld_fire_bomb_zb_500",
-    "name": "2x zb 500"
+    "name": "4x zb 500"
   },
   {
     "aircraftId": "mig_23mld",
@@ -33986,6 +35571,11 @@
   },
   {
     "aircraftId": "mig_29kr_9_41r",
+    "presetId": "mig_29kr_9_41r_kh_35",
+    "name": "kh 35 slot3; kh 35 slot4; kh 35 slot6; kh 35 slot7"
+  },
+  {
+    "aircraftId": "mig_29kr_9_41r",
     "presetId": "mig_29kr_9_41r_fab_100_120",
     "name": "4x fab 100 x4"
   },
@@ -34326,6 +35916,11 @@
   },
   {
     "aircraftId": "mig_29smt_9_19",
+    "presetId": "mig_29smt_9_19_kh_35",
+    "name": "kh 35 slot3; kh 35 slot5"
+  },
+  {
+    "aircraftId": "mig_29smt_9_19",
     "presetId": "mig_29smt_9_19_fab_100_120",
     "name": "4x fab 100 x4"
   },
@@ -34413,6 +36008,181 @@
     "aircraftId": "mig_3_series_34",
     "presetId": "mig_3_series_34_default",
     "name": "no suspended armament"
+  },
+  {
+    "aircraftId": "mig_35",
+    "presetId": "mig_35_default",
+    "name": "2x r73 default; 2x r77 default; ptb slot6"
+  },
+  {
+    "aircraftId": "mig_35",
+    "presetId": "mig_35_ptb",
+    "name": "ptb slot3; ptb slot4; ptb slot6; ptb slot8; ptb slot9"
+  },
+  {
+    "aircraftId": "mig_35",
+    "presetId": "mig_35_8x_r73",
+    "name": "2x r73 default; 6x r73"
+  },
+  {
+    "aircraftId": "mig_35",
+    "presetId": "mig_35_4x_r27t",
+    "name": "4x r27t"
+  },
+  {
+    "aircraftId": "mig_35",
+    "presetId": "mig_35_4x_r27r",
+    "name": "4x r27r"
+  },
+  {
+    "aircraftId": "mig_35",
+    "presetId": "mig_35_2x_r27et",
+    "name": "2x r27et"
+  },
+  {
+    "aircraftId": "mig_35",
+    "presetId": "mig_35_2x_r27er",
+    "name": "2x r27er"
+  },
+  {
+    "aircraftId": "mig_35",
+    "presetId": "mig_35_6x_r77",
+    "name": "6x r77; 2x r77 default"
+  },
+  {
+    "aircraftId": "mig_35",
+    "presetId": "mig_35_4x_b8m1",
+    "name": "4x b8m1 s 8ko"
+  },
+  {
+    "aircraftId": "mig_35",
+    "presetId": "mig_35_4x_c13",
+    "name": "4x s 13"
+  },
+  {
+    "aircraftId": "mig_35",
+    "presetId": "mig_35_4x_s_24_b",
+    "name": "4x s 24 b"
+  },
+  {
+    "aircraftId": "mig_35",
+    "presetId": "mig_35_4x_s_25_o",
+    "name": "s 25 o slot3; s 25 o slot4; s 25 o slot8; s 25 o slot9"
+  },
+  {
+    "aircraftId": "mig_35",
+    "presetId": "mig_35_16x_fab_100_120",
+    "name": "4x fab 100 x4"
+  },
+  {
+    "aircraftId": "mig_35",
+    "presetId": "mig_35_8x_fab_250m_62",
+    "name": "4x fab 250m 62 x2"
+  },
+  {
+    "aircraftId": "mig_35",
+    "presetId": "mig_35_8x_fab_500m_62",
+    "name": "2x fab 500m 62t; 2x fab 500 m62 x2"
+  },
+  {
+    "aircraftId": "mig_35",
+    "presetId": "mig_35_8x_ofab_250sh",
+    "name": "4x ofab 250sh x2"
+  },
+  {
+    "aircraftId": "mig_35",
+    "presetId": "mig_35_8x_fab_500sh",
+    "name": "2x fab 500sh; 2x fab 500sh x2"
+  },
+  {
+    "aircraftId": "mig_35",
+    "presetId": "mig_35_4x_s_25l",
+    "name": "s25l slot3; s25l slot4; s25l slot8; s25l slot9"
+  },
+  {
+    "aircraftId": "mig_35",
+    "presetId": "mig_35_4x_kh_25ml",
+    "name": "4x kh 25ml"
+  },
+  {
+    "aircraftId": "mig_35",
+    "presetId": "mig_35_4x_kh_29l",
+    "name": "4x kh 29l"
+  },
+  {
+    "aircraftId": "mig_35",
+    "presetId": "mig_35_4x_kh_29td",
+    "name": "4x kh 29td"
+  },
+  {
+    "aircraftId": "mig_35",
+    "presetId": "mig_35_4x_kh_38ml",
+    "name": "4x kh 38ml"
+  },
+  {
+    "aircraftId": "mig_35",
+    "presetId": "mig_35_4x_kh_38mt",
+    "name": "4x kh 38mt"
+  },
+  {
+    "aircraftId": "mig_35",
+    "presetId": "mig_35_kh_31pd",
+    "name": "4x kh 31pd"
+  },
+  {
+    "aircraftId": "mig_35",
+    "presetId": "mig_35_kh_58",
+    "name": "4x kh 58"
+  },
+  {
+    "aircraftId": "mig_35",
+    "presetId": "mig_35_kh_31ad",
+    "name": "4x kh 31ad"
+  },
+  {
+    "aircraftId": "mig_35",
+    "presetId": "mig_35_kh_35u",
+    "name": "4x kh 35"
+  },
+  {
+    "aircraftId": "mig_35",
+    "presetId": "mig_35_kh_59mk",
+    "name": "2x kh 59mk"
+  },
+  {
+    "aircraftId": "mig_35",
+    "presetId": "mig_35_kab500kr_e",
+    "name": "4x kab 500kr"
+  },
+  {
+    "aircraftId": "mig_35",
+    "presetId": "mig_35_kab500l",
+    "name": "4x kab 500l; t220"
+  },
+  {
+    "aircraftId": "mig_35",
+    "presetId": "mig_35_kab500s",
+    "name": "4x kab 500s"
+  },
+  {
+    "aircraftId": "mig_35",
+    "presetId": "mig_35_kab1500kr",
+    "name": "2x kab 1500kr"
+  },
+  {
+    "aircraftId": "mig_35",
+    "presetId": "mig_35_kab1500lg",
+    "name": "2x kab 1500lg; t220"
+  },
+  {
+    "aircraftId": "mig_35",
+    "presetId": "mig_35_grom2",
+    "name": "4x grom2"
+  },
+  {
+    "aircraftId": "mig_35",
+    "presetId": "mig_35_4x_zb500",
+    "name": "4x zb 500"
   },
   {
     "aircraftId": "mig-15",
@@ -35282,7 +37052,7 @@
   {
     "aircraftId": "mig-21_mf",
     "presetId": "mig_21_mf_4x_ub16",
-    "name": "4x ub16"
+    "name": "ub16 slot1; ub16 slot2; ub16 slot4; ub16 slot5"
   },
   {
     "aircraftId": "mig-21_mf",
@@ -35337,7 +37107,7 @@
   {
     "aircraftId": "mig-21_mf_hungary",
     "presetId": "mig_21_mf_4x_ub16",
-    "name": "4x ub16"
+    "name": "ub16 slot1; ub16 slot2; ub16 slot4; ub16 slot5"
   },
   {
     "aircraftId": "mig-21_mf_hungary",
@@ -35402,7 +37172,7 @@
   {
     "aircraftId": "mig-21_s",
     "presetId": "mig_21_s_default",
-    "name": "2x r3s; 2x r3r; gsh 23l common"
+    "name": "2x r3r; 2x r3s default; gsh 23l common"
   },
   {
     "aircraftId": "mig-21_s",
@@ -35422,22 +37192,22 @@
   {
     "aircraftId": "mig-21_s",
     "presetId": "mig_21_s_4x_r3r",
-    "name": "4x r3r"
+    "name": "2x r3r; r3r slot2; r3r slot4"
   },
   {
     "aircraftId": "mig-21_s",
     "presetId": "mig_21_s_4x_ub16",
-    "name": "4x ub16; gsh 23l common"
+    "name": "ub16 slot1; ub16 slot2; gsh 23l common; ub16 slot4; ub16 slot5"
   },
   {
     "aircraftId": "mig-21_s",
     "presetId": "mig_21_s_s24",
-    "name": "2x s24; gsh 23l common"
+    "name": "2x r3s; 2x s24; gsh 23l common"
   },
   {
     "aircraftId": "mig-21_s",
     "presetId": "mig_21_s_4x_ofab250_bombs",
-    "name": "2x fab250; gsh 23l common"
+    "name": "2x r3s; 2x fab250; gsh 23l common"
   },
   {
     "aircraftId": "mig-21_s",
@@ -35482,7 +37252,7 @@
   {
     "aircraftId": "mig-21_smt",
     "presetId": "mig_21_smt_4x_ub16",
-    "name": "4x ub16"
+    "name": "ub16 slot1; ub16 slot2; ub16 slot4; ub16 slot5"
   },
   {
     "aircraftId": "mig-21_smt",
@@ -35593,6 +37363,36 @@
     "aircraftId": "mig-9_ussr",
     "presetId": "mig_9_ussr_default",
     "name": "no suspended armament"
+  },
+  {
+    "aircraftId": "mirage_2000_5eg_mk2_greece",
+    "presetId": "mirage_2000_5eg_mk2_greece_default",
+    "name": "2x r550 magic 2 default; 2x mica em default; ptb"
+  },
+  {
+    "aircraftId": "mirage_2000_5eg_mk2_greece",
+    "presetId": "mirage_2000_5eg_mk2_greece_r_550_magic_2",
+    "name": "2x r550 magic 2 default; 2x r550 magic 2"
+  },
+  {
+    "aircraftId": "mirage_2000_5eg_mk2_greece",
+    "presetId": "mirage_2000_5eg_mk2_greece_matra_super_530f",
+    "name": "2x matra super 530f"
+  },
+  {
+    "aircraftId": "mirage_2000_5eg_mk2_greece",
+    "presetId": "mirage_2000_5eg_mk2_greece_matra_super_530d",
+    "name": "2x matra super 530d"
+  },
+  {
+    "aircraftId": "mirage_2000_5eg_mk2_greece",
+    "presetId": "mirage_2000_5eg_mk2_greece_6x_mica_em",
+    "name": "4x mica em; 2x mica em default"
+  },
+  {
+    "aircraftId": "mirage_2000_5eg_mk2_greece",
+    "presetId": "mirage_2000_5eg_mk2_greece_as_37",
+    "name": "2x as 37"
   },
   {
     "aircraftId": "mirage_2000_5ei",
@@ -36715,6 +38515,61 @@
     "name": "chaff right"
   },
   {
+    "aircraftId": "mirage_f1cg_greece",
+    "presetId": "mirage_f1cg_greece_default",
+    "name": "2x aim9p default; ptb rp35 slot3; ptb rp35 slot5"
+  },
+  {
+    "aircraftId": "mirage_f1cg_greece",
+    "presetId": "mirage_f1cg_greece_matra_lr_f1",
+    "name": "4x containers matra lr f1"
+  },
+  {
+    "aircraftId": "mirage_f1cg_greece",
+    "presetId": "mirage_f1cg_greece_matra_lr_f4",
+    "name": "4x containers matra lr f4"
+  },
+  {
+    "aircraftId": "mirage_f1cg_greece",
+    "presetId": "mirage_f1cg_greece_fr_250_samp_type_25",
+    "name": "wing left 1 bomb 250kg samp mk82; wing left middle bomb 250kg samp mk82 x2; clb 4 mk82 x4; wing right middle bomb 250kg samp mk82 x2; wing right 1 bomb 250kg samp mk82"
+  },
+  {
+    "aircraftId": "mirage_f1cg_greece",
+    "presetId": "mirage_f1cg_greece_5x_400_samp_type_21",
+    "name": "wing left 1 bomb 400 samp; wing left middle bomb 400 samp; clb 4 type 21 400kg x4; wing right middle bomb 400 samp; wing right 1 bomb 400 samp"
+  },
+  {
+    "aircraftId": "mirage_f1cg_greece",
+    "presetId": "mirage_f1cg_greece_fr_250_samp_type_25_200",
+    "name": "5x bomb 250 200"
+  },
+  {
+    "aircraftId": "mirage_f1cg_greece",
+    "presetId": "mirage_f1cg_greece_5x_400_samp_type_21_200",
+    "name": "wing left 1 bomb 400 samp 200; wing left middle bomb 400 samp 200; clb 4 type 21 400kg x4 200; wing right middle bomb 400 samp 200; wing right 1 bomb 400 samp 200"
+  },
+  {
+    "aircraftId": "mirage_f1cg_greece",
+    "presetId": "mirage_f1cg_greece_fr_1000lb_mk83",
+    "name": "wing left 1 bomb 500kg samp mk83; wing left middle bomb 500kg samp mk83; clb 4 mk83 x2; wing right middle bomb 500kg samp mk83; wing right 1 bomb 500kg samp mk83"
+  },
+  {
+    "aircraftId": "mirage_f1cg_greece",
+    "presetId": "mirage_f1cg_greece_3x_1000kg_mk84",
+    "name": "wing left middle bomb 1000kg samp mk84; fuse bomb 1000kg samp mk84; wing right middle bomb 1000kg samp mk84"
+  },
+  {
+    "aircraftId": "mirage_f1cg_greece",
+    "presetId": "mirage_f1cg_greece_aim_9",
+    "name": "2x aim9p default; 2x aim9p"
+  },
+  {
+    "aircraftId": "mirage_f1cg_greece",
+    "presetId": "mirage_f1cg_greece_phimat",
+    "name": "ptb rp35 slot3; ptb rp35 slot4; ptb rp35 slot5; chaff right"
+  },
+  {
     "aircraftId": "mirage_f1ct",
     "presetId": "mirage_f1ct_default",
     "name": "ptb rp35 slot3; ptb rp35 slot4; ptb rp35 slot5"
@@ -36901,18 +38756,23 @@
   },
   {
     "aircraftId": "mosquito_fb_mk26_china",
-    "presetId": "mosquito_fb_mk6_2x250lbs",
-    "name": "no suspended armament"
+    "presetId": "mosquito_fb_mk6_250lbs",
+    "name": "250lb slot2"
   },
   {
     "aircraftId": "mosquito_fb_mk26_china",
-    "presetId": "mosquito_fb_mk6_2x500lbs",
-    "name": "no suspended armament"
+    "presetId": "mosquito_fb_mk6_500lbs",
+    "name": "500lb slot2"
+  },
+  {
+    "aircraftId": "mosquito_fb_mk26_china",
+    "presetId": "mosquito_fb_mk6_500lbs_sap",
+    "name": "500lb sap slot2"
   },
   {
     "aircraftId": "mosquito_fb_mk26_china",
     "presetId": "mosquito_fb_mk6_rockets",
-    "name": "no suspended armament"
+    "name": "rp3 slot1; rp3 slot3"
   },
   {
     "aircraftId": "mosquito_fb_mk6",
@@ -36921,28 +38781,28 @@
   },
   {
     "aircraftId": "mosquito_fb_mk6",
-    "presetId": "mosquito_fb_mk6_2x250lbs",
-    "name": "no suspended armament"
+    "presetId": "mosquito_fb_mk6_250lbs",
+    "name": "250lb slot2"
   },
   {
     "aircraftId": "mosquito_fb_mk6",
-    "presetId": "mosquito_fb_mk6_2x500lbs",
-    "name": "no suspended armament"
+    "presetId": "mosquito_fb_mk6_500lbs",
+    "name": "500lb slot2"
   },
   {
     "aircraftId": "mosquito_fb_mk6",
-    "presetId": "mosquito_fb_mk6_2x500lbs_sap",
-    "name": "no suspended armament"
+    "presetId": "mosquito_fb_mk6_500lbs_sap",
+    "name": "500lb sap slot2"
   },
   {
     "aircraftId": "mosquito_fb_mk6",
     "presetId": "mosquito_fb_mk6_rockets",
-    "name": "no suspended armament"
+    "name": "rp3 slot1; rp3 slot3"
   },
   {
     "aircraftId": "mosquito_fb_mk6",
     "presetId": "mosquito_fb_mk6_uncle_tom",
-    "name": "no suspended armament"
+    "name": "uncle tom slot1; uncle tom slot2; uncle tom slot3"
   },
   {
     "aircraftId": "mosquito_fb_mk6_ash_norway",
@@ -36951,28 +38811,28 @@
   },
   {
     "aircraftId": "mosquito_fb_mk6_ash_norway",
-    "presetId": "mosquito_fb_mk6_2x250lbs",
-    "name": "no suspended armament"
+    "presetId": "mosquito_fb_mk6_250lbs",
+    "name": "250lb slot2"
   },
   {
     "aircraftId": "mosquito_fb_mk6_ash_norway",
-    "presetId": "mosquito_fb_mk6_2x500lbs",
-    "name": "no suspended armament"
+    "presetId": "mosquito_fb_mk6_500lbs",
+    "name": "500lb slot2"
   },
   {
     "aircraftId": "mosquito_fb_mk6_ash_norway",
-    "presetId": "mosquito_fb_mk6_2x500lbs_sap",
-    "name": "no suspended armament"
+    "presetId": "mosquito_fb_mk6_500lbs_sap",
+    "name": "500lb sap slot2"
   },
   {
     "aircraftId": "mosquito_fb_mk6_ash_norway",
     "presetId": "mosquito_fb_mk6_rockets",
-    "name": "no suspended armament"
+    "name": "rp3 slot1; rp3 slot3"
   },
   {
     "aircraftId": "mosquito_fb_mk6_ash_norway",
     "presetId": "mosquito_fb_mk6_uncle_tom",
-    "name": "no suspended armament"
+    "name": "uncle tom slot1; uncle tom slot2; uncle tom slot3"
   },
   {
     "aircraftId": "mosquito_fb_mk6_norway",
@@ -36981,28 +38841,28 @@
   },
   {
     "aircraftId": "mosquito_fb_mk6_norway",
-    "presetId": "mosquito_fb_mk6_2x250lbs",
-    "name": "no suspended armament"
+    "presetId": "mosquito_fb_mk6_250lbs",
+    "name": "250lb slot2"
   },
   {
     "aircraftId": "mosquito_fb_mk6_norway",
-    "presetId": "mosquito_fb_mk6_2x500lbs",
-    "name": "no suspended armament"
+    "presetId": "mosquito_fb_mk6_500lbs",
+    "name": "500lb slot2"
   },
   {
     "aircraftId": "mosquito_fb_mk6_norway",
-    "presetId": "mosquito_fb_mk6_2x500lbs_sap",
-    "name": "no suspended armament"
+    "presetId": "mosquito_fb_mk6_500lbs_sap",
+    "name": "500lb sap slot2"
   },
   {
     "aircraftId": "mosquito_fb_mk6_norway",
     "presetId": "mosquito_fb_mk6_rockets",
-    "name": "no suspended armament"
+    "name": "rp3 slot1; rp3 slot3"
   },
   {
     "aircraftId": "mosquito_fb_mk6_norway",
     "presetId": "mosquito_fb_mk6_uncle_tom",
-    "name": "no suspended armament"
+    "name": "uncle tom slot1; uncle tom slot2; uncle tom slot3"
   },
   {
     "aircraftId": "mosquito_j30_sweden",
@@ -37021,33 +38881,33 @@
   },
   {
     "aircraftId": "mosquito_tr_mk33",
-    "presetId": "mosquito_fb_mk6_2x250lbs",
-    "name": "no suspended armament"
+    "presetId": "mosquito_fb_mk6_250lbs",
+    "name": "250lb slot2"
   },
   {
     "aircraftId": "mosquito_tr_mk33",
-    "presetId": "mosquito_fb_mk6_2x500lbs",
-    "name": "no suspended armament"
+    "presetId": "mosquito_fb_mk6_500lbs",
+    "name": "500lb slot2"
   },
   {
     "aircraftId": "mosquito_tr_mk33",
-    "presetId": "mosquito_fb_mk6_2x500lbs_sap",
-    "name": "no suspended armament"
-  },
-  {
-    "aircraftId": "mosquito_tr_mk33",
-    "presetId": "mosquito_fb_mk6_rockets",
-    "name": "no suspended armament"
-  },
-  {
-    "aircraftId": "mosquito_tr_mk33",
-    "presetId": "mosquito_fb_mk6_uncle_tom",
-    "name": "no suspended armament"
+    "presetId": "mosquito_fb_mk6_500lbs_sap",
+    "name": "500lb sap slot2"
   },
   {
     "aircraftId": "mosquito_tr_mk33",
     "presetId": "mosquito_tr_mk33_torpedo",
-    "name": "no suspended armament"
+    "name": "mk15 torpedo slot2"
+  },
+  {
+    "aircraftId": "mosquito_tr_mk33",
+    "presetId": "mosquito_fb_mk6_rockets",
+    "name": "rp3 slot1; rp3 slot3"
+  },
+  {
+    "aircraftId": "mosquito_tr_mk33",
+    "presetId": "mosquito_fb_mk6_uncle_tom",
+    "name": "uncle tom slot1; uncle tom slot2; uncle tom slot3"
   },
   {
     "aircraftId": "ms_405c1",
@@ -38352,7 +40212,7 @@
   {
     "aircraftId": "p-47d",
     "presetId": "p-47d_25_1000lbs",
-    "name": "2x 1000lbs"
+    "name": "3x 1000lbs"
   },
   {
     "aircraftId": "p-47d_16_re_germany",
@@ -38487,7 +40347,7 @@
   {
     "aircraftId": "p-47d_30_china",
     "presetId": "p-47d_25_1000lbs",
-    "name": "2x 1000lbs"
+    "name": "3x 1000lbs"
   },
   {
     "aircraftId": "p-47d_30_italy",
@@ -38512,7 +40372,7 @@
   {
     "aircraftId": "p-47d_30_italy",
     "presetId": "p-47m-1-re_1000lbs",
-    "name": "2x 1000lbs"
+    "name": "3x 1000lbs"
   },
   {
     "aircraftId": "p-47d_luftwaffe",
@@ -38567,7 +40427,7 @@
   {
     "aircraftId": "p-47d-28",
     "presetId": "p-47d-28_1000lbs",
-    "name": "2x 1000lbs"
+    "name": "3x 1000lbs"
   },
   {
     "aircraftId": "p-47m-1-re",
@@ -38592,7 +40452,7 @@
   {
     "aircraftId": "p-47m-1-re",
     "presetId": "p-47m-1-re_1000lbs",
-    "name": "2x 1000lbs"
+    "name": "3x 1000lbs"
   },
   {
     "aircraftId": "p-47m-1-re_boxted",
@@ -38617,7 +40477,7 @@
   {
     "aircraftId": "p-47m-1-re_boxted",
     "presetId": "p-47m-1-re_1000lbs",
-    "name": "2x 1000lbs"
+    "name": "3x 1000lbs"
   },
   {
     "aircraftId": "p-47n-15",
@@ -39537,27 +41397,37 @@
   {
     "aircraftId": "pbm_3",
     "presetId": "PBM-3_default",
-    "name": "no suspended armament"
+    "name": "100lb left; 100lb right"
   },
   {
     "aircraftId": "pbm_3",
     "presetId": "PBM-3_8x500lbs",
-    "name": "no suspended armament"
+    "name": "500lbs left; 500lbs right"
   },
   {
     "aircraftId": "pbm_3",
     "presetId": "PBM-3_8x1000lbs",
-    "name": "no suspended armament"
+    "name": "1000lbs left; 1000lbs right"
   },
   {
     "aircraftId": "pbm_3",
     "presetId": "pbm_8x1600lbs",
-    "name": "no suspended armament"
+    "name": "1600lbs left; 1600lbs right"
+  },
+  {
+    "aircraftId": "pbm_3",
+    "presetId": "pbm_3_2x1600lbs",
+    "name": "1600lb fuse left; 1600lb fuse right"
+  },
+  {
+    "aircraftId": "pbm_3",
+    "presetId": "pbm_3_torpedoes",
+    "name": "mk13 torpedo left; mk13 torpedo right"
   },
   {
     "aircraftId": "pbm_3",
     "presetId": "PBM-3_8x_mine_mk13_mod0",
-    "name": "no suspended armament"
+    "name": "mine mk13 left; mine mk13 right"
   },
   {
     "aircraftId": "pbm_5a",
@@ -40555,6 +42425,76 @@
     "name": "aasm 250 sbu 54 x3 slot3; damocles; aasm 250 sbu 54 x3 slot10"
   },
   {
+    "aircraftId": "rafale_c_f3",
+    "presetId": "rafale_c_f3_am39",
+    "name": "am39 slot7"
+  },
+  {
+    "aircraftId": "rafale_eg_greece",
+    "presetId": "rafale_c_f3_default",
+    "name": "r550 magic 2 slot1 default; mica em slot2 default; ptb 1; ptb 2; ptb 3; mica em slot11 default; r550 magic 2 slot12 default"
+  },
+  {
+    "aircraftId": "rafale_eg_greece",
+    "presetId": "rafale_c_f3_mica_em",
+    "name": "mica em slot1; mica em slot2 default; mica em slot3; mica em slot5; mica em slot8; mica em slot10; mica em slot11 default; mica em slot12"
+  },
+  {
+    "aircraftId": "rafale_eg_greece",
+    "presetId": "rafale_c_f3_r550",
+    "name": "r550 magic 2 slot1 default; r550 magic 2 slot12 default"
+  },
+  {
+    "aircraftId": "rafale_eg_greece",
+    "presetId": "rafale_c_f3_samp_mk82",
+    "name": "250kg type 25c x3 slot3; 250kg type 25c x3 slot10"
+  },
+  {
+    "aircraftId": "rafale_eg_greece",
+    "presetId": "rafale_c_f3_gbu_12",
+    "name": "us gbu 12 x3 slot3; damocles; us gbu 12 x3 slot10"
+  },
+  {
+    "aircraftId": "rafale_eg_greece",
+    "presetId": "rafale_c_f3_gbu_22",
+    "name": "us gbu 22 x3 slot3; damocles; us gbu 22 x3 slot10"
+  },
+  {
+    "aircraftId": "rafale_eg_greece",
+    "presetId": "rafale_c_f3_gbu_49",
+    "name": "us gbu 49 x3 slot3; damocles; us gbu 49 x3 slot10"
+  },
+  {
+    "aircraftId": "rafale_eg_greece",
+    "presetId": "rafale_c_f3_gbu_16",
+    "name": "us gbu 16 slot3; damocles; us gbu 16 slot10"
+  },
+  {
+    "aircraftId": "rafale_eg_greece",
+    "presetId": "rafale_c_f3_gbu_24",
+    "name": "us gbu 24 slot3; damocles; us gbu 24 slot7; us gbu 24 slot10"
+  },
+  {
+    "aircraftId": "rafale_eg_greece",
+    "presetId": "rafale_c_f3_aasm_250_sbu_38",
+    "name": "aasm 250 sbu 38 x3 slot3; damocles; aasm 250 sbu 38 x3 slot10"
+  },
+  {
+    "aircraftId": "rafale_eg_greece",
+    "presetId": "rafale_c_f3_aasm_250_sbu_64",
+    "name": "aasm 250 sbu 64 x3 slot3; damocles; aasm 250 sbu 64 x3 slot10"
+  },
+  {
+    "aircraftId": "rafale_eg_greece",
+    "presetId": "rafale_c_f3_aasm_250_sbu_54",
+    "name": "aasm 250 sbu 54 x3 slot3; damocles; aasm 250 sbu 54 x3 slot10"
+  },
+  {
+    "aircraftId": "rafale_eg_greece",
+    "presetId": "rafale_c_f3_am39",
+    "name": "am39 slot7"
+  },
+  {
     "aircraftId": "rafale_m_f3r",
     "presetId": "rafale_c_f3_default",
     "name": "r550 magic 2 slot1 default; mica em slot2 default; ptb 1; ptb 2; ptb 3; mica em slot11 default; r550 magic 2 slot12 default"
@@ -40613,6 +42553,11 @@
     "aircraftId": "rafale_m_f3r",
     "presetId": "rafale_c_f3_aasm_250_sbu_54",
     "name": "aasm 250 sbu 54 x3 slot3; damocles; aasm 250 sbu 54 x3 slot10"
+  },
+  {
+    "aircraftId": "rafale_m_f3r",
+    "presetId": "rafale_c_f3_am39",
+    "name": "am39 slot7"
   },
   {
     "aircraftId": "rah_66",
@@ -41371,6 +43316,11 @@
   },
   {
     "aircraftId": "saab_ajs37",
+    "presetId": "saab_ajs37_rb_15",
+    "name": "2x rb 15"
+  },
+  {
+    "aircraftId": "saab_ajs37",
     "presetId": "saab_ajs37_120kg_m71",
     "name": "4x m71"
   },
@@ -41418,6 +43368,11 @@
     "aircraftId": "saab_ajs37_early",
     "presetId": "saab_ajs37_rockets_rb_75t",
     "name": "4x rb75t"
+  },
+  {
+    "aircraftId": "saab_ajs37_early",
+    "presetId": "saab_ajs37_rb_15",
+    "name": "2x rb 15"
   },
   {
     "aircraftId": "saab_ajs37_early",
@@ -41537,7 +43492,7 @@
   {
     "aircraftId": "saab_f35_wdns",
     "presetId": "saab_f35_wdns_default",
-    "name": "2x aim 9n; ptb slot4; ptb slot6"
+    "name": "2x aim 9n; ptb slot5; ptb slot7"
   },
   {
     "aircraftId": "saab_f35_wdns",
@@ -41568,6 +43523,11 @@
     "aircraftId": "saab_f35_wdns",
     "presetId": "saab_f35_wdns_mk82sn",
     "name": "8x mk82sn; mk82sn center"
+  },
+  {
+    "aircraftId": "saab_f35_wdns",
+    "presetId": "saab_f35_wdns_alq_162",
+    "name": "alq 162 l; alq 162 r"
   },
   {
     "aircraftId": "saab_j21a_1",
@@ -41760,14 +43720,74 @@
     "name": "2x m57b"
   },
   {
+    "aircraftId": "saab_j35j",
+    "presetId": "saab_j35j_default",
+    "name": "2x rb24j default; ptb slot4; ptb slot5"
+  },
+  {
+    "aircraftId": "saab_j35j",
+    "presetId": "saab_j35j_rb24jx6",
+    "name": "4x rb24j; 2x rb24j default"
+  },
+  {
+    "aircraftId": "saab_j35j",
+    "presetId": "saab_j35j_rb27",
+    "name": "4x rb27"
+  },
+  {
+    "aircraftId": "saab_j35j",
+    "presetId": "saab_j35j_rb28",
+    "name": "4x rb28"
+  },
+  {
+    "aircraftId": "saab_j35j",
+    "presetId": "saab_j35j_135mm_rockets",
+    "name": "2x m56d x6"
+  },
+  {
+    "aircraftId": "saab_j35j",
+    "presetId": "saab_j35j_75mm_srak_m57b",
+    "name": "2x m57b; 2x m57b fuse"
+  },
+  {
+    "aircraftId": "saab_j35j",
+    "presetId": "saab_j35j_rb24jx4",
+    "name": "4x rb24j"
+  },
+  {
     "aircraftId": "saab_j35xs",
     "presetId": "saab_j35xs_default",
-    "name": "4x rb24j; ptb slot4; ptb slot5"
+    "name": "2x rb24j; 2x rb24j default; ptb slot4; ptb slot5"
   },
   {
     "aircraftId": "saab_j35xs",
     "presetId": "saab_j35xs_rb24jx6",
-    "name": "6x rb24j"
+    "name": "4x rb24j; 2x rb24j default"
+  },
+  {
+    "aircraftId": "saab_j35xs",
+    "presetId": "saab_j35xs_rb24jx",
+    "name": "4x rb24j"
+  },
+  {
+    "aircraftId": "saab_j35xs",
+    "presetId": "saab_j35xs_rb27",
+    "name": "4x rb27"
+  },
+  {
+    "aircraftId": "saab_j35xs",
+    "presetId": "saab_j35xs_rb27_rb24j",
+    "name": "4x rb27; 2x rb24j default"
+  },
+  {
+    "aircraftId": "saab_j35xs",
+    "presetId": "saab_j35xs_rb28",
+    "name": "4x rb28"
+  },
+  {
+    "aircraftId": "saab_j35xs",
+    "presetId": "saab_j35xs_rb28_rb24j",
+    "name": "4x rb28; 2x rb24j default"
   },
   {
     "aircraftId": "saab_j35xs",
@@ -41782,17 +43802,17 @@
   {
     "aircraftId": "saab_j35xs",
     "presetId": "saab_j35xs_75mm_srak_m57b_rb24j",
-    "name": "4x rb24j; 2x m57b; 2x m57b fuse"
+    "name": "2x rb24j; 2x m57b; 2x rb24j default; 2x m57b fuse"
   },
   {
     "aircraftId": "saab_j35xs",
     "presetId": "saab_j35xs_135mm_rockets_rb24j",
-    "name": "2x m56d x6; 4x rb24j"
+    "name": "2x m56d x6; 2x rb24j default; 2x rb24j"
   },
   {
     "aircraftId": "saab_j35xs",
     "presetId": "saab_j35xs_75mm_srak_m57b_135mm_rockets_rb24j",
-    "name": "2x m56d x4; 2x m57b; 2x rb24j; 2x m57b fuse"
+    "name": "2x m56d x2; 2x m57b; 2x rb24j default; 2x m57b fuse"
   },
   {
     "aircraftId": "saab_ja37",
@@ -41951,6 +43971,11 @@
   },
   {
     "aircraftId": "saab_jas39a",
+    "presetId": "saab_jas39a_rb_15",
+    "name": "2x rb 15"
+  },
+  {
+    "aircraftId": "saab_jas39a",
     "presetId": "saab_jas39a_120kg_m71",
     "name": "4x m71"
   },
@@ -42048,6 +44073,11 @@
     "aircraftId": "saab_jas39c",
     "presetId": "saab_jas39c_rockets_agm_65g",
     "name": "4x us agm 65g"
+  },
+  {
+    "aircraftId": "saab_jas39c",
+    "presetId": "saab_jas39c_rb_15",
+    "name": "2x rb 15"
   },
   {
     "aircraftId": "saab_jas39c",
@@ -42196,6 +44226,11 @@
   },
   {
     "aircraftId": "saab_jas39c_hungary",
+    "presetId": "saab_jas39c_rb_15",
+    "name": "2x rb 15"
+  },
+  {
+    "aircraftId": "saab_jas39c_hungary",
     "presetId": "saab_jas39c_south_africa_gbu_12",
     "name": "4x gbu 12; gbu 12 slot4; litening pod"
   },
@@ -42313,6 +44348,11 @@
     "aircraftId": "saab_jas39c_south_africa",
     "presetId": "saab_jas39c_south_africa_rockets_agm_65g",
     "name": "4x us agm 65g"
+  },
+  {
+    "aircraftId": "saab_jas39c_south_africa",
+    "presetId": "saab_jas39c_rb_15",
+    "name": "2x rb 15"
   },
   {
     "aircraftId": "saab_jas39c_south_africa",
@@ -42441,6 +44481,11 @@
   },
   {
     "aircraftId": "saab_jas39c_thailand",
+    "presetId": "saab_jas39c_rb_15",
+    "name": "2x rb 15"
+  },
+  {
+    "aircraftId": "saab_jas39c_thailand",
     "presetId": "saab_jas39c_south_africa_gbu_12",
     "name": "4x gbu 12; gbu 12 slot4; litening pod"
   },
@@ -42556,6 +44601,11 @@
   },
   {
     "aircraftId": "saab_jas39d",
+    "presetId": "saab_jas39c_rb_15",
+    "name": "2x rb 15"
+  },
+  {
+    "aircraftId": "saab_jas39d",
     "presetId": "saab_jas39d_120kg_m71",
     "name": "4x m71"
   },
@@ -42637,7 +44687,7 @@
   {
     "aircraftId": "saab_jas39e",
     "presetId": "saab_jas39e_rockets_rb_74m_default",
-    "name": "2x rb74m default; aim120c x2 default slot4"
+    "name": "2x rb74m default; aim120c default slot4; aim120c default slot6"
   },
   {
     "aircraftId": "saab_jas39e",
@@ -42652,7 +44702,7 @@
   {
     "aircraftId": "saab_jas39e",
     "presetId": "saab_jas39e_rockets_rb_99",
-    "name": "4x rb99; rb99 slot4"
+    "name": "4x rb99; rb99 slot4; rb99 slot5; rb99 slot6"
   },
   {
     "aircraftId": "saab_jas39e",
@@ -42662,7 +44712,7 @@
   {
     "aircraftId": "saab_jas39e",
     "presetId": "saab_jas39e_rockets_aim_120c",
-    "name": "4x aim120c; aim120c slot4"
+    "name": "4x aim120c; aim120c default slot4; aim120c slot5; aim120c default slot6"
   },
   {
     "aircraftId": "saab_jas39e",
@@ -42697,57 +44747,77 @@
   {
     "aircraftId": "saab_jas39e",
     "presetId": "saab_jas39e_brimstone",
-    "name": "brimstone dm slot2; brimstone dm slot3; litening pod; brimstone dm slot6; brimstone dm slot7"
+    "name": "brimstone dm slot2; brimstone dm slot3; litening pod; brimstone dm slot8; brimstone dm slot9"
+  },
+  {
+    "aircraftId": "saab_jas39e",
+    "presetId": "saab_jas39e_rb_15",
+    "name": "4x rb 15"
   },
   {
     "aircraftId": "saab_jas39e",
     "presetId": "saab_jas39e_120kg_m71",
-    "name": "4x m71"
+    "name": "4x m71; m71 slot4; m71 slot6"
   },
   {
     "aircraftId": "saab_jas39e",
     "presetId": "saab_jas39e_mk82",
-    "name": "4x mk 82 x2"
+    "name": "4x mk 82 x2; mk 82 x2 slot4; mk 82 x2 slot6"
   },
   {
     "aircraftId": "saab_jas39e",
     "presetId": "saab_jas39e_mk83",
-    "name": "4x mk 83"
+    "name": "4x mk 83; mk 83 slot4; mk 83 slot5; mk 83 slot6"
+  },
+  {
+    "aircraftId": "saab_jas39e",
+    "presetId": "saab_jas39e_mk84",
+    "name": "2x mk 84; mk 84 slot4; mk 84 slot6"
   },
   {
     "aircraftId": "saab_jas39e",
     "presetId": "saab_jas39e_120kg_sb_m71_retarded",
-    "name": "4x m71 retarded"
+    "name": "4x m71 retarded; m71 retarded slot4; m71 retarded slot6"
   },
   {
     "aircraftId": "saab_jas39e",
     "presetId": "saab_jas39e_mk82_snakeye",
-    "name": "4x mk 82 snakeye x2"
+    "name": "4x mk 82 snakeye x2; mk 82 snakeye x2 slot4; mk 82 snakeye x2 slot6"
   },
   {
     "aircraftId": "saab_jas39e",
     "presetId": "saab_jas39e_gbu_38",
-    "name": "4x us gbu 38"
+    "name": "4x us gbu 38; us gbu 38 slot4; us gbu 38 slot5; us gbu 38 slot6"
   },
   {
     "aircraftId": "saab_jas39e",
     "presetId": "saab_jas39e_gbu_31",
-    "name": "4x us gbu 31"
+    "name": "2x us gbu 31; us gbu 31 slot4; us gbu 31 slot6"
   },
   {
     "aircraftId": "saab_jas39e",
     "presetId": "saab_jas39e_gbu_12",
-    "name": "4x gbu 12; litening pod"
+    "name": "4x gbu 12; gbu 12 slot4; gbu 12 slot5; gbu 12 slot6; litening pod"
   },
   {
     "aircraftId": "saab_jas39e",
     "presetId": "saab_jas39e_gbu_49",
-    "name": "4x gbu 49; gbu 49 x3; litening pod"
+    "name": "4x gbu 49; gbu 49 slot4; gbu 49 slot5; gbu 49 slot6; litening pod"
   },
   {
     "aircraftId": "saab_jas39e",
     "presetId": "saab_jas39e_gbu_16",
-    "name": "4x gbu 16; litening pod"
+    "name": "4x gbu 16; gbu 16 slot4; gbu 16 slot6; litening pod"
+  },
+  {
+    "aircraftId": "saab_jas39e",
+    "presetId": "saab_jas39e_gbu_48",
+    "name": "4x gbu 48; gbu 48 slot4; gbu 48 slot6; litening pod"
+  },
+  {
+    "aircraftId": "saab_jas39e",
+    "presetId": "saab_jas39e_gbu_10",
+    "name": "2x gbu 10; gbu 10 slot4; gbu 10 slot6; litening pod"
   },
   {
     "aircraftId": "saab_jas39e",
@@ -42757,27 +44827,27 @@
   {
     "aircraftId": "saab_jas39e",
     "presetId": "saab_jas39e_gbu_39",
-    "name": "us gbu 39 slot2; us gbu 39 slot3; us gbu 39 slot6; us gbu 39 slot7"
+    "name": "us gbu 39 slot3; us gbu 39 slot4; us gbu 39 slot6; us gbu 39 slot8"
   },
   {
     "aircraftId": "saab_jas39e",
     "presetId": "saab_jas39e_spice250",
-    "name": "il spice 250 slot3; il spice 250 slot4; il spice 250 slot6"
+    "name": "il spice 250 slot3; il spice 250 slot4; il spice 250 slot6; il spice 250 slot8"
   },
   {
     "aircraftId": "saab_jas39e",
     "presetId": "saab_jas39e_spice_1000",
-    "name": "4x il spice 1000"
+    "name": "4x il spice 1000; il spice 1000 slot4; il spice 1000 slot6"
   },
   {
     "aircraftId": "saab_jas39e",
     "presetId": "saab_jas39e_gbu_62",
-    "name": "4x us gbu 62"
+    "name": "4x us gbu 62; us gbu 62 slot4; us gbu 62 slot5; us gbu 62 slot6"
   },
   {
     "aircraftId": "saab_jas39e",
     "presetId": "saab_jas39e_gbu_64",
-    "name": "4x us gbu 64"
+    "name": "2x us gbu 64; us gbu 64 slot4; us gbu 64 slot6"
   },
   {
     "aircraftId": "saab_sk60b",
@@ -43270,6 +45340,61 @@
     "name": "2x gun pod"
   },
   {
+    "aircraftId": "sb2c_5_greece",
+    "presetId": "sb2c_5_5in_rockets",
+    "name": "hvar slot1; hvar slot5"
+  },
+  {
+    "aircraftId": "sb2c_5_greece",
+    "presetId": "sb2c_5_250lbs_bombs",
+    "name": "2x 250lbs; 250lbs x2"
+  },
+  {
+    "aircraftId": "sb2c_5_greece",
+    "presetId": "sb2c_5_500lbs_bombs",
+    "name": "2x 500lbs; 500lbs x2"
+  },
+  {
+    "aircraftId": "sb2c_5_greece",
+    "presetId": "sb2c_5_1000lbs_bombs",
+    "name": "1000lbs"
+  },
+  {
+    "aircraftId": "sb2c_5_greece",
+    "presetId": "sb2c_5_1000lbs_bombs_external",
+    "name": "2x 1000lbs external"
+  },
+  {
+    "aircraftId": "sb2c_5_greece",
+    "presetId": "sb2c_5_2x_1000lbs_ap",
+    "name": "1000lbs ap x2"
+  },
+  {
+    "aircraftId": "sb2c_5_greece",
+    "presetId": "sb2c_5_1600lbs_bombs",
+    "name": "1600lbs"
+  },
+  {
+    "aircraftId": "sb2c_5_greece",
+    "presetId": "sb2c_5_1x2000lbs",
+    "name": "2000lbs"
+  },
+  {
+    "aircraftId": "sb2c_5_greece",
+    "presetId": "sb2c_5_torpedo",
+    "name": "torpedo"
+  },
+  {
+    "aircraftId": "sb2c_5_greece",
+    "presetId": "sb2c_5_torpedo_case",
+    "name": "torpedo case"
+  },
+  {
+    "aircraftId": "sb2c_5_greece",
+    "presetId": "sb2c_5_dgp_1",
+    "name": "2x gun pod"
+  },
+  {
     "aircraftId": "sb2c_5_thailand",
     "presetId": "sb2c_5_5in_rockets",
     "name": "hvar slot1; hvar slot5"
@@ -43466,6 +45591,11 @@
   },
   {
     "aircraftId": "scimitar_f1",
+    "presetId": "scimitar_rp3_16x60lb_rockets",
+    "name": "4x rp 3 slot1; 4x rp 3 slot2; 4x rp 3 slot3; 4x rp 3 slot4"
+  },
+  {
+    "aircraftId": "scimitar_f1",
     "presetId": "scimitar_agm12x4_rockets",
     "name": "4x agm12"
   },
@@ -43478,6 +45608,41 @@
     "aircraftId": "scout_ah_mk1",
     "presetId": "scout_ah_mk1_default",
     "name": "no suspended armament"
+  },
+  {
+    "aircraftId": "se_203",
+    "presetId": "se_203_default",
+    "name": "no suspended armament"
+  },
+  {
+    "aircraftId": "se_203",
+    "presetId": "se_203_r511",
+    "name": "2x r511"
+  },
+  {
+    "aircraftId": "se_203",
+    "presetId": "se_203_aa20",
+    "name": "2x aa20"
+  },
+  {
+    "aircraftId": "se_203",
+    "presetId": "se_203_as20",
+    "name": "2x as20"
+  },
+  {
+    "aircraftId": "se_203",
+    "presetId": "se_203_t140",
+    "name": "t140 slot1; t140 slot2"
+  },
+  {
+    "aircraftId": "se_203",
+    "presetId": "se_203_t151",
+    "name": "t151 slot1; t151 slot2"
+  },
+  {
+    "aircraftId": "se_203",
+    "presetId": "se_203_sneb",
+    "name": "2x matra 116"
   },
   {
     "aircraftId": "sea_fury_fb11",
@@ -43860,68 +46025,113 @@
     "name": "no suspended armament"
   },
   {
-    "aircraftId": "seafire_fr47",
-    "presetId": "default",
+    "aircraftId": "sea_venom_faw20",
+    "presetId": "sea_venom_faw20_rp3_rockets",
     "name": "no suspended armament"
   },
   {
     "aircraftId": "seafire_fr47",
-    "presetId": "seafire_fr47_2x250lbs",
+    "presetId": "seafire_fr47_default",
     "name": "no suspended armament"
+  },
+  {
+    "aircraftId": "seafire_fr47",
+    "presetId": "seafire_fr47_4rockets",
+    "name": "rp3 slot1; rp3 slot4"
+  },
+  {
+    "aircraftId": "seafire_fr47",
+    "presetId": "seafire_fr47_8rockets",
+    "name": "rp3 x2 slot1; rp3 x2 slot4"
+  },
+  {
+    "aircraftId": "seafire_fr47",
+    "presetId": "seafire_fr47_2x250lbs",
+    "name": "250lb slot2; 250lb slot3"
   },
   {
     "aircraftId": "seafire_fr47",
     "presetId": "seafire_fr47_2x500lbs",
-    "name": "no suspended armament"
+    "name": "500lb slot2; 500lb slot3"
   },
   {
     "aircraftId": "seafire_fr47",
-    "presetId": "4_rockets",
-    "name": "no suspended armament"
+    "presetId": "seafire_fr47_2x500lb_sap",
+    "name": "500lb sap slot2; 500lb sap slot3"
   },
   {
-    "aircraftId": "seafire_fr47",
-    "presetId": "8_rockets",
+    "aircraftId": "seafire_mk17",
+    "presetId": "seafire_mk17_default",
     "name": "no suspended armament"
   },
   {
     "aircraftId": "seafire_mk17",
-    "presetId": "default",
-    "name": "no suspended armament"
+    "presetId": "seafire_mk17_4rockets",
+    "name": "rp3 slot1; rp3 slot5"
   },
   {
     "aircraftId": "seafire_mk17",
-    "presetId": "seafire_fr47_2x250lbs",
-    "name": "no suspended armament"
+    "presetId": "seafire_mk17_8rockets",
+    "name": "rp3 x2 slot1; rp3 x2 slot5"
   },
   {
     "aircraftId": "seafire_mk17",
-    "presetId": "seafire_mk17_3x250lbs",
-    "name": "no suspended armament"
+    "presetId": "seafire_mk17_250lb_wing",
+    "name": "250lb slot2; 250lb slot4"
   },
   {
     "aircraftId": "seafire_mk17",
-    "presetId": "500lbs_2x250lbs",
-    "name": "no suspended armament"
+    "presetId": "seafire_mk17_250lb",
+    "name": "250lb slot3"
+  },
+  {
+    "aircraftId": "seafire_mk17",
+    "presetId": "seafire_mk17_500lb",
+    "name": "500lb slot3"
+  },
+  {
+    "aircraftId": "seafire_mk17",
+    "presetId": "seafire_mk17_bombs_500lb_sap",
+    "name": "500lb sap slot3"
   },
   {
     "aircraftId": "seafire_mk3",
     "presetId": "seafire_mk3_default",
     "name": "no suspended armament"
+  },
+  {
+    "aircraftId": "seafire_mk3",
+    "presetId": "seafire_mk3_4rockets",
+    "name": "rp3 slot1; rp3 slot5"
+  },
+  {
+    "aircraftId": "seafire_mk3",
+    "presetId": "seafire_mk3_8rockets",
+    "name": "rp3 x2 slot1; rp3 x2 slot5"
+  },
+  {
+    "aircraftId": "seafire_mk3",
+    "presetId": "seafire_mk3_250lb_wing",
+    "name": "250lb slot2; 250lb slot4"
   },
   {
     "aircraftId": "seafire_mk3",
     "presetId": "seafire_mk3_250lb",
-    "name": "no suspended armament"
+    "name": "250lb slot3"
   },
   {
     "aircraftId": "seafire_mk3",
     "presetId": "seafire_mk3_500lb",
-    "name": "no suspended armament"
+    "name": "500lb slot3"
+  },
+  {
+    "aircraftId": "seafire_mk3",
+    "presetId": "seafire_mk3_bombs_500lb_sap",
+    "name": "500lb sap slot3"
   },
   {
     "aircraftId": "seafire_mk3_france",
-    "presetId": "seafire_mk3_default",
+    "presetId": "seafiremk3_france_default",
     "name": "no suspended armament"
   },
   {
@@ -45056,33 +47266,208 @@
   },
   {
     "aircraftId": "spitfire_mk5b",
-    "presetId": "Spitfire_mk5b_default",
+    "presetId": "spitfire_v_default",
     "name": "no suspended armament"
   },
   {
+    "aircraftId": "spitfire_mk5b",
+    "presetId": "spitfire_v_bombs_250lb_anm57_wing",
+    "name": "250lb anm57 slot1; 250lb anm57 slot3"
+  },
+  {
+    "aircraftId": "spitfire_mk5b",
+    "presetId": "spitfire_v_bombs_250lb_gp_wing",
+    "name": "250lb gp slot1; 250lb gp slot3"
+  },
+  {
+    "aircraftId": "spitfire_mk5b",
+    "presetId": "spitfire_v_bombs_250lb_anm57",
+    "name": "250lb anm57 slot2"
+  },
+  {
+    "aircraftId": "spitfire_mk5b",
+    "presetId": "spitfire_v_bombs_250lb_gp",
+    "name": "250lb gp slot2"
+  },
+  {
+    "aircraftId": "spitfire_mk5b",
+    "presetId": "spitfire_v_bombs_500lb_anm64a1",
+    "name": "500lb anm64a1 slot2"
+  },
+  {
+    "aircraftId": "spitfire_mk5b",
+    "presetId": "spitfire_v_bombs_500lb_gp",
+    "name": "500lb gp slot2"
+  },
+  {
+    "aircraftId": "spitfire_mk5b",
+    "presetId": "spitfire_v_bombs_500lb_sap",
+    "name": "500lb sap slot2"
+  },
+  {
     "aircraftId": "spitfire_mk5b_float",
-    "presetId": "Spitfire_mk5b_default",
+    "presetId": "spitfire_v_default",
     "name": "no suspended armament"
   },
   {
     "aircraftId": "spitfire_mk5b_italy",
-    "presetId": "Spitfire_mk5b_default",
+    "presetId": "spitfire_v_default",
+    "name": "no suspended armament"
+  },
+  {
+    "aircraftId": "spitfire_mk5b_italy",
+    "presetId": "spitfire_v_bombs_250lb_anm57_wing",
+    "name": "250lb anm57 slot1; 250lb anm57 slot3"
+  },
+  {
+    "aircraftId": "spitfire_mk5b_italy",
+    "presetId": "spitfire_v_bombs_250lb_gp_wing",
+    "name": "250lb gp slot1; 250lb gp slot3"
+  },
+  {
+    "aircraftId": "spitfire_mk5b_italy",
+    "presetId": "spitfire_v_bombs_250lb_anm57",
+    "name": "250lb anm57 slot2"
+  },
+  {
+    "aircraftId": "spitfire_mk5b_italy",
+    "presetId": "spitfire_v_bombs_250lb_gp",
+    "name": "250lb gp slot2"
+  },
+  {
+    "aircraftId": "spitfire_mk5b_italy",
+    "presetId": "spitfire_v_bombs_500lb_anm64a1",
+    "name": "500lb anm64a1 slot2"
+  },
+  {
+    "aircraftId": "spitfire_mk5b_italy",
+    "presetId": "spitfire_v_bombs_500lb_gp",
+    "name": "500lb gp slot2"
+  },
+  {
+    "aircraftId": "spitfire_mk5b_italy",
+    "presetId": "spitfire_v_bombs_500lb_sap",
+    "name": "500lb sap slot2"
+  },
+  {
+    "aircraftId": "spitfire_mk5b_notrop",
+    "presetId": "spitfire_v_default",
     "name": "no suspended armament"
   },
   {
     "aircraftId": "spitfire_mk5b_notrop",
-    "presetId": "Spitfire_mk5b_default",
+    "presetId": "spitfire_v_bombs_250lb_anm57_wing",
+    "name": "250lb anm57 slot1; 250lb anm57 slot3"
+  },
+  {
+    "aircraftId": "spitfire_mk5b_notrop",
+    "presetId": "spitfire_v_bombs_250lb_gp_wing",
+    "name": "250lb gp slot1; 250lb gp slot3"
+  },
+  {
+    "aircraftId": "spitfire_mk5b_notrop",
+    "presetId": "spitfire_v_bombs_250lb_anm57",
+    "name": "250lb anm57 slot2"
+  },
+  {
+    "aircraftId": "spitfire_mk5b_notrop",
+    "presetId": "spitfire_v_bombs_250lb_gp",
+    "name": "250lb gp slot2"
+  },
+  {
+    "aircraftId": "spitfire_mk5b_notrop",
+    "presetId": "spitfire_v_bombs_500lb_anm64a1",
+    "name": "500lb anm64a1 slot2"
+  },
+  {
+    "aircraftId": "spitfire_mk5b_notrop",
+    "presetId": "spitfire_v_bombs_500lb_gp",
+    "name": "500lb gp slot2"
+  },
+  {
+    "aircraftId": "spitfire_mk5b_notrop",
+    "presetId": "spitfire_v_bombs_500lb_sap",
+    "name": "500lb sap slot2"
+  },
+  {
+    "aircraftId": "spitfire_mk5c",
+    "presetId": "spitfire_v_default",
     "name": "no suspended armament"
   },
   {
     "aircraftId": "spitfire_mk5c",
-    "presetId": "Spitfire_mk5c_default",
+    "presetId": "spitfire_v_bombs_250lb_anm57_wing",
+    "name": "250lb anm57 slot1; 250lb anm57 slot3"
+  },
+  {
+    "aircraftId": "spitfire_mk5c",
+    "presetId": "spitfire_v_bombs_250lb_gp_wing",
+    "name": "250lb gp slot1; 250lb gp slot3"
+  },
+  {
+    "aircraftId": "spitfire_mk5c",
+    "presetId": "spitfire_v_bombs_250lb_anm57",
+    "name": "250lb anm57 slot2"
+  },
+  {
+    "aircraftId": "spitfire_mk5c",
+    "presetId": "spitfire_v_bombs_250lb_gp",
+    "name": "250lb gp slot2"
+  },
+  {
+    "aircraftId": "spitfire_mk5c",
+    "presetId": "spitfire_v_bombs_500lb_anm64a1",
+    "name": "500lb anm64a1 slot2"
+  },
+  {
+    "aircraftId": "spitfire_mk5c",
+    "presetId": "spitfire_v_bombs_500lb_gp",
+    "name": "500lb gp slot2"
+  },
+  {
+    "aircraftId": "spitfire_mk5c",
+    "presetId": "spitfire_v_bombs_500lb_sap",
+    "name": "500lb sap slot2"
+  },
+  {
+    "aircraftId": "spitfire_mk5c_notrop",
+    "presetId": "spitfire_v_default",
     "name": "no suspended armament"
   },
   {
     "aircraftId": "spitfire_mk5c_notrop",
-    "presetId": "Spitfire_mk5c_default",
-    "name": "no suspended armament"
+    "presetId": "spitfire_v_bombs_250lb_anm57_wing",
+    "name": "250lb anm57 slot1; 250lb anm57 slot3"
+  },
+  {
+    "aircraftId": "spitfire_mk5c_notrop",
+    "presetId": "spitfire_v_bombs_250lb_gp_wing",
+    "name": "250lb gp slot1; 250lb gp slot3"
+  },
+  {
+    "aircraftId": "spitfire_mk5c_notrop",
+    "presetId": "spitfire_v_bombs_250lb_anm57",
+    "name": "250lb anm57 slot2"
+  },
+  {
+    "aircraftId": "spitfire_mk5c_notrop",
+    "presetId": "spitfire_v_bombs_250lb_gp",
+    "name": "250lb gp slot2"
+  },
+  {
+    "aircraftId": "spitfire_mk5c_notrop",
+    "presetId": "spitfire_v_bombs_500lb_anm64a1",
+    "name": "500lb anm64a1 slot2"
+  },
+  {
+    "aircraftId": "spitfire_mk5c_notrop",
+    "presetId": "spitfire_v_bombs_500lb_gp",
+    "name": "500lb gp slot2"
+  },
+  {
+    "aircraftId": "spitfire_mk5c_notrop",
+    "presetId": "spitfire_v_bombs_500lb_sap",
+    "name": "500lb sap slot2"
   },
   {
     "aircraftId": "spitfire_mk9b",
@@ -45186,13 +47571,43 @@
   },
   {
     "aircraftId": "spitfire_xvi",
-    "presetId": "spitfire_xvi_default",
+    "presetId": "SpitfireIX_default",
     "name": "no suspended armament"
   },
   {
     "aircraftId": "spitfire_xvi",
-    "presetId": "spitfire_xvi_bombs",
-    "name": "no suspended armament"
+    "presetId": "spitfire_ix_bombs_250lb_anm57_wing",
+    "name": "250lb anm57 slot1; 250lb anm57 slot3"
+  },
+  {
+    "aircraftId": "spitfire_xvi",
+    "presetId": "spitfire_ix_bombs_250lb_gp_wing",
+    "name": "250lb gp slot1; 250lb gp slot3"
+  },
+  {
+    "aircraftId": "spitfire_xvi",
+    "presetId": "spitfire_ix_bombs_250lb_anm57",
+    "name": "250lb anm57 slot2"
+  },
+  {
+    "aircraftId": "spitfire_xvi",
+    "presetId": "spitfire_ix_bombs_250lb_gp",
+    "name": "250lb gp slot2"
+  },
+  {
+    "aircraftId": "spitfire_xvi",
+    "presetId": "spitfire_ix_bombs_500lb_anm64a1",
+    "name": "500lb anm64a1 slot2"
+  },
+  {
+    "aircraftId": "spitfire_xvi",
+    "presetId": "spitfire_ix_bombs_500lb_gp",
+    "name": "500lb gp slot2"
+  },
+  {
+    "aircraftId": "spitfire_xvi",
+    "presetId": "spitfire_ix_bombs_500lb_sap",
+    "name": "500lb sap slot2"
   },
   {
     "aircraftId": "spitfiremkii",
@@ -47586,21 +50001,6 @@
   },
   {
     "aircraftId": "su_30mkm",
-    "presetId": "su_30mkm_kh_59mke",
-    "name": "kh 59mke slot3; kh 59mke slot4; kh 59mke slot9; kh 59mke slot10"
-  },
-  {
-    "aircraftId": "su_30mkm",
-    "presetId": "su_30mkm_kh_31pd",
-    "name": "kh 31pd slot3; kh 31pd slot4; kh 31pd slot5; kh 31pd slot8; kh 31pd slot9; kh 31pd slot10"
-  },
-  {
-    "aircraftId": "su_30mkm",
-    "presetId": "su_30mkm_kh_31a",
-    "name": "kh 31a slot3; kh 31a slot4; kh 31a slot5; kh 31a slot8; kh 31a slot9; kh 31a slot10"
-  },
-  {
-    "aircraftId": "su_30mkm",
     "presetId": "su_30mkm_kh_38l",
     "name": "kh 38 slot3; kh 38 slot4; kh 38 slot5; damocles; kh 38 slot9; kh 38 slot10"
   },
@@ -47613,6 +50013,31 @@
     "aircraftId": "su_30mkm",
     "presetId": "su_30mkm_grom_2",
     "name": "grom2 slot3; grom2 slot4; grom2 slot5; grom2 slot7; grom2 slot8; grom2 slot9; grom2 slot10"
+  },
+  {
+    "aircraftId": "su_30mkm",
+    "presetId": "su_30mkm_kh_31pd",
+    "name": "kh 31pd slot3; kh 31pd slot4; kh 31pd slot5; kh 31pd slot8; kh 31pd slot9; kh 31pd slot10"
+  },
+  {
+    "aircraftId": "su_30mkm",
+    "presetId": "su_30mkm_kh_58",
+    "name": "kh 58 slot3; kh 58 slot4; kh 58 slot5; kh 58 slot8; kh 58 slot9; kh 58 slot10"
+  },
+  {
+    "aircraftId": "su_30mkm",
+    "presetId": "su_30mkm_kh_59mke",
+    "name": "kh 59mke slot3; kh 59mke slot4; kh 59mke slot9; kh 59mke slot10"
+  },
+  {
+    "aircraftId": "su_30mkm",
+    "presetId": "su_30mkm_kh_31a",
+    "name": "kh 31a slot3; kh 31a slot4; kh 31a slot5; kh 31a slot8; kh 31a slot9; kh 31a slot10"
+  },
+  {
+    "aircraftId": "su_30mkm",
+    "presetId": "su_30mkm_kh_35",
+    "name": "kh 35 slot3; kh 35 slot4; kh 35 slot5; kh 35 slot8; kh 35 slot9; kh 35 slot10"
   },
   {
     "aircraftId": "su_30mkm",
@@ -47751,21 +50176,6 @@
   },
   {
     "aircraftId": "su_30sm",
-    "presetId": "su_30sm_kh_59mk",
-    "name": "kh 59mk slot3; kh 59mk slot4; kh 59mk slot9; kh 59mk slot10"
-  },
-  {
-    "aircraftId": "su_30sm",
-    "presetId": "su_30sm_kh_31pd",
-    "name": "kh 31pd slot3; kh 31pd slot4; kh 31pd slot5; kh 31pd slot8; kh 31pd slot9; kh 31pd slot10"
-  },
-  {
-    "aircraftId": "su_30sm",
-    "presetId": "su_30sm_kh_31a",
-    "name": "kh 31a slot3; kh 31a slot4; kh 31a slot5; kh 31a slot8; kh 31a slot9; kh 31a slot10"
-  },
-  {
-    "aircraftId": "su_30sm",
     "presetId": "su_30sm_kh_38l",
     "name": "kh 38 slot3; kh 38 slot4; kh 38 slot5; t220; kh 38 slot9; kh 38 slot10"
   },
@@ -47778,6 +50188,31 @@
     "aircraftId": "su_30sm",
     "presetId": "su_30sm_grom_2",
     "name": "grom2 slot3; grom2 slot4; grom2 slot5; grom2 slot7; grom2 slot8; grom2 slot9; grom2 slot10"
+  },
+  {
+    "aircraftId": "su_30sm",
+    "presetId": "su_30sm_kh_31pd",
+    "name": "kh 31pd slot3; kh 31pd slot4; kh 31pd slot5; kh 31pd slot8; kh 31pd slot9; kh 31pd slot10"
+  },
+  {
+    "aircraftId": "su_30sm",
+    "presetId": "su_30sm_kh_58",
+    "name": "kh 58 slot3; kh 58 slot4; kh 58 slot5; kh 58 slot8; kh 58 slot9; kh 58 slot10"
+  },
+  {
+    "aircraftId": "su_30sm",
+    "presetId": "su_30sm_kh_59mk",
+    "name": "kh 59mk slot3; kh 59mk slot4; kh 59mk slot9; kh 59mk slot10"
+  },
+  {
+    "aircraftId": "su_30sm",
+    "presetId": "su_30sm_kh_31a",
+    "name": "kh 31a slot3; kh 31a slot4; kh 31a slot5; kh 31a slot8; kh 31a slot9; kh 31a slot10"
+  },
+  {
+    "aircraftId": "su_30sm",
+    "presetId": "su_30sm_kh_35",
+    "name": "kh 35 slot3; kh 35 slot4; kh 35 slot5; kh 35 slot8; kh 35 slot9; kh 35 slot10"
   },
   {
     "aircraftId": "su_30sm",
@@ -47911,21 +50346,6 @@
   },
   {
     "aircraftId": "su_30sm2",
-    "presetId": "su_30sm2_kh_59mk",
-    "name": "kh 59mk slot3; kh 59mk slot4; kh 59mk slot9; kh 59mk slot10"
-  },
-  {
-    "aircraftId": "su_30sm2",
-    "presetId": "su_30sm2_kh_31pd",
-    "name": "kh 31pd slot3; kh 31pd slot4; kh 31pd slot5; kh 31pd slot8; kh 31pd slot9; kh 31pd slot10"
-  },
-  {
-    "aircraftId": "su_30sm2",
-    "presetId": "su_30sm2_kh_31a",
-    "name": "kh 31a slot3; kh 31a slot4; kh 31a slot5; kh 31a slot8; kh 31a slot9; kh 31a slot10"
-  },
-  {
-    "aircraftId": "su_30sm2",
     "presetId": "su_30sm2_kh_38l",
     "name": "kh 38 slot3; kh 38 slot4; kh 38 slot5; t220; kh 38 slot9; kh 38 slot10"
   },
@@ -47938,6 +50358,31 @@
     "aircraftId": "su_30sm2",
     "presetId": "su_30sm2_grom_2",
     "name": "grom2 slot3; grom2 slot4; grom2 slot5; grom2 slot7; grom2 slot8; grom2 slot9; grom2 slot10"
+  },
+  {
+    "aircraftId": "su_30sm2",
+    "presetId": "su_30sm2_kh_31pd",
+    "name": "kh 31pd slot3; kh 31pd slot4; kh 31pd slot5; kh 31pd slot8; kh 31pd slot9; kh 31pd slot10"
+  },
+  {
+    "aircraftId": "su_30sm2",
+    "presetId": "su_30sm2_kh_58",
+    "name": "kh 58 slot3; kh 58 slot4; kh 58 slot5; kh 58 slot8; kh 58 slot9; kh 58 slot10"
+  },
+  {
+    "aircraftId": "su_30sm2",
+    "presetId": "su_30sm2_kh_59mk",
+    "name": "kh 59mk slot3; kh 59mk slot4; kh 59mk slot9; kh 59mk slot10"
+  },
+  {
+    "aircraftId": "su_30sm2",
+    "presetId": "su_30sm2_kh_31a",
+    "name": "kh 31a slot3; kh 31a slot4; kh 31a slot5; kh 31a slot8; kh 31a slot9; kh 31a slot10"
+  },
+  {
+    "aircraftId": "su_30sm2",
+    "presetId": "su_30sm2_kh_35",
+    "name": "kh 35 slot3; kh 35 slot4; kh 35 slot5; kh 35 slot8; kh 35 slot9; kh 35 slot10"
   },
   {
     "aircraftId": "su_30sm2",
@@ -48161,21 +50606,6 @@
   },
   {
     "aircraftId": "su_34",
-    "presetId": "su_34_kh_59mk",
-    "name": "kh 59mk slot3; kh 59mk slot4; kh 59mk slot7; kh 59mk slot9; kh 59mk slot10"
-  },
-  {
-    "aircraftId": "su_34",
-    "presetId": "su_34_kh_31pd",
-    "name": "kh 31pd slot3; kh 31pd slot4; kh 31pd slot5; kh 31pd slot8; kh 31pd slot9; kh 31pd slot10"
-  },
-  {
-    "aircraftId": "su_34",
-    "presetId": "su_34_kh_31a",
-    "name": "kh 31a slot3; kh 31a slot4; kh 31a slot5; kh 31a slot8; kh 31a slot9; kh 31a slot10"
-  },
-  {
-    "aircraftId": "su_34",
     "presetId": "su_34_rocket_grom_2",
     "name": "grom2 slot3; grom2 slot4; grom2 slot5; grom2 slot7; grom2 slot8; grom2 slot9; grom2 slot10"
   },
@@ -48188,6 +50618,31 @@
     "aircraftId": "su_34",
     "presetId": "su_34_rocket_kh_38mt",
     "name": "kh 38mt slot3; kh 38mt slot4; kh 38mt slot5; kh 38mt slot8; kh 38mt slot9; kh 38mt slot10"
+  },
+  {
+    "aircraftId": "su_34",
+    "presetId": "su_34_kh_31pd",
+    "name": "kh 31pd slot3; kh 31pd slot4; kh 31pd slot5; kh 31pd slot8; kh 31pd slot9; kh 31pd slot10"
+  },
+  {
+    "aircraftId": "su_34",
+    "presetId": "su_34_kh_58",
+    "name": "kh 58 slot3; kh 58 slot4; kh 58 slot5; kh 58 slot8; kh 58 slot9; kh 58 slot10"
+  },
+  {
+    "aircraftId": "su_34",
+    "presetId": "su_34_kh_59mk",
+    "name": "kh 59mk slot3; kh 59mk slot4; kh 59mk slot7; kh 59mk slot9; kh 59mk slot10"
+  },
+  {
+    "aircraftId": "su_34",
+    "presetId": "su_34_kh_31a",
+    "name": "kh 31a slot3; kh 31a slot4; kh 31a slot5; kh 31a slot8; kh 31a slot9; kh 31a slot10"
+  },
+  {
+    "aircraftId": "su_34",
+    "presetId": "su_34_kh_35",
+    "name": "kh 35 slot3; kh 35 slot4; kh 35 slot5; kh 35 slot8; kh 35 slot9; kh 35 slot10"
   },
   {
     "aircraftId": "su_34",
@@ -49822,7 +52277,7 @@
   {
     "aircraftId": "tornado_gr1",
     "presetId": "tornado_gr1_1000lb_mk13",
-    "name": "1000lbs slot3; 1000lbs slot4; 1000lbs slot5; 1000lbs slot6; 1000lbs slot7; 1000lbs slot8; 1000lbs slot9"
+    "name": "1000lbs slot3; 1000lbs default slot4; 1000lbs default slot5; 1000lbs slot6; 1000lbs default slot7; 1000lbs default slot8; 1000lbs slot9"
   },
   {
     "aircraftId": "tornado_gr1",
@@ -49977,7 +52432,7 @@
   {
     "aircraftId": "tornado_gr4",
     "presetId": "tornado_gr4_1000lb_mk13",
-    "name": "1000lbs slot3; 1000lbs slot5; 1000lbs slot6; 1000lbs slot7; 1000lbs slot8; 1000lbs slot9; 1000lbs slot11"
+    "name": "1000lbs slot3; 1000lbs default slot5; 1000lbs default slot6; 1000lbs slot7; 1000lbs default slot8; 1000lbs default slot9; 1000lbs slot11"
   },
   {
     "aircraftId": "tornado_gr4",
@@ -50083,6 +52538,11 @@
     "aircraftId": "tornado_ids_de_assta1",
     "presetId": "tornado_ids_assta1_4x_1000_default",
     "name": "3x 1000lbs mk83 default; 1000lbs mk83 default slot7"
+  },
+  {
+    "aircraftId": "tornado_ids_de_assta1",
+    "presetId": "tornado_ids_assta1_as_34",
+    "name": "as 34 slot3; as 34 slot4; as 34 slot8; as 34 slot9"
   },
   {
     "aircraftId": "tornado_ids_de_assta1_britain_killstreak",
@@ -50255,6 +52715,11 @@
     "name": "agm 88 slot3; agm 88 slot4; agm 88 slot8; agm 88 slot9"
   },
   {
+    "aircraftId": "tornado_ids_de_assta3_sle",
+    "presetId": "tornado_ids_de_assta3_sle_as_34",
+    "name": "as 34 slot3; as 34 slot4; as 34 slot8; as 34 slot9"
+  },
+  {
     "aircraftId": "tornado_ids_de_mfg",
     "presetId": "tornado_ids_de_mfg_default",
     "name": "2x boz; 2x aim 9l; ptb 1; ptb 2"
@@ -50272,7 +52737,7 @@
   {
     "aircraftId": "tornado_ids_de_mfg",
     "presetId": "tornado_ids_de_mfg_fr_mk13",
-    "name": "2x boz; 2x aim 9l; 6x 1000lbs mk83; 1000lbs mk83 fuse centr"
+    "name": "2x boz; 2x aim 9l; 2x 1000lbs mk83; 4x 1000lbs mk83 default; 1000lbs mk83 fuse centr"
   },
   {
     "aircraftId": "tornado_ids_de_mfg",
@@ -50292,7 +52757,7 @@
   {
     "aircraftId": "tornado_ids_de_mfg",
     "presetId": "tornado_ids_de_mfg_as_34",
-    "name": "2x as 34; 2x as 34 fuse"
+    "name": "as 34 slot3; as 34 slot4; as 34 slot8; as 34 slot9"
   },
   {
     "aircraftId": "tornado_ids_de_mfg",
@@ -50317,7 +52782,7 @@
   {
     "aircraftId": "tornado_ids_de_wtd61",
     "presetId": "tornado_ids_de_mfg_fr_mk13",
-    "name": "2x boz; 2x aim 9l; 6x 1000lbs mk83; 1000lbs mk83 fuse centr"
+    "name": "2x boz; 2x aim 9l; 2x 1000lbs mk83; 4x 1000lbs mk83 default; 1000lbs mk83 fuse centr"
   },
   {
     "aircraftId": "tornado_ids_de_wtd61",
@@ -50338,6 +52803,11 @@
     "aircraftId": "tornado_ids_de_wtd61",
     "presetId": "tornado_ids_de_mfg_4x_1000_default",
     "name": "2x boz; 2x aim 9l; 4x 1000lbs mk83 default"
+  },
+  {
+    "aircraftId": "tornado_ids_de_wtd61",
+    "presetId": "tornado_ids_de_mfg_as_34",
+    "name": "as 34 slot3; as 34 slot4; as 34 slot8; as 34 slot9"
   },
   {
     "aircraftId": "tornado_ids_it",
@@ -50377,7 +52847,7 @@
   {
     "aircraftId": "tornado_ids_it",
     "presetId": "tornado_ids_it_mod95_fr_mk13",
-    "name": "6x 1000lbs mk83; 1000lbs mk83 fuse centr"
+    "name": "2x 1000lbs mk83; 4x 1000lbs mk83 default; 1000lbs mk83 fuse centr"
   },
   {
     "aircraftId": "tornado_ids_it",
@@ -50400,6 +52870,11 @@
     "name": "4x 1000lbs mk83 default"
   },
   {
+    "aircraftId": "tornado_ids_it",
+    "presetId": "tornado_ids_it_mod95_as_34",
+    "name": "as 34 slot3; as 34 slot4; as 34 slot8; as 34 slot9"
+  },
+  {
     "aircraftId": "tornado_ids_it_mod95",
     "presetId": "tornado_ids_it_mod95_default",
     "name": "ptb 1; ptb 2"
@@ -50437,7 +52912,7 @@
   {
     "aircraftId": "tornado_ids_it_mod95",
     "presetId": "tornado_ids_it_mod95_fr_mk13",
-    "name": "6x 1000lbs mk83; 1000lbs mk83 fuse centr"
+    "name": "2x 1000lbs mk83; 4x 1000lbs mk83 default; 1000lbs mk83 fuse centr"
   },
   {
     "aircraftId": "tornado_ids_it_mod95",
@@ -50468,6 +52943,11 @@
     "aircraftId": "tornado_ids_it_mod95",
     "presetId": "tornado_ids_it_mod95_4x_1000_default",
     "name": "4x 1000lbs mk83 default"
+  },
+  {
+    "aircraftId": "tornado_ids_it_mod95",
+    "presetId": "tornado_ids_it_mod95_as_34",
+    "name": "as 34 slot3; as 34 slot4; as 34 slot8; as 34 slot9"
   },
   {
     "aircraftId": "tornado_ids_it_mod95_killstreak",
@@ -50598,6 +53078,11 @@
     "aircraftId": "tornado_ids_it_ret8",
     "presetId": "tornado_ids_it_ret8_agm_88a",
     "name": "agm 88 slot3; agm 88 slot4; agm 88 slot8; agm 88 slot9"
+  },
+  {
+    "aircraftId": "tornado_ids_it_ret8",
+    "presetId": "tornado_ids_it_ret8_as_34",
+    "name": "as 34 slot3; as 34 slot4; as 34 slot8; as 34 slot9"
   },
   {
     "aircraftId": "tu_14t",
@@ -51260,6 +53745,11 @@
     "name": "no suspended armament"
   },
   {
+    "aircraftId": "typhoon_mk1b",
+    "presetId": "typhoon_mk1b_late_16x_rockets",
+    "name": "no suspended armament"
+  },
+  {
     "aircraftId": "typhoon_mk1b_late",
     "presetId": "typhoon_mk1b_late_default",
     "name": "no suspended armament"
@@ -51287,6 +53777,11 @@
   {
     "aircraftId": "typhoon_mk1b_late",
     "presetId": "typhoon_mk1b_late_rockets",
+    "name": "no suspended armament"
+  },
+  {
+    "aircraftId": "typhoon_mk1b_late",
+    "presetId": "typhoon_mk1b_late_16x_rockets",
     "name": "no suspended armament"
   },
   {
@@ -52147,6 +54642,11 @@
   {
     "aircraftId": "wyvern_s4",
     "presetId": "wyvern_s4_3x1000lb",
+    "name": "1000lbs gp slot5; 1000lbs gp; 1000lbs gp slot7"
+  },
+  {
+    "aircraftId": "wyvern_s4",
+    "presetId": "wyvern_s4_1000lb_gp",
     "name": "1000lbs slot5; 1000lbs; 1000lbs slot7"
   },
   {

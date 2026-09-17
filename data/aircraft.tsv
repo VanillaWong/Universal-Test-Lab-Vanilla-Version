@@ -13,11 +13,14 @@ a_4e_early_iaf	A-4E Early (M) Skyhawk	typeFighter	a_4e_early_default	Israel	6	37
 a_4e_late_iaf	A-4E Skyhawk	typeFighter	a_4e_late_iaf_default	Israel	6	3720	Aircraft
 a_4h	A-4H Skyhawk	typeFighter	a_4h_iaf_default	Israel	6	3720	Aircraft
 a_4n	A-4N Skyhawk II (Ayit)	typeFighter	a_4n_default	Israel	6	4153	Aircraft
+a_4ptm_malaysia	A-4PTM Skyhawk	typeFighter	a_4ptm_malaysia_default	Japan	6	3720	Aircraft
 a_5c	A-5C	typeFighter	a_5c_default	China	7	2000	Aircraft
 a_6e_tram	A-6E TRAM Intruder	typeFighter	a_6e_tram_default	USA	7	8165	Aircraft
 a_7d	A-7D Corsair II	typeBomber	a_7d_default	USA	7	7260	Aircraft
-a_7e	A-7E Corsair II	typeBomber	a_7e_default	USA	7	7260	Aircraft
-a_7e_thailand	A-7E Corsair II	typeBomber	a_7e_default	Japan	7	7260	Aircraft
+a_7e	A-7E Corsair II	typeBomber	a_7e_default	USA	7	8150	Aircraft
+a_7e_greece	A-7E Corsair II	typeBomber	a_7e_default	Israel	7	8150	Aircraft
+a_7e_thailand	A-7E Corsair II	typeBomber	a_7e_default	Japan	7	8150	Aircraft
+a_7h_greece	A-7H Corsair II	typeBomber	a_7h_default	Israel	7	8150	Aircraft
 a_7k	A-7K Corsair II	typeBomber	a_7k_default	USA	7	8130	Aircraft
 a-20g	A-20G-25 Havoc	typeBomber	a20g_default	USA	2	0	Aircraft
 a-26b	A-26B-50	typeStormovik	a_26b_100lbs	USA	4	2500	Aircraft
@@ -90,10 +93,11 @@ am_1_mauler	AM-1 Mauler	typeFighter	default	USA	4	4830	Aircraft
 amx	AMX Ghibli	typeFighter	amx_default	Italy	7	3800	Aircraft
 amx_a_1a_brazil	AMX A-1A Ghibli	typeFighter	amx_a_1a_brazil_default	Italy	7	3800	Aircraft
 ar_2	Ar-2	typeBomber	ar2_default	USSR / Russia	1	1530	Aircraft
+arado_234b_2_mt	Ar 234 B-2 (WB 151)	typeBomber	arado_234b_2_mt_default	Germany	5	1600	Aircraft
 arado-196a-3	Ar 196 A-3	typeFighter	ar_196a_3_default	Germany	1	0	Aircraft
 arado-196a-5	Ar 196 A-5	typeFighter	ar_196a_3_default	Sweden	1	0	Aircraft
 arado-234	Ar 234 B-2	typeBomber	arado234_default	Germany	5	1600	Aircraft
-arado-234c-3	Ar 234 C-3	typeBomber	arado234_default	Germany	5	1600	Aircraft
+arado-234c-3	Ar 234 C-3	typeBomber	arado234_default	Germany	5	2000	Aircraft
 ariete	Ariete	typeFighter	sagittario_2_default	Italy	6	0	Aircraft
 attaker_fb1	Attacker FB 1	typeFighter	attaker_fb1_default	Great Britain	5	0	Aircraft
 attaker_fb2	Attacker FB.2	typeFighter	attaker_fb1_default	Great Britain	5	0	Aircraft
@@ -105,6 +109,7 @@ av_8c	AV-8C Harrier	typeFighter	av_8c_default	USA	6	4000	Aircraft
 av_8s_late_thailand	AV-8S Matador (Late)	typeFighter	av_8s_late_thailand_default	Japan	7	4000	Aircraft
 av_8s_thailand	AV-8S Matador (Early)	typeFighter	av_8s_thailand_default	Japan	6	4000	Aircraft
 avenger_mk1	Avenger Mk II	typeBomber	tbf_1c_default	Great Britain	2	1020	Aircraft
+aw_159	AW159 Wildcat HMA2	typeFighter	aw_159_default	Great Britain	7	570	Helicopter
 b_10b	B-10B	typeBomber	b_10b_250lb	USA	1	2050	Aircraft
 b_18a	B-18A	typeBomber	b_18a_default	USA	1	0	Aircraft
 b_239_finland	Brewster Model 239	typeFighter	b_239_finland_default	Sweden	2	0	Aircraft
@@ -116,6 +121,7 @@ b_25j_30_china	B-25J-30 Mitchell	typeBomber	b_25j_20_default	China	3	0	Aircraft
 b_25j_30_france	B-25J-30 Mitchell	typeBomber	b_25j_20_default	Other	0	0	Aircraft
 b_25j_30_vvs_ussr	B-25J-30 Mitchell	typeBomber	b_25j_30_12xfab50	USSR / Russia	3	0	Aircraft
 b_26b_c	B-26B Marauder	typeBomber	b_26b_c_default	USA	3	0	Aircraft
+b_26b_indonesia_kalong	B-26B Invader	typeStormovik	b_26b_indonesia_kalong_gun_pod	Japan	3	2500	Aircraft
 b_26c_france	B-26C Marauder	typeBomber	b_26b_c_default	France	3	0	Aircraft
 b_34	B-34	typeBomber	b_34_250lbs_bombs	USA	2	0	Aircraft
 b_48_firecrest	Firecrest	typeFighter	b_48_firecrest_default	Great Britain	2	820	Aircraft
@@ -149,7 +155,7 @@ ba_65_a80	Ba.65 A.80	typeFighter	ba_65_a80_default	Italy	1	0	Aircraft
 ba_65_k14_l	Ba.65 (K.14) L	typeFighter	ba_65_k14_l_default	Italy	1	0	Aircraft
 bb-1	BB-1	typeStormovik	bb-1_default	USSR / Russia	1	1245	Aircraft
 be_6	Be-6	typeBomber	be_6_fab250	USSR / Russia	4	4400	Aircraft
-beaufighter_mk1_40mm	Beaufighter Mk I Prototype (40-mm)	typeFighter	beaufighter_mk1_40mm_default	Great Britain	2	0	Aircraft
+beaufighter_mk1_40mm	Beaufighter Mk I Prototype (40 mm)	typeFighter	beaufighter_mk1_40mm_default	Great Britain	2	0	Aircraft
 beaufighter_mk21	Beaufighter Mk 21	typeFighter	beaufighter_mk21_default	Great Britain	2	930	Aircraft
 beaufighter_mk6c	Beaufighter Mk VIc	typeFighter	beaufighter_mk6c_default	Great Britain	2	0	Aircraft
 beaufighter_mkx	Beaufighter Mk X	typeFighter	beaufighter_mkx_default	Great Britain	2	930	Aircraft
@@ -211,6 +217,8 @@ bv-155b-1	BV 155 B-1	typeFighter	bv-155b-1_default	Germany	3	0	Aircraft
 bv-238	BV 238	typeBomber	bv-238_default	Germany	2	0	Aircraft
 c_3604	C-3604	typeStormovik	c_3604_default	Germany	2	410	Aircraft
 c-47	C-47	typeBomber	c_47_default	Other	0	0	Aircraft
+ca_27_mk32_malaysia	CA-27 Sabre Mk.32	typeFighter	ca_27_default	Japan	6	1100	Aircraft
+ca_27_mk32_raaf	CA-27 Sabre Mk.32	typeFighter	ca_27_default	Great Britain	6	1100	Aircraft
 canberra_bimk6	Canberra B (I) Mk 6	typeBomber	canberra_500lb_mc	Great Britain	5	2450	Aircraft
 canberra_bimk6_france_killstreak	Canberra B Mk 6	typeBomber	canberra_1xmark7	Other	0	0	Aircraft
 canberra_bimk6_germany_killstreak	Canberra B Mk 6	typeBomber	canberra_1xmark7	Other	0	0	Aircraft
@@ -284,6 +292,8 @@ er-2_m105r_tat	Yer-2 (M-105R) TAT-BT	typeBomber	er_2_m105_tat_12xfab50	USSR / Ru
 etndard_4m	Etendard IVM	typeFighter	etendard_4m_default	France	6	1610	Aircraft
 f_100f_china	F-100F Super Sabre	typeFighter	f_100f_default	China	6	2270	Aircraft
 f_101c	F-101C Voodoo	typeFighter	f_101c_default	USA	6	0	Aircraft
+f_102a_greece	F-102A "Delta Dagger"	typeFighter	f_102a_late_default	Israel	6	3000	Aircraft
+f_102a_late	F-102A "Delta Dagger"	typeFighter	f_102a_late_default	USA	6	3000	Aircraft
 f_105d_japan_killstreak	F-105D Thunderchief	typeFighter	f_105d_killstreak_default	Other	0	5800	Aircraft
 f_105d_killstreak	F-105D Thunderchief	typeFighter	f_105d_killstreak_default	Other	0	5800	Aircraft
 f_106a_1972	F-106A "Six Shooter"	typeFighter	f_106a_1972_default	USA	6	3000	Aircraft
@@ -298,6 +308,7 @@ f_14a_early	F-14A Tomcat (Early)	typeFighter	f_14a_early_default	USA	8	6580	Airc
 f_14a_iriaf	F-14A Tomcat (Early) IRIAF	typeFighter	f_14a_iriaf_default	USA	8	6580	Aircraft
 f_14b	F-14B Tomcat	typeFighter	f_14b_default	USA	8	6580	Aircraft
 f_14d	F-14D Super Tomcat	typeFighter	f_14d_default	USA	8	6580	Aircraft
+f_14d_vf_11	F-14D (VF-11) Super Tomcat	typeFighter	f_14b_default	USA	8	6580	Aircraft
 f_15a	F-15A Eagle	typeFighter	f_15a_default	USA	8	7711	Aircraft
 f_15a_iaf	F-15A Baz	typeFighter	f_15a_default	Israel	8	7711	Aircraft
 f_15c_baz_msip	F-15C Baz (Improved) Meshupar	typeFighter	f_15c_baz_msip_default	Israel	8	11793	Aircraft
@@ -341,12 +352,14 @@ f_16i_sufa	F-16I Sufa	typeFighter	f_16i_sufa_default	Israel	8	5420	Aircraft
 f_16xl	F-16XL-1	typeFighter	f_16xl_default	USA	8	6804	Aircraft
 f_20a	F-20A Tigershark	typeFighter	f_20a_default	USA	8	3600	Aircraft
 f_222_2	F.222.2	typeBomber	f_222_50kg_gammn	France	1	0	Aircraft
-f_2a	F-2A	typeFighter	f_2a_default	Japan	8	5900	Aircraft
-f_2a_adtw	F-2A ADTW	typeFighter	f_2a_adtw_default	Japan	8	5900	Aircraft
-f_2a_killstreak	F-2A	typeFighter	f_2a_killstreak_default	Other	0	5900	Aircraft
+f_2a	F-2A Viper Zero	typeFighter	f_2a_default	Japan	8	5900	Aircraft
+f_2a_adtw	F-2A ADTW Viper Zero	typeFighter	f_2a_adtw_default	Japan	8	5900	Aircraft
+f_2a_killstreak	F-2A Viper Zero	typeFighter	f_2a_killstreak_default	Other	0	5900	Aircraft
 f_47n_25_re_china	F-47N-25-RE Thunderbolt	typeFighter	f_47n_25_re_china_default	China	3	1970	Aircraft
+f_4e_aup_greece	F-4E AUP Phantom II	typeFighter	f_4e_aup_greece_default	Israel	8	7257	Aircraft
 f_4e_event	F-4E Phantom II	typeFighter	f_4e_event_default	USA	7	7257	Aircraft
 f_6c_pakistan	F-6C	typeFighter	f_6c_pakistan_default	China	6	1600	Aircraft
+f_86em_greece	F-86E(M)	typeFighter	f_86em_greece_default	Israel	6	1300	Aircraft
 f1	Mitsubishi F-1	typeFighter	f1_default	Japan	6	4000	Aircraft
 f-100a_china	F-100A Super Sabre	typeFighter	f_100a_default	China	6	1010	Aircraft
 f-100d	F-100D Super Sabre	typeFighter	f_100_default	USA	6	3220	Aircraft
@@ -433,6 +446,7 @@ f-84f_italy	F-84F Thunderstreak	typeFighter	f_84f_default	Italy	6	2700	Aircraft
 f-84g	F-84G-21-RE Thunderjet	typeFighter	f_84g_default	USA	5	2710	Aircraft
 f-84g_china	F-84G-21-RE Thunderjet	typeFighter	f_84g_default	China	5	2710	Aircraft
 f-84g_france	F-84G-26-RE Thunderjet	typeFighter	f_84g_default	France	5	2710	Aircraft
+f-84g_greece	F-84G-16-RE Thunderjet	typeFighter	f_84g_default	Israel	5	2710	Aircraft
 f-84g_italy	F-84G-21-RE Thunderjet	typeFighter	f_84g_default	Italy	5	2710	Aircraft
 f-84g_thailand	F-84G-21-RE Thunderjet	typeFighter	f_84g_default	Japan	5	2710	Aircraft
 f-84g-31-re_china	F-84G-31-RE Thunderjet	typeFighter	f_84g_default	China	5	2710	Aircraft
@@ -554,6 +568,7 @@ gladiator_mk2_tuck	Tuck's Gladiator Mk II	typeFighter	gladiator_mk2_default	Grea
 go229_v3	Ho 229 V3	typeFighter	go_229_default	Germany	5	0	Aircraft
 h_34	H-34	typeFighter	h_34_default	USA	5	0	Helicopter
 h_34_france	H-34	typeFighter	h_34_default	France	5	0	Helicopter
+h145m	H145M	typeFighter	h145m_default	Germany	7	1839	Helicopter
 h6k4	H6K4	typeBomber	h6k4_default	Japan	1	0	Aircraft
 h-75a-1_finland	Hawk H-75A-1	typeFighter	p_40e_default	Other	0	0	Aircraft
 h-75a-1_france	H-75A-1	typeFighter	h_75a_1_france_default	France	1	0	Aircraft
@@ -587,6 +602,8 @@ hawk_200	Hawk 200	typeFighter	hawk_200_default	Great Britain	7	3500	Aircraft
 hawk_200_rda	Hawk 200 RDA	typeFighter	hawk_200_rda_default	Great Britain	7	3500	Aircraft
 hawk_209_indonesia	Hawk 209	typeFighter	hawk_209_indonesia_default	Japan	7	3500	Aircraft
 hawk_iii	Hawk III	typeFighter	hawk_iii_default	China	1	0	Aircraft
+hawk_t1a	Hawk T Mk 1A (Fuselage Replacement Programme)	typeFighter	hawk_t1a_default	Great Britain	5	1500	Aircraft
+hawk_t1a_early	Hawk T Mk 1A	typeFighter	hawk_t1a_default	Great Britain	5	1500	Aircraft
 he_100d_1	He 100 D-1	typeFighter	he_100d_1_default	Germany	1	0	Aircraft
 he_112a_0	He 112 A-0	typeFighter	he_112a_0_default	Germany	1	0	Aircraft
 he_112b_0	He 112 B-0	typeFighter	he_112b_0_default	Germany	2	0	Aircraft
@@ -687,7 +704,7 @@ il_28_china_killstreak	IL-28	typeBomber	il_28_1xrds4	Other	0	0	Aircraft
 il_28_german	IL-28	typeBomber	il_28_12xfab100	Germany	5	0	Aircraft
 il_28_hungary	IL-28	typeBomber	il_28_12xfab100	Italy	5	0	Aircraft
 il_28_killstreak	IL-28	typeBomber	il_28_1xrds4	Other	0	0	Aircraft
-il_28sh	IL-28Sh	typeBomber	il_28sh_12xfab100	USSR / Russia	5	3010	Aircraft
+il_28sh	IL-28Sh	typeBomber	il_28sh_12xfab100	USSR / Russia	5	3100	Aircraft
 il_2m_1943	IL-2M (1943)	typeStormovik	default	USSR / Russia	3	625	Aircraft
 il_8_1944	IL-8 (1944)	typeStormovik	il_8_1944_default	USSR / Russia	3	1025	Aircraft
 il-10	IL-10	typeStormovik	IL10_default	USSR / Russia	4	600	Aircraft
@@ -700,13 +717,14 @@ il-2m_mstitel	IL-2M "Avenger"	typeStormovik	default	USSR / Russia	3	625	Aircraft
 il-4	IL-4	typeBomber	il_4_default	USSR / Russia	2	2900	Aircraft
 intruder_mk_1	Havoc Mk I	typeBomber	intruder_mk_1_default	Great Britain	2	0	Aircraft
 itp_m1	ITP (M-1)	typeFighter	itp_m1_default	USSR / Russia	3	0	Aircraft
-j_10a	J-10A (Early)	typeFighter	j_10a_default	China	8	7000	Aircraft
-j_10a_killstreak	J-10A	typeFighter	j_10a_default	Other	0	7000	Aircraft
-j_10c	J-10C	typeFighter	j_10c_default	China	9	7000	Aircraft
-j_11	J-11	typeFighter	j_11_default	China	8	8040	Aircraft
-j_11a	J-11A	typeFighter	j_11a_default	China	8	8040	Aircraft
-j_11b	J-11B	typeFighter	j_11b_default	China	8	8040	Aircraft
-j_15t	J-15T	typeFighter	j_15t_default	China	9	6500	Aircraft
+j_10a	J-10A (Early) Vigorous Dragon	typeFighter	j_10a_default	China	8	7000	Aircraft
+j_10a_killstreak	J-10A Vigorous Dragon	typeFighter	j_10a_default	Other	0	7000	Aircraft
+j_10c	J-10C Vigorous Dragon	typeFighter	j_10c_default	China	9	7000	Aircraft
+j_11	J-11 Responsive Dragon	typeFighter	j_11_default	China	8	8040	Aircraft
+j_11a	J-11A Responsive Dragon	typeFighter	j_11a_default	China	8	8040	Aircraft
+j_11b	J-11B Responsive Dragon	typeFighter	j_11b_default	China	8	8040	Aircraft
+j_15t	J-15T Flying Shark	typeFighter	j_15t_default	China	9	6500	Aircraft
+j_16	J-16 Hidden Dragon	typeFighter	j_16_default	China	9	8040	Aircraft
 j_22m1a	J-22M1A	typeFighter	j_22m1a_default	USSR / Russia	6	7711	Aircraft
 j_7_mk2	J-7II	typeFighter	j_7_mk2_default	China	6	2000	Aircraft
 j_7d	J-7D	typeFighter	j_7d_default	China	7	1600	Aircraft
@@ -727,14 +745,14 @@ j7w1	J7W1 Shinden	typeFighter	j7w1_default	Japan	4	0	Aircraft
 j8m1	Ki-200 Shusui	typeFighter	J8M1_default	Japan	5	0	Aircraft
 j9_early	J9 Early	typeFighter	j9_default	Sweden	2	0	Aircraft
 jaguar_a	Jaguar A	typeFighter	jaguar_a_default	France	7	4000	Aircraft
-jaguar_a_germany_killstreak	Jaguar A	typeFighter	jaguar_a_killstreak_default	Other	0	0	Aircraft
-jaguar_a_iaf_killstreak	Jaguar A	typeFighter	jaguar_a_killstreak_default	Other	0	0	Aircraft
-jaguar_a_italy_killstreak	Jaguar A	typeFighter	jaguar_a_killstreak_default	Other	0	0	Aircraft
-jaguar_a_japan_killstreak	Jaguar A	typeFighter	jaguar_a_killstreak_default	Other	0	0	Aircraft
-jaguar_a_killstreak	Jaguar A	typeFighter	jaguar_a_killstreak_default	Other	0	0	Aircraft
-jaguar_a_sweden_killstreak	Jaguar A	typeFighter	jaguar_a_killstreak_default	Other	0	0	Aircraft
-jaguar_a_uk_killstreak	Jaguar A	typeFighter	jaguar_a_killstreak_default	Other	0	0	Aircraft
-jaguar_a_usa_killstreak	Jaguar A	typeFighter	jaguar_a_killstreak_default	Other	0	0	Aircraft
+jaguar_a_germany_killstreak	Jaguar A	typeFighter	jaguar_a_killstreak_default	Other	0	4000	Aircraft
+jaguar_a_iaf_killstreak	Jaguar A	typeFighter	jaguar_a_killstreak_default	Other	0	4000	Aircraft
+jaguar_a_italy_killstreak	Jaguar A	typeFighter	jaguar_a_killstreak_default	Other	0	4000	Aircraft
+jaguar_a_japan_killstreak	Jaguar A	typeFighter	jaguar_a_killstreak_default	Other	0	4000	Aircraft
+jaguar_a_killstreak	Jaguar A	typeFighter	jaguar_a_killstreak_default	Other	0	4000	Aircraft
+jaguar_a_sweden_killstreak	Jaguar A	typeFighter	jaguar_a_killstreak_default	Other	0	4000	Aircraft
+jaguar_a_uk_killstreak	Jaguar A	typeFighter	jaguar_a_killstreak_default	Other	0	4000	Aircraft
+jaguar_a_usa_killstreak	Jaguar A	typeFighter	jaguar_a_killstreak_default	Other	0	4000	Aircraft
 jaguar_e	Jaguar E	typeFighter	jaguar_e_default	France	7	4000	Aircraft
 jaguar_gr1	Jaguar GR.1	typeFighter	jaguar_gr1_default	Great Britain	6	4070	Aircraft
 jaguar_gr1a	Jaguar GR.1A	typeFighter	jaguar_gr1a_default	Great Britain	7	4100	Aircraft
@@ -809,6 +827,7 @@ ki_84_ko	Ki-84 Ko Hayate	typeFighter	ki_84_ko_default	Japan	4	0	Aircraft
 ki_84_ko_china	Ki-84 Ko Hayate	typeFighter	ki_84_ko_default	China	4	0	Aircraft
 ki_84_otsu	Ki-84 Otsu Hayate	typeFighter	ki_84_ko_default	Japan	4	0	Aircraft
 ki_87	Ki-87	typeFighter	ki_87_default	Japan	4	0	Aircraft
+ki_93_1_ko	Ki-93-I Ko	typeStormovik	ki_93_1_ko_default	Japan	3	0	Aircraft
 ki_94_2	Ki-94-II	typeFighter	ki_94_2_default	Japan	4	0	Aircraft
 ki-27_otsu	Ki-27 Otsu	typeFighter	ki_27_default	Japan	1	0	Aircraft
 ki-27_otsu_china	Ki-27 Otsu	typeFighter	ki_27_default	China	1	0	Aircraft
@@ -860,7 +879,7 @@ lancaster_mk3	Lancaster B Mk III	typeBomber	lancaster_mk3_default	Great Britain	
 lancaster_mr7_france	Lancaster MR.7	typeBomber	lancaster_mr7_france_default	France	4	0	Aircraft
 late_298d	Late 298D	typeFighter	late_298d_default	France	1	675	Aircraft
 leo_451_early	LeO 451 early	typeBomber	leo_451_default	France	2	2100	Aircraft
-leo_451_late	LeO 451 late	typeBomber	leo_451_default	France	2	2100	Aircraft
+leo_451_late	LeO 451 Late	typeBomber	leo_451_default	France	2	2100	Aircraft
 li-2	Li-2	typeBomber	LI2_default	Other	0	0	Aircraft
 lightning_f53	Lightning F.53	typeFighter	lightning_f35_default	Great Britain	6	2000	Aircraft
 lightning_f6	Lightning F.6	typeFighter	lightning_f6_default	Great Britain	6	0	Aircraft
@@ -934,7 +953,7 @@ meteor_fmk4_sw	Meteor F Mk 4 type G.41G	typeFighter	meteor_fmk3_default	Great Br
 meteor_fmk8	Meteor F Mk 8 G.41K	typeFighter	meteor_fmk8_default	Great Britain	5	0	Aircraft
 meteor_fmk8_belgium	Meteor F Mk.8	typeFighter	meteor_fmk8_belgium_default	France	5	500	Aircraft
 meteor_fmk8_iaf	Meteor F Mk.8	typeFighter	meteor_fmk8_default	Israel	5	0	Aircraft
-meteor_fmk8_reaper	Meteor F Mk.8 Reaper	typeFighter	meteor_fmk8_default	Great Britain	5	0	Aircraft
+meteor_fmk8_reaper	Meteor F Mk.8 Reaper	typeFighter	meteor_fmk8_default	Great Britain	5	1950	Aircraft
 meteor_frmk9_iaf	Meteor FR Mk.9	typeFighter	meteor_frmk9_iaf_default	Israel	5	0	Aircraft
 meteor_nfmk13	Meteor NF Mk.13	typeFighter	meteor_nfmk13_default	Israel	5	0	Aircraft
 mh_60l_dap	MH-60L DAP Black Hawk	typeFighter	mh_60l_dap_default	USA	7	3000	Helicopter
@@ -964,13 +983,13 @@ mi_8tb	Mi-8TB	typeFighter	mi_8tb_default	Germany	5	2500	Helicopter
 mi_8tv	Mi-8TV	typeFighter	mi_8tv_default	USSR / Russia	5	2500	Helicopter
 mig_21_2000_iaf	MiG-21 2000	typeFighter	mig_21_2000_iaf_default	Israel	7	1300	Aircraft
 mig_21_bis_finland	MiG-21bis	typeFighter	mig_21_bis_finland_default	Sweden	7	1300	Aircraft
-mig_23bn	MiG-23BN	typeFighter	mig_23bn_default	Germany	6	3050	Aircraft
-mig_23m	MiG-23M	typeFighter	mig_23m_default	USSR / Russia	7	2000	Aircraft
-mig_23mf_germany	MiG-23MF	typeFighter	mig_23mf_default	Germany	7	2000	Aircraft
-mig_23mf_hungary	MiG-23MF	typeFighter	mig_23mf_default	Italy	7	2000	Aircraft
-mig_23ml	MiG-23ML	typeFighter	mig_23ml_default	USSR / Russia	7	2000	Aircraft
-mig_23mla	MiG-23MLA	typeFighter	mig_23mla_default	Germany	7	2000	Aircraft
-mig_23mld	MiG-23MLD	typeFighter	mig_23mld_default	USSR / Russia	7	2000	Aircraft
+mig_23bn	MiG-23BN	typeFighter	mig_23bn_default	Germany	6	3100	Aircraft
+mig_23m	MiG-23M	typeFighter	mig_23m_default	USSR / Russia	7	2100	Aircraft
+mig_23mf_germany	MiG-23MF	typeFighter	mig_23mf_default	Germany	7	2100	Aircraft
+mig_23mf_hungary	MiG-23MF	typeFighter	mig_23mf_default	Italy	7	2100	Aircraft
+mig_23ml	MiG-23ML	typeFighter	mig_23ml_default	USSR / Russia	7	2100	Aircraft
+mig_23mla	MiG-23MLA	typeFighter	mig_23mla_default	Germany	7	2100	Aircraft
+mig_23mld	MiG-23MLD	typeFighter	mig_23mld_default	USSR / Russia	7	2100	Aircraft
 mig_25pd	MiG-25PD	typeFighter	mig_25pd_default	USSR / Russia	7	3000	Aircraft
 mig_27k	MiG-27K	typeFighter	mig_27k_default	USSR / Russia	7	4100	Aircraft
 mig_27m	MiG-27M	typeFighter	mig_27m_default	USSR / Russia	7	4100	Aircraft
@@ -989,6 +1008,7 @@ mig_29smt_9_19_missile_test	MiG-29SMT (9-19)	typeFighter	mig_29smt_9_19_6x_r77_d
 mig_3_series_1_15	MiG-3-15	typeFighter	mig_3_series_1_15_default	USSR / Russia	1	0	Aircraft
 mig_3_series_1_15_bk_pod	MiG-3-15 (BK)	typeFighter	mig_3_series_1_15_default	USSR / Russia	2	0	Aircraft
 mig_3_series_34	MiG-3-34	typeFighter	mig_3_series_34_default	USSR / Russia	2	0	Aircraft
+mig_35	MiG-35	typeFighter	mig_35_default	USSR / Russia	9	6500	Aircraft
 mig-15	MiG-15bis	typeFighter	mig_15bis_nr23_default	USSR / Russia	5	0	Aircraft
 mig-15_ns23	MiG-15	typeFighter	mig_15bis_nr23_default	USSR / Russia	5	0	Aircraft
 mig-15bis_ish	MiG-15bis ISh	typeFighter	mig_15bis_ish_default	USSR / Russia	5	0	Aircraft
@@ -1021,8 +1041,9 @@ mig-21_smt	MiG-21SMT	typeFighter	mig_21_smt_default	USSR / Russia	7	1300	Aircraf
 mig-21_sps_k	MiG-21 SPS-K	typeFighter	mig-21_sps_k_default	Germany	6	1300	Aircraft
 mig-9	MiG-9	typeFighter	mig_9_default	USSR / Russia	5	0	Aircraft
 mig-9_china	MiG-9	typeFighter	mig_9_default	China	5	0	Aircraft
-mig-9_late_china	MiG-9 late	typeFighter	mig_9_ussr_default	China	5	0	Aircraft
+mig-9_late_china	MiG-9 Late	typeFighter	mig_9_ussr_default	China	5	0	Aircraft
 mig-9_ussr	MiG-9 Late	typeFighter	mig_9_ussr_default	USSR / Russia	5	0	Aircraft
+mirage_2000_5eg_mk2_greece	Mirage 2000-5EG	typeFighter	mirage_2000_5eg_mk2_greece_default	Israel	8	6200	Aircraft
 mirage_2000_5ei	Mirage 2000-5Ei	typeFighter	mirage_2000_5ei_default	China	8	6200	Aircraft
 mirage_2000_5f	Mirage 2000-5F	typeFighter	mirage_2000_5f_default	France	8	6200	Aircraft
 mirage_2000_5f_missile_test	Mirage 2000-5F	typeFighter	mirage_2000_5f_4x_mica_em_2x_r_550_magic_2_default	Other	0	6200	Aircraft
@@ -1039,19 +1060,20 @@ mirage_5ba	Mirage 5BA	typeFighter	mirage_5ba_default	France	7	3500	Aircraft
 mirage_5f	Mirage 5F	typeFighter	mirage_5f_default	France	7	4000	Aircraft
 mirage_f1c	Mirage F1C	typeFighter	mirage_f1c_default	France	7	3000	Aircraft
 mirage_f1c_200	Mirage F1C-200	typeFighter	mirage_f1c_default	France	7	3000	Aircraft
+mirage_f1cg_greece	Mirage F1CG	typeFighter	mirage_f1cg_greece_default	Israel	7	4000	Aircraft
 mirage_f1ct	Mirage F1CT	typeFighter	mirage_f1ct_default	France	7	4000	Aircraft
 mirage_milan	Milan	typeFighter	mirage_milan_default	France	6	3000	Aircraft
 morko_morane	Mörkö-Morane	typeFighter	morko_morane_default	Sweden	2	0	Aircraft
 mosquito_b_mk16	Mosquito B.Mk.XVI	typeBomber	mosquito_b_mk16_default	Great Britain	3	3720	Aircraft
 mosquito_f_mk2_norway	Mosquito F.Mk.II	typeBomber	mosquito_f_mk2_default	Sweden	3	0	Aircraft
 mosquito_fb_mk18	Mosquito FB Mk XVIII	typeBomber	mosquito_fb_mk6_default	Great Britain	3	0	Aircraft
-mosquito_fb_mk26_china	Mosquito FB.Mk.26	typeBomber	mosquito_fb_mk6_default	China	3	0	Aircraft
-mosquito_fb_mk6	Mosquito FB Mk VI	typeBomber	mosquito_fb_mk6_default	Great Britain	3	0	Aircraft
-mosquito_fb_mk6_ash_norway	Mosquito FB Mk VI ASH	typeBomber	mosquito_fb_mk6_default	Sweden	3	0	Aircraft
-mosquito_fb_mk6_norway	Mosquito FB Mk VI	typeBomber	mosquito_fb_mk6_default	Sweden	3	0	Aircraft
+mosquito_fb_mk26_china	Mosquito FB.Mk.26	typeBomber	mosquito_fb_mk6_default	China	3	2000	Aircraft
+mosquito_fb_mk6	Mosquito FB Mk VI	typeBomber	mosquito_fb_mk6_default	Great Britain	3	2000	Aircraft
+mosquito_fb_mk6_ash_norway	Mosquito FB Mk VI ASH	typeBomber	mosquito_fb_mk6_default	Sweden	3	2000	Aircraft
+mosquito_fb_mk6_norway	Mosquito FB Mk VI	typeBomber	mosquito_fb_mk6_default	Sweden	3	2000	Aircraft
 mosquito_j30_sweden	Mosquito J30	typeBomber	mosquito_j30_sweden_default	Sweden	3	0	Aircraft
 mosquito_nf_mk2	Mosquito NF.Mk.II	typeBomber	mosquito_nf_mk2_default	Great Britain	3	0	Aircraft
-mosquito_tr_mk33	Mosquito TR.Mk.33	typeBomber	mosquito_fb_mk6_default	Great Britain	3	0	Aircraft
+mosquito_tr_mk33	Mosquito TR.Mk.33	typeBomber	mosquito_fb_mk6_default	Great Britain	3	2000	Aircraft
 ms_405c1	M.S.405C1	typeFighter	ms_405_default	France	1	0	Aircraft
 ms_406c1	M.S.406C1	typeFighter	ms_406c1_default	France	1	0	Aircraft
 ms_410c1	M.S.410	typeFighter	ms_410c1_default	France	2	0	Aircraft
@@ -1173,20 +1195,20 @@ pbj_1h	PBJ-1H	typeBomber	default	USA	3	0	Aircraft
 pbj_1j	PBJ-1J	typeBomber	default	USA	3	0	Aircraft
 pbj_1j_1	PBJ-1J Mitchell	typeBomber	b_25j_20_default	Other	0	0	Aircraft
 pbm_1	PBM-1 "Mariner"	typeBomber	PBM-1_default	USA	1	0	Aircraft
-pbm_3	PBM-3 "Mariner"	typeBomber	PBM-3_default	USA	2	0	Aircraft
+pbm_3	PBM-3 "Mariner"	typeBomber	PBM-3_default	USA	2	5800	Aircraft
 pbm_5a	PBM-5A "Mariner"	typeBomber	pbm_5a_default	USA	3	5800	Aircraft
 pby-5	PBY-5 Catalina	typeBomber	pby_5_default	USA	1	2200	Aircraft
 pby-5a	PBY-5A Catalina	typeBomber	pby_5_16x100lbs	USA	1	2200	Aircraft
 pby-5a_late_france	PBY-5A Catalina (Late)	typeBomber	pby_5a_late_france_16x100lbs	France	1	2200	Aircraft
 pby-5a_raf	Catalina Mk IIIa	typeBomber	pby_5_16x100lbs	Great Britain	1	2200	Aircraft
 pby-5a_ussr	PBY-5A Catalina	typeBomber	pby_5_16x100lbs	USSR / Russia	1	2200	Aircraft
-pe-2-1	Pe-2-1 Peshka	typeBomber	pe_2_1_default	USSR / Russia	2	1065	Aircraft
-pe-2-110	Pe-2-110 Peshka	typeBomber	pe_2_31_default	USSR / Russia	3	1050	Aircraft
-pe-2-205	Pe-2-205 Peshka	typeBomber	pe_2_31_default	USSR / Russia	3	1050	Aircraft
-pe-2-31	Pe-2-31 Peshka	typeBomber	pe_2_31_default	USSR / Russia	2	1065	Aircraft
-pe-2-359	Pe-2-359 Peshka	typeBomber	pe_2_31_default	USSR / Russia	3	1050	Aircraft
-pe-2-359_china	Pe-2-359 Peshka	typeBomber	pe_2_31_default	China	4	1050	Aircraft
-pe-2-83	Pe-2-83 Peshka	typeBomber	pe_2_31_default	USSR / Russia	2	1065	Aircraft
+pe-2-1	Pe-2-1 Peshka	typeBomber	pe_2_1_default	USSR / Russia	2	1600	Aircraft
+pe-2-110	Pe-2-110 Peshka	typeBomber	pe_2_31_default	USSR / Russia	3	1600	Aircraft
+pe-2-205	Pe-2-205 Peshka	typeBomber	pe_2_31_default	USSR / Russia	3	1600	Aircraft
+pe-2-31	Pe-2-31 Peshka	typeBomber	pe_2_31_default	USSR / Russia	2	1600	Aircraft
+pe-2-359	Pe-2-359 Peshka	typeBomber	pe_2_31_default	USSR / Russia	3	1600	Aircraft
+pe-2-359_china	Pe-2-359 Peshka	typeBomber	pe_2_31_default	China	4	1600	Aircraft
+pe-2-83	Pe-2-83 Peshka	typeBomber	pe_2_31_default	USSR / Russia	2	1600	Aircraft
 pe-3	Pe-3	typeBomber	pe_3_default	USSR / Russia	1	720	Aircraft
 pe-3_bis	Pe-3bis	typeBomber	pe_3_default	USSR / Russia	2	720	Aircraft
 pe-3_early	Pe-3 Early	typeBomber	pe_3_default	USSR / Russia	1	720	Aircraft
@@ -1208,6 +1230,7 @@ r2y2_kai	R2Y2 Keiun-Kai V3	typeFighter	r2y2_default	Japan	5	0	Aircraft
 r2y2_v1	R2Y2 Keiun-Kai V1	typeFighter	r2y2_default	Japan	5	0	Aircraft
 r2y2_v2	R2Y2 Keiun-Kai V2	typeFighter	r2y2_default	Japan	5	0	Aircraft
 rafale_c_f3	Rafale C F3-R	typeFighter	rafale_c_f3_default	France	9	9500	Aircraft
+rafale_eg_greece	Rafale EG	typeFighter	rafale_c_f3_default	Israel	9	9500	Aircraft
 rafale_m_f3r	Rafale M F3-R	typeFighter	rafale_c_f3_default	France	9	9500	Aircraft
 rah_66	RAH-66 Comanche	typeFighter	rah_66_default	USA	6	1000	Helicopter
 re_2000_ga	Re.2000 G.A.	typeFighter	re_2000_ga_default	Italy	1	0	Aircraft
@@ -1260,6 +1283,7 @@ saab_j29f	J29F Tunnan	typeFighter	saab_j29f_default	Sweden	6	800	Aircraft
 saab_j32b	J32B Lansen	typeFighter	saab_j32b_default	Sweden	6	520	Aircraft
 saab_j35a	J35A Draken	typeFighter	saab_j35a_default	Sweden	6	660	Aircraft
 saab_j35d	J35D Draken	typeFighter	saab_j35d_default	Sweden	7	660	Aircraft
+saab_j35j	J35J Draken	typeFighter	saab_j35j_default	Sweden	7	1500	Aircraft
 saab_j35xs	Saab J35XS Draken	typeFighter	saab_j35xs_default	Sweden	7	1500	Aircraft
 saab_ja37	JA37C Jaktviggen	typeFighter	saab_ja37_default	Sweden	7	5000	Aircraft
 saab_ja37d	JA37D Viggen	typeFighter	saab_ja37d_default	Sweden	8	5000	Aircraft
@@ -1290,13 +1314,15 @@ sb_2m_105	SB 2M-105	typeBomber	sb_2m_105_default	USSR / Russia	1	1600	Aircraft
 sb2c_1c	SB2C-1C Helldiver	typeBomber	sb2c_1c_default	USA	2	0	Aircraft
 sb2c_4	SB2C-4 Helldiver	typeBomber	sb2c_4_5in_rockets	USA	2	1040	Aircraft
 sb2c_5_france	SB2C-5 Helldiver	typeBomber	sb2c_5_5in_rockets	France	3	2260	Aircraft
+sb2c_5_greece	SB2C-5 Helldiver	typeBomber	sb2c_5_5in_rockets	Israel	4	2260	Aircraft
 sb2c_5_thailand	SB2C-5 Helldiver	typeBomber	sb2c_5_5in_rockets	Japan	3	2260	Aircraft
 sb2u-2	SB2U-2	typeBomber	sb2u_2_default	USA	1	725	Aircraft
 sb2u-3	SB2U-3	typeBomber	sb2u_3_default	USA	1	725	Aircraft
 sbd-3	SBD-3 Dauntless	typeBomber	sbd_3_default	USA	1	750	Aircraft
 sc_1	SC-1 Seahawk	typeFighter	sc_1_default	USA	1	0	Aircraft
-scimitar_f1	Scimitar F Mk.1	typeFighter	scimitar_f1_default	Great Britain	6	1920	Aircraft
+scimitar_f1	Scimitar F Mk.1	typeFighter	scimitar_f1_default	Great Britain	6	2000	Aircraft
 scout_ah_mk1	Scout AH.Mk.1	typeFighter	scout_ah_mk1_default	Great Britain	5	0	Helicopter
+se_203	SE.203 Aquilon 203	typeFighter	se_203_default	France	5	3100	Aircraft
 sea_fury_fb11	Sea Fury FB 11	typeFighter	default	Great Britain	4	990	Aircraft
 sea_fury_fb51	Sea Fury FB 51	typeFighter	default	France	4	990	Aircraft
 sea_harrier_fa2	Sea Harrier FA 2	typeFighter	sea_harrier_fa2_default	Great Britain	8	4000	Aircraft
@@ -1304,10 +1330,10 @@ sea_hawk_fga50_netherlands	Sea Hawk Mk.50	typeFighter	sea_hawk_default	France	5	
 sea_hawk_fga6	Sea Hawk FGA.6	typeFighter	sea_hawk_default	Great Britain	5	1250	Aircraft
 sea_hawk_mk100	Sea Hawk Mk.100	typeFighter	sea_hawk_mk100_default	Germany	5	1250	Aircraft
 sea_venom_faw20	Sea Venom FAW 20	typeFighter	sea_venom_faw20_default	Great Britain	5	0	Aircraft
-seafire_fr47	Seafire FR 47	typeFighter	default	Great Britain	4	0	Aircraft
-seafire_mk17	Seafire F Mk XVII	typeFighter	default	Great Britain	4	0	Aircraft
-seafire_mk3	Seafire LF Mk.III	typeFighter	seafire_mk3_default	Great Britain	3	0	Aircraft
-seafire_mk3_france	Seafire LF Mk.III	typeFighter	seafire_mk3_default	France	4	0	Aircraft
+seafire_fr47	Seafire FR 47	typeFighter	seafire_fr47_default	Great Britain	4	700	Aircraft
+seafire_mk17	Seafire F Mk XVII	typeFighter	seafire_mk17_default	Great Britain	4	500	Aircraft
+seafire_mk3	Seafire LF Mk.III	typeFighter	seafire_mk3_default	Great Britain	3	500	Aircraft
+seafire_mk3_france	Seafire LF Mk.III	typeFighter	seafiremk3_france_default	France	4	0	Aircraft
 shackleton_mr_mk_2	Shackleton MR.Mk.2	typeBomber	shackleton_mr_mk_2_default	Great Britain	4	0	Aircraft
 sm_79_1936	S.M.79 Sparviero serie 1 (1936)	typeBomber	12_100lb_bombs	Germany	2	0	Aircraft
 sm_79_1936_italy	S.M.79 Sparviero serie 1 (1936)	typeBomber	12_100lb_bombs	Italy	1	0	Aircraft
@@ -1352,16 +1378,16 @@ spitfire_mk1	Spitfire Mk Ia	typeFighter	spitfire_mk1_default	Great Britain	2	0	A
 spitfire_mk14c	Spitfire F Mk XIVc	typeFighter	default	Great Britain	4	0	Aircraft
 spitfire_mk14e	Spitfire F Mk XIVe	typeFighter	default	Great Britain	4	0	Aircraft
 spitfire_mk18e	Spitfire F Mk XVIIIe	typeFighter	default	Great Britain	4	0	Aircraft
-spitfire_mk5b	Spitfire Mk Vb/trop	typeFighter	Spitfire_mk5b_default	Great Britain	2	0	Aircraft
-spitfire_mk5b_float	Spitfire Mk Vb (Float)	typeFighter	Spitfire_mk5b_default	Great Britain	2	0	Aircraft
-spitfire_mk5b_italy	Spitfire Mk Vb/trop	typeFighter	Spitfire_mk5b_default	Italy	3	0	Aircraft
-spitfire_mk5b_notrop	Spitfire Mk Vb	typeFighter	Spitfire_mk5b_default	Great Britain	2	0	Aircraft
-spitfire_mk5c	Spitfire Mk Vc/trop	typeFighter	Spitfire_mk5c_default	Great Britain	3	0	Aircraft
-spitfire_mk5c_notrop	Spitfire Mk Vc	typeFighter	Spitfire_mk5c_default	Great Britain	3	0	Aircraft
+spitfire_mk5b	Spitfire Mk Vb/trop	typeFighter	spitfire_v_default	Great Britain	2	500	Aircraft
+spitfire_mk5b_float	Spitfire Mk Vb (Float)	typeFighter	spitfire_v_default	Great Britain	2	0	Aircraft
+spitfire_mk5b_italy	Spitfire Mk Vb/trop	typeFighter	spitfire_v_default	Italy	3	500	Aircraft
+spitfire_mk5b_notrop	Spitfire Mk Vb	typeFighter	spitfire_v_default	Great Britain	2	500	Aircraft
+spitfire_mk5c	Spitfire Mk Vc/trop	typeFighter	spitfire_v_default	Great Britain	3	500	Aircraft
+spitfire_mk5c_notrop	Spitfire Mk Vc	typeFighter	spitfire_v_default	Great Britain	3	500	Aircraft
 spitfire_mk9b	Spitfire Mk IXb	typeFighter	SpitfireIX_default	Other	0	500	Aircraft
 spitfire_mk9c_4cannons	Spitfire F Mk IXc	typeFighter	spitfire_ix_default	Great Britain	3	500	Aircraft
 spitfire_mk9c_iaf	Spitfire Mk IXc	typeFighter	SpitfireIX_default	Israel	4	0	Aircraft
-spitfire_xvi	Spitfire F Mk XVI	typeFighter	spitfire_xvi_default	Great Britain	3	0	Aircraft
+spitfire_xvi	Spitfire F Mk XVI	typeFighter	SpitfireIX_default	Great Britain	3	500	Aircraft
 spitfiremkii	Spitfire Mk IIb	typeFighter	SpitfireMkII_default	Great Britain	2	0	Aircraft
 spitfiremkiia	Spitfire Mk IIa	typeFighter	spitfire_mk1_default	Great Britain	2	0	Aircraft
 spitfiremkiia_ep	Spitfire Mk.IIa Venture I	typeFighter	spitfire_mk1_default	Great Britain	2	0	Aircraft
@@ -1464,12 +1490,12 @@ tu_4_china_killstreak	Tu-4	typeBomber	tu_4_1xrds4	Other	0	0	Aircraft
 tu_4_killstreak	Tu-4	typeBomber	tu_4_1xrds4	Other	0	0	Aircraft
 tu_95m	Tu-95M	typeBomber	tu_95m_nt_default	USSR / Russia	6	13000	Aircraft
 tu-1	Tu-1	typeFighter	tu-1_default	USSR / Russia	4	3050	Aircraft
-tu-2	Tu-2S	typeBomber	tu-2_default	USSR / Russia	4	3250	Aircraft
-tu-2_early	Tu-2	typeBomber	tu-2_default	USSR / Russia	3	3250	Aircraft
-tu-2_postwar	Tu-2S-44	typeBomber	tu-2_default	USSR / Russia	4	3250	Aircraft
-tu-2_postwar_china	Tu-2S-44	typeBomber	tu-2_default	China	4	3250	Aircraft
-tu-2_postwar_late	Tu-2S-59	typeBomber	tu-2_default	USSR / Russia	4	3250	Aircraft
-tu-2_postwar_late_hungary	Tu-2S-59	typeBomber	tu-2_default	Italy	4	3250	Aircraft
+tu-2	Tu-2S (7 series) factory No.23	typeBomber	tu-2_default	USSR / Russia	4	3250	Aircraft
+tu-2_early	Tu-2 (5 series) factory No.166	typeBomber	tu-2_default	USSR / Russia	3	3250	Aircraft
+tu-2_postwar	Tu-2S (1 series) factory No.166	typeBomber	tu-2_default	USSR / Russia	4	3250	Aircraft
+tu-2_postwar_china	Tu-2S (1 series) factory No.166	typeBomber	tu-2_default	China	4	3250	Aircraft
+tu-2_postwar_late	Tu-2S (8 series) factory No.39	typeBomber	tu-2_default	USSR / Russia	4	3250	Aircraft
+tu-2_postwar_late_hungary	Tu-2S (8 series) factory No.39	typeBomber	tu-2_default	Italy	4	3250	Aircraft
 typhoon_mk1a	Typhoon Mk Ia	typeFighter	typhoon_mk1a_default	Great Britain	2	0	Aircraft
 typhoon_mk1b	Typhoon Mk Ib	typeFighter	typhoon_mk1b_default	Great Britain	3	0	Aircraft
 typhoon_mk1b_late	Typhoon Mk Ib /Late	typeFighter	typhoon_mk1b_late_default	Great Britain	3	0	Aircraft

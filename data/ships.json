@@ -96,6 +96,14 @@
     "type": "typeDestroyer"
   },
   {
+    "id": "fr_cruiser_algerie_class",
+    "display": "Algerie",
+    "defaultPreset": "torpedoes",
+    "nation": "France",
+    "rank": 5,
+    "type": "typeDestroyer"
+  },
+  {
     "id": "fr_cruiser_chateaurenault_class_guichen",
     "display": "Guichen",
     "defaultPreset": "torpedoes",
@@ -349,6 +357,14 @@
     "defaultPreset": "lcg_m_l9059_default",
     "nation": "France",
     "rank": 3,
+    "type": "typeGunBoat"
+  },
+  {
+    "id": "fr_lcm_monitor",
+    "display": "LCM(65)",
+    "defaultPreset": "fr_lcm_monitor_default",
+    "nation": "France",
+    "rank": 1,
     "type": "typeGunBoat"
   },
   {
@@ -1064,6 +1080,14 @@
     "type": "typeGunBoat"
   },
   {
+    "id": "germ_rboot_r310",
+    "display": "R-310",
+    "defaultPreset": "torpedoes",
+    "nation": "Germany",
+    "rank": 2,
+    "type": "typeGunBoat"
+  },
+  {
     "id": "germ_rboot_r41",
     "display": "R-41",
     "defaultPreset": "germ_rboot_r41_default",
@@ -1301,6 +1325,14 @@
     "defaultPreset": "it_battleship_francesco_caracciolo_default",
     "nation": "Italy",
     "rank": 5,
+    "type": "typeDestroyer"
+  },
+  {
+    "id": "it_battleship_giulio_cesare",
+    "display": "RN Giulio Cesare",
+    "defaultPreset": "it_battleship_giulio_cesare_default",
+    "nation": "Italy",
+    "rank": 6,
     "type": "typeDestroyer"
   },
   {
@@ -1785,6 +1817,14 @@
   },
   {
     "id": "jp_aircraftcarrier_shokaku",
+    "display": "IJN Shokaku",
+    "defaultPreset": "jp_aircraftcarrier_shokaku_default",
+    "nation": "Other",
+    "rank": 0,
+    "type": "typeDestroyer"
+  },
+  {
+    "id": "jp_aircraftcarrier_shokaku_ai",
     "display": "IJN Shokaku",
     "defaultPreset": "jp_aircraftcarrier_shokaku_default",
     "nation": "Other",
@@ -2536,6 +2576,14 @@
     "type": "typeTorpedoBoat"
   },
   {
+    "id": "jp_type9_pt809",
+    "display": "PT-809",
+    "defaultPreset": "torpedoes",
+    "nation": "Japan",
+    "rank": 3,
+    "type": "typeTorpedoBoat"
+  },
+  {
     "id": "jp_ujishima_msc",
     "display": "JDS Ujishima (MSC-655)",
     "defaultPreset": "bomb_mortar",
@@ -2597,10 +2645,26 @@
     "defaultPreset": "uk_aircraftcarrier_ark_royal_default",
     "nation": "Other",
     "rank": 0,
+    "type": "typeDestroyer"
+  },
+  {
+    "id": "uk_aircraftcarrier_ark_royal_ai",
+    "display": "HMS Ark Royal",
+    "defaultPreset": "uk_aircraftcarrier_ark_royal_ai_default",
+    "nation": "Other",
+    "rank": 0,
     "type": "typeShip"
   },
   {
     "id": "uk_aircraftcarrier_illustrious",
+    "display": "HMS Illustrious",
+    "defaultPreset": "uk_aircraftcarrier_illustrious_default",
+    "nation": "Other",
+    "rank": 0,
+    "type": "typeDestroyer"
+  },
+  {
+    "id": "uk_aircraftcarrier_illustrious_ai",
     "display": "HMS Illustrious",
     "defaultPreset": "uk_aircraftcarrier_illustrious_default",
     "nation": "Other",
@@ -2693,6 +2757,14 @@
     "defaultPreset": "torpedoes",
     "nation": "Great Britain",
     "rank": 5,
+    "type": "typeDestroyer"
+  },
+  {
+    "id": "uk_battleship_lion_class",
+    "display": "HMS Lion",
+    "defaultPreset": "uk_battleship_lion_class_default",
+    "nation": "Great Britain",
+    "rank": 7,
     "type": "typeDestroyer"
   },
   {
@@ -3421,10 +3493,26 @@
     "defaultPreset": "us_aircraftcarrier_enterprise_default",
     "nation": "Other",
     "rank": 0,
+    "type": "typeDestroyer"
+  },
+  {
+    "id": "us_aircraftcarrier_enterprise_ai",
+    "display": "USS Enterprise",
+    "defaultPreset": "us_aircraftcarrier_enterprise_default",
+    "nation": "Other",
+    "rank": 0,
     "type": "typeShip"
   },
   {
     "id": "us_aircraftcarrier_forrestal",
+    "display": "USS Forrestal",
+    "defaultPreset": "us_aircraftcarrier_forrestal_default",
+    "nation": "Other",
+    "rank": 0,
+    "type": "typeDestroyer"
+  },
+  {
+    "id": "us_aircraftcarrier_forrestal_ai",
     "display": "USS Forrestal",
     "defaultPreset": "us_aircraftcarrier_forrestal_default",
     "nation": "Other",
@@ -3437,10 +3525,26 @@
     "defaultPreset": "us_aircraftcarrier_lexington_default",
     "nation": "Other",
     "rank": 0,
+    "type": "typeDestroyer"
+  },
+  {
+    "id": "us_aircraftcarrier_lexington_ai",
+    "display": "USS Lexington",
+    "defaultPreset": "us_aircraftcarrier_lexington_default",
+    "nation": "Other",
+    "rank": 0,
     "type": "typeShip"
   },
   {
     "id": "us_aircraftcarrier_saratoga",
+    "display": "USS Saratoga",
+    "defaultPreset": "us_aircraftcarrier_saratoga_default",
+    "nation": "Other",
+    "rank": 0,
+    "type": "typeDestroyer"
+  },
+  {
+    "id": "us_aircraftcarrier_saratoga_ai",
     "display": "USS Saratoga",
     "defaultPreset": "us_aircraftcarrier_saratoga_default",
     "nation": "Other",
@@ -3888,6 +3992,14 @@
     "type": "typeDestroyer"
   },
   {
+    "id": "us_destroyer_mahan_class",
+    "display": "USS Mahan",
+    "defaultPreset": "torpedoes",
+    "nation": "USA",
+    "rank": 2,
+    "type": "typeDestroyer"
+  },
+  {
     "id": "us_destroyer_mitscher",
     "display": "USS Mitscher",
     "defaultPreset": "torpedoes",
@@ -4229,10 +4341,26 @@
     "defaultPreset": "ussr_aircraftcarrier_admiral_kuznetsov_default",
     "nation": "Other",
     "rank": 0,
+    "type": "typeDestroyer"
+  },
+  {
+    "id": "ussr_aircraftcarrier_admiral_kuznetsov_ai",
+    "display": "Admiral Kuznetsov",
+    "defaultPreset": "ussr_aircraftcarrier_admiral_kuznetsov_default",
+    "nation": "Other",
+    "rank": 0,
     "type": "typeShip"
   },
   {
     "id": "ussr_aircraftcarrier_baku",
+    "display": "Baku",
+    "defaultPreset": "ussr_aircraftcarrier_baku_default",
+    "nation": "Other",
+    "rank": 0,
+    "type": "typeDestroyer"
+  },
+  {
+    "id": "ussr_aircraftcarrier_baku_ai",
     "display": "Baku",
     "defaultPreset": "ussr_aircraftcarrier_baku_default",
     "nation": "Other",
@@ -4638,6 +4766,14 @@
     "nation": "USSR / Russia",
     "rank": 1,
     "type": "typeDestroyer"
+  },
+  {
+    "id": "ussr_fugas_t1_strela",
+    "display": "Strela",
+    "defaultPreset": "ussr_fugas_t1_strela_default",
+    "nation": "USSR / Russia",
+    "rank": 3,
+    "type": "typeGunBoat"
   },
   {
     "id": "ussr_g5_mtb",

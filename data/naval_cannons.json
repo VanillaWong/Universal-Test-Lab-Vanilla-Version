@@ -508,6 +508,10 @@
     "value": "203mm 50 mle 1924"
   },
   {
+    "key": "gamedata/weapons/navalmodels_weapons/203mm_50_mle_1931_naval_user_cannon.blk",
+    "value": "203mm 50 mle 1931"
+  },
+  {
     "key": "gamedata/weapons/navalmodels_weapons/203mm_55_8inch_mk12_naval_user_cannon.blk",
     "value": "203mm 55 8inch mk12"
   },
@@ -900,6 +904,10 @@
     "value": "406mm 45 bl mk1 r2"
   },
   {
+    "key": "gamedata/weapons/navalmodels_weapons/406mm_45_bl_mk2_naval_user_cannon.blk",
+    "value": "406mm 45 bl mk2"
+  },
+  {
     "key": "gamedata/weapons/navalmodels_weapons/406mm_45_mk5_naval_user_cannon.blk",
     "value": "406mm 45 mk5"
   },
@@ -934,6 +942,10 @@
   {
     "key": "gamedata/weapons/navalmodels_weapons/40mm_39_vickers_terni_mod1915_1917_naval_user_cannon.blk",
     "value": "40mm 39 vickers terni mod1915 1917"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/40mm_50_2pdr_qf_mk9_naval_user_cannon.blk",
+    "value": "40mm 50 2pdr qf mk9"
   },
   {
     "key": "gamedata/weapons/navalmodels_weapons/40mm_50_2pdr_rolls_royce_mk14_naval_user_cannon.blk",

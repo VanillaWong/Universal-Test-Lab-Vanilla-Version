@@ -480,6 +480,30 @@
     ]
   },
   {
+    "unitId": "a_4ptm_malaysia",
+    "hasRadarPage": false,
+    "hasRadarDm": true,
+    "radarCount": 0,
+    "radarIndex": null,
+    "radarId": "",
+    "radarDmPart": "",
+    "esmCount": 1,
+    "sensors": [
+      {
+        "index": 0,
+        "id": "us_an_apr_25",
+        "blk": "gameData/sensors/us_an_apr_25.blk",
+        "dmPart": "",
+        "node": "",
+        "external": false,
+        "type": "rwr",
+        "ir": true,
+        "passive": true,
+        "radioRadar": false
+      }
+    ]
+  },
+  {
     "unitId": "a_5c",
     "hasRadarPage": false,
     "hasRadarDm": true,
@@ -600,7 +624,55 @@
     ]
   },
   {
+    "unitId": "a_7e_greece",
+    "hasRadarPage": false,
+    "hasRadarDm": true,
+    "radarCount": 0,
+    "radarIndex": null,
+    "radarId": "",
+    "radarDmPart": "",
+    "esmCount": 0,
+    "sensors": [
+      {
+        "index": 0,
+        "id": "us_an_alr_45f_v",
+        "blk": "gameData/sensors/us_an_alr_45f_v.blk",
+        "dmPart": "",
+        "node": "",
+        "external": false,
+        "type": "rwr",
+        "ir": true,
+        "passive": false,
+        "radioRadar": false
+      }
+    ]
+  },
+  {
     "unitId": "a_7e_thailand",
+    "hasRadarPage": false,
+    "hasRadarDm": true,
+    "radarCount": 0,
+    "radarIndex": null,
+    "radarId": "",
+    "radarDmPart": "",
+    "esmCount": 0,
+    "sensors": [
+      {
+        "index": 0,
+        "id": "us_an_alr_45f_v",
+        "blk": "gameData/sensors/us_an_alr_45f_v.blk",
+        "dmPart": "",
+        "node": "",
+        "external": false,
+        "type": "rwr",
+        "ir": true,
+        "passive": false,
+        "radioRadar": false
+      }
+    ]
+  },
+  {
+    "unitId": "a_7h_greece",
     "hasRadarPage": false,
     "hasRadarDm": true,
     "radarCount": 0,
@@ -1118,7 +1190,7 @@
   {
     "unitId": "ah_56a",
     "hasRadarPage": false,
-    "hasRadarDm": true,
+    "hasRadarDm": false,
     "radarCount": 0,
     "radarIndex": null,
     "radarId": "",
@@ -1259,8 +1331,8 @@
       },
       {
         "index": 3,
-        "id": "us_an_avr-2",
-        "blk": "gameData/sensors/us_an_avr-2.blk",
+        "id": "us_an_avr-2a_v1",
+        "blk": "gameData/sensors/us_an_avr-2a_v1.blk",
         "dmPart": "",
         "node": "",
         "external": false,
@@ -1319,8 +1391,8 @@
       },
       {
         "index": 3,
-        "id": "us_an_avr-2",
-        "blk": "gameData/sensors/us_an_avr-2.blk",
+        "id": "us_an_avr-2a_v1",
+        "blk": "gameData/sensors/us_an_avr-2a_v1.blk",
         "dmPart": "",
         "node": "",
         "external": false,
@@ -1379,8 +1451,8 @@
       },
       {
         "index": 3,
-        "id": "us_an_avr-2",
-        "blk": "gameData/sensors/us_an_avr-2.blk",
+        "id": "us_an_avr-2a_v1",
+        "blk": "gameData/sensors/us_an_avr-2a_v1.blk",
         "dmPart": "",
         "node": "",
         "external": false,
@@ -1451,8 +1523,8 @@
       },
       {
         "index": 3,
-        "id": "us_an_avr-2",
-        "blk": "gameData/sensors/us_an_avr-2.blk",
+        "id": "us_an_avr-2a_v1",
+        "blk": "gameData/sensors/us_an_avr-2a_v1.blk",
         "dmPart": "",
         "node": "",
         "external": false,
@@ -1511,8 +1583,8 @@
       },
       {
         "index": 3,
-        "id": "us_an_avr-2",
-        "blk": "gameData/sensors/us_an_avr-2.blk",
+        "id": "us_an_avr-2a_v1",
+        "blk": "gameData/sensors/us_an_avr-2a_v1.blk",
         "dmPart": "",
         "node": "",
         "external": false,
@@ -1571,8 +1643,8 @@
       },
       {
         "index": 3,
-        "id": "us_an_avr-2",
-        "blk": "gameData/sensors/us_an_avr-2.blk",
+        "id": "us_an_avr-2a_v1",
+        "blk": "gameData/sensors/us_an_avr-2a_v1.blk",
         "dmPart": "",
         "node": "",
         "external": false,
@@ -1643,8 +1715,8 @@
       },
       {
         "index": 4,
-        "id": "us_an_avr-2",
-        "blk": "gameData/sensors/us_an_avr-2.blk",
+        "id": "us_an_avr-2a_v1",
+        "blk": "gameData/sensors/us_an_avr-2a_v1.blk",
         "dmPart": "",
         "node": "",
         "external": false,
@@ -1715,8 +1787,8 @@
       },
       {
         "index": 4,
-        "id": "us_an_avr-2",
-        "blk": "gameData/sensors/us_an_avr-2.blk",
+        "id": "us_an_avr-2a_v1",
+        "blk": "gameData/sensors/us_an_avr-2a_v1.blk",
         "dmPart": "",
         "node": "",
         "external": false,
@@ -1895,8 +1967,8 @@
       },
       {
         "index": 3,
-        "id": "us_an_avr-2",
-        "blk": "gameData/sensors/us_an_avr-2.blk",
+        "id": "us_an_avr-2a_v1",
+        "blk": "gameData/sensors/us_an_avr-2a_v1.blk",
         "dmPart": "",
         "node": "",
         "external": false,
@@ -1967,8 +2039,8 @@
       },
       {
         "index": 4,
-        "id": "us_an_avr-2",
-        "blk": "gameData/sensors/us_an_avr-2.blk",
+        "id": "us_an_avr-2b_v",
+        "blk": "gameData/sensors/us_an_avr-2b_v.blk",
         "dmPart": "",
         "node": "",
         "external": false,
@@ -2111,8 +2183,8 @@
       },
       {
         "index": 4,
-        "id": "us_an_avr-2",
-        "blk": "gameData/sensors/us_an_avr-2.blk",
+        "id": "us_an_avr-2b_v",
+        "blk": "gameData/sensors/us_an_avr-2b_v.blk",
         "dmPart": "",
         "node": "",
         "external": false,
@@ -2183,8 +2255,8 @@
       },
       {
         "index": 4,
-        "id": "us_an_avr-2",
-        "blk": "gameData/sensors/us_an_avr-2.blk",
+        "id": "us_an_avr-2b_v",
+        "blk": "gameData/sensors/us_an_avr-2b_v.blk",
         "dmPart": "",
         "node": "",
         "external": false,
@@ -2255,8 +2327,8 @@
       },
       {
         "index": 4,
-        "id": "us_an_avr-2",
-        "blk": "gameData/sensors/us_an_avr-2.blk",
+        "id": "us_an_avr-2b_v",
+        "blk": "gameData/sensors/us_an_avr-2b_v.blk",
         "dmPart": "",
         "node": "",
         "external": false,
@@ -2435,8 +2507,8 @@
       },
       {
         "index": 3,
-        "id": "us_an_avr-2",
-        "blk": "gameData/sensors/us_an_avr-2.blk",
+        "id": "us_an_avr-2a_v1",
+        "blk": "gameData/sensors/us_an_avr-2a_v1.blk",
         "dmPart": "",
         "node": "",
         "external": false,
@@ -2772,6 +2844,90 @@
     ]
   },
   {
+    "unitId": "aw_159",
+    "hasRadarPage": true,
+    "hasRadarDm": true,
+    "radarCount": 1,
+    "radarIndex": 0,
+    "radarId": "uk_seaspray_7400e",
+    "radarDmPart": "radar_dm",
+    "esmCount": 1,
+    "sensors": [
+      {
+        "index": 0,
+        "id": "uk_seaspray_7400e",
+        "blk": "gameData/sensors/uk_seaspray_7400e.blk",
+        "dmPart": "radar_dm",
+        "node": "",
+        "external": false,
+        "type": "radar",
+        "ir": false,
+        "passive": false,
+        "radioRadar": true
+      },
+      {
+        "index": 1,
+        "id": "ir_tracker",
+        "blk": "gameData/sensors/ir_tracker.blk",
+        "dmPart": "",
+        "node": "optic1_gun",
+        "external": false,
+        "type": "radar",
+        "ir": true,
+        "passive": false,
+        "radioRadar": false
+      },
+      {
+        "index": 2,
+        "id": "us_an_apr_39_v4_apr_48",
+        "blk": "gameData/sensors/us_an_apr_39_v4_apr_48.blk",
+        "dmPart": "",
+        "node": "",
+        "external": false,
+        "type": "rwr",
+        "ir": true,
+        "passive": true,
+        "radioRadar": false
+      },
+      {
+        "index": 3,
+        "id": "us_flir",
+        "blk": "gameData/sensors/us_flir.blk",
+        "dmPart": "",
+        "node": "optic1_gun",
+        "external": false,
+        "type": "lds",
+        "ir": true,
+        "passive": false,
+        "radioRadar": false
+      },
+      {
+        "index": 4,
+        "id": "us_an_avr-2b_v",
+        "blk": "gameData/sensors/us_an_avr-2b_v.blk",
+        "dmPart": "",
+        "node": "",
+        "external": false,
+        "type": "lws",
+        "ir": true,
+        "passive": false,
+        "radioRadar": false
+      },
+      {
+        "index": 5,
+        "id": "laserbeamridingsensor",
+        "blk": "gameData/sensors/LaserBeamRidingSensor.blk",
+        "dmPart": "",
+        "node": "optic1_gun",
+        "external": false,
+        "type": "lds",
+        "ir": true,
+        "passive": false,
+        "radioRadar": false
+      }
+    ]
+  },
+  {
     "unitId": "b_52h",
     "hasRadarPage": false,
     "hasRadarDm": true,
@@ -2783,8 +2939,8 @@
     "sensors": [
       {
         "index": 0,
-        "id": "us_an_alr_46_v3",
-        "blk": "gameData/sensors/us_an_alr_46_v3.blk",
+        "id": "us_an_alr_46_v4",
+        "blk": "gameData/sensors/us_an_alr_46_v4.blk",
         "dmPart": "",
         "node": "",
         "external": false,
@@ -3140,6 +3296,54 @@
         "ir": true,
         "passive": false,
         "radioRadar": false
+      }
+    ]
+  },
+  {
+    "unitId": "ca_27_mk32_malaysia",
+    "hasRadarPage": false,
+    "hasRadarDm": true,
+    "radarCount": 1,
+    "radarIndex": 0,
+    "radarId": "us_an_apg_501",
+    "radarDmPart": "radar_dm",
+    "esmCount": 0,
+    "sensors": [
+      {
+        "index": 0,
+        "id": "us_an_apg_501",
+        "blk": "gameData/sensors/us_an_apg_501.blk",
+        "dmPart": "radar_dm",
+        "node": "",
+        "external": false,
+        "type": "radar",
+        "ir": false,
+        "passive": false,
+        "radioRadar": true
+      }
+    ]
+  },
+  {
+    "unitId": "ca_27_mk32_raaf",
+    "hasRadarPage": false,
+    "hasRadarDm": true,
+    "radarCount": 1,
+    "radarIndex": 0,
+    "radarId": "us_an_apg_501",
+    "radarDmPart": "radar_dm",
+    "esmCount": 0,
+    "sensors": [
+      {
+        "index": 0,
+        "id": "us_an_apg_501",
+        "blk": "gameData/sensors/us_an_apg_501.blk",
+        "dmPart": "radar_dm",
+        "node": "",
+        "external": false,
+        "type": "radar",
+        "ir": false,
+        "passive": false,
+        "radioRadar": true
       }
     ]
   },
@@ -3960,6 +4164,54 @@
     ]
   },
   {
+    "unitId": "f_102a_greece",
+    "hasRadarPage": true,
+    "hasRadarDm": false,
+    "radarCount": 1,
+    "radarIndex": 0,
+    "radarId": "us_mg_10",
+    "radarDmPart": "radar1_dm",
+    "esmCount": 0,
+    "sensors": [
+      {
+        "index": 0,
+        "id": "us_mg_10",
+        "blk": "gameData/sensors/us_mg_10.blk",
+        "dmPart": "radar1_dm",
+        "node": "",
+        "external": false,
+        "type": "radar",
+        "ir": false,
+        "passive": false,
+        "radioRadar": true
+      }
+    ]
+  },
+  {
+    "unitId": "f_102a_late",
+    "hasRadarPage": true,
+    "hasRadarDm": false,
+    "radarCount": 1,
+    "radarIndex": 0,
+    "radarId": "us_mg_10_irst",
+    "radarDmPart": "radar1_dm",
+    "esmCount": 0,
+    "sensors": [
+      {
+        "index": 0,
+        "id": "us_mg_10_irst",
+        "blk": "gameData/sensors/us_mg_10_irst.blk",
+        "dmPart": "radar1_dm",
+        "node": "",
+        "external": false,
+        "type": "radar",
+        "ir": false,
+        "passive": false,
+        "radioRadar": true
+      }
+    ]
+  },
+  {
     "unitId": "f_105d_japan_killstreak",
     "hasRadarPage": true,
     "hasRadarDm": true,
@@ -4034,18 +4286,18 @@
   {
     "unitId": "f_106a_1972",
     "hasRadarPage": true,
-    "hasRadarDm": true,
+    "hasRadarDm": false,
     "radarCount": 1,
     "radarIndex": 0,
     "radarId": "us_ma_1",
-    "radarDmPart": "radar_dm",
+    "radarDmPart": "radar1_dm",
     "esmCount": 0,
     "sensors": [
       {
         "index": 0,
         "id": "us_ma_1",
         "blk": "gameData/sensors/us_ma_1.blk",
-        "dmPart": "radar_dm",
+        "dmPart": "radar1_dm",
         "node": "",
         "external": false,
         "type": "radar",
@@ -4501,6 +4753,54 @@
   },
   {
     "unitId": "f_14d",
+    "hasRadarPage": true,
+    "hasRadarDm": true,
+    "radarCount": 1,
+    "radarIndex": 0,
+    "radarId": "us_an_apg_71",
+    "radarDmPart": "radar_dm",
+    "esmCount": 0,
+    "sensors": [
+      {
+        "index": 0,
+        "id": "us_an_apg_71",
+        "blk": "gameData/sensors/us_an_apg_71.blk",
+        "dmPart": "radar_dm",
+        "node": "",
+        "external": false,
+        "type": "radar",
+        "ir": false,
+        "passive": false,
+        "radioRadar": true
+      },
+      {
+        "index": 1,
+        "id": "us_an_alr_67",
+        "blk": "gameData/sensors/us_an_alr_67.blk",
+        "dmPart": "",
+        "node": "",
+        "external": false,
+        "type": "rwr",
+        "ir": true,
+        "passive": false,
+        "radioRadar": false
+      },
+      {
+        "index": 2,
+        "id": "laserdesignatorsensor",
+        "blk": "gameData/sensors/LaserDesignatorSensor.blk",
+        "dmPart": "",
+        "node": "optic1_gun",
+        "external": false,
+        "type": "lds",
+        "ir": true,
+        "passive": false,
+        "radioRadar": false
+      }
+    ]
+  },
+  {
+    "unitId": "f_14d_vf_11",
     "hasRadarPage": true,
     "hasRadarDm": true,
     "radarCount": 1,
@@ -5729,14 +6029,14 @@
     "hasRadarDm": true,
     "radarCount": 1,
     "radarIndex": 0,
-    "radarId": "us_an_apg_66_v_3",
+    "radarId": "us_an_apg_66_v_3_hms",
     "radarDmPart": "radar_dm",
     "esmCount": 0,
     "sensors": [
       {
         "index": 0,
-        "id": "us_an_apg_66_v_3",
-        "blk": "gameData/sensors/us_an_apg_66_v_3.blk",
+        "id": "us_an_apg_66_v_3_hms",
+        "blk": "gameData/sensors/us_an_apg_66_v_3_hms.blk",
         "dmPart": "radar_dm",
         "node": "",
         "external": false,
@@ -6612,6 +6912,42 @@
     ]
   },
   {
+    "unitId": "f_4e_aup_greece",
+    "hasRadarPage": true,
+    "hasRadarDm": true,
+    "radarCount": 1,
+    "radarIndex": 0,
+    "radarId": "us_an_apg_65gy",
+    "radarDmPart": "radar_dm",
+    "esmCount": 0,
+    "sensors": [
+      {
+        "index": 0,
+        "id": "us_an_apg_65gy",
+        "blk": "gameData/sensors/us_an_apg_65gy.blk",
+        "dmPart": "radar_dm",
+        "node": "",
+        "external": false,
+        "type": "radar",
+        "ir": false,
+        "passive": false,
+        "radioRadar": true
+      },
+      {
+        "index": 1,
+        "id": "us_an_alr_68_v_3",
+        "blk": "gameData/sensors/us_an_alr_68_v_3.blk",
+        "dmPart": "",
+        "node": "",
+        "external": false,
+        "type": "rwr",
+        "ir": true,
+        "passive": false,
+        "radioRadar": false
+      }
+    ]
+  },
+  {
     "unitId": "f_4e_event",
     "hasRadarPage": true,
     "hasRadarDm": true,
@@ -6668,6 +7004,30 @@
         "ir": true,
         "passive": true,
         "radioRadar": false
+      }
+    ]
+  },
+  {
+    "unitId": "f_86em_greece",
+    "hasRadarPage": false,
+    "hasRadarDm": true,
+    "radarCount": 1,
+    "radarIndex": 0,
+    "radarId": "us_an_apg_501",
+    "radarDmPart": "radar_dm",
+    "esmCount": 0,
+    "sensors": [
+      {
+        "index": 0,
+        "id": "us_an_apg_501",
+        "blk": "gameData/sensors/us_an_apg_501.blk",
+        "dmPart": "radar_dm",
+        "node": "",
+        "external": false,
+        "type": "radar",
+        "ir": false,
+        "passive": false,
+        "radioRadar": true
       }
     ]
   },
@@ -8114,18 +8474,18 @@
   {
     "unitId": "f-84f",
     "hasRadarPage": false,
-    "hasRadarDm": true,
+    "hasRadarDm": false,
     "radarCount": 1,
     "radarIndex": 0,
     "radarId": "us_an_apg_30",
-    "radarDmPart": "radar_dm",
+    "radarDmPart": "radar1_dm",
     "esmCount": 0,
     "sensors": [
       {
         "index": 0,
         "id": "us_an_apg_30",
         "blk": "gameData/sensors/us_an_apg_30.blk",
-        "dmPart": "radar_dm",
+        "dmPart": "radar1_dm",
         "node": "",
         "external": false,
         "type": "radar",
@@ -8138,18 +8498,18 @@
   {
     "unitId": "f-84f_france",
     "hasRadarPage": false,
-    "hasRadarDm": true,
+    "hasRadarDm": false,
     "radarCount": 1,
     "radarIndex": 0,
     "radarId": "us_an_apg_30",
-    "radarDmPart": "radar_dm",
+    "radarDmPart": "radar1_dm",
     "esmCount": 0,
     "sensors": [
       {
         "index": 0,
         "id": "us_an_apg_30",
         "blk": "gameData/sensors/us_an_apg_30.blk",
-        "dmPart": "radar_dm",
+        "dmPart": "radar1_dm",
         "node": "",
         "external": false,
         "type": "radar",
@@ -8162,18 +8522,18 @@
   {
     "unitId": "f-84f_germany",
     "hasRadarPage": false,
-    "hasRadarDm": true,
+    "hasRadarDm": false,
     "radarCount": 1,
     "radarIndex": 0,
     "radarId": "us_an_apg_30",
-    "radarDmPart": "radar_dm",
+    "radarDmPart": "radar1_dm",
     "esmCount": 0,
     "sensors": [
       {
         "index": 0,
         "id": "us_an_apg_30",
         "blk": "gameData/sensors/us_an_apg_30.blk",
-        "dmPart": "radar_dm",
+        "dmPart": "radar1_dm",
         "node": "",
         "external": false,
         "type": "radar",
@@ -8186,18 +8546,18 @@
   {
     "unitId": "f-84f_iaf",
     "hasRadarPage": false,
-    "hasRadarDm": true,
+    "hasRadarDm": false,
     "radarCount": 1,
     "radarIndex": 0,
     "radarId": "us_an_apg_30",
-    "radarDmPart": "radar_dm",
+    "radarDmPart": "radar1_dm",
     "esmCount": 0,
     "sensors": [
       {
         "index": 0,
         "id": "us_an_apg_30",
         "blk": "gameData/sensors/us_an_apg_30.blk",
-        "dmPart": "radar_dm",
+        "dmPart": "radar1_dm",
         "node": "",
         "external": false,
         "type": "radar",
@@ -8210,18 +8570,18 @@
   {
     "unitId": "f-84f_israel_iaf",
     "hasRadarPage": false,
-    "hasRadarDm": true,
+    "hasRadarDm": false,
     "radarCount": 1,
     "radarIndex": 0,
     "radarId": "us_an_apg_30",
-    "radarDmPart": "radar_dm",
+    "radarDmPart": "radar1_dm",
     "esmCount": 0,
     "sensors": [
       {
         "index": 0,
         "id": "us_an_apg_30",
         "blk": "gameData/sensors/us_an_apg_30.blk",
-        "dmPart": "radar_dm",
+        "dmPart": "radar1_dm",
         "node": "",
         "external": false,
         "type": "radar",
@@ -8234,18 +8594,18 @@
   {
     "unitId": "f-84f_italy",
     "hasRadarPage": false,
-    "hasRadarDm": true,
+    "hasRadarDm": false,
     "radarCount": 1,
     "radarIndex": 0,
     "radarId": "us_an_apg_30",
-    "radarDmPart": "radar_dm",
+    "radarDmPart": "radar1_dm",
     "esmCount": 0,
     "sensors": [
       {
         "index": 0,
         "id": "us_an_apg_30",
         "blk": "gameData/sensors/us_an_apg_30.blk",
-        "dmPart": "radar_dm",
+        "dmPart": "radar1_dm",
         "node": "",
         "external": false,
         "type": "radar",
@@ -8262,14 +8622,14 @@
     "radarCount": 1,
     "radarIndex": 0,
     "radarId": "us_an_apg_30",
-    "radarDmPart": "radar_dm",
+    "radarDmPart": "radar1_dm",
     "esmCount": 0,
     "sensors": [
       {
         "index": 0,
         "id": "us_an_apg_30",
         "blk": "gameData/sensors/us_an_apg_30.blk",
-        "dmPart": "radar_dm",
+        "dmPart": "radar1_dm",
         "node": "",
         "external": false,
         "type": "radar",
@@ -8286,14 +8646,14 @@
     "radarCount": 1,
     "radarIndex": 0,
     "radarId": "us_an_apg_30",
-    "radarDmPart": "radar_dm",
+    "radarDmPart": "radar1_dm",
     "esmCount": 0,
     "sensors": [
       {
         "index": 0,
         "id": "us_an_apg_30",
         "blk": "gameData/sensors/us_an_apg_30.blk",
-        "dmPart": "radar_dm",
+        "dmPart": "radar1_dm",
         "node": "",
         "external": false,
         "type": "radar",
@@ -8310,14 +8670,38 @@
     "radarCount": 1,
     "radarIndex": 0,
     "radarId": "us_an_apg_30",
-    "radarDmPart": "radar_dm",
+    "radarDmPart": "radar1_dm",
     "esmCount": 0,
     "sensors": [
       {
         "index": 0,
         "id": "us_an_apg_30",
         "blk": "gameData/sensors/us_an_apg_30.blk",
-        "dmPart": "radar_dm",
+        "dmPart": "radar1_dm",
+        "node": "",
+        "external": false,
+        "type": "radar",
+        "ir": false,
+        "passive": false,
+        "radioRadar": true
+      }
+    ]
+  },
+  {
+    "unitId": "f-84g_greece",
+    "hasRadarPage": false,
+    "hasRadarDm": true,
+    "radarCount": 1,
+    "radarIndex": 0,
+    "radarId": "us_an_apg_30",
+    "radarDmPart": "radar1_dm",
+    "esmCount": 0,
+    "sensors": [
+      {
+        "index": 0,
+        "id": "us_an_apg_30",
+        "blk": "gameData/sensors/us_an_apg_30.blk",
+        "dmPart": "radar1_dm",
         "node": "",
         "external": false,
         "type": "radar",
@@ -8334,14 +8718,14 @@
     "radarCount": 1,
     "radarIndex": 0,
     "radarId": "us_an_apg_30",
-    "radarDmPart": "radar_dm",
+    "radarDmPart": "radar1_dm",
     "esmCount": 0,
     "sensors": [
       {
         "index": 0,
         "id": "us_an_apg_30",
         "blk": "gameData/sensors/us_an_apg_30.blk",
-        "dmPart": "radar_dm",
+        "dmPart": "radar1_dm",
         "node": "",
         "external": false,
         "type": "radar",
@@ -8358,14 +8742,14 @@
     "radarCount": 1,
     "radarIndex": 0,
     "radarId": "us_an_apg_30",
-    "radarDmPart": "radar_dm",
+    "radarDmPart": "radar1_dm",
     "esmCount": 0,
     "sensors": [
       {
         "index": 0,
         "id": "us_an_apg_30",
         "blk": "gameData/sensors/us_an_apg_30.blk",
-        "dmPart": "radar_dm",
+        "dmPart": "radar1_dm",
         "node": "",
         "external": false,
         "type": "radar",
@@ -8382,14 +8766,14 @@
     "radarCount": 1,
     "radarIndex": 0,
     "radarId": "us_an_apg_30",
-    "radarDmPart": "radar_dm",
+    "radarDmPart": "radar1_dm",
     "esmCount": 0,
     "sensors": [
       {
         "index": 0,
         "id": "us_an_apg_30",
         "blk": "gameData/sensors/us_an_apg_30.blk",
-        "dmPart": "radar_dm",
+        "dmPart": "radar1_dm",
         "node": "",
         "external": false,
         "type": "radar",
@@ -8666,18 +9050,18 @@
   {
     "unitId": "f-86k_late",
     "hasRadarPage": false,
-    "hasRadarDm": true,
+    "hasRadarDm": false,
     "radarCount": 1,
     "radarIndex": 0,
     "radarId": "us_an_aps_21",
-    "radarDmPart": "radar_dm",
+    "radarDmPart": "radar1_dm",
     "esmCount": 0,
     "sensors": [
       {
         "index": 0,
         "id": "us_an_aps_21",
         "blk": "gameData/sensors/us_an_aps_21.blk",
-        "dmPart": "radar_dm",
+        "dmPart": "radar1_dm",
         "node": "",
         "external": false,
         "type": "radar",
@@ -8690,18 +9074,18 @@
   {
     "unitId": "f-86k_late_german",
     "hasRadarPage": false,
-    "hasRadarDm": true,
+    "hasRadarDm": false,
     "radarCount": 1,
     "radarIndex": 0,
     "radarId": "us_an_aps_21",
-    "radarDmPart": "radar_dm",
+    "radarDmPart": "radar1_dm",
     "esmCount": 0,
     "sensors": [
       {
         "index": 0,
         "id": "us_an_aps_21",
         "blk": "gameData/sensors/us_an_aps_21.blk",
-        "dmPart": "radar_dm",
+        "dmPart": "radar1_dm",
         "node": "",
         "external": false,
         "type": "radar",
@@ -8714,18 +9098,18 @@
   {
     "unitId": "f-86k_late_italy",
     "hasRadarPage": false,
-    "hasRadarDm": true,
+    "hasRadarDm": false,
     "radarCount": 1,
     "radarIndex": 0,
     "radarId": "us_an_aps_21",
-    "radarDmPart": "radar_dm",
+    "radarDmPart": "radar1_dm",
     "esmCount": 0,
     "sensors": [
       {
         "index": 0,
         "id": "us_an_aps_21",
         "blk": "gameData/sensors/us_an_aps_21.blk",
-        "dmPart": "radar_dm",
+        "dmPart": "radar1_dm",
         "node": "",
         "external": false,
         "type": "radar",
@@ -8893,7 +9277,7 @@
   },
   {
     "unitId": "f1",
-    "hasRadarPage": true,
+    "hasRadarPage": false,
     "hasRadarDm": true,
     "radarCount": 1,
     "radarIndex": 0,
@@ -10056,6 +10440,90 @@
     ]
   },
   {
+    "unitId": "h145m",
+    "hasRadarPage": false,
+    "hasRadarDm": false,
+    "radarCount": 0,
+    "radarIndex": null,
+    "radarId": "",
+    "radarDmPart": "",
+    "esmCount": 0,
+    "sensors": [
+      {
+        "index": 0,
+        "id": "ir_tracker",
+        "blk": "gameData/sensors/ir_tracker.blk",
+        "dmPart": "",
+        "node": "optic1_gun",
+        "external": false,
+        "type": "radar",
+        "ir": true,
+        "passive": false,
+        "radioRadar": false
+      },
+      {
+        "index": 1,
+        "id": "it_elt_156",
+        "blk": "gameData/sensors/it_elt_156.blk",
+        "dmPart": "",
+        "node": "",
+        "external": false,
+        "type": "rwr",
+        "ir": true,
+        "passive": false,
+        "radioRadar": false
+      },
+      {
+        "index": 2,
+        "id": "us_an_aar_60",
+        "blk": "gameData/sensors/us_an_aar_60.blk",
+        "dmPart": "",
+        "node": "",
+        "external": false,
+        "type": "mlws",
+        "ir": true,
+        "passive": false,
+        "radioRadar": false
+      },
+      {
+        "index": 3,
+        "id": "us_flir",
+        "blk": "gameData/sensors/us_flir.blk",
+        "dmPart": "",
+        "node": "optic1_gun",
+        "external": false,
+        "type": "lds",
+        "ir": true,
+        "passive": false,
+        "radioRadar": false
+      },
+      {
+        "index": 4,
+        "id": "it_ralm-101",
+        "blk": "gameData/sensors/it_ralm-101.blk",
+        "dmPart": "",
+        "node": "",
+        "external": false,
+        "type": "lws",
+        "ir": true,
+        "passive": false,
+        "radioRadar": false
+      },
+      {
+        "index": 5,
+        "id": "laserbeamridingsensor",
+        "blk": "gameData/sensors/LaserBeamRidingSensor.blk",
+        "dmPart": "",
+        "node": "optic1_gun",
+        "external": false,
+        "type": "lds",
+        "ir": true,
+        "passive": false,
+        "radioRadar": false
+      }
+    ]
+  },
+  {
     "unitId": "harrier_frs1",
     "hasRadarPage": true,
     "hasRadarDm": true,
@@ -10079,8 +10547,8 @@
       },
       {
         "index": 1,
-        "id": "uk_ari_18228",
-        "blk": "gameData/sensors/uk_ari_18228.blk",
+        "id": "uk_ari_18228_10",
+        "blk": "gameData/sensors/uk_ari_18228_10.blk",
         "dmPart": "",
         "node": "",
         "external": false,
@@ -10115,8 +10583,8 @@
       },
       {
         "index": 1,
-        "id": "uk_ari_18228",
-        "blk": "gameData/sensors/uk_ari_18228.blk",
+        "id": "uk_ari_18228_10",
+        "blk": "gameData/sensors/uk_ari_18228_10.blk",
         "dmPart": "",
         "node": "",
         "external": false,
@@ -11256,6 +11724,78 @@
     ]
   },
   {
+    "unitId": "j_16",
+    "hasRadarPage": true,
+    "hasRadarDm": true,
+    "radarCount": 1,
+    "radarIndex": 0,
+    "radarId": "cn_klj_j16",
+    "radarDmPart": "radar_dm",
+    "esmCount": 1,
+    "sensors": [
+      {
+        "index": 0,
+        "id": "cn_klj_j16",
+        "blk": "gameData/sensors/cn_klj_j16.blk",
+        "dmPart": "radar_dm",
+        "node": "",
+        "external": false,
+        "type": "radar",
+        "ir": false,
+        "passive": false,
+        "radioRadar": true
+      },
+      {
+        "index": 1,
+        "id": "cn_rwr_esm",
+        "blk": "gameData/sensors/cn_rwr_esm.blk",
+        "dmPart": "",
+        "node": "",
+        "external": false,
+        "type": "radar",
+        "ir": false,
+        "passive": true,
+        "radioRadar": false
+      },
+      {
+        "index": 2,
+        "id": "cn_krkz2200",
+        "blk": "gameData/sensors/cn_krkz2200.blk",
+        "dmPart": "",
+        "node": "",
+        "external": false,
+        "type": "rwr",
+        "ir": true,
+        "passive": false,
+        "radioRadar": false
+      },
+      {
+        "index": 3,
+        "id": "cn_s740",
+        "blk": "gameData/sensors/cn_s740.blk",
+        "dmPart": "",
+        "node": "",
+        "external": false,
+        "type": "mlws",
+        "ir": true,
+        "passive": false,
+        "radioRadar": false
+      },
+      {
+        "index": 4,
+        "id": "laserdesignatorsensor",
+        "blk": "gameData/sensors/LaserDesignatorSensor.blk",
+        "dmPart": "",
+        "node": "optic3_turret",
+        "external": false,
+        "type": "lds",
+        "ir": true,
+        "passive": false,
+        "radioRadar": false
+      }
+    ]
+  },
+  {
     "unitId": "j_22m1a",
     "hasRadarPage": false,
     "hasRadarDm": false,
@@ -11329,7 +11869,7 @@
   },
   {
     "unitId": "j_7d",
-    "hasRadarPage": true,
+    "hasRadarPage": false,
     "hasRadarDm": true,
     "radarCount": 1,
     "radarIndex": 0,
@@ -14077,7 +14617,7 @@
   },
   {
     "unitId": "mig_21_bis_finland",
-    "hasRadarPage": true,
+    "hasRadarPage": false,
     "hasRadarDm": true,
     "radarCount": 1,
     "radarIndex": 0,
@@ -14789,14 +15329,14 @@
     "hasRadarDm": true,
     "radarCount": 1,
     "radarIndex": 0,
-    "radarId": "su_n_010m",
+    "radarId": "su_n_010m_ols_ue",
     "radarDmPart": "radar1_dm",
     "esmCount": 2,
     "sensors": [
       {
         "index": 0,
-        "id": "su_n_010m",
-        "blk": "gameData/sensors/su_n_010m.blk",
+        "id": "su_n_010m_ols_ue",
+        "blk": "gameData/sensors/su_n_010m_ols_ue.blk",
         "dmPart": "radar1_dm",
         "node": "",
         "external": false,
@@ -14827,6 +15367,18 @@
         "type": "rwr",
         "ir": true,
         "passive": true,
+        "radioRadar": false
+      },
+      {
+        "index": 3,
+        "id": "laserdesignatorsensor",
+        "blk": "gameData/sensors/LaserDesignatorSensor.blk",
+        "dmPart": "",
+        "node": "",
+        "external": false,
+        "type": "lds",
+        "ir": true,
+        "passive": false,
         "radioRadar": false
       }
     ]
@@ -14875,6 +15427,18 @@
         "type": "rwr",
         "ir": true,
         "passive": true,
+        "radioRadar": false
+      },
+      {
+        "index": 3,
+        "id": "laserdesignatorsensor",
+        "blk": "gameData/sensors/LaserDesignatorSensor.blk",
+        "dmPart": "",
+        "node": "",
+        "external": false,
+        "type": "lds",
+        "ir": true,
+        "passive": false,
         "radioRadar": false
       }
     ]
@@ -14960,6 +15524,18 @@
         "ir": true,
         "passive": true,
         "radioRadar": false
+      },
+      {
+        "index": 3,
+        "id": "laserdesignatorsensor",
+        "blk": "gameData/sensors/LaserDesignatorSensor.blk",
+        "dmPart": "",
+        "node": "",
+        "external": false,
+        "type": "lds",
+        "ir": true,
+        "passive": false,
+        "radioRadar": false
       }
     ]
   },
@@ -15008,6 +15584,18 @@
         "ir": true,
         "passive": true,
         "radioRadar": false
+      },
+      {
+        "index": 3,
+        "id": "laserdesignatorsensor",
+        "blk": "gameData/sensors/LaserDesignatorSensor.blk",
+        "dmPart": "",
+        "node": "",
+        "external": false,
+        "type": "lds",
+        "ir": true,
+        "passive": false,
+        "radioRadar": false
       }
     ]
   },
@@ -15055,6 +15643,90 @@
         "type": "rwr",
         "ir": true,
         "passive": true,
+        "radioRadar": false
+      },
+      {
+        "index": 3,
+        "id": "laserdesignatorsensor",
+        "blk": "gameData/sensors/LaserDesignatorSensor.blk",
+        "dmPart": "",
+        "node": "",
+        "external": false,
+        "type": "lds",
+        "ir": true,
+        "passive": false,
+        "radioRadar": false
+      }
+    ]
+  },
+  {
+    "unitId": "mig_35",
+    "hasRadarPage": false,
+    "hasRadarDm": true,
+    "radarCount": 1,
+    "radarIndex": 0,
+    "radarId": "su_n_010a",
+    "radarDmPart": "radar1_dm",
+    "esmCount": 2,
+    "sensors": [
+      {
+        "index": 0,
+        "id": "su_n_010a",
+        "blk": "gameData/sensors/su_n_010a.blk",
+        "dmPart": "radar1_dm",
+        "node": "",
+        "external": false,
+        "type": "radar",
+        "ir": false,
+        "passive": false,
+        "radioRadar": true
+      },
+      {
+        "index": 1,
+        "id": "su_spo_150_esm",
+        "blk": "gameData/sensors/su_spo_150_esm.blk",
+        "dmPart": "",
+        "node": "",
+        "external": false,
+        "type": "radar",
+        "ir": false,
+        "passive": true,
+        "radioRadar": false
+      },
+      {
+        "index": 2,
+        "id": "su_spo-150m_02",
+        "blk": "gameData/sensors/su_spo-150m_02.blk",
+        "dmPart": "",
+        "node": "",
+        "external": false,
+        "type": "rwr",
+        "ir": true,
+        "passive": true,
+        "radioRadar": false
+      },
+      {
+        "index": 3,
+        "id": "laserdesignatorsensor",
+        "blk": "gameData/sensors/LaserDesignatorSensor.blk",
+        "dmPart": "",
+        "node": "",
+        "external": false,
+        "type": "lds",
+        "ir": true,
+        "passive": false,
+        "radioRadar": false
+      },
+      {
+        "index": 4,
+        "id": "su_mig_35_lws",
+        "blk": "gameData/sensors/su_mig_35_lws.blk",
+        "dmPart": "",
+        "node": "",
+        "external": false,
+        "type": "lws",
+        "ir": true,
+        "passive": false,
         "radioRadar": false
       }
     ]
@@ -15385,7 +16057,7 @@
   },
   {
     "unitId": "mig-21_bis",
-    "hasRadarPage": true,
+    "hasRadarPage": false,
     "hasRadarDm": true,
     "radarCount": 1,
     "radarIndex": 0,
@@ -15421,7 +16093,7 @@
   },
   {
     "unitId": "mig-21_bis_event",
-    "hasRadarPage": true,
+    "hasRadarPage": false,
     "hasRadarDm": true,
     "radarCount": 1,
     "radarIndex": 0,
@@ -15457,7 +16129,7 @@
   },
   {
     "unitId": "mig-21_bis_lazur",
-    "hasRadarPage": true,
+    "hasRadarPage": false,
     "hasRadarDm": true,
     "radarCount": 1,
     "radarIndex": 0,
@@ -15493,7 +16165,7 @@
   },
   {
     "unitId": "mig-21_bis_sau",
-    "hasRadarPage": true,
+    "hasRadarPage": false,
     "hasRadarDm": true,
     "radarCount": 1,
     "radarIndex": 0,
@@ -15529,7 +16201,7 @@
   },
   {
     "unitId": "mig-21_bis_sau_hungary",
-    "hasRadarPage": true,
+    "hasRadarPage": false,
     "hasRadarDm": true,
     "radarCount": 1,
     "radarIndex": 0,
@@ -15625,7 +16297,7 @@
   },
   {
     "unitId": "mig-21_mf",
-    "hasRadarPage": true,
+    "hasRadarPage": false,
     "hasRadarDm": true,
     "radarCount": 1,
     "radarIndex": 0,
@@ -15661,7 +16333,7 @@
   },
   {
     "unitId": "mig-21_mf_hungary",
-    "hasRadarPage": true,
+    "hasRadarPage": false,
     "hasRadarDm": true,
     "radarCount": 1,
     "radarIndex": 0,
@@ -15721,7 +16393,7 @@
   },
   {
     "unitId": "mig-21_s",
-    "hasRadarPage": true,
+    "hasRadarPage": false,
     "hasRadarDm": true,
     "radarCount": 1,
     "radarIndex": 0,
@@ -15757,7 +16429,7 @@
   },
   {
     "unitId": "mig-21_smt",
-    "hasRadarPage": true,
+    "hasRadarPage": false,
     "hasRadarDm": true,
     "radarCount": 1,
     "radarIndex": 0,
@@ -15793,7 +16465,7 @@
   },
   {
     "unitId": "mig-21_sps_k",
-    "hasRadarPage": true,
+    "hasRadarPage": false,
     "hasRadarDm": true,
     "radarCount": 1,
     "radarIndex": 0,
@@ -15823,6 +16495,54 @@
         "type": "rwr",
         "ir": true,
         "passive": true,
+        "radioRadar": false
+      }
+    ]
+  },
+  {
+    "unitId": "mirage_2000_5eg_mk2_greece",
+    "hasRadarPage": true,
+    "hasRadarDm": true,
+    "radarCount": 1,
+    "radarIndex": 0,
+    "radarId": "fr_thales_rdy",
+    "radarDmPart": "radar_dm",
+    "esmCount": 1,
+    "sensors": [
+      {
+        "index": 0,
+        "id": "fr_thales_rdy",
+        "blk": "gameData/sensors/fr_thales_rdy.blk",
+        "dmPart": "radar_dm",
+        "node": "",
+        "external": false,
+        "type": "radar",
+        "ir": false,
+        "passive": false,
+        "radioRadar": true
+      },
+      {
+        "index": 1,
+        "id": "fr_serval_rwr",
+        "blk": "gameData/sensors/fr_serval_rwr.blk",
+        "dmPart": "",
+        "node": "",
+        "external": false,
+        "type": "rwr",
+        "ir": true,
+        "passive": true,
+        "radioRadar": false
+      },
+      {
+        "index": 2,
+        "id": "laserdesignatorsensor",
+        "blk": "gameData/sensors/LaserDesignatorSensor.blk",
+        "dmPart": "",
+        "node": "",
+        "external": false,
+        "type": "lds",
+        "ir": true,
+        "passive": false,
         "radioRadar": false
       }
     ]
@@ -16465,7 +17185,7 @@
   },
   {
     "unitId": "mirage_f1c",
-    "hasRadarPage": true,
+    "hasRadarPage": false,
     "hasRadarDm": true,
     "radarCount": 1,
     "radarIndex": 0,
@@ -16501,7 +17221,7 @@
   },
   {
     "unitId": "mirage_f1c_200",
-    "hasRadarPage": true,
+    "hasRadarPage": false,
     "hasRadarDm": true,
     "radarCount": 1,
     "radarIndex": 0,
@@ -16536,8 +17256,44 @@
     ]
   },
   {
+    "unitId": "mirage_f1cg_greece",
+    "hasRadarPage": false,
+    "hasRadarDm": true,
+    "radarCount": 1,
+    "radarIndex": 0,
+    "radarId": "fr_cyrano_ivmr",
+    "radarDmPart": "radar_dm",
+    "esmCount": 0,
+    "sensors": [
+      {
+        "index": 0,
+        "id": "fr_cyrano_ivmr",
+        "blk": "gameData/sensors/fr_cyrano_ivmr.blk",
+        "dmPart": "radar_dm",
+        "node": "",
+        "external": false,
+        "type": "radar",
+        "ir": false,
+        "passive": false,
+        "radioRadar": true
+      },
+      {
+        "index": 1,
+        "id": "fr_sherloc",
+        "blk": "gameData/sensors/fr_sherloc.blk",
+        "dmPart": "",
+        "node": "",
+        "external": false,
+        "type": "rwr",
+        "ir": true,
+        "passive": false,
+        "radioRadar": false
+      }
+    ]
+  },
+  {
     "unitId": "mirage_f1ct",
-    "hasRadarPage": true,
+    "hasRadarPage": false,
     "hasRadarDm": true,
     "radarCount": 1,
     "radarIndex": 0,
@@ -16871,8 +17627,8 @@
     "sensors": [
       {
         "index": 0,
-        "id": "us_an_alr_46_v3",
-        "blk": "gameData/sensors/us_an_alr_46_v3.blk",
+        "id": "us_an_alr_46_v4",
+        "blk": "gameData/sensors/us_an_alr_46_v4.blk",
         "dmPart": "",
         "node": "",
         "external": false,
@@ -17448,6 +18204,90 @@
     ]
   },
   {
+    "unitId": "rafale_eg_greece",
+    "hasRadarPage": true,
+    "hasRadarDm": true,
+    "radarCount": 1,
+    "radarIndex": 0,
+    "radarId": "fr_thales_rbe2",
+    "radarDmPart": "radar_dm",
+    "esmCount": 1,
+    "sensors": [
+      {
+        "index": 0,
+        "id": "fr_thales_rbe2",
+        "blk": "gameData/sensors/fr_thales_rbe2.blk",
+        "dmPart": "radar_dm",
+        "node": "",
+        "external": false,
+        "type": "radar",
+        "ir": false,
+        "passive": false,
+        "radioRadar": true
+      },
+      {
+        "index": 1,
+        "id": "ir_tracker_tgp",
+        "blk": "gameData/sensors/ir_tracker_tgp.blk",
+        "dmPart": "",
+        "node": "optic2_gun",
+        "external": false,
+        "type": "radar",
+        "ir": true,
+        "passive": false,
+        "radioRadar": false
+      },
+      {
+        "index": 2,
+        "id": "laserbeamridingsensor",
+        "blk": "gameData/sensors/LaserBeamRidingSensor.blk",
+        "dmPart": "",
+        "node": "optic2_gun",
+        "external": false,
+        "type": "lds",
+        "ir": true,
+        "passive": false,
+        "radioRadar": false
+      },
+      {
+        "index": 3,
+        "id": "laserdesignatorsensor",
+        "blk": "gameData/sensors/LaserDesignatorSensor.blk",
+        "dmPart": "",
+        "node": "",
+        "external": false,
+        "type": "lds",
+        "ir": true,
+        "passive": false,
+        "radioRadar": false
+      },
+      {
+        "index": 4,
+        "id": "fr_spectra_rwr",
+        "blk": "gameData/sensors/fr_spectra_rwr.blk",
+        "dmPart": "",
+        "node": "",
+        "external": false,
+        "type": "rwr",
+        "ir": true,
+        "passive": true,
+        "radioRadar": false
+      },
+      {
+        "index": 5,
+        "id": "fr_spectra_lws",
+        "blk": "gameData/sensors/fr_spectra_lws.blk",
+        "dmPart": "",
+        "node": "",
+        "external": false,
+        "type": "lws",
+        "ir": true,
+        "passive": false,
+        "radioRadar": false
+      }
+    ]
+  },
+  {
     "unitId": "rafale_m_f3r",
     "hasRadarPage": true,
     "hasRadarDm": true,
@@ -17905,6 +18745,30 @@
         "index": 0,
         "id": "sw_ps-03",
         "blk": "gameData/sensors/sw_ps-03.blk",
+        "dmPart": "radar_dm",
+        "node": "",
+        "external": false,
+        "type": "radar",
+        "ir": false,
+        "passive": false,
+        "radioRadar": true
+      }
+    ]
+  },
+  {
+    "unitId": "saab_j35j",
+    "hasRadarPage": true,
+    "hasRadarDm": true,
+    "radarCount": 1,
+    "radarIndex": 0,
+    "radarId": "sw_ps-011a_71h_ir",
+    "radarDmPart": "radar_dm",
+    "esmCount": 0,
+    "sensors": [
+      {
+        "index": 0,
+        "id": "sw_ps-011a_71h_ir",
+        "blk": "gameData/sensors/sw_ps-011a_71h_ir.blk",
         "dmPart": "radar_dm",
         "node": "",
         "external": false,
@@ -18588,6 +19452,30 @@
     ]
   },
   {
+    "unitId": "se_203",
+    "hasRadarPage": true,
+    "hasRadarDm": true,
+    "radarCount": 1,
+    "radarIndex": 0,
+    "radarId": "us_an_apq_65",
+    "radarDmPart": "radar_dm",
+    "esmCount": 0,
+    "sensors": [
+      {
+        "index": 0,
+        "id": "us_an_apq_65",
+        "blk": "gameData/sensors/us_an_apq_65.blk",
+        "dmPart": "radar_dm",
+        "node": "",
+        "external": false,
+        "type": "radar",
+        "ir": false,
+        "passive": false,
+        "radioRadar": true
+      }
+    ]
+  },
+  {
     "unitId": "sea_harrier_fa2",
     "hasRadarPage": true,
     "hasRadarDm": true,
@@ -18626,18 +19514,18 @@
   {
     "unitId": "sea_venom_faw20",
     "hasRadarPage": false,
-    "hasRadarDm": true,
+    "hasRadarDm": false,
     "radarCount": 1,
     "radarIndex": 0,
     "radarId": "us_mk_x",
-    "radarDmPart": "radar_dm",
+    "radarDmPart": "radar1_dm",
     "esmCount": 0,
     "sensors": [
       {
         "index": 0,
         "id": "us_mk_x",
         "blk": "gameData/sensors/us_mk_x.blk",
-        "dmPart": "radar_dm",
+        "dmPart": "radar1_dm",
         "node": "",
         "external": false,
         "type": "radar",
@@ -18723,26 +19611,14 @@
     "unitId": "su_17m2",
     "hasRadarPage": false,
     "hasRadarDm": true,
-    "radarCount": 1,
-    "radarIndex": 0,
-    "radarId": "su_srd-5",
-    "radarDmPart": "radar_dm",
+    "radarCount": 0,
+    "radarIndex": null,
+    "radarId": "",
+    "radarDmPart": "",
     "esmCount": 1,
     "sensors": [
       {
         "index": 0,
-        "id": "su_srd-5",
-        "blk": "gameData/sensors/su_srd-5.blk",
-        "dmPart": "radar_dm",
-        "node": "",
-        "external": false,
-        "type": "radar",
-        "ir": false,
-        "passive": false,
-        "radioRadar": true
-      },
-      {
-        "index": 1,
         "id": "su_spo-10",
         "blk": "gameData/sensors/su_spo-10.blk",
         "dmPart": "",
@@ -18754,7 +19630,7 @@
         "radioRadar": false
       },
       {
-        "index": 2,
+        "index": 1,
         "id": "laserdesignatorsensor",
         "blk": "gameData/sensors/LaserDesignatorSensor.blk",
         "dmPart": "",
@@ -18771,26 +19647,14 @@
     "unitId": "su_17m4",
     "hasRadarPage": false,
     "hasRadarDm": true,
-    "radarCount": 1,
-    "radarIndex": 0,
-    "radarId": "su_srd-5",
-    "radarDmPart": "radar_dm",
+    "radarCount": 0,
+    "radarIndex": null,
+    "radarId": "",
+    "radarDmPart": "",
     "esmCount": 1,
     "sensors": [
       {
         "index": 0,
-        "id": "su_srd-5",
-        "blk": "gameData/sensors/su_srd-5.blk",
-        "dmPart": "radar_dm",
-        "node": "",
-        "external": false,
-        "type": "radar",
-        "ir": false,
-        "passive": false,
-        "radioRadar": true
-      },
-      {
-        "index": 1,
         "id": "su_spo-15lm",
         "blk": "gameData/sensors/su_spo-15lm.blk",
         "dmPart": "",
@@ -18802,7 +19666,7 @@
         "radioRadar": false
       },
       {
-        "index": 2,
+        "index": 1,
         "id": "laserdesignatorsensor",
         "blk": "gameData/sensors/LaserDesignatorSensor.blk",
         "dmPart": "",
@@ -18819,26 +19683,14 @@
     "unitId": "su_17m4_china_killstreak",
     "hasRadarPage": false,
     "hasRadarDm": true,
-    "radarCount": 1,
-    "radarIndex": 0,
-    "radarId": "su_srd-5",
-    "radarDmPart": "radar_dm",
+    "radarCount": 0,
+    "radarIndex": null,
+    "radarId": "",
+    "radarDmPart": "",
     "esmCount": 1,
     "sensors": [
       {
         "index": 0,
-        "id": "su_srd-5",
-        "blk": "gameData/sensors/su_srd-5.blk",
-        "dmPart": "radar_dm",
-        "node": "",
-        "external": false,
-        "type": "radar",
-        "ir": false,
-        "passive": false,
-        "radioRadar": true
-      },
-      {
-        "index": 1,
         "id": "su_spo-15lm",
         "blk": "gameData/sensors/su_spo-15lm.blk",
         "dmPart": "",
@@ -18850,7 +19702,7 @@
         "radioRadar": false
       },
       {
-        "index": 2,
+        "index": 1,
         "id": "laserdesignatorsensor",
         "blk": "gameData/sensors/LaserDesignatorSensor.blk",
         "dmPart": "",
@@ -18867,26 +19719,14 @@
     "unitId": "su_17m4_killstreak",
     "hasRadarPage": false,
     "hasRadarDm": true,
-    "radarCount": 1,
-    "radarIndex": 0,
-    "radarId": "su_srd-5",
-    "radarDmPart": "radar_dm",
+    "radarCount": 0,
+    "radarIndex": null,
+    "radarId": "",
+    "radarDmPart": "",
     "esmCount": 1,
     "sensors": [
       {
         "index": 0,
-        "id": "su_srd-5",
-        "blk": "gameData/sensors/su_srd-5.blk",
-        "dmPart": "radar_dm",
-        "node": "",
-        "external": false,
-        "type": "radar",
-        "ir": false,
-        "passive": false,
-        "radioRadar": true
-      },
-      {
-        "index": 1,
         "id": "su_spo-15lm",
         "blk": "gameData/sensors/su_spo-15lm.blk",
         "dmPart": "",
@@ -18898,7 +19738,7 @@
         "radioRadar": false
       },
       {
-        "index": 2,
+        "index": 1,
         "id": "laserdesignatorsensor",
         "blk": "gameData/sensors/LaserDesignatorSensor.blk",
         "dmPart": "",
@@ -18915,26 +19755,14 @@
     "unitId": "su_22m3",
     "hasRadarPage": false,
     "hasRadarDm": true,
-    "radarCount": 1,
-    "radarIndex": 0,
-    "radarId": "su_srd-5",
-    "radarDmPart": "radar_dm",
+    "radarCount": 0,
+    "radarIndex": null,
+    "radarId": "",
+    "radarDmPart": "",
     "esmCount": 1,
     "sensors": [
       {
         "index": 0,
-        "id": "su_srd-5",
-        "blk": "gameData/sensors/su_srd-5.blk",
-        "dmPart": "radar_dm",
-        "node": "",
-        "external": false,
-        "type": "radar",
-        "ir": false,
-        "passive": false,
-        "radioRadar": true
-      },
-      {
-        "index": 1,
         "id": "su_spo-15lm",
         "blk": "gameData/sensors/su_spo-15lm.blk",
         "dmPart": "",
@@ -18946,7 +19774,7 @@
         "radioRadar": false
       },
       {
-        "index": 2,
+        "index": 1,
         "id": "laserdesignatorsensor",
         "blk": "gameData/sensors/LaserDesignatorSensor.blk",
         "dmPart": "",
@@ -18963,26 +19791,14 @@
     "unitId": "su_22m3_hungary",
     "hasRadarPage": false,
     "hasRadarDm": true,
-    "radarCount": 1,
-    "radarIndex": 0,
-    "radarId": "su_srd-5",
-    "radarDmPart": "radar_dm",
+    "radarCount": 0,
+    "radarIndex": null,
+    "radarId": "",
+    "radarDmPart": "",
     "esmCount": 1,
     "sensors": [
       {
         "index": 0,
-        "id": "su_srd-5",
-        "blk": "gameData/sensors/su_srd-5.blk",
-        "dmPart": "radar_dm",
-        "node": "",
-        "external": false,
-        "type": "radar",
-        "ir": false,
-        "passive": false,
-        "radioRadar": true
-      },
-      {
-        "index": 1,
         "id": "su_spo-15lm",
         "blk": "gameData/sensors/su_spo-15lm.blk",
         "dmPart": "",
@@ -18994,7 +19810,7 @@
         "radioRadar": false
       },
       {
-        "index": 2,
+        "index": 1,
         "id": "laserdesignatorsensor",
         "blk": "gameData/sensors/LaserDesignatorSensor.blk",
         "dmPart": "",
@@ -19011,26 +19827,14 @@
     "unitId": "su_22m4",
     "hasRadarPage": false,
     "hasRadarDm": true,
-    "radarCount": 1,
-    "radarIndex": 0,
-    "radarId": "su_srd-5",
-    "radarDmPart": "radar_dm",
+    "radarCount": 0,
+    "radarIndex": null,
+    "radarId": "",
+    "radarDmPart": "",
     "esmCount": 1,
     "sensors": [
       {
         "index": 0,
-        "id": "su_srd-5",
-        "blk": "gameData/sensors/su_srd-5.blk",
-        "dmPart": "radar_dm",
-        "node": "",
-        "external": false,
-        "type": "radar",
-        "ir": false,
-        "passive": false,
-        "radioRadar": true
-      },
-      {
-        "index": 1,
         "id": "su_spo-15lm",
         "blk": "gameData/sensors/su_spo-15lm.blk",
         "dmPart": "",
@@ -19042,7 +19846,7 @@
         "radioRadar": false
       },
       {
-        "index": 2,
+        "index": 1,
         "id": "laserdesignatorsensor",
         "blk": "gameData/sensors/LaserDesignatorSensor.blk",
         "dmPart": "",
@@ -19059,26 +19863,14 @@
     "unitId": "su_22m4_de_wtd61",
     "hasRadarPage": false,
     "hasRadarDm": true,
-    "radarCount": 1,
-    "radarIndex": 0,
-    "radarId": "su_srd-5",
-    "radarDmPart": "radar_dm",
+    "radarCount": 0,
+    "radarIndex": null,
+    "radarId": "",
+    "radarDmPart": "",
     "esmCount": 1,
     "sensors": [
       {
         "index": 0,
-        "id": "su_srd-5",
-        "blk": "gameData/sensors/su_srd-5.blk",
-        "dmPart": "radar_dm",
-        "node": "",
-        "external": false,
-        "type": "radar",
-        "ir": false,
-        "passive": false,
-        "radioRadar": true
-      },
-      {
-        "index": 1,
         "id": "su_spo-15lm",
         "blk": "gameData/sensors/su_spo-15lm.blk",
         "dmPart": "",
@@ -19090,7 +19882,7 @@
         "radioRadar": false
       },
       {
-        "index": 2,
+        "index": 1,
         "id": "laserdesignatorsensor",
         "blk": "gameData/sensors/LaserDesignatorSensor.blk",
         "dmPart": "",
@@ -19107,26 +19899,14 @@
     "unitId": "su_22um3k",
     "hasRadarPage": false,
     "hasRadarDm": true,
-    "radarCount": 1,
-    "radarIndex": 0,
-    "radarId": "su_srd-5",
-    "radarDmPart": "radar_dm",
+    "radarCount": 0,
+    "radarIndex": null,
+    "radarId": "",
+    "radarDmPart": "",
     "esmCount": 1,
     "sensors": [
       {
         "index": 0,
-        "id": "su_srd-5",
-        "blk": "gameData/sensors/su_srd-5.blk",
-        "dmPart": "radar_dm",
-        "node": "",
-        "external": false,
-        "type": "radar",
-        "ir": false,
-        "passive": false,
-        "radioRadar": true
-      },
-      {
-        "index": 1,
         "id": "su_spo-15lm",
         "blk": "gameData/sensors/su_spo-15lm.blk",
         "dmPart": "",
@@ -19138,7 +19918,7 @@
         "radioRadar": false
       },
       {
-        "index": 2,
+        "index": 1,
         "id": "laserdesignatorsensor",
         "blk": "gameData/sensors/LaserDesignatorSensor.blk",
         "dmPart": "",
@@ -20569,7 +21349,7 @@
   },
   {
     "unitId": "t2",
-    "hasRadarPage": true,
+    "hasRadarPage": false,
     "hasRadarDm": true,
     "radarCount": 1,
     "radarIndex": 0,
@@ -20593,7 +21373,7 @@
   },
   {
     "unitId": "t2_early",
-    "hasRadarPage": true,
+    "hasRadarPage": false,
     "hasRadarDm": true,
     "radarCount": 1,
     "radarIndex": 0,
@@ -23018,7 +23798,7 @@
   {
     "unitId": "z_9w",
     "hasRadarPage": false,
-    "hasRadarDm": true,
+    "hasRadarDm": false,
     "radarCount": 0,
     "radarIndex": null,
     "radarId": "",
@@ -23042,7 +23822,7 @@
   {
     "unitId": "z_9wa",
     "hasRadarPage": false,
-    "hasRadarDm": true,
+    "hasRadarDm": false,
     "radarCount": 0,
     "radarIndex": null,
     "radarId": "",

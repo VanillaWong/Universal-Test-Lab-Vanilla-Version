@@ -128,6 +128,8 @@ gamedata/weapons/rocketguns/fr_as37_armat.blk	fr as37 armat	rocket
 gamedata/weapons/rocketguns/fr_as37_c_band.blk	fr as37 c band	rocket
 gamedata/weapons/rocketguns/fr_as37_l_band.blk	fr as37 l band	rocket
 gamedata/weapons/rocketguns/fr_as37_s_band.blk	fr as37 s band	rocket
+gamedata/weapons/rocketguns/fr_exocet_am39_block_2.blk	fr exocet am39 block 2	rocket
+gamedata/weapons/rocketguns/fr_fz275_lgr.blk	fr fz275 lgr	rocket
 gamedata/weapons/rocketguns/fr_fz49.blk	fr fz49	rocket
 gamedata/weapons/rocketguns/fr_matra_super_530d.blk	fr matra super 530d	rocket
 gamedata/weapons/rocketguns/fr_matra_super_530d_default.blk	fr matra super 530d default	rocket
@@ -172,6 +174,7 @@ gamedata/weapons/rocketguns/fr_tba_multidart_ab.blk	fr tba multidart ab	rocket
 gamedata/weapons/rocketguns/fr_tba_multidart_abl.blk	fr tba multidart abl	rocket
 gamedata/weapons/rocketguns/fr_tba_multidart_amv.blk	fr tba multidart amv	rocket
 gamedata/weapons/rocketguns/gr_as34_kormoran.blk	gr as34 kormoran	rocket
+gamedata/weapons/rocketguns/gr_as34_kormoran_mk_2.blk	gr as34 kormoran mk 2	rocket
 gamedata/weapons/rocketguns/ijnaf_60kg.blk	ijnaf 60kg	rocket
 gamedata/weapons/rocketguns/il_derby.blk	il derby	rocket
 gamedata/weapons/rocketguns/il_derby_default.blk	il derby default	rocket
@@ -186,6 +189,9 @@ gamedata/weapons/rocketguns/in_nasser_240.blk	in nasser 240	rocket
 gamedata/weapons/rocketguns/ir_fakour_90.blk	ir fakour 90	rocket
 gamedata/weapons/rocketguns/ir_sedjil.blk	ir sedjil	rocket
 gamedata/weapons/rocketguns/ir_yasser.blk	ir yasser	rocket
+gamedata/weapons/rocketguns/is_delilah.blk	is delilah	rocket
+gamedata/weapons/rocketguns/is_delilah_arm.blk	is delilah arm	rocket
+gamedata/weapons/rocketguns/is_delilah_ir.blk	is delilah ir	rocket
 gamedata/weapons/rocketguns/it_aspide_1a.blk	it aspide 1a	rocket
 gamedata/weapons/rocketguns/it_snia_bpd_50mm_type_arf8m_at_ap.blk	it snia bpd 50mm type arf8m at ap	rocket
 gamedata/weapons/rocketguns/jp_aam3.blk	jp aam3	rocket
@@ -194,6 +200,7 @@ gamedata/weapons/rocketguns/jp_aam4.blk	jp aam4	rocket
 gamedata/weapons/rocketguns/jp_aam4_default.blk	jp aam4 default	rocket
 gamedata/weapons/rocketguns/jp_asm1.blk	jp asm1	rocket
 gamedata/weapons/rocketguns/jp_asm2.blk	jp asm2	rocket
+gamedata/weapons/rocketguns/jp_asm3.blk	jp asm3	rocket
 gamedata/weapons/rocketguns/jp_ki_148_i_go_1b.blk	jp ki 148 i go 1b	rocket
 gamedata/weapons/rocketguns/jp_ki_148_i_go_1b_event.blk	jp ki 148 i go 1b event	rocket
 gamedata/weapons/rocketguns/jp_ki_148_i_go_1b_event_broken_air_ballon.blk	jp ki 148 i go 1b event broken air ballon	rocket
@@ -226,6 +233,9 @@ gamedata/weapons/rocketguns/s75m_missile_v760.blk	s75m missile v760	rocket
 gamedata/weapons/rocketguns/sa_zt_35_ingwe.blk	sa zt 35 ingwe	rocket
 gamedata/weapons/rocketguns/sa_zt_35_ingwe_default.blk	sa zt 35 ingwe default	rocket
 gamedata/weapons/rocketguns/spike_er.blk	spike er	rocket
+gamedata/weapons/rocketguns/spike_er_default.blk	spike er default	rocket
+gamedata/weapons/rocketguns/spike_nlos.blk	spike nlos	rocket
+gamedata/weapons/rocketguns/spike_nlos_default.blk	spike nlos default	rocket
 gamedata/weapons/rocketguns/su_3m11.blk	su 3m11	rocket
 gamedata/weapons/rocketguns/su_9m114.blk	su 9m114	rocket
 gamedata/weapons/rocketguns/su_9m114_default.blk	su 9m114 default	rocket
@@ -273,6 +283,8 @@ gamedata/weapons/rocketguns/su_kh_31pd.blk	su kh 31pd	rocket
 gamedata/weapons/rocketguns/su_kh_31pk_l_111.blk	su kh 31pk l 111	rocket
 gamedata/weapons/rocketguns/su_kh_31pk_l_112.blk	su kh 31pk l 112	rocket
 gamedata/weapons/rocketguns/su_kh_31pk_l_113.blk	su kh 31pk l 113	rocket
+gamedata/weapons/rocketguns/su_kh_35u.blk	su kh 35u	rocket
+gamedata/weapons/rocketguns/su_kh_35ue.blk	su kh 35ue	rocket
 gamedata/weapons/rocketguns/su_kh_38ml.blk	su kh 38ml	rocket
 gamedata/weapons/rocketguns/su_kh_38mle.blk	su kh 38mle	rocket
 gamedata/weapons/rocketguns/su_kh_38mt.blk	su kh 38mt	rocket
@@ -283,6 +295,7 @@ gamedata/weapons/rocketguns/su_kh_58u_b_band.blk	su kh 58u b band	rocket
 gamedata/weapons/rocketguns/su_kh_58u_c_band.blk	su kh 58u c band	rocket
 gamedata/weapons/rocketguns/su_kh_58ush.blk	su kh 58ush	rocket
 gamedata/weapons/rocketguns/su_kh_58ushk.blk	su kh 58ushk	rocket
+gamedata/weapons/rocketguns/su_kh_58ushke.blk	su kh 58ushke	rocket
 gamedata/weapons/rocketguns/su_kh_59.blk	su kh 59	rocket
 gamedata/weapons/rocketguns/su_kh_59m.blk	su kh 59m	rocket
 gamedata/weapons/rocketguns/su_kh_59me.blk	su kh 59me	rocket
@@ -389,10 +402,13 @@ gamedata/weapons/rocketguns/swd_180mm_hpsrak_m49.blk	swd 180mm hpsrak m49	rocket
 gamedata/weapons/rocketguns/swd_75mm_frida.blk	swd 75mm frida	rocket
 gamedata/weapons/rocketguns/swd_75mm_m57b.blk	swd 75mm m57b	rocket
 gamedata/weapons/rocketguns/swd_rb_05a.blk	swd rb 05a	rocket
+gamedata/weapons/rocketguns/swd_rb_15f.blk	swd rb 15f	rocket
 gamedata/weapons/rocketguns/swd_rb24.blk	swd rb24	rocket
 gamedata/weapons/rocketguns/swd_rb24_default.blk	swd rb24 default	rocket
 gamedata/weapons/rocketguns/swd_rb24j.blk	swd rb24j	rocket
 gamedata/weapons/rocketguns/swd_rb24j_default.blk	swd rb24j default	rocket
+gamedata/weapons/rocketguns/swd_rb27.blk	swd rb27	rocket
+gamedata/weapons/rocketguns/swd_rb28.blk	swd rb28	rocket
 gamedata/weapons/rocketguns/swd_rb52.blk	swd rb52	rocket
 gamedata/weapons/rocketguns/swd_rb53.blk	swd rb53	rocket
 gamedata/weapons/rocketguns/swd_rb55b.blk	swd rb55b	rocket
@@ -446,6 +462,8 @@ gamedata/weapons/rocketguns/uk_firestreak.blk	uk firestreak	rocket
 gamedata/weapons/rocketguns/uk_firestreak_default.blk	uk firestreak default	rocket
 gamedata/weapons/rocketguns/uk_firestreak_javelin.blk	uk firestreak javelin	rocket
 gamedata/weapons/rocketguns/uk_hvar.blk	uk hvar	rocket
+gamedata/weapons/rocketguns/uk_martlet.blk	uk martlet	rocket
+gamedata/weapons/rocketguns/uk_martlet_default.blk	uk martlet default	rocket
 gamedata/weapons/rocketguns/uk_redtop.blk	uk redtop	rocket
 gamedata/weapons/rocketguns/uk_rp3.blk	uk rp3	rocket
 gamedata/weapons/rocketguns/uk_rp3_2.blk	uk rp3 2	rocket
@@ -478,6 +496,7 @@ gamedata/weapons/rocketguns/us_2_75_in_ffar_mighty_mouse.blk	us 2 75 in ffar mig
 gamedata/weapons/rocketguns/us_2_75_in_ffar_mighty_mouse_default.blk	us 2 75 in ffar mighty mouse default	rocket
 gamedata/weapons/rocketguns/us_2_75_in_ffar_mighty_mouse_fn_m3p.blk	us 2 75 in ffar mighty mouse fn m3p	rocket
 gamedata/weapons/rocketguns/us_2_75_in_ffar_mighty_mouse_fn_m3p_cwp.blk	us 2 75 in ffar mighty mouse fn m3p cwp	rocket
+gamedata/weapons/rocketguns/us_2_75_in_ffar_mighty_mouse_m151.blk	us 2 75 in ffar mighty mouse m151	rocket
 gamedata/weapons/rocketguns/us_2_75_in_ffar_mighty_mouse_m429.blk	us 2 75 in ffar mighty mouse m429	rocket
 gamedata/weapons/rocketguns/us_2_75_in_ffar_mighty_mouse_m439.blk	us 2 75 in ffar mighty mouse m439	rocket
 gamedata/weapons/rocketguns/us_2_75_in_lsffar_mighty_mouse.blk	us 2 75 in lsffar mighty mouse	rocket
@@ -534,6 +553,7 @@ gamedata/weapons/rocketguns/us_agm_84h_slam_er.blk	us agm 84h slam er	rocket
 gamedata/weapons/rocketguns/us_agm_84k_slam_er.blk	us agm 84k slam er	rocket
 gamedata/weapons/rocketguns/us_agm_88a.blk	us agm 88a	rocket
 gamedata/weapons/rocketguns/us_agm_88c.blk	us agm 88c	rocket
+gamedata/weapons/rocketguns/us_agm_88g.blk	us agm 88g	rocket
 gamedata/weapons/rocketguns/us_aim_120a.blk	us aim 120a	rocket
 gamedata/weapons/rocketguns/us_aim_120a_default.blk	us aim 120a default	rocket
 gamedata/weapons/rocketguns/us_aim_120b.blk	us aim 120b	rocket
@@ -557,6 +577,7 @@ gamedata/weapons/rocketguns/us_aim_54c.blk	us aim 54c	rocket
 gamedata/weapons/rocketguns/us_aim_54c_default.blk	us aim 54c default	rocket
 gamedata/weapons/rocketguns/us_aim_54c_plus.blk	us aim 54c plus	rocket
 gamedata/weapons/rocketguns/us_aim_54c_plus_default.blk	us aim 54c plus default	rocket
+gamedata/weapons/rocketguns/us_aim4d_falcon.blk	us aim4d falcon	rocket
 gamedata/weapons/rocketguns/us_aim4f_falcon.blk	us aim4f falcon	rocket
 gamedata/weapons/rocketguns/us_aim4f_falcon_default.blk	us aim4f falcon default	rocket
 gamedata/weapons/rocketguns/us_aim4g_falcon.blk	us aim4g falcon	rocket
@@ -661,6 +682,7 @@ gamedata/weapons/cannon_mauser_bk_27.blk	cannon mauser bk 27	cannon
 gamedata/weapons/cannon_mavag_39m.blk	cannon mavag 39m	cannon
 gamedata/weapons/cannon_type23_2k.blk	cannon type23 2k	cannon
 gamedata/weapons/cannon2a42.blk	cannon2a42	cannon
+gamedata/weapons/cannon404_modele50.blk	cannon404 modele50	cannon
 gamedata/weapons/cannonaden.blk	cannonaden	cannon
 gamedata/weapons/cannonaden_25.blk	cannonaden 25	cannon
 gamedata/weapons/cannonaden_mk4.blk	cannonaden mk4	cannon
@@ -697,6 +719,7 @@ gamedata/weapons/cannondefa552a.blk	cannondefa552a	cannon
 gamedata/weapons/cannondefa552a_switzerland.blk	cannondefa552a switzerland	cannon
 gamedata/weapons/cannondefa553.blk	cannondefa553	cannon
 gamedata/weapons/cannondefa553_gunpod.blk	cannondefa553 gunpod	cannon
+gamedata/weapons/cannondefa553_jaguar.blk	cannondefa553 jaguar	cannon
 gamedata/weapons/cannondefa554.blk	cannondefa554	cannon
 gamedata/weapons/cannondefa554_gunpod.blk	cannondefa554 gunpod	cannon
 gamedata/weapons/cannonflzkan_76.blk	cannonflzkan 76	cannon
@@ -722,6 +745,7 @@ gamedata/weapons/cannongsh_6_23m_gun_pod.blk	cannongsh 6 23m gun pod	cannon
 gamedata/weapons/cannongsh_6_23m_gun_pod_turret.blk	cannongsh 6 23m gun pod turret	cannon
 gamedata/weapons/cannongsh_6_30.blk	cannongsh 6 30	cannon
 gamedata/weapons/cannonhispano_hs825.blk	cannonhispano hs825	cannon
+gamedata/weapons/cannonhispano_hs825_l_53.blk	cannonhispano hs825 l 53	cannon
 gamedata/weapons/cannonhispano_hs9.blk	cannonhispano hs9	cannon
 gamedata/weapons/cannonhispano404.blk	cannonhispano404	cannon
 gamedata/weapons/cannonhispano404_turret.blk	cannonhispano404 turret	cannon
@@ -733,11 +757,13 @@ gamedata/weapons/cannonhispanomkii_tutorial.blk	cannonhispanomkii tutorial	canno
 gamedata/weapons/cannonhispanomkv.blk	cannonhispanomkv	cannon
 gamedata/weapons/cannonhispanomkv_turret.blk	cannonhispanomkv turret	cannon
 gamedata/weapons/cannonho155.blk	cannonho155	cannon
+gamedata/weapons/cannonho155-ii.blk	cannonho155 ii	cannon
 gamedata/weapons/cannonho203.blk	cannonho203	cannon
 gamedata/weapons/cannonho204.blk	cannonho204	cannon
 gamedata/weapons/cannonho3.blk	cannonho3	cannon
 gamedata/weapons/cannonho301.blk	cannonho301	cannon
 gamedata/weapons/cannonho401.blk	cannonho401	cannon
+gamedata/weapons/cannonho402.blk	cannonho402	cannon
 gamedata/weapons/cannonho5.blk	cannonho5	cannon
 gamedata/weapons/cannonho5_turret.blk	cannonho5 turret	cannon
 gamedata/weapons/cannonhughesmk11mod0.blk	cannonhughesmk11mod0	cannon
@@ -841,6 +867,7 @@ gamedata/weapons/cannontype99_turret.blk	cannontype99 turret	cannon
 gamedata/weapons/cannontype99mark3.blk	cannontype99mark3	cannon
 gamedata/weapons/cannontype99mark4.blk	cannontype99mark4	cannon
 gamedata/weapons/cannontype99mk2.blk	cannontype99mk2	cannon
+gamedata/weapons/cannontype99mk2_kai.blk	cannontype99mk2 kai	cannon
 gamedata/weapons/cannontype99mod2_mark3_turret.blk	cannontype99mod2 mark3 turret	cannon
 gamedata/weapons/cannontype99mod2_mark5_turret.blk	cannontype99mod2 mark5 turret	cannon
 gamedata/weapons/cannonvickers_p.blk	cannonvickers p	cannon

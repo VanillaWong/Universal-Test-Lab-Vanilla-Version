@@ -125,6 +125,7 @@ gamedata/weapons/navalmodels_weapons/203mm_50_8inch_mk8_naval_user_cannon.blk	20
 gamedata/weapons/navalmodels_weapons/203mm_50_ansaldo_mod1924_naval_user_cannon.blk	203mm 50 ansaldo mod1924
 gamedata/weapons/navalmodels_weapons/203mm_50_ansaldo_mod1927_naval_user_cannon.blk	203mm 50 ansaldo mod1927
 gamedata/weapons/navalmodels_weapons/203mm_50_mle_1924_naval_user_cannon.blk	203mm 50 mle 1924
+gamedata/weapons/navalmodels_weapons/203mm_50_mle_1931_naval_user_cannon.blk	203mm 50 mle 1931
 gamedata/weapons/navalmodels_weapons/203mm_55_8inch_mk12_naval_user_cannon.blk	203mm 55 8inch mk12
 gamedata/weapons/navalmodels_weapons/203mm_55_8inch_mk14_naval_user_cannon.blk	203mm 55 8inch mk14
 gamedata/weapons/navalmodels_weapons/203mm_55_8inch_mk16_naval_user_cannon.blk	203mm 55 8inch mk16
@@ -223,6 +224,7 @@ gamedata/weapons/navalmodels_weapons/381mm_42_bl_mk1_naval_user_cannon.blk	381mm
 gamedata/weapons/navalmodels_weapons/381mm_50_ansaldo_oto_mod_1934_naval_user_cannon.blk	381mm 50 ansaldo oto mod 1934
 gamedata/weapons/navalmodels_weapons/406mm_45_bl_mk1_r1_naval_user_cannon.blk	406mm 45 bl mk1 r1
 gamedata/weapons/navalmodels_weapons/406mm_45_bl_mk1_r2_naval_user_cannon.blk	406mm 45 bl mk1 r2
+gamedata/weapons/navalmodels_weapons/406mm_45_bl_mk2_naval_user_cannon.blk	406mm 45 bl mk2
 gamedata/weapons/navalmodels_weapons/406mm_45_mk5_naval_user_cannon.blk	406mm 45 mk5
 gamedata/weapons/navalmodels_weapons/406mm_45_mk6_naval_user_cannon.blk	406mm 45 mk6
 gamedata/weapons/navalmodels_weapons/406mm_50_b37_naval_user_cannon.blk	406mm 50 b37
@@ -232,6 +234,7 @@ gamedata/weapons/navalmodels_weapons/40mm_39_2pdr_qf_mk8_pom_pom_naval_user_cann
 gamedata/weapons/navalmodels_weapons/40mm_39_vickers_terni_mod15_17_modif1930_naval_user_cannon.blk	40mm 39 vickers terni mod15 17 modif1930
 gamedata/weapons/navalmodels_weapons/40mm_39_vickers_terni_mod15_17_naval_user_cannon.blk	40mm 39 vickers terni mod15 17
 gamedata/weapons/navalmodels_weapons/40mm_39_vickers_terni_mod1915_1917_naval_user_cannon.blk	40mm 39 vickers terni mod1915 1917
+gamedata/weapons/navalmodels_weapons/40mm_50_2pdr_qf_mk9_naval_user_cannon.blk	40mm 50 2pdr qf mk9
 gamedata/weapons/navalmodels_weapons/40mm_50_2pdr_rolls_royce_mk14_naval_user_cannon.blk	40mm 50 2pdr rolls royce mk14
 gamedata/weapons/navalmodels_weapons/40mm_56_4cm_flak_28_bofors_naval_user_cannon.blk	40mm 56 4cm flak 28 bofors
 gamedata/weapons/navalmodels_weapons/40mm_62_hi_type91_naval_user_cannon.blk	40mm 62 hi type91
