@@ -16,8 +16,8 @@ using System.Windows.Forms;
 [assembly: AssemblyDescription("War Thunder User Mission and vehicle test workspace (public beta)")]
 [assembly: AssemblyCompany("Vanilla Wong")]
 [assembly: AssemblyVersion("0.12.0.0")]
-[assembly: AssemblyFileVersion("0.12.0.7")]
-[assembly: AssemblyInformationalVersion("0.12.0-beta.7")]
+[assembly: AssemblyFileVersion("0.12.0.8")]
+[assembly: AssemblyInformationalVersion("0.12.0-beta.8")]
 
 namespace UniversalTestLab
 {

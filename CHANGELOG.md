@@ -1,5 +1,64 @@
 # Changelog
 
+## v0.12.0-beta.8 — 2026-09-17
+
+### Added / 新增
+
+- **Per-slot cannon swaps**: the gun-swap lab can now replace *any* host weapon
+  slot, not just the main gun. Pick a host slot from the dropdown — including
+  `SKIP`, which keeps the main gun untouched and applies only the extra
+  replacements listed underneath — and give each extra replacement its own donor
+  weapon and ammunition. / 换炮实验台现在可以替换**任意宿主武器槽**,不再只能换主炮:
+  宿主槽位下拉选择,选 `SKIP` 则保留主炮、只执行下方额外替换列表;每个额外替换各自
+  带来源武器与弹药。
+- **All-weapon catalog**: the weapon list now covers every weapon in a vehicle
+  file — secondary guns, machine guns and empty (`dummy`) camera slots included —
+  and shows each one's `trigger` name, so multi-gun vehicles with non-consecutive
+  triggers (BMPT: `gunner0` … `gunner7`) no longer look like they have empty
+  slots. / 武器目录改为收录车文件里的**全部武器**(含副炮、机枪、空 `dummy` 观察槽),
+  并显示每门的 `trigger` 名——trigger 号不连续的多炮车(BMPT 的 gunner0…gunner7)
+  不再显示成空槽。
+- Gun-swap settings now persist per vehicle across sessions. / 换炮设置现在**按载具
+  持久化**,重启不丢。
+
+### Fixed / 修复
+
+- **Native multi-gun vehicles losing their secondary ammunition** (BMD-4's 100 mm
+  gun came up with a single round): the carrier-group ammunition path that fills
+  all four mission slots is now limited to missile-only carriers the player has not
+  configured. / **原生多炮车副炮弹药丢失**(BMD-4 的 100mm 只剩 1 发):会把四个任务弹槽
+  按容器顺序塞满的"载弹车按组装弹"路径,现在只对"纯导弹发射车且玩家未配置"生效。
+- **Bradley TOW rounds missing from the ammo picker**: Tow 2A/2B are 152 mm while
+  the launcher is 127 mm, so they were filtered out; they are now grouped into the
+  launcher by name keyword. / **布拉德利 TOW 弹选不到**:2A/2B 标注 152mm、发射器为
+  127mm 被过滤掉了,现按名字关键词并入发射器分组。
+- `config.json` is written as indented JSON again instead of one long line. /
+  `config.json` 恢复缩进格式,不再是一行。
+
+### Changed / 变更
+
+- **Data catalog refreshed for the 2026-09-17 game update**: 1605 aircraft /
+  1303 ground vehicles / 640 ships / 32670 donor mounts / 52210 modifications /
+  466 sensor blocks. / **数据目录已随 2026-09-17 游戏更新刷新**:1605 架飞机 / 1303 辆
+  地面载具 / 640 艘舰船 / 32670 条挂载 / 52210 项改装 / 466 个传感 blk。
+- **Aircraft and naval weapon entries are complete again**: the ground-only quick
+  rebuild had been preserving them from an older game version, which silently kept
+  those lists stale. / **飞机与舰船武器条目补齐**:此前"只重刷地面"的快速脚本会原样保留
+  旧版本条目,导致这两类列表悄悄停留在旧数据上。
+- `Update-Data.ps1` now unpacks `gamedata/sensors` and rebuilds the radar catalogs,
+  so a game update can no longer leave them pinned to the previous version. /
+  `Update-Data.ps1` 现在会解包 `gamedata/sensors` 并重建雷达目录,游戏更新后不会再残留
+  旧数据。
+- Added an aircraft radar dataset (radar catalog + per-aircraft sensor layout) as
+  groundwork for a future radar-swap feature — data only, no UI yet. / 新增飞机雷达
+  数据集(雷达目录 + 每机传感器位布局),作为后续"飞机换雷达"的地基——目前仅数据,
+  无界面。
+
+### Notes / 说明
+
+- Crash reports and bug reports go to GitHub Issues. Please include the crash log
+  and what you were doing. / 报错请到 GitHub Issues,附上崩溃日志与操作描述即可。
+
 ## v0.12.0-beta.7 — 2026-09-06
 
 ### Fixed / 修复
