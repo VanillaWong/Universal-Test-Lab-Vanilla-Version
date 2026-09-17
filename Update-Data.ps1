@@ -59,6 +59,10 @@ function Unpack-From([string]$vromfs, [string]$folder, [string]$outDir) {
 if (-not $SkipExtract) {
     Unpack-From 'aces.vromfs.bin' 'gamedata/flightmodels' 'universal_game_data'
     Unpack-From 'aces.vromfs.bin' 'gamedata/units' 'universal_units_data'
+    # Sensors live beside gamedata/units; the radar catalogs (data/sensors.tsv and
+    # data/aircraft_radars.json) are built from this tree, so it must be refreshed
+    # too or both stay pinned to the previous game version.
+    Unpack-From 'aces.vromfs.bin' 'gamedata/sensors' 'universal_units_data'
     Unpack-From 'aces.vromfs.bin' 'gamedata/weapons' 'universal_weapons_data'
     Unpack-From 'lang.vromfs.bin' 'lang' 'universal_lang_data'
     Unpack-From 'char.vromfs.bin' 'config' 'universal_char_data'
@@ -79,6 +83,13 @@ if (-not $SkipCatalog) {
     Write-Host 'Converting TSV catalogs to JSON ...'
     node (Join-Path $scriptRoot 'tools\tsv2json.js')
     if ($LASTEXITCODE -ne 0) { throw 'tsv2json.js failed.' }
+
+    # Aircraft radar catalog (data/aircraft_radars.json + aircraft_radar_sites.json).
+    # Kept out of Build-Catalog because it only needs sensors/ + flightmodels/ and
+    # runs in seconds.
+    Write-Host 'Rebuilding aircraft radar catalog ...'
+    node (Join-Path $scriptRoot 'tools\rebuild-aircraft-radars.js')
+    if ($LASTEXITCODE -ne 0) { throw 'rebuild-aircraft-radars.js failed.' }
 }
 
 if (-not $SkipCompile) {
