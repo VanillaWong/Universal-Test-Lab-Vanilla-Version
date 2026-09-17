@@ -52,6 +52,12 @@ data/aircraft_slots.json      每机可编辑槽（aircraftId/slot/order/tier/ma
 data/donor_weapons.json       每机每槽原生武器清单（NATIVE 模式列表源）
 data/weapon_catalog.json      全局武器（INJECT 模式列表源）
 data/sensors.json             雷达目录（442 行：id/display/band/role/rangeMax/type/...）
+data/aircraft_radars.json     飞机雷达候选（423 行 = 传感 blk 里 type=radar 的全部；radio 330 / ir 93）
+                              额外字段：passive / illumination / tws / launchZone / airUse / groundUse / airExample
+                              （radio=band>0 或有 illuminationTransmitter；合并 IRST 的苏系雷达仍算 radio）
+data/aircraft_radar_sites.json 每机传感器位布局（560 行，仅含带 sensors 块的机型）
+                              unitId / hasRadarPage / hasRadarDm / radarIndex / radarId / radarDmPart / esmCount / sensors[]
+                              重建：node tools/rebuild-aircraft-radars.js（秒级）
 data/ground_ammo.json         地面弹药
 data/air_ordnance.json        blk→display 映射（弹显示名）
 data/unit_weapons.json / vehicle_weapons.json / presets.json / modifications.json ...

@@ -62,4 +62,6 @@ ModernShell.MainWindow.SelfTest.cs
 ModernShell.cs
 /resource:data\era_presets.json,UTL.era_presets.json
 /resource:data\sensors.json,UTL.sensors.json
+/resource:data\aircraft_radars.json,UTL.aircraft_radars.json
+/resource:data\aircraft_radar_sites.json,UTL.aircraft_radar_sites.json
 /resource:data\ground_presets.json,UTL.ground_presets.json
