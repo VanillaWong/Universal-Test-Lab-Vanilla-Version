@@ -288,6 +288,14 @@
     "value": "127mm 54 mk45"
   },
   {
+    "key": "gamedata/weapons/navalmodels_weapons/127mm_54_oto_melara_compact_naval_user_cannon.blk",
+    "value": "127mm 54 oto melara compact"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/127mm_62_mk45_mod4_naval_user_cannon.blk",
+    "value": "127mm 62 mk45 mod4"
+  },
+  {
     "key": "gamedata/weapons/navalmodels_weapons/128mm_45_skc_41_naval_user_cannon.blk",
     "value": "128mm 45 skc 41"
   },
@@ -298,6 +306,10 @@
   {
     "key": "gamedata/weapons/navalmodels_weapons/130mm_45_model_1932_naval_user_cannon.blk",
     "value": "130mm 45 model 1932"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/130mm_45_model_1935_naval_user_cannon.blk",
+    "value": "130mm 45 model 1935"
   },
   {
     "key": "gamedata/weapons/navalmodels_weapons/130mm_50_b13_1936_naval_user_cannon.blk",
@@ -318,6 +330,10 @@
   {
     "key": "gamedata/weapons/navalmodels_weapons/130mm_70_ak_130_naval_user_cannon.blk",
     "value": "130mm 70 ak 130"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/130mm_70_hpj45_naval_user_cannon.blk",
+    "value": "130mm 70 hpj45"
   },
   {
     "key": "gamedata/weapons/navalmodels_weapons/133mm_5_25inch_50_qf_mk1_ask_naval_user_cannon.blk",
@@ -430,6 +446,10 @@
   {
     "key": "gamedata/weapons/navalmodels_weapons/152mm_6inch_47_mk_16_naval_user_cannon.blk",
     "value": "152mm 6inch 47 mk 16"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/152mm_6inch_47_mk_17_naval_user_cannon.blk",
+    "value": "152mm 6inch 47 mk 17"
   },
   {
     "key": "gamedata/weapons/navalmodels_weapons/152mm_6inch_50_bl_mk22_naval_user_cannon.blk",
@@ -566,6 +586,10 @@
   {
     "key": "gamedata/weapons/navalmodels_weapons/20mm_jm61_rfs_vulcan_naval_user_cannon.blk",
     "value": "20mm jm61 rfs vulcan"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/20mm_m61_phalanx_block1b_naval_user_cannon.blk",
+    "value": "20mm m61 phalanx block1b"
   },
   {
     "key": "gamedata/weapons/navalmodels_weapons/20mm_m61_vulcan_naval_user_cannon.blk",
@@ -724,12 +748,20 @@
     "value": "30mm 73 m44"
   },
   {
+    "key": "gamedata/weapons/navalmodels_weapons/30mm_77_type730_naval_user_cannon.blk",
+    "value": "30mm 77 type730"
+  },
+  {
     "key": "gamedata/weapons/navalmodels_weapons/30mm_ak_230_naval_user_cannon.blk",
     "value": "30mm ak 230"
   },
   {
     "key": "gamedata/weapons/navalmodels_weapons/30mm_bp_30_mortar_naval_user_cannon.blk",
     "value": "30mm bp 30 mortar"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/30mm_hpj11_naval_user_cannon.blk",
+    "value": "30mm hpj11"
   },
   {
     "key": "gamedata/weapons/navalmodels_weapons/320mm_40_ansaldo_mod_1934_naval_user_cannon.blk",
@@ -924,6 +956,10 @@
     "value": "406mm 50 mk7"
   },
   {
+    "key": "gamedata/weapons/navalmodels_weapons/406mm_52_skc_34_naval_user_cannon.blk",
+    "value": "406mm 52 skc 34"
+  },
+  {
     "key": "gamedata/weapons/navalmodels_weapons/40mm_39_2pdr_qf_mk2c_naval_user_cannon.blk",
     "value": "40mm 39 2pdr qf mk2c"
   },
@@ -1086,6 +1122,10 @@
   {
     "key": "gamedata/weapons/navalmodels_weapons/75mm_35_model_1925_naval_user_cannon.blk",
     "value": "75mm 35 model 1925"
+  },
+  {
+    "key": "gamedata/weapons/navalmodels_weapons/75mm_40_m3_naval_user_cannon.blk",
+    "value": "75mm 40 m3"
   },
   {
     "key": "gamedata/weapons/navalmodels_weapons/75mm_50_model_1922_aa_naval_user_cannon.blk",

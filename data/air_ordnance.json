@@ -170,6 +170,11 @@
     "kind": "rocket"
   },
   {
+    "blk": "gamedata/weapons/rocketguns/cn_cm_502kg_he_wo_mitl.blk",
+    "display": "cn cm 502kg he wo mitl",
+    "kind": "rocket"
+  },
+  {
     "blk": "gamedata/weapons/rocketguns/cn_fire_snake_70a.blk",
     "display": "cn fire snake 70a",
     "kind": "rocket"
@@ -1180,6 +1185,11 @@
     "kind": "rocket"
   },
   {
+    "blk": "gamedata/weapons/rocketguns/spike_er_wo_mitl.blk",
+    "display": "spike er wo mitl",
+    "kind": "rocket"
+  },
+  {
     "blk": "gamedata/weapons/rocketguns/spike_nlos.blk",
     "display": "spike nlos",
     "kind": "rocket"
@@ -1187,6 +1197,11 @@
   {
     "blk": "gamedata/weapons/rocketguns/spike_nlos_default.blk",
     "display": "spike nlos default",
+    "kind": "rocket"
+  },
+  {
+    "blk": "gamedata/weapons/rocketguns/spike_nlos_wo_mitl.blk",
+    "display": "spike nlos wo mitl",
     "kind": "rocket"
   },
   {
@@ -1525,6 +1540,11 @@
     "kind": "rocket"
   },
   {
+    "blk": "gamedata/weapons/rocketguns/su_lmur_wo_mitl.blk",
+    "display": "su lmur wo mitl",
+    "kind": "rocket"
+  },
+  {
     "blk": "gamedata/weapons/rocketguns/su_m13uk.blk",
     "display": "su m13uk",
     "kind": "rocket"
@@ -1792,6 +1812,16 @@
   {
     "blk": "gamedata/weapons/rocketguns/su_r_77_default.blk",
     "display": "su r 77 default",
+    "kind": "rocket"
+  },
+  {
+    "blk": "gamedata/weapons/rocketguns/su_r_98mr.blk",
+    "display": "su r 98mr",
+    "kind": "rocket"
+  },
+  {
+    "blk": "gamedata/weapons/rocketguns/su_r_98mt.blk",
+    "display": "su r 98mt",
     "kind": "rocket"
   },
   {
@@ -2162,6 +2192,11 @@
   {
     "blk": "gamedata/weapons/rocketguns/sws_flz_lwf_63_80.blk",
     "display": "sws flz lwf 63 80",
+    "kind": "rocket"
+  },
+  {
+    "blk": "gamedata/weapons/rocketguns/sws_flz_lwf_63_90.blk",
+    "display": "sws flz lwf 63 90",
     "kind": "rocket"
   },
   {

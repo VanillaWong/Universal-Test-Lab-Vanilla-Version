@@ -1,5 +1,37 @@
 [
   {
+    "id": "cn_aircraftcarrier_fujian",
+    "display": "Fujian",
+    "defaultPreset": "cn_aircraftcarrier_fujian_default",
+    "nation": "Other",
+    "rank": 0,
+    "type": "typeDestroyer"
+  },
+  {
+    "id": "cn_aircraftcarrier_fujian_ai",
+    "display": "Fujian",
+    "defaultPreset": "cn_aircraftcarrier_fujian_default",
+    "nation": "Other",
+    "rank": 0,
+    "type": "typeShip"
+  },
+  {
+    "id": "cn_destroyer_type052d",
+    "display": "Type 052D",
+    "defaultPreset": "cn_destroyer_type052d_torpedoes",
+    "nation": "Other",
+    "rank": 0,
+    "type": "typeDestroyer"
+  },
+  {
+    "id": "cn_frigate_type054a",
+    "display": "Type 054A",
+    "defaultPreset": "cn_frigate_type054a_torpedoes",
+    "nation": "Other",
+    "rank": 0,
+    "type": "typeDestroyer"
+  },
+  {
     "id": "fr_adroit_class",
     "display": "L'Intrépide",
     "defaultPreset": "torpedoes",
@@ -288,6 +320,14 @@
     "type": "typeDestroyer"
   },
   {
+    "id": "fr_destroyer_le_hardi_class_le_hardi",
+    "display": "Le Hardi",
+    "defaultPreset": "torpedoes",
+    "nation": "France",
+    "rank": 3,
+    "type": "typeDestroyer"
+  },
+  {
     "id": "fr_destroyer_marceau_class_marceau",
     "display": "Marceau",
     "defaultPreset": "fr_destroyer_marceau_class_marceau_torpedoes",
@@ -352,6 +392,14 @@
     "type": "typeTorpedoGunBoat"
   },
   {
+    "id": "fr_l990_monitor",
+    "display": "L-990",
+    "defaultPreset": "fr_l990_monitor_default",
+    "nation": "France",
+    "rank": 2,
+    "type": "typeGunBoat"
+  },
+  {
     "id": "fr_lcg_m_l9059",
     "display": "L9059",
     "defaultPreset": "lcg_m_l9059_default",
@@ -414,6 +462,14 @@
     "nation": "France",
     "rank": 2,
     "type": "typeTorpedoBoat"
+  },
+  {
+    "id": "fr_vc1",
+    "display": "VC-1",
+    "defaultPreset": "fr_vc1_default",
+    "nation": "France",
+    "rank": 2,
+    "type": "typeGunBoat"
   },
   {
     "id": "fr_vlt1",
@@ -613,6 +669,14 @@
     "defaultPreset": "germ_battleship_ostfriesland_torpedoes",
     "nation": "Germany",
     "rank": 5,
+    "type": "typeDestroyer"
+  },
+  {
+    "id": "germ_battleship_pr_h39",
+    "display": "H-39",
+    "defaultPreset": "torpedoes",
+    "nation": "Germany",
+    "rank": 7,
     "type": "typeDestroyer"
   },
   {
@@ -1136,6 +1200,14 @@
     "type": "typeTorpedoBoat"
   },
   {
+    "id": "germ_s_700_s_706",
+    "display": "S-706",
+    "defaultPreset": "germ_s_700_s_706_torpedoes",
+    "nation": "Germany",
+    "rank": 3,
+    "type": "typeTorpedoBoat"
+  },
+  {
     "id": "germ_s30_s61",
     "display": "S-61",
     "defaultPreset": "torpedoes",
@@ -1190,6 +1262,14 @@
     "nation": "Germany",
     "rank": 4,
     "type": "typeTorpedoGunBoat"
+  },
+  {
+    "id": "germ_sub_type_7",
+    "display": "Type VII",
+    "defaultPreset": "germ_sub_type_7_g7e_torpedoes",
+    "nation": "Germany",
+    "rank": 2,
+    "type": "typeSubmarine"
   },
   {
     "id": "germ_type140_jaguar",
@@ -1509,6 +1589,14 @@
     "defaultPreset": "torpedoes",
     "nation": "Italy",
     "rank": 1,
+    "type": "typeDestroyer"
+  },
+  {
+    "id": "it_destroyer_audace",
+    "display": "Audace",
+    "defaultPreset": "torpedoes",
+    "nation": "Italy",
+    "rank": 4,
     "type": "typeDestroyer"
   },
   {
@@ -2117,6 +2205,14 @@
     "defaultPreset": "torpedoes",
     "nation": "Japan",
     "rank": 3,
+    "type": "typeDestroyer"
+  },
+  {
+    "id": "jp_cruiser_takao",
+    "display": "IJN Takao",
+    "defaultPreset": "torpedoes",
+    "nation": "Japan",
+    "rank": 5,
     "type": "typeDestroyer"
   },
   {
@@ -2752,6 +2848,14 @@
     "type": "typeDestroyer"
   },
   {
+    "id": "uk_battleship_duke_of_york",
+    "display": "HMS Duke of York",
+    "defaultPreset": "default",
+    "nation": "Great Britain",
+    "rank": 6,
+    "type": "typeDestroyer"
+  },
+  {
     "id": "uk_battleship_iron_duke",
     "display": "HMS Iron Duke",
     "defaultPreset": "torpedoes",
@@ -2893,6 +2997,14 @@
     "defaultPreset": "uk_cruiser_belfast_default",
     "nation": "Great Britain",
     "rank": 4,
+    "type": "typeDestroyer"
+  },
+  {
+    "id": "uk_cruiser_danae_class",
+    "display": "HMS Danae",
+    "defaultPreset": "uk_cruiser_danae_class_default",
+    "nation": "Great Britain",
+    "rank": 3,
     "type": "typeDestroyer"
   },
   {
@@ -3520,6 +3632,22 @@
     "type": "typeShip"
   },
   {
+    "id": "us_aircraftcarrier_gerald_ford",
+    "display": "USS Gerald Ford",
+    "defaultPreset": "us_aircraftcarrier_gerald_ford_default",
+    "nation": "Other",
+    "rank": 0,
+    "type": "typeDestroyer"
+  },
+  {
+    "id": "us_aircraftcarrier_gerald_ford_ai",
+    "display": "USS Gerald Ford",
+    "defaultPreset": "us_aircraftcarrier_gerald_ford_default",
+    "nation": "Other",
+    "rank": 0,
+    "type": "typeShip"
+  },
+  {
     "id": "us_aircraftcarrier_lexington",
     "display": "USS Lexington",
     "defaultPreset": "us_aircraftcarrier_lexington_default",
@@ -3531,6 +3659,22 @@
     "id": "us_aircraftcarrier_lexington_ai",
     "display": "USS Lexington",
     "defaultPreset": "us_aircraftcarrier_lexington_default",
+    "nation": "Other",
+    "rank": 0,
+    "type": "typeShip"
+  },
+  {
+    "id": "us_aircraftcarrier_nimitz",
+    "display": "USS Nimitz",
+    "defaultPreset": "us_aircraftcarrier_nimitz_default",
+    "nation": "Other",
+    "rank": 0,
+    "type": "typeDestroyer"
+  },
+  {
+    "id": "us_aircraftcarrier_nimitz_ai",
+    "display": "USS Nimitz",
+    "defaultPreset": "us_aircraftcarrier_nimitz_default",
     "nation": "Other",
     "rank": 0,
     "type": "typeShip"
@@ -3992,6 +4136,14 @@
     "type": "typeDestroyer"
   },
   {
+    "id": "us_destroyer_halsey",
+    "display": "USS Halsey",
+    "defaultPreset": "us_destroyer_halsey_torpedoes",
+    "nation": "Other",
+    "rank": 0,
+    "type": "typeDestroyer"
+  },
+  {
     "id": "us_destroyer_mahan_class",
     "display": "USS Mahan",
     "defaultPreset": "torpedoes",
@@ -4128,6 +4280,14 @@
     "type": "typeTorpedoBoat"
   },
   {
+    "id": "us_erie_class",
+    "display": "Erie",
+    "defaultPreset": "us_erie_class_default",
+    "nation": "USA",
+    "rank": 2,
+    "type": "typeDestroyer"
+  },
+  {
     "id": "us_flagstaff_pgh1",
     "display": "USS Flagstaff",
     "defaultPreset": "us_flagstaff_pgh1_default",
@@ -4150,6 +4310,14 @@
     "nation": "USA",
     "rank": 5,
     "type": "typeDestroyer"
+  },
+  {
+    "id": "us_frigate_oliver_hazard_perry",
+    "display": "USS Oliver Hazard Perry",
+    "defaultPreset": "torpedoes",
+    "nation": "Other",
+    "rank": 0,
+    "type": "typeTorpedoGunBoat"
   },
   {
     "id": "us_frigate_tacoma",
@@ -4405,6 +4573,14 @@
     "defaultPreset": "ussr_battleship_arhangelsk_default",
     "nation": "USSR / Russia",
     "rank": 6,
+    "type": "typeDestroyer"
+  },
+  {
+    "id": "ussr_battleship_imperator_nikolai_pervyi",
+    "display": "Nikolay Perviy",
+    "defaultPreset": "torpedoes",
+    "nation": "USSR / Russia",
+    "rank": 5,
     "type": "typeDestroyer"
   },
   {
@@ -4762,6 +4938,14 @@
   {
     "id": "ussr_destroyer_regele_ferdinand_class_letuchiy",
     "display": "Letuchiy",
+    "defaultPreset": "torpedoes",
+    "nation": "USSR / Russia",
+    "rank": 1,
+    "type": "typeDestroyer"
+  },
+  {
+    "id": "ussr_destroyer_vifor_class_lyogkiy",
+    "display": "Lyogkiy",
     "defaultPreset": "torpedoes",
     "nation": "USSR / Russia",
     "rank": 1,

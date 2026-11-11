@@ -1185,11 +1185,27 @@
   },
   {
     "aircraftId": "a-20g",
-    "slot": 0,
-    "order": 0,
-    "tier": 0,
+    "slot": 1,
+    "order": 1,
+    "tier": 7,
     "maxLoad": 0,
-    "anchorMount": "A-20G_500lb"
+    "anchorMount": "m8_bazooka_x2_left"
+  },
+  {
+    "aircraftId": "a-20g",
+    "slot": 2,
+    "order": 13,
+    "tier": 6,
+    "maxLoad": 0,
+    "anchorMount": "us_250lb_x4"
+  },
+  {
+    "aircraftId": "a-20g",
+    "slot": 3,
+    "order": 2,
+    "tier": 5,
+    "maxLoad": 0,
+    "anchorMount": "m8_bazooka_x2_right"
   },
   {
     "aircraftId": "a-26b",
@@ -3920,6 +3936,54 @@
     "anchorMount": "martlet_default"
   },
   {
+    "aircraftId": "aw_249_pre_serie",
+    "slot": 1,
+    "order": 1,
+    "tier": 9,
+    "maxLoad": 0,
+    "anchorMount": "atas_wing"
+  },
+  {
+    "aircraftId": "aw_249_pre_serie",
+    "slot": 2,
+    "order": 3,
+    "tier": 8,
+    "maxLoad": 0,
+    "anchorMount": "hl_19_70"
+  },
+  {
+    "aircraftId": "aw_249_pre_serie",
+    "slot": 3,
+    "order": 5,
+    "tier": 7,
+    "maxLoad": 0,
+    "anchorMount": "hl_19_70"
+  },
+  {
+    "aircraftId": "aw_249_pre_serie",
+    "slot": 4,
+    "order": 6,
+    "tier": 5,
+    "maxLoad": 0,
+    "anchorMount": "hl_19_70"
+  },
+  {
+    "aircraftId": "aw_249_pre_serie",
+    "slot": 5,
+    "order": 4,
+    "tier": 4,
+    "maxLoad": 0,
+    "anchorMount": "hl_19_70"
+  },
+  {
+    "aircraftId": "aw_249_pre_serie",
+    "slot": 6,
+    "order": 2,
+    "tier": 3,
+    "maxLoad": 0,
+    "anchorMount": "atas_wing"
+  },
+  {
     "aircraftId": "b_10b",
     "slot": 1,
     "order": 1,
@@ -4094,6 +4158,54 @@
     "tier": 0,
     "maxLoad": 0,
     "anchorMount": "b_26b_c_default"
+  },
+  {
+    "aircraftId": "b_33_indonesia",
+    "slot": 1,
+    "order": 1,
+    "tier": 9,
+    "maxLoad": 0,
+    "anchorMount": "rs82_slot1"
+  },
+  {
+    "aircraftId": "b_33_indonesia",
+    "slot": 2,
+    "order": 2,
+    "tier": 8,
+    "maxLoad": 0,
+    "anchorMount": "rs82_slot2"
+  },
+  {
+    "aircraftId": "b_33_indonesia",
+    "slot": 3,
+    "order": 3,
+    "tier": 7,
+    "maxLoad": 0,
+    "anchorMount": "fab50"
+  },
+  {
+    "aircraftId": "b_33_indonesia",
+    "slot": 4,
+    "order": 4,
+    "tier": 5,
+    "maxLoad": 0,
+    "anchorMount": "fab50"
+  },
+  {
+    "aircraftId": "b_33_indonesia",
+    "slot": 5,
+    "order": 5,
+    "tier": 4,
+    "maxLoad": 0,
+    "anchorMount": "rs82_slot5"
+  },
+  {
+    "aircraftId": "b_33_indonesia",
+    "slot": 6,
+    "order": 6,
+    "tier": 3,
+    "maxLoad": 0,
+    "anchorMount": "rs82_slot6"
   },
   {
     "aircraftId": "b_34",
@@ -4609,11 +4721,27 @@
   },
   {
     "aircraftId": "beaufort_mkviii",
-    "slot": 0,
-    "order": 0,
-    "tier": 0,
+    "slot": 1,
+    "order": 1,
+    "tier": 7,
     "maxLoad": 0,
-    "anchorMount": "beaufort_mkviii_250gp"
+    "anchorMount": "250lb_slot1"
+  },
+  {
+    "aircraftId": "beaufort_mkviii",
+    "slot": 2,
+    "order": 3,
+    "tier": 6,
+    "maxLoad": 0,
+    "anchorMount": "250lb_slot2"
+  },
+  {
+    "aircraftId": "beaufort_mkviii",
+    "slot": 3,
+    "order": 2,
+    "tier": 5,
+    "maxLoad": 0,
+    "anchorMount": "250lb_slot3"
   },
   {
     "aircraftId": "bf_109t_2",
@@ -4713,6 +4841,14 @@
   },
   {
     "aircraftId": "bf-109e-3",
+    "slot": 0,
+    "order": 0,
+    "tier": 0,
+    "maxLoad": 0,
+    "anchorMount": "Bf-109E-3_4xSC50"
+  },
+  {
+    "aircraftId": "bf-109e-3_tl",
     "slot": 0,
     "order": 0,
     "tier": 0,
@@ -7813,7 +7949,7 @@
     "order": 1,
     "tier": 9,
     "maxLoad": 0,
-    "anchorMount": "ptb_slot1"
+    "anchorMount": "suu_11a_gunpod_slot1"
   },
   {
     "aircraftId": "f_102a_greece",
@@ -7861,7 +7997,7 @@
     "order": 2,
     "tier": 3,
     "maxLoad": 0,
-    "anchorMount": "ptb_slot7"
+    "anchorMount": "suu_11a_gunpod_slot7"
   },
   {
     "aircraftId": "f_102a_late",
@@ -7869,7 +8005,7 @@
     "order": 1,
     "tier": 9,
     "maxLoad": 0,
-    "anchorMount": "ptb_slot1"
+    "anchorMount": "suu_11a_gunpod_slot1"
   },
   {
     "aircraftId": "f_102a_late",
@@ -7917,7 +8053,7 @@
     "order": 2,
     "tier": 3,
     "maxLoad": 0,
-    "anchorMount": "ptb_slot7"
+    "anchorMount": "suu_11a_gunpod_slot7"
   },
   {
     "aircraftId": "f_105d_japan_killstreak",
@@ -9225,14 +9361,6 @@
   },
   {
     "aircraftId": "f_15e",
-    "slot": 8,
-    "order": 12,
-    "tier": 5,
-    "maxLoad": 0,
-    "anchorMount": "ltc_right"
-  },
-  {
-    "aircraftId": "f_15e",
     "slot": 9,
     "order": 10,
     "tier": 4,
@@ -9270,6 +9398,118 @@
     "tier": 0,
     "maxLoad": 0,
     "anchorMount": "aim_9l_default"
+  },
+  {
+    "aircraftId": "f_15ex",
+    "slot": 1,
+    "order": 1,
+    "tier": 14,
+    "maxLoad": 0,
+    "anchorMount": "aim_9m_slot1"
+  },
+  {
+    "aircraftId": "f_15ex",
+    "slot": 2,
+    "order": 3,
+    "tier": 13,
+    "maxLoad": 0,
+    "anchorMount": "aim_9m_default_slot2"
+  },
+  {
+    "aircraftId": "f_15ex",
+    "slot": 3,
+    "order": 5,
+    "tier": 12,
+    "maxLoad": 0,
+    "anchorMount": "aim_120c_x2_slot3"
+  },
+  {
+    "aircraftId": "f_15ex",
+    "slot": 4,
+    "order": 7,
+    "tier": 11,
+    "maxLoad": 0,
+    "anchorMount": "aim_9m_slot4"
+  },
+  {
+    "aircraftId": "f_15ex",
+    "slot": 5,
+    "order": 9,
+    "tier": 10,
+    "maxLoad": 0,
+    "anchorMount": "aim_120b_slot5"
+  },
+  {
+    "aircraftId": "f_15ex",
+    "slot": 6,
+    "order": 11,
+    "tier": 9,
+    "maxLoad": 0,
+    "anchorMount": "fueltank_fuse_slot6"
+  },
+  {
+    "aircraftId": "f_15ex",
+    "slot": 7,
+    "order": 13,
+    "tier": 8,
+    "maxLoad": 0,
+    "anchorMount": "sniper"
+  },
+  {
+    "aircraftId": "f_15ex",
+    "slot": 8,
+    "order": 15,
+    "tier": 7,
+    "maxLoad": 0,
+    "anchorMount": "us_mk84_slot8"
+  },
+  {
+    "aircraftId": "f_15ex",
+    "slot": 10,
+    "order": 12,
+    "tier": 5,
+    "maxLoad": 0,
+    "anchorMount": "fueltank_fuse_slot10"
+  },
+  {
+    "aircraftId": "f_15ex",
+    "slot": 11,
+    "order": 10,
+    "tier": 4,
+    "maxLoad": 0,
+    "anchorMount": "aim_120b_slot11"
+  },
+  {
+    "aircraftId": "f_15ex",
+    "slot": 12,
+    "order": 8,
+    "tier": 3,
+    "maxLoad": 0,
+    "anchorMount": "aim_9m_slot12"
+  },
+  {
+    "aircraftId": "f_15ex",
+    "slot": 13,
+    "order": 6,
+    "tier": 2,
+    "maxLoad": 0,
+    "anchorMount": "aim_120c_x2_slot13"
+  },
+  {
+    "aircraftId": "f_15ex",
+    "slot": 14,
+    "order": 4,
+    "tier": 1,
+    "maxLoad": 0,
+    "anchorMount": "aim_9m_default_slot14"
+  },
+  {
+    "aircraftId": "f_15ex",
+    "slot": 15,
+    "order": 2,
+    "tier": 0,
+    "maxLoad": 0,
+    "anchorMount": "aim_9m_slot15"
   },
   {
     "aircraftId": "f_15i_raam",
@@ -9329,14 +9569,6 @@
   },
   {
     "aircraftId": "f_15i_raam",
-    "slot": 8,
-    "order": 12,
-    "tier": 5,
-    "maxLoad": 0,
-    "anchorMount": "ltc_right"
-  },
-  {
-    "aircraftId": "f_15i_raam",
     "slot": 9,
     "order": 10,
     "tier": 4,
@@ -9374,6 +9606,118 @@
     "tier": 0,
     "maxLoad": 0,
     "anchorMount": "aim_9l_default"
+  },
+  {
+    "aircraftId": "f_15ia",
+    "slot": 1,
+    "order": 1,
+    "tier": 14,
+    "maxLoad": 0,
+    "anchorMount": "derby_slot1"
+  },
+  {
+    "aircraftId": "f_15ia",
+    "slot": 2,
+    "order": 3,
+    "tier": 13,
+    "maxLoad": 0,
+    "anchorMount": "aim_9m_default_slot2"
+  },
+  {
+    "aircraftId": "f_15ia",
+    "slot": 3,
+    "order": 5,
+    "tier": 12,
+    "maxLoad": 0,
+    "anchorMount": "aim_120c_x2_slot3"
+  },
+  {
+    "aircraftId": "f_15ia",
+    "slot": 4,
+    "order": 7,
+    "tier": 11,
+    "maxLoad": 0,
+    "anchorMount": "aim_9m_slot4"
+  },
+  {
+    "aircraftId": "f_15ia",
+    "slot": 5,
+    "order": 9,
+    "tier": 10,
+    "maxLoad": 0,
+    "anchorMount": "aim_120b_slot5"
+  },
+  {
+    "aircraftId": "f_15ia",
+    "slot": 6,
+    "order": 11,
+    "tier": 9,
+    "maxLoad": 0,
+    "anchorMount": "fueltank_fuse_slot6"
+  },
+  {
+    "aircraftId": "f_15ia",
+    "slot": 7,
+    "order": 13,
+    "tier": 8,
+    "maxLoad": 0,
+    "anchorMount": "litening"
+  },
+  {
+    "aircraftId": "f_15ia",
+    "slot": 8,
+    "order": 15,
+    "tier": 7,
+    "maxLoad": 0,
+    "anchorMount": "us_mk84_slot8"
+  },
+  {
+    "aircraftId": "f_15ia",
+    "slot": 10,
+    "order": 12,
+    "tier": 5,
+    "maxLoad": 0,
+    "anchorMount": "fueltank_fuse_slot10"
+  },
+  {
+    "aircraftId": "f_15ia",
+    "slot": 11,
+    "order": 10,
+    "tier": 4,
+    "maxLoad": 0,
+    "anchorMount": "aim_120b_slot11"
+  },
+  {
+    "aircraftId": "f_15ia",
+    "slot": 12,
+    "order": 8,
+    "tier": 3,
+    "maxLoad": 0,
+    "anchorMount": "aim_9m_slot12"
+  },
+  {
+    "aircraftId": "f_15ia",
+    "slot": 13,
+    "order": 6,
+    "tier": 2,
+    "maxLoad": 0,
+    "anchorMount": "aim_120c_x2_slot13"
+  },
+  {
+    "aircraftId": "f_15ia",
+    "slot": 14,
+    "order": 4,
+    "tier": 1,
+    "maxLoad": 0,
+    "anchorMount": "aim_9m_default_slot14"
+  },
+  {
+    "aircraftId": "f_15ia",
+    "slot": 15,
+    "order": 2,
+    "tier": 0,
+    "maxLoad": 0,
+    "anchorMount": "derby_slot15"
   },
   {
     "aircraftId": "f_15j",
@@ -17601,11 +17945,19 @@
   },
   {
     "aircraftId": "f-8e_fn",
-    "slot": 0,
-    "order": 0,
-    "tier": 0,
+    "slot": 1,
+    "order": 1,
+    "tier": 7,
     "maxLoad": 0,
-    "anchorMount": "f_8e_fn_2x_aim9b"
+    "anchorMount": "aim9b_default"
+  },
+  {
+    "aircraftId": "f-8e_fn",
+    "slot": 2,
+    "order": 2,
+    "tier": 5,
+    "maxLoad": 0,
+    "anchorMount": "aim9b_default"
   },
   {
     "aircraftId": "f8f1",
@@ -18576,6 +18928,78 @@
     "anchorMount": "aim_9l"
   },
   {
+    "aircraftId": "fa_18d_late",
+    "slot": 1,
+    "order": 1,
+    "tier": 10,
+    "maxLoad": 0,
+    "anchorMount": "aim_9m_default"
+  },
+  {
+    "aircraftId": "fa_18d_late",
+    "slot": 2,
+    "order": 3,
+    "tier": 9,
+    "maxLoad": 0,
+    "anchorMount": "aim_9m_x2"
+  },
+  {
+    "aircraftId": "fa_18d_late",
+    "slot": 3,
+    "order": 5,
+    "tier": 8,
+    "maxLoad": 0,
+    "anchorMount": "aim_7p_slot3"
+  },
+  {
+    "aircraftId": "fa_18d_late",
+    "slot": 4,
+    "order": 4,
+    "tier": 7,
+    "maxLoad": 0,
+    "anchorMount": "aim_7p_slot4"
+  },
+  {
+    "aircraftId": "fa_18d_late",
+    "slot": 5,
+    "order": 9,
+    "tier": 6,
+    "maxLoad": 0,
+    "anchorMount": "us_mk82_x1_slot5"
+  },
+  {
+    "aircraftId": "fa_18d_late",
+    "slot": 6,
+    "order": 8,
+    "tier": 5,
+    "maxLoad": 0,
+    "anchorMount": "aim_7p_slot6"
+  },
+  {
+    "aircraftId": "fa_18d_late",
+    "slot": 7,
+    "order": 6,
+    "tier": 4,
+    "maxLoad": 0,
+    "anchorMount": "aim_7p_slot7"
+  },
+  {
+    "aircraftId": "fa_18d_late",
+    "slot": 8,
+    "order": 4,
+    "tier": 3,
+    "maxLoad": 0,
+    "anchorMount": "aim_9m_x2"
+  },
+  {
+    "aircraftId": "fa_18d_late",
+    "slot": 9,
+    "order": 2,
+    "tier": 2,
+    "maxLoad": 0,
+    "anchorMount": "aim_9m_default"
+  },
+  {
     "aircraftId": "fa_18d_late_malaysia",
     "slot": 1,
     "order": 1,
@@ -19328,6 +19752,14 @@
     "anchorMount": "firefly_mk1_250lbs_bombs"
   },
   {
+    "aircraftId": "firefly_mk1_thailand",
+    "slot": 0,
+    "order": 0,
+    "tier": 0,
+    "maxLoad": 0,
+    "anchorMount": "firefly_mk1_250lbs_bombs"
+  },
+  {
     "aircraftId": "firefly_mk4_netherlands",
     "slot": 1,
     "order": 1,
@@ -19640,6 +20072,30 @@
     "anchorMount": "hvar"
   },
   {
+    "aircraftId": "fulmar_mk2",
+    "slot": 1,
+    "order": 1,
+    "tier": 7,
+    "maxLoad": 0,
+    "anchorMount": "250lb_gp"
+  },
+  {
+    "aircraftId": "fulmar_mk2",
+    "slot": 2,
+    "order": 3,
+    "tier": 6,
+    "maxLoad": 0,
+    "anchorMount": "250lb_gp"
+  },
+  {
+    "aircraftId": "fulmar_mk2",
+    "slot": 3,
+    "order": 2,
+    "tier": 5,
+    "maxLoad": 0,
+    "anchorMount": "250lb_gp"
+  },
+  {
     "aircraftId": "fw_189c_0",
     "slot": 0,
     "order": 0,
@@ -19654,6 +20110,14 @@
     "tier": 0,
     "maxLoad": 0,
     "anchorMount": "fw_190a_5_f5b_torpedo"
+  },
+  {
+    "aircraftId": "fw_190a_8_mistel",
+    "slot": 0,
+    "order": 0,
+    "tier": 0,
+    "maxLoad": 0,
+    "anchorMount": "fw_190a_8_mistel_default"
   },
   {
     "aircraftId": "fw_190f_8_hungary",
@@ -19974,6 +20438,14 @@
     "tier": 0,
     "maxLoad": 0,
     "anchorMount": "h_34_default"
+  },
+  {
+    "aircraftId": "h_34_killstreak",
+    "slot": 0,
+    "order": 0,
+    "tier": 0,
+    "maxLoad": 0,
+    "anchorMount": "h_34_killstreak_default"
   },
   {
     "aircraftId": "h145m",
@@ -23760,44 +24232,12 @@
     "anchorMount": "an52"
   },
   {
-    "aircraftId": "jaguar_a_germany_killstreak",
-    "slot": 6,
-    "order": 6,
-    "tier": 9,
-    "maxLoad": 0,
-    "anchorMount": "ltc"
-  },
-  {
-    "aircraftId": "jaguar_a_germany_killstreak",
-    "slot": 7,
-    "order": 7,
-    "tier": 3,
-    "maxLoad": 0,
-    "anchorMount": "ltc"
-  },
-  {
     "aircraftId": "jaguar_a_iaf_killstreak",
     "slot": 3,
     "order": 3,
     "tier": 7,
     "maxLoad": 0,
     "anchorMount": "an52"
-  },
-  {
-    "aircraftId": "jaguar_a_iaf_killstreak",
-    "slot": 6,
-    "order": 6,
-    "tier": 9,
-    "maxLoad": 0,
-    "anchorMount": "ltc"
-  },
-  {
-    "aircraftId": "jaguar_a_iaf_killstreak",
-    "slot": 7,
-    "order": 7,
-    "tier": 3,
-    "maxLoad": 0,
-    "anchorMount": "ltc"
   },
   {
     "aircraftId": "jaguar_a_italy_killstreak",
@@ -23808,44 +24248,12 @@
     "anchorMount": "an52"
   },
   {
-    "aircraftId": "jaguar_a_italy_killstreak",
-    "slot": 6,
-    "order": 6,
-    "tier": 9,
-    "maxLoad": 0,
-    "anchorMount": "ltc"
-  },
-  {
-    "aircraftId": "jaguar_a_italy_killstreak",
-    "slot": 7,
-    "order": 7,
-    "tier": 3,
-    "maxLoad": 0,
-    "anchorMount": "ltc"
-  },
-  {
     "aircraftId": "jaguar_a_japan_killstreak",
     "slot": 3,
     "order": 3,
     "tier": 7,
     "maxLoad": 0,
     "anchorMount": "an52"
-  },
-  {
-    "aircraftId": "jaguar_a_japan_killstreak",
-    "slot": 6,
-    "order": 6,
-    "tier": 9,
-    "maxLoad": 0,
-    "anchorMount": "ltc"
-  },
-  {
-    "aircraftId": "jaguar_a_japan_killstreak",
-    "slot": 7,
-    "order": 7,
-    "tier": 3,
-    "maxLoad": 0,
-    "anchorMount": "ltc"
   },
   {
     "aircraftId": "jaguar_a_killstreak",
@@ -23856,44 +24264,12 @@
     "anchorMount": "an52"
   },
   {
-    "aircraftId": "jaguar_a_killstreak",
-    "slot": 6,
-    "order": 6,
-    "tier": 9,
-    "maxLoad": 0,
-    "anchorMount": "ltc"
-  },
-  {
-    "aircraftId": "jaguar_a_killstreak",
-    "slot": 7,
-    "order": 7,
-    "tier": 3,
-    "maxLoad": 0,
-    "anchorMount": "ltc"
-  },
-  {
     "aircraftId": "jaguar_a_sweden_killstreak",
     "slot": 3,
     "order": 3,
     "tier": 7,
     "maxLoad": 0,
     "anchorMount": "an52"
-  },
-  {
-    "aircraftId": "jaguar_a_sweden_killstreak",
-    "slot": 6,
-    "order": 6,
-    "tier": 9,
-    "maxLoad": 0,
-    "anchorMount": "ltc"
-  },
-  {
-    "aircraftId": "jaguar_a_sweden_killstreak",
-    "slot": 7,
-    "order": 7,
-    "tier": 3,
-    "maxLoad": 0,
-    "anchorMount": "ltc"
   },
   {
     "aircraftId": "jaguar_a_uk_killstreak",
@@ -23904,44 +24280,12 @@
     "anchorMount": "an52"
   },
   {
-    "aircraftId": "jaguar_a_uk_killstreak",
-    "slot": 6,
-    "order": 6,
-    "tier": 9,
-    "maxLoad": 0,
-    "anchorMount": "ltc"
-  },
-  {
-    "aircraftId": "jaguar_a_uk_killstreak",
-    "slot": 7,
-    "order": 7,
-    "tier": 3,
-    "maxLoad": 0,
-    "anchorMount": "ltc"
-  },
-  {
     "aircraftId": "jaguar_a_usa_killstreak",
     "slot": 3,
     "order": 3,
     "tier": 7,
     "maxLoad": 0,
     "anchorMount": "an52"
-  },
-  {
-    "aircraftId": "jaguar_a_usa_killstreak",
-    "slot": 6,
-    "order": 6,
-    "tier": 9,
-    "maxLoad": 0,
-    "anchorMount": "ltc"
-  },
-  {
-    "aircraftId": "jaguar_a_usa_killstreak",
-    "slot": 7,
-    "order": 7,
-    "tier": 3,
-    "maxLoad": 0,
-    "anchorMount": "ltc"
   },
   {
     "aircraftId": "jaguar_e",
@@ -25857,6 +26201,38 @@
   },
   {
     "aircraftId": "lagg-3-66",
+    "slot": 4,
+    "order": 2,
+    "tier": 4,
+    "maxLoad": 0,
+    "anchorMount": "rs82_slot4"
+  },
+  {
+    "aircraftId": "lagg-i-301",
+    "slot": 1,
+    "order": 1,
+    "tier": 8,
+    "maxLoad": 0,
+    "anchorMount": "rs82_slot1"
+  },
+  {
+    "aircraftId": "lagg-i-301",
+    "slot": 2,
+    "order": 7,
+    "tier": 7,
+    "maxLoad": 0,
+    "anchorMount": "fab50_slot2"
+  },
+  {
+    "aircraftId": "lagg-i-301",
+    "slot": 3,
+    "order": 4,
+    "tier": 5,
+    "maxLoad": 0,
+    "anchorMount": "fab50_slot3"
+  },
+  {
+    "aircraftId": "lagg-i-301",
     "slot": 4,
     "order": 2,
     "tier": 4,
@@ -28126,6 +28502,22 @@
     "tier": 1,
     "maxLoad": 0,
     "anchorMount": "9m17m"
+  },
+  {
+    "aircraftId": "mi_4av_killstreak",
+    "slot": 1,
+    "order": 1,
+    "tier": 9,
+    "maxLoad": 0,
+    "anchorMount": "ub16"
+  },
+  {
+    "aircraftId": "mi_4av_killstreak",
+    "slot": 2,
+    "order": 2,
+    "tier": 3,
+    "maxLoad": 0,
+    "anchorMount": "ub16"
   },
   {
     "aircraftId": "mi_8amtsh",
@@ -35184,6 +35576,62 @@
     "anchorMount": "hf14"
   },
   {
+    "aircraftId": "q_5d",
+    "slot": 1,
+    "order": 1,
+    "tier": 9,
+    "maxLoad": 0,
+    "anchorMount": "gp250_3_slot1"
+  },
+  {
+    "aircraftId": "q_5d",
+    "slot": 2,
+    "order": 3,
+    "tier": 8,
+    "maxLoad": 0,
+    "anchorMount": "hf14_slot2"
+  },
+  {
+    "aircraftId": "q_5d",
+    "slot": 3,
+    "order": 5,
+    "tier": 7,
+    "maxLoad": 0,
+    "anchorMount": "hf14_slot3"
+  },
+  {
+    "aircraftId": "q_5d",
+    "slot": 4,
+    "order": 7,
+    "tier": 6,
+    "maxLoad": 0,
+    "anchorMount": "gp250_3_slot4"
+  },
+  {
+    "aircraftId": "q_5d",
+    "slot": 5,
+    "order": 6,
+    "tier": 5,
+    "maxLoad": 0,
+    "anchorMount": "hf14_slot5"
+  },
+  {
+    "aircraftId": "q_5d",
+    "slot": 6,
+    "order": 4,
+    "tier": 4,
+    "maxLoad": 0,
+    "anchorMount": "hf14_slot6"
+  },
+  {
+    "aircraftId": "q_5d",
+    "slot": 7,
+    "order": 2,
+    "tier": 3,
+    "maxLoad": 0,
+    "anchorMount": "gp250_3_slot7"
+  },
+  {
     "aircraftId": "q_5l",
     "slot": 1,
     "order": 1,
@@ -36931,33 +37379,97 @@
     "aircraftId": "saab_j32b",
     "slot": 1,
     "order": 1,
-    "tier": 8,
+    "tier": 12,
     "maxLoad": 0,
-    "anchorMount": "rb24_default"
+    "anchorMount": "psrak_m49a"
   },
   {
     "aircraftId": "saab_j32b",
     "slot": 2,
     "order": 3,
-    "tier": 7,
+    "tier": 11,
     "maxLoad": 0,
-    "anchorMount": "rb24"
+    "anchorMount": "psrak_m49a"
   },
   {
     "aircraftId": "saab_j32b",
     "slot": 3,
-    "order": 4,
-    "tier": 5,
+    "order": 5,
+    "tier": 10,
+    "maxLoad": 0,
+    "anchorMount": "rb24_default"
+  },
+  {
+    "aircraftId": "saab_j32b",
+    "slot": 4,
+    "order": 7,
+    "tier": 9,
+    "maxLoad": 0,
+    "anchorMount": "psrak_m49a"
+  },
+  {
+    "aircraftId": "saab_j32b",
+    "slot": 5,
+    "order": 9,
+    "tier": 8,
     "maxLoad": 0,
     "anchorMount": "rb24"
   },
   {
     "aircraftId": "saab_j32b",
-    "slot": 4,
-    "order": 2,
+    "slot": 6,
+    "order": 11,
+    "tier": 7,
+    "maxLoad": 0,
+    "anchorMount": "psrak_m49a"
+  },
+  {
+    "aircraftId": "saab_j32b",
+    "slot": 7,
+    "order": 12,
+    "tier": 5,
+    "maxLoad": 0,
+    "anchorMount": "psrak_m49a"
+  },
+  {
+    "aircraftId": "saab_j32b",
+    "slot": 8,
+    "order": 10,
     "tier": 4,
     "maxLoad": 0,
+    "anchorMount": "rb24"
+  },
+  {
+    "aircraftId": "saab_j32b",
+    "slot": 9,
+    "order": 8,
+    "tier": 3,
+    "maxLoad": 0,
+    "anchorMount": "psrak_m49a"
+  },
+  {
+    "aircraftId": "saab_j32b",
+    "slot": 10,
+    "order": 6,
+    "tier": 2,
+    "maxLoad": 0,
     "anchorMount": "rb24_default"
+  },
+  {
+    "aircraftId": "saab_j32b",
+    "slot": 11,
+    "order": 4,
+    "tier": 1,
+    "maxLoad": 0,
+    "anchorMount": "psrak_m49a"
+  },
+  {
+    "aircraftId": "saab_j32b",
+    "slot": 12,
+    "order": 2,
+    "tier": 0,
+    "maxLoad": 0,
+    "anchorMount": "psrak_m49a"
   },
   {
     "aircraftId": "saab_j35a",
@@ -37364,6 +37876,70 @@
     "slot": 7,
     "order": 2,
     "tier": 3,
+    "maxLoad": 0,
+    "anchorMount": "rb74_default"
+  },
+  {
+    "aircraftId": "saab_jas39_pre_serie",
+    "slot": 1,
+    "order": 1,
+    "tier": 10,
+    "maxLoad": 0,
+    "anchorMount": "rb74_default"
+  },
+  {
+    "aircraftId": "saab_jas39_pre_serie",
+    "slot": 2,
+    "order": 3,
+    "tier": 9,
+    "maxLoad": 0,
+    "anchorMount": "rb74"
+  },
+  {
+    "aircraftId": "saab_jas39_pre_serie",
+    "slot": 3,
+    "order": 5,
+    "tier": 8,
+    "maxLoad": 0,
+    "anchorMount": "rb74"
+  },
+  {
+    "aircraftId": "saab_jas39_pre_serie",
+    "slot": 4,
+    "order": 7,
+    "tier": 6,
+    "maxLoad": 0,
+    "anchorMount": "ptb_2"
+  },
+  {
+    "aircraftId": "saab_jas39_pre_serie",
+    "slot": 5,
+    "order": 8,
+    "tier": 5,
+    "maxLoad": 0,
+    "anchorMount": "litening_pod"
+  },
+  {
+    "aircraftId": "saab_jas39_pre_serie",
+    "slot": 6,
+    "order": 6,
+    "tier": 4,
+    "maxLoad": 0,
+    "anchorMount": "rb74"
+  },
+  {
+    "aircraftId": "saab_jas39_pre_serie",
+    "slot": 7,
+    "order": 4,
+    "tier": 3,
+    "maxLoad": 0,
+    "anchorMount": "rb74"
+  },
+  {
+    "aircraftId": "saab_jas39_pre_serie",
+    "slot": 8,
+    "order": 2,
+    "tier": 2,
     "maxLoad": 0,
     "anchorMount": "rb74_default"
   },
@@ -40152,6 +40728,54 @@
     "anchorMount": "sura_heat"
   },
   {
+    "aircraftId": "su_15tm",
+    "slot": 1,
+    "order": 1,
+    "tier": 9,
+    "maxLoad": 0,
+    "anchorMount": "r_98mr_slot1"
+  },
+  {
+    "aircraftId": "su_15tm",
+    "slot": 2,
+    "order": 3,
+    "tier": 8,
+    "maxLoad": 0,
+    "anchorMount": "r60_slot2"
+  },
+  {
+    "aircraftId": "su_15tm",
+    "slot": 3,
+    "order": 5,
+    "tier": 7,
+    "maxLoad": 0,
+    "anchorMount": "gsh23l_slot3"
+  },
+  {
+    "aircraftId": "su_15tm",
+    "slot": 4,
+    "order": 6,
+    "tier": 5,
+    "maxLoad": 0,
+    "anchorMount": "gsh23l_slot4"
+  },
+  {
+    "aircraftId": "su_15tm",
+    "slot": 5,
+    "order": 4,
+    "tier": 4,
+    "maxLoad": 0,
+    "anchorMount": "r60_slot5"
+  },
+  {
+    "aircraftId": "su_15tm",
+    "slot": 6,
+    "order": 2,
+    "tier": 3,
+    "maxLoad": 0,
+    "anchorMount": "r_98mr_slot6"
+  },
+  {
     "aircraftId": "su_17m2",
     "slot": 1,
     "order": 1,
@@ -41253,7 +41877,7 @@
     "order": 11,
     "tier": 6,
     "maxLoad": 0,
-    "anchorMount": "mercury"
+    "anchorMount": "hod"
   },
   {
     "aircraftId": "su_25tm",

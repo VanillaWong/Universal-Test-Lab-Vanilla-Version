@@ -1,29 +1,29 @@
-ir_tracker_tgp	Auto tracker		track	15000	radar	lock,track			1					93	0	0	amx,amx_a_1a_brazil,a_6e_tram
+ir_tracker_tgp	Auto tracker		track	15000	radar	lock,track			1					95	0	0	amx,amx_a_1a_brazil,a_6e_tram
 ir_tracker	Auto tracker		track	15000	radar	lock,track			1					59	0	0	ahs,ah_1w,ah_1w_china
 us_an_apg_30	AN/APG-30	8	track	2750	radar	lock,track								44	0	0	f-100a_china,f-100d,f-100d_france
 su_spo_150_esm	SPO-150 ESM	2	track	250000	radar	tws,lock,track				1		1		17	0	0	mig_29kr_9_41r,mig_29m_9_15,mig_29smt_9_19
 uk_ari_23274_ids	ARI 23274	9	search+track	150000	radar	search,lock,track							1	15	0	0	tornado_gr1,tornado_gr4,tornado_ids_de_assta1
+us_harm_a_esm	AGM-88 HAS	4	track	250000	radar	tws,lock,track				1		1		12	0	0	fa_18a,fa_18a_hug_2_raaf,fa_18a_raaf
 su_sapphire_21	Sapphire-21	9	search+track	30000	radar	search,lock,track								12	0	0	mig-21_bis,mig-21_bis_event,mig-21_bis_lazur
 cn_rwr_esm	ESM	2	track	250000	radar	tws,lock,track				1		1		11	0	0	jf_17,jh_7a,jh_7a2
 us_an_apg_66_v_3	AN/APG-66	8	search+track	150000	radar	searchModes,search,bvrLock,track,illumination,acmLock,tws,gtmTrack,main	6				1	1	1	11	0	0	f_16a_block_15_adf,f_16a_block_15_adf_britain_killstreak,f_16a_block_15_adf_france_killstreak
 tv_tracker_tgp	Auto tracker		track	15000	radar	lock,track			1					11	0	0	buccaneer_s2b,f-4e_kurnass_2000,mig_27k
 us_harm_c_esm	AGM-88 HAS	4	track	250000	radar	tws,lock,track				1		1		10	0	0	ef_2000a,ef_2000a_aesa,ef_2000_aesa
-us_harm_a_esm	AGM-88 HAS	4	track	250000	radar	tws,lock,track				1		1		9	0	0	fa_18a,fa_18a_hug_2_raaf,fa_18a_raaf
 ir_tracker_360	Auto tracker	-1	track	15000	radar	lock,track			1					9	0	0	ah_6m,dji_mavic_2,oh_58d
+sw_ps_05a	PS-05	8	search+track	150000	radar	searchModes,search,bvrLock,velocityLock,track,illumination,acmLock,tws,helmetDesignation,gtmTrack,main	4				1	1	1	8	0	0	saab_jas39a,saab_jas39c,saab_jas39c_hungary
 us_an_apq_120	AN/APQ-120	8	search+track	120000	radar	search,lock,track,illumination					1		1	8	0	0	f-4e,f-4ej,f-4ej_adtw
-sw_ps_05a	PS-05	8	search+track	150000	radar	searchModes,search,bvrLock,velocityLock,track,illumination,acmLock,tws,helmetDesignation,gtmTrack,main	4				1	1	1	7	0	0	saab_jas39a,saab_jas39c,saab_jas39c_hungary
 us_nasarr	NASARR	8	search+track	40000	radar	search,lock,track,illumination					1		1	7	0	0	f-104g,f-104g_belgium,f-104g_china
 su_srd-5	SRD-5	8	track	7000	radar	lock,track							1	7	0	0	j_7_mk2,mig-21_f13,su-7b
+us_an_apg_73_hms	AN/APG-65	8	search+track	210000	radar	searchModes,search,bvrLock,velocityLock,track,illumination,acmLock,tws,gtmTrack,helmetDesignation,main	4				1	1	1	6	0	0	fa_18a_hug_2_raaf,fa_18c_late,fa_18c_late_switzerland
 il_el_m_2001b	ELTA EL/M-2001B	8	track	10000	radar	lock,track								6	0	0	amx,amx_a_1a_brazil,kfir_c2
-us_an_apg_78	AN/APG-78	10	search	10000	radar	mode,search								6	0	0	ah_64d,ah_64d_i_saraph,ah_64d_japan
 us_an_apg_501	AN/APG-501	8	track	2750	radar	lock,track								6	0	0	ca_27_mk32_malaysia,ca_27_mk32_raaf,f-86_canadair_german
 fr_as37_armat_esm	AS-37 ARMAT ESM	2	track	250000	radar	tws,lock,track				1		1		5	0	0	mirage_2000c_s4,mirage_2000c_s5,mirage_2000d_r1
 us_an_asq_213_esm	AN/ASQ-213	2	track	250000	radar	tws,lock,track				1		1		5	0	0	f_16a_block_72v_china,f_16c_block_40_barak_2,f_16c_block_50
-us_an_apg_73_hms	AN/APG-65	8	search+track	210000	radar	searchModes,search,bvrLock,velocityLock,track,illumination,acmLock,tws,gtmTrack,helmetDesignation,main	4				1	1	1	5	0	0	fa_18a_hug_2_raaf,fa_18c_late,fa_18c_late_switzerland
 us_an_apg_66	AN/APG-66	8	search+track	130000	radar	searchModes,search,bvrLock,track,acmLock,main							1	5	0	0	f_16a_block_10,f_16a_block_10_iaf,f_16a_block_10_netz_mod
 su_n_019e	N019	8	search+track	85000	radar	sensorTypes,search,illumination,lock,radarSearchModes,irstSearchModes,tws,radarBvrLock,radarBvrTrack,irstTrack,radarAcmHmdTrack,helmetDesignation,main	1	1			1	1	1	5	0	0	mig_29_9_12,mig_29_9_12b_hungary,mig_29_9_12g
 us_an_apq_169	AN/APQ-159	8	search+track	75000	radar	search,lock,track							1	5	0	0	f_111c_raaf,f_111f,f_111f_iaf_killstreak
 us_an_aps_21	AN/APS-21	8	search	45000	radar	search								5	0	0	f-86k_late,f-86k_late_german,f-86k_late_italy
+us_an_apg_78	AN/APG-78	10	search	10000	radar	mode,search								5	0	0	ah_64d,ah_64d_i_saraph,ah_64d_japan
 fr_thales_rdy	Thales RDY	8	search+track	180000	radar	searchModes,search,bvrLock,velocityLock,track,illumination,acmLock,tws,helmetDesignation,main,acmLockModes	4				1	1	1	4	0	0	mirage_2000_5eg_mk2_greece,mirage_2000_5ei,mirage_2000_5f
 cn_jl_10a	JL-10A	8	search+track	150000	radar	searchModes,search,bvrLock,velocityLock,track,illumination,acmLock,tws,gtmTrack,main	4				1	1	1	4	0	0	jh_7,jh_7a,jh_7a_killstreak
 su_n_010m	N010	8	search+track	150000	radar	sensorTypes,search,illumination,lock,radarSearchModes,irstSearchModes,tws,radarBvrLock,radarBvrTrack,irstTrack,radarAcmHmdTrack,helmetDesignation,gtmTrack,main	4	1			1	1	1	4	0	0	mig_29m_9_15,mig_29smt_9_19,mig_29smt_9_19_killstreak
@@ -31,6 +31,7 @@ sw_ps-46a	PS-37	8	search+track	150000	radar	searchModes,search,bvrLock,track,ill
 us_an_apg_65	AN/APG-65	8	search+track	150000	radar	searchModes,search,bvrLock,velocityLock,track,illumination,acmLock,tws,gtmTrack,main	4				1	1	1	4	0	0	cf_188a_canada,fa_18a,fa_18a_raaf
 us_an_apg_68_v_5	AN/APG-68	8	search+track	150000	radar	searchModes,search,bvrLock,velocityLock,track,illumination,acmLock,tws,gtmTrack,helmetDesignation,main	6				1	1	1	4	0	0	f_16c_block_40_barak_2,f_16d_block_40_barak_2,f_16d_block_40_barak_2_killstreak
 su_orion	Orion	8	search	50000	radar	mode,search								4	0	0	nt_su_24m,su_24m,su_24m_china_killstreak
+us_an_apg_78_v6	AN/APG-78	10	search	16000	radar	mode,search								4	0	0	ah_64e,ah_64e_britain,ah_64e_china
 su_rp-5_search	RP-5 TA	8	search	15000	radar	search								4	0	0	mig-17pf_hungary,mig-17p_lim_5p,mig-19j_6a
 us_mk_x	Mk.X	5	search	14000	radar	search								4	0	0	meteor_nfmk13,p-61a_1,p-61c_1
 de_fug_220	FuG-220	1	search	8000	radar	search								4	0	0	bf_110g_4,bf_110g_4_hungary,do_217n_2
@@ -45,7 +46,6 @@ sw_ps-42_search	PS-42 TA	8	search	90000	radar	search					1			3	0	0	saab_a32a,saa
 us_an_apq_159	AN/APQ-159	8	search+track	75000	radar	search,lock,track							1	3	0	0	f-5e,f-5e_aidc,f-5e_fcu_thailand
 us_an_asg_14	AN/ASG-14	8	search+track	37000	radar	search,lock,track								3	0	0	f-104a,f-104a_china,f-104c
 us_an_asg_19	AN/ASG-19	8	search+track	37000	radar	search,lock,track								3	0	0	f-105d,f_105d_japan_killstreak,f_105d_killstreak
-us_an_apg_78_v6	AN/APG-78	10	search	16000	radar	mode,search								3	0	0	ah_64e,ah_64e_britain,ah_64e_netherlands
 de_fug_202	FuG-202	1	search	8000	radar	search								3	0	0	do_217j_2,do_217n_1,ju-388j
 sw_ps-42_track	PS-42 TT	8	track	5000	radar	lock,track					1			3	0	0	saab_a32a,saab_a32a_red_adam,saab_j32b
 uk_ari_5820	ARI.5820	8	track	800	radar	lock,track								3	0	0	hunter_f1,hunter_f6,hunter_f6_holland
@@ -53,6 +53,7 @@ cn_klj_10a	KLJ-10A	8	search+track	300000	radar	sensorTypes,search,illumination,l
 uk_captor_ecrs_2_pirate	CAPTOR-E	8	search+track	300000	radar	sensorTypes,search,illumination,lock,radarSearchModes,irstSearchModes,tws,radarBvrLock,velocityLock,gtmTrack,radarBvrTrack,irstTrack,radarAcmHmdTrack,helmetDesignation,main	8	1			1	1	1	2	0	0	ef_2000a_aesa,ef_2000_typhoon_aesa
 us_an_apg_71	AN/AWG-9	8	search+track	300000	radar	sensorTypes,search,illumination,lock,radarSearchModes,irstSearchModes,tws,radarBvrLock,velocityLock,gtmTrack,radarBvrTrack,irstTrack,radarAcmTrack,main	6	1			1	1	1	2	0	0	f_14d,f_14d_vf_11
 us_an_apg_79	AN/APG-79	8	search+track	300000	radar	searchModes,search,bvrLock,velocityLock,track,illumination,acmLock,tws,gtmTrack,helmetDesignation,main	12				1	1	1	2	0	0	fa_18e_block_2,fa_18f_block_2_raaf
+us_an_apg_82_v_1	AN/APG-63	8	search+track	300000	radar	searchModes,search,bvrLock,velocityLock,track,illumination,acmLock,tws,gtmTrack,helmetDesignation,main	12				1	1	1	2	0	0	f_15ex,f_15ia
 us_an_apg_83	AN/APG-83	8	search+track	300000	radar	searchModes,search,bvrLock,velocityLock,track,illumination,acmLock,tws,gtmTrack,helmetDesignation,main	12				1	1	1	2	0	0	f_16a_block_72v_china,f_16c_block_52_aesa
 su_kh_27ps_viuga_esm	Kh-27PS ESM	8	track	250000	radar	tws,lock,track				1		1		2	0	0	mig_27k,mig_27m
 su_kh_31p_111_esm	Kh-31 L-111 ESM	8	track	250000	radar	tws,lock,track				1		1		2	0	0	mig_27k,mig_27m
@@ -112,6 +113,7 @@ cn_klj_7	KLJ-7	8	search+track	150000	radar	searchModes,search,bvrLock,velocityLo
 cn_type_1493_pd	Type 1493	8	search+track	150000	radar	sensorTypes,search,illumination,lock,radarSearchModes,irstSearchModes,tws,radarBvrLock,radarBvrTrack,irstTrack,radarAcmHmdTrack,gtmTrack,helmetDesignation,main	6	1			1	1	1	1	0	0	j_11b
 fr_anemone	Anemone	9	search+track	150000	radar	search,lock,track							1	1	0	0	super_etendard_97
 it_grifo_346	GRIFO 346	8	search+track	150000	radar	searchModes,search,bvrLock,velocityLock,track,illumination,acmLock,tws,gtmTrack,helmetDesignation,main	4				1	1	1	1	0	0	m_346fa
+jp_an_apg_66j	AN/APG-66	8	search+track	150000	radar	searchModes,search,bvrLock,track,illumination,acmLock,gtmTrack,main					1		1	1	0	0	f-4ej_kai
 jp_awg_12	AN/APG-59	8	search+track	150000	radar	searchModes,search,bvrLock,velocityLock,track,illumination,acmLock,main,acmLockModes					1		1	1	0	0	f1
 su_n_001ve	N001	8	search+track	150000	radar	sensorTypes,search,illumination,lock,radarSearchModes,irstSearchModes,tws,radarBvrLock,radarBvrTrack,irstTrack,radarAcmHmdTrack,helmetDesignation,gtmTrack,main	2	1			1	1	1	1	0	0	su_30mkk
 su_n_010m_ols_ue	N010	8	search+track	150000	radar	sensorTypes,search,illumination,lock,radarSearchModes,irstSearchModes,tws,radarBvrLock,radarBvrTrack,irstTrack,radarAcmHmdTrack,helmetDesignation,gtmTrack,main	4	1			1	1	1	1	0	0	mig_29kr_9_41r
@@ -130,7 +132,6 @@ us_an_apg_76_an_asx_1	AN/APG-76 / AN/ASX-1	9	search+track	150000	radar	search,lo
 us_an_aps_31	AN/APS-31	8	search	150000	radar	search								1	0	0	pbm_5a
 us_an_apg_63	AN/APG-63	8	search+track	140000	radar	searchModes,search,bvrLock,velocityLock,track,illumination,acmLock,main					1		1	1	0	0	f_15a_iaf
 us_an_apg_63_baz	AN/APG-63	8	search+track	140000	radar	searchModes,search,bvrLock,velocityLock,track,illumination,acmLock,tws,helmetDesignation,main	8				1	1	1	1	0	0	f_15c_baz_msip
-jp_an_apg_66j	AN/APG-66	8	search+track	130000	radar	searchModes,search,bvrLock,track,illumination,acmLock,main					1		1	1	0	0	f-4ej_kai
 su_sapphire_25	Sapphire-25	9	search+track	120000	radar	sensorTypes,search,lock,track,illumination,radarStandbySearchModes,scanZoneAzimuth,scanZoneElevation,main,radarTrackModes		1			1		1	1	0	0	mig_25pd
 fr_taran_18	TARAN 18	8	search+track	100000	radar	search,lock,track							1	1	0	0	mirage_3s_c70_switzerland
 su_kopio	N019	8	search+track	100000	radar	searchModes,search,bvrLock,track,illumination,acmLock,tws,gtmTrack,helmetDesignation,main	2				1	1	1	1	0	0	mig-21_bison
@@ -149,6 +150,7 @@ us_ma_1	MA-1	8	search+track	90000	radar	sensorTypes,search,lock,track,acmLock,he
 su_n_019	N019	8	search+track	85000	radar	sensorTypes,search,illumination,lock,radarSearchModes,irstSearchModes,tws,radarBvrLock,radarBvrTrack,irstTrack,radarAcmHmdTrack,helmetDesignation,main	1	1			1	1	1	1	0	0	mig_29_9_13
 su_n_019me	N019	8	search+track	85000	radar	sensorTypes,search,illumination,lock,radarSearchModes,irstSearchModes,tws,radarBvrLock,radarBvrTrack,irstTrack,radarAcmHmdTrack,helmetDesignation,main	2	1			1	1	1	1	0	0	mig_29n
 fr_drac_32a	DRAC-32A	8	search+track	80000	radar	search,lock,track								1	0	0	so_4050_vautour_2n_late
+su_rp_26m	RP-26M	8	search+track	80000	radar	search,lock,track							1	1	0	0	su_15tm
 us_an_apq_113	AN/APQ-113	9	search+track	80000	radar	search,lock,track								1	0	0	f_111a
 us_an_apq_104	AN/APQ-104	8	search+track	75000	radar	search,lock,track							1	1	0	0	f-8e_fn
 us_an_apq_159_hms	AN/APQ-159	8	search+track	75000	radar	search,lock,track,helmetDesignation							1	1	0	0	f-5t_thailand
@@ -199,16 +201,20 @@ su_kh_58_phantasmagoria_c_esm	Phantasmagoria C ESM	3	track	250000	radar	tws,lock
 su_orion_phantasmagoria	ESM	2	track	250000	radar	tws,lock,track						1		0	0	0	
 fr_thales_rdy_2	Thales RDY-2	8	search+track	220000	radar	searchModes,search,bvrLock,velocityLock,track,illumination,acmLock,tws,helmetDesignation,gtmTrack,main,acmLockModes	4				1	1	1	0	0	0	
 il_spyder_search	SPYDER AIO TA	5		200000	radar	tws	8					1		0	1	0	
+su_55zh6	55ZH6	5	search	200000	radar	search								0	1	0	
 su_p_12ma	S75 P12MA	6	search	200000	radar	search								0	1	0	
 uk_marconi_ai_mk24w	AI.24 Foxhunter	8	search+track	200000	radar	searchModes,search,bvrLock,velocityLock,track,illumination,acmLock,tws,main,acmLockModes					1	1	1	0	0	0	
 uk_marconi_ai_mk24z	AI.24 Foxhunter	8	search+track	200000	radar	searchModes,search,bvrLock,velocityLock,track,illumination,acmLock,tws,main,acmLockModes					1	1	1	0	0	0	
-su_5n63s	5N63S	8	track	180000	radar	lock,track,illumination					1	1		0	1	0	
+us_tps_59	AN/TPS-59	5	search	200000	radar	search								0	1	0	
+su_5n63s	5N63S	8	track	180000	radar	lock,track,illumination					1	1		0	0	0	
+su_5n63s_search_and_track	5N63S	8	search+track	180000	radar	lock,track,illumination,standbyOrSearch,search					1	1		0	1	0	
 su_5n64s	5N64S	5	search	180000	radar	search								0	1	0	
 su_9s18	9S18	5	search	180000	radar	search								0	1	0	
 su_9s18m1	9S18M1	5	search	180000	radar	search								0	1	0	
 sw_giraffe_amb	Giraffe AMB	6		180000	radar	tws	24					1		0	1	0	
 us_an_mpq_50	AN/MPQ-50	7	search	180000	radar	search								0	2	0	
-us_an_mpq_53	AN/MPQ-53	6	track	180000	radar	lock,track,illumination					1	1		0	1	0	
+us_an_mpq_53	AN/MPQ-53	6	track	180000	radar	lock,track,illumination					1	1		0	0	0	
+us_an_mpq_53_search_and_track	AN/MPQ-53	6	search+track	180000	radar	lock,track,illumination,standbyOrSearch,search					1	1		0	1	0	
 jp_j_apg_1	J/APG-1	8	search+track	165000	radar	searchModes,search,bvrLock,track,illumination,acmLock,tws,gtmTrack,main	4				1	1	1	0	0	0	
 fr_arabel	Arabel	8		160000	radar	tws	16					1		0	2	0	
 su_9s18m3	9S18M3	5		160000	radar	tws,designateTarget	18					1		0	1	0	
@@ -219,7 +225,7 @@ fr_drbv20a	DRBV-20A	0	search	150000	radar	search			1					0	0	3
 fr_drbv23b	DRBV-23B	0	search	150000	radar	search			1					0	0	2	
 it_3st_7_250	3ST-7/250	8	search	150000	radar	search								0	0	2	
 it_mln_1a	MLN 1A	8	search	150000	radar	search								0	0	2	
-it_mm_sps_702	MM/SPS-702	0	search	150000	radar	search			1					0	0	1	
+it_mm_sps_702	MM/SPS-702	0	search	150000	radar	search			1					0	0	2	
 it_spq_701	SPQ-701	8	search	150000	radar	search								0	0	1	
 jp_ops_1_radar	OPS-2	0	search	150000	radar	search			1					0	0	2	
 jp_ops_14_radar	OPS-14	0	search	150000	radar	search			1					0	0	1	
@@ -231,7 +237,7 @@ su_foot_n_search	Foot-N	4	search	150000	radar	search								0	0	2
 su_mr_220_reyd	MR-220-Reyd	0	search	150000	radar	search			1					0	0	3	
 su_mr_302_rubka	MR-302-Rubka	0	search	150000	radar	search			1					0	0	4	
 su_mr_352_pozitiv	MR-352-Pozitiv	0	search	150000	radar	search			1					0	0	1	
-su_mr_360_podkat	MR-750-Kil-U	0	search	150000	radar	search			1					0	0	2	
+su_mr_360_podkat	MR-750-Kil-U	6	search	150000	radar	search								0	0	2	
 su_mr_510_kil_u	MR-510-Kil-U	0	search	150000	radar	search			1					0	0	1	
 su_mr_750_fregat_ma	MR-750 Fregat-MA	5	search	150000	radar	search								0	0	3	
 sw_ps-371a	PS-37	8	search+track	150000	radar	searchModes,search,bvrLock,track,illumination,acmLock,tws,gtmTrack,main					1	1	1	0	0	0	
@@ -247,10 +253,10 @@ us_an_sps_37	AN-SPS-37	0	search	150000	radar	search			1					0	0	2
 us_an_sps_39	AN-SPS-39	0	search	150000	radar	search			1					0	0	2	
 us_an_sps_4	AN-SPS-4	0	search	150000	radar	search			1					0	0	2	
 us_an_sps_40	AN-SPS-40	5	search	150000	radar	search								0	0	1	
-us_an_sps_48	AN-SPS-48	5	search	150000	radar	search								0	0	1	
-us_an_sps_49	AN-SPS-49	0	search	150000	radar	search			1					0	0	0	
+us_an_sps_48	AN-SPS-48	5	search	150000	radar	search								0	0	7	
+us_an_sps_49	AN-SPS-49	6	search	150000	radar	search								0	0	3	
 us_an_sps_5	AN-SPS-5	0	search	150000	radar	search			1					0	0	1	
-us_an_sps_52	AN-SPS-52	0	search	150000	radar	search			1					0	0	1	
+us_an_sps_52	AN-SPS-52	0	search	150000	radar	search			1					0	0	2	
 us_an_sps_6	AN-SPS-6	0	search	150000	radar	search			1					0	0	10	
 us_an_sps_72	AN-SPS-72	0	search	150000	radar	search			1					0	0	0	
 us_an_sps_8a	AN-SPS-8A	0	search	150000	radar	search			1					0	0	4	
@@ -263,8 +269,10 @@ su_snr_75	S75 RSN-75	6	track	120000	radar	lock,track								0	1	0
 su_viking	viking	6	track	120000	radar	lock,radarTrack,track	6	1				1		0	1	0	
 us_phalanx_search	Phalanx Search Radar	9	search	120000	radar	search								0	1	0	
 jp_type_03_search	Type 03 TA	5		100000	radar	tws	4					1		0	1	0	
+jp_type_13	Type 3 Mark 1 Model 3	0	search	100000	radar	search			1					0	0	7	
 su_kopio_25	N019	8	search+track	100000	radar	searchModes,search,bvrLock,track,illumination,acmLock,tws,gtmTrack,main	2				1	1	1	0	0	0	
 us_an_apq_72	AN/APQ-72	8	search+track	100000	radar	search,lock,track,illumination					1		1	0	0	0	
+us_an_spy_1_ai	AN/SPY-1	5		100000	radar	tws	8					1		0	0	4	
 su_1rs2_3	1RS2-3	10	track	90000	radar	lock,radarTrack,track	4	1				1		0	1	0	
 us_md_1a	MD-1A	8	search+track	90000	radar	search,lock,track							1	0	0	0	
 nw_xenta_m_5	XENTA M5	8		75000	radar	tws	4					1		0	1	0	
@@ -272,22 +280,26 @@ sw_giraffe_1x	Giraffe 1X	8		75000	radar	tws	4					1		0	1	0
 cn_fk_2000_search	FK-2000 TA	6	search	70000	radar	search								0	1	0	
 cn_fk_2000_track	FK-2000 TT	9	track	70000	radar	lock,radarTrack,track	8	1				1		0	1	0	
 cn_hq_11_search	HQ-11 TA	5		70000	radar	tws	4					1		0	1	0	
+cn_hljp_345_ai	H/LJP-345	8	track	60000	radar	lock,track,illumination	4				1	1		0	0	1	
 cn_type_280	Type 208	8	search+track	60000	radar	search,lock,track					1		1	0	0	0	
 fr_arabel_ai	Arabel	8		60000	radar	tws	16					1		0	2	0	
 jp_type_81_search	Type 81 TA	8		60000	radar	tws	4					1		0	1	0	
 su_9s18m3_ai	9S18M3	5		60000	radar	tws,designateTarget	18					1		0	1	0	
-su_9s35	9S35	8	track	60000	radar	lock,track,illumination					1			0	1	0	
-su_9s35m1	9S35M1	8	track	60000	radar	lock,track,illumination					1			0	1	0	
+su_9s35	9S35	8	track	60000	radar	lock,track,illumination					1			0	0	0	
+su_9s35_search_and_track	9S35	8	search+track	60000	radar	lock,track,illumination,standbyOrSearch,search					1			0	1	0	
+su_9s35m1	9S35M1	8	track	60000	radar	lock,track,illumination					1			0	0	0	
+su_9s35m1_search_and_track	9S35M1	8	search+track	60000	radar	lock,track,illumination,standbyOrSearch,search					1			0	1	0	
 su_mr_90	MR-90	8	track	60000	radar	lock,track,illumination					1			0	0	0	
 su_mr_90_ai	MR-90	8	track	60000	radar	lock,track,illumination	3				1	1		0	0	1	
 su_viking_ai	viking	6	track	60000	radar	lock,radarTrack,track	6	1				1		0	0	0	
 us_an_mpq_61	AN/MPQ-61	8	track	60000	radar	lock,track,illumination					1			0	2	0	
-us_an_spg_51_ec	AN-SPG-51	8	track	60000	radar	lock,track,illumination	4				1	1		0	0	1	
+us_an_spg_51_ec	AN-SPG-51	8	track	60000	radar	lock,track,illumination	4				1	1		0	0	4	
 uk_type_277	Type 277	4	search	56000	radar	search								0	0	2	
 uk_type_992q	Type 992Q	4	search	56000	radar	search								0	0	1	
 cn_pgz_625_search	PGZ-625 TA	6	search	50000	radar	search								0	1	0	
 naval_nav_radar	standby	8	search	50000	radar	search								0	0	0	
 su_1rs1	1RS1	5	search	50000	radar	search								0	1	0	
+us_mk_95_ai	Mk-95	8	track	50000	radar	lock,track,illumination	4				1	1		0	0	0	
 cn_hq_11_search_ai	HQ-11 TA	5		45000	radar	tws	4					1		0	1	0	
 cn_hq_17_search	HQ-17 TA	5	search	45000	radar	search								0	1	0	
 it_spg-70	MR-123	8	track	45000	radar	lock,track								0	0	0	
@@ -316,16 +328,16 @@ su_p_10_volga_a	P-10-Volga-A	0	search	40000	radar	search			1					0	0	2
 su_rif	Rif	0	search	40000	radar	search			1					0	0	1	
 uk_lws_type6	LWS Type 6	0	search	40000	radar	search			1					0	0	1	
 uk_type_1006	Type-1006	0	search	40000	radar	search			1					0	0	2	
-uk_type_278	Type-278	0	search	40000	radar	search			1					0	0	3	
-uk_type_279	Type-279	0	search	40000	radar	search			1					0	0	1	
+uk_type_278	Type-278	5	search	40000	radar	search								0	0	3	
+uk_type_279	Type-279	0	search	40000	radar	search			1					0	0	2	
 uk_type_281	Type-281	0	search	40000	radar	search			1					0	0	3	
 uk_type_282	Type-282	0	search	40000	radar	search			1					0	0	1	
 uk_type_284b	Type-284b	0	search	40000	radar	search			1					0	0	1	
 uk_type_286	Type-286	0	search	40000	radar	search			1					0	0	1	
 uk_type_291	Type-291	0	search	40000	radar	search			1					0	0	3	
 uk_type_293	Type-293	0	search	40000	radar	search			1					0	0	1	
-uk_type_293q	Type 293q	0	search	40000	radar	search			1					0	0	7	
-uk_type_79y	Type-79Y	0	search	40000	radar	search			1					0	0	4	
+uk_type_293q	Type 293q	5	search	40000	radar	search								0	0	7	
+uk_type_79y	Type-79Y	0	search	40000	radar	search			1					0	0	5	
 us_an_sc2_radar	AN-SC-2	0	search	40000	radar	search			1					0	0	2	
 us_sc2_radar	SC-2 radar	0	search	40000	radar	search			1					0	0	1	
 us_sg_radar	SG-radar	0	search	40000	radar	search			1					0	0	5	
@@ -334,7 +346,7 @@ su_9k_330_search	9K330 TA	6	search	35000	radar	search								0	3	0
 cn_hq_17_track	HQ-17 TT	9	track	30000	radar	lock,radarTrack,track	2	1				1		0	1	0	
 de_sgr_108	SGR-108	8	track	30000	radar	lock,track								0	0	2	
 de_wm_27_track	WM-27	8	track	30000	radar	lock,track								0	0	2	
-it_rtn_10x	RTN 10X	8	track	30000	radar	lock,track								0	0	1	
+it_rtn_10x	RTN 10X	8	track	30000	radar	lock,track								0	0	2	
 it_rtn_150	RTN 150	8	track	30000	radar	lock,track								0	0	2	
 su_1rs2_ai	1RS2	10	track	30000	radar	lock,radarTrack,track	4	1				1		0	1	0	
 su_3r95	3R95	6	track	30000	radar	lock,track								0	0	2	
@@ -353,7 +365,7 @@ us_adats_search	ADATS TA	8	search	30000	radar	search								0	2	0
 us_an_spg_34	AN-SPG-34	2	track	30000	radar	lock,track								0	0	2	
 us_an_spg_48	AN-SPG-48	8	track	30000	radar	lock,track								0	0	1	
 us_an_spg_50	AN-SPG-50	2	track	30000	radar	lock,track								0	0	2	
-us_an_spg_51	AN-SPG-51	2	track	30000	radar	lock,track,illumination					1			0	0	6	
+us_an_spg_51	AN-SPG-51	2	track	30000	radar	lock,track,illumination					1			0	0	7	
 us_an_spg_70	AN-SPG-70	2	track	30000	radar	lock,track								0	0	1	
 us_mk12_radar	MK12-radar	2	track	30000	radar	lock,track								0	0	4	
 us_mk25_radar	MK25-radar	8	track	30000	radar	lock,track								0	0	11	
@@ -376,10 +388,12 @@ de_roland_sr	Roland TA	3	search	20000	radar	search								0	4	0
 fr_crotale_search	Crotale TA	4	search	20000	radar	search								0	2	0	
 fr_crotale_track	Crotale TT	9	track	20000	radar	lock,track		1						0	2	0	
 fr_crotale_track_ai	Crotale TT	9	track	20000	radar	lock,track		1						0	2	0	
+fr_prtl_search	PRTL TA	8	search	20000	radar	search								0	1	0	
+fr_prtl_track	PRTL TT	8	track	20000	radar	lock,track								0	1	0	
 it_sma_vps-a05	SMA VPS-A05	4	search	20000	radar	search								0	1	0	
-jp_type_13	Type-13	0	search	20000	radar	search			1					0	0	7	
-jp_type_21	Type-21	0	search	20000	radar	search			1					0	0	4	
-jp_type_22	Type-22	0	search	20000	radar	search			1					0	0	8	
+jp_type_12	Type-12	0	search	20000	radar	search			1					0	0	0	
+jp_type_21	Type-21	0	search	20000	radar	search			1					0	0	5	
+jp_type_22	Type-22	0	search	20000	radar	search			1					0	0	9	
 jp_type_87_track	Type-87 TT	9	track	20000	radar	lock,track		1						0	1	0	
 su_1rl33	1RL33	9	search+track	20000	radar	search,lock,track								0	3	0	
 su_1rl33_ai	1RL33	9	search+track	20000	radar	search,lock,track								0	3	0	
@@ -417,7 +431,7 @@ rooikat_aa_eot_track	AA-EOT	-1	track	12000	radar	lock,track			1					0	1	0
 sam_tv_ir_track	TV/IR tracker	-1	track	12000	radar	lock,track			1					0	3	0	
 sam_tv_ir_track_rc	Roland TT	9	track	12000	radar	lock,track								0	1	0	
 su_9s86	9S86	8	track	12000	radar	lock,track								0	4	0	
-su_bmp_auto_target_tracker	Auto tracker	-1	track	12000	radar	lock,track			1					0	35	0	
+su_bmp_auto_target_tracker	Auto tracker	-1	track	12000	radar	lock,track			1					0	36	0	
 su_khrizantema	1L32-1	10	search+track	12000	radar	searchModes,lock,track,standbyOrSearch,search								0	1	0	
 sw_asrad_search	ASRAD TA	8	search	12000	radar	search								0	1	0	
 uk_esd_ra_20_s_search	ESD RA-20 S	4	search	12000	radar	search								0	1	0	
@@ -437,5 +451,3 @@ fr_crotale_search_ai	Crotale TA	4	search	10	radar	search								0	2	0
 it_sma_vps-a05_ai	SMA VPS-A05	4	search	10	radar	search								0	1	0	
 su_1rl144_search_ai	1RL114 TA	4	search	10	radar	search								0	1	0	
 su_1rs1_ai	1RS1	5	search	10	radar	search								0	1	0	
-su_55zh6	55ZH6	5	search	2	radar	search								0	1	0	
-us_tps_59	AN/TPS-59	5	search	2	radar	search								0	1	0	

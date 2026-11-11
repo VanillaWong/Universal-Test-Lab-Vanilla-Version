@@ -70,14 +70,18 @@ gamedata/weapons/navalmodels_weapons/127mm_54_mk16_single_naval_user_cannon.blk	
 gamedata/weapons/navalmodels_weapons/127mm_54_mk18_turret_mk42_single_naval_user_cannon.blk	127mm 54 mk18 turret mk42 single
 gamedata/weapons/navalmodels_weapons/127mm_54_mk42_naval_user_cannon.blk	127mm 54 mk42
 gamedata/weapons/navalmodels_weapons/127mm_54_mk45_naval_user_cannon.blk	127mm 54 mk45
+gamedata/weapons/navalmodels_weapons/127mm_54_oto_melara_compact_naval_user_cannon.blk	127mm 54 oto melara compact
+gamedata/weapons/navalmodels_weapons/127mm_62_mk45_mod4_naval_user_cannon.blk	127mm 62 mk45 mod4
 gamedata/weapons/navalmodels_weapons/128mm_45_skc_41_naval_user_cannon.blk	128mm 45 skc 41
 gamedata/weapons/navalmodels_weapons/130mm_40_model_1919_naval_user_cannon.blk	130mm 40 model 1919
 gamedata/weapons/navalmodels_weapons/130mm_45_model_1932_naval_user_cannon.blk	130mm 45 model 1932
+gamedata/weapons/navalmodels_weapons/130mm_45_model_1935_naval_user_cannon.blk	130mm 45 model 1935
 gamedata/weapons/navalmodels_weapons/130mm_50_b13_1936_naval_user_cannon.blk	130mm 50 b13 1936
 gamedata/weapons/navalmodels_weapons/130mm_55_obr1913_naval_user_cannon.blk	130mm 55 obr1913
 gamedata/weapons/navalmodels_weapons/130mm_58_bl_109a_naval_user_cannon.blk	130mm 58 bl 109a
 gamedata/weapons/navalmodels_weapons/130mm_58_sm_2_1_naval_user_cannon.blk	130mm 58 sm 2 1
 gamedata/weapons/navalmodels_weapons/130mm_70_ak_130_naval_user_cannon.blk	130mm 70 ak 130
+gamedata/weapons/navalmodels_weapons/130mm_70_hpj45_naval_user_cannon.blk	130mm 70 hpj45
 gamedata/weapons/navalmodels_weapons/133mm_5_25inch_50_qf_mk1_ask_naval_user_cannon.blk	133mm 5 25inch 50 qf mk1 ask
 gamedata/weapons/navalmodels_weapons/133mm_5_25inch_50_qf_mk1_naval_user_cannon.blk	133mm 5 25inch 50 qf mk1
 gamedata/weapons/navalmodels_weapons/135mm_45_oto_mod1938_naval_user_cannon.blk	135mm 45 oto mod1938
@@ -106,6 +110,7 @@ gamedata/weapons/navalmodels_weapons/152mm_6inch_45_bl_mk12_naval_user_cannon.bl
 gamedata/weapons/navalmodels_weapons/152mm_6inch_45_bl_mk7_naval_user_cannon.blk	152mm 6inch 45 bl mk7
 gamedata/weapons/navalmodels_weapons/152mm_6inch_47_mk_16_dp_naval_user_cannon.blk	152mm 6inch 47 mk 16 dp
 gamedata/weapons/navalmodels_weapons/152mm_6inch_47_mk_16_naval_user_cannon.blk	152mm 6inch 47 mk 16
+gamedata/weapons/navalmodels_weapons/152mm_6inch_47_mk_17_naval_user_cannon.blk	152mm 6inch 47 mk 17
 gamedata/weapons/navalmodels_weapons/152mm_6inch_50_bl_mk22_naval_user_cannon.blk	152mm 6inch 50 bl mk22
 gamedata/weapons/navalmodels_weapons/152mm_6inch_50_bl_mk23_naval_user_cannon.blk	152mm 6inch 50 bl mk23
 gamedata/weapons/navalmodels_weapons/152mm_6inch_50_qf_mk_5_naval_user_cannon.blk	152mm 6inch 50 qf mk 5
@@ -140,6 +145,7 @@ gamedata/weapons/navalmodels_weapons/20mm_65_rh_202_naval_user_cannon.blk	20mm 6
 gamedata/weapons/navalmodels_weapons/20mm_70_isotta_fraschini_mod1939_naval_user_cannon.blk	20mm 70 isotta fraschini mod1939
 gamedata/weapons/navalmodels_weapons/20mm_jm61_m_vulcan_naval_user_cannon.blk	20mm jm61 m vulcan
 gamedata/weapons/navalmodels_weapons/20mm_jm61_rfs_vulcan_naval_user_cannon.blk	20mm jm61 rfs vulcan
+gamedata/weapons/navalmodels_weapons/20mm_m61_phalanx_block1b_naval_user_cannon.blk	20mm m61 phalanx block1b
 gamedata/weapons/navalmodels_weapons/20mm_m61_vulcan_naval_user_cannon.blk	20mm m61 vulcan
 gamedata/weapons/navalmodels_weapons/20mm_mg151_20_1938_naval_user_cannon.blk	20mm mg151 20 1938
 gamedata/weapons/navalmodels_weapons/20mm_oerlikon_3s_single_naval_user_cannon.blk	20mm oerlikon 3s single
@@ -179,8 +185,10 @@ gamedata/weapons/navalmodels_weapons/30mm_38_mk103_1942_naval_user_cannon.blk	30
 gamedata/weapons/navalmodels_weapons/30mm_54_ak630_naval_user_cannon.blk	30mm 54 ak630
 gamedata/weapons/navalmodels_weapons/30mm_54_ak630m_naval_user_cannon.blk	30mm 54 ak630m
 gamedata/weapons/navalmodels_weapons/30mm_73_m44_naval_user_cannon.blk	30mm 73 m44
+gamedata/weapons/navalmodels_weapons/30mm_77_type730_naval_user_cannon.blk	30mm 77 type730
 gamedata/weapons/navalmodels_weapons/30mm_ak_230_naval_user_cannon.blk	30mm ak 230
 gamedata/weapons/navalmodels_weapons/30mm_bp_30_mortar_naval_user_cannon.blk	30mm bp 30 mortar
+gamedata/weapons/navalmodels_weapons/30mm_hpj11_naval_user_cannon.blk	30mm hpj11
 gamedata/weapons/navalmodels_weapons/320mm_40_ansaldo_mod_1934_naval_user_cannon.blk	320mm 40 ansaldo mod 1934
 gamedata/weapons/navalmodels_weapons/320mm_40_mod_1936_naval_user_cannon.blk	320mm 40 mod 1936
 gamedata/weapons/navalmodels_weapons/320mm_40_oto_mod_1934_naval_user_cannon.blk	320mm 40 oto mod 1934
@@ -229,6 +237,7 @@ gamedata/weapons/navalmodels_weapons/406mm_45_mk5_naval_user_cannon.blk	406mm 45
 gamedata/weapons/navalmodels_weapons/406mm_45_mk6_naval_user_cannon.blk	406mm 45 mk6
 gamedata/weapons/navalmodels_weapons/406mm_50_b37_naval_user_cannon.blk	406mm 50 b37
 gamedata/weapons/navalmodels_weapons/406mm_50_mk7_naval_user_cannon.blk	406mm 50 mk7
+gamedata/weapons/navalmodels_weapons/406mm_52_skc_34_naval_user_cannon.blk	406mm 52 skc 34
 gamedata/weapons/navalmodels_weapons/40mm_39_2pdr_qf_mk2c_naval_user_cannon.blk	40mm 39 2pdr qf mk2c
 gamedata/weapons/navalmodels_weapons/40mm_39_2pdr_qf_mk8_pom_pom_naval_user_cannon.blk	40mm 39 2pdr qf mk8 pom pom
 gamedata/weapons/navalmodels_weapons/40mm_39_vickers_terni_mod15_17_modif1930_naval_user_cannon.blk	40mm 39 vickers terni mod15 17 modif1930
@@ -270,6 +279,7 @@ gamedata/weapons/navalmodels_weapons/65mm_50_m1902_naval_user_cannon.blk	65mm 50
 gamedata/weapons/navalmodels_weapons/65mm_64_ansaldo_terni_mod_1939_naval_user_cannon.blk	65mm 64 ansaldo terni mod 1939
 gamedata/weapons/navalmodels_weapons/75mm_35_model_1897_naval_user_cannon.blk	75mm 35 model 1897
 gamedata/weapons/navalmodels_weapons/75mm_35_model_1925_naval_user_cannon.blk	75mm 35 model 1925
+gamedata/weapons/navalmodels_weapons/75mm_40_m3_naval_user_cannon.blk	75mm 40 m3
 gamedata/weapons/navalmodels_weapons/75mm_50_model_1922_aa_naval_user_cannon.blk	75mm 50 model 1922 aa
 gamedata/weapons/navalmodels_weapons/75mm_50_model_1922_naval_user_cannon.blk	75mm 50 model 1922
 gamedata/weapons/navalmodels_weapons/75mm_50_model_1927_aa_naval_user_cannon.blk	75mm 50 model 1927 aa

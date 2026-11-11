@@ -32,6 +32,7 @@ gamedata/weapons/rocketguns/cn_ba_9.blk	cn ba 9	rocket
 gamedata/weapons/rocketguns/cn_cm_102.blk	cn cm 102	rocket
 gamedata/weapons/rocketguns/cn_cm_502kg_he.blk	cn cm 502kg he	rocket
 gamedata/weapons/rocketguns/cn_cm_502kg_he_rail.blk	cn cm 502kg he rail	rocket
+gamedata/weapons/rocketguns/cn_cm_502kg_he_wo_mitl.blk	cn cm 502kg he wo mitl	rocket
 gamedata/weapons/rocketguns/cn_fire_snake_70a.blk	cn fire snake 70a	rocket
 gamedata/weapons/rocketguns/cn_fire_snake_90a_brm1.blk	cn fire snake 90a brm1	rocket
 gamedata/weapons/rocketguns/cn_fs_70.blk	cn fs 70	rocket
@@ -234,8 +235,10 @@ gamedata/weapons/rocketguns/sa_zt_35_ingwe.blk	sa zt 35 ingwe	rocket
 gamedata/weapons/rocketguns/sa_zt_35_ingwe_default.blk	sa zt 35 ingwe default	rocket
 gamedata/weapons/rocketguns/spike_er.blk	spike er	rocket
 gamedata/weapons/rocketguns/spike_er_default.blk	spike er default	rocket
+gamedata/weapons/rocketguns/spike_er_wo_mitl.blk	spike er wo mitl	rocket
 gamedata/weapons/rocketguns/spike_nlos.blk	spike nlos	rocket
 gamedata/weapons/rocketguns/spike_nlos_default.blk	spike nlos default	rocket
+gamedata/weapons/rocketguns/spike_nlos_wo_mitl.blk	spike nlos wo mitl	rocket
 gamedata/weapons/rocketguns/su_3m11.blk	su 3m11	rocket
 gamedata/weapons/rocketguns/su_9m114.blk	su 9m114	rocket
 gamedata/weapons/rocketguns/su_9m114_default.blk	su 9m114 default	rocket
@@ -303,6 +306,7 @@ gamedata/weapons/rocketguns/su_kh_59mk.blk	su kh 59mk	rocket
 gamedata/weapons/rocketguns/su_kh_59mke.blk	su kh 59mke	rocket
 gamedata/weapons/rocketguns/su_kh_66.blk	su kh 66	rocket
 gamedata/weapons/rocketguns/su_lmur.blk	su lmur	rocket
+gamedata/weapons/rocketguns/su_lmur_wo_mitl.blk	su lmur wo mitl	rocket
 gamedata/weapons/rocketguns/su_m13uk.blk	su m13uk	rocket
 gamedata/weapons/rocketguns/su_m8.blk	su m8	rocket
 gamedata/weapons/rocketguns/su_pl2.blk	su pl2	rocket
@@ -357,6 +361,8 @@ gamedata/weapons/rocketguns/su_r_77.blk	su r 77	rocket
 gamedata/weapons/rocketguns/su_r_77_1.blk	su r 77 1	rocket
 gamedata/weapons/rocketguns/su_r_77_1_default.blk	su r 77 1 default	rocket
 gamedata/weapons/rocketguns/su_r_77_default.blk	su r 77 default	rocket
+gamedata/weapons/rocketguns/su_r_98mr.blk	su r 98mr	rocket
+gamedata/weapons/rocketguns/su_r_98mt.blk	su r 98mt	rocket
 gamedata/weapons/rocketguns/su_rbs132.blk	su rbs132	rocket
 gamedata/weapons/rocketguns/su_rbs82.blk	su rbs82	rocket
 gamedata/weapons/rocketguns/su_rofs132.blk	su rofs132	rocket
@@ -431,6 +437,7 @@ gamedata/weapons/rocketguns/sws_80_mm_sura_fl_us3.blk	sws 80 mm sura fl us3	rock
 gamedata/weapons/rocketguns/sws_flz_lwf_63.blk	sws flz lwf 63	rocket
 gamedata/weapons/rocketguns/sws_flz_lwf_63_75.blk	sws flz lwf 63 75	rocket
 gamedata/weapons/rocketguns/sws_flz_lwf_63_80.blk	sws flz lwf 63 80	rocket
+gamedata/weapons/rocketguns/sws_flz_lwf_63_90.blk	sws flz lwf 63 90	rocket
 gamedata/weapons/rocketguns/sws_flz_lwf_lb_82.blk	sws flz lwf lb 82	rocket
 gamedata/weapons/rocketguns/sws_flz_lwf_ll_64.blk	sws flz lwf ll 64	rocket
 gamedata/weapons/rocketguns/sws_oerlikon_oe82.blk	sws oerlikon oe82	rocket

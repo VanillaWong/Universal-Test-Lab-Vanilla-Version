@@ -21,6 +21,8 @@ a_10a_early	a_10a_early_suu_23a	suu 23a pod slot5; suu 23a pod slot6
 a_10a_early	a_10a_early_suu_23a_aim_9l	us aim9l sidewinder lm default; suu 23a pod slot5; suu 23a pod slot6; us aim9l sidewinder rm default
 a_10a_early	a_10a_early_2000lb_mk_84_air	6x us 2000lb mk 84 ldgp air
 a_10a_early	a_10a_early_2000lb_mk_84_air_aim_9l	us aim9l sidewinder lm default; 6x us 2000lb mk 84 ldgp air; us aim9l sidewinder rm default
+a_10a_early	a_10a_early_cbu_87b	10x cbu 87b
+a_10a_early	a_10a_early_cbu_58b	6x cbu 58b; 4x cbu 58b x3
 a_10a_late	a_10a_default	no suspended armament
 a_10a_late	a_10a_late_aim_9l_default	us aim9l sidewinder lm default; us aim9l sidewinder rm default
 a_10a_late	a_10a_late_aero_131a	6x us hydra 70 m247
@@ -36,6 +38,8 @@ a_10a_late	a_10a_late_3x_agm_65d	2x us agm 65d x 3
 a_10a_late	a_10a_late_3x_agm_65d_aim_9l	2x us aim9l sidewinder; 2x us agm 65d x 3
 a_10a_late	a_10a_late_aim_9l	2x us aim9l sidewinder
 a_10a_late	a_10a_late_2000lb_mk_84_air	6x us 2000lb mk 84 ldgp air
+a_10a_late	a_10a_late_cbu_87b	10x cbu 87b
+a_10a_late	a_10a_late_cbu_58b	6x cbu 58b; 4x cbu 58b x3
 a_10c	a_10c_default	ptb slot4; ptb slot6; ptb slot8
 a_10c	a_10c_aim_9l_default	aim9l default slot1; aim9l default slot11
 a_10c	a_10c_aim_9l	aim9l x2 slot1; aim9l x2 slot11
@@ -54,6 +58,7 @@ a_10c	a_10c_mk84	2000lbs slot3; 2000lbs slot4; 2000lbs slot5; 2000lbs slot7; 200
 a_10c	a_10c_mk82_air	500lbs air slot1; 500lbs air slot2; 500lbs air slot3; 500lbs air slot4; 500lbs air slot5; 500lbs air slot7; 500lbs air slot8; 500lbs air slot9; 500lbs air slot10; 500lbs air slot11
 a_10c	a_10c_mk82_air_x3	500lbs air x3 slot3; 500lbs air x3 slot4; 500lbs air x3 slot8; 500lbs air x3 slot9
 a_10c	a_10c_mk84_air	2000lbs air slot3; 2000lbs air slot4; 2000lbs air slot5; 2000lbs air slot7; 2000lbs air slot8; 2000lbs air slot9
+a_10c	a_10c_cbu_87b	cbu 87b slot1; cbu 87b slot2; cbu 87b slot3; cbu 87b slot4; cbu 87b slot5; cbu 87b slot7; cbu 87b slot8; cbu 87b slot9; cbu 87b slot10; cbu 87b slot11
 a_10c	a_10c_gbu_12	gbu12 slot1; gbu12 slot2; gbu12 x3 slot3; gbu12 x3 slot4; gbu12 slot5; gbu12 slot7; gbu12 x3 slot8; gbu12 x3 slot9; sniper pod; gbu12 slot11
 a_10c	a_10c_gbu_10	gbu 10 slot3; gbu 10 slot4; gbu 10 slot5; gbu 10 slot7; gbu 10 slot8; gbu 10 slot9; sniper pod
 a_10c	a_10c_jdam_38	jdam38 slot3; jdam38 slot4; jdam38 slot5; jdam38 slot7; jdam38 slot8; jdam38 slot9
@@ -97,6 +102,8 @@ a_129_d	a_129_d_4_hellfire_default	2x helfire x2
 a_129_d	a_129_d_8_hellfire	2x helfire x4
 a_129_d	a_129_d_4_spike	2x spike x2
 a_129_d	a_129_d_8_spike	2x spike x4
+a_129_d	a_129_d_4_spike_wo_mitl	2x spike wo mitl x2
+a_129_d	a_129_d_8_spike_wo_mitl	2x spike wo mitl x4
 a_129_d	a_129_d_stinger	4x atas
 a_129_d	a_129_d_mistral	4x mistral
 a_20g_30_ussr	a_20g_30_default	no suspended armament
@@ -200,6 +207,7 @@ a_4n	a_4n_bomb_mk82	2x mk82 x1; 2x mk82 x3; mk82 x6
 a_4n	a_4n_bomb_m117	2x mk117 x1; mk117 x1 central
 a_4n	a_4n_bomb_mk83	2x mk83 x1; mk83 x1 central
 a_4n	a_4n_bomb_mk84	3x mk84
+a_4n	a_4n_cbu_58b	cbu 58b slot1; cbu 58b slot2; cbu 58b slot3; cbu 58b slot4; cbu 58b slot5
 a_4n	a_4n_bomb_mk77	2x mk77 x1; mk77 left x2; mk77 x3 central; mk77 right x2
 a_4n	a_4n_agm_62	2x agm62
 a_4n	a_4n_bomb_guided_gbu8	gbu 8
@@ -225,6 +233,7 @@ a_5c	a_5c_4x500kg_bombs	2x gp250; gp250 x4
 a_5c	a_5c_4x500lb_mk82_bombs	2x us 500lb; us 500lb x4
 a_5c	a_5c_4x500kg_3_bombs	2x gp250 3; gp250 3 x4
 a_5c	a_5c_4x500kg_4_bombs	2x us 500lb 4; us 500lb 4 x4
+a_5c	a_5c_4x500kg_3_cluster_bombs	2x gp250 3 cluster
 a_5c	a_5c_4x750lbs_bombs	bomb 750lb x4
 a_5c	a_5c_500kg_bombs	2x gp500
 a_5c	a_5c_500kg_4_bombs	2x gp500 4
@@ -266,12 +275,13 @@ a_7d	a_7d_bomb_m117	2x us 750lb m117; us 750lb m117 x4 left wing; 2x us 750lb m1
 a_7d	a_7d_bomb_blu27b	4x blu 27b; 2x blu 27b x3
 a_7d	a_7d_bomb_mk83	4x ter mk83
 a_7d	a_7d_bomb_mk84	6x us mk84
+a_7d	a_7d_cbu_58b	cbu 58b slot1; cbu 58b x4 slot2; cbu 58b x4 slot7; cbu 58b slot8
 a_7d	a_7d_rocket_agm_65a	agm 65a slot2; agm 65a slot7
 a_7d	a_7d_bomb_gbu8	2x us 2000lb gbu 8 out; 2x us 2000lb gbu 8
 a_7d	a_7d_guns_suu_23	2x suu 23a gunpod wing
 a_7d	a_7d_guns_gpu_5a	2x gpu 5a gunpod
 a_7d	a_7d_bomb_mk84_air	6x us mk84 air
-a_7e	a_7e_default	no suspended armament
+a_7e	a_7e_default	ptb left; ptb right
 a_7e	a_7e_default_aim9d	2x aim 9d
 a_7e	a_7e_rockets_aim9e	2x aim 9g
 a_7e	a_7e_rockets_lau18	lau 3a slot1; lau 3a slot2; lau 3a slot3; lau 3a slot6; lau 3a slot7; lau 3a slot8
@@ -292,7 +302,7 @@ a_7e	a_7e_lana_flir	lana
 a_7e	a_7e_bomb_mk84_air	6x us mk84 air
 a_7e	a_7e_agm_45b_9	agm 45b 9 slot1; agm 45b 9 slot2; agm 45b 9 slot7; agm 45b 9 slot8
 a_7e	a_7e_agm_45b_10	agm 45b 10 slot1; agm 45b 10 slot2; agm 45b 10 slot7; agm 45b 10 slot8
-a_7e_greece	a_7e_default	no suspended armament
+a_7e_greece	a_7e_default	ptb left; ptb right
 a_7e_greece	a_7e_default_aim9d	2x aim 9d
 a_7e_greece	a_7e_rockets_aim9e	2x aim 9g
 a_7e_greece	a_7e_rockets_lau18	lau 3a slot1; lau 3a slot2; lau 3a slot3; lau 3a slot6; lau 3a slot7; lau 3a slot8
@@ -313,7 +323,7 @@ a_7e_greece	a_7e_lana_flir	lana
 a_7e_greece	a_7e_bomb_mk84_air	6x us mk84 air
 a_7e_greece	a_7e_agm_45b_9	agm 45b 9 slot1; agm 45b 9 slot2; agm 45b 9 slot7; agm 45b 9 slot8
 a_7e_greece	a_7e_agm_45b_10	agm 45b 10 slot1; agm 45b 10 slot2; agm 45b 10 slot7; agm 45b 10 slot8
-a_7e_thailand	a_7e_default	no suspended armament
+a_7e_thailand	a_7e_default	ptb left; ptb right
 a_7e_thailand	a_7e_default_aim9d	2x aim 9d
 a_7e_thailand	a_7e_rockets_aim9e	2x aim 9g
 a_7e_thailand	a_7e_rockets_lau18	lau 3a slot1; lau 3a slot2; lau 3a slot3; lau 3a slot6; lau 3a slot7; lau 3a slot8
@@ -362,6 +372,7 @@ a_7k	a_7k_bomb_m117	2x us 750lb m117; us 750lb m117 x4 left wing; 2x us 750lb m1
 a_7k	a_7k_bomb_blu27b	4x blu 27b; 2x blu 27b x3
 a_7k	a_7k_bomb_mk83	ter mk83 left; 2x ter mk83; ter mk83 x2 left wing; ter mk83 x2 right wing; ter mk83 right
 a_7k	a_7k_bomb_mk84	6x us mk84
+a_7k	a_7k_cbu_58b	cbu 58b slot1; cbu 58b x4 slot2; cbu 58b x4 slot7; cbu 58b slot8
 a_7k	a_7k_rocket_agm_65b	2x agm 65b
 a_7k	a_7k_bomb_gbu8	2x us 2000lb gbu 8 out; 2x us 2000lb gbu 8
 a_7k	a_7k_guns_suu_23	2x suu 23a gunpod wing
@@ -369,11 +380,11 @@ a_7k	a_7k_guns_gpu_5a	2x gpu 5a gunpod
 a_7k	a_7k_lana_flir	lana
 a_7k	a_7k_bomb_mk84_air	6x us mk84 air
 a-20g	a20g_default	no suspended armament
-a-20g	A-20G_500lb	no suspended armament
-a-20g	a20g_4x250lb	no suspended armament
-a-20g	a20g_2x250_2x500lb	no suspended armament
-a-20g	a20g_torpedo	no suspended armament
-a-20g	a-20g_12xbazooka	no suspended armament
+a-20g	a-20g_12xbazooka	m8 bazooka x2 left; m8 bazooka x2 right
+a-20g	A-20G_500lb	us 500lb x4
+a-20g	a20g_4x250lb	us 250lb x4
+a-20g	A-20G_8x500lb	us 500lb x2 left; us 500lb x4; us 500lb x2 right
+a-20g	a20g_8x250lb	us 250lb x2 left; us 250lb x4; us 250lb x2 right
 a-26b	a_26b_100lbs	100lbs wing right out; 100lbs wing right in; 100lbs int; 100lbs wing left in; 100lbs wing left out
 a-26b	a_26b_250lbs	250lbs wing right out; 250lbs wing right in; 250lbs int; 250lbs wing left in; 250lbs wing left out
 a-26b	a_26b_500lbs	500lbs wing right out; 500lbs wing right in; 500lbs int; 500lbs wing left in; 500lbs wing left out
@@ -587,6 +598,8 @@ ah_60_iaf	ah_60_iaf_8_hellfire	2x 114b x2 default; 2x 114b x2
 ah_60_iaf	ah_60_iaf_16_hellfire	4x 114b x4
 ah_60_iaf	ah_60_iaf_8_spike	4x spike x2
 ah_60_iaf	ah_60_iaf_16_spike	4x spike x4
+ah_60_iaf	ah_60_iaf_8_spike_wo_mitl	4x spike wo mitl x2
+ah_60_iaf	ah_60_iaf_16_spike_wo_mitl	4x spike wo mitl x4
 ah_64a	ah_64a_default	4x m247
 ah_64a	ah_64a_aim_9	2x aim9l
 ah_64a	ah_64a_stinger	aim92 l; aim92 r
@@ -638,6 +651,7 @@ ah_64d_i_saraph	ah_64d_i_saraph_rocket_4_hellfire	2x helfire x2 default
 ah_64d_i_saraph	ah_64d_i_saraph_8_hellfire	2x helfire x2 default; 2x helfire x2
 ah_64d_i_saraph	ah_64d_i_saraph_16_hellfire	4x helfire x4
 ah_64d_i_saraph	ah_64d_i_saraph_spike_nlos	4x spike nlos x4; spike nlos targeting pod
+ah_64d_i_saraph	ah_64d_i_saraph_spike_nlos_wo_mitl	4x spike nlos wo mitl x4; spike nlos targeting pod
 ah_64d_i_saraph	ah_64d_i_saraph_aim92	atas left; atas right
 ah_64d_japan	ah_64d_japan_default	no suspended armament
 ah_64d_japan	ah_64d_stinger	aim92 l; aim92 r
@@ -671,6 +685,7 @@ ah_64e	ah_64e_16_hellfire	4x 114b x4
 ah_64e	ah_64e_agm_179	4x agm 179 x4
 ah_64e	ah_64e_agm_179_ir	4x agm 179 ir x4
 ah_64e	ah_64e_spike_nlos	spike nlos targeting pod; 3x spike nlos x4
+ah_64e	ah_64e_spike_nlos_wo_mitl	spike nlos targeting pod; 3x spike nlos wo mitl x4
 ah_64e_britain	ah_64e_default	2x 114b x2 default; 2x m247
 ah_64e_britain	ah_64e_stinger	2x aim92
 ah_64e_britain	ah_64e_hydra_70_m247	4x m247
@@ -680,15 +695,18 @@ ah_64e_britain	ah_64e_16_hellfire	4x 114b x4
 ah_64e_britain	ah_64e_agm_179	4x agm 179 x4
 ah_64e_britain	ah_64e_agm_179_ir	4x agm 179 ir x4
 ah_64e_britain	ah_64e_spike_nlos	spike nlos targeting pod; 3x spike nlos x4
-ah_64e_china	ah_64e_china_default	ldircm l; 2x 114b x2 default; 2x m247; ldircm r
+ah_64e_britain	ah_64e_spike_nlos_wo_mitl	spike nlos targeting pod; 3x spike nlos wo mitl x4
+ah_64e_china	ah_64e_china_default	3x 114b x2 default; 2x m247; ldircm r
 ah_64e_china	ah_64e_china_stinger	aim92 l; 2x aim92; aim92 r
-ah_64e_china	ah_64e_china_hydra_70_m247	ldircm l; 4x m247; ldircm r
-ah_64e_china	ah_64e_china_apkws_m151	ldircm l; 4x apkws m151; ldircm r
-ah_64e_china	ah_64e_china_apkws_m282	ldircm l; 4x apkws m282; ldircm r
-ah_64e_china	ah_64e_china_16_hellfire	ldircm l; 4x 114b x4; ldircm r
-ah_64e_china	ah_64e_china_agm_179	ldircm l; 4x agm 179 x4; ldircm r
-ah_64e_china	ah_64e_china_agm_179_ir	ldircm l; 4x agm 179 ir x4; ldircm r
-ah_64e_china	ah_64e_china_spike_nlos	ldircm l; spike nlos targeting pod; 3x spike nlos x4; ldircm r
+ah_64e_china	ah_64e_china_hydra_70_m247	5x m247; ldircm r
+ah_64e_china	ah_64e_china_apkws_m151	5x apkws m151; ldircm r
+ah_64e_china	ah_64e_china_apkws_m282	5x apkws m282; ldircm r
+ah_64e_china	ah_64e_china_16_hellfire	5x 114b x4; ldircm r
+ah_64e_china	ah_64e_china_agm_179	5x agm 179 x4; ldircm r
+ah_64e_china	ah_64e_china_agm_179_ir	5x agm 179 ir x4; ldircm r
+ah_64e_china	ah_64e_china_circm	ldircm l; ldircm r
+ah_64e_china	ah_64e_china_spike_nlos	spike nlos targeting pod; 4x spike nlos x4; ldircm r
+ah_64e_china	ah_64e_china_spike_nlos_wo_mitl	spike nlos targeting pod; 3x spike nlos wo mitl x4
 ah_64e_indonesia	ah_64e_default	2x 114b x2 default; 2x m247
 ah_64e_indonesia	ah_64e_stinger	2x aim92
 ah_64e_indonesia	ah_64e_hydra_70_m247	4x m247
@@ -698,6 +716,7 @@ ah_64e_indonesia	ah_64e_16_hellfire	4x 114b x4
 ah_64e_indonesia	ah_64e_agm_179	4x agm 179 x4
 ah_64e_indonesia	ah_64e_agm_179_ir	4x agm 179 ir x4
 ah_64e_indonesia	ah_64e_spike_nlos	spike nlos targeting pod; 3x spike nlos x4
+ah_64e_indonesia	ah_64e_spike_nlos_wo_mitl	spike nlos targeting pod; 3x spike nlos wo mitl x4
 ah_64e_netherlands	ah_64e_default	2x 114b x2 default; 2x m247
 ah_64e_netherlands	ah_64e_stinger	2x aim92
 ah_64e_netherlands	ah_64e_hydra_70_m247	4x m247
@@ -707,6 +726,7 @@ ah_64e_netherlands	ah_64e_16_hellfire	4x 114b x4
 ah_64e_netherlands	ah_64e_agm_179	4x agm 179 x4
 ah_64e_netherlands	ah_64e_agm_179_ir	4x agm 179 ir x4
 ah_64e_netherlands	ah_64e_spike_nlos	spike nlos targeting pod; 3x spike nlos x4
+ah_64e_netherlands	ah_64e_spike_nlos_wo_mitl	spike nlos targeting pod; 3x spike nlos wo mitl x4
 ah_6m	ah_6m_default	2x hydra 70 m247 x19
 ah_6m	ah_6m_2_m134	ah 6m m134d left; ah 6m m134d right
 ah_6m	ah_6m_2_lau_131a	2x hydra 70 m247 x7
@@ -737,6 +757,7 @@ alpha_jet_a	alpha_jet_a_mk82_snakeye	2x mk 82 snakeye; 2x mk 82 snakeye x2; gun 
 alpha_jet_a	alpha_jet_a_250_samp_type_25	2x fr 250 samp type 25; 2x fr 250 samp type 25 x2; gun pod
 alpha_jet_a	alpha_jet_a_250_samp_type_25_200	2x fr 250 samp type 25 200; 2x fr 250 samp type 25 200 x2; gun pod
 alpha_jet_a	alpha_jet_a_m116	4x m116; gun pod
+alpha_jet_a	alpha_jet_a_bl755	4x bl755; gun pod
 alpha_jet_a	alpha_jet_a_lau_51	2x lau 51; 2x lau 51 x2; gun pod
 alpha_jet_a_jabog41	alpha_jet_a_default	ptb 1; gun pod; ptb 2
 alpha_jet_a_jabog41	alpha_jet_a_mk82_default	4x mk 82; gun pod
@@ -745,6 +766,7 @@ alpha_jet_a_jabog41	alpha_jet_a_mk82_snakeye	2x mk 82 snakeye; 2x mk 82 snakeye 
 alpha_jet_a_jabog41	alpha_jet_a_250_samp_type_25	2x fr 250 samp type 25; 2x fr 250 samp type 25 x2; gun pod
 alpha_jet_a_jabog41	alpha_jet_a_250_samp_type_25_200	2x fr 250 samp type 25 200; 2x fr 250 samp type 25 200 x2; gun pod
 alpha_jet_a_jabog41	alpha_jet_a_m116	4x m116; gun pod
+alpha_jet_a_jabog41	alpha_jet_a_bl755	4x bl755; gun pod
 alpha_jet_a_jabog41	alpha_jet_a_lau_51	2x lau 51; 2x lau 51 x2; gun pod
 alpha_jet_a_thailand	alpha_jet_a_default	ptb 1; gun pod; ptb 2
 alpha_jet_a_thailand	alpha_jet_a_mk82_default	4x mk 82; gun pod
@@ -753,6 +775,7 @@ alpha_jet_a_thailand	alpha_jet_a_mk82_snakeye	2x mk 82 snakeye; 2x mk 82 snakeye
 alpha_jet_a_thailand	alpha_jet_a_250_samp_type_25	2x fr 250 samp type 25; 2x fr 250 samp type 25 x2; gun pod
 alpha_jet_a_thailand	alpha_jet_a_250_samp_type_25_200	2x fr 250 samp type 25 200; 2x fr 250 samp type 25 200 x2; gun pod
 alpha_jet_a_thailand	alpha_jet_a_m116	4x m116; gun pod
+alpha_jet_a_thailand	alpha_jet_a_bl755	4x bl755; gun pod
 alpha_jet_a_thailand	alpha_jet_a_lau_51	2x lau 51; 2x lau 51 x2; gun pod
 alpha_jet_e	alpha_jet_e_default	ptb 1; gun pod; ptb 2
 alpha_jet_e	alpha_jet_e_mk82_default	4x mk 82; gun pod
@@ -761,6 +784,7 @@ alpha_jet_e	alpha_jet_e_mk82_snakeye	2x mk 82 snakeye; 2x mk 82 snakeye x2; gun 
 alpha_jet_e	alpha_jet_e_250_samp_type_25	2x fr 250 samp type 25; 2x fr 250 samp type 25 x2; gun pod
 alpha_jet_e	alpha_jet_e_250_samp_type_25_200	2x fr 250 samp type 25 200; 2x fr 250 samp type 25 200 x2; gun pod
 alpha_jet_e	alpha_jet_e_m116	4x m116; gun pod
+alpha_jet_e	alpha_jet_e_blg66	4x blg66; gun pod
 alpha_jet_e	alpha_jet_e_matra_lr_f4	4x containers matra lr f4; gun pod
 alpha_jet_e	alpha_jet_e_matra_lr_f1	4x containers matra lr f1; gun pod
 alpha_jet_e	alpha_jet_e_cc_420	wing left middle cc420; gun pod; wing right middle cc420
@@ -772,6 +796,7 @@ alpha_jet_th_phase_1	alpha_jet_th_phase_1_mk82_snakeye	2x mk 82 snakeye; 2x mk 8
 alpha_jet_th_phase_1	alpha_jet_th_phase_1_250_samp_type_25	2x fr 250 samp type 25; 2x fr 250 samp type 25 x2; gun pod
 alpha_jet_th_phase_1	alpha_jet_th_phase_1_250_samp_type_25_200	2x fr 250 samp type 25 200; 2x fr 250 samp type 25 200 x2; gun pod
 alpha_jet_th_phase_1	alpha_jet_th_phase_1_m116	4x m116; gun pod
+alpha_jet_th_phase_1	alpha_jet_th_phase_1_bl755	4x bl755; gun pod
 alpha_jet_th_phase_1	alpha_jet_th_phase_1_lau_51	2x lau 51; 2x lau 51 x2; gun pod
 am_1_mauler	default	no suspended armament
 am_1_mauler	am_1_mauler_bomb_14x250lb	12x us 250 anm57a1
@@ -790,6 +815,7 @@ amx	amx_mk82_default	4x mk 82; mk 82 fuse
 amx	amx_mk82	2x mk 82; 2x mk 82 x2; mk 82 x2 fuse
 amx	amx_mk82_snakeye	2x mk 82 snakeye; 2x mk 82 snakeye x2; mk 82 snakeye x2 fuse
 amx	amx_mk83	4x mk 83; mk 83 x2
+amx	amx_bl755	4x bl755; bl755 fuse
 amx	amx_mk84	2x mk 84; mk 84 fuse
 amx	amx_gbu_12	2x gbu 12; 2x gbu 12 x2; pdlct s pod
 amx	amx_gbu_16	4x gbu 16; pdlct s pod
@@ -978,7 +1004,13 @@ avenger_mk1	tbf_1c_mk13_torpedo_weak	mk13 no case
 avenger_mk1	tbf_1c_mk13_torpedo	mk13
 aw_159	aw_159_default	spike nlos x2 default; spike nlos targeting pod; martlet default
 aw_159	aw_159_martel	3x martlet; martlet default
-aw_159	aw_159_spike	spike nlos x2 default; spike nlos targeting pod; spike nlos x2
+aw_159	aw_159_spike	2x spike nlos x2; spike nlos targeting pod
+aw_159	aw_159_spike_wo_mitl	spike nlos x2 default; spike nlos targeting pod; spike nlos wo mitl x2
+aw_249_pre_serie	aw_249_default	3x hl 19 70; spike x4 default
+aw_249_pre_serie	aw_249_rocket_ffar	4x hl 19 70
+aw_249_pre_serie	aw_249_8_spike	4x spike x4
+aw_249_pre_serie	aw_249_8_spike_wo_mitl	3x spike wo mitl x4; spike x4 default
+aw_249_pre_serie	aw_249_stinger	2x atas wing; 4x atas
 b_10b	b_10b_250lb	250lb slot2
 b_10b	b_10b_500lb	500lb slot1; 500lb slot2; 500lb slot3
 b_10b	b_10b_1000lb	1000lb slot1; 1000lb slot2; 1000lb slot3
@@ -1072,6 +1104,14 @@ b_26c_france	b_26b_c_4x1000lbs	no suspended armament
 b_26c_france	b_26b_c_2x2000lbs	no suspended armament
 b_26c_france	b_26b_c_2x1600lbs	no suspended armament
 b_26c_france	b_26b_c_torpedo	no suspended armament
+b_33_indonesia	IL10_default	no suspended armament
+b_33_indonesia	il-10_rs82	rs82 slot1; rs82 slot2; rs82 slot5; rs82 slot6
+b_33_indonesia	il-10_rbs82	rbs82 slot1; rbs82 slot2; rbs82 slot5; rbs82 slot6
+b_33_indonesia	il-10_rs132	rs132 slot1; rs132 slot2; rs132 slot5; rs132 slot6
+b_33_indonesia	il-10_rbs132	rbs132 slot1; rbs132 slot2; rbs132 slot5; rbs132 slot6
+b_33_indonesia	IL10_fab50	2x fab50
+b_33_indonesia	IL10_fab100	2x fab100
+b_33_indonesia	IL10_fab250	2x fab250
 b_34	b_34_250lbs_bombs	no suspended armament
 b_34	b_34_500lbs_bombs	no suspended armament
 b_34	b_34_torp	no suspended armament
@@ -1159,25 +1199,35 @@ b5n2	b5n2_type91mod3_torpedo	no suspended armament
 b5n2	b5n2_default	no suspended armament
 b6n1	b6n1_default	no suspended armament
 b6n1	b6n1_250kg_mod25mark2	no suspended armament
+b6n1	b6n1_500kg_mod50mk1	no suspended armament
+b6n1	b6n1_500kg_mod50mk2	no suspended armament
 b6n1	b6n1_800kg_mod80mk1	no suspended armament
 b6n1	b6n1_type91mod2_torpedo	no suspended armament
 b6n1	b6n1_type91mod3_torpedo	no suspended armament
 b6n2	b6n2_default	no suspended armament
 b6n2	b6n2_250kg_mod25mark2	no suspended armament
+b6n2	b6n2_500kg_mod50mk1	no suspended armament
+b6n2	b6n2_500kg_mod50mk2	no suspended armament
 b6n2	b6n2_800kg_mod80mk1	no suspended armament
 b6n2	b6n2_type91mod2_torpedo	no suspended armament
 b6n2	b6n2_type91mod3_torpedo	no suspended armament
 b6n2a	b6n2a_default	no suspended armament
 b6n2a	b6n2a_250kg_mod25mark2	no suspended armament
+b6n2a	b6n2a_500kg_mod50mk1	no suspended armament
+b6n2a	b6n2a_500kg_mod50mk2	no suspended armament
 b6n2a	b6n2a_800kg_mod80mk1	no suspended armament
 b6n2a	b6n2a_type91mod2_torpedo	no suspended armament
 b6n2a	b6n2a_type91mod3_torpedo	no suspended armament
 b7a2	b7a2_10xmod6_bombs	no suspended armament
 b7a2	b7a2_2xtype98_4xmod6_bombs	no suspended armament
+b7a2	b7a2_mod50mk1_bomb	no suspended armament
+b7a2	b7a2_mod50mk2_bomb	no suspended armament
 b7a2	b7a2_mod80mk1_bomb	no suspended armament
 b7a2	b7a2_type91mod2_torpedo	no suspended armament
 b7a2_homare_23	b7a2_10xmod6_bombs	no suspended armament
 b7a2_homare_23	b7a2_2xtype98_4xmod6_bombs	no suspended armament
+b7a2_homare_23	b7a2_mod50mk1_bomb	no suspended armament
+b7a2_homare_23	b7a2_mod50mk2_bomb	no suspended armament
 b7a2_homare_23	b7a2_mod80mk1_bomb	no suspended armament
 b7a2_homare_23	b7a2_type91mod2_torpedo	no suspended armament
 ba_65_a80	ba_65_a80_default	no suspended armament
@@ -1219,11 +1269,13 @@ beaufighter_mkx	beaufighter_mkx_mc250_bomb	2x 250lbs; 2x250lbs
 beaufighter_mkx	beaufighter_mkx_mc500_bomb	2x 500lbs; 2x500lbs
 beaufighter_mkx	beaufighter_mkx_mc1000_bomb	2x1000lbs
 beaufighter_mkx	beaufighter_mkx_torpedo	torpedo
-beaufort_mkviii	beaufort_mkviii_250gp	no suspended armament
-beaufort_mkviii	beaufort_mkviii_torpedo	no suspended armament
-beaufort_mkviii	beaufort_mkviii_500gp	no suspended armament
-beaufort_mkviii	beaufort_mkviii_500sap	no suspended armament
 beaufort_mkviii	beaufort_mkviii_default	no suspended armament
+beaufort_mkviii	beaufort_mkviii_250gp	250lb slot1; 250lb slot2; 250lb slot3
+beaufort_mkviii	beaufort_mkviii_500gp	500lb slot2
+beaufort_mkviii	beaufort_mkviii_500sap	500lb ap slot2
+beaufort_mkviii	beaufort_mkviii_1000gp	1000lb slot2
+beaufort_mkviii	beaufort_mkviii_2000sap	2000lb ap slot2
+beaufort_mkviii	beaufort_mkviii_torpedo	torpedo
 bf_109t_2	bf_109t_2_default	no suspended armament
 bf_109t_2	bf_109t_2_4xSC50	sc50 slot1
 bf_109t_2	bf_109t_2_SC250	sc250 slot1
@@ -1259,6 +1311,10 @@ bf-109e-3	Bf-109E-3_4xSC50	no suspended armament
 bf-109e-3	Bf-109E-3_SC250	no suspended armament
 bf-109e-3	Bf-109E-3_SC500	no suspended armament
 bf-109e-3_japan	Bf-109E-4_default	no suspended armament
+bf-109e-3_tl	Bf-109E-3_default	no suspended armament
+bf-109e-3_tl	Bf-109E-3_4xSC50	no suspended armament
+bf-109e-3_tl	Bf-109E-3_SC250	no suspended armament
+bf-109e-3_tl	Bf-109E-3_SC500	no suspended armament
 bf-109e-4	Bf-109E-4_default	no suspended armament
 bf-109e-4	Bf-109E-4_4xSC50	no suspended armament
 bf-109e-4	Bf-109E-4_SC250	no suspended armament
@@ -1478,6 +1534,7 @@ buccaneer_s2b	buccaneer_s2b_540lb_bombs	4x 540lbs mer; 540lbs fuse
 buccaneer_s2b	buccaneer_s2b_1000lb_bombs	4x 1000lbs ter
 buccaneer_s2b	buccaneer_s2b_1000lb_bombs_fuse_wing_x2	2x 1000lbs ter mk n1 x2 left wing; 1000lbs; 2x 1000lbs ter mk n1 x2 right wing
 buccaneer_s2b	buccaneer_s2b_1000lb_bombs_n117	4x 1000lbs ter n117; 1000lbs centr n117
+buccaneer_s2b	buccaneer_s2b_bl755_bombs	bl755 slot1; bl755 slot2; bl755 slot3; bl755 slot4; bl755 slot5
 buccaneer_s2b	buccaneer_s2b_lgbu_13	fr mk13 slot1; pave spike; fr mk13 slot4; fr mk13 slot5
 buccaneer_s2b	buccaneer_s2b_500lb_drag_bombs	4x 500lbs drag mer
 bv-138c-1	bv-138c-1_default	no suspended armament
@@ -1936,14 +1993,16 @@ f_100f_china	f_100f_blu27_x4	4x blu27
 f_100f_china	f_100f_blu27_x4_x2	2x blu27 x2
 f_100f_china	f_100f_2xchaff_pods	2x chaff
 f_101c	f_101c_default	no suspended armament
-f_102a_greece	f_102a_late_default	ptb slot1; aim 4g default slot2; aim 4g default slot6; ptb slot7
-f_102a_greece	f_102a_late_aim_4g	aim 4g x2 slot2; aim 4g x2 slot4; aim 4g x2 slot6
-f_102a_greece	f_102a_late_aim_4f	aim 4f x2 slot2; aim 4f x2 slot4; aim 4f x2 slot6
-f_102a_greece	f_102a_late_ffar	ffar x12 slot3; ffar x12 slot5
-f_102a_late	f_102a_late_default	ptb slot1; aim 4g default slot2; aim 4g default slot6; ptb slot7
-f_102a_late	f_102a_late_aim_4g	aim 4g x2 slot2; aim 4g x2 slot4; aim 4g x2 slot6
-f_102a_late	f_102a_late_aim_4f	aim 4f x2 slot2; aim 4f x2 slot4; aim 4f x2 slot6
-f_102a_late	f_102a_late_ffar	ffar x12 slot3; ffar x12 slot5
+f_102a_greece	f_102a_late_default	suu 11a gunpod slot1; aim 4g default slot2; aim 4g default slot6; suu 11a gunpod slot7
+f_102a_greece	f_102a_late_aim_4g	suu 11a gunpod slot1; aim 4g x2 slot2; aim 4g x2 slot4; aim 4g x2 slot6; suu 11a gunpod slot7
+f_102a_greece	f_102a_late_aim_4f	suu 11a gunpod slot1; aim 4f x2 slot2; aim 4f x2 slot4; aim 4f x2 slot6; suu 11a gunpod slot7
+f_102a_greece	f_102a_late_aim_26b	suu 11a gunpod slot1; aim 26b x2 slot4; suu 11a gunpod slot7
+f_102a_greece	f_102a_late_ffar	suu 11a gunpod slot1; ffar x12 slot3; ffar x12 slot5; suu 11a gunpod slot7
+f_102a_late	f_102a_late_default	suu 11a gunpod slot1; aim 4g default slot2; aim 4g default slot6; suu 11a gunpod slot7
+f_102a_late	f_102a_late_aim_4g	suu 11a gunpod slot1; aim 4g x2 slot2; aim 4g x2 slot4; aim 4g x2 slot6; suu 11a gunpod slot7
+f_102a_late	f_102a_late_aim_4f	suu 11a gunpod slot1; aim 4f x2 slot2; aim 4f x2 slot4; aim 4f x2 slot6; suu 11a gunpod slot7
+f_102a_late	f_102a_late_aim_26b	suu 11a gunpod slot1; aim 26b x2 slot4; suu 11a gunpod slot7
+f_102a_late	f_102a_late_ffar	suu 11a gunpod slot1; ffar x12 slot3; ffar x12 slot5; suu 11a gunpod slot7
 f_105d_japan_killstreak	f_105d_killstreak_default	no suspended armament
 f_105d_japan_killstreak	f_105d_killstreak_1xb61	b61
 f_105d_japan_killstreak	f_105d_killstreak_b61_5kt_nt	b61 5kt
@@ -1985,6 +2044,7 @@ f_111c_raaf	f_111c_aim9l	2x aim 9l default; 4x aim 9l
 f_111c_raaf	f_111c_mk82_bru_supersonic	2x bru 3a mk82 x6 supersonic; 2x bru 3a mk82 x6 supersonic fuse
 f_111c_raaf	f_111c_mk84	4x us mk84
 f_111c_raaf	f_111c_mk82_snakeye_bru_supersonic	2x bru 3a mk82 snakeye x6 supersonic; 2x bru 3a mk82 snakeye x6 supersonic fuse
+f_111c_raaf	f_111c_cbu_58b	cbu 58b x6 slot2; cbu 58b x4 slot3; cbu 58b x4 slot5; cbu 58b x6 slot6
 f_111c_raaf	f_111c_gbu_12	us gbu 12 slot1; us gbu 12 slot2; pave tack; us gbu 12 slot3; us gbu 12 slot4
 f_111c_raaf	f_111c_gbu_10	us gbu 10 slot1; us gbu 10 slot2; pave tack; us gbu 10 slot3; us gbu 10 slot4
 f_111c_raaf	f_111c_gbu_24	us gbu 24 slot1; us gbu 24 slot2; pave tack; us gbu 24 slot3; us gbu 24 slot4
@@ -1997,6 +2057,8 @@ f_111f	f_111f_m117_bru_supersonic	2x bru 3a m117 x6 supersonic; 2x bru 3a m117 x
 f_111f	f_111f_mk84	4x us mk84
 f_111f	f_111f_mk82_snakeye_bru_supersonic	2x bru 3a mk82 snakeye x6 supersonic; 2x bru 3a mk82 snakeye x6 supersonic fuse
 f_111f	f_111f_mk84_air	4x us mk84 air
+f_111f	f_111f_cbu_87b	bru 3a cbu 87b x4 left; 2x cbu 87b; bru 3a cbu 87b x4 right
+f_111f	f_111f_cbu_58b	cbu 58b x6 slot2; cbu 58b x4 slot3; cbu 58b x4 slot5; cbu 58b x6 slot6
 f_111f	f_111f_agm_65d	2x agm 65d x3
 f_111f	f_111f_agm_65g	2x agm 65g
 f_111f	f_111f_gbu_12	us gbu 12 slot1; us gbu 12 slot2; pave tack; us gbu 12 slot3; us gbu 12 slot4
@@ -2132,6 +2194,7 @@ f_15a	f_15a_aim_7m	2x aim 7m default; 2x aim 7m
 f_15a	f_15a_mk82	3x mer mk82 x6
 f_15a	f_15a_mk82_snakeye	3x mer mk82 x6 snakeye
 f_15a	f_15a_mk84	3x us mk84
+f_15a	f_15a_cbu_58b	mer cbu 58b x4 slot2; mer cbu 58b x4 slot6; mer cbu 58b x4 slot10
 f_15a	f_15a_gbu_8	3x us 2000lb gbu 8
 f_15a	f_15a_blu_27	3x ter us blu 27
 f_15a_iaf	f_15a_default	ptb left; ptb fuse; ptb right
@@ -2143,6 +2206,7 @@ f_15a_iaf	f_15a_aim_7m	2x aim 7m default; 2x aim 7m
 f_15a_iaf	f_15a_mk82	3x mer mk82 x6
 f_15a_iaf	f_15a_mk82_snakeye	3x mer mk82 x6 snakeye
 f_15a_iaf	f_15a_mk84	3x us mk84
+f_15a_iaf	f_15a_cbu_58b	mer cbu 58b x4 slot2; mer cbu 58b x4 slot6; mer cbu 58b x4 slot10
 f_15a_iaf	f_15a_gbu_8	3x us 2000lb gbu 8
 f_15a_iaf	f_15a_blu_27	3x ter us blu 27
 f_15c_baz_msip	f_15c_baz_msip_default	ptb left; fueltank fuse slot6; ptb fuse; fueltank fuse slot8; ptb right
@@ -2157,6 +2221,7 @@ f_15c_baz_msip	f_15c_baz_msip_aim_120a_tank	aim 120a tank slot4; aim 120a tank s
 f_15c_baz_msip	f_15c_baz_msip_mk82	mer mk82 x6 slot2; mer mk82 x6 slot7; mer mk82 x6 slot12
 f_15c_baz_msip	f_15c_baz_msip_mk82_snakeye	mer mk82 x6 snakeye slot2; mer mk82 x6 snakeye slot7; mer mk82 x6 snakeye slot12
 f_15c_baz_msip	f_15c_baz_msip_mk84	us mk84 slot2; us mk84 slot7; us mk84 slot12
+f_15c_baz_msip	f_15c_baz_msip_cbu_58b	mer cbu 58b x4 slot2; mer cbu 58b x4 slot7; mer cbu 58b x4 slot12
 f_15c_baz_msip	f_15c_baz_msip_gbu_8	us 2000lb gbu 8 slot2; us 2000lb gbu 8 slot7; us 2000lb gbu 8 slot12
 f_15c_baz_msip	f_15c_baz_msip_spice_1000	spice 1000 slot2; spice 1000 slot7; spice 1000 slot12
 f_15c_baz_msip	f_15c_baz_msip_spice_2000	spice 2000 slot2; spice 2000 slot7; spice 2000 slot12
@@ -2179,6 +2244,7 @@ f_15c_golden_eagle	f_15c_golden_eagle_mk81_snakeye_tank	mer mk81 x6 snakeye tank
 f_15c_golden_eagle	f_15c_golden_eagle_mk82	mer mk82 x6 slot2; mer mk82 x6 slot7; mer mk82 x6 slot12
 f_15c_golden_eagle	f_15c_golden_eagle_mk82_snakeye	mer mk82 x6 snakeye slot2; mer mk82 x6 snakeye slot7; mer mk82 x6 snakeye slot12
 f_15c_golden_eagle	f_15c_golden_eagle_mk84	us mk84 slot2; us mk84 slot7; us mk84 slot12
+f_15c_golden_eagle	f_15c_golden_eagle_cbu_87b	mer cbu 87b x4 slot2; mer cbu 87b x4 slot7; mer cbu 87b x4 slot12
 f_15c_golden_eagle	f_15c_golden_eagle_gbu_8	us 2000lb gbu 8 slot2; us 2000lb gbu 8 slot7; us 2000lb gbu 8 slot12
 f_15c_golden_eagle	f_15c_golden_eagle_apkws_m151	2x us apkws m151; sniper
 f_15c_golden_eagle	f_15c_golden_eagle_apkws_m282	2x us apkws m282; sniper
@@ -2207,6 +2273,7 @@ f_15c_msip2	f_15c_msip2_mk81_snakeye_tank	mer mk81 x6 snakeye tank slot6; mer mk
 f_15c_msip2	f_15c_msip2_mk82	mer mk82 x6 slot2; mer mk82 x6 slot7; mer mk82 x6 slot12
 f_15c_msip2	f_15c_msip2_mk82_snakeye	mer mk82 x6 snakeye slot2; mer mk82 x6 snakeye slot7; mer mk82 x6 snakeye slot12
 f_15c_msip2	f_15c_msip2_mk84	us mk84 slot2; us mk84 slot7; us mk84 slot12
+f_15c_msip2	f_15c_msip2_cbu_87b	mer cbu 87b x4 slot2; mer cbu 87b x4 slot7; mer cbu 87b x4 slot12
 f_15c_msip2	f_15c_msip2_gbu_8	us 2000lb gbu 8 slot2; us 2000lb gbu 8 slot7; us 2000lb gbu 8 slot12
 f_15c_msip2	f_15c_msip2_gbu_38	us gbu 38 slot2; us gbu 38 slot7; us gbu 38 slot12
 f_15c_msip2	f_15c_msip2_gbu_31	us gbu 31 slot2; us gbu 31 slot7; us gbu 31 slot12
@@ -2215,69 +2282,142 @@ f_15c_msip2	f_15c_msip2_gbu_64	us gbu 64 slot2; us gbu 64 slot7; us gbu 64 slot1
 f_15c_msip2	f_15c_msip2_gbu_39	us gbu 39 slot2; us gbu 39 slot12
 f_15c_msip2	f_15c_msip2_gbu_53	us gbu 53 slot2; us gbu 53 slot12
 f_15c_msip2	f_15c_msip2_blu_27	ter us blu 27 slot2; ter us blu 27 slot7; ter us blu 27 slot12
-f_15e	f_15e_default	2x aim 9l default; ptb left; aim 120c slot3 default; fueltank fuse slot5; ltc left; ptb fuse; ltc right; fueltank fuse slot9; aim 120c slot11 default; ptb right
-f_15e	f_15e_aim_9l	2x aim 9l default; aim 9l slot3; ltc left; ltc right; aim 9l slot11
-f_15e	f_15e_aim_9m	aim 9m slot1; aim 9m slot3; ltc left; ltc right; aim 9m slot11; aim 9m slot13
-f_15e	f_15e_aim_7m	aim 7m tank slot4; ltc left; ltc right; aim 7m tank slot10
-f_15e	f_15e_aim_120	aim 120b slot1; aim 120b tank slot4; aim 120b tank slot10; aim 120b slot13
+f_15e	f_15e_default	3x aim 9l default; ptb left; aim 120c slot3 default; fueltank fuse slot5; ltc left; ptb fuse; fueltank fuse slot9; aim 120c slot11 default; ptb right
+f_15e	f_15e_aim_9l	3x aim 9l default; aim 9l slot3; ltc left; aim 9l slot11
+f_15e	f_15e_aim_9m	aim 9m slot1; aim 9m slot3; ltc left; aim 9m slot11; 2x aim 9m slot13
+f_15e	f_15e_aim_7m	aim 7m tank slot4; ltc left; 2x aim 7m tank slot10
+f_15e	f_15e_aim_120	aim 120b slot1; aim 120b slot3 default; aim 120b tank slot4; aim 120b tank slot10; aim 120b slot11 default; aim 120b slot13
 f_15e	f_15e_aim_120c	aim 120c slot1; aim 120c slot3 default; aim 120c tank slot4; aim 120c tank slot10; aim 120c slot11 default; aim 120c slot13
-f_15e	f_15e_aim_120_ltc	aim 120b slot1; aim 120b slot3 default; aim 120b tank slot4; ltc left; ltc right; aim 120b tank slot10; aim 120b slot11 default; aim 120b slot13
-f_15e	f_15e_aim_120c_ltc	aim 120c slot1; aim 120c slot3 default; aim 120c tank slot4; ltc left; ltc right; aim 120c tank slot10; aim 120c slot11 default; aim 120c slot13
-f_15e	f_15e_mk82	mer mk82 x6 slot2; us mk82 x6 tank slot5; ltc left; ltc right; us mk82 x6 tank slot9; mer mk82 x6 slot12
-f_15e	f_15e_mk82_snakeye	mer mk82 snakeye x6 slot2; us mk82 x6 snakeye tank slot5; ltc left; ltc right; us mk82 x6 snakeye tank slot9; mer mk82 snakeye x6 slot12
-f_15e	f_15e_mk84	us mk84 slot2; us mk84 tank slot5; ltc left; us mk84 slot7; ltc right; us mk84 tank slot9; us mk84 slot12
-f_15e	f_15e_mk84_air	us mk84 air slot2; us mk84 air tank slot5; ltc left; us mk84 air slot7; ltc right; us mk84 air tank slot9; us mk84 air slot12
-f_15e	f_15e_gbu_38	us gbu 38 slot2; us gbu 38 slot5; ltc left; us gbu 38 slot7; ltc right; us gbu 38 slot9; us gbu 38 slot12
+f_15e	f_15e_aim_120_ltc	aim 120b slot1; aim 120b slot3 default; aim 120b tank slot4; ltc left; aim 120b tank slot10; aim 120b slot11 default; 2x aim 120b slot13
+f_15e	f_15e_aim_120c_ltc	aim 120c slot1; aim 120c slot3 default; aim 120c tank slot4; ltc left; aim 120c tank slot10; aim 120c slot11 default; 2x aim 120c slot13
+f_15e	f_15e_mk82	mer mk82 x6 slot2; us mk82 x6 tank slot5; ltc left; us mk82 x6 tank slot9; 2x mer mk82 x6 slot12
+f_15e	f_15e_mk82_snakeye	mer mk82 snakeye x6 slot2; us mk82 x6 snakeye tank slot5; ltc left; us mk82 x6 snakeye tank slot9; 2x mer mk82 snakeye x6 slot12
+f_15e	f_15e_mk84	us mk84 slot2; us mk84 tank slot5; ltc left; us mk84 slot7; us mk84 tank slot9; 2x us mk84 slot12
+f_15e	f_15e_mk84_air	us mk84 air slot2; us mk84 air tank slot5; ltc left; us mk84 air slot7; us mk84 air tank slot9; 2x us mk84 air slot12
+f_15e	f_15e_cbu_87b	mer cbu 87b x4 slot2; us cbu 87b tank slot5; ltc left; us cbu 87b tank slot9; mer cbu 87b x4 slot12
+f_15e	f_15e_gbu_38	us gbu 38 slot2; us gbu 38 slot5; ltc left; us gbu 38 slot7; us gbu 38 slot9; 2x us gbu 38 slot12
 f_15e	f_15e_gbu_54	us gbu 54 slot2; us gbu 54 slot5; sniper; us gbu 54 slot7; us gbu 54 slot9; us gbu 54 slot12
-f_15e	f_15e_gbu_31	us gbu 31 slot2; us gbu 31 slot5; ltc left; us gbu 31 slot7; ltc right; us gbu 31 slot9; us gbu 31 slot12
-f_15e	f_15e_gbu_39	us gbu 39 slot5; ltc left; us gbu 39 slot7; ltc right; us gbu 39 slot9
-f_15e	f_15e_gbu_53	us gbu 53 slot5; ltc left; us gbu 53 slot7; ltc right; us gbu 53 slot9
-f_15e	f_15e_gbu_62	us gbu 62 slot2; us gbu 62 slot5; ltc left; us gbu 62 slot7; ltc right; us gbu 62 slot9; us gbu 62 slot12
+f_15e	f_15e_gbu_31	us gbu 31 slot2; us gbu 31 slot5; ltc left; us gbu 31 slot7; us gbu 31 slot9; 2x us gbu 31 slot12
+f_15e	f_15e_gbu_39	us gbu 39 slot5; ltc left; us gbu 39 slot7; 2x us gbu 39 slot9
+f_15e	f_15e_gbu_53	us gbu 53 slot5; ltc left; us gbu 53 slot7; 2x us gbu 53 slot9
+f_15e	f_15e_gbu_62	us gbu 62 slot2; us gbu 62 slot5; ltc left; us gbu 62 slot7; us gbu 62 slot9; 2x us gbu 62 slot12
 f_15e	f_15e_gbu_62_ljdam	us gbu 62 ljdam slot2; us gbu 62 ljdam slot5; sniper; us gbu 62 ljdam slot7; us gbu 62 ljdam slot9; us gbu 62 ljdam slot12
-f_15e	f_15e_gbu_64	us gbu 64 slot2; us gbu 64 slot5; ltc left; us gbu 64 slot7; ltc right; us gbu 64 slot9; us gbu 64 slot12
-f_15e	f_15e_agm_154a1	agm 154a1 slot2; agm 154a1 slot5; agm 154a1 slot7; agm 154a1 slot9; agm 154a1 slot12
-f_15e	f_15e_agm_65d	2x agm 65d x3; ltc left; ltc right
-f_15e	f_15e_agm_65g	2x agm 65g; ltc left; ltc right
+f_15e	f_15e_gbu_64	us gbu 64 slot2; us gbu 64 slot5; ltc left; us gbu 64 slot7; us gbu 64 slot9; 2x us gbu 64 slot12
+f_15e	f_15e_agm_154a1	agm 154a1 slot2; agm 154a1 slot5; ltc left; agm 154a1 slot7; agm 154a1 slot9; agm 154a1 slot12
+f_15e	f_15e_agm_65d	3x agm 65d x3; ltc left
+f_15e	f_15e_agm_65g	3x agm 65g; ltc left
 f_15e	f_15e_apkws_m151	2x us apkws m151; sniper
 f_15e	f_15e_apkws_m282	2x us apkws m282; sniper
-f_15e	f_15e_gbu_12_ltc	us gbu 12 slot2; us gbu 12 slot5; sniper; us gbu 12 slot7; ltc right; us gbu 12 slot9; us gbu 12 slot12
-f_15e	f_15e_gbu_10_ltc	us gbu 10 slot2; us gbu 10 slot5; sniper; us gbu 10 slot7; ltc right; us gbu 10 slot9; us gbu 10 slot12
-f_15e	f_15e_gbu_24_ltc	us gbu 24 slot2; us gbu 24 slot5; sniper; us gbu 24 slot7; ltc right; us gbu 24 slot9; us gbu 24 slot12
 f_15e	f_15e_gbu_12	us gbu 12 slot2; us gbu 12 slot5; sniper; us gbu 12 slot7; us gbu 12 slot9; us gbu 12 slot12
 f_15e	f_15e_gbu_10	us gbu 10 slot2; us gbu 10 slot5; sniper; us gbu 10 slot7; us gbu 10 slot9; us gbu 10 slot12
 f_15e	f_15e_gbu_24	us gbu 24 slot2; us gbu 24 slot5; sniper; us gbu 24 slot7; us gbu 24 slot9; us gbu 24 slot12
-f_15e	f_15e_gbu_15v2	2x gbu15v2; ltc left; is asw 55 pod; ltc right
+f_15e	f_15e_gbu_15v2	3x gbu15v2; ltc left; is asw 55 pod
 f_15e	f_15e_gbu_15v2_tutorial	2x gbu15v2; is asw 55 pod
-f_15e	f_15e_agm_130	2x agm 130; ltc left; ltc right
+f_15e	f_15e_agm_130	2x agm 130; ltc left; is asw 55 pod
+f_15e	f_15e_agm_130_tutorial	2x agm 130; is asw 55 pod
 f_15e	f_15e_aim_120c_single	aim 120c slot1; aim 120c tank slot4; aim 120c tank slot10; aim 120c slot13
-f_15i_raam	f_15i_raam_default	2x aim 9l default; ptb left; aim 120b slot3 default; fueltank fuse slot5; ltc left; ptb fuse; ltc right; fueltank fuse slot9; aim 120b slot11 default; ptb right
-f_15i_raam	f_15i_raam_aim_9l	2x aim 9l default; aim 9l slot3; ltc left; ltc right; aim 9l slot11
-f_15i_raam	f_15i_raam_aim_9m	aim 9m slot1; aim 9m slot3; ltc left; ltc right; aim 9m slot11; aim 9m slot13
-f_15i_raam	f_15i_raam_aim_7m	aim 7m tank slot4; ltc left; ltc right; aim 7m tank slot10
+f_15ex	f_15ex_default	aim 9m default slot2; ptb left; aim 120c default slot4; fueltank fuse slot6; ltc left; ptb fuse; fueltank fuse slot10; aim 120c default slot12; ptb right; aim 9m default slot14
+f_15ex	f_15ex_aim_9m	aim 9m slot1; aim 9m default slot2; aim 9m slot4; aim 9m slot12; aim 9m default slot14; aim 9m slot15
+f_15ex	f_15ex_aim_120b	aim 120b slot1; aim 120b slot2; aim 120b default slot4; aim 120b slot5; aim 120b slot11; aim 120b default slot12; aim 120b slot14; aim 120b slot15
+f_15ex	f_15ex_aim_120c	aim 120c slot1; aim 120c slot2; aim 120c default slot4; aim 120c slot5; aim 120c slot11; aim 120c default slot12; aim 120c slot14; aim 120c slot15
+f_15ex	f_15ex_aim_120d	aim 120d slot1; aim 120d slot2; aim 120d slot4; aim 120d slot5; aim 120d slot11; aim 120d slot12; aim 120d slot14; aim 120d slot15
+f_15ex	f_15ex_mk82	mer mk82 x6 slot3; us mk82 x6 tank slot6; us mk82 x6 tank slot10; mer mk82 x6 slot13
+f_15ex	f_15ex_mk82_snakeye	mer mk82 snakeye x6 slot3; us mk82 x6 snakeye tank slot6; us mk82 x6 snakeye tank slot10; mer mk82 snakeye x6 slot13
+f_15ex	f_15ex_mk84	us mk84 slot3; us mk84 tank slot6; us mk84 slot8; us mk84 tank slot10; us mk84 slot13
+f_15ex	f_15ex_mk84_air	us mk84 air slot3; us mk84 air tank slot6; us mk84 air slot8; us mk84 air tank slot10; us mk84 air slot13
+f_15ex	f_15ex_cbu_87b	us cbu 87b tank slot6; ltc left; us cbu 87b tank slot10
+f_15ex	f_15ex_cbu_87b_wings	mer cbu 87b x4 slot3; ltc left; mer cbu 87b x4 slot13
+f_15ex	f_15ex_gbu_38	us gbu 38 slot3; us gbu 38 slot6; us gbu 38 slot8; us gbu 38 slot10; us gbu 38 slot13
+f_15ex	f_15ex_gbu_54	us gbu 54 slot3; us gbu 54 slot6; sniper; us gbu 54 slot8; us gbu 54 slot10; us gbu 54 slot13
+f_15ex	f_15ex_gbu_32	us gbu 32 slot3; us gbu 32 slot6; us gbu 32 slot8; us gbu 32 slot10; us gbu 32 slot13
+f_15ex	f_15ex_gbu_31	us gbu 31 slot3; us gbu 31 slot6; us gbu 31 slot8; us gbu 31 slot10; us gbu 31 slot13
+f_15ex	f_15ex_gbu_39	us gbu 39 slot6; us gbu 39 slot8; us gbu 39 slot10
+f_15ex	f_15ex_gbu_53	us gbu 53 slot6; us gbu 53 slot8; us gbu 53 slot10
+f_15ex	f_15ex_gbu_62	us gbu 62 slot3; us gbu 62 slot6; us gbu 62 slot8; us gbu 62 slot10; us gbu 62 slot13
+f_15ex	f_15ex_gbu_62_ljdam	us gbu 62 ljdam slot3; us gbu 62 ljdam slot6; sniper; us gbu 62 ljdam slot8; us gbu 62 ljdam slot10; us gbu 62 ljdam slot13
+f_15ex	f_15ex_gbu_64	us gbu 64 slot3; us gbu 64 slot6; us gbu 64 slot8; us gbu 64 slot10; us gbu 64 slot13
+f_15ex	f_15ex_agm_154a1	agm 154a1 slot3; agm 154a1 slot6; agm 154a1 slot8; agm 154a1 slot10; agm 154a1 slot13
+f_15ex	f_15ex_agm_65d	2x agm 65d x3
+f_15ex	f_15ex_agm_65g	2x agm 65g
+f_15ex	f_15ex_agm_130	2x agm 130; is asw 55 pod
+f_15ex	f_15ex_agm_84_slam	2x agm 84h; is asw 55 pod
+f_15ex	f_15ex_apkws_m151	2x us apkws m151; sniper
+f_15ex	f_15ex_apkws_m282	2x us apkws m282; sniper
+f_15ex	f_15ex_agm_88	agm 88 slot1; agm 88 slot3; agm 88 slot13; agm 88 slot15
+f_15ex	f_15ex_agm_84	2x agm 84
+f_15ex	f_15ex_gbu_12	us gbu 12 slot3; us gbu 12 slot6; sniper; us gbu 12 slot8; us gbu 12 slot10; us gbu 12 slot13
+f_15ex	f_15ex_gbu_49	us gbu 49 slot3; us gbu 49 slot6; sniper; us gbu 49 slot8; us gbu 49 slot10; us gbu 49 slot13
+f_15ex	f_15ex_gbu_10	us gbu 10 slot3; us gbu 10 slot6; sniper; us gbu 10 slot8; us gbu 10 slot10; us gbu 10 slot13
+f_15ex	f_15ex_gbu_50	us gbu 50 slot3; us gbu 50 slot6; sniper; us gbu 50 slot8; us gbu 50 slot10; us gbu 50 slot13
+f_15ex	f_15ex_gbu_24	us gbu 24 slot3; us gbu 24 slot6; sniper; us gbu 24 slot8; us gbu 24 slot10; us gbu 24 slot13
+f_15ex	f_15ex_gbu_15v2	2x gbu15v2; is asw 55 pod
+f_15i_raam	f_15i_raam_default	3x aim 9l default; ptb left; aim 120b slot3 default; fueltank fuse slot5; ltc left; ptb fuse; fueltank fuse slot9; aim 120b slot11 default; ptb right
+f_15i_raam	f_15i_raam_aim_9l	3x aim 9l default; aim 9l slot3; ltc left; aim 9l slot11
+f_15i_raam	f_15i_raam_aim_9m	aim 9m slot1; aim 9m slot3; ltc left; aim 9m slot11; 2x aim 9m slot13
+f_15i_raam	f_15i_raam_aim_7m	aim 7m tank slot4; ltc left; 2x aim 7m tank slot10
 f_15i_raam	f_15i_raam_aim_120	aim 120b slot1; aim 120b slot3 default; aim 120b tank slot4; aim 120b tank slot10; aim 120b slot11 default; aim 120b slot13
-f_15i_raam	f_15i_raam_aim_120_ltc	aim 120b slot1; aim 120b slot3 default; aim 120b tank slot4; ltc left; ltc right; aim 120b tank slot10; aim 120b slot11 default; aim 120b slot13
+f_15i_raam	f_15i_raam_aim_120_ltc	aim 120b slot1; aim 120b slot3 default; aim 120b tank slot4; ltc left; aim 120b tank slot10; aim 120b slot11 default; 2x aim 120b slot13
 f_15i_raam	f_15i_raam_aim_120c	aim 120c slot1; aim 120c slot3 default; aim 120c tank slot4; aim 120c tank slot10; aim 120c slot11 default; aim 120c slot13
-f_15i_raam	f_15i_raam_aim_120c_ltc	aim 120c slot1; aim 120c slot3 default; aim 120c tank slot4; ltc left; ltc right; aim 120c tank slot10; aim 120c slot11 default; aim 120c slot13
-f_15i_raam	f_15i_raam_agm_65d	2x agm 65d x3; ltc left; ltc right
-f_15i_raam	f_15i_raam_mk82	mer mk82 x6 slot2; us mk82 x6 tank slot5; ltc left; ltc right; us mk82 x6 tank slot9; mer mk82 x6 slot12
-f_15i_raam	f_15i_raam_mk82_snakeye	mer mk82 snakeye x6 slot2; us mk82 x6 snakeye tank slot5; ltc left; ltc right; us mk82 x6 snakeye tank slot9; mer mk82 snakeye x6 slot12
-f_15i_raam	f_15i_raam_mk84	us mk84 slot2; us mk84 tank slot5; ltc left; us mk84 slot7; ltc right; us mk84 tank slot9; us mk84 slot12
-f_15i_raam	f_15i_raam_mk84_air	us mk84 air slot2; us mk84 air tank slot5; ltc left; us mk84 air slot7; ltc right; us mk84 air tank slot9; us mk84 air slot12
-f_15i_raam	f_15i_raam_gbu_38	us gbu 38 slot2; us gbu 38 slot5; ltc left; us gbu 38 slot7; ltc right; us gbu 38 slot9; us gbu 38 slot12
+f_15i_raam	f_15i_raam_aim_120c_ltc	aim 120c slot1; aim 120c slot3 default; aim 120c tank slot4; ltc left; aim 120c tank slot10; aim 120c slot11 default; 2x aim 120c slot13
+f_15i_raam	f_15i_raam_agm_65d	3x agm 65d x3; ltc left
+f_15i_raam	f_15i_raam_mk82	mer mk82 x6 slot2; us mk82 x6 tank slot5; ltc left; us mk82 x6 tank slot9; 2x mer mk82 x6 slot12
+f_15i_raam	f_15i_raam_mk82_snakeye	mer mk82 snakeye x6 slot2; us mk82 x6 snakeye tank slot5; ltc left; us mk82 x6 snakeye tank slot9; 2x mer mk82 snakeye x6 slot12
+f_15i_raam	f_15i_raam_mk84	us mk84 slot2; us mk84 tank slot5; ltc left; us mk84 slot7; us mk84 tank slot9; 2x us mk84 slot12
+f_15i_raam	f_15i_raam_mk84_air	us mk84 air slot2; us mk84 air tank slot5; ltc left; us mk84 air slot7; us mk84 air tank slot9; 2x us mk84 air slot12
+f_15i_raam	f_15i_raam_cbu_58b	mer cbu 58b x4 slot2; us cbu 58b tank slot5; ltc left; us cbu 58b tank slot9; mer cbu 58b x4 slot12
+f_15i_raam	f_15i_raam_gbu_38	us gbu 38 slot2; us gbu 38 slot5; ltc left; us gbu 38 slot7; us gbu 38 slot9; 2x us gbu 38 slot12
 f_15i_raam	f_15i_raam_gbu_54	us gbu 54 slot2; us gbu 54 slot5; lantirn; us gbu 54 slot7; us gbu 54 slot9; us gbu 54 slot12
-f_15i_raam	f_15i_raam_gbu_31	us gbu 31 slot2; us gbu 31 slot5; ltc left; us gbu 31 slot7; ltc right; us gbu 31 slot9; us gbu 31 slot12
-f_15i_raam	f_15i_raam_gbu_39	us gbu 39 slot5; ltc left; us gbu 39 slot7; ltc right; us gbu 39 slot9
-f_15i_raam	f_15i_raam_gbu_62	us gbu 62 slot2; us gbu 62 slot5; ltc left; us gbu 62 slot7; ltc right; us gbu 62 slot9; us gbu 62 slot12
+f_15i_raam	f_15i_raam_gbu_31	us gbu 31 slot2; us gbu 31 slot5; ltc left; us gbu 31 slot7; us gbu 31 slot9; 2x us gbu 31 slot12
+f_15i_raam	f_15i_raam_gbu_39	us gbu 39 slot5; ltc left; us gbu 39 slot7; 2x us gbu 39 slot9
+f_15i_raam	f_15i_raam_gbu_62	us gbu 62 slot2; us gbu 62 slot5; ltc left; us gbu 62 slot7; us gbu 62 slot9; 2x us gbu 62 slot12
 f_15i_raam	f_15i_raam_gbu_62_ljdam	us gbu 62 ljdam slot2; us gbu 62 ljdam slot5; lantirn; us gbu 62 ljdam slot7; us gbu 62 ljdam slot9; us gbu 62 ljdam slot12
-f_15i_raam	f_15i_raam_gbu_64	us gbu 64 slot2; us gbu 64 slot5; ltc left; us gbu 64 slot7; ltc right; us gbu 64 slot9; us gbu 64 slot12
+f_15i_raam	f_15i_raam_gbu_64	us gbu 64 slot2; us gbu 64 slot5; ltc left; us gbu 64 slot7; us gbu 64 slot9; 2x us gbu 64 slot12
 f_15i_raam	f_15i_raam_gbu_12	us gbu 12 slot2; us gbu 12 slot5; lantirn; us gbu 12 slot7; us gbu 12 slot9; us gbu 12 slot12
 f_15i_raam	f_15i_raam_gbu_10	us gbu 10 slot2; us gbu 10 slot5; lantirn; us gbu 10 slot7; us gbu 10 slot9; us gbu 10 slot12
 f_15i_raam	f_15i_raam_gbu_24	us gbu 24 slot2; us gbu 24 slot5; lantirn; us gbu 24 slot7; us gbu 24 slot9; us gbu 24 slot12
-f_15i_raam	f_15i_raam_gbu_15v2	2x gbu15v2; ltc left; is asw 55 pod; ltc right
+f_15i_raam	f_15i_raam_gbu_15v2	3x gbu15v2; ltc left; is asw 55 pod
 f_15i_raam	f_15i_raam_gbu_15v2_tutorial	2x gbu15v2; is asw 55 pod
-f_15i_raam	f_15i_raam_spice_250	il spice 250 slot5; ltc left; ltc right; il spice 250 slot9
-f_15i_raam	f_15i_raam_spice_1000	spice 1000 slot2; spice 1000 slot5; ltc left; spice 1000 slot7; ltc right; spice 1000 slot9; spice 1000 slot12
-f_15i_raam	f_15i_raam_spice_2000	spice 2000 slot2; spice 2000 slot5; ltc left; spice 2000 slot7; ltc right; spice 2000 slot9; spice 2000 slot12
+f_15i_raam	f_15i_raam_spice_250	il spice 250 slot5; ltc left; 2x il spice 250 slot9
+f_15i_raam	f_15i_raam_spice_1000	spice 1000 slot2; spice 1000 slot5; ltc left; spice 1000 slot7; spice 1000 slot9; 2x spice 1000 slot12
+f_15i_raam	f_15i_raam_spice_2000	spice 2000 slot2; spice 2000 slot5; ltc left; spice 2000 slot7; spice 2000 slot9; 2x spice 2000 slot12
+f_15ia	f_15ia_default	aim 9m default slot2; ptb left; aim 120c default slot4; fueltank fuse slot6; ltc left; ptb fuse; fueltank fuse slot10; aim 120c default slot12; ptb right; aim 9m default slot14
+f_15ia	f_15ia_aim_9m	aim 9m slot1; aim 9m default slot2; aim 9m slot4; aim 9m slot12; aim 9m default slot14; aim 9m slot15
+f_15ia	f_15ia_derby	derby slot1; derby slot2; derby default slot4; derby default slot12; derby slot14; derby slot15
+f_15ia	f_15ia_aim_120b	aim 120b slot1; aim 120b slot2; aim 120b default slot4; aim 120b slot5; aim 120b slot11; aim 120b default slot12; aim 120b slot14; aim 120b slot15
+f_15ia	f_15ia_aim_120c	aim 120c slot1; aim 120c slot2; aim 120c default slot4; aim 120c slot5; aim 120c slot11; aim 120c default slot12; aim 120c slot14; aim 120c slot15
+f_15ia	f_15ia_aim_120d	aim 120d slot1; aim 120d slot2; aim 120d slot4; aim 120d slot5; aim 120d slot11; aim 120d slot12; aim 120d slot14; aim 120d slot15
+f_15ia	f_15ia_apkws_m151	2x us apkws m151; litening
+f_15ia	f_15ia_apkws_m282	2x us apkws m282; litening
+f_15ia	f_15ia_agm_65d	2x agm 65d x3
+f_15ia	f_15ia_agm_65g	2x agm 65g
+f_15ia	f_15ia_agm_130	2x agm 130; is asw 55 pod
+f_15ia	f_15ia_agm_84_slam	2x agm 84h; is asw 55 pod
+f_15ia	f_15ia_agm_88	agm 88 slot1; agm 88 slot3; agm 88 slot13; agm 88 slot15
+f_15ia	f_15ia_agm_84	2x agm 84
+f_15ia	f_15ia_mk82	mer mk82 x6 slot3; us mk82 x6 tank slot6; us mk82 x6 tank slot10; mer mk82 x6 slot13
+f_15ia	f_15ia_mk82_snakeye	mer mk82 snakeye x6 slot3; us mk82 x6 snakeye tank slot6; us mk82 x6 snakeye tank slot10; mer mk82 snakeye x6 slot13
+f_15ia	f_15ia_mk84	us mk84 slot3; us mk84 tank slot6; us mk84 slot8; us mk84 tank slot10; us mk84 slot13
+f_15ia	f_15ia_mk84_air	us mk84 air slot3; us mk84 air tank slot6; us mk84 air slot8; us mk84 air tank slot10; us mk84 air slot13
+f_15ia	f_15ia_cbu_58b	us cbu 58b tank slot6; ltc left; us cbu 58b tank slot10
+f_15ia	f_15ia_cbu_58b_wings	mer cbu 58b x4 slot3; ltc left; mer cbu 58b x4 slot13
+f_15ia	f_15ia_gbu_38	us gbu 38 slot3; us gbu 38 slot6; us gbu 38 slot8; us gbu 38 slot10; us gbu 38 slot13
+f_15ia	f_15ia_gbu_54	us gbu 54 slot3; us gbu 54 slot6; litening; us gbu 54 slot8; us gbu 54 slot10; us gbu 54 slot13
+f_15ia	f_15ia_gbu_32	us gbu 32 slot3; us gbu 32 slot6; us gbu 32 slot8; us gbu 32 slot10; us gbu 32 slot13
+f_15ia	f_15ia_gbu_31	us gbu 31 slot3; us gbu 31 slot6; us gbu 31 slot8; us gbu 31 slot10; us gbu 31 slot13
+f_15ia	f_15ia_gbu_39	us gbu 39 slot6; us gbu 39 slot8; us gbu 39 slot10
+f_15ia	f_15ia_gbu_62	us gbu 62 slot3; us gbu 62 slot6; us gbu 62 slot8; us gbu 62 slot10; us gbu 62 slot13
+f_15ia	f_15ia_gbu_62_ljdam	us gbu 62 ljdam slot3; us gbu 62 ljdam slot6; litening; us gbu 62 ljdam slot8; us gbu 62 ljdam slot10; us gbu 62 ljdam slot13
+f_15ia	f_15ia_gbu_64	us gbu 64 slot3; us gbu 64 slot6; us gbu 64 slot8; us gbu 64 slot10; us gbu 64 slot13
+f_15ia	f_15ia_agm_154a1	agm 154a1 slot3; agm 154a1 slot6; agm 154a1 slot8; agm 154a1 slot10; agm 154a1 slot13
+f_15ia	f_15ia_gbu_12	us gbu 12 slot3; us gbu 12 slot6; litening; us gbu 12 slot8; us gbu 12 slot10; us gbu 12 slot13
+f_15ia	f_15ia_gbu_49	us gbu 49 slot3; us gbu 49 slot6; litening; us gbu 49 slot8; us gbu 49 slot10; us gbu 49 slot13
+f_15ia	f_15ia_gbu_10	us gbu 10 slot3; us gbu 10 slot6; litening; us gbu 10 slot8; us gbu 10 slot10; us gbu 10 slot13
+f_15ia	f_15ia_gbu_50	us gbu 50 slot3; us gbu 50 slot6; litening; us gbu 50 slot8; us gbu 50 slot10; us gbu 50 slot13
+f_15ia	f_15ia_gbu_24	us gbu 24 slot3; us gbu 24 slot6; litening; us gbu 24 slot8; us gbu 24 slot10; us gbu 24 slot13
+f_15ia	f_15ia_gbu_15v2	2x gbu15v2; is asw 55 pod
+f_15ia	f_15ia_spice_250	il spice 250 slot6; il spice 250 slot8; il spice 250 slot10
+f_15ia	f_15ia_spice_1000	spice 1000 slot3; spice 1000 slot6; spice 1000 slot8; spice 1000 slot10; spice 1000 slot13
+f_15ia	f_15ia_spice_2000	spice 2000 slot3; spice 2000 slot6; spice 2000 slot8; spice 2000 slot10; spice 2000 slot13
 f_15j	f_15j_default	ptb left; ptb fuse; ptb right
 f_15j	f_15a_aim_9l_default	2x aim 9l default; 2x aim 7m default
 f_15j	f_15a_aim_9l	2x aim 9l default; 2x aim 9l
@@ -2288,6 +2428,7 @@ f_15j	f_15a_mk82	3x mer mk82 x6
 f_15j	f_15a_mk82_snakeye	3x mer mk82 x6 snakeye
 f_15j	f_15a_mk84	3x us mk84
 f_15j	f_15a_blu_27	3x ter us blu 27
+f_15j	f_15j_cbu_87b	mer cbu 87b x4 slot2; mer cbu 87b x4 slot6; mer cbu 87b x4 slot10
 f_15j_kai	f_15j_kai_default	ptb left; ptb fuse; ptb right
 f_15j_kai	f_15j_kai_aim_9m_default	aim 9m slot1; aim 120a slot3 default; aim 120a slot9 default; aim 9m slot11
 f_15j_kai	f_15j_kai_aim_9l	2x aim 9l default; aim 9l slot3; aim 9l slot9
@@ -2300,12 +2441,14 @@ f_15j_kai	f_15j_kai_mk82	mer mk82 x6 slot2; mer mk82 x6 slot6; mer mk82 x6 slot1
 f_15j_kai	f_15j_kai_mk82_snakeye	mer mk82 x6 snakeye slot2; mer mk82 x6 snakeye slot6; mer mk82 x6 snakeye slot10
 f_15j_kai	f_15j_kai_mk84	us mk84 slot2; us mk84 slot6; us mk84 slot10
 f_15j_kai	f_15j_kai_blu_27	ter us blu 27 slot2; ter us blu 27 slot6; ter us blu 27 slot10
+f_15j_kai	f_15j_kai_cbu_87b	mer cbu 87b x4 slot2; mer cbu 87b x4 slot6; mer cbu 87b x4 slot10
 f_16a_block_10	f_16a_block_10_default	ptb slot4; ptb; ptb slot6
 f_16a_block_10	f_16a_block_10_aim_9j_default	2x aim 9j default; 2x aim 9l default
 f_16a_block_10	f_16a_block_10_aim_9j	2x aim 9j default; 4x aim 9j
 f_16a_block_10	f_16a_block_10_aim_9l	2x aim 9l wingtip; 2x aim 9l default; 2x aim 9l
 f_16a_block_10	f_16a_block_10_mk82	2x ter mk82; 2x mer mk82 x6; mer mk82 x1
 f_16a_block_10	f_16a_block_10_mk82_snakeye	2x ter mk82 snakeye; 2x mer mk82 snakeye x6; mer mk82 snakeye x1
+f_16a_block_10	f_16a_block_10_cbu_58b	ter cbu 58b x2 left; mer cbu 58b x4 left; us cbu 58b; mer cbu 58b x4 right; ter cbu 58b x2 right
 f_16a_block_10	f_16a_block_10_mk84	4x us mk84
 f_16a_block_10	f_16a_block_10_mk84_air	4x us mk84 air
 f_16a_block_10	f_16a_block_10_blu_27	4x blu 27
@@ -2319,6 +2462,7 @@ f_16a_block_10_iaf	f_16a_block_10_iaf_aim_9l	2x aim 9l wingtip; 4x aim 9l
 f_16a_block_10_iaf	f_16a_block_10_iaf_pyton3	2x pyton3 wingtip; 2x pyton3 default; 2x pyton3
 f_16a_block_10_iaf	f_16a_block_10_iaf_mk82	2x ter mk82; 2x mer mk82 x6; mer mk82 x1
 f_16a_block_10_iaf	f_16a_block_10_iaf_mk82_snakeye	2x ter mk82 snakeye; 2x mer mk82 snakeye x6; mer mk82 snakeye x1
+f_16a_block_10_iaf	f_16a_block_10_iaf_cbu_58b	ter cbu 58b x2 left; mer cbu 58b x4 left; us cbu 58b; mer cbu 58b x4 right; ter cbu 58b x2 right
 f_16a_block_10_iaf	f_16a_block_10_iaf_mk84	4x us mk84
 f_16a_block_10_iaf	f_16a_block_10_iaf_blu_27	4x blu 27
 f_16a_block_10_iaf	f_16a_block_10_iaf_lau3a	2x ter lau 3a
@@ -2328,6 +2472,7 @@ f_16a_block_10_netz_mod	f_16a_block_10_netz_mod_aim_9l	2x aim 9l wingtip; 4x aim
 f_16a_block_10_netz_mod	f_16a_block_10_netz_mod_pyton3	2x pyton3 wingtip; 2x pyton3 default; 2x pyton3
 f_16a_block_10_netz_mod	f_16a_block_10_netz_mod_mk82	2x pyton3 wingtip; 2x pyton3 default; 2x ter mk82; 2x mer mk82 x6; mer mk82 x1
 f_16a_block_10_netz_mod	f_16a_block_10_netz_mod_mk82_snakeye	2x pyton3 wingtip; 2x pyton3 default; 2x ter mk82 snakeye; 2x mer mk82 snakeye x6; mer mk82 snakeye x1
+f_16a_block_10_netz_mod	f_16a_block_10_netz_mod_cbu_58b	2x pyton3 wingtip; 2x pyton3 default; ter cbu 58b x2 left; mer cbu 58b x4 left; us cbu 58b; mer cbu 58b x4 right; ter cbu 58b x2 right
 f_16a_block_10_netz_mod	f_16a_block_10_netz_mod_mk84	2x pyton3 wingtip; 2x pyton3 default; 4x us mk84
 f_16a_block_10_netz_mod	f_16a_block_10_netz_mod_gbu_31	2x pyton3 wingtip; 2x pyton3 default; us gbu 31 slot3; us gbu 31 slot4; us gbu 31 slot6; us gbu 31 slot7
 f_16a_block_10_netz_mod	f_16a_block_10_netz_mod_gbu_31_tutorial	us gbu 31 slot3; us gbu 31 slot4; us gbu 31 slot6; us gbu 31 slot7
@@ -2341,6 +2486,7 @@ f_16a_block_10_norway	f_16a_block_10_norway_aim_9p	2x aim 9p default; 4x aim 9p
 f_16a_block_10_norway	f_16a_block_10_norway_aim_9l	2x aim 9l wingtip; 2x aim 9l default; 2x aim 9l
 f_16a_block_10_norway	f_16a_block_10_norway_mk82	2x ter mk82; 2x mer mk82 x6; mer mk82 x1
 f_16a_block_10_norway	f_16a_block_10_norway_mk82_snakeye	2x ter mk82 snakeye; 2x mer mk82 snakeye x6; mer mk82 snakeye x1
+f_16a_block_10_norway	f_16a_block_10_norway_cbu_58b	ter cbu 58b x2 left; mer cbu 58b x4 left; us cbu 58b; mer cbu 58b x4 right; ter cbu 58b x2 right
 f_16a_block_10_norway	f_16a_block_10_norway_mk84	4x us mk84
 f_16a_block_10_norway	f_16a_block_10_norway_mk84_air	4x us mk84 air
 f_16a_block_10_norway	f_16a_block_10_norway_blu_27	4x blu 27
@@ -2395,6 +2541,8 @@ f_16a_block_15_belgium	f_16a_block_10_mk84	4x us mk84
 f_16a_block_15_belgium	f_16a_block_15_belgium_mk84_pids	2x us mk84 pids; 2x us mk84
 f_16a_block_15_belgium	f_16a_block_15_belgium_mk82_snakeye	2x ter mk82 snakeye; 2x mer mk82 snakeye x6; mer mk82 snakeye x1
 f_16a_block_15_belgium	f_16a_block_15_belgium_mk82_snakeye_pids	2x ter mk82 snakeye pids; 2x mer mk82 snakeye x6; mer mk82 snakeye x1
+f_16a_block_15_belgium	f_16a_block_15_belgium_cbu_58b	ter cbu 58b x2 left; mer cbu 58b x4 left; us cbu 58b; mer cbu 58b x4 right; ter cbu 58b x2 right
+f_16a_block_15_belgium	f_16a_block_15_belgium_cbu_58b_pids	ter cbu 58b x2 left pids; mer cbu 58b x4 left; us cbu 58b; mer cbu 58b x4 right; ter cbu 58b x2 right pids
 f_16a_block_15_belgium	f_16a_block_15_belgium_mk84_air	4x us mk84 air
 f_16a_block_15_belgium	f_16a_block_15_belgium_mk84_air_pids	2x us mk84 air pids; 2x us mk84 air
 f_16a_block_15_belgium	f_16a_block_15_belgium_blu_27	4x blu 27
@@ -2420,6 +2568,7 @@ f_16a_block_15_ocu_thailand	f_16a_block_15_ocu_thailand_agm_65b_x4	agm 65d slot3
 f_16a_block_15_ocu_thailand	f_16a_block_15_ocu_thailand_agm_65b_x6	2x agm 65d x3
 f_16a_block_15_ocu_thailand	f_16a_block_15_ocu_thailand_agm_65g	agm 65g slot3; agm 65g slot4; agm 65g slot7; agm 65g slot8
 f_16a_block_15_ocu_thailand	f_16a_block_15_ocu_thailand_mk82	4x ter mk82
+f_16a_block_15_ocu_thailand	f_16a_block_15_ocu_thailand_cbu_58b	2x ter cbu 58b x2 left; 2x ter cbu 58b x2 right
 f_16a_block_15_ocu_thailand	f_16a_block_15_ocu_thailand_mk84	4x us mk84
 f_16a_block_15_ocu_thailand	f_16a_block_15_ocu_thailand_gbu_12	gbu12 slot3; gbu12 slot4; atlis2; gbu12 slot7; gbu12 slot8
 f_16a_block_15_ocu_thailand	f_16a_block_15_ocu_thailand_kggb	kggb slot3; kggb slot4; kggb slot7; kggb slot8
@@ -2432,6 +2581,7 @@ f_16a_block_20_mlu	f_16a_block_20_mlu_aim_7m	2x aim 7m
 f_16a_block_20_mlu	f_16a_block_20_mlu_aim_120a	aim 120a wingtip slot1; aim 120a slot2; aim 120a slot3; aim 120a slot8; aim 120a slot9; aim 120a wingtip slot10
 f_16a_block_20_mlu	f_16a_block_20_mlu_mk82	4x ter mk82
 f_16a_block_20_mlu	f_16a_block_20_mlu_mk82_snakeye	4x ter mk82 snakeye
+f_16a_block_20_mlu	f_16a_block_20_mlu_cbu_58b	2x ter cbu 58b x2 left; 2x ter cbu 58b x2 right
 f_16a_block_20_mlu	f_16a_block_20_mlu_mk84	4x us mk84
 f_16a_block_20_mlu	f_16a_block_20_mlu_gbu12	gbu12 slot3; 2x gbu12; lantirn pod; gbu12 slot8
 f_16a_block_20_mlu	f_16a_block_20_mlu_gbu10	4x gbu10; lantirn pod
@@ -2449,6 +2599,7 @@ f_16a_block_5_netherlands	f_16a_block_10_aim_9p	2x aim 9p default; 4x aim 9p
 f_16a_block_5_netherlands	f_16a_block_10_aim_9l	2x aim 9l wingtip; 2x aim 9l default; 2x aim 9l
 f_16a_block_5_netherlands	f_16a_block_10_mk82	2x ter mk82; 2x mer mk82 x6; mer mk82 x1
 f_16a_block_5_netherlands	f_16a_block_10_mk82_snakeye	2x ter mk82 snakeye; 2x mer mk82 snakeye x6; mer mk82 snakeye x1
+f_16a_block_5_netherlands	f_16a_block_5_netherlands_cbu_58b	ter cbu 58b x2 left; mer cbu 58b x4 left; us cbu 58b; mer cbu 58b x4 right; ter cbu 58b x2 right
 f_16a_block_5_netherlands	f_16a_block_10_mk84	4x us mk84
 f_16a_block_5_netherlands	f_16a_block_10_mk84_air	4x us mk84 air
 f_16a_block_5_netherlands	f_16a_block_10_blu_27	4x blu 27
@@ -2475,6 +2626,8 @@ f_16a_block_72v_china	f_16a_block_72v_china_mk82_snakeye	4x ter mk82 snakeye
 f_16a_block_72v_china	f_16a_block_72v_china_mk82_snakeye_pids	2x ter mk82 snakeye pids; 2x ter mk82 snakeye
 f_16a_block_72v_china	f_16a_block_72v_china_mk84_air	4x us mk84 air
 f_16a_block_72v_china	f_16a_block_72v_china_mk84_air_pids	2x us mk84 air pids; 2x us mk84 air
+f_16a_block_72v_china	f_16a_block_72v_china_cbu_87b	2x ter cbu 87b x2 left; 2x ter cbu 87b x2 right
+f_16a_block_72v_china	f_16a_block_72v_china_cbu_87b_pids	ter cbu 87b x2 left pids; ter cbu 87b x2 left; ter cbu 87b x2 right; ter cbu 87b x2 right pids
 f_16a_block_72v_china	f_16a_block_72v_china_gbu_12	us gbu 12 x3 slot3; 2x us gbu 12; sniper pod; us gbu 12 x3 slot8
 f_16a_block_72v_china	f_16a_block_72v_china_gbu_12_pids	gbu12 x3 slot3 pids; 2x us gbu 12; sniper pod; gbu12 x3 slot8 pids
 f_16a_block_72v_china	f_16a_block_72v_china_gbu_24	4x gbu24; sniper pod
@@ -2531,6 +2684,8 @@ f_16am_block_15_mlu_belgium	f_16am_block_15_mlu_belgium_mk82_snakeye	4x ter mk82
 f_16am_block_15_mlu_belgium	f_16am_block_15_mlu_belgium_mk82_snakeye_pids	2x ter mk82 snakeye pids; 2x ter mk82 snakeye
 f_16am_block_15_mlu_belgium	f_16am_block_15_mlu_belgium_mk84_air	4x us mk84 air
 f_16am_block_15_mlu_belgium	f_16am_block_15_mlu_belgium_mk84_air_pids	2x us mk84 air pids; 2x us mk84 air
+f_16am_block_15_mlu_belgium	f_16am_block_15_mlu_belgium_cbu_87b	2x ter cbu 87b x2 left; 2x ter cbu 87b x2 right
+f_16am_block_15_mlu_belgium	f_16am_block_15_mlu_belgium_cbu_87b_pids	ter cbu 87b x2 left pids; ter cbu 87b x2 left; ter cbu 87b x2 right; ter cbu 87b x2 right pids
 f_16am_block_15_mlu_belgium	f_16am_block_15_mlu_belgium_gbu_12	gbu12 slot3; 2x gbu12; lantirn pod; gbu12 slot8
 f_16am_block_15_mlu_belgium	f_16am_block_15_mlu_belgium_gbu_12_pids	gbu12 slot3 pids; 2x gbu12; lantirn pod; gbu12 slot8 pids
 f_16am_block_15_mlu_belgium	f_16am_block_15_mlu_belgium_gbu_24	4x gbu24; lantirn pod
@@ -2570,6 +2725,8 @@ f_16am_block_20_mlu_netherlands	f_16am_block_20_mlu_netherlands_mk82_snakeye	2x 
 f_16am_block_20_mlu_netherlands	f_16am_block_20_mlu_netherlands_mk82_snakeye_pids	2x aim 9m wingtip default; 2x aim 120a default; 2x ter mk82 snakeye pids; 2x ter mk82 snakeye
 f_16am_block_20_mlu_netherlands	f_16am_block_20_mlu_netherlands_mk84_air	2x aim 9m wingtip default; 2x aim 120a default; 4x us mk84 air
 f_16am_block_20_mlu_netherlands	f_16am_block_20_mlu_netherlands_mk84_air_pids	2x aim 9m wingtip default; 2x aim 120a default; 2x us mk84 air pids; 2x us mk84 air
+f_16am_block_20_mlu_netherlands	f_16am_block_20_mlu_netherlands_cbu_87b	2x aim 9m wingtip default; 2x aim 120a default; 2x ter cbu 87b x2 left; 2x ter cbu 87b x2 right
+f_16am_block_20_mlu_netherlands	f_16am_block_20_mlu_netherlands_cbu_87b_pids	2x aim 9m wingtip default; 2x aim 120a default; ter cbu 87b x2 left pids; ter cbu 87b x2 left; ter cbu 87b x2 right; ter cbu 87b x2 right pids
 f_16am_block_20_mlu_netherlands	f_16am_block_20_mlu_netherlands_gbu_12	gbu12 slot3; 2x gbu12; litening pod; gbu12 slot8
 f_16am_block_20_mlu_netherlands	f_16am_block_20_mlu_netherlands_gbu_12_pids	2x aim 9m wingtip default; 2x aim 120a default; gbu12 slot3 pids; 2x gbu12; litening pod; gbu12 slot8 pids
 f_16am_block_20_mlu_netherlands	f_16am_block_20_mlu_netherlands_gbu_24	4x gbu24; litening pod
@@ -2604,6 +2761,7 @@ f_16am_block_20_mlu_norway	f_16am_block_15_mlu_belgium_mk82_ter	4x ter mk82
 f_16am_block_20_mlu_norway	f_16am_block_15_mlu_belgium_mk84	4x us mk84
 f_16am_block_20_mlu_norway	f_16am_block_15_mlu_belgium_mk82_snakeye	4x ter mk82 snakeye
 f_16am_block_20_mlu_norway	f_16am_block_15_mlu_belgium_mk84_air	4x us mk84 air
+f_16am_block_20_mlu_norway	f_16am_block_15_mlu_belgium_cbu_87b	2x ter cbu 87b x2 left; 2x ter cbu 87b x2 right
 f_16am_block_20_mlu_norway	f_16am_block_20_mlu_norway_gbu_12	gbu12 slot3; 2x gbu12; sniper pod; gbu12 slot8
 f_16am_block_20_mlu_norway	f_16am_block_20_mlu_norway_gbu_24	4x gbu24; sniper pod
 f_16am_block_20_mlu_norway	f_16am_block_15_mlu_belgium_blu_1	blu 27 slot3; blu 27 slot4; blu 27 slot6; blu 27 slot7
@@ -2617,6 +2775,7 @@ f_16am_block_20_mlu_norway	f_16am_block_15_mlu_belgium_mk82_ter_pids	2x ter mk82
 f_16am_block_20_mlu_norway	f_16am_block_15_mlu_belgium_mk84_pids	2x us mk84 pids; 2x us mk84
 f_16am_block_20_mlu_norway	f_16am_block_15_mlu_belgium_mk82_snakeye_pids	2x ter mk82 snakeye pids; 2x ter mk82 snakeye
 f_16am_block_20_mlu_norway	f_16am_block_15_mlu_belgium_mk84_air_pids	2x us mk84 air pids; 2x us mk84 air
+f_16am_block_20_mlu_norway	f_16am_block_15_mlu_belgium_cbu_87b_pids	ter cbu 87b x2 left pids; ter cbu 87b x2 left; ter cbu 87b x2 right; ter cbu 87b x2 right pids
 f_16am_block_20_mlu_norway	f_16am_block_20_mlu_norway_gbu_12_pids	gbu12 slot3 pids; 2x gbu12; sniper pod; gbu12 slot8 pids
 f_16am_block_20_mlu_norway	f_16am_block_20_mlu_norway_gbu_24_pids	2x gbu24 pids; 2x gbu24; sniper pod
 f_16am_block_20_mlu_norway	f_16am_block_15_mlu_belgium_blu_1_pids	blu 27 slot3 pids; blu 27 slot4; blu 27 slot6; blu 27 slot7 pids
@@ -2638,6 +2797,7 @@ f_16c_block_40_barak_2	f_16c_block_40_barak_2_mk82	4x ver mk82
 f_16c_block_40_barak_2	f_16c_block_40_barak_2_mk83	2x ver mk83; 2x mk83; fuse ver mk82
 f_16c_block_40_barak_2	f_16c_block_40_barak_2_mk84	4x us mk84
 f_16c_block_40_barak_2	f_16c_block_40_barak_2_mk82_snakeye	4x ver mk82 snakeye
+f_16c_block_40_barak_2	f_16c_block_40_barak_2_cbu_58b	2x ter cbu 58b x2 left; 2x ter cbu 58b x2 right
 f_16c_block_40_barak_2	f_16c_block_40_barak_2_mk84_air	4x us mk84 air
 f_16c_block_40_barak_2	f_16c_block_40_barak_2_gbu_12	4x gbu12; litening pod
 f_16c_block_40_barak_2	f_16c_block_40_barak_2_gbu_16	4x gbu16; litening pod
@@ -2665,6 +2825,7 @@ f_16c_block_50	f_16c_block_50_mk82_ter	4x ter mk82
 f_16c_block_50	f_16c_block_50_mk84	4x us mk84
 f_16c_block_50	f_16c_block_50_mk82_snakeye	4x ter mk82 snakeye
 f_16c_block_50	f_16c_block_50_mk84_air	4x us mk84 air
+f_16c_block_50	f_16c_block_50_cbu_87b	2x ter cbu 87b x2 left; 2x ter cbu 87b x2 right
 f_16c_block_50	f_16c_block_50_gbu_12	gbu12 slot3; 2x gbu12; sniper pod; gbu12 slot8
 f_16c_block_50	f_16c_block_50_gbu_24	4x gbu24; sniper pod
 f_16c_block_50	f_16c_block_50_gbu_38	us gbu 38 x2 slot3; 2x us gbu 38; us gbu 38 x2 slot8
@@ -2695,6 +2856,7 @@ f_16c_block_50_missile_test	f_16c_block_50_mk82_ter	4x ter mk82
 f_16c_block_50_missile_test	f_16c_block_50_mk84	4x us mk84
 f_16c_block_50_missile_test	f_16c_block_50_mk82_snakeye	4x ter mk82 snakeye
 f_16c_block_50_missile_test	f_16c_block_50_mk84_air	4x us mk84 air
+f_16c_block_50_missile_test	f_16c_block_50_cbu_87b	2x ter cbu 87b x2 left; 2x ter cbu 87b x2 right
 f_16c_block_50_missile_test	f_16c_block_50_gbu_12	gbu12 slot3; 2x gbu12; sniper pod; gbu12 slot8
 f_16c_block_50_missile_test	f_16c_block_50_gbu_24	4x gbu24; sniper pod
 f_16c_block_50_missile_test	f_16c_block_50_gbu_38	us gbu 38 x2 slot3; 2x us gbu 38; us gbu 38 x2 slot8
@@ -2729,6 +2891,8 @@ f_16c_block_52_aesa	f_16c_block_52_aesa_mk82_snakeye	4x ter mk82 snakeye
 f_16c_block_52_aesa	f_16c_block_52_aesa_mk82_snakeye_pids	2x ter mk82 snakeye pids; 2x ter mk82 snakeye
 f_16c_block_52_aesa	f_16c_block_52_aesa_mk84_air	4x us mk84 air
 f_16c_block_52_aesa	f_16c_block_52_aesa_mk84_air_pids	2x us mk84 air pids; 2x us mk84 air
+f_16c_block_52_aesa	f_16c_block_52_aesa_cbu_87b	2x ter cbu 87b x2 left; 2x ter cbu 87b x2 right
+f_16c_block_52_aesa	f_16c_block_52_aesa_cbu_87b_pids	ter cbu 87b x2 left pids; ter cbu 87b x2 left; ter cbu 87b x2 right; ter cbu 87b x2 right pids
 f_16c_block_52_aesa	f_16c_block_52_aesa_gbu_12	gbu12 slot3; 2x gbu12; sniper pod; gbu12 slot8
 f_16c_block_52_aesa	f_16c_block_52_aesa_gbu_12_pids	gbu12 slot3 pids; 2x gbu12; sniper pod; gbu12 slot8 pids
 f_16c_block_52_aesa	f_16c_block_52_aesa_gbu_24	4x gbu24; sniper pod
@@ -2768,6 +2932,7 @@ f_16d_block_40_barak_2	f_16d_block_40_barak_2_mk83	4x mk83
 f_16d_block_40_barak_2	f_16d_block_40_barak_2_mk83_x2	4x ver mk83 x2
 f_16d_block_40_barak_2	f_16d_block_40_barak_2_mk84	4x us mk84
 f_16d_block_40_barak_2	f_16d_block_40_barak_2_mk82_snakeye	4x ver mk82 snakeye
+f_16d_block_40_barak_2	f_16d_block_40_barak_2_cbu_58b	4x cbu 58b x2
 f_16d_block_40_barak_2	f_16d_block_40_barak_2_gbu_12	4x gbu12; litening pod
 f_16d_block_40_barak_2	f_16d_block_40_barak_2_gbu_16	4x gbu16; litening pod
 f_16d_block_40_barak_2	f_16d_block_40_barak_2_gbu_10	4x gbu10; litening pod
@@ -2798,6 +2963,7 @@ f_16i_sufa	f_16i_sufa_mk83	4x mk83; comfor left; comfor right
 f_16i_sufa	f_16i_sufa_mk83_x2	4x ver mk83 x2; comfor left; comfor right
 f_16i_sufa	f_16i_sufa_mk84	4x us mk84
 f_16i_sufa	f_16i_sufa_mk82_snakeye	4x ver mk82 snakeye; comfor left; comfor right
+f_16i_sufa	f_16i_sufa_cbu_58b	4x cbu 58b x2; comfor left; comfor right
 f_16i_sufa	f_16i_sufa_gbu_12	4x gbu12; litening pod
 f_16i_sufa	f_16i_sufa_gbu_16	4x gbu16; litening pod
 f_16i_sufa	f_16i_sufa_gbu_10	4x gbu10; litening pod
@@ -2816,6 +2982,7 @@ f_16i_sufa	f_16i_sufa_spice_2000	il spice 2000 slot3; il spice 2000 slot4; il sp
 f_16xl	f_16xl_default	2x aim 9l wingtip default; ptb slot2; aim 120a default; ptb slot12
 f_16xl	f_16xl_aim_120	aim 120a
 f_16xl	f_16xl_mk82	8x mk82; 2x mk82 x4
+f_16xl	f_16xl_cbu_58b	2x us cbu 58b x2; 2x us cbu 58b
 f_16xl	f_16xl_mk84	mk84 slot2; mk84 slot5; mk84 slot9; mk84 slot12
 f_16xl	f_16xl_agm_65b	4x agm 65b; agm 65b slot6; agm 65b slot8
 f_16xl	f_16xl_video_agm_65b	2x aim 9l wingtip default; 4x agm 65b; agm 65b slot6; aim 120a default; agm 65b slot8
@@ -2846,9 +3013,11 @@ f_2a	f_2a_aam_3	2x jp aam3 default; 2x jp aam3
 f_2a	f_2a_aam_4	2x jp aam4 default; 2x jp aam4
 f_2a	f_2a_aim_7m	2x aim 7m default; 2x aim 7m
 f_2a	f_2a_mk82	6x ter mk82
-f_2a	f_2a_mk82_snakeye	6x ter mk82 snakeye
 f_2a	f_2a_mk84	6x us mk84
+f_2a	f_2a_cbu_87b	6x us cbu 87b
+f_2a	f_2a_mk82_snakeye	6x ter mk82 snakeye
 f_2a	f_2a_mk84_air	6x us mk84 air
+f_2a	f_2a_mk82_gcs_1	6x ter mk82 gcs 1
 f_2a	f_2a_gbu_38	4x bru 55 gbu 38
 f_2a	f_2a_gbu_31	4x gbu 31
 f_2a	f_2a_gbu_54	4x bru 55 gbu 54; sniper atp pod
@@ -2864,11 +3033,14 @@ f_2a_adtw	f_2a_adtw_default	2x jp aam3 default; 2x jp aam3; 2x aim 7m default; 2
 f_2a_adtw	f_2a_adtw_aim_9l	aim 9l slot1; aim 9l slot2; aim 9l slot11; aim 9l slot12
 f_2a_adtw	f_2a_adtw_aim_9m	aim 9m slot1; aim 9m slot2; aim 9m slot11; aim 9m slot12
 f_2a_adtw	f_2a_adtw_aam_3	2x jp aam3 default; 2x jp aam3
+f_2a_adtw	f_2a_adtw_aam_4	2x jp aam4 default; 2x jp aam4; aim 7m; aim 7m default; jp aam3; jp aam3 default
 f_2a_adtw	f_2a_adtw_aim_7m	2x jp aam3 default; 2x jp aam3; 2x aim 7m default; 2x aim 7m
 f_2a_adtw	f_2a_adtw_mk82	2x jp aam3 default; 2x jp aam3; 6x ter mk82; j aaq 2 pod
-f_2a_adtw	f_2a_adtw_mk82_snakeye	2x jp aam3 default; 2x jp aam3; 6x ter mk82 snakeye; j aaq 2 pod
 f_2a_adtw	f_2a_adtw_mk84	2x jp aam3 default; 2x jp aam3; 6x us mk84; j aaq 2 pod
+f_2a_adtw	f_2a_adtw_cbu_87b	2x jp aam3 default; 2x jp aam3; 6x us cbu 87b; j aaq 2 pod
+f_2a_adtw	f_2a_adtw_mk82_snakeye	2x jp aam3 default; 2x jp aam3; 6x ter mk82 snakeye; j aaq 2 pod
 f_2a_adtw	f_2a_adtw_mk84_air	2x jp aam3 default; 2x jp aam3; 6x us mk84 air; j aaq 2 pod
+f_2a_adtw	f_2a_mk82_gcs_1	6x ter mk82 gcs 1
 f_2a_adtw	f_2a_adtw_gbu_38	2x jp aam3 default; 2x jp aam3; 4x bru 55 gbu 38; j aaq 2 pod
 f_2a_adtw	f_2a_adtw_gbu_31	2x jp aam3 default; 2x jp aam3; 4x gbu 31; j aaq 2 pod
 f_2a_adtw	f_2a_adtw_gbu_62	2x jp aam3 default; 2x jp aam3; 4x bru 55 gbu 62; j aaq 2 pod
@@ -2905,6 +3077,7 @@ f_4e_aup_greece	f_4e_aup_greece_blu_1	mer blu 1 x2 left; 2x ter blu 1 x2; mer bl
 f_4e_aup_greece	f_4e_aup_greece_bomb_mk83	mer mk83 x2 slot1; ter mk83 slot2; mer mk83 x3 slot6; ter mk83 slot10; mer mk83 x2 slot11
 f_4e_aup_greece	f_4e_aup_greece_bomb_mk84	us mk84 slot1; us mk84 slot6; us mk84 slot11
 f_4e_aup_greece	f_4e_aup_greece_bomb_m118	us m118 slot6
+f_4e_aup_greece	f_4e_aup_greece_cbu_58b	cbu 58b slot1; cbu 58b slot2; cbu 58b slot6; cbu 58b slot10; cbu 58b slot11
 f_4e_aup_greece	f_4e_aup_greece_rockets_lau18	mer lau 3a slot1; ter lau 3a slot2; mer lau 3a slot6; ter lau 3a slot10; mer lau 3a slot11
 f_4e_aup_greece	f_4e_aup_greece_rockets_zuni	mer lau 10a slot1; ter lau 10a slot2; mer lau 10a slot6; ter lau 10a slot10; mer lau 10a slot11
 f_4e_aup_greece	f_4e_aup_greece_agm_65d	2x agm 65d x3
@@ -2948,6 +3121,9 @@ f1	f1_2xAero7	4x jlau 3a
 f1	f1_zuni	4x rl4 zuni
 f1	f1_8x500lbs	4x us 500lb x2; us 500lb x4
 f1	f1_5x750lbs	5x jp 750lb
+f1	f1_mk82_gcs_1	4x der mk82 gcs 1; fer mk82 gcs 1
+f1	f1_m117_gcs_1	5x jp m117 gcs 1
+f1	f1_cbu_87b	5x us cbu 87b
 f-100a_china	f_100a_default	no suspended armament
 f-100a_china	f_100a_default_2xaim9b	2x aim9b default
 f-100a_china	f_100a_4xaim9b	aim9b x2 slot1; aim9b x2 slot2
@@ -3004,6 +3180,7 @@ f-104g	f-104g_as_30	2x as 30
 f-104g	f-104g_bomb_mk82	mk82 dlt left; mk82; mk82 dlt right
 f-104g	f-104g_bomb_m117	3x m117
 f-104g	f-104g_bomb_mk83	3x mk83
+f-104g	f-104g_bl755	bl755 dlt left; bl755 dlt right
 f-104g	f-104g_bomb_mk84	mk84
 f-104g	f-104g_bomb_matra_25e	3x matra 25e
 f-104g	f-104g_bomb_mk82_snakeye	mk82 snakeye dlt left; mk82 snakeye; mk82 snakeye dlt right
@@ -3063,6 +3240,7 @@ f-104s	f-104s_bomb_mk81	6x mk81; cannon m61
 f-104s	f-104s_bomb_mk82	7x mk82; cannon m61
 f-104s	f-104s_bomb_m117	7x m117; cannon m61
 f-104s	f-104s_bomb_mk83	3x mk83; cannon m61
+f-104s	f-104s_bl755	4x bl755; cannon m61
 f-104s	f-104s_bomb_mk84	cannon m61; mk84
 f-104s	f-104s_bomb_mk82_snakeye	7x mk82 snakeye; cannon m61
 f-104s	f-104s_bomb_blu_27	7x blu1; cannon m61
@@ -3076,14 +3254,15 @@ f-104s_asa	f-104s_asa_bomb_mk82_snakeye	7x mk82 snakeye; cannon m61
 f-104s_asa	f-104s_asa_bomb_m117	6x us 750lb m117 cone 45; cannon m61; m117
 f-104s_asa	f-104s_asa_bomb_m117_aim_9l	2x default aim9l; 6x us 750lb m117 cone 45; cannon m61; m117
 f-104s_asa	f-104s_asa_bomb_mk83	2x us 1000lb mk 83 ldgp; cannon m61; mk83
+f-104s_asa	f-104s_asa_bl755	4x bl755; cannon m61
 f-104s_asa	f-104s_asa_bomb_mk83_aim_9l	2x default aim9l; 2x us 1000lb mk 83 ldgp; cannon m61; mk83
+f-104s_asa	f-104s_asa_bl755_aim_9l	2x default aim9l; 4x bl755; cannon m61
 f-104s_asa	f-104s_asa_bomb_mk84	cannon m61; us 2000lb mk 84 ldgp
 f-104s_asa	f-104s_asa_bomb_mk84_aim_9l	2x default aim9l; cannon m61; us 2000lb mk 84 ldgp
 f-104s_asa	f-104s_asa_aero_7	4x aero 7a 2 75 in ffar mighty mouse; cannon m61
 f-104s_asa	f-104s_asa_zuni	2x lau 10a zuni wafar mk32; cannon m61
 f-104s_asa	f-104s_asa_zuni_aero_7	2x lau 10a zuni wafar mk32; cannon m61; 2x aero 7a 2 75 in ffar mighty mouse
 f-104s_asa	f-104s_asa_bomb_blu_27	5x blu1; cannon m61
-f-104s_cb	f-104s_cb_default	no suspended armament
 f-104s_cb	f-104s_cb_default_aim_9b	2x aim 9b default; cannon m61
 f-104s_cb	f-104s_cb_default_aim_9p	2x aim 9p default; cannon m61
 f-104s_cb	f-104s_cb_aim_9b	2x aim 9b default; 4x aim 9b; cannon m61
@@ -3097,6 +3276,7 @@ f-104s_cb	f-104s_cb_bomb_mk82	2x aim 9p default; 7x mk82; cannon m61
 f-104s_cb	f-104s_cb_bomb_mk82_snakeye	2x aim 9p default; 7x mk82 snakeye; cannon m61
 f-104s_cb	f-104s_cb_bomb_m117	2x aim 9p default; 7x m117; cannon m61
 f-104s_cb	f-104s_cb_bomb_mk83	2x aim 9p default; 4x aim 9p; 3x mk83; cannon m61
+f-104s_cb	f-104s_cb_bl755	4x bl755; cannon m61
 f-104s_cb	f-104s_cb_bomb_mk84	2x aim 9p default; 4x aim 9p; cannon m61; mk84
 f-104s_cb	f-104s_cb_bomb_blu_27	7x blu1; cannon m61
 f-105d	f_105d_default	no suspended armament
@@ -3130,6 +3310,7 @@ f11f_1_late	f11f_1_late_bomb_mk83	2x mk83
 f1m2	f1m2_default	no suspended armament
 f1m2	f1m2_bombs	no suspended armament
 f2a-1	f2a-1_default	no suspended armament
+f2a-1_nvidia	f2a-1_default	no suspended armament
 f2a-1_thach	f2a-1_default	no suspended armament
 f2a-3	f2a-3_default	no suspended armament
 f2a-3	f2a-3_bombs	no suspended armament
@@ -3218,6 +3399,8 @@ f-4e	f_4e_agm_65b	2x agm 65b x3
 f-4e	f_4e_agm_62	agm 62a slot1; agm 62a slot2; agm 62a slot10; agm 62a slot11
 f-4e	f_4e_gbu_8	us 2000lb gbu 8 slot1; us 2000lb gbu 8 slot2; us 2000lb gbu 8 slot10; us 2000lb gbu 8 slot11
 f-4e	f_4e_gbu_15	2x us 2000lb gbu 15v1
+f-4e	f_4e_cbu_58b	cbu 58b slot1; cbu 58b slot2; cbu 58b slot6; cbu 58b slot10; cbu 58b slot11
+f-4e	f_4e_cbu_87b	cbu 87b slot1; cbu 87b slot2; cbu 87b slot6; cbu 87b slot10; cbu 87b slot11
 f-4e	f_4e_bomb_mk84_air	3x us mk84 air
 f-4e	f_4e_agm_45b_9	agm 45b 9 slot1; agm 45b 9 slot2; agm 45b 9 slot10; agm 45b 9 slot11
 f-4e	f_4e_agm_45b_10	agm 45b 10 slot1; agm 45b 10 slot2; agm 45b 10 slot10; agm 45b 10 slot11
@@ -3235,6 +3418,7 @@ f-4e_iaf	f_4e_iaf_blu_1	mer blu 1 x2 left; 2x ter blu 1 x2; mer blu 1 x3; mer bl
 f-4e_iaf	f_4e_iaf_bomb_mk83	2x mer mk83 x2; 2x ter mk83; mer mk83 x3
 f-4e_iaf	f_4e_iaf_bomb_mk84	3x us mk84
 f-4e_iaf	f_4e_iaf_bomb_m118	us m118
+f-4e_iaf	f_4e_iaf_cbu_58b	cbu 58b slot1; cbu 58b slot2; cbu 58b slot6; cbu 58b slot10; cbu 58b slot11
 f-4e_iaf	f_4e_iaf_rockets_lau18	3x mer lau 3a; 2x ter lau 3a
 f-4e_iaf	f_4e_iaf_rockets_zuni	3x mer lau 10a; 2x ter lau 10a
 f-4e_iaf	f_4e_iaf_rockets_aim7e	4x aim 7e
@@ -3260,6 +3444,7 @@ f-4e_kurnass_2000	kurnass_2000_blu_1	mer blu 1 x2 left; 2x ter blu 1 x2; mer blu
 f-4e_kurnass_2000	kurnass_2000_bomb_mk83	2x mer mk83 x2; 2x ter mk83; mer mk83 x3
 f-4e_kurnass_2000	kurnass_2000_bomb_mk84	3x us mk84
 f-4e_kurnass_2000	kurnass_2000_bomb_m118	us m118
+f-4e_kurnass_2000	kurnass_2000_cbu_58b	cbu 58b slot1; cbu 58b slot2; cbu 58b slot6; cbu 58b slot10; cbu 58b slot11
 f-4e_kurnass_2000	kurnass_2000_rockets_lau18	3x mer lau 3a; 2x ter lau 3a
 f-4e_kurnass_2000	kurnass_2000_rockets_zuni	3x mer lau 10a; 2x ter lau 10a
 f-4e_kurnass_2000	kurnass_2000_add_ltc	2x additional ltc
@@ -3284,6 +3469,7 @@ f-4ej	f_4ej_aim7e	4x aim 7e
 f-4ej	f_4ej_bomb_mk82	3x mer mk82 x6; 2x ter mk82
 f-4ej	f_4ej_bomb_mk82_snakeye	3x mer mk82 x6 snakeye; 2x ter mk82 snakeye
 f-4ej	f_4ej_bomb_m117	mer m117 x3 left wing; 2x ter m117; mer m117 x5; mer m117 x3 right wing
+f-4ej	f_4ej_cbu_87b	cbu 87b slot1; cbu 87b slot2; cbu 87b slot6; cbu 87b slot10; cbu 87b slot11
 f-4ej	f_4ej_rockets_lau18	3x mer lau 3a; 2x ter lau 3a
 f-4ej	f_4ej_rockets_zuni	3x mer lau 10a; 2x ter lau 10a
 f-4ej	f_4ej_suu_23a	2x suu 23a gunpod wing; suu 23a gunpod
@@ -3296,6 +3482,7 @@ f-4ej_adtw	f_4ej_adtw_aim7e	4x aim 7e
 f-4ej_adtw	f_4ej_adtw_bomb_mk82	3x mer mk82 x6; 2x ter mk82; 2x aim 9p; 4x aim 7d
 f-4ej_adtw	f_4ej_adtw_bomb_mk82_snakeye	3x mer mk82 x6 snakeye; 2x ter mk82 snakeye; 2x aim 9p; 4x aim 7d
 f-4ej_adtw	f_4ej_adtw_bomb_m117	mer m117 x3 left wing; 2x ter m117; 2x aim 9p; 4x aim 7d; mer m117 x5; mer m117 x3 right wing
+f-4ej_adtw	f_4ej_adtw_cbu_87b	cbu 87b slot1; cbu 87b slot2; 2x aim 9p; 4x aim 7d; cbu 87b slot6; cbu 87b slot10; cbu 87b slot11
 f-4ej_adtw	f_4ej_adtw_rockets_lau18	3x mer lau 3a; 2x ter lau 3a; 2x aim 9p; 4x aim 7d
 f-4ej_adtw	f_4ej_adtw_rockets_zuni	3x mer lau 10a; 2x ter lau 10a; 2x aim 9p; 4x aim 7d
 f-4ej_adtw	f_4ej_adtw_suu_23a	2x suu 23a gunpod wing; 2x aim 9p; 4x aim 7d; suu 23a gunpod
@@ -3309,8 +3496,13 @@ f-4ej_kai	f_4ej_kai_suu_23a	2x suu 23a gunpod wing; suu 23a gunpod
 f-4ej_kai	f_4ej_kai_bomb_mk82	3x mer mk82 x6; 2x ter mk82
 f-4ej_kai	f_4ej_kai_bomb_mk82_snakeye	3x mer mk82 x6 snakeye; 2x ter mk82 snakeye
 f-4ej_kai	f_4ej_kai_bomb_m117	mer m117 x3 left wing; 2x ter m117; mer m117 x5; mer m117 x3 right wing
+f-4ej_kai	f_4ej_kai_cbu_87b	cbu 87b slot1; cbu 87b slot2; cbu 87b slot6; cbu 87b slot10; cbu 87b slot11
 f-4ej_kai	f_4ej_kai_rockets_lau18	3x mer lau 3a; 2x ter lau 3a
 f-4ej_kai	f_4ej_kai_rockets_zuni	3x mer lau 10a; 2x ter lau 10a
+f-4ej_kai	f_4ej_kai_mk82_gcs_1	mer mk82 gcs 1 slot1; ter mk82 gcs 1 slot2; mer mk82 gcs 1 slot6; ter mk82 gcs 1 slot10; mer mk82 gcs 1 slot11
+f-4ej_kai	f_4ej_kai_m117_gcs_1	jp m117 gcs 1 slot1; jp m117 gcs 1 slot2; jp m117 gcs 1 slot6; jp m117 gcs 1 slot10; jp m117 gcs 1 slot11
+f-4ej_kai	f_4ej_kai_asm1	2x jp asm1
+f-4ej_kai	f_4ej_kai_asm2	2x jp asm2
 f-4f	f_4f_default	ptb
 f-4f	f_4f_suu_23a	2x suu 23a gunpod wing
 f-4f	f_4f_default_aim_9e	aim 9e default left wing; aim 9e default right wing
@@ -3326,6 +3518,7 @@ f-4f	f_4f_bomb_m117	mer m117 x3 left wing; 2x ter m117; mer m117 x5; mer m117 x3
 f-4f	f_4f_blu_27	2x mer blu 27 x1; mer blu 27 x2
 f-4f	f_4f_blu_1	mer blu 1 x2 left; 2x ter blu 1 x2; mer blu 1 x3; mer blu 1 x2 right
 f-4f	f_4f_bomb_mk83	2x mer mk83 x2; 2x ter mk83; mer mk83 x3
+f-4f	f_4f_bl755	mer bl755 x2 left wing; ter bl755 x2 left wing; mer bl755 x3; ter bl755 x2 right wing; mer bl755 x2 right wing
 f-4f	f_4f_bomb_mk84	3x us mk84
 f-4f	f_4f_bomb_m118	us m118
 f-4f	f_4f_rockets_lau18	3x mer lau 3a; 2x ter lau 3a
@@ -3344,6 +3537,7 @@ f-4f_kws_lv	f_4f_kws_lv_bomb_m117	mer m117 x3 left wing slot1; ter m117 slot2; m
 f-4f_kws_lv	f_4f_kws_lv_blu_27	2x mer blu 27 x1; mer blu 27 x2
 f-4f_kws_lv	f_4f_kws_lv_blu_1	mer blu 1 x2 left; 2x ter blu 1 x2; mer blu 1 x3; mer blu 1 x2 right
 f-4f_kws_lv	f_4f_kws_lv_bomb_mk83	mer mk83 x2 slot1; ter mk83 slot2; mer mk83 x3 slot6; ter mk83 slot10; mer mk83 x2 slot11
+f-4f_kws_lv	f_4f_kws_lv_bl755	mer bl755 x2 slot1; ter bl755 x2 slot2; mer bl755 x3 slot6; ter bl755 x2 slot10; mer bl755 x2 slot11
 f-4f_kws_lv	f_4f_kws_lv_bomb_mk84	us mk84 slot1; us mk84 slot6; us mk84 slot11
 f-4f_kws_lv	f_4f_kws_lv_bomb_m118	us m118 slot6
 f-4f_kws_lv	f_4f_kws_lv_rockets_lau18	mer lau 3a slot1; ter lau 3a slot2; mer lau 3a slot6; ter lau 3a slot10; mer lau 3a slot11
@@ -3365,6 +3559,7 @@ f-4f_late	f_4f_bomb_m117	mer m117 x3 left wing; 2x ter m117; mer m117 x5; mer m1
 f-4f_late	f_4f_blu_27	2x mer blu 27 x1; mer blu 27 x2
 f-4f_late	f_4f_blu_1	mer blu 1 x2 left; 2x ter blu 1 x2; mer blu 1 x3; mer blu 1 x2 right
 f-4f_late	f_4f_bomb_mk83	2x mer mk83 x2; 2x ter mk83; mer mk83 x3
+f-4f_late	f_4f_bl755	mer bl755 x2 left wing; ter bl755 x2 left wing; mer bl755 x3; ter bl755 x2 right wing; mer bl755 x2 right wing
 f-4f_late	f_4f_bomb_mk84	3x us mk84
 f-4f_late	f_4f_bomb_m118	us m118
 f-4f_late	f_4f_rockets_lau18	3x mer lau 3a; 2x ter lau 3a
@@ -3399,6 +3594,7 @@ f-4jk	f_4jk_aim7e	4x aim 7e
 f-4jk	f_4jk_skyflash	4x skyflash
 f-4jk	f_4jk_sneb	ter sneb x2 left wing; 2x ter sneb; ter sneb centr; ter sneb x2 right wing
 f-4jk	f_4jk_1000lb	ter 1000lbs x2 left wing; 2x ter 1000lbs x2; ter 1000lbs; ter 1000lbs x2 right wing
+f-4jk	f_4m_fgr2_bl755	2x ter bl755 x2 left wing; ter bl755; 2x ter bl755 x2 right wing
 f-4jk	f_4jk_1000lb_n117	ter 1000lbs x2 left wing n117; 2x ter 1000lbs x2 n117; ter 1000lbs n117; ter 1000lbs x2 right wing n117
 f-4jk	f_4jk_540lb	ter 540lbs x2 left wing; ter 540lbs slot2; ter 540lbs slot6; ter 540lbs slot10; ter 540lbs x2 right wing
 f-4jk	f_4jk_aim9g_aim7e	2x aim 9g; 4x aim 7e; mk4 gunpod
@@ -3415,7 +3611,9 @@ f-4k	f_4k_aim7e	4x aim 7e
 f-4k	f_4k_skyflash	4x skyflash
 f-4k	f_4k_sneb	2x ter sneb; ter sneb centr
 f-4k	f_4k_2_inch_rp	ter 2 inch rp x2 left; ter 2 inch rp x3 slot2; ter 2 inch rp x3 slot6; ter 2 inch rp x3 slot10; ter 2 inch rp x2 right
+f-4k	f_4m_fgr2_1000lb_ld	1000lb ld slot1; 1000lb ld slot2; 1000lb ld slot6; 1000lb ld slot10; 1000lb ld slot11
 f-4k	f_4m_fgr2_1000lb	ter 1000lbs x2 left wing; 2x ter 1000lbs x2; ter 1000lbs; ter 1000lbs x2 right wing
+f-4k	f_4m_fgr2_bl755	2x ter bl755 x2 left wing; ter bl755; 2x ter bl755 x2 right wing
 f-4k	f_4m_fgr2_1000lb_n117	ter 1000lbs x2 left wing n117; 2x ter 1000lbs x2 n117; ter 1000lbs n117; ter 1000lbs x2 right wing n117
 f-4k	f_4m_fgr2_540lb	ter 540lbs x2 left wing; ter 540lbs slot2; ter 540lbs slot6; ter 540lbs slot10; ter 540lbs x2 right wing
 f-4m_fgr2	f_4m_fgr2_default	suu 23a gunpod
@@ -3426,7 +3624,9 @@ f-4m_fgr2	f_4m_fgr2_aim9g	2x aim 9g
 f-4m_fgr2	f_4m_fgr2_aim7e	4x aim 7e
 f-4m_fgr2	f_4m_fgr2_skyflash	4x skyflash
 f-4m_fgr2	f_4m_fgr2_sneb	2x ter sneb; ter sneb centr
+f-4m_fgr2	f_4m_fgr2_1000lb_ld	1000lb ld slot1; 1000lb ld slot2; 1000lb ld slot6; 1000lb ld slot10; 1000lb ld slot11
 f-4m_fgr2	f_4m_fgr2_1000lb	ter 1000lbs x2 left wing; 2x ter 1000lbs x2; ter 1000lbs; ter 1000lbs x2 right wing
+f-4m_fgr2	f_4m_fgr2_bl755	2x ter bl755 x2 left wing; ter bl755; 2x ter bl755 x2 right wing
 f-4m_fgr2	f_4m_fgr2_1000lb_n117	ter 1000lbs x2 left wing n117; 2x ter 1000lbs x2 n117; ter 1000lbs n117; ter 1000lbs x2 right wing n117
 f-4m_fgr2	f_4m_fgr2_540lb	ter 540lbs x2 left wing; ter 540lbs slot2; ter 540lbs slot6; ter 540lbs slot10; ter 540lbs x2 right wing
 f-4s	f_4s_default	2x aim 9h; 4x aim 7f; mk4 gunpod
@@ -3593,9 +3793,12 @@ f-5e_fcu_thailand	f_5e_fcu_agm_65b	4x agm 65b
 f-5e_switzerland	f_5e_default	ptb slot3; ptb slot4; ptb slot5
 f-5e_switzerland	f_5e_switzerland_flz_lwf_63_75	2x sws flz lwf 63 75
 f-5e_switzerland	f_5e_switzerland_flz_lwf_63_80	2x sws flz lwf 63 80
+f-5e_switzerland	f_5e_switzerland_flz_lwf_63_90	2x sws flz lwf 63 90
 f-5e_switzerland	f_5e_switzerland_rockets_lau18	4x aero 7a
 f-5e_switzerland	f_5e_switzerland_rockets_zuni	2x lau 10a
 f-5e_switzerland	f_5e_switzerland_agm_65b	4x agm 65b
+f-5e_switzerland	f_5e_switzerland_agm_65d	4x agm 65d
+f-5e_switzerland	f_5e_switzerland_agm_65g	4x agm 65g
 f-5e_switzerland	f_5e_switzerland_bomb_mk82	5x mk82
 f-5e_switzerland	f_5e_switzerland_bomb_m117	5x m117
 f-5e_switzerland	f_5e_switzerland_bomb_mk83	3x mk83
@@ -3896,12 +4099,12 @@ f-8e	f_8e_2x_mk84_bombs	2x us 2000lb mk 84
 f-8e	f_8e_2x_mk77_bombs	2x us mk 77
 f-8e	f_8e_2x_mk84_air	2x us 2000lb mk 84 air
 f-8e_fn	f_8e_fn_default	no suspended armament
-f-8e_fn	f_8e_fn_2x_aim9b	no suspended armament
-f-8e_fn	f_8e_fn_4x_aim9b	no suspended armament
-f-8e_fn	f_8e_fn_2x_matra530e	no suspended armament
-f-8e_fn	f_8e_fn_2x_matra530	no suspended armament
-f-8e_fn	f_8e_fn_1x_matra530e_1x_matra530	no suspended armament
-f-8e_fn	f_8e_fn_2x_matra550	no suspended armament
+f-8e_fn	f_8e_fn_2x_aim9b	2x aim9b default
+f-8e_fn	f_8e_fn_4x_aim9b	2x aim9b x2
+f-8e_fn	f_8e_fn_2x_matra530e	2x matra530e
+f-8e_fn	f_8e_fn_2x_matra530	2x matra530
+f-8e_fn	f_8e_fn_1x_matra530e_1x_matra530	matra530e; matra530
+f-8e_fn	f_8e_fn_2x_matra550	2x matra550
 f8f1	f8f1_default	no suspended armament
 f8f1	f8f1-4_hvar	hvar slot1; hvar slot5
 f8f1	f8f1_tiny_tim	tiny slot2; tiny slot4
@@ -4161,6 +4364,54 @@ fa_18c_switzerland	fa_18c_switzerland_gbu_10	us gbu 10 slot2; us gbu 10 slot3; a
 fa_18c_switzerland	fa_18c_switzerland_gbu_24	us gbu 24 slot2; us gbu 24 slot3; an aas 38b pod; us gbu 24 slot7; us gbu 24 slot8
 fa_18c_switzerland	fa_18c_switzerland_agm_65e	4x agm 65e; an aas 38b pod
 fa_18c_switzerland	fa_18c_switzerland_agm_65g	4x agm 65g; an aas 38b pod
+fa_18d_late	fa_18d_late_default	2x aim 9m default; aim 120 x2 slot2; aim 120 default slot4; ptb fuse; aim 120 default slot6; aim 120 x2 slot8
+fa_18d_late	fa_18d_late_aim_9m	2x aim 9m default; 2x aim 9m x2
+fa_18d_late	fa_18d_late_aim_7p	aim 7p slot2; aim 7p slot3; aim 7p slot4; aim 7p slot6; aim 7p slot7; aim 7p slot8
+fa_18d_late	fa_18d_late_aim_120	aim 120 x2 slot2; aim 120 default slot4; aim 120 default slot6; aim 120 x2 slot8
+fa_18d_late	fa_18d_late_mk82	2x aim 9m default; us mk82 x2 slot2; us mk82 x2 slot3; aim 120 default slot4; us mk82 x2 slot5; aim 120 default slot6; us mk82 x2 slot7; us mk82 x2 slot8
+fa_18d_late	fa_18d_late_mk83	2x aim 9m default; us mk83 x2 slot2; us mk83 x2 slot3; aim 120 default slot4; us mk83 x1 slot5; aim 120 default slot6; us mk83 x2 slot7; us mk83 x2 slot8
+fa_18d_late	fa_18d_late_mk84	2x aim 9m default; 4x us mk84; aim 120 default slot4; aim 120 default slot6
+fa_18d_late	fa_18d_late_mk82_snakeye	2x aim 9m default; us mk82 x2 snakeye slot2; us mk82 x2 snakeye slot3; aim 120 default slot4; us mk82 x2 snakeye slot5; aim 120 default slot6; us mk82 x2 snakeye slot7; us mk82 x2 snakeye slot8
+fa_18d_late	fa_18d_late_mk83_air	2x aim 9m default; us mk83 air x2 slot2; us mk83 air x2 slot3; aim 120 default slot4; us mk83 air x1 slot5; aim 120 default slot6; us mk83 air x2 slot7; us mk83 air x2 slot8
+fa_18d_late	fa_18d_late_mk77_mod4	2x aim 9m default; us 500lb mk77 mod4 x2 slot2; us 500lb mk77 mod4 x2 slot3; aim 120 default slot4; us 500lb mk77 mod4 slot5; aim 120 default slot6; us 500lb mk77 mod4 x2 slot7; us 500lb mk77 mod4 x2 slot8
+fa_18d_late	fa_18d_late_lau_10	2x aim 9m default; 4x lau 10 x2; aim 120 default slot4; aim 120 default slot6
+fa_18d_late	fa_18d_late_lau_61	2x aim 9m default; 4x us hydra 70 lau 61 x2; aim 120 default slot4; aim 120 default slot6
+fa_18d_late	fa_18d_late_gbu_12	us gbu 12 x2 slot2; us gbu 12 x2 slot3; litening pod; us gbu 12 x2 slot7; us gbu 12 x2 slot8
+fa_18d_late	fa_18d_late_gbu_16	us gbu 16 slot2; us gbu 16 slot3; litening pod; us gbu 16 slot7; us gbu 16 slot8
+fa_18d_late	fa_18d_late_gbu_10	us gbu 10 slot2; us gbu 10 slot3; litening pod; us gbu 10 slot7; us gbu 10 slot8
+fa_18d_late	fa_18d_late_gbu_24	us gbu 24 slot2; us gbu 24 slot3; litening pod; us gbu 24 slot7; us gbu 24 slot8
+fa_18d_late	fa_18d_late_gbu_38	us gbu 38 x2 slot2; us gbu 38 x2 slot3; us gbu 38 x2 slot7; us gbu 38 x2 slot8
+fa_18d_late	fa_18d_late_gbu_54	us gbu 54 x2 slot2; us gbu 54 x2 slot3; litening pod; us gbu 54 x2 slot7; us gbu 54 x2 slot8
+fa_18d_late	fa_18d_late_gbu_32	us gbu 32 x2 slot2; us gbu 32 x2 slot3; us gbu 32 x2 slot7; us gbu 32 x2 slot8
+fa_18d_late	fa_18d_late_gbu_31	us gbu 31 slot2; us gbu 31 slot3; us gbu 31 slot7; us gbu 31 slot8
+fa_18d_late	fa_18d_late_gbu_62_laser	us gbu 62 x2 slot2; us gbu 62 x2 slot3; litening pod; us gbu 62 x2 slot7; us gbu 62 x2 slot8
+fa_18d_late	fa_18d_late_gbu_64	us gbu 64 slot2; us gbu 64 slot3; us gbu 64 slot7; us gbu 64 slot8
+fa_18d_late	fa_18d_late_agm_154a1	agm 154a1 x2 slot2; agm 154a1 x2 slot3; agm 154a1 x2 slot7; agm 154a1 x2 slot8
+fa_18d_late	fa_18d_late_agm_65e	4x agm 65e; litening pod
+fa_18d_late	fa_18d_late_agm_65f	4x agm 65f
+fa_18d_late	fa_18d_late_agm_62er	2x walleye
+fa_18d_late	fa_18d_late_agm_84h	4x agm 84h
+fa_18d_late	fa_18d_late_apkws_m151	us apkws m151 x2 slot2; us apkws m151 x2 slot3; litening pod; us apkws m151 x2 slot7; us apkws m151 x2 slot8
+fa_18d_late	fa_18d_late_apkws_m282	us apkws m282 x2 slot2; us apkws m282 x2 slot3; litening pod; us apkws m282 x2 slot7; us apkws m282 x2 slot8
+fa_18d_late	fa_18d_late_agm_88	2x aim 9m default; 4x agm 88; aim 120 default slot4; aim 120 default slot6
+fa_18d_late	fa_18d_late_agm_84	2x aim 9m default; 4x agm 84; aim 120 default slot4; aim 120 default slot6
+fa_18d_late	fa_18d_late_agm_65e_aam	2x aim 9m default; 4x agm 65e; aim 120 default slot4; litening pod; aim 120 default slot6
+fa_18d_late	fa_18d_late_agm_65f_aam	2x aim 9m default; 4x agm 65f; aim 120 default slot4; aim 120 default slot6
+fa_18d_late	fa_18d_late_agm_62er_aam	2x aim 9m default; 2x walleye; aim 120 default slot4; aim 120 default slot6
+fa_18d_late	fa_18d_late_agm_84h_aam	2x aim 9m default; 4x agm 84h; aim 120 default slot4; aim 120 default slot6
+fa_18d_late	fa_18d_late_apkws_m151_aam	2x aim 9m default; us apkws m151 x2 slot2; us apkws m151 x2 slot3; aim 120 default slot4; litening pod; aim 120 default slot6; us apkws m151 x2 slot7; us apkws m151 x2 slot8
+fa_18d_late	fa_18d_late_apkws_m282_aam	2x aim 9m default; us apkws m282 x2 slot2; us apkws m282 x2 slot3; aim 120 default slot4; litening pod; aim 120 default slot6; us apkws m282 x2 slot7; us apkws m282 x2 slot8
+fa_18d_late	fa_18d_late_gbu_12_aam	2x aim 9m default; us gbu 12 x2 slot2; us gbu 12 x2 slot3; aim 120 default slot4; litening pod; aim 120 default slot6; us gbu 12 x2 slot7; us gbu 12 x2 slot8
+fa_18d_late	fa_18d_late_gbu_16_aam	2x aim 9m default; us gbu 16 slot2; us gbu 16 slot3; aim 120 default slot4; litening pod; aim 120 default slot6; us gbu 16 slot7; us gbu 16 slot8
+fa_18d_late	fa_18d_late_gbu_10_aam	2x aim 9m default; us gbu 10 slot2; us gbu 10 slot3; aim 120 default slot4; litening pod; aim 120 default slot6; us gbu 10 slot7; us gbu 10 slot8
+fa_18d_late	fa_18d_late_gbu_24_aam	2x aim 9m default; us gbu 24 slot2; us gbu 24 slot3; aim 120 default slot4; litening pod; aim 120 default slot6; us gbu 24 slot7; us gbu 24 slot8
+fa_18d_late	fa_18d_late_gbu_38_aam	2x aim 9m default; us gbu 38 x2 slot2; us gbu 38 x2 slot3; aim 120 default slot4; aim 120 default slot6; us gbu 38 x2 slot7; us gbu 38 x2 slot8
+fa_18d_late	fa_18d_late_gbu_54_aam	2x aim 9m default; us gbu 54 x2 slot2; us gbu 54 x2 slot3; aim 120 default slot4; litening pod; aim 120 default slot6; us gbu 54 x2 slot7; us gbu 54 x2 slot8
+fa_18d_late	fa_18d_late_gbu_32_aam	2x aim 9m default; us gbu 32 x2 slot2; us gbu 32 x2 slot3; aim 120 default slot4; aim 120 default slot6; us gbu 32 x2 slot7; us gbu 32 x2 slot8
+fa_18d_late	fa_18d_late_gbu_31_aam	2x aim 9m default; us gbu 31 slot2; us gbu 31 slot3; aim 120 default slot4; aim 120 default slot6; us gbu 31 slot7; us gbu 31 slot8
+fa_18d_late	fa_18d_late_gbu_62_laser_aam	2x aim 9m default; us gbu 62 x2 slot2; us gbu 62 x2 slot3; aim 120 default slot4; litening pod; aim 120 default slot6; us gbu 62 x2 slot7; us gbu 62 x2 slot8
+fa_18d_late	fa_18d_late_gbu_64_aam	2x aim 9m default; us gbu 64 slot2; us gbu 64 slot3; aim 120 default slot4; aim 120 default slot6; us gbu 64 slot7; us gbu 64 slot8
+fa_18d_late	fa_18d_late_agm_154a1_aam	2x aim 9m default; agm 154a1 x2 slot2; agm 154a1 x2 slot3; aim 120 default slot4; aim 120 default slot6; agm 154a1 x2 slot7; agm 154a1 x2 slot8
 fa_18d_late_malaysia	fa_18d_late_malaysia_default	2x aim 9m default; ptb wing left; aim 120c default slot4; ptb fuse; aim 120c default slot6; ptb wing right
 fa_18d_late_malaysia	fa_18d_late_malaysia_aim_9l	2x aim 9l; 2x aim 9l x2
 fa_18d_late_malaysia	fa_18d_late_malaysia_aim_9m	2x aim 9m default; 2x aim 9m x2
@@ -4335,6 +4586,7 @@ fiat_g91_y	fiat_g91y_4x500lb_bombs_snakeye	us 500lb snakeye slot1; 2x us 500lb s
 fiat_g91_y	fiat_g91y_2x500lb_bombs	2x us 500lb m82
 fiat_g91_y	fiat_g91y_2x1000lb_bombs	2x us 1000lb m83
 fiat_g91_y	fiat_g91y_4x1000lb_bombs	2x us 1000lb m83 2; 2x us 1000lb m83
+fiat_g91_y	fiat_g91y_4xbl755_bombs	2x bl755 2; 2x bl755
 fiat_g91_y	fiat_g91y_2x_aerea_559	2x aerea 559
 fiat_g91_ys	fiat_g91_default	no suspended armament
 fiat_g91_ys	fiat_g91ys_2x500lb_bombs	2x us 500lb m82
@@ -4342,6 +4594,7 @@ fiat_g91_ys	fiat_g91ys_4x500lb_bombs	2x us 500lb m82 2; 2x us 500lb m82
 fiat_g91_ys	fiat_g91ys_4x500lb_bombs_snakeye	us 500lb snakeye slot2; 2x us 500lb snakeye; us 500lb snakeye slot5
 fiat_g91_ys	fiat_g91ys_2x1000lb_bombs	2x us 1000lb m83
 fiat_g91_ys	fiat_g91ys_4x1000lb_bombs	2x us 1000lb m83 2; 2x us 1000lb m83
+fiat_g91_ys	fiat_g91ys_4xbl755_bombs	2x bl755 2; 2x bl755
 fiat_g91_ys	fiat_g91ys_Lau3	4x aero 7a
 fiat_g91_ys	fiat_g91ys_Lau10	4x lau 10a
 fiat_g91_ys	fiat_g91ys_2xaim9	2x aim9b
@@ -4367,6 +4620,14 @@ firefly_mk1	firefly_mk1_500lbs_mc_bombs	no suspended armament
 firefly_mk1	firefly_mk1_1000lbs_bombs	no suspended armament
 firefly_mk1	firefly_mk1_rockets	no suspended armament
 firefly_mk1	firefly_mk1_16x_rockets	no suspended armament
+firefly_mk1_thailand	firefly_mk1_default	no suspended armament
+firefly_mk1_thailand	firefly_mk1_250lbs_bombs	no suspended armament
+firefly_mk1_thailand	firefly_mk1_250lbs_mc_bombs	no suspended armament
+firefly_mk1_thailand	firefly_mk1_500lbs_bombs	no suspended armament
+firefly_mk1_thailand	firefly_mk1_500lbs_mc_bombs	no suspended armament
+firefly_mk1_thailand	firefly_mk1_1000lbs_bombs	no suspended armament
+firefly_mk1_thailand	firefly_mk1_rockets	no suspended armament
+firefly_mk1_thailand	firefly_mk1_16x_rockets	no suspended armament
 firefly_mk4_netherlands	firefly_mk4_netherlands_default	no suspended armament
 firefly_mk4_netherlands	firefly_mk4_netherlands_rp3_rockets	rp3 slot1; rp3 slot2; rp3 slot3; rp3 slot4; rp3 slot7; rp3 slot8; rp3 slot9; rp3 slot10
 firefly_mk4_netherlands	firefly_mk4_netherlands_rp3_x16_rockets	rp3 x2 slot1; rp3 x2 slot2; rp3 x2 slot3; rp3 x2 slot4; rp3 x2 slot7; rp3 x2 slot8; rp3 x2 slot9; rp3 x2 slot10
@@ -4420,12 +4681,18 @@ fr_1_fireball	fr_1_fireball_hvar	4x hvar
 fr_1_fireball	fr_1_fireball_500lb_hvar	4x hvar; 2x 500lbs
 fr_1_fireball	fr_1_fireball_1000lb_hvar	4x hvar; 2x 1000lbs
 fr_1_fireball	fr_1_fireball_mk13_mine_hvar	4x hvar; 2x mine mk13
+fulmar_mk2	fulmar_mk2_default	no suspended armament
+fulmar_mk2	fulmar_mk2_1x_250lb_gp	250lb gp
+fulmar_mk2	fulmar_mk2_2x_250gp	2x 250lb gp
+fulmar_mk2	fulmar_mk2_1x_500lb_gp	500lb gp
+fulmar_mk2	fulmar_mk2_1x_500lb_sap	500lb sap
 fury_mk1	nimrod_default	no suspended armament
 fury_mk2	nimrod_default	no suspended armament
 fw_189c_0	fw_189c_0_default	no suspended armament
 fw_189c_0	fw_189c_0_4xsc50	no suspended armament
 fw_190a_5_u14	fw_190a_5_default	no suspended armament
 fw_190a_5_u14	fw_190a_5_f5b_torpedo	no suspended armament
+fw_190a_8_mistel	fw_190a_8_mistel_default	no suspended armament
 fw_190f_8_hungary	Fw-190F-8_default	no suspended armament
 fw_190f_8_hungary	Fw-190F-8_Pb2	pb2 slot1; pb2 slot3
 fw_190f_8_hungary	Fw-190F-8_4xSC50	50kg x2 slot1; 50kg x2 slot3
@@ -4557,6 +4824,7 @@ h_34	h_34_us_v1	no suspended armament
 h_34	h_34_us_v6	no suspended armament
 h_34_france	h_34_default	no suspended armament
 h_34_france	h_34_fr_v1	no suspended armament
+h_34_killstreak	h_34_killstreak_default	no suspended armament
 h145m	h145m_default	2x spike x2
 h145m	h145m_gun_fn_m3p	2x hmp 400
 h145m	h145m_gun_fn_m3p_hvar	2x rmp lc
@@ -4564,6 +4832,7 @@ h145m	h145m_gun_m261	2x m261 nexter
 h145m	h145m_fz207	2x fz207
 h145m	h145m_fz275	2x fz275
 h145m	h145m_8_spike	2x spike x4
+h145m	h145m_8_spike_wo_mitl	2x spike wo mitl x4
 h6k4	h6k4_12xtype97mod6	no suspended armament
 h6k4	h6k4_2xmod25mark2	no suspended armament
 h6k4	h6k4_2xtype98mod25	no suspended armament
@@ -4620,12 +4889,16 @@ harrier_frs1	harrier_frs1_rocket_matra155	4x matra 155
 harrier_frs1	harrier_frs1_bomb_500lbs	5x 500lbs
 harrier_frs1	harrier_frs1_bomb_dlt_500lbs	500lbs x2 left; 500lbs x2 right
 harrier_frs1	harrier_frs1_bomb_1000lbs	5x 1000lbs
+harrier_frs1	harrier_frs1_bomb_bl755	5x bl755
 harrier_frs1	harrier_frs1_bomb_dlt_1000lbs	1000lbs x2 left wing; 1000lbs x2 right wing
+harrier_frs1	harrier_frs1_bomb_dlt_bl755	bl755 x2 left wing; bl755 x2 right wing
 harrier_frs1	harrier_frs1_bomb_1000lbs_n117	5x 1000lbs n117
 harrier_frs1	harrier_frs1_bomb_dlt_1000lbs_n117	1000lbs x2 left wing n117; 1000lbs x2 right wing n117
 harrier_frs1	harrier_frs1_bomb_1000lbs_aim9	2x aim9g; 1000lbs x2 left wing; 1000lbs; 1000lbs x2 right wing
+harrier_frs1	harrier_frs1_bomb_bl755_aim9	2x aim9g; bl755 x2 left wing; bl755; bl755 x2 right wing
 harrier_frs1	harrier_frs1_rocket_matra7_aim9	2x aim9g; matra 155 left; matra 155 right
 harrier_frs1	harrier_frs1_bomb_1000lbs_aim9l	aim9l x2 left wing; 3x 1000lbs; aim9l x2 right wing
+harrier_frs1	harrier_frs1_bomb_bl755_aim9l	aim9l x2 left wing; 3x bl755; aim9l x2 right wing
 harrier_frs1	harrier_frs1_rocket_matra7_aim9l	aim9l x2 left wing; 2x matra 155; aim9l x2 right wing
 harrier_frs1_early	harrier_frs1_default	no suspended armament
 harrier_frs1_early	harrier_frs1_rocket_aim9	2x aim9g
@@ -4635,17 +4908,22 @@ harrier_frs1_early	harrier_frs1_rocket_dlt_matra155	2x matra 155; matra 155 left
 harrier_frs1_early	harrier_frs1_bomb_500lbs	5x 500lbs
 harrier_frs1_early	harrier_frs1_bomb_dlt_500lbs	500lbs x2 left; 500lbs x2 right
 harrier_frs1_early	harrier_frs1_bomb_1000lbs	5x 1000lbs
+harrier_frs1_early	harrier_frs1_bomb_bl755	5x bl755
 harrier_frs1_early	harrier_frs1_bomb_dlt_1000lbs	1000lbs x2 left wing; 1000lbs x2 right wing
+harrier_frs1_early	harrier_frs1_bomb_dlt_bl755	bl755 x2 left wing; bl755 x2 right wing
 harrier_frs1_early	harrier_frs1_bomb_1000lbs_n117	5x 1000lbs n117
 harrier_frs1_early	harrier_frs1_bomb_dlt_1000lbs_n117	1000lbs x2 left wing n117; 1000lbs x2 right wing n117
 harrier_gr1	harrier_gr1_default	no suspended armament
 harrier_gr1	harrier_gr1_rocket_sraam	sraam left; sraam right
+harrier_gr1	harrier_gr3_rocket_aim9	2x aim9g
 harrier_gr1	harrier_gr1_rocket_matra155_dlt_matra155	2x matra 155; matra 155 left; matra 155 right
 harrier_gr1	harrier_gr1_rocket_2_inch_rp	2x 2 inch rp; 2 inch rp left; 2 inch rp right
 harrier_gr1	harrier_gr1_bomb_500lbs	5x 500lbs
 harrier_gr1	harrier_gr1_bomb_dlt_500lbs	sraam left; 500lbs x2 left; 500lbs x2 right; sraam right
 harrier_gr1	harrier_gr1_bomb_1000lbs	sraam left; 3x 1000lbs; sraam right
+harrier_gr1	harrier_gr1_bomb_bl755	sraam left; 3x bl755; sraam right
 harrier_gr1	harrier_gr1_bomb_dlt_1000lbs	sraam left; 1000lbs x2 slot2; 1000lbs x2 slot4; sraam right
+harrier_gr1	harrier_gr1_bomb_dlt_bl755	sraam left; bl755 x2 slot2; bl755 x2 slot4; sraam right
 harrier_gr1	harrier_gr1_bomb_1000lbs_n117	sraam left; 3x 1000lbs n117; sraam right
 harrier_gr1	harrier_gr1_bomb_dlt_1000lbs_n117	sraam left; 1000lbs x2 slot2 n117; 1000lbs x2 slot4 n117; sraam right
 harrier_gr1	harrier_gr1_fire_bomb_mk77_mod4	5x mk77 mod4
@@ -4656,7 +4934,9 @@ harrier_gr3	harrier_gr3_rocket_2_inch_rp	2x 2 inch rp; 2 inch rp left; 2 inch rp
 harrier_gr3	harrier_gr3_bomb_500lbs	5x 500lbs
 harrier_gr3	harrier_gr3_bomb_dlt_500lbs	500lbs x2 left; 500lbs x2 right
 harrier_gr3	harrier_gr3_bomb_1000lbs	5x 1000lbs
+harrier_gr3	harrier_gr3_bomb_bl755	5x bl755
 harrier_gr3	harrier_gr3_bomb_dlt_1000lbs	1000lbs x2 slot2; 1000lbs x2 slot4
+harrier_gr3	harrier_gr3_bomb_dlt_bl755	bl755 x2 slot2; bl755 x2 slot4
 harrier_gr3	harrier_gr3_bomb_1000lbs_n117	5x 1000lbs n117
 harrier_gr3	harrier_gr3_bomb_dlt_1000lbs_n117	1000lbs x2 slot2 n117; 1000lbs x2 slot4 n117
 harrier_gr7	harrier_gr7_default	aden 25 left; aden 25 right
@@ -4670,6 +4950,7 @@ harrier_gr7	harrier_gr7_lau_5003b	6x lau 5003b
 harrier_gr7	harrier_gr7_uk_500lb	7x uk 500lbs
 harrier_gr7	harrier_gr7_uk_500lb_retarded	7x uk 500lbs retard
 harrier_gr7	harrier_gr7_uk_1000lb	5x uk 1000lbs
+harrier_gr7	harrier_gr7_uk_bl755	7x uk bl755
 harrier_gr7	harrier_gr7_uk_1000lb_n117	5x uk 1000lbs n117
 harrier_gr7	harrier_gr7_gbu_12	6x gbu 12; tiald
 harrier_gr7	harrier_gr7_mk13	4x uk mk 13 18; tiald
@@ -4686,6 +4967,7 @@ harrier_t10	harrier_t10_lau_5003b	6x lau 5003b; 2x aim9l bol; aden 25 left; aden
 harrier_t10	harrier_t10_uk_500lb	7x uk 500lbs; 2x aim9l bol; tiald; aden 25 right
 harrier_t10	harrier_t10_uk_500lb_retarded	7x uk 500lbs retard; 2x aim9l bol; tiald; aden 25 right
 harrier_t10	harrier_t10_uk_1000lb	2x aim9l default; 5x uk 1000lbs; 2x aim9l bol; tiald; aden 25 right
+harrier_t10	harrier_t10_uk_bl755	7x uk bl755; 2x aim9l bol; tiald; aden 25 right
 harrier_t10	harrier_t10_uk_1000lb_n117	2x aim9l default; 5x uk 1000lbs n117; 2x aim9l bol; tiald; aden 25 right
 harrier_t10	harrier_t10_gbu_12_aam	6x gbu 12; 2x aim9l bol; tiald; aden 25 right
 harrier_t10	harrier_t10_mk13_aam	2x aim9l default; 4x uk mk 13 18; 2x aim9l bol; tiald; aden 25 right
@@ -4713,6 +4995,7 @@ hawk_200	hawk_200_sea_eagle	3x sea eagle
 hawk_200	hawk_200_mk81	4x mk 81 x2; mk 81
 hawk_200	hawk_200_mk82	4x mk 82 x2; mk 82
 hawk_200	hawk_200_mk83	5x mk 83
+hawk_200	hawk_200_bl755	5x bl755
 hawk_200	hawk_200_mk81sn	4x mk 81 snakeye x2; mk 81 snakeye
 hawk_200	hawk_200_mk82sn	4x mk 82 snakeye x2; mk 82 snakeye
 hawk_200_rda	hawk_200_rda_default	aim9l default slot1; ptb 1; ptb 2; aim9l default slot7
@@ -4726,6 +5009,7 @@ hawk_200_rda	hawk_200_rda_sea_eagle	3x sea eagle
 hawk_200_rda	hawk_200_rda_mk81	4x mk 81 x2; mk 81
 hawk_200_rda	hawk_200_rda_mk82	4x mk 82 x2; mk 82
 hawk_200_rda	hawk_200_rda_mk83	5x mk 83
+hawk_200_rda	hawk_200_rda_bl755	5x bl755
 hawk_200_rda	hawk_200_rda_mk81sn	4x mk 81 snakeye x2; mk 81 snakeye
 hawk_200_rda	hawk_200_rda_mk82sn	4x mk 82 snakeye x2; mk 82 snakeye
 hawk_209_indonesia	hawk_209_indonesia_default	aim9p4 slot1; 2x us agm 65g; ptb slot3; 30mm gunpod; ptb slot5; aim9p4 slot7
@@ -4932,8 +5216,11 @@ hurricane_mk4	hurricane_mk4_guns	no suspended armament
 hurricane_mk4	hurricane_mk4_rockets	no suspended armament
 hurricane_mk4	hurricane_mk4_250lbs_bombs	no suspended armament
 hurricane_mk4	hurricane_mk4_500lbs_bombs	no suspended armament
+hurricane_mk4	hurricane_mk4_500lbs_ap_bombs	no suspended armament
 hurricanemkii	hurricane_real	no suspended armament
 hurricanemkii	hurricane_real_bombs	no suspended armament
+hurricanemkii	hurricane_real_500lb_bombs	no suspended armament
+hurricanemkii	hurricane_real_500lb_ap_bombs	no suspended armament
 hurricanemkii	hurricane_rockets	no suspended armament
 hurricanemkii_ussr	hurricane_ussr_real	no suspended armament
 hurricanemkii_ussr	hurricane_ussr_rockets	no suspended armament
@@ -5078,6 +5365,7 @@ il_2_1941	il_2_1941_4x_rofs132	rofs 132 slot1; rofs 132 slot6
 il_2_1941	il_2_1941_4x_rbs132	rbs 132 slot1; rbs 132 slot6
 il_2_1941	il_2_1941_12x25m1	12 25 slot3; 12 25 slot4
 il_2_1941	il_2_1941_6x_fab50	fab50 der31 left; fab50 x2 slot3; fab50 x2 slot4; fab50 der31 right
+il_2_1941	il_2_1941_zab50	zab50 der31 left; zab50 x2 slot3; zab50 x2 slot4; zab50 der31 right
 il_2_1941	il_2_1941_4xfab100	fab100 der31 left; fab100 x2 slot3; fab100 x2 slot4; fab100 der31 right
 il_2_1941	il_2_1941_2xfab250	fab250 slot2; fab250 slot5
 il_2_1941	il_2_1941_rbs132_fab100	rbs 132 slot1; fab50 x2 slot3; fab50 x2 slot4; rbs 132 slot6
@@ -5087,6 +5375,7 @@ il_2_1942_luftwaffe	il_2_1942_luft_4xfab50	sc50 slot1; sc50 slot2
 il_2_1942_luftwaffe	il_2_1942_luft_2xfab250	2x sc250
 il_2_37_1943	default	no suspended armament
 il_2_37_1943	il_2_4xfab50	no suspended armament
+il_2_37_1943	il_2_4xzab50	no suspended armament
 il_2_37_1943	il_2_37_2xfab100	no suspended armament
 il_2_m82	il_2_m82_default	no suspended armament
 il_2_m82	il_2_1942_4x_rbs82	rbs 82 slot1; rbs 82 slot6
@@ -5096,6 +5385,7 @@ il_2_m82	il_2_m82_4x_rofs132	rofs 132 slot1; rofs 132 slot6
 il_2_m82	il_2_m82_4x_rbs132	rbs 132 slot1; rbs 132 slot6
 il_2_m82	il_2_m82_12x25m1	12 25 slot3; 12 25 slot4
 il_2_m82	il_2_m82_6x_fab50	fab50 der31 left; fab50 x2 slot3; fab50 x2 slot4; fab50 der31 right
+il_2_m82	il_2_m82_zab50	zab50 der31 left; zab50 x2 slot3; zab50 x2 slot4; zab50 der31 right
 il_2_m82	il_2_m82_4xfab100	fab100 der31 left; fab100 x2 slot3; fab100 x2 slot4; fab100 der31 right
 il_2_m82	il_2_m82_2xfab250	fab250 slot2; fab250 slot5
 il_28	il_28_12xfab100	no suspended armament
@@ -5138,6 +5428,7 @@ il_2m_1943	il_2m_1943_rofs_132	rofs 132 slot1; rofs 132 slot6
 il_2m_1943	il_2m_1943_rbs_132	rbs 132 slot1; rbs 132 slot6
 il_2m_1943	il_2m_1943_ao_25m	12 25 slot3; 12 25 slot4
 il_2m_1943	il_2m_1943_fab50	fab50 der31 left; fab50 x2 slot3; fab50 x2 slot4; fab50 der31 right
+il_2m_1943	il_2m_1943_zab50	zab50 der31 left; zab50 x2 slot3; zab50 x2 slot4; zab50 der31 right
 il_2m_1943	il_2m_1943_fab100	fab100 der31 left; fab100 x2 slot3; fab100 x2 slot4; fab100 der31 right
 il_2m_1943	il_2m_1943_fab250	fab250 slot2; fab250 slot5
 il_8_1944	il_8_1944_default	no suspended armament
@@ -5186,6 +5477,7 @@ il-2i	il-2i_rofs132	rofs 132 slot1; rofs 132 slot6
 il-2i	il-2i_rbs132	rbs 132 slot1; rbs 132 slot6
 il-2i	il-2m_12x25m1	12 25 slot3; 12 25 slot4
 il-2i	il-2i_fab50	fab50 der31 left; fab50 x2 slot3; fab50 x2 slot4; fab50 der31 right
+il-2i	il-2i_zab50	zab50 der31 left; zab50 x2 slot3; zab50 x2 slot4; zab50 der31 right
 il-2i	il-2i_fab100	fab100 der31 left; fab100 x2 slot3; fab100 x2 slot4; fab100 der31 right
 il-2i	il-2i_fab250	fab250 slot2; fab250 slot5
 il-2i	il-2i_fab100_rs132	rofs 132 slot1; fab100 x2 slot3; fab100 x2 slot4; rofs 132 slot6
@@ -5196,6 +5488,7 @@ il-2m	il_2m_rofs_132	rofs 132 slot1; rofs 132 slot6
 il-2m	il_2m_rbs_132	rbs 132 slot1; rbs 132 slot6
 il-2m	il_2m_ao_25m	12 25 slot3; 12 25 slot4
 il-2m	il_2m_fab50	fab50 der31 left; fab50 x2 slot3; fab50 x2 slot4; fab50 der31 right
+il-2m	il_2m_zab50	zab50 der31 left; zab50 x2 slot3; zab50 x2 slot4; zab50 der31 right
 il-2m	il_2m_fab100	fab100 der31 left; fab100 x2 slot3; fab100 x2 slot4; fab100 der31 right
 il-2m	il_2m_fab250	fab250 slot2; fab250 slot5
 il-2m_mstitel	default	no suspended armament
@@ -5205,6 +5498,7 @@ il-2m_mstitel	il-2m_mstitel_rofs_132	rofs 132 slot1; rofs 132 slot6
 il-2m_mstitel	il-2m_mstitel_rbs_132	rbs 132 slot1; rbs 132 slot6
 il-2m_mstitel	il-2m_mstitel_ao_25m	12 25 slot3; 12 25 slot4
 il-2m_mstitel	il-2m_mstitel_fab50	fab50 der31 left; fab50 x2 slot3; fab50 x2 slot4; fab50 der31 right
+il-2m_mstitel	il_2m_mstitel_zab50	zab50 der31 left; zab50 x2 slot3; zab50 x2 slot4; zab50 der31 right
 il-2m_mstitel	il-2m_mstitel_fab100	fab100 der31 left; fab100 x2 slot3; fab100 x2 slot4; fab100 der31 right
 il-2m_mstitel	il-2m_mstitel_fab250	fab250 slot2; fab250 slot5
 il-4	il_4_default	fab100
@@ -5235,6 +5529,7 @@ j_10a	j_10a_hf14	4x hf14
 j_10a	j_10a_250_bomb	3x 250 3 x2; 6x 250 3
 j_10a	j_10a_500_bomb	5x 500 3
 j_10a	j_10a_250_drag_bomb	3x 250 4 x2; 6x 250 4
+j_10a	j_10a_250_3_cluster	5x 250 3 cluster
 j_10a	j_10a_500_drag_bomb	5x 500 4
 j_10a	j_10a_250_guided_bomb	4x ls250; k adc03a
 j_10a	j_10a_500_guided_bomb	4x ls500; k adc03a
@@ -5255,6 +5550,7 @@ j_10c	j_10c_hf14	4x hf14
 j_10c	j_10c_250_bomb	250 3 x3 slot2; 250 3 slot3; 250 3 slot4; 250 3 slot5; 250 3 x2 slot6; 250 3 slot7; 250 3 slot8; 250 3 slot9; 250 3 x3 slot10
 j_10c	j_10c_500_bomb	5x 500 3
 j_10c	j_10c_250_drag_bomb	250 4 x3 slot2; 250 4 slot3; 250 4 slot4; 250 4 slot5; 250 4 x2 slot6; 250 4 slot7; 250 4 slot8; 250 4 slot9; 250 4 x3 slot10
+j_10c	j_10c_250_3_cluster	250 3 cluster slot2; 250 3 cluster slot3; 250 3 cluster slot6; 250 3 cluster slot9; 250 3 cluster slot10
 j_10c	j_10c_500_drag_bomb	5x 500 4
 j_10c	j_10c_250_guided_bomb	7x ls250; yings 3a
 j_10c	j_10c_500_guided_bomb	4x ls500; yings 3a
@@ -5285,6 +5581,8 @@ j_11	j_11_fab_250m_62	fab 250m 62 slot3 x2; fab 250m 62 slot4; fab 250m 62 slot5
 j_11	j_11_ofab_250sh	fab 250sh slot3 x2; fab 250sh slot4; fab 250sh slot5; fab 250sh slot6; fab 250sh slot7; fab 250sh slot8 x2
 j_11	j_11_fab_500m_62	fab 500m 62 slot3 x2; fab 500m 62 slot4; fab 500m 62 slot5; fab 500m 62 slot6; fab 500m 62 slot7; fab 500m 62 slot8 x2
 j_11	j_11_fab_500sh	fab 500sh slot3 x2; fab 500sh slot4; fab 500sh slot5; fab 500sh slot6; fab 500sh slot7; fab 500sh slot8 x2
+j_11	j_11_rbk_500_ao_2_5rtm	rbk 500 ao 2 5rtm slot3 x2; rbk 500 ao 2 5rtm slot4; rbk 500 ao 2 5rtm slot5; rbk 500 ao 2 5rtm slot6; rbk 500 ao 2 5rtm slot7; rbk 500 ao 2 5rtm slot8 x2
+j_11	j_11_rbk_500_ptab	rbk 500 ptab slot3 x2; rbk 500 ptab slot4; rbk 500 ptab slot5; rbk 500 ptab slot6; rbk 500 ptab slot7; rbk 500 ptab slot8 x2
 j_11	j_11_zb500	zb 500 slot3 x2; zb 500 slot4; zb 500 slot5; zb 500 slot6; zb 500 slot7; zb 500 slot8 x2
 j_11a	j_11a_default	no suspended armament
 j_11a	j_11a_r73e_default	2x r73 default; r77 slot4; r77 slot7
@@ -5303,6 +5601,8 @@ j_11a	j_11a_fab_250m_62	fab 250m 62 slot3 x2; fab 250m 62 slot4; fab 250m 62 slo
 j_11a	j_11a_ofab_250sh	fab 250sh slot3 x2; fab 250sh slot4; fab 250sh slot5; fab 250sh slot6; fab 250sh slot7; fab 250sh slot8 x2
 j_11a	j_11a_fab_500m_62	fab 500m 62 slot3 x2; fab 500m 62 slot4; fab 500m 62 slot5; fab 500m 62 slot6; fab 500m 62 slot7; fab 500m 62 slot8 x2
 j_11a	j_11a_fab_500sh	fab 500sh slot3 x2; fab 500sh slot4; fab 500sh slot5; fab 500sh slot6; fab 500sh slot7; fab 500sh slot8 x2
+j_11a	j_11a_rbk_500_ao_2_5rtm	rbk 500 ao 2 5rtm slot3 x2; rbk 500 ao 2 5rtm slot4; rbk 500 ao 2 5rtm slot5; rbk 500 ao 2 5rtm slot6; rbk 500 ao 2 5rtm slot7; rbk 500 ao 2 5rtm slot8 x2
+j_11a	j_11a_rbk_500_ptab	rbk 500 ptab slot3 x2; rbk 500 ptab slot4; rbk 500 ptab slot5; rbk 500 ptab slot6; rbk 500 ptab slot7; rbk 500 ptab slot8 x2
 j_11a	j_11a_zb500	zb 500 slot3 x2; zb 500 slot4; zb 500 slot5; zb 500 slot6; zb 500 slot7; zb 500 slot8 x2
 j_11b	j_11b_default	pl8 slot1 default; pl12 slot4 default; pl12 slot7 default; pl8 slot10 default
 j_11b	j_11b_pl_8b	pl8 slot1 default; pl8 slot2; pl8 slot3; pl8 slot8; pl8 slot9; pl8 slot10 default
@@ -5319,6 +5619,7 @@ j_11b	j_11b_cm_102	cm 102 slot3; cm 102 slot4; cm 102 slot5; cm 102 slot6; cm 10
 j_11b	j_11b_type_250_3	type 250 3 slot2; type 250 3 slot3 x2; type 250 3 slot4; type 250 3 slot5; type 250 3 slot6; type 250 3 slot7; type 250 3 slot8 x2; type 250 3 slot9
 j_11b	j_11b_type_500_3	type 500 3 slot2; type 500 3 slot3 x2; type 500 3 slot4; type 500 3 slot5; type 500 3 slot6; type 500 3 slot7; type 500 3 slot8 x2; type 500 3 slot9
 j_11b	j_11b_type_250_4	type 250 4 slot2; type 250 4 slot3 x2; type 250 4 slot4; type 250 4 slot5; type 250 4 slot6; type 250 4 slot7; type 250 4 slot8 x2; type 250 4 slot9
+j_11b	j_11b_type_250_3_cluster	type 250 3 cluster slot2; type 250 3 cluster slot3 x2; type 250 3 cluster slot4; type 250 3 cluster slot5; type 250 3 cluster slot6; type 250 3 cluster slot7; type 250 3 cluster slot8 x2; type 250 3 cluster slot9
 j_11b	j_11b_type_500_4	type 500 4 slot2; type 500 4 slot3 x2; type 500 4 slot4; type 500 4 slot5; type 500 4 slot6; type 500 4 slot7; type 500 4 slot8 x2; type 500 4 slot9
 j_11b	j_11b_tg250	gb250 slot2; gb250 slot3; gb250 slot5; gb250 slot6; k adc03a; gb250 slot8; gb250 slot9
 j_11b	j_11b_tg500	gb500 slot2; gb500 slot3; gb500 slot5; gb500 slot6; k adc03a; gb500 slot8; gb500 slot9
@@ -5341,6 +5642,7 @@ j_15t	j_15t_ld10	ld10 x2 slot3; ld10 slot4; ld10 slot5; ld10 slot6; ld10 slot7; 
 j_15t	j_15t_250_3	250 3 slot2; 250 3 x3 slot3; 250 3 slot5; 250 3 slot6; 250 3 slot7; 250 3 slot8; 250 3 x3 slot10; 250 3 slot11
 j_15t	j_15t_500_3	500 3 slot3; 500 3 slot5; 500 3 slot6; 500 3 slot7; 500 3 slot8; 500 3 slot10
 j_15t	j_15t_250_4	250 4 slot2; 250 4 x3 slot3; 250 4 slot5; 250 4 slot6; 250 4 slot7; 250 4 slot8; 250 4 x3 slot10; 250 4 slot11
+j_15t	j_15t_250_3_cluster	250 3 cluster slot3; 250 3 cluster slot5; 250 3 cluster slot6; 250 3 cluster slot7; 250 3 cluster slot8; 250 3 cluster slot10
 j_15t	j_15t_500_4	500 4 slot3; 500 4 slot5; 500 4 slot6; 500 4 slot7; 500 4 slot8; 500 4 slot10
 j_15t	j_15t_gb1000	ls1000 slot4; k adc03a; ls1000 slot9
 j_15t	j_15t_ls6_250	ls6 250 slot2; ls6 250 slot3; ls6 250 slot5; ls6 250 slot6; ls6 250 slot7; k adc03a; ls6 250 slot10; ls6 250 slot11
@@ -5362,18 +5664,19 @@ j_16	j_16_yj91as	yj91as slot3; yj91as slot4; yj91as slot5; yj91as slot8; yj91as 
 j_16	j_16_yj91a	yj91a slot3; yj91a slot4; yj91a slot5; yj91a slot8; yj91a slot9; yj91a slot10
 j_16	j_16_cm_102	cm 102 slot3; cm 102 slot4; cm 102 slot5; cm 102 slot6; cm 102 slot7; cm 102 slot8; cm 102 slot9; cm 102 slot10
 j_16	j_16_ld10	ld10 slot2; ld10 slot3; ld10 slot4; ld10 slot5; ld10 slot6; ld10 slot7; ld10 slot8; ld10 slot9; ld10 slot10; ld10 slot11
-j_16	j_16_250_3	250 3 x2 slot3; 250 3 x2 slot5; 250 3 slot6; 250 3 slot7; 250 3 x2 slot8; 250 3 x2 slot10
-j_16	j_16_500_3	500 3 slot3; 500 3 slot5; 500 3 slot6; 500 3 slot7; 500 3 slot8; 500 3 slot10
-j_16	j_16_250_4	250 4 x2 slot3; 250 4 x2 slot5; 250 4 slot6; 250 4 slot7; 250 4 x2 slot8; 250 4 x2 slot10
-j_16	j_16_500_4	500 4 slot3; 500 4 slot5; 500 4 slot6; 500 4 slot7; 500 4 slot8; 500 4 slot10
+j_16	j_16_250_3	250 3 slot2; 250 3 x2 slot3; 250 3 slot4; 250 3 x2 slot5; 250 3 slot6; 250 3 slot7; 250 3 x2 slot8; 250 3 slot9; 250 3 x2 slot10; 250 3 slot11
+j_16	j_16_500_3	500 3 x2 slot3; 500 3 slot4; 500 3 slot5; 500 3 slot6; 500 3 slot7; 500 3 slot8; 500 3 slot9; 500 3 x2 slot10
+j_16	j_16_250_4	250 4 slot2; 250 4 x2 slot3; 250 4 slot4; 250 4 x2 slot5; 250 4 slot6; 250 4 slot7; 250 4 x2 slot8; 250 4 slot9; 250 4 x2 slot10; 250 4 slot11
+j_16	j_16_250_3_cluster	250 3 cluster x2 slot3; 250 3 cluster slot4; 250 3 cluster slot5; 250 3 cluster slot6; 250 3 cluster slot7; 250 3 cluster slot8; 250 3 cluster slot9; 250 3 cluster x2 slot10
+j_16	j_16_500_4	500 4 x2 slot3; 500 4 slot4; 500 4 slot5; 500 4 slot6; 500 4 slot7; 500 4 slot8; 500 4 slot9; 500 4 x2 slot10
 j_16	j_16_gb1000	ls1000 slot4; yings 3a slot5; ls1000 slot7; ls1000 slot9
-j_16	j_16_ls_500j	ls 500j slot3; yings 3a slot5; ls 500j slot6; ls 500j slot7; ls 500j slot8; ls 500j slot10
-j_16	j_16_ts_250	ts 250 x2 slot3; yings 3a slot5; ts 250 slot6; ts 250 slot7; ts 250 x2 slot8; ts 250 x2 slot10
-j_16	j_16_ls6_250	ls6 250 x2 slot3; ls6 250 x2 slot5; ls6 250 slot6; ls6 250 slot7; ls6 250 x2 slot8; ls6 250 x2 slot10
-j_16	j_16_ls6_250_ir	ls6 250 ir x2 slot3; ls6 250 ir x2 slot5; ls6 250 ir slot6; ls6 250 ir slot7; ls6 250 ir x2 slot8; ls6 250 ir x2 slot10
-j_16	j_16_ls6_500	ls6 500 slot3; ls6 500 slot5; ls6 500 slot6; ls6 500 slot7; ls6 500 slot8; ls6 500 slot10
-j_16	j_16_ls6_500_ir	ls6 500 ir slot3; ls6 500 ir slot5; ls6 500 ir slot6; ls6 500 ir slot7; ls6 500 ir slot8; ls6 500 ir slot10
-j_16	j_16_gb3	gb3 x2 slot3; gb3 x2 slot5; gb3 slot6; gb3 slot7; gb3 x2 slot8; gb3 x2 slot10
+j_16	j_16_ls_500j	ls 500j slot3; ls 500j slot4; yings 3a slot5; ls 500j slot6; ls 500j slot7; ls 500j slot8; ls 500j slot9; ls 500j slot10
+j_16	j_16_ts_250	ts 250 slot2; ts 250 x2 slot3; ts 250 slot4; yings 3a slot5; ts 250 slot6; ts 250 slot7; ts 250 x2 slot8; ts 250 slot9; ts 250 x2 slot10; ts 250 slot11
+j_16	j_16_ls6_250	ls6 250 slot2; ls6 250 x2 slot3; ls6 250 slot4; ls6 250 x2 slot5; ls6 250 slot6; ls6 250 slot7; ls6 250 x2 slot8; ls6 250 slot9; ls6 250 x2 slot10; ls6 250 slot11
+j_16	j_16_ls6_250_ir	ls6 250 ir slot2; ls6 250 ir x2 slot3; ls6 250 ir slot4; ls6 250 ir x2 slot5; ls6 250 ir slot6; ls6 250 ir slot7; ls6 250 ir x2 slot8; ls6 250 ir slot9; ls6 250 ir x2 slot10; ls6 250 ir slot11
+j_16	j_16_ls6_500	ls6 500 slot3; ls6 500 slot4; ls6 500 slot5; ls6 500 slot6; ls6 500 slot7; ls6 500 slot8; ls6 500 slot9; ls6 500 slot10
+j_16	j_16_ls6_500_ir	ls6 500 ir slot3; ls6 500 ir slot4; ls6 500 ir slot5; ls6 500 ir slot6; ls6 500 ir slot7; ls6 500 ir slot8; ls6 500 ir slot9; ls6 500 ir slot10
+j_16	j_16_gb3	gb3 slot2; gb3 x2 slot3; gb3 slot4; gb3 x2 slot5; gb3 slot6; gb3 slot7; gb3 x2 slot8; gb3 slot9; gb3 x2 slot10; gb3 slot11
 j_22m1a	j_22m1a_default	ptb
 j_22m1a	j_22m1a_plab_350m_73	plab 350m 73 slot1; plab 350m 73 slot2; plab 350m 73 slot3; plab 350m 73 slot4; plab 350m 73 slot5
 j_22m1a	j_22m1a_fab_100_m80	fab 100 m80 slot1; fab 100 m80 slot2; fab 100 m80 slot3; fab 100 m80 slot4; fab 100 m80 slot5
@@ -5419,6 +5722,7 @@ j_7e	j_7e_28x_type90	4x hf9
 j_7e	j_7e_4x250_bombs	4x gp250
 j_7e	j_7e_2x500_bombs	2x gp500
 j_7e	j_7e_4x250_4_bombs	4x 250 4
+j_7e	j_7e_4x250_3_cluster_bombs	2x 250 3 cluster
 j_7e	j_7e_2x500_4_bombs	2x 500 4
 j_8b	j_8b_default	ptb slot1; ptb slot4; ptb slot7
 j_8b	j_8b_2x_pl5b_default	2x default pl5b
@@ -5426,6 +5730,7 @@ j_8b	j_8b_4x_pl5b	2x pl5b; 2x default pl5b
 j_8b	j_8b_2x_aspide	2x aspide
 j_8b	j_8b_bomb250_gp	2x 250kg mk 82; 250kg mk 82 x6
 j_8b	j_8b_bomb250_4	2x 250 4; 250 4 x6
+j_8b	j_8b_bomb250_3_cluster	2x gp250 3 cluster
 j_8b	j_8b_bomb500_gp	2x gp500
 j_8b	j_8b_bomb500_4	2x gp500 4
 j_8b	j_8b_4x_type90_rockets	4x hf 6 type90 heat
@@ -5442,6 +5747,7 @@ j_8f	j_8f_4x_pl8	4x pl8; 2x pl8 default
 j_8f	j_8f_2x_pl12	2x pl12
 j_8f	j_8f_bomb250_gp	2x 250kg mk 82; 250kg mk 82 x6
 j_8f	j_8f_bomb250_4	2x 250 4; 250 4 x6
+j_8f	j_8f_bomb250_3_cluster	2x gp250 3 cluster
 j_8f	j_8f_bomb500_gp	2x gp500
 j_8f	j_8f_bomb500_4	2x gp500 4
 j_8f	j_8f_4x_type90_rockets	4x hf 6 type90 heat
@@ -5490,6 +5796,7 @@ jaguar_a	jaguar_a_rocket_lrf1	4x matra lr f1
 jaguar_a	jaguar_a_rocket_lau3a	2x lau3a; 2x lau3a x2
 jaguar_a	jaguar_a_rocket_lau10a	2x lau10a; 2x lau10a x2
 jaguar_a	jaguar_a_fire_bomb_fr_460l_secan_63	5x secan
+jaguar_a	jaguar_a_bomb_blg66	blg66 slot1; blg66 x2 slot2; blg66 x2 slot3; blg66 x2 slot4; blg66 slot5
 jaguar_a	jaguar_a_phimat_counteiner	phimat counteiner
 jaguar_a	jaguar_a_atlis2	atlis2
 jaguar_a	jaguar_a_as37_l_band	as37 l band slot3
@@ -5573,6 +5880,7 @@ jaguar_e	jaguar_e_atlis2	atlis2
 jaguar_gr1	jaguar_gr1_default	ptb slot2; ptb slot3; ptb slot4
 jaguar_gr1	jaguar_gr1_bomb_uk_540lbs_gp	2x uk 540lbs; 2x uk 540lbs x2; uk 540lbs x2 fuse
 jaguar_gr1	jaguar_gr1_bomb_uk_1000lbs_gp	2x uk 1000lbs; 2x uk 1000lbs x2; uk 1000lbs x2 fuse
+jaguar_gr1	jaguar_gr1_bomb_uk_bl755	2x uk bl755; 2x uk bl755 x2; uk bl755 x2 fuse
 jaguar_gr1	jaguar_gr1_bomb_uk_1000lbs_gp_n117	2x uk 1000lbs n117; 2x uk 1000lbs x2 n117; uk 1000lbs x2 fuse n117
 jaguar_gr1	jaguar_gr1_rocket_aim_9	2x aim9g
 jaguar_gr1	jaguar_gr1_phimat_counteiner	phimat container
@@ -5582,6 +5890,7 @@ jaguar_gr1a	jaguar_gr1a_rocket_aim_9	2x aim9g
 jaguar_gr1a	jaguar_gr1a_bomb_uk_540lbs_gp	2x uk 540lbs; 2x uk 540lbs x2; uk 540lbs x2 fuse
 jaguar_gr1a	jaguar_gr1a_bomb_uk_540lbs_retarded	2x uk 540lbs retarded; 2x uk 540lbs retarded x2; uk 540lbs retarded x2 fuse
 jaguar_gr1a	jaguar_gr1a_bomb_uk_1000lbs_gp	2x uk 1000lbs; 2x uk 1000lbs x2; uk 1000lbs x2 fuse
+jaguar_gr1a	jaguar_gr1a_bomb_uk_bl755	2x uk bl755; 2x uk bl755 x2; uk bl755 x2 fuse
 jaguar_gr1a	jaguar_gr1a_bomb_uk_1000lbs_gp_n117	2x uk 1000lbs n117; 2x uk 1000lbs x2 n117; uk 1000lbs x2 fuse n117
 jaguar_gr1a	jaguar_gr1_a_mk_13_tiald	tiald
 jaguar_gr1a	jaguar_gr1_rocket_a_crv7_ra79	4x lau 5003b
@@ -5593,6 +5902,7 @@ jaguar_is	jaguar_is_default	ptb slot2; ptb slot4; ptb slot7
 jaguar_is	jaguar_is_r_550_magic_2	r550 magic 2 left; r550 magic 2 right
 jaguar_is	jaguar_is_bomb_uk_540lbs_gp	2x uk 540lbs; 2x uk 540lbs x2; uk 540lbs x2 fuse
 jaguar_is	jaguar_is_bomb_uk_1000lbs_gp	2x uk 1000lbs; 2x uk 1000lbs x2; uk 1000lbs x2 fuse
+jaguar_is	jaguar_is_bomb_uk_bl755	2x uk bl755; 2x uk bl755 x2; uk bl755 x2 fuse
 jaguar_is	jaguar_is_bomb_uk_1000lbs_gp_n117	2x uk 1000lbs n117; 2x uk 1000lbs x2 n117; uk 1000lbs x2 fuse n117
 jaguar_is	jaguar_is_mk13	3x mk13; litening pod
 jaguar_is	jaguar_gr1_rocket_a_crv7_ra79	4x lau 5003b
@@ -5612,6 +5922,7 @@ jf_17	jf_17_ld10	ld10 x2 slot2; ld10 x2 slot6
 jf_17	jf_17_cm_102	cm 102 slot2; cm 102 slot3; cm 102 slot5; cm 102 slot6
 jf_17	jf_17_mk82_x2	mk82 x2 slot2; mk82 slot3; mk82 slot4; mk82 slot5; mk82 x2 slot6
 jf_17	jf_17_mk83	5x mk83
+jf_17	jf_17_250_3_cluster	5x 250 3 cluster
 jf_17	jf_17_mk84	3x mk84
 jf_17	jf_17_gbu12_x2	gbu 12 x2 slot2; gbu 12 slot3; aselpod; gbu 12 slot5; gbu 12 x2 slot6
 jf_17	jf_17_gbu16	4x gbu 16; aselpod
@@ -5629,6 +5940,7 @@ jh_7	jh_7_type90_rockets	4x hf 6 type90 heat
 jh_7	jh_7_type130_rockets	4x hf14
 jh_7	jh_7_bomb250_gp	2x 250 3 x4; 2x 250 3 x6
 jh_7	jh_7_bomb250_4	2x 250 4 x4; 2x 250 4 x6
+jh_7	jh_7_bomb250_3_cluster	4x 250 3 cluster x2
 jh_7	jh_7_bomb500_gp	4x 500 3 x2
 jh_7	jh_7_bomb500_4	4x 500 4 x2
 jh_7	jh_7_yj_81k	4x yj 81k
@@ -5643,6 +5955,7 @@ jh_7a	jh_7a_type90_rockets	6x hf 6 type90 heat
 jh_7a	jh_7a_type130_rockets	4x hf14
 jh_7a	jh_7a_bomb250_gp	2x 250 3; 2x 250 3 x4; 2x 250 3 x6
 jh_7a	jh_7a_bomb250_4	2x 250 4; 2x 250 4 x4; 2x 250 4 x6
+jh_7a	jh_7a_bomb250_3_cluster	4x 250 3 cluster x2
 jh_7a	jh_7a_bomb500_gp	4x 500 3 x2
 jh_7a	jh_7a_bomb500_4	4x 500 4 x2
 jh_7a	jh_7a_sl_250j	6x ls250; k adc03a
@@ -5671,6 +5984,7 @@ jh_7a_prototype	jh_7a_prototype_type90_rockets	2x pl5e wing; 6x hf 6 type90 heat
 jh_7a_prototype	jh_7a_prototype_type130_rockets	2x pl5e wing; 2x pl8; 4x hf14
 jh_7a_prototype	jh_7a_prototype_bomb250_gp	2x pl5e wing; 2x 250 3; 2x 250 3 x4; 2x 250 3 x6
 jh_7a_prototype	jh_7a_prototype_bomb250_4	2x pl5e wing; 2x 250 4; 2x 250 4 x4; 2x 250 4 x6
+jh_7a_prototype	jh_7a_prototype_bomb250_3_cluster	2x pl5e wing; 2x pl8; 4x 250 3 cluster x2
 jh_7a_prototype	jh_7a_prototype_bomb500_gp	2x pl5e wing; 2x pl8; 4x 500 3 x2
 jh_7a_prototype	jh_7a_prototype_bomb500_4	2x pl5e wing; 2x pl8; 4x 500 4 x2
 jh_7a_prototype	jh_7a_prototype_sl_250j	2x pl5e wing; 6x ls250; k adc03a
@@ -5707,6 +6021,7 @@ jh_7a2	jh_7a2_kd_88_ir	kd 88 ir slot4; kd 88 ir slot5; kd 88 ir slot8; kd 88 ir 
 jh_7a2	jh_7a2_bomb250_gp_default	250 3 x6 slot5; 250 3 x6 slot8
 jh_7a2	jh_7a2_bomb250_gp	250 3 slot2; 250 3 x4 slot4; 250 3 x6 slot5; 250 3 x6 slot8; 250 3 x4 slot9; 250 3 slot11
 jh_7a2	jh_7a2_bomb250_4	250 4 slot2; 250 4 x4 slot4; 250 4 x6 slot5; 250 4 x6 slot8; 250 4 x4 slot9; 250 4 slot11
+jh_7a2	jh_7a2_bomb250_3_cluster	250 3 cluster x2 slot4; 250 3 cluster x2 slot5; 250 3 cluster x2 slot8; 250 3 cluster x2 slot9
 jh_7a2	jh_7a2_bomb500_gp	500 3 x2 slot4; 500 3 x2 slot5; 500 3 x2 slot8; 500 3 x2 slot9
 jh_7a2	jh_7a2_bomb500_4	500 4 x2 slot4; 500 4 x2 slot5; 500 4 x2 slot8; 500 4 x2 slot9
 jh_7a2	jh_7a2_sl_250j	ls250 slot2; ls250 slot4; ls250 slot5; k adc03a; ls250 slot8; ls250 slot9; ls250 slot11
@@ -5721,6 +6036,7 @@ jh_7a2	jh_7a2_yj91_l_113	yj91 l 113 slot4; yj91 l 113 slot5; yj91 l 113 slot8; y
 jh_7a2	jh_7a2_cm_102	cm 102 slot4; cm 102 slot5; cm 102 slot8; cm 102 slot9
 jh_7a2	jh_7a2_yj_83k	yj 83k slot4; yj 83k slot5; yj 83k slot8; yj 83k slot9
 jh_7a2	jh_7a2_yj91as	yj91as slot4; yj91as slot5; yj91as slot8; yj91as slot9
+ju_88g_1_mistel	ju_88g_1_mistel_default	no suspended armament
 ju-188a-2	ju-188A-2_default	10sc50
 ju-188a-2	ju_188a_6x250	6x sc250
 ju-188a-2	ju_188a_2x500	2x sc500
@@ -6152,7 +6468,11 @@ lagg-3-66	LaGG-3-66_fab100	fab100 slot2; fab100 slot3
 lagg-3-66	LaGG-3-35_rockets	rs82 slot1; rs82 slot4
 lagg-3-66	LaGG-3-35_rockets_rbs	rbs82 slot1; rbs82 slot4
 lagg-3-8	LaGG-3-8_default	no suspended armament
-lagg-i-301	I-301_default	no suspended armament
+lagg-i-301	LaGG-3-35_default	no suspended armament
+lagg-i-301	LaGG-3-35_rockets	rs82 slot1; rs82 slot4
+lagg-i-301	LaGG-3-35_rockets_rbs	rbs82 slot1; rbs82 slot4
+lagg-i-301	LaGG-3-35_fab50	fab50 slot2; fab50 slot3
+lagg-i-301	LaGG-3-35_fab100	fab100 slot2; fab100 slot3
 lancaster_mk1	lancaster_mk3_14x250lbs	no suspended armament
 lancaster_mk1	lancaster_mk3_6x500lbs_8x250lbs	no suspended armament
 lancaster_mk1	lancaster_mk3_14x500lbs	no suspended armament
@@ -6667,6 +6987,7 @@ mi_28nm	mi_28nm_rocket_9M120_4	9m120 x4 left; 9m120 x4 right
 mi_28nm	mi_28nm_rocket_9M120	2x 9m120 x8
 mi_28nm	mi_28nm_rocket_vyhr	9k127 x8 left; 9k127 x8 right
 mi_28nm	mi_28nm_rocket_lmur	4x lmur x2
+mi_28nm	mi_28nm_rocket_lmur_wo_mitl	4x lmur x2 wo mitl
 mi_28nm	mi_28nm_fab250	4x fab250
 mi_28nm	mi_28nm_fab500	4x fab500
 mi_28nm	mi_28nm_upk_23_250	2x upk250
@@ -6688,8 +7009,6 @@ mi_35m_pakistan	mi_35m_pakistan_rocket_c_8_ko	4x b8m1
 mi_35m_pakistan	mi_35m_pakistan_rocket_c_13	9m39; 2x c13; 9m120 x8
 mi_35m_pakistan	mi_35m_pakistan_upk_23_250	9m39; 2x upk250; 9m120 x8
 mi_35m_pakistan	mi_35m_pakistan_9m114_c_8_ko	9m39; 2x b8m1; 9m114 x8
-mi_35m_pakistan	mi_35m_pakistan_9m114_c_13	9m39; 2x c13; 9m114 x8
-mi_35m_pakistan	mi_35m_pakistan_9m114_upk_23_250	9m39; 2x upk250; 9m114 x8
 mi_35m_pakistan	mi_35m_pakistan_9m114_c_13	9m39; 2x c13; 9m114 x8
 mi_35m_pakistan	mi_35m_pakistan_9m114_upk_23_250	9m39; 2x upk250; 9m114 x8
 mi_35p	mi_35p_default	9m120 x4 left; b8m1 slot2; b8m1 slot3
@@ -6721,6 +7040,7 @@ mi_4av	mi_4av_4x9m17m	2x 9m17m default; 2x 9m17m
 mi_4av	mi_4av_6xfab100	6x fab100
 mi_4av	mi_4av_4xfab250	4x fab250
 mi_4av	mi_4av_4xfab250_9m17m	2x 9m17m default; 4x fab250; 2x 9m17m
+mi_4av_killstreak	mi_4av_killstreak_default	2x ub16
 mi_8amtsh	mi_8amtsh_default	6x b8m1
 mi_8amtsh	mi_8amtsh_b8m_9m114_default	2x 9m114 x2; 4x b8m1
 mi_8amtsh	mi_8amtsh_9m114	2x 9m114 x4
@@ -6803,6 +7123,8 @@ mig_23bn	mig_23bn_bomb_fab500m_62	4x fab 500m 62t; fab 500m 62t slot3; fab 500m 
 mig_23bn	mig_23bn_bomb_fab500m_62_x4	2x fab 500m 62 x2
 mig_23bn	mig_23bn_bomb_ofab250sh	6x ofab 250sh
 mig_23bn	mig_23bn_bomb_fab500sh	6x fab 500sh
+mig_23bn	mig_23bn_bomb_rbk_500_ao_2_5rtm	6x rbk 500 ao 2 5rtm
+mig_23bn	mig_23bn_bomb_rbk_500_ptab	6x rbk 500 ptab
 mig_23bn	mig_23bn_fire_bomb_zb_500	2x zb 500; zb 500 slot3; zb 500 slot5
 mig_23bn	mig_23bn_upk_250_gun_pod	2x upk23 gunpod
 mig_23m	mig_23m_default	ptb
@@ -6942,6 +7264,8 @@ mig_27k	mig_27k_bomb_ofab250m_62	2x fab 250m 62 x2; 5x fab 250m 62
 mig_27k	mig_27k_bomb_fab500m_62	2x fab 500m 62 x2; 4x fab 500m 62t
 mig_27k	mig_27k_bomb_ofab250sh	7x ofab 250sh
 mig_27k	mig_27k_bomb_fab500sh	5x fab 500sh
+mig_27k	mig_27k_bomb_rbk_500_ao_2_5rtm	7x rbk 500 ao 2 5rtm
+mig_27k	mig_27k_bomb_rbk_500_ptab	7x rbk 500 ptab
 mig_27k	mig_27k_fire_bomb_zb_500	4x zb 500
 mig_27k	mig_27k_kab500kr	4x kab 500kr
 mig_27k	mig_27k_kab500l	4x kab 500l
@@ -6965,6 +7289,8 @@ mig_27m	mig_27m_bomb_ofab250m_62	2x fab 250m 62 x2; 5x fab 250m 62
 mig_27m	mig_27m_bomb_fab500m_62	2x fab 500m 62 x2; 4x fab 500m 62t
 mig_27m	mig_27m_bomb_ofab250sh	7x ofab 250sh
 mig_27m	mig_27m_bomb_fab500sh	5x fab 500sh
+mig_27m	mig_27m_bomb_rbk_500_ao_2_5rtm	2x rbk 500 ao 2 5rtm x2; 4x rbk 500 ao 2 5rtm
+mig_27m	mig_27m_bomb_rbk_500_ptab	2x rbk 500 ptab x2; 4x rbk 500 ptab
 mig_27m	mig_27m_kab500kr	4x kab 500kr
 mig_27m	mig_27m_fire_bomb_zb_500	4x zb 500
 mig_27m	mig_27m_rocket_ub32	4x ub 32a 24 s5k
@@ -6999,6 +7325,8 @@ mig_29_9_12	mig_29_9_12_fab_500_m54	4x fab 500 m54
 mig_29_9_12	mig_29_9_12_fab_500_m54_x2	2x fab 500 m54 x2
 mig_29_9_12	mig_29_9_12_ofab_250sh_x2	4x ofab 250sh x2
 mig_29_9_12	mig_29_9_12_fab_500sh	2x fab 500sh; 2x fab 500sh x2
+mig_29_9_12	mig_29_9_12_rbk_500_ao_2_5rtm	2x rbk 500 ao 2 5rtm; 2x rbk 500 ao 2 5rtm x2
+mig_29_9_12	mig_29_9_12_rbk_500_ptab	2x rbk 500 ptab; 2x rbk 500 ptab x2
 mig_29_9_12	mig_29_9_12_zb500	4x zb 500
 mig_29_9_12_germany	mig_29_9_12_germany_default	ptb
 mig_29_9_12_germany	mig_29_9_12_germany_r60mk_default	2x default r60mk; 2x r27r1
@@ -7020,6 +7348,8 @@ mig_29_9_12_germany	mig_29_9_12_germany_fab_500_m54	4x fab 500 m54
 mig_29_9_12_germany	mig_29_9_12_germany_fab_500_m54_x2	2x fab 500 m54 x2
 mig_29_9_12_germany	mig_29_9_12_germany_ofab_250sh_x2	4x ofab 250sh x2
 mig_29_9_12_germany	mig_29_9_12_germany_fab_500sh	2x fab 500sh; 2x fab 500sh x2
+mig_29_9_12_germany	mig_29_9_12_germany_rbk_500_ao_2_5rtm	2x rbk 500 ao 2 5rtm; 2x rbk 500 ao 2 5rtm x2
+mig_29_9_12_germany	mig_29_9_12_germany_rbk_500_ptab	2x rbk 500 ptab; 2x rbk 500 ptab x2
 mig_29_9_12_germany	mig_29_9_12_germany_zb500	4x zb 500
 mig_29_9_12_sniper	mig_29_9_12_sniper_r60mk_default	2x default r60mk; 2x r27r1; ptb
 mig_29_9_12_sniper	mig_29_9_12_sniper_r27er1	2x r27er1
@@ -7033,6 +7363,8 @@ mig_29_9_12_sniper	mig_29_9_12_sniper_fab_250m_62_x2_r60mk	2x default r60mk; 4x 
 mig_29_9_12_sniper	mig_29_9_12_sniper_fab_500m_62_x2_r60mk	2x default r60mk; 2x fab 500 m62 x2
 mig_29_9_12_sniper	mig_29_9_12_sniper_mk82_r60mk	2x default r60mk; 4x mk82 x2; ptb
 mig_29_9_12_sniper	mig_29_9_12_sniper_mk83_r60mk	2x default r60mk; 4x mk83; ptb
+mig_29_9_12_sniper	mig_29_9_12_sniper_rbk_500_ao_2_5rtm_r60mk	2x default r60mk; 2x rbk 500 ao 2 5rtm; 2x rbk 500 ao 2 5rtm x2
+mig_29_9_12_sniper	mig_29_9_12_sniper_rbk_500_ptab_r60mk	2x default r60mk; 2x rbk 500 ptab; 2x rbk 500 ptab x2
 mig_29_9_12_sniper	mig_29_9_12_sniper_zb500_r60mk	2x default r60mk; 4x zb 500
 mig_29_9_12_sniper	mig_29_9_12_sniper_b8m1_fab_500m_62_r60mk	2x default r60mk; 2x b8m1 s 8ko; 2x fab 500 m62 x2; ptb
 mig_29_9_12_sniper	mig_29_9_12_sniper_b8m1_mk83_r60mk	2x default r60mk; 2x mk83; 2x b8m1 s 8ko; ptb
@@ -7056,6 +7388,8 @@ mig_29_9_12b_hungary	mig_29_9_12_germany_fab_500_m54	4x fab 500 m54
 mig_29_9_12b_hungary	mig_29_9_12_germany_fab_500_m54_x2	2x fab 500 m54 x2
 mig_29_9_12b_hungary	mig_29_9_12_germany_ofab_250sh_x2	4x ofab 250sh x2
 mig_29_9_12b_hungary	mig_29_9_12_germany_fab_500sh	2x fab 500sh; 2x fab 500sh x2
+mig_29_9_12b_hungary	mig_29_9_12_germany_rbk_500_ao_2_5rtm	2x rbk 500 ao 2 5rtm; 2x rbk 500 ao 2 5rtm x2
+mig_29_9_12b_hungary	mig_29_9_12_germany_rbk_500_ptab	2x rbk 500 ptab; 2x rbk 500 ptab x2
 mig_29_9_12b_hungary	mig_29_9_12_germany_zb500	4x zb 500
 mig_29_9_12g	mig_29_9_12g_default	ptb
 mig_29_9_12g	mig_29_9_12g_r73_default	2x r73 default; 2x r27r1
@@ -7077,6 +7411,8 @@ mig_29_9_12g	mig_29_9_12g_fab_500_m54	4x fab 500 m54
 mig_29_9_12g	mig_29_9_12g_fab_500_m54_x2	2x fab 500 m54 x2
 mig_29_9_12g	mig_29_9_12g_ofab_250sh_x2	4x ofab 250sh x2
 mig_29_9_12g	mig_29_9_12g_fab_500sh	2x fab 500sh; 2x fab 500sh x2
+mig_29_9_12g	mig_29_9_12g_rbk_500_ao_2_5rtm	2x rbk 500 ao 2 5rtm; 2x rbk 500 ao 2 5rtm x2
+mig_29_9_12g	mig_29_9_12g_rbk_500_ptab	2x rbk 500 ptab; 2x rbk 500 ptab x2
 mig_29_9_12g	mig_29_9_12g_zb500	4x zb 500
 mig_29_9_13	mig_29_9_13_default	ptb
 mig_29_9_13	mig_29_9_13_r73_default	2x r73 default; 2x r27r
@@ -7098,6 +7434,8 @@ mig_29_9_13	mig_29_9_13_fab_500_m54	4x fab 500 m54
 mig_29_9_13	mig_29_9_13_fab_500_m54_x2	2x fab 500 m54 x2
 mig_29_9_13	mig_29_9_13_ofab_250sh_x2	4x ofab 250sh x2
 mig_29_9_13	mig_29_9_13_fab_500sh	2x fab 500sh; 2x fab 500sh x2
+mig_29_9_13	mig_29_9_13_rbk_500_ao_2_5rtm	2x rbk 500 ao 2 5rtm; 2x rbk 500 ao 2 5rtm x2
+mig_29_9_13	mig_29_9_13_rbk_500_ptab	2x rbk 500 ptab; 2x rbk 500 ptab x2
 mig_29_9_13	mig_29_9_13_zb500	4x zb 500
 mig_29kr_9_41r	mig_29kr_9_41r_default	2x r73 default; 2x r77 default; ptb slot3; ptb slot4; ptb slot5; ptb slot6; ptb slot7
 mig_29kr_9_41r	mig_29kr_9_41r_drop_tank	ptb slot3; ptb slot4; ptb slot5; ptb slot6; ptb slot7
@@ -7119,6 +7457,8 @@ mig_29kr_9_41r	mig_29kr_9_41r_fab_500m_62	2x fab 500m 62t; 2x fab 500 m62 x2
 mig_29kr_9_41r	mig_29kr_9_41r_ofab_250sh	4x ofab 250sh x2
 mig_29kr_9_41r	mig_29kr_9_41r_fab_500sh	2x fab 500sh; 2x fab 500sh x2
 mig_29kr_9_41r	mig_29kr_9_41r_kab500kr_e	4x kab 500kr
+mig_29kr_9_41r	mig_29kr_9_41r_rbk_500_ao_2_5rtm	2x rbk 500 ao 2 5rtm; 2x rbk 500 ao 2 5rtm x2
+mig_29kr_9_41r	mig_29kr_9_41r_rbk_500_ptab	2x rbk 500 ptab; 2x rbk 500 ptab x2
 mig_29kr_9_41r	mig_29kr_9_41r_zb500	4x zb 500
 mig_29m_9_15	mig_29m_9_15_default	ptb
 mig_29m_9_15	mig_29m_9_15_2x_r73_2x77_default	2x r73 default; 2x r77 default
@@ -7143,6 +7483,8 @@ mig_29m_9_15	mig_29m_9_15_8x_fab_500m_62	2x fab 500m 62t; 2x fab 500 m62 x2
 mig_29m_9_15	mig_29m_9_15_8x_ofab_250sh	4x ofab 250sh x2
 mig_29m_9_15	mig_29m_9_15_8x_fab_500sh	2x fab 500sh; 2x fab 500sh x2
 mig_29m_9_15	mig_29m_9_15_kab500kr_e	4x kab 500kr
+mig_29m_9_15	mig_29m_9_15_rbk_500_ao_2_5rtm	2x rbk 500 ao 2 5rtm; 2x rbk 500 ao 2 5rtm x2
+mig_29m_9_15	mig_29m_9_15_rbk_500_ptab	2x rbk 500 ptab; 2x rbk 500 ptab x2
 mig_29m_9_15	mig_29m_9_15_4x_zb500	4x zb 500
 mig_29n	mig_29n_default	ptb
 mig_29n	mig_29n_r73_default	2x r73 default; r77 default slot2; r77 default slot6
@@ -7165,6 +7507,8 @@ mig_29n	mig_29n_fab_500_m54	4x fab 500 m54
 mig_29n	mig_29n_fab_500_m54_x2	2x fab 500 m54 x2
 mig_29n	mig_29n_ofab_250sh_x2	4x ofab 250sh x2
 mig_29n	mig_29n_fab_500sh	2x fab 500sh; 2x fab 500sh x2
+mig_29n	mig_29n_rbk_500_ao_2_5rtm	2x rbk 500 ao 2 5rtm; 2x rbk 500 ao 2 5rtm x2
+mig_29n	mig_29n_rbk_500_ptab	2x rbk 500 ptab; 2x rbk 500 ptab x2
 mig_29n	mig_29n_zb500	4x zb 500
 mig_29smt_9_19	mig_29smt_9_19_default	ptb
 mig_29smt_9_19	mig_29smt_9_19_r73_default	2x r73 default; 2x r77 default
@@ -7189,6 +7533,8 @@ mig_29smt_9_19	mig_29smt_9_19_ofab_250sh	4x ofab 250sh x2
 mig_29smt_9_19	mig_29smt_9_19_fab_500sh	2x fab 500sh; 2x fab 500sh x2
 mig_29smt_9_19	mig_29smt_9_19_kab500s	4x kab 500s
 mig_29smt_9_19	mig_29smt_9_19_kab500kr_e	4x kab 500kr
+mig_29smt_9_19	mig_29smt_9_19_rbk_500_ao_2_5rtm	2x rbk 500 ao 2 5rtm; 2x rbk 500 ao 2 5rtm x2
+mig_29smt_9_19	mig_29smt_9_19_rbk_500_ptab	2x rbk 500 ptab; 2x rbk 500 ptab x2
 mig_29smt_9_19	mig_29smt_9_19_zb500	4x zb 500
 mig_29smt_9_19_killstreak	mig_29smt_9_19_killstreak_default	no suspended armament
 mig_29smt_9_19_killstreak	mig_29smt_9_19_killstreak_rn_28	2x r73 default; 2x r77 default; rn 28; ptb
@@ -7234,6 +7580,8 @@ mig_35	mig_35_kab500s	4x kab 500s
 mig_35	mig_35_kab1500kr	2x kab 1500kr
 mig_35	mig_35_kab1500lg	2x kab 1500lg; t220
 mig_35	mig_35_grom2	4x grom2
+mig_35	mig_35_rbk_500_ao_2_5rtm	2x rbk 500 ao 2 5rtm; 2x rbk 500 ao 2 5rtm x2
+mig_35	mig_35_rbk_500_ptab	2x rbk 500 ptab; 2x rbk 500 ptab x2
 mig_35	mig_35_4x_zb500	4x zb 500
 mig-15	mig_15bis_nr23_default	no suspended armament
 mig-15	mig_15bis_nr23_100lb_bombs	no suspended armament
@@ -7386,6 +7734,7 @@ mig-21_bison	mig_21_bison_r_27r	2x r27r
 mig-21_bison	mig_21_bison_r_27t	2x r27t
 mig-21_bison	mig_21_bison_r_27r_r73	2x r73; 2x r27r
 mig-21_bison	mig_21_bison_r_27t_r73	2x r73; 2x r27t
+mig-21_bison	mig_21_bison_r_77	4x r77
 mig-21_bison	mig_21_bison_ofab100	2x r73; 2x fab100 x4
 mig-21_bison	mig_21_bison_mk82	4x mk82
 mig-21_bison	mig_21_bison_ofab250m_62t	4x fab250
@@ -7491,6 +7840,7 @@ mirage_2000_5f	mirage_2000_5f_matra_super_250_samp_type_25	9x bomb 250
 mirage_2000_5f	mirage_2000_5f_mk82	8x us 500lb mk 82 ldgp; us 500lb mk 82 ldgp x2
 mirage_2000_5f	mirage_2000_5f_matra_super_250_samp_type_25_200	9x bomb 250 200
 mirage_2000_5f	mirage_2000_5f_mk82_snakeye	8x us 500lb mk 82 ldgp snakeye; us 500lb mk 82 ldgp x2 snakeye
+mirage_2000_5f	mirage_2000_5f_blg66	blg66 slot2; blg66 slot3; blg66 slot4; blg66 slot5; blg66 slot6; blg66 slot7; blg66 slot8
 mirage_2000_5f	mirage_2000_5f_matra_lr_f4	4x lr f4
 mirage_2000_5f	mirage_2000_5f_gbu_12	3x us gbu 12; us gbu 12 x2; damocles
 mirage_2000_5f	mirage_2000_5f_gbu_16	us gbu 16; damocles
@@ -7512,6 +7862,7 @@ mirage_2000c_s4	mirage_2000c_s4_matra_super_530f	2x matra super 530f
 mirage_2000c_s4	mirage_2000c_s4_matra_super_530d	2x matra super 530d
 mirage_2000c_s4	mirage_2000c_s4_matra_super_250_samp_type_25	7x bomb 250
 mirage_2000c_s4	mirage_2000c_s4_matra_super_250_samp_type_25_200	7x bomb 250 200
+mirage_2000c_s4	mirage_2000c_s4_blg66	blg66 slot2; blg66 slot3; blg66 slot4; blg66 slot5; blg66 slot6; blg66 slot7; blg66 slot8
 mirage_2000c_s4	mirage_2000c_s4_as_37	2x as 37
 mirage_2000c_s5	mirage_2000c_s5_default	ptb
 mirage_2000c_s5	mirage_2000c_s5_r_550_magic	2x r550 magic 1; 2x matra super 530f
@@ -7521,6 +7872,7 @@ mirage_2000c_s5	mirage_2000c_s5_matra_super_530f	2x matra super 530f
 mirage_2000c_s5	mirage_2000c_s5_matra_super_530d	2x matra super 530d
 mirage_2000c_s5	mirage_2000c_s5_matra_super_250_samp_type_25	7x bomb 250
 mirage_2000c_s5	mirage_2000c_s5_matra_super_250_samp_type_25_200	7x bomb 250 200
+mirage_2000c_s5	mirage_2000c_s5_blg66	blg66 slot2; blg66 slot3; blg66 slot4; blg66 slot5; blg66 slot6; blg66 slot7; blg66 slot8
 mirage_2000c_s5	mirage_2000c_s5_as_37	2x as 37
 mirage_2000d_r1	mirage_2000d_r1_default	ptb
 mirage_2000d_r1	mirage_2000d_r1_cc_630_gunpod	cc 630 gunpod
@@ -7531,6 +7883,7 @@ mirage_2000d_r1	mirage_2000d_r1_matra_super_250_samp_type_25	5x bomb 250 default
 mirage_2000d_r1	mirage_2000d_r1_mk82	8x us 500lb mk 82 ldgp; us 500lb mk 82 ldgp x2
 mirage_2000d_r1	mirage_2000d_r1_matra_super_250_samp_type_25_200	9x bomb 250 200
 mirage_2000d_r1	mirage_2000d_r1_mk82_snakeye	8x us 500lb mk 82 ldgp snakeye; us 500lb mk 82 ldgp x2 snakeye
+mirage_2000d_r1	mirage_2000d_r1_blg66	blg66 slot2; blg66 slot3; blg66 slot4; blg66 slot5; blg66 slot6; blg66 slot7; blg66 slot8
 mirage_2000d_r1	mirage_2000d_r1_gbu_12	us gbu 12 x2; pdlct s
 mirage_2000d_r1	mirage_2000d_r1_gbu_16	us gbu 16; pdlct s
 mirage_2000d_r1	mirage_2000d_r1_gbu_24	us gbu 24; pdlct s
@@ -7546,6 +7899,7 @@ mirage_2000d_rmv	mirage_2000d_rmv_matra_super_250_samp_type_25	fr 250 slot1; fr 
 mirage_2000d_rmv	mirage_2000d_rmv_mk82	mk82 slot1; mk82 slot2; mk82 slot3; mk82 slot4; mk82 x2 slot5; mk82 slot6; mk82 slot7; mk82 slot8; mk82 slot9
 mirage_2000d_rmv	mirage_2000d_rmv_matra_super_250_samp_type_25_200	fr 250 drag slot1; fr 250 drag slot2; fr 250 drag slot3; fr 250 drag slot4; fr 250 drag slot5; fr 250 drag slot6; fr 250 drag slot7; fr 250 drag slot8; fr 250 drag slot9
 mirage_2000d_rmv	mirage_2000d_rmv_mk82_snakeye	mk82 snakeye slot1; mk82 snakeye slot2; mk82 snakeye slot3; mk82 snakeye slot4; mk82 snakeye x2 slot5; mk82 snakeye slot6; mk82 snakeye slot7; mk82 snakeye slot8; mk82 snakeye slot9
+mirage_2000d_rmv	mirage_2000d_rmv_blg66	blg66 slot2; blg66 slot3; blg66 slot4; blg66 slot5; blg66 slot6; blg66 slot7; blg66 slot8
 mirage_2000d_rmv	mirage_2000d_rmv_gbu_12	gbu 12 slot2; gbu 12 slot4; gbu 12 x2 slot5; damocles; gbu 12 slot8
 mirage_2000d_rmv	mirage_2000d_rmv_gbu_49	gbu 49 slot2; gbu 49 slot4; gbu 49 x2 slot5; damocles; gbu 49 slot8
 mirage_2000d_rmv	mirage_2000d_rmv_gbu_48	gbu 48 slot5; damocles
@@ -7616,6 +7970,7 @@ mirage_4000	mirage_4000_250_samp_type_25	8x bomb 250; bomb 250 x9
 mirage_4000	mirage_4000_250_samp_type_25_200	8x bomb 250 200; bomb 250 200 x9
 mirage_4000	mirage_4000_mk83	4x mk83; mk83 x2
 mirage_4000	mirage_4000_mk84	4x mk84; mk84 x2
+mirage_4000	mirage_4000_blg66	blg66 slot2; blg66 slot3; blg66 slot4; blg66 slot5; blg66 x2 slot6; blg66 slot7; blg66 slot8; blg66 slot9; blg66 slot10
 mirage_4000	mirage_4000_bgl1000	atlis2; fr bgl1000 x2
 mirage_4000	mirage_4000_ltc	2x ltc
 mirage_4000	mirage_4000_as37	4x as 37
@@ -8406,7 +8761,8 @@ pe-8_m82	pe-8_4xfab1000	no suspended armament
 pe-8_m82	pe-8_fab5000	no suspended armament
 po_2op_event	po_2op_event_default	no suspended armament
 po-2	Po2_default	4x fab 50; fab 50 x2
-po-2	Po2_fab100	2x fab 100
+po-2	Po2_zab50	4x zab 50; zab 50 x2
+po-2	Po2_fab100	3x fab 100
 po-2	Po2_fab50_fab100	2x fab 100; fab 50 x2
 po-2	Po2_rs_82	ros82 slot1; ros82 slot7
 po-2	Po2_rbs_82	rbs82 slot1; rbs82 slot7
@@ -8447,6 +8803,18 @@ q_5a	q_5a_4x250kg_4_bombs	gp250 4 x4
 q_5a	q_5a_type90_rockets	4x hf7
 q_5a	q_5a_type130ap	4x hf14
 q_5a	q_5a_4x250kg_incendiary_bombs	gp250 4 x4 inc
+q_5d	q_5d_default	no suspended armament
+q_5d	q_5d_fuel_tanks	ptb slot2; ptb slot6
+q_5d	q_5d_4x250kg_3_bombs	gp250 3 slot1; gp250 3 slot2; gp250 3 slot4; gp250 3 slot6; gp250 3 slot7
+q_5d	q_5d_500kg_3_bombs	gp500 slot2; gp500 slot6
+q_5d	q_5d_4x250kg_incendiary_bombs	gp250 2 slot1; gp250 2 slot2; gp250 2 slot4; gp250 2 slot6; gp250 2 slot7
+q_5d	q_5d_4x250kg_4_bombs	gp250 4 slot1; gp250 4 slot2; gp250 4 slot4; gp250 4 slot6; gp250 4 slot7
+q_5d	q_5d_4x250kg_3_cluster_bombs	gp250 3 cluster slot1; gp250 3 cluster slot2; gp250 3 cluster slot6; gp250 3 cluster slot7
+q_5d	q_5d_500kg_4_bombs	gp500 4 slot2; gp500 4 slot6
+q_5d	q_5d_type90_rockets	hf7 slot2; hf7 slot3; hf7 slot5; hf7 slot6
+q_5d	q_5d_type130ap	hf14 slot2; hf14 slot3; hf14 slot5; hf14 slot6
+q_5d	q_5d_4x250kg_bombs_4type90_rockets	gp250 3 slot1; hf7 slot2; hf7 slot3; gp250 3 slot4; hf7 slot5; hf7 slot6; gp250 3 slot7
+q_5d	q_5d_4x250kg_bombs_4type130ap	hf14 slot2; hf14 slot3; gp250 3 slot4; hf14 slot5; hf14 slot6
 q_5l	q_5l_default	no suspended armament
 q_5l	q_5l_hf6_rockets	4x hf6
 q_5l	q_5l_hf14_rockets	4x hf14
@@ -8455,6 +8823,7 @@ q_5l	q_5l_ls_500j	2x ls500; k pzs 01
 q_5l	q_5l_250kg_bombs	4x gp250; gp250 x4
 q_5l	q_5l_500kg_bombs	2x gp500
 q_5l	q_5l_250kg_4_bombs	4x gp250 4; gp250 4 x4
+q_5l	q_5l_250kg_3_cluster_bombs	2x gp250 3 cluster; gp250 3 cluster slot2; gp250 3 cluster slot6
 q_5l	q_5l_500kg_4_bombs	2x gp500 4
 q_5l	q_5l_250kg_incendiary_bombs	4x gp250 4 inc; gp250 4 x4 inc
 quing_6	quing_6_fab250	8x fab250
@@ -8698,6 +9067,7 @@ saab_b3c	saab_b3c_torp_m41	no suspended armament
 saab_b3c	saab_b3c_250kg_minb_m40	no suspended armament
 saab_f35_wdns	saab_f35_wdns_default	2x aim 9n; ptb slot5; ptb slot7
 saab_f35_wdns	saab_f35_wdns_aim_9b	2x aim 9b
+saab_f35_wdns	saab_f35_wdns_aim_9n	2x aim 9n
 saab_f35_wdns	saab_f35_wdns_lau3a	8x lau3a
 saab_f35_wdns	saab_f35_wdns_lau_5003a	8x lau 5003b
 saab_f35_wdns	saab_f35_wdns_mk82	8x mk82; mk82 center
@@ -8730,9 +9100,12 @@ saab_j29f	saab_j29f_150mm_x8_rockets	srak m51 slot1; srak m51 slot2; srak m51 sl
 saab_j29f	saab_j29f_150mm_x14_rockets	srak m51 x2 slot1; srak m51 x2 slot2; srak m51 x2 slot3; srak m51 x2 slot6; srak m51 x2 slot7; srak m51 x2 slot8
 saab_j29f	saab_j29_2xaim9	rb24 slot2; rb24 slot7
 saab_j32b	saab_j32b_default	no suspended armament
+saab_j32b	saab_j32b_75mm_srak_m57b	2x swe m57b
+saab_j32b	saab_j32b_145mm_psrak_m49a	12x psrak m49a
+saab_j32b	saab_j32b_150mm_srak_m51	12x psrak m51
+saab_j32b	saab_j32b_180mm_hpsrak_m49	12x hpsrak m49
 saab_j32b	saab_j32b_default_rb24_missiles	2x rb24 default
 saab_j32b	saab_j32b_rb24_missiles	2x rb24 default; 2x rb24
-saab_j32b	saab_j32b_75mm_srak_m57b	2x swe m57b
 saab_j35a	saab_j35a_default	2x swe rb24; ptb
 saab_j35a	saab_j35a_135mm_rockets	m56d slot1; swe rb24 x2; m56d slot3
 saab_j35a	saab_j35a_rb24x4_missiles	2x swe rb24; swe rb24 x2
@@ -8781,6 +9154,27 @@ saab_ja37di_f21	saab_ja37di_f21_default	2x rb74 default; rb99 slot2; rb99 slot3;
 saab_ja37di_f21	saab_ja37di_rockets_rb74	2x rb74 default; 4x rb74
 saab_ja37di_f21	saab_ja37di_rockets_rb99	rb99 slot2; rb99 slot3; rb99 slot5; rb99 slot6
 saab_ja37di_f21	saab_ja37di_rocket_135mm_psrak_m70_rb99	2x rb74 default; 4x m70b
+saab_jas39_pre_serie	saab_jas39a_default	ptb 1; ptb 2; ptb 3
+saab_jas39_pre_serie	saab_jas39a_rockets_rb_74_default	2x rb74 default; 2x rb71 default
+saab_jas39_pre_serie	saab_jas39a_rockets_rb_74	2x rb74 default; 4x rb74
+saab_jas39_pre_serie	saab_jas39a_rockets_rb_74_bol	2x rb74 default; 4x rb74 bol
+saab_jas39_pre_serie	saab_jas39a_rockets_rb_74m	2x rb74m wing; 4x rb74m
+saab_jas39_pre_serie	saab_jas39a_rockets_rb_74m_bol	2x rb74m wing; 4x rb74m bol
+saab_jas39_pre_serie	saab_jas39a_rockets_rb_71	2x rb71 default; 2x rb71
+saab_jas39_pre_serie	saab_jas39a_rockets_rb_99	4x rb99
+saab_jas39_pre_serie	saab_jas39a_bol	4x bol pod
+saab_jas39_pre_serie	saab_jas39a_rockets_rb_99_bol	4x rb99 bol
+saab_jas39_pre_serie	saab_jas39a_rocket_135mm_psrak_m70	4x m70b
+saab_jas39_pre_serie	saab_jas39a_rockets_rb_75	4x rb75
+saab_jas39_pre_serie	saab_jas39a_rockets_rb_75t	4x rb75t
+saab_jas39_pre_serie	saab_jas39a_rb_15	2x rb 15
+saab_jas39_pre_serie	saab_jas39a_120kg_m71	4x m71
+saab_jas39_pre_serie	saab_jas39a_mk82	4x mk 82 x2
+saab_jas39_pre_serie	saab_jas39a_120kg_sb_m71_retarded	4x m71 retarded
+saab_jas39_pre_serie	saab_jas39a_mk82_snakeye	4x mk 82 snakeye x2
+saab_jas39_pre_serie	saab_jas39a_gbu_12	4x gbu 12; litening pod
+saab_jas39_pre_serie	saab_jas39a_gbu_16	4x gbu 16; litening pod
+saab_jas39_pre_serie	saab_jas39a_gbu_24	2x gbu 24; litening pod
 saab_jas39a	saab_jas39a_default	ptb 1; ptb 2; ptb 3
 saab_jas39a	saab_jas39a_rockets_rb_74_default	2x rb74 default; 2x rb71 default
 saab_jas39a	saab_jas39a_rockets_rb_74	2x rb74 default; 4x rb74
@@ -8788,7 +9182,9 @@ saab_jas39a	saab_jas39a_rockets_rb_74_bol	2x rb74 default; 4x rb74 bol
 saab_jas39a	saab_jas39a_rockets_rb_74m	2x rb74m wing; 4x rb74m
 saab_jas39a	saab_jas39a_rockets_rb_74m_bol	2x rb74m wing; 4x rb74m bol
 saab_jas39a	saab_jas39a_rockets_rb_71	2x rb71 default; 2x rb71
+saab_jas39a	saab_jas39a_rockets_rb_99	4x rb99
 saab_jas39a	saab_jas39a_bol	4x bol pod
+saab_jas39a	saab_jas39a_rockets_rb_99_bol	4x rb99 bol
 saab_jas39a	saab_jas39a_rocket_135mm_psrak_m70	4x m70b
 saab_jas39a	saab_jas39a_rockets_rb_75	4x rb75
 saab_jas39a	saab_jas39a_rockets_rb_75t	4x rb75t
@@ -9162,9 +9558,11 @@ sea_harrier_fa2	sea_harrier_fa2_matra7	2 inch rp slot1; 2 inch rp slot2; 2 inch 
 sea_harrier_fa2	sea_harrier_fa2_matra7_dlt	2 inch rp slot1; 2 inch rp left slot2; 2 inch rp right slot6; 2 inch rp slot7
 sea_harrier_fa2	sea_harrier_fa2_bomb_540lbs	540lbs slot1; 540lbs slot2; 540lbs slot4; 540lbs slot6; 540lbs slot7
 sea_harrier_fa2	sea_harrier_fa2_bomb_1000lbs	1000lbs slot1; 1000lbs slot2; 1000lbs slot4; 1000lbs slot6; 1000lbs slot7
+sea_harrier_fa2	sea_harrier_fa2_bomb_bl755	bl755 slot1; bl755 slot2; bl755 slot4; bl755 slot6; bl755 slot7
 sea_harrier_fa2	sea_harrier_fa2_bomb_1000lbs_n117	1000lbs n117 slot1; 1000lbs n117 slot2; 1000lbs n117 slot4; 1000lbs n117 slot6; 1000lbs n117 slot7
 sea_harrier_fa2	sea_harrier_fa2_bomb_540lbs_dlt	500lbs x2 left slot2; 500lbs x2 right slot6
 sea_harrier_fa2	sea_harrier_fa2_bomb_1000lbs_dlt	1000lbs x2 left wing slot2; 1000lbs x2 right wing slot6
+sea_harrier_fa2	sea_harrier_fa2_bomb_bl755_dlt	bl755 x2 left wing slot2; bl755 x2 right wing slot6
 sea_harrier_fa2	sea_harrier_fa2_bomb_1000lbs_n117_dlt	1000lbs x2 left wing n117 slot2; 1000lbs x2 right wing n117 slot6
 sea_hawk_fga50_netherlands	sea_hawk_default	no suspended armament
 sea_hawk_fga50_netherlands	sea_hawk_2xAim9	2x aim9
@@ -9540,6 +9938,17 @@ strikemaster_mk88	strikemaster_mk88_mk82sn	4x mk82sn
 strikemaster_mk88	strikemaster_mk88_mk_n1_540lbs	4x uk 540lbs
 strikemaster_mk88	strikemaster_mk88_mk77	4x mk77
 strikemaster_mk88	strikemaster_mk88_mag_pod	4x mgp
+su_15tm	su_15tm_default	r60 slot2; gsh23l slot3; gsh23l slot4; r60 slot5
+su_15tm	su_15tm_ptb	r60 slot2; ptb slot3; ptb slot4; r60 slot5
+su_15tm	su_15tm_r_98mt	r 98mt slot1; gsh23l slot3; gsh23l slot4; r 98mt slot6
+su_15tm	su_15tm_r_98mr	r 98mr slot1; gsh23l slot3; gsh23l slot4; r 98mr slot6
+su_15tm	su_15tm_ub16	ub16 slot1; gsh23l slot3; gsh23l slot4; ub16 slot6
+su_15tm	su_15tm_ub32	ub32 slot1; gsh23l slot3; gsh23l slot4; ub32 slot6
+su_15tm	su_15tm_s24	s24 slot1; gsh23l slot3; gsh23l slot4; s24 slot6
+su_15tm	su_15tm_ofab100	fab100 slot1; fab100 slot3; fab100 slot4; fab100 slot6
+su_15tm	su_15tm_ofab250m_62t	fab250 slot1; fab250 slot3; fab250 slot4; fab250 slot6
+su_15tm	su_15tm_ofab500m_62t	fab500 slot3; fab500 slot4
+su_15tm	su_15tm_zb_500	zb500 slot1; zb500 slot3; zb500 slot4; zb500 slot6
 su_17m2	su_17m2_default	ptb left1; ptb left; ptb right; ptb right1
 su_17m2	su_17m2_default_rocket_r60	wing middle left rocket r 60; wing middle right rocket r 60
 su_17m2	su_17m2_rocket_r60	wing middle left rocket r 60 x2; wing middle right rocket r 60 x2
@@ -9554,6 +9963,8 @@ su_17m2	su_17m2_bomb_ofab250	wing left fab 250; wing left middle fab 250 x1; fus
 su_17m2	su_17m2_bomb_fab500m_62	wing left fab 500; wing left middle fab 500 x1; fuse left fab 500 x2; fuse right fab 500 x2; wing right middle fab 500 x1; wing right fab 500
 su_17m2	su_17m2_bomb_ofab250sh	2x wing left fab 250sh; fuse containers left fab 250sh x3; fuse containers right fab 250sh x3; 2x wing right middle fab 250sh x1
 su_17m2	su_17m2_bomb_fab500sh	2x wing left fab 500sh; fuse left fab 500sh x2; fuse right fab 500sh x2; 2x wing right middle fab 500sh x1
+su_17m2	su_17m2_bomb_rbk_500_ao_2_5rtm	4x rbk 500 ao 2 5rtm; 2x rbk 500 ao 2 5rtm x2
+su_17m2	su_17m2_bomb_rbk_500_ptab	4x rbk 500 ptab; 2x rbk 500 ptab x2
 su_17m2	su_17m2_bomb_zb500	4x zb500
 su_17m2	su_17m2_sppu_22	2x sppu 22
 su_17m2	su_17m2_rocket_s3k	4x container s3k
@@ -9571,6 +9982,8 @@ su_17m4	su_17m4_bomb_ofab250	wing left fab 250; wing left middle fab 250 x1; fus
 su_17m4	su_17m4_bomb_fab500m_62	wing left fab 500; wing left middle fab 500 x1; fuse left fab 500 x2; fuse right fab 500 x2; wing right middle fab 500 x1; wing right fab 500
 su_17m4	su_17m4_bomb_ofab250sh	2x wing left fab 250sh; fuse containers left fab 250sh x3; fuse containers right fab 250sh x3; 2x wing right middle fab 250sh x1
 su_17m4	su_17m4_bomb_fab500sh	2x wing left fab 500sh; fuse left fab 500sh x2; fuse right fab 500sh x2; 2x wing right middle fab 500sh x1
+su_17m4	su_17m4_bomb_rbk_500_ao_2_5rtm	4x rbk 500 ao 2 5rtm; 2x rbk 500 ao 2 5rtm x2
+su_17m4	su_17m4_bomb_rbk_500_ptab	4x rbk 500 ptab; 2x rbk 500 ptab x2
 su_17m4	su_17m4_zb500	4x zb500
 su_17m4	su_17m4_rocket_s25l	wing left rocket s25l; wing right rocket s25l
 su_17m4	su_17m4_rocket_kh25	wing left rocket kh25 ml; fuse left rocket kh25 ml; fuse right rocket kh25 ml; wing right rocket kh25 ml
@@ -9608,6 +10021,8 @@ su_22m3	su_22m3_bomb_ofab250	wing left fab 250; wing left middle fab 250 x1; fus
 su_22m3	su_22m3_bomb_fab500m_62	wing left fab 500; wing left middle fab 500 x1; fuse left fab 500 x2; fuse right fab 500 x2; wing right middle fab 500 x1; wing right fab 500
 su_22m3	su_22m3_bomb_ofab250sh	2x wing left fab 250sh; fuse containers left fab 250sh x3; fuse containers right fab 250sh x3; 2x wing right middle fab 250sh x1
 su_22m3	su_22m3_bomb_fab500sh	2x wing left fab 500sh; fuse left fab 500sh x2; fuse right fab 500sh x2; 2x wing right middle fab 500sh x1
+su_22m3	su_22m3_bomb_rbk_500_ao_2_5rtm	4x rbk 500 ao 2 5rtm; 2x rbk 500 ao 2 5rtm x2
+su_22m3	su_22m3_bomb_rbk_500_ptab	4x rbk 500 ptab; 2x rbk 500 ptab x2
 su_22m3	su_22m3_bomb_zb500_62	4x zb500
 su_22m3	su_22m3_sppu_22	wing middle left sppu 22; wing middle right sppu 22
 su_22m3_hungary	su_22m3_default	ptb left1; ptb left; ptb right; ptb right1
@@ -9629,6 +10044,8 @@ su_22m3_hungary	su_22m3_bomb_ofab250	wing left fab 250; wing left middle fab 250
 su_22m3_hungary	su_22m3_bomb_fab500m_62	wing left fab 500; wing left middle fab 500 x1; fuse left fab 500 x2; fuse right fab 500 x2; wing right middle fab 500 x1; wing right fab 500
 su_22m3_hungary	su_22m3_bomb_ofab250sh	2x wing left fab 250sh; fuse containers left fab 250sh x3; fuse containers right fab 250sh x3; 2x wing right middle fab 250sh x1
 su_22m3_hungary	su_22m3_bomb_fab500sh	2x wing left fab 500sh; fuse left fab 500sh x2; fuse right fab 500sh x2; 2x wing right middle fab 500sh x1
+su_22m3_hungary	su_22m3_bomb_rbk_500_ao_2_5rtm	4x rbk 500 ao 2 5rtm; 2x rbk 500 ao 2 5rtm x2
+su_22m3_hungary	su_22m3_bomb_rbk_500_ptab	4x rbk 500 ptab; 2x rbk 500 ptab x2
 su_22m3_hungary	su_22m3_bomb_zb500_62	4x zb500
 su_22m3_hungary	su_22m3_sppu_22	wing middle left sppu 22; wing middle right sppu 22
 su_22m4	su_22m4_default	ptb left1; ptb left; ptb right; ptb right1
@@ -9645,6 +10062,8 @@ su_22m4	su_22m4_bomb_ofab250	wing left fab 250; wing left middle fab 250 x1; fus
 su_22m4	su_22m4_bomb_fab500m_62	wing left fab 500; wing left middle fab 500 x1; fuse left fab 500 x2; fuse right fab 500 x2; wing right middle fab 500 x1; wing right fab 500
 su_22m4	su_22m4_bomb_ofab250sh	2x wing left fab 250sh; fuse containers left fab 250sh x3; fuse containers right fab 250sh x3; 2x wing right middle fab 250sh x1
 su_22m4	su_22m4_bomb_fab500sh	2x wing left fab 500sh; fuse left fab 500sh x2; fuse right fab 500sh x2; 2x wing right middle fab 500sh x1
+su_22m4	su_22m4_bomb_rbk_500_ao_2_5rtm	4x rbk 500 ao 2 5rtm; 2x rbk 500 ao 2 5rtm x2
+su_22m4	su_22m4_bomb_rbk_500_ptab	4x rbk 500 ptab; 2x rbk 500 ptab x2
 su_22m4	su_22m4_zb500	4x zb500
 su_22m4	su_22m4_rocket_s25l	wing left rocket s25l; wing right rocket s25l
 su_22m4	su_22m4_rocket_kh25	wing left rocket kh25 ml; fuse left rocket kh25 ml; fuse right rocket kh25 ml; wing right rocket kh25 ml
@@ -9668,6 +10087,8 @@ su_22m4_de_wtd61	su_22m4_de_wtd61_bomb_ofab250	wing left fab 250; wing left sing
 su_22m4_de_wtd61	su_22m4_de_wtd61_bomb_fab500m_62	wing left fab 500; wing left single r 60mk; wing left middle fab 500 x1; fuse left fab 500 x2; fuse right fab 500 x2; wing right middle fab 500 x1; wing right single r 60mk; wing right fab 500
 su_22m4_de_wtd61	su_22m4_de_wtd61_bomb_ofab250sh	2x wing left fab 250sh; wing left single r 60mk; fuse containers left fab 250sh x3; fuse containers right fab 250sh x3; 2x wing right middle fab 250sh x1; wing right single r 60mk
 su_22m4_de_wtd61	su_22m4_de_wtd61_bomb_fab500sh	2x wing left fab 500sh; wing left single r 60mk; fuse left fab 500sh x2; fuse right fab 500sh x2; 2x wing right middle fab 500sh x1; wing right single r 60mk
+su_22m4_de_wtd61	su_22m4_de_wtd61_bomb_rbk_500_ao_2_5rtm_r60mk	4x rbk 500 ao 2 5rtm; wing left single r 60mk; 2x rbk 500 ao 2 5rtm x2; wing right single r 60mk
+su_22m4_de_wtd61	su_22m4_de_wtd61_bomb_rbk_500_ptab_r60mk	4x rbk 500 ptab; wing left single r 60mk; 2x rbk 500 ptab x2; wing right single r 60mk
 su_22m4_de_wtd61	su_22m4_de_wtd61_zb500	4x zb500; wing left single r 60mk; wing middle left rocket r 60mk x2; wing middle right rocket r 60mk x2; wing right single r 60mk
 su_22m4_de_wtd61	su_22m4_de_wtd61_rocket_s25l	wing left rocket s25l; wing right rocket s25l
 su_22m4_de_wtd61	su_22m4_de_wtd61_rocket_s25l_r60mk	wing left rocket s25l; wing left single r 60mk; wing middle left rocket r 60mk x2; wing middle right rocket r 60mk x2; wing right single r 60mk; wing right rocket s25l
@@ -9694,6 +10115,8 @@ su_22um3k	su_22um3k_bomb_ofab250	wing left fab 250; wing right fab 250; wing lef
 su_22um3k	su_22um3k_bomb_fab500m_62	wing left fab 500; fuse left fab 500 x2; fuse right fab 500 x2; wing right fab 500
 su_22um3k	su_22um3k_bomb_ofab250sh	2x wing left fab 250sh; fuse containers left fab 250sh x3; fuse containers right fab 250sh x3; 2x wing right middle fab 250sh x1
 su_22um3k	su_22um3k_bomb_fab500sh	wing left fab 500sh; fuse left fab 500sh x2; fuse right fab 500sh x2; wing right middle fab 500sh x1
+su_22um3k	su_22um3k_bomb_rbk_500_ao_2_5rtm	4x rbk 500 ao 2 5rtm
+su_22um3k	su_22um3k_bomb_rbk_500_ptab	4x rbk 500 ptab
 su_22um3k	su_22um3k_rocket_s3k	4x container s3k
 su_22um3k	su_22um3k_rocket_ub32	4x container ub 32
 su_22um3k	su_22um3k_rocket_s24	wing left rocket s24; wing right rocket s24; wing middle left rocket s 24; wing middle right rocket s 24; fuse left rocket s 24; fuse right rocket s 24
@@ -9715,6 +10138,8 @@ su_24m	su_24m_bomb_fab500m_62	wing left in single fab 500; wing2 left out fab 50
 su_24m	su_24m_bomb_ofab250sh	wing left out fab 250sh x2; wing2 left in containers fab250sh x3; fuse left containers fab250sh x2; fuse single fab 250sh; fuse right containers fab250sh x3; wing2 right in containers fab250sh x3; wing right out fab 250sh x2
 su_24m	su_24m_bomb_fab500sh	wing left in single fab 500sh; wing2 left out fab 500sh x2; fuse left single fab 500sh; fuse single fab 500sh; fuse right single fab 500sh; wing2 right out fab 500sh x2; wing right in single fab 500sh
 su_24m	su_24m_bomb_fab1500	wing2 left in single fab 1500; fuse single fab 1500; wing2 right in single fab 1500
+su_24m	su_24m_rbk_500_ao_2_5rtm	rbk 500 ao 2 5rtm slot1; rbk 500 ao 2 5rtm x2 slot2; rbk 500 ao 2 5rtm slot3; rbk 500 ao 2 5rtm slot4; rbk 500 ao 2 5rtm slot6; rbk 500 ao 2 5rtm x2 slot7; rbk 500 ao 2 5rtm slot8
+su_24m	su_24m_rbk_500_ptab	rbk 500 ptab slot1; rbk 500 ptab x2 slot2; rbk 500 ptab slot3; rbk 500 ptab slot4; rbk 500 ptab slot6; rbk 500 ptab x2 slot7; rbk 500 ptab slot8
 su_24m	su_24m_bomb_kab500kr	wing left kab 500kr; left wing kab 500kr; fuse left kab 500kr; fuse right kab 500kr; right wing kab 500kr; wing right kab 500kr
 su_24m	su_24m_bomb_kab500l	wing left kab 500l; left wing kab 500l; fuse left kab 500l; fuse kab 500l; fuse right kab 500l; right wing kab 500l; wing right kab 500l
 su_24m	su_24m_bomb_kab500s	wing left kab 500s; left wing kab 500s; fuse left kab 500s; fuse kab 500s; fuse right kab 500s; right wing kab 500s; wing right kab 500s
@@ -9756,6 +10181,8 @@ su_25	su_25_fab_250	fab 250 slot2; fab 250 slot3; 4x fab 250; fab 250 slot8; fab
 su_25	su_25_fab_500	fab 500 slot2; fab 500 slot3; 4x fab 500; fab 500 slot8; fab 500 slot9
 su_25	su_25_fab_250sh	fab 250sh slot2; fab 250sh slot3; 4x fab 250sh; fab 250sh slot8; fab 250sh slot9
 su_25	su_25_fab_500sh	fab 500sh slot2; fab 500sh slot3; 4x fab 500sh; fab 500sh slot8; fab 500sh slot9
+su_25	su_25_rbk_500_ao_2_5rtm	rbk 500 ao 2 5rtm slot2; rbk 500 ao 2 5rtm slot3; 4x rbk 500 ao 2 5rtm; rbk 500 ao 2 5rtm slot8; rbk 500 ao 2 5rtm slot9
+su_25	su_25_rbk_500_ptab	rbk 500 ptab slot2; rbk 500 ptab slot3; 4x rbk 500 ptab; rbk 500 ptab slot8; rbk 500 ptab slot9
 su_25	su_25_zb_500	zb 500 slot2; zb 500 slot3; 4x zb 500; zb 500 slot8; zb 500 slot9
 su_25	su_25_ub_32	ub 32 slot2; ub 32 slot3; ub 32 slot4; ub 32 slot5; ub 32 slot6; ub 32 slot7; ub 32 slot8; ub 32 slot9
 su_25	su_25_b8m	s 8ko slot2; s 8ko slot3; s 8ko slot4; s 8ko slot5; s 8ko slot6; s 8ko slot7; s 8ko slot8; s 8ko slot9
@@ -9773,6 +10200,8 @@ su_25_558arz	su_25_558arz_fab_250	fab 250 slot2; fab 250 slot3; 4x fab 250; fab 
 su_25_558arz	su_25_558arz_fab_500	fab 500 slot2; fab 500 slot3; 4x fab 500; fab 500 slot8; fab 500 slot9
 su_25_558arz	su_25_558arz_fab_250sh	fab 250sh slot2; fab 250sh slot3; 4x fab 250sh; fab 250sh slot8; fab 250sh slot9
 su_25_558arz	su_25_558arz_fab_500sh	fab 500sh slot2; fab 500sh slot3; 4x fab 500sh; fab 500sh slot8; fab 500sh slot9
+su_25_558arz	su_25_558arz_rbk_500_ao_2_5rtm	rbk 500 ao 2 5rtm slot2; rbk 500 ao 2 5rtm slot3; 4x rbk 500 ao 2 5rtm; rbk 500 ao 2 5rtm slot8; rbk 500 ao 2 5rtm slot9
+su_25_558arz	su_25_558arz_rbk_500_ptab	rbk 500 ptab slot2; rbk 500 ptab slot3; 4x rbk 500 ptab; rbk 500 ptab slot8; rbk 500 ptab slot9
 su_25_558arz	su_25_558arz_zb_500	zb 500 slot2; zb 500 slot3; 4x zb 500; zb 500 slot8; zb 500 slot9
 su_25_558arz	su_25_558arz_kab_500kr	4x kab 500kr
 su_25_558arz	su_25_558arz_ub_32	ub 32 slot2; ub 32 slot3; ub 32 slot4; ub 32 slot5; ub 32 slot6; ub 32 slot7; ub 32 slot8; ub 32 slot9
@@ -9791,6 +10220,8 @@ su_25k	su_25k_fab_250_r_60m	2x r 60m; fab 250 slot2; fab 250 slot3; 4x fab 250; 
 su_25k	su_25k_fab_500_r_60m	2x r 60m; fab 500 slot2; fab 500 slot3; 4x fab 500; fab 500 slot8; fab 500 slot9
 su_25k	su_25k_fab_250sh_r_60m	2x r 60m; fab 250sh slot2; fab 250sh slot3; 4x fab 250sh; fab 250sh slot8; fab 250sh slot9
 su_25k	su_25k_fab_500sh_r_60m	2x r 60m; fab 500sh slot2; fab 500sh slot3; 4x fab 500sh; fab 500sh slot8; fab 500sh slot9
+su_25k	su_25k_rbk_500_ao_2_5rtm_r_60m	2x r 60m; rbk 500 ao 2 5rtm slot2; rbk 500 ao 2 5rtm slot3; 4x rbk 500 ao 2 5rtm; rbk 500 ao 2 5rtm slot8; rbk 500 ao 2 5rtm slot9
+su_25k	su_25k_rbk_500_ptab_r_60m	2x r 60m; rbk 500 ptab slot2; rbk 500 ptab slot3; 4x rbk 500 ptab; rbk 500 ptab slot8; rbk 500 ptab slot9
 su_25k	su_25k_zb_500_r_60m	2x r 60m; zb 500 slot2; zb 500 slot3; 4x zb 500; zb 500 slot8; zb 500 slot9
 su_25k	su_25k_ub_32_r_60m	2x r 60m; ub 32 slot2; ub 32 slot3; ub 32 slot4; ub 32 slot5; ub 32 slot6; ub 32 slot7; ub 32 slot8; ub 32 slot9
 su_25k	su_25k_b8m_r_60m	2x r 60m; s 8ko slot2; s 8ko slot3; s 8ko slot4; s 8ko slot5; s 8ko slot6; s 8ko slot7; s 8ko slot8; s 8ko slot9
@@ -9811,6 +10242,8 @@ su_25sm3	su_25sm3_fab_250	fab 250 slot2; fab 250 slot3; 4x fab 250; fab 250 slot
 su_25sm3	su_25sm3_fab_500	fab 500 slot2; fab 500 slot3; 4x fab 500; fab 500 slot8; fab 500 slot9
 su_25sm3	su_25sm3_fab_250sh	fab 250sh slot2; fab 250sh slot3; 4x fab 250sh; fab 250sh slot8; fab 250sh slot9
 su_25sm3	su_25sm3_fab_500sh	fab 500sh slot2; fab 500sh slot3; 4x fab 500sh; fab 500sh slot8; fab 500sh slot9
+su_25sm3	su_25sm3_rbk_500_ao_2_5rtm	rbk 500 ao 2 5rtm slot2; rbk 500 ao 2 5rtm slot3; 4x rbk 500 ao 2 5rtm; rbk 500 ao 2 5rtm slot8; rbk 500 ao 2 5rtm slot9
+su_25sm3	su_25sm3_rbk_500_ptab	rbk 500 ptab slot2; rbk 500 ptab slot3; 4x rbk 500 ptab; rbk 500 ptab slot8; rbk 500 ptab slot9
 su_25sm3	su_25sm3_zb_500	zb 500 slot2; zb 500 slot3; 4x zb 500; zb 500 slot8; zb 500 slot9
 su_25sm3	su_25sm3_kab_500kr	4x kab 500kr
 su_25sm3	su_25sm3_kab_500s	4x kab 500s
@@ -9834,6 +10267,8 @@ su_25t	su_25t_fab_250	fab 250 slot2; fab 250 slot3; 4x fab 250; fab 250 slot9; f
 su_25t	su_25t_fab_500	fab 500 slot2; fab 500 slot3; 4x fab 500; fab 500 slot9; fab 500 slot10
 su_25t	su_25t_fab_250sh	fab 250sh slot2; fab 250sh slot3; 4x fab 250sh; fab 250sh slot9; fab 250sh slot10
 su_25t	su_25t_fab_500sh	fab 500sh slot2; fab 500sh slot3; 4x fab 500sh; fab 500sh slot9; fab 500sh slot10
+su_25t	su_25t_rbk_500_ao_2_5rtm	rbk 500 ao 2 5rtm slot2; rbk 500 ao 2 5rtm slot3; 4x rbk 500 ao 2 5rtm; rbk 500 ao 2 5rtm slot9; rbk 500 ao 2 5rtm slot10
+su_25t	su_25t_rbk_500_ptab	rbk 500 ptab slot2; rbk 500 ptab slot3; 4x rbk 500 ptab; rbk 500 ptab slot9; rbk 500 ptab slot10
 su_25t	su_25t_kab_500kr	2x kab 500kr
 su_25t	su_25t_zb_500	zb 500 slot2; zb 500 slot3; 4x zb 500; zb 500 slot9; zb 500 slot10
 su_25t	su_25t_b8m	s 8ko slot2; s 8ko slot3; s 8ko slot4; s 8ko slot5; s 8ko slot7; s 8ko slot8; s 8ko slot9; s 8ko slot10
@@ -9852,29 +10287,36 @@ su_25t	su_25t_sppu_22	4x sppu 22
 su_25t	su_25t_mercury	mercury
 su_25tm	su_25tm_default	2x r 60m; 2x r 73; ptb left1; ptb left; kopio 25; ptb right; ptb right1
 su_25tm	su_25tm_r_60m_rls	2x r 60m; kopio 25
-su_25tm	su_25tm_r_73_rls	2x r 73; kopio 25
-su_25tm	su_25tm_fab_100_r60m	2x r 60m; fab 100 slot2; fab 100 slot3; 4x fab 100; mercury; fab 100 slot9; fab 100 slot10
-su_25tm	su_25tm_fab_250_r60m	2x r 60m; fab 250 slot2; fab 250 slot3; 4x fab 250; mercury; fab 250 slot9; fab 250 slot10
-su_25tm	su_25tm_fab_500_r60m	2x r 60m; fab 500 slot2; fab 500 slot3; 4x fab 500; mercury; fab 500 slot9; fab 500 slot10
-su_25tm	su_25tm_fab_250sh_r60m	2x r 60m; fab 250sh slot2; fab 250sh slot3; 4x fab 250sh; mercury; fab 250sh slot9; fab 250sh slot10
-su_25tm	su_25tm_fab_500sh_r60m	2x r 60m; fab 500sh slot2; fab 500sh slot3; 4x fab 500sh; mercury; fab 500sh slot9; fab 500sh slot10
-su_25tm	su_25tm_zb_500_r60m	2x r 60m; zb 500 slot2; zb 500 slot3; 4x zb 500; mercury; zb 500 slot9; zb 500 slot10
-su_25tm	su_25tm_b8m_r60m	2x r 60m; s 8ko slot2; s 8ko slot3; s 8ko slot4; s 8ko slot5; mercury; s 8ko slot7; s 8ko slot8; s 8ko slot9; s 8ko slot10
-su_25tm	su_25tm_c13_r60m	2x r 60m; c13 slot2; c13 slot3; c13 slot4; c13 slot5; mercury; c13 slot7; c13 slot8; c13 slot9; c13 slot10
-su_25tm	su_25tm_s_24b_r60m	2x r 60m; s 24b slot2; s 24b slot3; s 24b slot4; s 24b slot5; mercury; s 24b slot7; s 24b slot8; s 24b slot9; s 24b slot10
-su_25tm	su_25tm_s_25o_r60m	2x r 60m; s 25o 1 slot2; s 25o 2 slot3; s 25o 3 slot4; s 25o 4 slot5; mercury; s 25o 5 slot7; s 25o 6 slot8; s 25o 7 slot9; s 25o 8 slot10
-su_25tm	su_25tm_s_25l_r60m	2x r 60m; 2x r 73; s25l 1 slot3; s25l 2 slot4; mercury; s25l 3 slot8; s25l 4 slot9
-su_25tm	su_25tm_kh_25ml_r60m	2x r 60m; 2x r 73; 4x kh 25ml; mercury
-su_25tm	su_25tm_kh_29l_r60m	2x r 60m; 2x r 73; kh 29l left; mercury; kh 29l right
-su_25tm	su_25tm_kh_29te_r60m	2x r 60m; 2x r 73; kh 29te left; mercury; kh 29te right
-su_25tm	su_25tm_9k127_r60m	2x r 60m; 2x r 73; 9k127 x8 left; mercury; 9k127 x8 right
+su_25tm	su_25tm_r_73_rls	4x r 73; kopio 25
+su_25tm	su_25tm_r_27r	2x r27r; kopio 25
+su_25tm	su_25tm_r_27t	2x r27t
+su_25tm	su_25tm_r_27er	2x r27er; kopio 25
+su_25tm	su_25tm_r_27et	2x r27et
+su_25tm	su_25tm_r_77	2x r77; kopio 25
+su_25tm	su_25tm_fab_100_r60m	2x r 73; fab 100 slot2; fab 100 slot3; 4x fab 100; hod; fab 100 slot9; fab 100 slot10
+su_25tm	su_25tm_fab_250_r60m	2x r 73; fab 250 slot2; fab 250 slot3; 4x fab 250; hod; fab 250 slot9; fab 250 slot10
+su_25tm	su_25tm_fab_500_r60m	2x r 73; fab 500 slot2; fab 500 slot3; 4x fab 500; hod; fab 500 slot9; fab 500 slot10
+su_25tm	su_25tm_fab_250sh_r60m	2x r 73; fab 250sh slot2; fab 250sh slot3; 4x fab 250sh; hod; fab 250sh slot9; fab 250sh slot10
+su_25tm	su_25tm_fab_500sh_r60m	2x r 73; fab 500sh slot2; fab 500sh slot3; 4x fab 500sh; hod; fab 500sh slot9; fab 500sh slot10
+su_25tm	su_25tm_rbk_500_ao_2_5rtm	2x r 73; rbk 500 ao 2 5rtm slot2; rbk 500 ao 2 5rtm slot3; 4x rbk 500 ao 2 5rtm; hod; rbk 500 ao 2 5rtm slot9; rbk 500 ao 2 5rtm slot10
+su_25tm	su_25tm_rbk_500_ptab	2x r 73; rbk 500 ptab slot2; rbk 500 ptab slot3; 4x rbk 500 ptab; hod; rbk 500 ptab slot9; rbk 500 ptab slot10
+su_25tm	su_25tm_zb_500_r60m	2x r 73; zb 500 slot2; zb 500 slot3; 4x zb 500; hod; zb 500 slot9; zb 500 slot10
+su_25tm	su_25tm_b8m_r60m	2x r 73; s 8ko slot2; s 8ko slot3; s 8ko slot4; s 8ko slot5; hod; s 8ko slot7; s 8ko slot8; s 8ko slot9; s 8ko slot10
+su_25tm	su_25tm_c13_r60m	2x r 73; c13 slot2; c13 slot3; c13 slot4; c13 slot5; hod; c13 slot7; c13 slot8; c13 slot9; c13 slot10
+su_25tm	su_25tm_s_24b_r60m	2x r 73; s 24b slot2; s 24b slot3; s 24b slot4; s 24b slot5; hod; s 24b slot7; s 24b slot8; s 24b slot9; s 24b slot10
+su_25tm	su_25tm_s_25o_r60m	2x r 73; s 25o 1 slot2; s 25o 2 slot3; s 25o 3 slot4; s 25o 4 slot5; hod; s 25o 5 slot7; s 25o 6 slot8; s 25o 7 slot9; s 25o 8 slot10
+su_25tm	su_25tm_s_25l_r60m	4x r 73; s25l 1 slot3; s25l 2 slot4; hod; s25l 3 slot8; s25l 4 slot9
+su_25tm	su_25tm_kh_25ml_r60m	4x r 73; 4x kh 25ml; hod
+su_25tm	su_25tm_kh_29l_r60m	4x r 73; kh 29l left; hod; kh 29l right
+su_25tm	su_25tm_kh_29te_r60m	4x r 73; kh 29te left; hod; kh 29te right
+su_25tm	su_25tm_9k127_r60m	4x r 73; 9k127 x8 left; hod; 9k127 x8 right
 su_25tm	su_25tm_sppu_22_r60m	2x r 60m; 2x r 73; 4x sppu 22; kopio 25
-su_25tm	su_25tm_kab500kr_r60m	2x r 60m; 2x r 73; 2x kab 500kr; mercury
-su_25tm	su_25tm_s_25l	s25l 1 slot3; s25l 2 slot4; mercury; s25l 3 slot8; s25l 4 slot9
-su_25tm	su_25tm_kh_25ml	4x kh 25ml; mercury
+su_25tm	su_25tm_kab500kr_r60m	4x r 73; 6x kab 500kr; hod
+su_25tm	su_25tm_s_25l	s25l 1 slot3; s25l 2 slot4; hod; s25l 3 slot8; s25l 4 slot9
+su_25tm	su_25tm_kh_25ml	4x kh 25ml; hod
 su_25tm	su_25tm_kh_25mpu	kh 25mpu slot3; kh 25mpu slot4; kh 25mpu slot8; kh 25mpu slot9
-su_25tm	su_25tm_kh_29l	kh 29l left; mercury; kh 29l right
-su_25tm	su_25tm_kh_29te	kh 29te left; mercury; kh 29te right
+su_25tm	su_25tm_kh_29l	kh 29l left; hod; kh 29l right
+su_25tm	su_25tm_kh_29te	kh 29te left; hod; kh 29te right
 su_25tm	su_25tm_kh_58u_a	kh 58u a slot5; kh 58u a slot7
 su_25tm	su_25tm_kh_58u_b	kh 58u b slot5; kh 58u b slot7
 su_25tm	su_25tm_kh_58u_c	kh 58u c slot5; kh 58u c slot7
@@ -9882,7 +10324,7 @@ su_25tm	su_25tm_kh_31p_111	kh 31p 111 slot5; kh 31p 111 slot7
 su_25tm	su_25tm_kh_31p_112	kh 31p 112 slot5; kh 31p 112 slot7
 su_25tm	su_25tm_kh_31p_113	kh 31p 113 slot5; kh 31p 113 slot7
 su_25tm	su_25tm_kh_31a	kh 31a slot5; kopio 25; kh 31a slot7
-su_25tm	su_25tm_kab500kr	2x kab 500kr; mercury
+su_25tm	su_25tm_kab500kr	6x kab 500kr; hod
 su_27	su_27_default	no suspended armament
 su_27	su_27_r73_default	2x r73 default; r27r slot4; r27r slot7
 su_27	su_27_r73	2x r73 default; 4x r73
@@ -9899,6 +10341,8 @@ su_27	su_27_fab_250m_62	fab 250m 62 slot3 x2; fab 250m 62 slot4; fab 250m 62 slo
 su_27	su_27_ofab_250sh	fab 250sh slot3 x2; fab 250sh slot4; fab 250sh slot5; fab 250sh slot6; fab 250sh slot7; fab 250sh slot8 x2
 su_27	su_27_fab_500m_62	fab 500m 62 slot3 x2; fab 500m 62 slot4; fab 500m 62 slot5; fab 500m 62 slot6; fab 500m 62 slot7; fab 500m 62 slot8 x2
 su_27	su_27_fab_500sh	fab 500sh slot3 x2; fab 500sh slot4; fab 500sh slot5; fab 500sh slot6; fab 500sh slot7; fab 500sh slot8 x2
+su_27	su_27_rbk_500_ao_2_5rtm	rbk 500 ao 2 5rtm slot3 x2; rbk 500 ao 2 5rtm slot4; rbk 500 ao 2 5rtm slot5; rbk 500 ao 2 5rtm slot6; rbk 500 ao 2 5rtm slot7; rbk 500 ao 2 5rtm slot8 x2
+su_27	su_27_rbk_500_ptab	rbk 500 ptab slot3 x2; rbk 500 ptab slot4; rbk 500 ptab slot5; rbk 500 ptab slot6; rbk 500 ptab slot7; rbk 500 ptab slot8 x2
 su_27	su_27_zb500	zb 500 slot3 x2; zb 500 slot4; zb 500 slot5; zb 500 slot6; zb 500 slot7; zb 500 slot8 x2
 su_27sm	su_27sm_default	no suspended armament
 su_27sm	su_27sm_r73_default	2x r73 default; r77 slot4; r77 slot7
@@ -9920,6 +10364,8 @@ su_27sm	su_27sm_fab_250m_62	fab 250m 62 slot3 x2; fab 250m 62 slot4; fab 250m 62
 su_27sm	su_27sm_ofab_250sh	fab 250sh slot3 x2; fab 250sh slot4; fab 250sh slot5; fab 250sh slot6; fab 250sh slot7; fab 250sh slot8 x2
 su_27sm	su_27sm_fab_500m_62	fab 500m 62 slot3 x2; fab 500m 62 slot4; fab 500m 62 slot5; fab 500m 62 slot6; fab 500m 62 slot7; fab 500m 62 slot8 x2
 su_27sm	su_27sm_fab_500sh	fab 500sh slot3 x2; fab 500sh slot4; fab 500sh slot5; fab 500sh slot6; fab 500sh slot7; fab 500sh slot8 x2
+su_27sm	su_27sm_rbk_500_ao_2_5rtm	rbk 500 ao 2 5rtm slot3 x2; rbk 500 ao 2 5rtm slot4; rbk 500 ao 2 5rtm slot5; rbk 500 ao 2 5rtm slot6; rbk 500 ao 2 5rtm slot7; rbk 500 ao 2 5rtm slot8 x2
+su_27sm	su_27sm_rbk_500_ptab	rbk 500 ptab slot3 x2; rbk 500 ptab slot4; rbk 500 ptab slot5; rbk 500 ptab slot6; rbk 500 ptab slot7; rbk 500 ptab slot8 x2
 su_27sm	su_27sm_kab_500kr	kab 500kr slot3; kab 500kr slot4; kab 500kr slot7; kab 500kr slot8
 su_27sm	su_27sm_kab_1500kr	kab 1500kr slot6
 su_27sm	su_27sm_zb500	zb 500 slot3 x2; zb 500 slot4; zb 500 slot5; zb 500 slot6; zb 500 slot7; zb 500 slot8 x2
@@ -9949,6 +10395,8 @@ su_30mk2v_venezuela	su_30mk2v_venezuela_fab_250sh	r73 slot1 default; r73 slot2; 
 su_30mk2v_venezuela	su_30mk2v_venezuela_fab_500m_62	r73 slot1 default; r73 slot2; fab 500m 62 slot3 x2; fab 500m 62 slot5; fab 500m 62 slot6; fab 500m 62 slot7; fab 500m 62 slot8; fab 500m 62 slot10 x2; r73 slot11; r73 slot12 default
 su_30mk2v_venezuela	su_30mk2v_venezuela_fab_500sh	r73 slot1 default; r73 slot2; fab 500sh slot3 x2; fab 500sh slot5; fab 500sh slot6; fab 500sh slot7; fab 500sh slot8; fab 500sh slot10 x2; r73 slot11; r73 slot12 default
 su_30mk2v_venezuela	su_30mk2v_venezuela_fab_1500	r73 slot1 default; r73 slot2; fab 1500 slot4; r77 slot5; r77 slot6; fab 1500 slot7; r77 slot8; fab 1500 slot9; r73 slot11; r73 slot12 default
+su_30mk2v_venezuela	su_30mk2v_venezuela_rbk_500_ao_2_5rtm	r73 slot1 default; r73 slot2; rbk 500 ao 2 5rtm slot3 x2; rbk 500 ao 2 5rtm slot5; rbk 500 ao 2 5rtm slot6; rbk 500 ao 2 5rtm slot7; rbk 500 ao 2 5rtm slot8; rbk 500 ao 2 5rtm slot10 x2; r73 slot11; r73 slot12 default
+su_30mk2v_venezuela	su_30mk2v_venezuela_rbk_500_ptab	r73 slot1 default; r73 slot2; rbk 500 ptab slot3 x2; rbk 500 ptab slot5; rbk 500 ptab slot6; rbk 500 ptab slot7; rbk 500 ptab slot8; rbk 500 ptab slot10 x2; r73 slot11; r73 slot12 default
 su_30mk2v_venezuela	su_30mk2v_venezuela_kab_500kr	kab 500kr slot3; kab 500kr slot4; kab 500kr slot5; kab 500kr slot8; kab 500kr slot9; kab 500kr slot10
 su_30mk2v_venezuela	su_30mk2v_venezuela_kab_1500kr	kab 1500kr slot4; kab 1500kr slot7; kab 1500kr slot9
 su_30mk2v_venezuela	su_30mk2v_venezuela_kab_500kr_r73	r73 slot1 default; r73 slot2; kab 500kr slot3; kab 500kr slot4; kab 500kr slot5; kab 500kr slot8; kab 500kr slot9; kab 500kr slot10; r73 slot11; r73 slot12 default
@@ -9982,6 +10430,8 @@ su_30mkk	su_30mkk_fab_250sh	r73 slot1 default; r73 slot2; ofab 250sh slot3 x2; o
 su_30mkk	su_30mkk_fab_500m_62	r73 slot1 default; r73 slot2; fab 500m 62 slot3 x2; fab 500m 62 slot5; fab 500m 62 slot6; fab 500m 62 slot7; fab 500m 62 slot8; fab 500m 62 slot10 x2; r73 slot11; r73 slot12 default
 su_30mkk	su_30mkk_fab_500sh	r73 slot1 default; r73 slot2; fab 500sh slot3 x2; fab 500sh slot5; fab 500sh slot6; fab 500sh slot7; fab 500sh slot8; fab 500sh slot10 x2; r73 slot11; r73 slot12 default
 su_30mkk	su_30mkk_fab_1500	r73 slot1 default; r73 slot2; fab 1500 slot4; r77 slot5; r77 slot6; fab 1500 slot7; r77 slot8; fab 1500 slot9; r73 slot11; r73 slot12 default
+su_30mkk	su_30mkk_rbk_500_ao_2_5rtm	r73 slot1 default; r73 slot2; rbk 500 ao 2 5rtm slot3 x2; rbk 500 ao 2 5rtm slot5; rbk 500 ao 2 5rtm slot6; rbk 500 ao 2 5rtm slot7; rbk 500 ao 2 5rtm slot8; rbk 500 ao 2 5rtm slot10 x2; r73 slot11; r73 slot12 default
+su_30mkk	su_30mkk_rbk_500_ptab	r73 slot1 default; r73 slot2; rbk 500 ptab slot3 x2; rbk 500 ptab slot5; rbk 500 ptab slot6; rbk 500 ptab slot7; rbk 500 ptab slot8; rbk 500 ptab slot10 x2; r73 slot11; r73 slot12 default
 su_30mkk	su_30mkk_kab_500kr	kab 500kr slot3; kab 500kr slot4; kab 500kr slot5; kab 500kr slot8; kab 500kr slot9; kab 500kr slot10
 su_30mkk	su_30mkk_kab_1500kr	kab 1500kr slot4; kab 1500kr slot7; kab 1500kr slot9
 su_30mkk	su_30mkk_kab_500kr_r73	r73 slot1 default; r73 slot2; kab 500kr slot3; kab 500kr slot4; kab 500kr slot5; kab 500kr slot8; kab 500kr slot9; kab 500kr slot10; r73 slot11; r73 slot12 default
@@ -10021,6 +10471,8 @@ su_30mkm	su_30mkm_upab_500	upab 500b slot3 x2; upab 500b slot5; upab 500b slot6;
 su_30mkm	su_30mkm_kab_1500kr	kab 1500kr slot4; kab 1500kr slot7; kab 1500kr slot9
 su_30mkm	su_30mkm_kab_1500lg	kab 1500lg slot4; kab 1500lg slot7; damocles; kab 1500lg slot9
 su_30mkm	su_30mkm_upab_1500	upab 1500 slot4; upab 1500 slot7; upab 1500 slot9
+su_30mkm	su_30mkm_rbk_500_ao_2_5rtm	rbk 500 ao 2 5rtm slot3 x2; rbk 500 ao 2 5rtm slot5; rbk 500 ao 2 5rtm slot6; rbk 500 ao 2 5rtm slot7; rbk 500 ao 2 5rtm slot8; rbk 500 ao 2 5rtm slot10 x2
+su_30mkm	su_30mkm_rbk_500_ptab	rbk 500 ptab slot3 x2; rbk 500 ptab slot5; rbk 500 ptab slot6; rbk 500 ptab slot7; rbk 500 ptab slot8; rbk 500 ptab slot10 x2
 su_30mkm	su_30mkm_zb_500	zb 500 slot3 x2; zb 500 slot5; zb 500 slot6; zb 500 slot7; zb 500 slot8; zb 500 slot10 x2
 su_30sm	su_30sm_default	r73 slot1 default; r77 slot4 default; r77 slot9 default; r73 slot12 default
 su_30sm	su_30sm_r73	r73 slot1 default; r73 slot2; r73 slot3; r73 slot10; r73 slot11; r73 slot12 default
@@ -10055,6 +10507,8 @@ su_30sm	su_30sm_upab_500	upab 500b slot3 x2; upab 500b slot5; upab 500b slot6; u
 su_30sm	su_30sm_kab_1500kr	kab 1500kr slot4; kab 1500kr slot7; kab 1500kr slot9
 su_30sm	su_30sm_kab_1500lg	kab 1500lg slot4; kab 1500lg slot7; t220; kab 1500lg slot9
 su_30sm	su_30sm_upab_1500	upab 1500 slot4; upab 1500 slot7; upab 1500 slot9
+su_30sm	su_30sm_rbk_500_ao_2_5rtm	rbk 500 ao 2 5rtm slot3 x2; rbk 500 ao 2 5rtm slot5; rbk 500 ao 2 5rtm slot6; rbk 500 ao 2 5rtm slot7; rbk 500 ao 2 5rtm slot8; rbk 500 ao 2 5rtm slot10 x2
+su_30sm	su_30sm_rbk_500_ptab	rbk 500 ptab slot3 x2; rbk 500 ptab slot5; rbk 500 ptab slot6; rbk 500 ptab slot7; rbk 500 ptab slot8; rbk 500 ptab slot10 x2
 su_30sm	su_30sm_zb_500	zb 500 slot3 x2; zb 500 slot5; zb 500 slot6; zb 500 slot7; zb 500 slot8; zb 500 slot10 x2
 su_30sm2	su_30sm2_default	r73 slot1 default; r77 slot4 default; r77 slot9 default; r73 slot12 default
 su_30sm2	su_30sm2_r73	r73 slot1 default; r73 slot2; r73 slot3; r73 slot10; r73 slot11; r73 slot12 default
@@ -10089,6 +10543,8 @@ su_30sm2	su_30sm2_upab_500	upab 500b slot3 x2; upab 500b slot5; upab 500b slot6;
 su_30sm2	su_30sm2_kab_1500kr	kab 1500kr slot4; kab 1500kr slot7; kab 1500kr slot9
 su_30sm2	su_30sm2_kab_1500lg	kab 1500lg slot4; kab 1500lg slot7; t220; kab 1500lg slot9
 su_30sm2	su_30sm2_upab_1500	upab 1500 slot4; upab 1500 slot7; upab 1500 slot9
+su_30sm2	su_30sm2_rbk_500_ao_2_5rtm	rbk 500 ao 2 5rtm slot3 x2; rbk 500 ao 2 5rtm slot5; rbk 500 ao 2 5rtm slot6; rbk 500 ao 2 5rtm slot7; rbk 500 ao 2 5rtm slot8; rbk 500 ao 2 5rtm slot10 x2
+su_30sm2	su_30sm2_rbk_500_ptab	rbk 500 ptab slot3 x2; rbk 500 ptab slot5; rbk 500 ptab slot6; rbk 500 ptab slot7; rbk 500 ptab slot8; rbk 500 ptab slot10 x2
 su_30sm2	su_30sm2_zb_500	zb 500 slot3 x2; zb 500 slot5; zb 500 slot6; zb 500 slot7; zb 500 slot8; zb 500 slot10 x2
 su_33	su_33_default	2x r73 default; r27er slot4; r27er slot9
 su_33	su_33_r73	2x r73 default; r73 slot2; r73 slot3; r73 slot10; r73 slot11
@@ -10103,6 +10559,8 @@ su_33	su_33_fab_250_270	fab 250 270 x6 slot3; fab 250 270 x5 slot5; fab 250 270 
 su_33	su_33_fab_500m_62	fab 500m 62 slot3 x2; fab 500m 62 slot5; fab 500m 62 slot6; fab 500m 62 slot7; fab 500m 62 slot8; fab 500m 62 slot10 x2
 su_33	su_33_ofab_250sh	ofab 250sh slot3 x2; ofab 250sh slot5; ofab 250sh x3 slot6; ofab 250sh x3 slot7; ofab 250sh slot8; ofab 250sh slot10 x2
 su_33	su_33_fab_500sh	fab 500sh slot3 x2; fab 500sh slot5; fab 500sh slot6; fab 500sh slot7; fab 500sh slot8; fab 500sh slot10 x2
+su_33	su_33_rbk_500_ao_2_5rtm	rbk 500 ao 2 5rtm slot3 x2; rbk 500 ao 2 5rtm slot5; rbk 500 ao 2 5rtm slot6; rbk 500 ao 2 5rtm slot7; rbk 500 ao 2 5rtm slot8; rbk 500 ao 2 5rtm slot10 x2
+su_33	su_33_rbk_500_ptab	rbk 500 ptab slot3 x2; rbk 500 ptab slot5; rbk 500 ptab slot6; rbk 500 ptab slot7; rbk 500 ptab slot8; rbk 500 ptab slot10 x2
 su_33	su_33_zb500	zb 500 slot3 x2; zb 500 slot5; zb 500 slot6; zb 500 slot7; zb 500 slot8; zb 500 slot10 x2
 su_34	su_34_default	2x r73 default; ptb left; r77 slot5 default; ptb fuse; r77 slot8 default; ptb right
 su_34	su_34_r73	2x r73 default; r73 slot2; r73 slot3; r73 slot10; r73 slot11
@@ -10135,6 +10593,8 @@ su_34	su_34_bomb_fab_500m_62	fab 500m 62 slot3 x2; fab 500m 62 slot4; fab 500m 6
 su_34	su_34_bomb_fab_500sh	fab 500sh slot3 x2; fab 500sh slot4; fab 500sh slot5; fab 500sh slot6 x2; fab 500sh slot7 x2; fab 500sh slot8; fab 500sh slot9; fab 500sh slot10 x2
 su_34	su_34_bomb_fab_1500	fab 1500 slot4; fab 1500 slot7; fab 1500 slot9
 su_34	su_34_bomb_fab_3000	fab 3000 slot7
+su_34	su_34_rbk_500_ao_2_5rtm	rbk 500 ao 2 5rtm slot3 x2; rbk 500 ao 2 5rtm slot4; rbk 500 ao 2 5rtm slot5; rbk 500 ao 2 5rtm slot6 x2; rbk 500 ao 2 5rtm slot7 x2; rbk 500 ao 2 5rtm slot8; rbk 500 ao 2 5rtm slot9; rbk 500 ao 2 5rtm slot10 x2
+su_34	su_34_rbk_500_ptab	rbk 500 ptab slot3 x2; rbk 500 ptab slot4; rbk 500 ptab slot5; rbk 500 ptab slot6 x2; rbk 500 ptab slot7 x2; rbk 500 ptab slot8; rbk 500 ptab slot9; rbk 500 ptab slot10 x2
 su_34	su_34_bomb_zab_500	zb 500 slot3 x2; zb 500 slot4; zb 500 slot5; zb 500 slot8; zb 500 slot9; zb 500 slot10 x2
 su_34	su_34_bomb_kab_500kr	kab 500kr slot3; kab 500kr slot4; kab 500kr slot5; kab 500kr slot8; kab 500kr slot9; kab 500kr slot10
 su_34	su_34_bomb_kab_250lg	kab 250lg slot3; kab 250lg slot4; kab 250lg slot5; kab 250lg slot8; kab 250lg slot9; kab 250lg slot10
@@ -10386,6 +10846,8 @@ tiger_had_block2_france	tiger_had_france_4_hellfire_default	2x helfire x2
 tiger_had_block2_france	tiger_had_france_8_hellfire	2x helfire x4
 tiger_had_block2_france	tiger_had_block2_france_4_spike	2x spike x2
 tiger_had_block2_france	tiger_had_block2_france_8_spike	2x spike x4
+tiger_had_block2_france	tiger_had_block2_france_4_spike_wo_mitl	2x spike wo mitl x2
+tiger_had_block2_france	tiger_had_block2_france_8_spike_wo_mitl	2x spike wo mitl x4
 tiger_had_block2_france	tiger_had_france_stinger	2x atas
 tiger_had_block2_france	tiger_had_france_mistral	2x mistral
 tiger_had_france	tiger_had_france_default	no suspended armament
@@ -10454,8 +10916,10 @@ tornado_gr1	tornado_gr1_mk82_tsc	500lbs mk82 x2 slot3; 500lbs mk82 x2 slot4; 500
 tornado_gr1	tornado_gr1_mk82_snakeye	500lbs mk82 snakeye slot3; 500lbs mk82 snakeye slot4; 500lbs mk82 snakeye slot5; 500lbs mk82 snakeye slot6; 500lbs mk82 snakeye slot7; 500lbs mk82 snakeye slot8; 500lbs mk82 snakeye slot9
 tornado_gr1	tornado_gr1_mk82_snakeye_tsc	500lbs mk82 snakeye x2 slot3; 500lbs mk82 snakeye x2 slot4; 500lbs mk82 snakeye x2 slot5; 500lbs mk82 snakeye slot6; 500lbs mk82 snakeye x2 slot7; 500lbs mk82 snakeye x2 slot8; 500lbs mk82 snakeye x2 slot9
 tornado_gr1	tornado_gr1_1000lb_mk13	1000lbs slot3; 1000lbs default slot4; 1000lbs default slot5; 1000lbs slot6; 1000lbs default slot7; 1000lbs default slot8; 1000lbs slot9
+tornado_gr1	tornado_gr1_bl755	bl755 slot3; bl755 slot4; bl755 slot5; bl755 slot6; bl755 slot7; bl755 slot8; bl755 slot9
 tornado_gr1	tornado_gr1_1000lb_mk83	1000lbs mk83 slot3; 1000lbs mk83 slot4; 1000lbs mk83 slot5; 1000lbs mk83 slot6; 1000lbs mk83 slot7; 1000lbs mk83 slot8; 1000lbs mk83 slot9
 tornado_gr1	tornado_gr1_1000lb_mk13_tsc	1000lbs x2 slot3; 1000lbs x2 slot4; 1000lbs x2 slot5; 1000lbs x2 slot7; 1000lbs x2 slot8; 1000lbs x2 slot9
+tornado_gr1	tornado_gr1_bl755_tsc	bl755 x2 slot3; bl755 x2 slot4; bl755 x2 slot5; bl755 x2 slot7; bl755 x2 slot8; bl755 x2 slot9
 tornado_gr1	tornado_gr1_1000lb_mk13_tsc_n117	1000lbs x2 n117 slot3; 1000lbs x2 n117 slot4; 1000lbs x2 n117 slot5; 1000lbs x2 n117 slot7; 1000lbs x2 n117 slot8; 1000lbs x2 n117 slot9
 tornado_gr1	tornado_gr1_1000lb_mk83_tsc	1000lbs mk83 x2 slot3; 1000lbs mk83 x2 slot4; 1000lbs mk83 x2 slot5; 1000lbs mk83 x2 slot7; 1000lbs mk83 x2 slot8; 1000lbs mk83 x2 slot9
 tornado_gr1	tornado_gr1_1000lb_default	1000lbs default slot4; 1000lbs default slot5; 1000lbs default slot7; 1000lbs default slot8
@@ -10485,8 +10949,10 @@ tornado_gr4	tornado_gr4_mk82_tsc	500lbs mk82 x2 slot3; 500lbs mk82 x2 slot5; 500
 tornado_gr4	tornado_gr4_mk82_snakeye	500lbs mk82 snakeye slot3; 500lbs mk82 snakeye slot5; 500lbs mk82 snakeye slot6; 500lbs mk82 snakeye slot7; 500lbs mk82 snakeye slot8; 500lbs mk82 snakeye slot9; 500lbs mk82 snakeye slot11
 tornado_gr4	tornado_gr4_mk82_snakeye_tsc	500lbs mk82 snakeye x2 slot3; 500lbs mk82 snakeye x2 slot5; 500lbs mk82 snakeye x2 slot6; 500lbs mk82 snakeye slot7; 500lbs mk82 snakeye x2 slot8; 500lbs mk82 snakeye x2 slot9; 500lbs mk82 snakeye x2 slot11
 tornado_gr4	tornado_gr4_1000lb_mk13	1000lbs slot3; 1000lbs default slot5; 1000lbs default slot6; 1000lbs slot7; 1000lbs default slot8; 1000lbs default slot9; 1000lbs slot11
+tornado_gr4	tornado_gr4_bl755	bl755 slot3; bl755 slot5; bl755 slot6; bl755 slot7; bl755 slot8; bl755 slot9; bl755 slot11
 tornado_gr4	tornado_gr4_1000lb_mk83	1000lbs mk83 slot3; 1000lbs mk83 slot5; 1000lbs mk83 slot6; 1000lbs mk83 slot7; 1000lbs mk83 slot8; 1000lbs mk83 slot9; 1000lbs mk83 slot11
 tornado_gr4	tornado_gr4_1000lb_mk13_tsc	1000lbs x2 slot3; 1000lbs x2 slot5; 1000lbs x2 slot6; 1000lbs x2 slot8; 1000lbs x2 slot9; 1000lbs x2 slot11
+tornado_gr4	tornado_gr4_bl755_tsc	bl755 x2 slot3; bl755 x2 slot5; bl755 x2 slot6; bl755 x2 slot8; bl755 x2 slot9; bl755 x2 slot11
 tornado_gr4	tornado_gr4_1000lb_mk13_tsc_n117	1000lbs x2 n117 slot3; 1000lbs x2 n117 slot5; 1000lbs x2 n117 slot6; 1000lbs x2 n117 slot8; 1000lbs x2 n117 slot9; 1000lbs x2 n117 slot11
 tornado_gr4	tornado_gr4_1000lb_mk83_tsc	1000lbs mk83 x2 slot3; 1000lbs mk83 x2 slot5; 1000lbs mk83 x2 slot6; 1000lbs mk83 x2 slot8; 1000lbs mk83 x2 slot9; 1000lbs mk83 x2 slot11
 tornado_gr4	tornado_gr4_1000lb_default	1000lbs default slot5; 1000lbs default slot6; 1000lbs default slot8; 1000lbs default slot9
@@ -10499,7 +10965,9 @@ tornado_ids_de_assta1	tornado_ids_assta1_default	ptb 1; ptb 2
 tornado_ids_de_assta1	tornado_ids_assta1_boz	2x boz
 tornado_ids_de_assta1	tornado_ids_assta1_aim_9l	2x aim 9l
 tornado_ids_de_assta1	tornado_ids_assta1_fr_mk13	2x 1000lbs mk83; 3x 1000lbs mk83 default; 1000lbs mk83 fuse centr; 1000lbs mk83 default slot7
+tornado_ids_de_assta1	tornado_ids_assta1_bl755	5x bl755; bl755 fuse centr; bl755 slot7
 tornado_ids_de_assta1	tornado_ids_assta1_fr_mk13_tsc	5x 1000lbs mk83 x2; 1000lbs mk83 x2 slot7
+tornado_ids_de_assta1	tornado_ids_assta1_bl755_tsc	5x bl755 x2; bl755 x2 slot7
 tornado_ids_de_assta1	tornado_ids_assta1_fr_mk13_air	5x 1000lbs mk83 air; 1000lbs mk83 air fuse centr; 1000lbs mk83 air slot7
 tornado_ids_de_assta1	tornado_ids_assta1_fr_mk13_air_tsc	5x 1000lbs mk83 air x2; 1000lbs mk83 air x2 slot7
 tornado_ids_de_assta1	tornado_ids_assta1_gbu_16	2x 1000lb gbu 16 wing; litening pod; 1000lb gbu 16 fuse centr; 1000lb gbu 16
@@ -10533,7 +11001,9 @@ tornado_ids_de_assta3_sle	tornado_ids_de_assta3_sle_boz_102_ec	maw 300 left; maw
 tornado_ids_de_assta3_sle	tornado_ids_de_assta3_sle_brimstone_dm	brimstone dm slot4; brimstone dm slot5; litening pod; brimstone dm slot7
 tornado_ids_de_assta3_sle	tornado_ids_de_assta3_sle_1000lb_default	mk83 default slot4; mk83 default slot5; mk83 default slot7; mk83 default slot8
 tornado_ids_de_assta3_sle	tornado_ids_de_assta3_sle_1000lb_mk13	mk83 slot3; mk83 default slot4; mk83 default slot5; mk83 slot6; mk83 default slot7; mk83 default slot8; mk83 slot9
+tornado_ids_de_assta3_sle	tornado_ids_de_assta3_sle_bl755	bl755 slot3; bl755 slot4; bl755 slot5; bl755 slot6; bl755 slot7; bl755 slot8; bl755 slot9
 tornado_ids_de_assta3_sle	tornado_ids_de_assta3_sle_1000lb_mk13_tsc	mk83 x2 slot3; mk83 x2 slot4; mk83 x2 slot5; mk83 x2 slot7; mk83 x2 slot8; mk83 x2 slot9
+tornado_ids_de_assta3_sle	tornado_ids_de_assta3_sle_bl755_tsc	bl755 x2 slot3; bl755 x2 slot4; bl755 x2 slot5; bl755 x2 slot7; bl755 x2 slot8; bl755 x2 slot9
 tornado_ids_de_assta3_sle	tornado_ids_de_assta3_sle_fr_mk13_air	mk83 air slot3; mk83 air slot4; mk83 air slot5; mk83 air slot6; mk83 air slot7; mk83 air slot8; mk83 air slot9
 tornado_ids_de_assta3_sle	tornado_ids_de_assta3_sle_fr_mk13_air_tsc	mk83 air x2 slot3; mk83 air x2 slot4; mk83 air x2 slot5; mk83 air x2 slot7; mk83 air x2 slot8; mk83 air x2 slot9
 tornado_ids_de_assta3_sle	tornado_ids_de_assta3_sle_gbu_16	gbu 16 slot3; gbu 16 slot4; gbu 16 slot6; litening pod; gbu 16 slot9
@@ -10546,7 +11016,9 @@ tornado_ids_de_mfg	tornado_ids_de_mfg_default	2x boz; 2x aim 9l; ptb 1; ptb 2
 tornado_ids_de_mfg	tornado_ids_de_mfg_boz	2x boz
 tornado_ids_de_mfg	tornado_ids_de_mfg_aim_9l	2x aim 9l
 tornado_ids_de_mfg	tornado_ids_de_mfg_fr_mk13	2x boz; 2x aim 9l; 2x 1000lbs mk83; 4x 1000lbs mk83 default; 1000lbs mk83 fuse centr
+tornado_ids_de_mfg	tornado_ids_de_mfg_bl755	2x boz; 2x aim 9l; 6x bl755; bl755 fuse centr
 tornado_ids_de_mfg	tornado_ids_de_mfg_fr_mk13_tsc	2x boz; 2x aim 9l; 6x 1000lbs mk83 x2
+tornado_ids_de_mfg	tornado_ids_de_mfg_bl755_tsc	2x boz; 2x aim 9l; 6x bl755 x2
 tornado_ids_de_mfg	tornado_ids_de_mfg_fr_mk13_air	2x boz; 2x aim 9l; 6x 1000lbs mk83 air; 1000lbs mk83 air fuse centr
 tornado_ids_de_mfg	tornado_ids_de_mfg_fr_mk13_air_tsc	2x boz; 2x aim 9l; 6x 1000lbs mk83 air x2
 tornado_ids_de_mfg	tornado_ids_de_mfg_as_34	as 34 slot3; as 34 slot4; as 34 slot8; as 34 slot9
@@ -10555,7 +11027,9 @@ tornado_ids_de_wtd61	tornado_ids_de_mfg_default	2x boz; 2x aim 9l; ptb 1; ptb 2
 tornado_ids_de_wtd61	tornado_ids_de_mfg_boz	2x boz
 tornado_ids_de_wtd61	tornado_ids_de_mfg_aim_9l	2x aim 9l
 tornado_ids_de_wtd61	tornado_ids_de_mfg_fr_mk13	2x boz; 2x aim 9l; 2x 1000lbs mk83; 4x 1000lbs mk83 default; 1000lbs mk83 fuse centr
+tornado_ids_de_wtd61	tornado_ids_de_mfg_bl755	2x boz; 2x aim 9l; 6x bl755; bl755 fuse centr
 tornado_ids_de_wtd61	tornado_ids_de_mfg_fr_mk13_tsc	2x boz; 2x aim 9l; 6x 1000lbs mk83 x2
+tornado_ids_de_wtd61	tornado_ids_de_mfg_bl755_tsc	2x boz; 2x aim 9l; 6x bl755 x2
 tornado_ids_de_wtd61	tornado_ids_de_mfg_fr_mk13_air	2x boz; 2x aim 9l; 6x 1000lbs mk83 air; 1000lbs mk83 air fuse centr
 tornado_ids_de_wtd61	tornado_ids_de_mfg_fr_mk13_air_tsc	2x boz; 2x aim 9l; 6x 1000lbs mk83 air x2
 tornado_ids_de_wtd61	tornado_ids_de_mfg_4x_1000_default	2x boz; 2x aim 9l; 4x 1000lbs mk83 default
@@ -10568,7 +11042,9 @@ tornado_ids_it	tornado_ids_it_mod95_mk82_tsc	6x 500lbs mk82 x2; 500lbs mk82 fuse
 tornado_ids_it	tornado_ids_it_mod95_mk82_snakeye	6x 500lbs mk82 snakeye; 500lbs mk82 snakeye fuse centr
 tornado_ids_it	tornado_ids_it_mod95_mk82_snakeye_tsc	6x 500lbs mk82 snakeye x2; 500lbs mk82 snakeye fuse centr
 tornado_ids_it	tornado_ids_it_mod95_fr_mk13	2x 1000lbs mk83; 4x 1000lbs mk83 default; 1000lbs mk83 fuse centr
+tornado_ids_it	tornado_ids_it_mod95_bl755	6x bl755; bl755 fuse centr
 tornado_ids_it	tornado_ids_it_mod95_fr_mk13_tsc	6x 1000lbs mk83 x2
+tornado_ids_it	tornado_ids_it_mod95_bl755_tsc	6x bl755 x2
 tornado_ids_it	tornado_ids_it_mod95_fr_mk13_air	6x 1000lbs mk83 air; 1000lbs mk83 air fuse centr
 tornado_ids_it	tornado_ids_it_mod95_fr_mk13_air_tsc	6x 1000lbs mk83 air x2
 tornado_ids_it	tornado_ids_it_mod95_4x_1000_default	4x 1000lbs mk83 default
@@ -10581,7 +11057,9 @@ tornado_ids_it_mod95	tornado_ids_it_mod95_mk82_tsc	6x 500lbs mk82 x2; 500lbs mk8
 tornado_ids_it_mod95	tornado_ids_it_mod95_mk82_snakeye	6x 500lbs mk82 snakeye; 500lbs mk82 snakeye fuse centr
 tornado_ids_it_mod95	tornado_ids_it_mod95_mk82_snakeye_tsc	6x 500lbs mk82 snakeye x2; 500lbs mk82 snakeye fuse centr
 tornado_ids_it_mod95	tornado_ids_it_mod95_fr_mk13	2x 1000lbs mk83; 4x 1000lbs mk83 default; 1000lbs mk83 fuse centr
+tornado_ids_it_mod95	tornado_ids_it_mod95_bl755	6x bl755; bl755 fuse centr
 tornado_ids_it_mod95	tornado_ids_it_mod95_fr_mk13_tsc	6x 1000lbs mk83 x2
+tornado_ids_it_mod95	tornado_ids_it_mod95_bl755_tsc	6x bl755 x2
 tornado_ids_it_mod95	tornado_ids_it_mod95_fr_mk1_air	6x 1000lbs mk83 air; 1000lbs mk83 air fuse centr
 tornado_ids_it_mod95	tornado_ids_it_mod95_fr_mk13_air_tsc	6x 1000lbs mk83 air x2
 tornado_ids_it_mod95	tornado_ids_it_mod95_gbu_16	2x 1000lb gbu 16 wing; pdlct s pod; 1000lb gbu 16 fuse centr; 1000lb gbu 16
@@ -10601,7 +11079,9 @@ tornado_ids_it_ret8	tornado_ids_it_ret8_mk82_tsc	500lbs mk82 x2 slot3; 500lbs mk
 tornado_ids_it_ret8	tornado_ids_it_ret8_mk82_snakeye	500lbs mk82 snakeye slot3; 500lbs mk82 snakeye slot4; 500lbs mk82 snakeye slot5; 500lbs mk82 snakeye slot6; 500lbs mk82 snakeye slot7; 500lbs mk82 snakeye slot8; 500lbs mk82 snakeye slot9
 tornado_ids_it_ret8	tornado_ids_it_ret8_mk82_snakeye_tsc	500lbs mk82 snakeye x2 slot3; 500lbs mk82 snakeye x2 slot4; 500lbs mk82 snakeye x2 slot5; 500lbs mk82 snakeye slot6; 500lbs mk82 snakeye x2 slot7; 500lbs mk82 snakeye x2 slot8; 500lbs mk82 snakeye x2 slot9
 tornado_ids_it_ret8	tornado_ids_it_ret8_fr_mk13	1000lbs mk83 slot3; 1000lbs mk83 slot4; 1000lbs mk83 slot5; 1000lbs mk83 slot6; 1000lbs mk83 slot7; 1000lbs mk83 slot8; 1000lbs mk83 slot9
+tornado_ids_it_ret8	tornado_ids_it_ret8_bl755	bl755 slot3; bl755 slot4; bl755 slot5; bl755 slot6; bl755 slot7; bl755 slot8; bl755 slot9
 tornado_ids_it_ret8	tornado_ids_it_ret8_fr_mk13_tsc	1000lbs mk83 x2 slot3; 1000lbs mk83 x2 slot4; 1000lbs mk83 x2 slot5; 1000lbs mk83 x2 slot7; 1000lbs mk83 x2 slot8; 1000lbs mk83 x2 slot9
+tornado_ids_it_ret8	tornado_ids_it_ret8_bl755_tsc	bl755 x2 slot3; bl755 x2 slot4; bl755 x2 slot5; bl755 x2 slot7; bl755 x2 slot8; bl755 x2 slot9
 tornado_ids_it_ret8	tornado_ids_it_ret8_fr_mk13_air	1000lbs mk83 air slot3; 1000lbs mk83 air slot4; 1000lbs mk83 air slot5; 1000lbs mk83 air slot6; 1000lbs mk83 air slot7; 1000lbs mk83 air slot8; 1000lbs mk83 air slot9
 tornado_ids_it_ret8	tornado_ids_it_ret8_fr_mk13_air_tsc	1000lbs mk83 air x2 slot3; 1000lbs mk83 air x2 slot4; 1000lbs mk83 air x2 slot5; 1000lbs mk83 air x2 slot7; 1000lbs mk83 air x2 slot8; 1000lbs mk83 air x2 slot9
 tornado_ids_it_ret8	tornado_ids_it_ret8_2x_gbu_10	us gbu 10 slot4; us gbu 10 slot6; litening pod slot8
@@ -10959,6 +11439,8 @@ yak_130_early	yak_130_early_fab_250m_54	fab 250m 54 slot2; fab 250m 54 slot3; fa
 yak_130_early	yak_130_early_fab_250m_62	fab 250m 62 slot2; fab 250m 62 slot3; fab 250m 62 slot4; fab 250m 62 slot5
 yak_130_early	yak_130_early_fab_500m_54	fab 500m 54 slot2; fab 500m 54 slot3; fab 500m 54 slot4; fab 500m 54 slot5
 yak_130_early	yak_130_early_fab_500m_62	fab 500m 62 slot2; fab 500m 62 slot3; fab 500m 62 slot4; fab 500m 62 slot5
+yak_130_early	yak_130_early_rbk_500_ao_2_5rtm	rbk 500 ao 2 5rtm slot2; rbk 500 ao 2 5rtm slot3; rbk 500 ao 2 5rtm slot4; rbk 500 ao 2 5rtm slot5
+yak_130_early	yak_130_early_rbk_500_ptab	rbk 500 ptab slot2; rbk 500 ptab slot3; rbk 500 ptab slot4; rbk 500 ptab slot5
 yak_130_early	yak_130_early_kab_500kr	kab 500kr slot2; kab 500kr slot3; kab 500kr slot4; kab 500kr slot5
 yak_130_early	yak_130_early_zb_500	zb 500 slot2; zb 500 slot3; zb 500 slot4; zb 500 slot5
 yak_141	yak_141_default	no suspended armament
@@ -10969,6 +11451,7 @@ yak_141	yak_141_4x_r_27r	2x r27r; 2x r27r default
 yak_141	yak_141_2x_r_27er	2x r27er
 yak_141	yak_141_2x_r_27et	2x r27et
 yak_141	yak_141_4x_r_27t	4x r27t
+yak_141	yak_141_4x_r_77	4x r77
 yak_141	yak_141_4x_ub_32	4x ub32
 yak_141	yak_141_4x_b8m1	4x b8m1 s 8ko
 yak_141	yak_141_4x_s24	4x s24
@@ -10978,6 +11461,8 @@ yak_141	yak_141_4x_fab_250	4x fab 250m 62
 yak_141	yak_141_4x_fab_500	4x fab 500m 62t
 yak_141	yak_141_4x_fab_250sh	4x ofab 250sh
 yak_141	yak_141_4x_fab_500sh	4x fab 500sh
+yak_141	yak_141_rbk_500_ao_2_5rtm	4x rbk 500 ao 2 5rtm
+yak_141	yak_141_rbk_500_ptab	4x rbk 500 ptab
 yak_141	yak_141_4x_zb_500	4x zb 500
 yak_141	yak_141_4x_upk_23_250	4x upk23 gunpod
 yak_2_kabb	yak_2_kabb_default	no suspended armament
@@ -11085,6 +11570,7 @@ z_10me	z_10_akd_9_default	akd 9 default
 z_10me	z_10_akd_9	akd 9 default; akd 9
 z_10me	z_10_akd_10	2x akd 10
 z_10me	z_10_cm_502kg	cm 502kg slot1; cm 502kg slot2; cm 502kg slot3; cm 502kg slot4
+z_10me	z_10_cm_502kg_wo_mitl	cm 502kg wo mitl slot1; cm 502kg wo mitl slot2; cm 502kg wo mitl slot3; cm 502kg wo mitl slot4
 z_10me	z_10_cm_ba_11	ba 11 slot1; ba 11 slot4
 z_10me	z_10_hf_7d	4x hf27
 z_10me	z_10_hf_25	2x hf25

@@ -1575,6 +1575,15 @@
     "requires": "atgm_spike_x2"
   },
   {
+    "aircraftId": "a_129_d",
+    "id": "atgm_spike_x4_mitl",
+    "display": "Spike ER /4 (MITL)",
+    "tier": 4,
+    "modClass": "weapon",
+    "group": "",
+    "requires": "atgm_spike_x4"
+  },
+  {
     "aircraftId": "a_20g_30_ussr",
     "id": "50cal_ground_targets",
     "display": "12.7 mm machine gun ammunition belt for ground targets",
@@ -1675,15 +1684,6 @@
   },
   {
     "aircraftId": "a_20g_30_ussr",
-    "id": "us_500lb_anm64a1",
-    "display": "AN-M64A1 BOX",
-    "tier": 2,
-    "modClass": "weapon",
-    "group": "",
-    "requires": "su_fab_250"
-  },
-  {
-    "aircraftId": "a_20g_30_ussr",
     "id": "bmg50_turret_belt_pack",
     "display": "Bmg50 Turret Belt Pack",
     "tier": 2,
@@ -1716,7 +1716,7 @@
     "tier": 3,
     "modClass": "weapon",
     "group": "",
-    "requires": "us_500lb_anm64a1"
+    "requires": ""
   },
   {
     "aircraftId": "a_20g_30_ussr",
@@ -3781,8 +3781,8 @@
   },
   {
     "aircraftId": "a_5c",
-    "id": "countermeasures_launcher_chaff_large",
-    "display": "Countermeasures Launcher Chaff Large",
+    "id": "countermeasures_launcher_chaff",
+    "display": "Countermeasures Launcher Chaff",
     "tier": 0,
     "modClass": "",
     "group": "",
@@ -6013,6 +6013,15 @@
   },
   {
     "aircraftId": "a-20g",
+    "id": "b-25_sbc",
+    "display": "SBC-25",
+    "tier": 1,
+    "modClass": "weapon",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "a-20g",
     "id": "structure_str",
     "display": "Airframe",
     "tier": 2,
@@ -6028,6 +6037,15 @@
     "modClass": "lth",
     "group": "",
     "requires": "new_radiator"
+  },
+  {
+    "aircraftId": "a-20g",
+    "id": "b-25_mbc",
+    "display": "MBC-25",
+    "tier": 2,
+    "modClass": "weapon",
+    "group": "",
+    "requires": "b-25_sbc"
   },
   {
     "aircraftId": "a-20g",
@@ -13473,6 +13491,15 @@
     "requires": "atgm_spike_x2"
   },
   {
+    "aircraftId": "ah_60_iaf",
+    "id": "atgm_spike_x4_mitl",
+    "display": "Spike ER /4 (MITL)",
+    "tier": 4,
+    "modClass": "weapon",
+    "group": "",
+    "requires": "atgm_spike_x4"
+  },
+  {
     "aircraftId": "ah_64a",
     "id": "countermeasures_launcher_chaff",
     "display": "Countermeasures Launcher Chaff",
@@ -14616,6 +14643,15 @@
     "requires": "ah_1_AGM_114_16"
   },
   {
+    "aircraftId": "ah_64d_i_saraph",
+    "id": "atgm_spike_nlos_mitl",
+    "display": "Spike NLOS (MITL)",
+    "tier": 4,
+    "modClass": "weapon",
+    "group": "",
+    "requires": "atgm_spike_nlos"
+  },
+  {
     "aircraftId": "ah_64d_japan",
     "id": "countermeasures_launcher_chaff",
     "display": "Countermeasures Launcher Chaff",
@@ -15036,7 +15072,7 @@
     "tier": 0,
     "modClass": "",
     "group": "",
-    "requires": ""
+    "requires": "MAW_system_heli_false_thermal_targets_large_dircm"
   },
   {
     "aircraftId": "ah_64e",
@@ -15067,8 +15103,8 @@
   },
   {
     "aircraftId": "ah_64e",
-    "id": "MAW_system_heli_false_thermal_targets_large",
-    "display": "MAW",
+    "id": "MAW_system_heli_false_thermal_targets_large_dircm",
+    "display": "MAWS/DIRCM",
     "tier": 1,
     "modClass": "armor",
     "group": "countermeasures",
@@ -15099,7 +15135,7 @@
     "tier": 2,
     "modClass": "armor",
     "group": "",
-    "requires": "MAW_system_heli_false_thermal_targets_large"
+    "requires": "MAW_system_heli_false_thermal_targets_large_dircm"
   },
   {
     "aircraftId": "ah_64e",
@@ -15163,6 +15199,15 @@
     "modClass": "weapon",
     "group": "",
     "requires": "us_agm_179_ir"
+  },
+  {
+    "aircraftId": "ah_64e",
+    "id": "atgm_spike_nlos_mitl",
+    "display": "Spike NLOS (MITL)",
+    "tier": 4,
+    "modClass": "weapon",
+    "group": "",
+    "requires": "atgm_spike_nlos"
   },
   {
     "aircraftId": "ah_64e_britain",
@@ -15189,7 +15234,7 @@
     "tier": 0,
     "modClass": "",
     "group": "",
-    "requires": ""
+    "requires": "MAW_system_heli_false_thermal_targets_large_dircm"
   },
   {
     "aircraftId": "ah_64e_britain",
@@ -15220,8 +15265,8 @@
   },
   {
     "aircraftId": "ah_64e_britain",
-    "id": "MAW_system_heli_false_thermal_targets_large",
-    "display": "MAW",
+    "id": "MAW_system_heli_false_thermal_targets_large_dircm",
+    "display": "MAWS/DIRCM",
     "tier": 1,
     "modClass": "armor",
     "group": "countermeasures",
@@ -15252,7 +15297,7 @@
     "tier": 2,
     "modClass": "armor",
     "group": "",
-    "requires": "MAW_system_heli_false_thermal_targets_large"
+    "requires": "MAW_system_heli_false_thermal_targets_large_dircm"
   },
   {
     "aircraftId": "ah_64e_britain",
@@ -15316,6 +15361,15 @@
     "modClass": "weapon",
     "group": "",
     "requires": "us_agm_179_ir"
+  },
+  {
+    "aircraftId": "ah_64e_britain",
+    "id": "atgm_spike_nlos_mitl",
+    "display": "Spike NLOS (MITL)",
+    "tier": 4,
+    "modClass": "weapon",
+    "group": "",
+    "requires": "atgm_spike_nlos"
   },
   {
     "aircraftId": "ah_64e_china",
@@ -15342,7 +15396,7 @@
     "tier": 0,
     "modClass": "",
     "group": "",
-    "requires": ""
+    "requires": "MAW_system_heli_false_thermal_targets_large_dircm"
   },
   {
     "aircraftId": "ah_64e_china",
@@ -15373,8 +15427,8 @@
   },
   {
     "aircraftId": "ah_64e_china",
-    "id": "MAW_system_heli_false_thermal_targets_large",
-    "display": "MAW",
+    "id": "MAW_system_heli_false_thermal_targets_large_dircm",
+    "display": "MAWS/DIRCM",
     "tier": 1,
     "modClass": "armor",
     "group": "countermeasures",
@@ -15405,7 +15459,7 @@
     "tier": 2,
     "modClass": "armor",
     "group": "",
-    "requires": "MAW_system_heli_false_thermal_targets_large"
+    "requires": "MAW_system_heli_false_thermal_targets_large_dircm"
   },
   {
     "aircraftId": "ah_64e_china",
@@ -15469,6 +15523,15 @@
     "modClass": "weapon",
     "group": "",
     "requires": "us_agm_179_ir"
+  },
+  {
+    "aircraftId": "ah_64e_china",
+    "id": "atgm_spike_nlos_mitl",
+    "display": "Spike NLOS (MITL)",
+    "tier": 4,
+    "modClass": "weapon",
+    "group": "",
+    "requires": "atgm_spike_nlos"
   },
   {
     "aircraftId": "ah_64e_indonesia",
@@ -15495,7 +15558,7 @@
     "tier": 0,
     "modClass": "",
     "group": "",
-    "requires": ""
+    "requires": "MAW_system_heli_false_thermal_targets_large_dircm"
   },
   {
     "aircraftId": "ah_64e_indonesia",
@@ -15526,8 +15589,8 @@
   },
   {
     "aircraftId": "ah_64e_indonesia",
-    "id": "MAW_system_heli_false_thermal_targets_large",
-    "display": "MAW",
+    "id": "MAW_system_heli_false_thermal_targets_large_dircm",
+    "display": "MAWS/DIRCM",
     "tier": 1,
     "modClass": "armor",
     "group": "countermeasures",
@@ -15558,7 +15621,7 @@
     "tier": 2,
     "modClass": "armor",
     "group": "",
-    "requires": "MAW_system_heli_false_thermal_targets_large"
+    "requires": "MAW_system_heli_false_thermal_targets_large_dircm"
   },
   {
     "aircraftId": "ah_64e_indonesia",
@@ -15622,6 +15685,15 @@
     "modClass": "weapon",
     "group": "",
     "requires": "us_agm_179_ir"
+  },
+  {
+    "aircraftId": "ah_64e_indonesia",
+    "id": "atgm_spike_nlos_mitl",
+    "display": "Spike NLOS (MITL)",
+    "tier": 4,
+    "modClass": "weapon",
+    "group": "",
+    "requires": "atgm_spike_nlos"
   },
   {
     "aircraftId": "ah_64e_netherlands",
@@ -15648,7 +15720,7 @@
     "tier": 0,
     "modClass": "",
     "group": "",
-    "requires": ""
+    "requires": "MAW_system_heli_false_thermal_targets_large_dircm"
   },
   {
     "aircraftId": "ah_64e_netherlands",
@@ -15679,8 +15751,8 @@
   },
   {
     "aircraftId": "ah_64e_netherlands",
-    "id": "MAW_system_heli_false_thermal_targets_large",
-    "display": "MAW",
+    "id": "MAW_system_heli_false_thermal_targets_large_dircm",
+    "display": "MAWS/DIRCM",
     "tier": 1,
     "modClass": "armor",
     "group": "countermeasures",
@@ -15711,7 +15783,7 @@
     "tier": 2,
     "modClass": "armor",
     "group": "",
-    "requires": "MAW_system_heli_false_thermal_targets_large"
+    "requires": "MAW_system_heli_false_thermal_targets_large_dircm"
   },
   {
     "aircraftId": "ah_64e_netherlands",
@@ -15775,6 +15847,15 @@
     "modClass": "weapon",
     "group": "",
     "requires": "us_agm_179_ir"
+  },
+  {
+    "aircraftId": "ah_64e_netherlands",
+    "id": "atgm_spike_nlos_mitl",
+    "display": "Spike NLOS (MITL)",
+    "tier": 4,
+    "modClass": "weapon",
+    "group": "",
+    "requires": "atgm_spike_nlos"
   },
   {
     "aircraftId": "ah_6m",
@@ -21060,6 +21141,195 @@
     "requires": "uk_martlet"
   },
   {
+    "aircraftId": "aw_159",
+    "id": "atgm_spike_nlos_mitl",
+    "display": "Spike NLOS (MITL)",
+    "tier": 4,
+    "modClass": "weapon",
+    "group": "",
+    "requires": "atgm_spike_nlos"
+  },
+  {
+    "aircraftId": "aw_249_pre_serie",
+    "id": "maw_countermeasures_launcher_chaff",
+    "display": "Maw Countermeasures Launcher Chaff",
+    "tier": 0,
+    "modClass": "",
+    "group": "",
+    "requires": "MAW_system_heli_false_thermal_targets_large_dircm"
+  },
+  {
+    "aircraftId": "aw_249_pre_serie",
+    "id": "t_160_air_targets",
+    "display": "T 160 Air Targets",
+    "tier": 0,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "aw_249_pre_serie",
+    "id": "t_160_armor_targets",
+    "display": "T 160 Armor Targets",
+    "tier": 0,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "aw_249_pre_serie",
+    "id": "t_160_stealth",
+    "display": "T 160 Stealth",
+    "tier": 0,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "aw_249_pre_serie",
+    "id": "t_160_universal",
+    "display": "T 160 Universal",
+    "tier": 0,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "aw_249_pre_serie",
+    "id": "new_compressor_heli",
+    "display": "Compressor",
+    "tier": 1,
+    "modClass": "lth",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "aw_249_pre_serie",
+    "id": "heli_flak_jacket",
+    "display": "Flak jacket",
+    "tier": 1,
+    "modClass": "armor",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "aw_249_pre_serie",
+    "id": "t_160_belt_pack",
+    "display": "T 160 Belt Pack",
+    "tier": 1,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "aw_249_pre_serie",
+    "id": "MAW_system_heli_false_thermal_targets_large_dircm",
+    "display": "MAWS/DIRCM",
+    "tier": 2,
+    "modClass": "armor",
+    "group": "countermeasures",
+    "requires": "heli_flak_jacket"
+  },
+  {
+    "aircraftId": "aw_249_pre_serie",
+    "id": "cd_98_main_rotor",
+    "display": "Replacing helicopter blades",
+    "tier": 2,
+    "modClass": "lth",
+    "group": "",
+    "requires": "new_compressor_heli"
+  },
+  {
+    "aircraftId": "aw_249_pre_serie",
+    "id": "t_160_new_gun",
+    "display": "T 160 New Gun",
+    "tier": 2,
+    "modClass": "",
+    "group": "",
+    "requires": "t_160_belt_pack"
+  },
+  {
+    "aircraftId": "aw_249_pre_serie",
+    "id": "stinger_aam",
+    "display": "AIM-92 Stinger",
+    "tier": 3,
+    "modClass": "weapon",
+    "group": "",
+    "requires": "t_160_new_gun"
+  },
+  {
+    "aircraftId": "aw_249_pre_serie",
+    "id": "hp_105_jet",
+    "display": "Engine",
+    "tier": 3,
+    "modClass": "lth",
+    "group": "",
+    "requires": "cd_98_main_rotor"
+  },
+  {
+    "aircraftId": "aw_249_pre_serie",
+    "id": "heli_structure",
+    "display": "Helicopter frame",
+    "tier": 3,
+    "modClass": "lth",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "aw_249_pre_serie",
+    "id": "heli_night_vision_system",
+    "display": "NVD",
+    "tier": 3,
+    "modClass": "weapon",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "aw_249_pre_serie",
+    "id": "atgm_spike_x2",
+    "display": "Spike ER",
+    "tier": 3,
+    "modClass": "weapon",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "aw_249_pre_serie",
+    "id": "new_heli_cover",
+    "display": "Cover",
+    "tier": 4,
+    "modClass": "lth",
+    "group": "",
+    "requires": "hp_105_jet"
+  },
+  {
+    "aircraftId": "aw_249_pre_serie",
+    "id": "air_extinguisher",
+    "display": "EFS",
+    "tier": 4,
+    "modClass": "armor",
+    "group": "",
+    "requires": "MAW_system_heli_false_thermal_targets_large_dircm"
+  },
+  {
+    "aircraftId": "aw_249_pre_serie",
+    "id": "atgm_spike_x4",
+    "display": "Spike ER /4",
+    "tier": 4,
+    "modClass": "weapon",
+    "group": "",
+    "requires": "atgm_spike_x2"
+  },
+  {
+    "aircraftId": "aw_249_pre_serie",
+    "id": "atgm_spike_x4_mitl",
+    "display": "Spike ER /4 (MITL)",
+    "tier": 4,
+    "modClass": "weapon",
+    "group": "",
+    "requires": "atgm_spike_x4"
+  },
+  {
     "aircraftId": "b_10b",
     "id": "30cal_turret_ap",
     "display": "7.62 mm machine gun ammunition belt with AP bullets",
@@ -23488,6 +23758,177 @@
     "modClass": "weapon",
     "group": "",
     "requires": "us_1000lb_m65"
+  },
+  {
+    "aircraftId": "b_33_indonesia",
+    "id": "shvak_turret_het",
+    "display": "20 mm cannon ammunition belt for air targets",
+    "tier": 0,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "b_33_indonesia",
+    "id": "ns23_air_targets",
+    "display": "23 mm cannon ammunition belt for air targets",
+    "tier": 0,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "b_33_indonesia",
+    "id": "ns23_armor_targets",
+    "display": "23 mm cannon ammunition belt for armored targets",
+    "tier": 0,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "b_33_indonesia",
+    "id": "ns23_stealth",
+    "display": "23 mm cannon ammunition belt for stealth attack",
+    "tier": 0,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "b_33_indonesia",
+    "id": "structure_str",
+    "display": "Airframe",
+    "tier": 0,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "b_33_indonesia",
+    "id": "b20_turret_new_gun",
+    "display": "B20 Turret New Gun",
+    "tier": 0,
+    "modClass": "",
+    "group": "",
+    "requires": "shvak_turret_belt_pack"
+  },
+  {
+    "aircraftId": "b_33_indonesia",
+    "id": "new_compressor",
+    "display": "Compressor",
+    "tier": 0,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "b_33_indonesia",
+    "id": "new_cover",
+    "display": "Cover",
+    "tier": 0,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "b_33_indonesia",
+    "id": "hp_105",
+    "display": "Engine",
+    "tier": 0,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "b_33_indonesia",
+    "id": "new_engine_injection",
+    "display": "Engine injection",
+    "tier": 0,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "b_33_indonesia",
+    "id": "CdMin_Fuse",
+    "display": "Fuselage repair",
+    "tier": 0,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "b_33_indonesia",
+    "id": "new_radiator",
+    "display": "Radiator",
+    "tier": 0,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "b_33_indonesia",
+    "id": "shvak_turret_ap",
+    "display": "Shvak Turret Ap",
+    "tier": 0,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "b_33_indonesia",
+    "id": "shvak_turret_belt_pack",
+    "display": "Shvak Turret Belt Pack",
+    "tier": 0,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "b_33_indonesia",
+    "id": "cd_98",
+    "display": "Wings repair",
+    "tier": 0,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "b_33_indonesia",
+    "id": "ns23_belt_pack",
+    "display": "Ns23 Belt Pack",
+    "tier": 1,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "b_33_indonesia",
+    "id": "ns23_new_gun",
+    "display": "Ns23 New Gun",
+    "tier": 2,
+    "modClass": "",
+    "group": "",
+    "requires": "ns23_belt_pack"
+  },
+  {
+    "aircraftId": "b_33_indonesia",
+    "id": "ro_82_mod",
+    "display": "RO-82",
+    "tier": 3,
+    "modClass": "weapon",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "b_33_indonesia",
+    "id": "ro_132_mod",
+    "display": "RO-132",
+    "tier": 4,
+    "modClass": "weapon",
+    "group": "",
+    "requires": "ro_82_mod"
   },
   {
     "aircraftId": "b_34",
@@ -27190,6 +27631,15 @@
   },
   {
     "aircraftId": "b6n1",
+    "id": "b5n2_12in_mod30",
+    "display": "12 in (mod30)",
+    "tier": 2,
+    "modClass": "weapon",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "b6n1",
     "id": "improved_torpedo_mod",
     "display": "Improved torpedo",
     "tier": 2,
@@ -27208,12 +27658,12 @@
   },
   {
     "aircraftId": "b6n1",
-    "id": "b5n2_12in_mod30",
-    "display": "12 in (mod30)",
+    "id": "13in_mod35",
+    "display": "13 in (mod35)",
     "tier": 3,
     "modClass": "weapon",
     "group": "",
-    "requires": "improved_torpedo_mod"
+    "requires": "b5n2_12in_mod30"
   },
   {
     "aircraftId": "b6n1",
@@ -27240,7 +27690,7 @@
     "tier": 4,
     "modClass": "weapon",
     "group": "",
-    "requires": "b5n2_12in_mod30"
+    "requires": "13in_mod35"
   },
   {
     "aircraftId": "b6n1",
@@ -27352,6 +27802,15 @@
   },
   {
     "aircraftId": "b6n2",
+    "id": "b5n2_12in_mod30",
+    "display": "12 in (mod30)",
+    "tier": 2,
+    "modClass": "weapon",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "b6n2",
     "id": "improved_torpedo_mod",
     "display": "Improved torpedo",
     "tier": 2,
@@ -27370,12 +27829,12 @@
   },
   {
     "aircraftId": "b6n2",
-    "id": "b5n2_12in_mod30",
-    "display": "12 in (mod30)",
+    "id": "13in_mod35",
+    "display": "13 in (mod35)",
     "tier": 3,
     "modClass": "weapon",
     "group": "",
-    "requires": "improved_torpedo_mod"
+    "requires": "b5n2_12in_mod30"
   },
   {
     "aircraftId": "b6n2",
@@ -27393,7 +27852,7 @@
     "tier": 4,
     "modClass": "weapon",
     "group": "",
-    "requires": "b5n2_12in_mod30"
+    "requires": "13in_mod35"
   },
   {
     "aircraftId": "b6n2",
@@ -27532,6 +27991,15 @@
   },
   {
     "aircraftId": "b6n2a",
+    "id": "b5n2_12in_mod30",
+    "display": "12 in (mod30)",
+    "tier": 2,
+    "modClass": "weapon",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "b6n2a",
     "id": "improved_torpedo_mod",
     "display": "Improved torpedo",
     "tier": 2,
@@ -27550,12 +28018,12 @@
   },
   {
     "aircraftId": "b6n2a",
-    "id": "b5n2_12in_mod30",
-    "display": "12 in (mod30)",
+    "id": "13in_mod35",
+    "display": "13 in (mod35)",
     "tier": 3,
     "modClass": "weapon",
     "group": "",
-    "requires": "improved_torpedo_mod"
+    "requires": "b5n2_12in_mod30"
   },
   {
     "aircraftId": "b6n2a",
@@ -27582,7 +28050,7 @@
     "tier": 4,
     "modClass": "weapon",
     "group": "",
-    "requires": "b5n2_12in_mod30"
+    "requires": "13in_mod35"
   },
   {
     "aircraftId": "b6n2a",
@@ -27775,12 +28243,21 @@
   },
   {
     "aircraftId": "b7a2",
-    "id": "b5n2_14in_mod35",
-    "display": "14 in (mod35)",
+    "id": "14in_mod30",
+    "display": "14 in (mod30)",
     "tier": 3,
     "modClass": "weapon",
     "group": "",
     "requires": "b5n2_12in_mod30"
+  },
+  {
+    "aircraftId": "b7a2",
+    "id": "b5n2_14in_mod35",
+    "display": "14 in (mod35)",
+    "tier": 4,
+    "modClass": "weapon",
+    "group": "",
+    "requires": "14in_mod30"
   },
   {
     "aircraftId": "b7a2_homare_23",
@@ -27964,12 +28441,21 @@
   },
   {
     "aircraftId": "b7a2_homare_23",
-    "id": "b5n2_14in_mod35",
-    "display": "14 in (mod35)",
+    "id": "14in_mod30",
+    "display": "14 in (mod30)",
     "tier": 3,
     "modClass": "weapon",
     "group": "",
     "requires": "b5n2_12in_mod30"
+  },
+  {
+    "aircraftId": "b7a2_homare_23",
+    "id": "b5n2_14in_mod35",
+    "display": "14 in (mod35)",
+    "tier": 4,
+    "modClass": "weapon",
+    "group": "",
+    "requires": "14in_mod30"
   },
   {
     "aircraftId": "ba_65_a80",
@@ -31552,6 +32038,204 @@
     "modClass": "",
     "group": "",
     "requires": ""
+  },
+  {
+    "aircraftId": "bf-109e-3_tl",
+    "id": "mgff_air_targets",
+    "display": "20 mm cannon ammunition belt for air targets",
+    "tier": 0,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "bf-109e-3_tl",
+    "id": "mgff_stealth",
+    "display": "20 mm cannon ammunition belt for stealth attack",
+    "tier": 0,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "bf-109e-3_tl",
+    "id": "mg_stealth",
+    "display": "7.92 mm machine gun ammunition belt for stealth attack",
+    "tier": 0,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "bf-109e-3_tl",
+    "id": "mg_all_tracers",
+    "display": "7.92 mm machine gun ammunition belt with tracer bullets",
+    "tier": 0,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "bf-109e-3_tl",
+    "id": "structure_str",
+    "display": "Airframe",
+    "tier": 0,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "bf-109e-3_tl",
+    "id": "new_compressor",
+    "display": "Compressor",
+    "tier": 0,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "bf-109e-3_tl",
+    "id": "new_cover",
+    "display": "Cover",
+    "tier": 0,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "bf-109e-3_tl",
+    "id": "hp_105",
+    "display": "Engine",
+    "tier": 0,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "bf-109e-3_tl",
+    "id": "new_engine_injection",
+    "display": "Engine injection",
+    "tier": 0,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "bf-109e-3_tl",
+    "id": "CdMin_Fuse",
+    "display": "Fuselage repair",
+    "tier": 0,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "bf-109e-3_tl",
+    "id": "mg_belt_pack",
+    "display": "Mg Belt Pack",
+    "tier": 0,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "bf-109e-3_tl",
+    "id": "mg17_new_gun",
+    "display": "Mg17 New Gun",
+    "tier": 0,
+    "modClass": "",
+    "group": "",
+    "requires": "mg_belt_pack"
+  },
+  {
+    "aircraftId": "bf-109e-3_tl",
+    "id": "mgff_all_tracers",
+    "display": "Mgff All Tracers",
+    "tier": 0,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "bf-109e-3_tl",
+    "id": "mgff_belt_pack",
+    "display": "Mgff Belt Pack",
+    "tier": 0,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "bf-109e-3_tl",
+    "id": "mgffm_new_gun",
+    "display": "Mgffm New Gun",
+    "tier": 0,
+    "modClass": "",
+    "group": "",
+    "requires": "mgff_belt_pack"
+  },
+  {
+    "aircraftId": "bf-109e-3_tl",
+    "id": "mgff_universal",
+    "display": "Omni-purpose ammunition belt for 20 mm cannon",
+    "tier": 0,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "bf-109e-3_tl",
+    "id": "mg_universal",
+    "display": "Omni-purpose ammunition belt for 7.92 mm machine gun",
+    "tier": 0,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "bf-109e-3_tl",
+    "id": "new_radiator",
+    "display": "Radiator",
+    "tier": 0,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "bf-109e-3_tl",
+    "id": "cd_98",
+    "display": "Wings repair",
+    "tier": 0,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "bf-109e-3_tl",
+    "id": "Bf-109E-3_4xSC50",
+    "display": "SC 50",
+    "tier": 1,
+    "modClass": "weapon",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "bf-109e-3_tl",
+    "id": "Bf-109E-3_SC250",
+    "display": "SC 250",
+    "tier": 3,
+    "modClass": "weapon",
+    "group": "",
+    "requires": "Bf-109E-3_4xSC50"
+  },
+  {
+    "aircraftId": "bf-109e-3_tl",
+    "id": "Bf-109F-4_SC500",
+    "display": "SC 500",
+    "tier": 4,
+    "modClass": "weapon",
+    "group": "",
+    "requires": "Bf-109E-3_SC250"
   },
   {
     "aircraftId": "bf-109e-4",
@@ -36892,7 +37576,7 @@
   },
   {
     "aircraftId": "bf-110f-2",
-    "id": "mgff_air_targets",
+    "id": "mg151_air_targets",
     "display": "20 mm cannon ammunition belt for air targets",
     "tier": 0,
     "modClass": "",
@@ -36901,7 +37585,7 @@
   },
   {
     "aircraftId": "bf-110f-2",
-    "id": "mg151_air_targets",
+    "id": "mgff_air_targets",
     "display": "20 mm cannon ammunition belt for air targets",
     "tier": 0,
     "modClass": "",
@@ -36919,7 +37603,7 @@
   },
   {
     "aircraftId": "bf-110f-2",
-    "id": "mg151_stealth",
+    "id": "mgff_stealth",
     "display": "20 mm cannon ammunition belt for stealth attack",
     "tier": 0,
     "modClass": "",
@@ -36928,7 +37612,7 @@
   },
   {
     "aircraftId": "bf-110f-2",
-    "id": "mgff_stealth",
+    "id": "mg151_stealth",
     "display": "20 mm cannon ammunition belt for stealth attack",
     "tier": 0,
     "modClass": "",
@@ -39043,7 +39727,7 @@
   },
   {
     "aircraftId": "br_20m_m1",
-    "id": "breda12_7_turret_ap",
+    "id": "breda_turret_ap",
     "display": "12.7 mm machine gun ammunition belt with AP bullets",
     "tier": 0,
     "modClass": "",
@@ -39052,7 +39736,7 @@
   },
   {
     "aircraftId": "br_20m_m1",
-    "id": "breda_turret_ap",
+    "id": "breda12_7_turret_ap",
     "display": "12.7 mm machine gun ammunition belt with AP bullets",
     "tier": 0,
     "modClass": "",
@@ -41320,8 +42004,8 @@
   },
   {
     "aircraftId": "ca_27_mk32_malaysia",
-    "id": "frc_mk2",
-    "display": "FRC mk.2",
+    "id": "gloster_lbc",
+    "display": "GLBC mk.3",
     "tier": 3,
     "modClass": "weapon",
     "group": "",
@@ -41473,8 +42157,8 @@
   },
   {
     "aircraftId": "ca_27_mk32_raaf",
-    "id": "frc_mk2",
-    "display": "FRC mk.2",
+    "id": "gloster_lbc",
+    "display": "GLBC mk.3",
     "tier": 3,
     "modClass": "weapon",
     "group": "",
@@ -55189,6 +55873,159 @@
   },
   {
     "aircraftId": "cn_wz_305",
+    "id": "new_tank_transmission",
+    "display": "Transmission",
+    "tier": 4,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "cn_zbd_04",
+    "id": "tank_support_ucav",
+    "display": "Scout UAV",
+    "tier": 0,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "cn_zbd_04",
+    "id": "30mm_2a42_APDS_ammo_pack",
+    "display": "30 mm 2A42 APDS Ammo Pack",
+    "tier": 1,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "cn_zbd_04",
+    "id": "new_tank_horizontal_aiming",
+    "display": "Horizontal Drive",
+    "tier": 1,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "cn_zbd_04",
+    "id": "tank_tool_kit",
+    "display": "Improved Parts",
+    "tier": 1,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "cn_zbd_04",
+    "id": "new_tank_tracks",
+    "display": "Tracks",
+    "tier": 1,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "cn_zbd_04",
+    "id": "tank_new_gun",
+    "display": "Adjustment of Fire",
+    "tier": 2,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "cn_zbd_04",
+    "id": "new_tank_brakes",
+    "display": "Brake System",
+    "tier": 2,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "cn_zbd_04",
+    "id": "manual_extinguisher",
+    "display": "Improved FPE",
+    "tier": 2,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "cn_zbd_04",
+    "id": "new_tank_suspension",
+    "display": "Suspension",
+    "tier": 2,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "cn_zbd_04",
+    "id": "tank_medical_kit",
+    "display": "Crew Replenishment",
+    "tier": 3,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "cn_zbd_04",
+    "id": "new_tank_vertical_aiming",
+    "display": "Elevation Mechanism",
+    "tier": 3,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "cn_zbd_04",
+    "id": "new_tank_filter",
+    "display": "Filters",
+    "tier": 3,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "cn_zbd_04",
+    "id": "art_support",
+    "display": "Artillery Support",
+    "tier": 4,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "cn_zbd_04",
+    "id": "new_tank_engine",
+    "display": "Engine",
+    "tier": 4,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "cn_zbd_04",
+    "id": "laser_rangefinder_lws",
+    "display": "LWS/LR",
+    "tier": 4,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "cn_zbd_04",
+    "id": "tank_smoke_screen_system_mod",
+    "display": "Smoke grenade",
+    "tier": 4,
+    "modClass": "firepower",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "cn_zbd_04",
     "id": "new_tank_transmission",
     "display": "Transmission",
     "tier": 4,
@@ -68968,6 +69805,15 @@
   },
   {
     "aircraftId": "f_102a_greece",
+    "id": "M163_Minigun_new_gun",
+    "display": "M163 Minigun New Gun",
+    "tier": 1,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "f_102a_greece",
     "id": "structure_str",
     "display": "Airframe",
     "tier": 2,
@@ -69010,6 +69856,15 @@
     "modClass": "lth",
     "group": "",
     "requires": "hydravlic_power"
+  },
+  {
+    "aircraftId": "f_102a_greece",
+    "id": "us_aim_26b",
+    "display": "AIM-26B",
+    "tier": 4,
+    "modClass": "weapon",
+    "group": "",
+    "requires": "us_aim_4f"
   },
   {
     "aircraftId": "f_102a_greece",
@@ -69067,6 +69922,15 @@
   },
   {
     "aircraftId": "f_102a_late",
+    "id": "M163_Minigun_new_gun",
+    "display": "M163 Minigun New Gun",
+    "tier": 1,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "f_102a_late",
     "id": "structure_str",
     "display": "Airframe",
     "tier": 2,
@@ -69109,6 +69973,15 @@
     "modClass": "lth",
     "group": "",
     "requires": "hydravlic_power"
+  },
+  {
+    "aircraftId": "f_102a_late",
+    "id": "us_aim_26b",
+    "display": "AIM-26B",
+    "tier": 4,
+    "modClass": "weapon",
+    "group": "",
+    "requires": "us_aim_4f"
   },
   {
     "aircraftId": "f_102a_late",
@@ -69301,8 +70174,8 @@
   },
   {
     "aircraftId": "f_111a",
-    "id": "countermeasures_launcher_chaff",
-    "display": "Countermeasures Launcher Chaff",
+    "id": "countermeasures_launcher_chaff_large",
+    "display": "Countermeasures Launcher Chaff Large",
     "tier": 0,
     "modClass": "",
     "group": "",
@@ -70665,7 +71538,7 @@
     "tier": 0,
     "modClass": "",
     "group": "",
-    "requires": "f_4c_g_suit"
+    "requires": ""
   },
   {
     "aircraftId": "f_14b",
@@ -70899,7 +71772,7 @@
     "tier": 0,
     "modClass": "",
     "group": "",
-    "requires": "f_4c_g_suit"
+    "requires": ""
   },
   {
     "aircraftId": "f_14d",
@@ -71133,7 +72006,7 @@
     "tier": 0,
     "modClass": "",
     "group": "",
-    "requires": "f_4c_g_suit"
+    "requires": ""
   },
   {
     "aircraftId": "f_14d_vf_11",
@@ -72783,6 +73656,294 @@
     "requires": "us_gbu_15v1"
   },
   {
+    "aircraftId": "f_15ex",
+    "id": "countermeasures_launcher_chaff",
+    "display": "Countermeasures Launcher Chaff",
+    "tier": 0,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "f_15ex",
+    "id": "countermeasures_launcher_chaff_large",
+    "display": "Countermeasures Launcher Chaff Large",
+    "tier": 0,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "f_15ex",
+    "id": "M60_air_targets",
+    "display": "M60 Air Targets",
+    "tier": 0,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "f_15ex",
+    "id": "M60_armor_targets",
+    "display": "M60 Armor Targets",
+    "tier": 0,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "f_15ex",
+    "id": "M60_stealth",
+    "display": "M60 Stealth",
+    "tier": 0,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "f_15ex",
+    "id": "us_aim_9m",
+    "display": "AIM-9M",
+    "tier": 1,
+    "modClass": "weapon",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "f_15ex",
+    "id": "new_compressor_jet",
+    "display": "Compressor",
+    "tier": 1,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "f_15ex",
+    "id": "countermeasures_belt_pack",
+    "display": "Flares/Chaff",
+    "tier": 1,
+    "modClass": "armor",
+    "group": "countermeasures",
+    "requires": ""
+  },
+  {
+    "aircraftId": "f_15ex",
+    "id": "f_4c_CdMin_Fuse",
+    "display": "Fuselage repair",
+    "tier": 1,
+    "modClass": "lth",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "f_15ex",
+    "id": "us_jdam",
+    "display": "JDAM",
+    "tier": 1,
+    "modClass": "weapon",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "f_15ex",
+    "id": "M60_belt_pack",
+    "display": "M60 Belt Pack",
+    "tier": 1,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "f_15ex",
+    "id": "us_sniper_pod",
+    "display": "SNIPER ATP",
+    "tier": 1,
+    "modClass": "weapon",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "f_15ex",
+    "id": "structure_str",
+    "display": "Airframe",
+    "tier": 2,
+    "modClass": "lth",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "f_15ex",
+    "id": "asm",
+    "display": "ASM",
+    "tier": 2,
+    "modClass": "weapon",
+    "group": "",
+    "requires": "countermeasures_belt_pack"
+  },
+  {
+    "aircraftId": "f_15ex",
+    "id": "f_4c_g_suit",
+    "display": "G-suit",
+    "tier": 2,
+    "modClass": "lth",
+    "group": "",
+    "requires": "new_compressor_jet"
+  },
+  {
+    "aircraftId": "f_15ex",
+    "id": "us_gbu_laser",
+    "display": "LGBU",
+    "tier": 2,
+    "modClass": "weapon",
+    "group": "",
+    "requires": "us_sniper_pod"
+  },
+  {
+    "aircraftId": "f_15ex",
+    "id": "us_ljdam",
+    "display": "LJDAM",
+    "tier": 2,
+    "modClass": "weapon",
+    "group": "",
+    "requires": "us_gbu_laser"
+  },
+  {
+    "aircraftId": "f_15ex",
+    "id": "M60_new_gun",
+    "display": "M60 New Gun",
+    "tier": 2,
+    "modClass": "",
+    "group": "",
+    "requires": "M60_belt_pack"
+  },
+  {
+    "aircraftId": "f_15ex",
+    "id": "us_agm_65",
+    "display": "AGM-65",
+    "tier": 3,
+    "modClass": "weapon",
+    "group": "",
+    "requires": "M60_new_gun"
+  },
+  {
+    "aircraftId": "f_15ex",
+    "id": "us_aim_120b_c",
+    "display": "AIM-120B/C",
+    "tier": 3,
+    "modClass": "weapon",
+    "group": "",
+    "requires": "us_aim_9m"
+  },
+  {
+    "aircraftId": "f_15ex",
+    "id": "us_apkws",
+    "display": "APKWS II",
+    "tier": 3,
+    "modClass": "weapon",
+    "group": "",
+    "requires": "us_gbu_laser"
+  },
+  {
+    "aircraftId": "f_15ex",
+    "id": "new_cover",
+    "display": "Cover",
+    "tier": 3,
+    "modClass": "lth",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "f_15ex",
+    "id": "us_gbu_15v1",
+    "display": "GBU-15",
+    "tier": 3,
+    "modClass": "weapon",
+    "group": "",
+    "requires": "us_ljdam"
+  },
+  {
+    "aircraftId": "f_15ex",
+    "id": "us_agm_84h",
+    "display": "SLAM-ER",
+    "tier": 3,
+    "modClass": "weapon",
+    "group": "",
+    "requires": "asm"
+  },
+  {
+    "aircraftId": "f_15ex",
+    "id": "cd_98",
+    "display": "Wings repair",
+    "tier": 3,
+    "modClass": "",
+    "group": "",
+    "requires": "f_4c_g_suit"
+  },
+  {
+    "aircraftId": "f_15ex",
+    "id": "us_agm_130",
+    "display": "AGM-130",
+    "tier": 4,
+    "modClass": "weapon",
+    "group": "",
+    "requires": "us_agm_65"
+  },
+  {
+    "aircraftId": "f_15ex",
+    "id": "us_agm154_jsow",
+    "display": "AGM-154",
+    "tier": 4,
+    "modClass": "weapon",
+    "group": "",
+    "requires": "us_apkws"
+  },
+  {
+    "aircraftId": "f_15ex",
+    "id": "us_aim_120d",
+    "display": "AIM-120D",
+    "tier": 4,
+    "modClass": "weapon",
+    "group": "",
+    "requires": "us_aim_120b_c"
+  },
+  {
+    "aircraftId": "f_15ex",
+    "id": "us_arm",
+    "display": "ARM",
+    "tier": 4,
+    "modClass": "weapon",
+    "group": "",
+    "requires": "us_agm_84h"
+  },
+  {
+    "aircraftId": "f_15ex",
+    "id": "air_extinguisher",
+    "display": "EFS",
+    "tier": 4,
+    "modClass": "lth",
+    "group": "",
+    "requires": "new_cover"
+  },
+  {
+    "aircraftId": "f_15ex",
+    "id": "hp_105_jet",
+    "display": "Engine",
+    "tier": 4,
+    "modClass": "",
+    "group": "",
+    "requires": "cd_98"
+  },
+  {
+    "aircraftId": "f_15ex",
+    "id": "us_gbu_53",
+    "display": "GBU-53",
+    "tier": 4,
+    "modClass": "weapon",
+    "group": "",
+    "requires": "us_gbu_15v1"
+  },
+  {
     "aircraftId": "f_15i_raam",
     "id": "countermeasures_launcher_chaff",
     "display": "Countermeasures Launcher Chaff",
@@ -73051,6 +74212,303 @@
     "modClass": "weapon",
     "group": "",
     "requires": "us_agm_65d"
+  },
+  {
+    "aircraftId": "f_15ia",
+    "id": "countermeasures_launcher_chaff",
+    "display": "Countermeasures Launcher Chaff",
+    "tier": 0,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "f_15ia",
+    "id": "countermeasures_launcher_chaff_large",
+    "display": "Countermeasures Launcher Chaff Large",
+    "tier": 0,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "f_15ia",
+    "id": "M60_air_targets",
+    "display": "M60 Air Targets",
+    "tier": 0,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "f_15ia",
+    "id": "M60_armor_targets",
+    "display": "M60 Armor Targets",
+    "tier": 0,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "f_15ia",
+    "id": "M60_stealth",
+    "display": "M60 Stealth",
+    "tier": 0,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "f_15ia",
+    "id": "us_aim_9m",
+    "display": "AIM-9M",
+    "tier": 1,
+    "modClass": "weapon",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "f_15ia",
+    "id": "new_compressor_jet",
+    "display": "Compressor",
+    "tier": 1,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "f_15ia",
+    "id": "countermeasures_belt_pack",
+    "display": "Flares/Chaff",
+    "tier": 1,
+    "modClass": "armor",
+    "group": "countermeasures",
+    "requires": ""
+  },
+  {
+    "aircraftId": "f_15ia",
+    "id": "f_4c_CdMin_Fuse",
+    "display": "Fuselage repair",
+    "tier": 1,
+    "modClass": "lth",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "f_15ia",
+    "id": "us_jdam",
+    "display": "JDAM",
+    "tier": 1,
+    "modClass": "weapon",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "f_15ia",
+    "id": "gr_litening_iii_pod",
+    "display": "LITENING III",
+    "tier": 1,
+    "modClass": "weapon",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "f_15ia",
+    "id": "M60_belt_pack",
+    "display": "M60 Belt Pack",
+    "tier": 1,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "f_15ia",
+    "id": "structure_str",
+    "display": "Airframe",
+    "tier": 2,
+    "modClass": "lth",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "f_15ia",
+    "id": "asm",
+    "display": "ASM",
+    "tier": 2,
+    "modClass": "weapon",
+    "group": "",
+    "requires": "countermeasures_belt_pack"
+  },
+  {
+    "aircraftId": "f_15ia",
+    "id": "il_derby",
+    "display": "Derby",
+    "tier": 2,
+    "modClass": "weapon",
+    "group": "",
+    "requires": "us_aim_9m"
+  },
+  {
+    "aircraftId": "f_15ia",
+    "id": "f_4c_g_suit",
+    "display": "G-suit",
+    "tier": 2,
+    "modClass": "lth",
+    "group": "",
+    "requires": "new_compressor_jet"
+  },
+  {
+    "aircraftId": "f_15ia",
+    "id": "us_gbu_laser",
+    "display": "LGBU",
+    "tier": 2,
+    "modClass": "weapon",
+    "group": "",
+    "requires": "gr_litening_iii_pod"
+  },
+  {
+    "aircraftId": "f_15ia",
+    "id": "us_ljdam",
+    "display": "LJDAM",
+    "tier": 2,
+    "modClass": "weapon",
+    "group": "",
+    "requires": "us_gbu_laser"
+  },
+  {
+    "aircraftId": "f_15ia",
+    "id": "M60_new_gun",
+    "display": "M60 New Gun",
+    "tier": 2,
+    "modClass": "",
+    "group": "",
+    "requires": "M60_belt_pack"
+  },
+  {
+    "aircraftId": "f_15ia",
+    "id": "us_agm_65",
+    "display": "AGM-65",
+    "tier": 3,
+    "modClass": "weapon",
+    "group": "",
+    "requires": "M60_new_gun"
+  },
+  {
+    "aircraftId": "f_15ia",
+    "id": "us_aim_120b_c",
+    "display": "AIM-120B/C",
+    "tier": 3,
+    "modClass": "weapon",
+    "group": "",
+    "requires": "il_derby"
+  },
+  {
+    "aircraftId": "f_15ia",
+    "id": "us_apkws",
+    "display": "APKWS II",
+    "tier": 3,
+    "modClass": "weapon",
+    "group": "",
+    "requires": "us_gbu_laser"
+  },
+  {
+    "aircraftId": "f_15ia",
+    "id": "new_cover",
+    "display": "Cover",
+    "tier": 3,
+    "modClass": "lth",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "f_15ia",
+    "id": "us_gbu_15v1",
+    "display": "GBU-15",
+    "tier": 3,
+    "modClass": "weapon",
+    "group": "",
+    "requires": "us_ljdam"
+  },
+  {
+    "aircraftId": "f_15ia",
+    "id": "us_agm_84h",
+    "display": "SLAM-ER",
+    "tier": 3,
+    "modClass": "weapon",
+    "group": "",
+    "requires": "asm"
+  },
+  {
+    "aircraftId": "f_15ia",
+    "id": "cd_98",
+    "display": "Wings repair",
+    "tier": 3,
+    "modClass": "",
+    "group": "",
+    "requires": "f_4c_g_suit"
+  },
+  {
+    "aircraftId": "f_15ia",
+    "id": "us_agm_130",
+    "display": "AGM-130",
+    "tier": 4,
+    "modClass": "weapon",
+    "group": "",
+    "requires": "us_agm_65"
+  },
+  {
+    "aircraftId": "f_15ia",
+    "id": "us_agm154_jsow",
+    "display": "AGM-154",
+    "tier": 4,
+    "modClass": "weapon",
+    "group": "",
+    "requires": "us_apkws"
+  },
+  {
+    "aircraftId": "f_15ia",
+    "id": "us_aim_120d",
+    "display": "AIM-120D",
+    "tier": 4,
+    "modClass": "weapon",
+    "group": "",
+    "requires": "us_aim_120b_c"
+  },
+  {
+    "aircraftId": "f_15ia",
+    "id": "us_arm",
+    "display": "ARM",
+    "tier": 4,
+    "modClass": "weapon",
+    "group": "",
+    "requires": "us_agm_84h"
+  },
+  {
+    "aircraftId": "f_15ia",
+    "id": "air_extinguisher",
+    "display": "EFS",
+    "tier": 4,
+    "modClass": "lth",
+    "group": "",
+    "requires": "new_cover"
+  },
+  {
+    "aircraftId": "f_15ia",
+    "id": "hp_105_jet",
+    "display": "Engine",
+    "tier": 4,
+    "modClass": "",
+    "group": "",
+    "requires": "cd_98"
+  },
+  {
+    "aircraftId": "f_15ia",
+    "id": "il_spice",
+    "display": "SPICE",
+    "tier": 4,
+    "modClass": "weapon",
+    "group": "",
+    "requires": "us_gbu_15v1"
   },
   {
     "aircraftId": "f_15j",
@@ -75629,7 +77087,7 @@
   {
     "aircraftId": "f_16a_block_20_mlu",
     "id": "us_agm_84d",
-    "display": "AGM-84D",
+    "display": "AGM-84",
     "tier": 4,
     "modClass": "weapon",
     "group": "",
@@ -76052,7 +77510,7 @@
   {
     "aircraftId": "f_16a_block_72v_china",
     "id": "us_agm_84d",
-    "display": "AGM-84D",
+    "display": "AGM-84",
     "tier": 3,
     "modClass": "weapon",
     "group": "",
@@ -77555,7 +79013,7 @@
   {
     "aircraftId": "f_16c_block_50",
     "id": "us_agm_84d",
-    "display": "AGM-84D",
+    "display": "AGM-84",
     "tier": 3,
     "modClass": "weapon",
     "group": "",
@@ -77816,7 +79274,7 @@
   {
     "aircraftId": "f_16c_block_50_missile_test",
     "id": "us_agm_84d",
-    "display": "AGM-84D",
+    "display": "AGM-84",
     "tier": 3,
     "modClass": "weapon",
     "group": "",
@@ -78086,7 +79544,7 @@
   {
     "aircraftId": "f_16c_block_52_aesa",
     "id": "us_agm_84d",
-    "display": "AGM-84D",
+    "display": "AGM-84",
     "tier": 3,
     "modClass": "weapon",
     "group": "",
@@ -79654,7 +81112,7 @@
     "id": "countermeasures_belt_pack",
     "display": "Flares/Chaff",
     "tier": 1,
-    "modClass": "armor",
+    "modClass": "weapon",
     "group": "countermeasures",
     "requires": ""
   },
@@ -79705,6 +81163,15 @@
   },
   {
     "aircraftId": "f_2a",
+    "id": "jp_gcs_1",
+    "display": "GCS-1",
+    "tier": 2,
+    "modClass": "weapon",
+    "group": "",
+    "requires": "us_jdam"
+  },
+  {
+    "aircraftId": "f_2a",
     "id": "f_4c_g_suit",
     "display": "G-suit",
     "tier": 2,
@@ -79728,7 +81195,7 @@
     "tier": 2,
     "modClass": "",
     "group": "",
-    "requires": "us_jdam"
+    "requires": "countermeasures_belt_pack"
   },
   {
     "aircraftId": "f_2a",
@@ -79756,6 +81223,15 @@
     "modClass": "weapon",
     "group": "",
     "requires": "us_aim_7m"
+  },
+  {
+    "aircraftId": "f_2a",
+    "id": "asm",
+    "display": "ASM",
+    "tier": 3,
+    "modClass": "weapon",
+    "group": "",
+    "requires": "jp_gcs_1"
   },
   {
     "aircraftId": "f_2a",
@@ -79792,15 +81268,6 @@
     "modClass": "weapon",
     "group": "",
     "requires": "us_aim_9m"
-  },
-  {
-    "aircraftId": "f_2a",
-    "id": "asm",
-    "display": "ASM",
-    "tier": 4,
-    "modClass": "weapon",
-    "group": "",
-    "requires": "M60_new_gun"
   },
   {
     "aircraftId": "f_2a",
@@ -79870,7 +81337,7 @@
     "id": "countermeasures_belt_pack",
     "display": "Flares/Chaff",
     "tier": 1,
-    "modClass": "armor",
+    "modClass": "weapon",
     "group": "countermeasures",
     "requires": ""
   },
@@ -79894,15 +81361,6 @@
   },
   {
     "aircraftId": "f_2a_adtw",
-    "id": "M60_belt_pack",
-    "display": "M60 Belt Pack",
-    "tier": 1,
-    "modClass": "",
-    "group": "",
-    "requires": ""
-  },
-  {
-    "aircraftId": "f_2a_adtw",
     "id": "us_aim_7m",
     "display": "AIM-7M",
     "tier": 2,
@@ -79916,6 +81374,15 @@
     "display": "Airframe",
     "tier": 2,
     "modClass": "lth",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "f_2a_adtw",
+    "id": "jp_gcs_1",
+    "display": "GCS-1",
+    "tier": 2,
+    "modClass": "weapon",
     "group": "",
     "requires": ""
   },
@@ -79939,12 +81406,12 @@
   },
   {
     "aircraftId": "f_2a_adtw",
-    "id": "M60_new_gun",
-    "display": "M60 New Gun",
+    "id": "M60_belt_pack",
+    "display": "M60 Belt Pack",
     "tier": 2,
     "modClass": "",
     "group": "",
-    "requires": "M60_belt_pack"
+    "requires": "countermeasures_belt_pack"
   },
   {
     "aircraftId": "f_2a_adtw",
@@ -79971,7 +81438,7 @@
     "tier": 3,
     "modClass": "weapon",
     "group": "",
-    "requires": "M60_new_gun"
+    "requires": "jp_gcs_1"
   },
   {
     "aircraftId": "f_2a_adtw",
@@ -79981,6 +81448,15 @@
     "modClass": "lth",
     "group": "",
     "requires": ""
+  },
+  {
+    "aircraftId": "f_2a_adtw",
+    "id": "M60_new_gun",
+    "display": "M60 New Gun",
+    "tier": 3,
+    "modClass": "",
+    "group": "",
+    "requires": "M60_belt_pack"
   },
   {
     "aircraftId": "f_2a_adtw",
@@ -79999,6 +81475,15 @@
     "modClass": "weapon",
     "group": "",
     "requires": "us_aim_9m"
+  },
+  {
+    "aircraftId": "f_2a_adtw",
+    "id": "jp_aam4",
+    "display": "AAM-4",
+    "tier": 4,
+    "modClass": "weapon",
+    "group": "",
+    "requires": "asm|jp_aam3"
   },
   {
     "aircraftId": "f_2a_adtw",
@@ -80832,10 +82317,19 @@
     "aircraftId": "f_86em_greece",
     "id": "frc_mk2",
     "display": "FRC mk.2",
-    "tier": 2,
+    "tier": 1,
     "modClass": "weapon",
     "group": "",
     "requires": ""
+  },
+  {
+    "aircraftId": "f_86em_greece",
+    "id": "us_750lb_m117",
+    "display": "M117",
+    "tier": 2,
+    "modClass": "weapon",
+    "group": "",
+    "requires": "frc_mk2"
   },
   {
     "aircraftId": "f_86em_greece",
@@ -80848,21 +82342,21 @@
   },
   {
     "aircraftId": "f_86em_greece",
-    "id": "us_750lb_m117",
-    "display": "M117",
+    "id": "flbc_mk2",
+    "display": "FLBC mk.1",
     "tier": 3,
     "modClass": "weapon",
     "group": "",
-    "requires": "frc_mk2"
+    "requires": "us_750lb_m117"
   },
   {
     "aircraftId": "f_86em_greece",
-    "id": "flbc_mk2",
-    "display": "FLBC mk.1",
+    "id": "us_aim_9b",
+    "display": "AIM-9B",
     "tier": 4,
     "modClass": "weapon",
     "group": "",
-    "requires": "us_750lb_m117"
+    "requires": "flbc_mk2"
   },
   {
     "aircraftId": "f1",
@@ -80929,6 +82423,15 @@
   },
   {
     "aircraftId": "f1",
+    "id": "us_500lb_m82",
+    "display": "M82",
+    "tier": 1,
+    "modClass": "weapon",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "f1",
     "id": "t2_rl4_zuni",
     "display": "RL-4",
     "tier": 1,
@@ -80956,12 +82459,12 @@
   },
   {
     "aircraftId": "f1",
-    "id": "us_500lb_m82",
-    "display": "M82",
+    "id": "jp_750lb_jm117",
+    "display": "JM117",
     "tier": 2,
     "modClass": "weapon",
     "group": "",
-    "requires": ""
+    "requires": "us_500lb_m82"
   },
   {
     "aircraftId": "f1",
@@ -80971,6 +82474,15 @@
     "modClass": "",
     "group": "",
     "requires": "new_compressor_jet"
+  },
+  {
+    "aircraftId": "f1",
+    "id": "jp_gcs_1",
+    "display": "GCS-1",
+    "tier": 3,
+    "modClass": "weapon",
+    "group": "",
+    "requires": "jp_750lb_jm117"
   },
   {
     "aircraftId": "f1",
@@ -81025,15 +82537,6 @@
     "modClass": "",
     "group": "",
     "requires": "cd_98"
-  },
-  {
-    "aircraftId": "f1",
-    "id": "jp_750lb_jm117",
-    "display": "JM117",
-    "tier": 4,
-    "modClass": "weapon",
-    "group": "",
-    "requires": "us_500lb_m82"
   },
   {
     "aircraftId": "f-100a_china",
@@ -84456,6 +85959,186 @@
     "requires": "hp_105"
   },
   {
+    "aircraftId": "f2a-1_nvidia",
+    "id": "50cal_ground_targets",
+    "display": "12.7 mm machine gun ammunition belt for ground targets",
+    "tier": 0,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "f2a-1_nvidia",
+    "id": "50cal_stealth",
+    "display": "12.7 mm machine gun ammunition belt for stealth attack",
+    "tier": 0,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "f2a-1_nvidia",
+    "id": "50cal_tracers",
+    "display": "12.7 mm machine gun ammunition belt with tracer bullets",
+    "tier": 0,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "f2a-1_nvidia",
+    "id": "30cal_stealth",
+    "display": "7.62 mm machine gun ammunition belt for stealth attack",
+    "tier": 0,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "f2a-1_nvidia",
+    "id": "30cal_tracer",
+    "display": "7.62 mm machine gun ammunition belt with tracer bullets",
+    "tier": 0,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "f2a-1_nvidia",
+    "id": "50cal_universal",
+    "display": "Omni-purpose ammunition belt for 12.7 mm machine gun",
+    "tier": 0,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "f2a-1_nvidia",
+    "id": "30cal_universal",
+    "display": "Omni-purpose ammunition belt for 7.62 mm machine gun",
+    "tier": 0,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "f2a-1_nvidia",
+    "id": "bmg30_belt_pack",
+    "display": "Bmg30 Belt Pack",
+    "tier": 1,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "f2a-1_nvidia",
+    "id": "CdMin_Fuse",
+    "display": "Fuselage repair",
+    "tier": 1,
+    "modClass": "lth",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "f2a-1_nvidia",
+    "id": "new_radiator",
+    "display": "Radiator",
+    "tier": 1,
+    "modClass": "lth",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "f2a-1_nvidia",
+    "id": "structure_str",
+    "display": "Airframe",
+    "tier": 2,
+    "modClass": "lth",
+    "group": "",
+    "requires": "CdMin_Fuse"
+  },
+  {
+    "aircraftId": "f2a-1_nvidia",
+    "id": "bmg30_new_gun",
+    "display": "Bmg30 New Gun",
+    "tier": 2,
+    "modClass": "",
+    "group": "",
+    "requires": "bmg30_belt_pack"
+  },
+  {
+    "aircraftId": "f2a-1_nvidia",
+    "id": "new_compressor",
+    "display": "Compressor",
+    "tier": 2,
+    "modClass": "lth",
+    "group": "",
+    "requires": "new_radiator"
+  },
+  {
+    "aircraftId": "f2a-1_nvidia",
+    "id": "bmg50_belt_pack",
+    "display": "Bmg50 Belt Pack",
+    "tier": 3,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "f2a-1_nvidia",
+    "id": "hp_105",
+    "display": "Engine",
+    "tier": 3,
+    "modClass": "lth",
+    "group": "",
+    "requires": "new_compressor"
+  },
+  {
+    "aircraftId": "f2a-1_nvidia",
+    "id": "cd_98",
+    "display": "Wings repair",
+    "tier": 3,
+    "modClass": "lth",
+    "group": "",
+    "requires": "structure_str"
+  },
+  {
+    "aircraftId": "f2a-1_nvidia",
+    "id": "bmg50_new_gun",
+    "display": "Bmg50 New Gun",
+    "tier": 4,
+    "modClass": "",
+    "group": "",
+    "requires": "bmg50_belt_pack"
+  },
+  {
+    "aircraftId": "f2a-1_nvidia",
+    "id": "new_cover",
+    "display": "Cover",
+    "tier": 4,
+    "modClass": "lth",
+    "group": "",
+    "requires": "cd_98"
+  },
+  {
+    "aircraftId": "f2a-1_nvidia",
+    "id": "air_extinguisher",
+    "display": "EFS",
+    "tier": 4,
+    "modClass": "armor",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "f2a-1_nvidia",
+    "id": "new_engine_injection",
+    "display": "Engine injection",
+    "tier": 4,
+    "modClass": "lth",
+    "group": "",
+    "requires": "hp_105"
+  },
+  {
     "aircraftId": "f2a-1_thach",
     "id": "50cal_ground_targets",
     "display": "12.7 mm machine gun ammunition belt for ground targets",
@@ -87112,21 +88795,21 @@
   },
   {
     "aircraftId": "f-4e_kurnass_2000",
-    "id": "is_delilah",
-    "display": "Delilah",
-    "tier": 4,
-    "modClass": "weapon",
-    "group": "",
-    "requires": "us_gbu_15v1"
-  },
-  {
-    "aircraftId": "f-4e_kurnass_2000",
     "id": "is_delilah_ir",
     "display": "Delilah",
     "tier": 4,
     "modClass": "weapon",
     "group": "",
     "requires": "il_python_3|is_delilah"
+  },
+  {
+    "aircraftId": "f-4e_kurnass_2000",
+    "id": "is_delilah",
+    "display": "Delilah",
+    "tier": 4,
+    "modClass": "weapon",
+    "group": "",
+    "requires": "us_gbu_15v1"
   },
   {
     "aircraftId": "f-4e_kurnass_2000",
@@ -87724,6 +89407,15 @@
   },
   {
     "aircraftId": "f-4ej_kai",
+    "id": "jp_750lb_jm117",
+    "display": "JM117",
+    "tier": 2,
+    "modClass": "weapon",
+    "group": "",
+    "requires": "us_500lb_mk82"
+  },
+  {
+    "aircraftId": "f-4ej_kai",
     "id": "hydravlic_power",
     "display": "New boosters",
     "tier": 2,
@@ -87742,21 +89434,21 @@
   },
   {
     "aircraftId": "f-4ej_kai",
+    "id": "jp_gcs_1",
+    "display": "GCS-1",
+    "tier": 3,
+    "modClass": "weapon",
+    "group": "",
+    "requires": "us_500lb_mk82"
+  },
+  {
+    "aircraftId": "f-4ej_kai",
     "id": "f_4c_g_suit",
     "display": "G-suit",
     "tier": 3,
     "modClass": "",
     "group": "",
     "requires": ""
-  },
-  {
-    "aircraftId": "f-4ej_kai",
-    "id": "jp_750lb_jm117",
-    "display": "JM117",
-    "tier": 3,
-    "modClass": "weapon",
-    "group": "",
-    "requires": "us_500lb_mk82"
   },
   {
     "aircraftId": "f-4ej_kai",
@@ -87784,6 +89476,15 @@
     "modClass": "weapon",
     "group": "",
     "requires": "us_aim_7m"
+  },
+  {
+    "aircraftId": "f-4ej_kai",
+    "id": "asm",
+    "display": "ASM",
+    "tier": 4,
+    "modClass": "weapon",
+    "group": "",
+    "requires": "jp_gcs_1"
   },
   {
     "aircraftId": "f-4ej_kai",
@@ -91468,6 +93169,15 @@
   },
   {
     "aircraftId": "f4u-7",
+    "id": "anm3_new_gun",
+    "display": "Anm3 New Gun",
+    "tier": 2,
+    "modClass": "",
+    "group": "",
+    "requires": "anm3_belt_pack"
+  },
+  {
+    "aircraftId": "f4u-7",
     "id": "new_compressor",
     "display": "Compressor",
     "tier": 2,
@@ -91504,15 +93214,6 @@
   },
   {
     "aircraftId": "f4u-7",
-    "id": "anm3_new_gun",
-    "display": "Anm3 New Gun",
-    "tier": 3,
-    "modClass": "",
-    "group": "",
-    "requires": "anm3_belt_pack"
-  },
-  {
-    "aircraftId": "f4u-7",
     "id": "an_mk1",
     "display": "AN-Mk 1",
     "tier": 3,
@@ -91545,7 +93246,7 @@
     "tier": 3,
     "modClass": "weapon",
     "group": "",
-    "requires": "fr_matra_t_10_150"
+    "requires": "fr_matra_t_10_150|anm3_new_gun"
   },
   {
     "aircraftId": "f4u-7",
@@ -93637,6 +95338,15 @@
   },
   {
     "aircraftId": "f-5e_switzerland",
+    "id": "us_2_75_in_ffar_lau_3a",
+    "display": "LAU-3/A",
+    "tier": 1,
+    "modClass": "weapon",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "f-5e_switzerland",
     "id": "us_500lb_mk82",
     "display": "Mk82",
     "tier": 1,
@@ -93652,15 +95362,6 @@
     "modClass": "",
     "group": "",
     "requires": ""
-  },
-  {
-    "aircraftId": "f-5e_switzerland",
-    "id": "t_160_new_gun",
-    "display": "T 160 New Gun",
-    "tier": 1,
-    "modClass": "",
-    "group": "",
-    "requires": "t_160_belt_pack"
   },
   {
     "aircraftId": "f-5e_switzerland",
@@ -93682,12 +95383,12 @@
   },
   {
     "aircraftId": "f-5e_switzerland",
-    "id": "us_2_75_in_ffar_lau_3a",
-    "display": "LAU-3/A",
+    "id": "f4c_zuni",
+    "display": "LAU-10/A",
     "tier": 2,
     "modClass": "weapon",
     "group": "",
-    "requires": "t_160_new_gun"
+    "requires": "us_2_75_in_ffar_lau_3a"
   },
   {
     "aircraftId": "f-5e_switzerland",
@@ -93709,12 +95410,30 @@
   },
   {
     "aircraftId": "f-5e_switzerland",
-    "id": "f4c_zuni",
-    "display": "LAU-10/A",
+    "id": "t_160_new_gun",
+    "display": "T 160 New Gun",
+    "tier": 2,
+    "modClass": "",
+    "group": "",
+    "requires": "t_160_belt_pack"
+  },
+  {
+    "aircraftId": "f-5e_switzerland",
+    "id": "us_agm_65b",
+    "display": "AGM-65B",
     "tier": 3,
     "modClass": "weapon",
     "group": "",
-    "requires": "us_2_75_in_ffar_lau_3a"
+    "requires": "f4c_zuni"
+  },
+  {
+    "aircraftId": "f-5e_switzerland",
+    "id": "sws_flz_lwf_63_80",
+    "display": "Flz Lwf 63/80",
+    "tier": 3,
+    "modClass": "weapon",
+    "group": "",
+    "requires": "us_blu_1"
   },
   {
     "aircraftId": "f-5e_switzerland",
@@ -93736,12 +95455,21 @@
   },
   {
     "aircraftId": "f-5e_switzerland",
-    "id": "us_agm_65b",
-    "display": "AGM-65B",
+    "id": "us_agm_65d",
+    "display": "AGM-65D",
     "tier": 4,
     "modClass": "weapon",
     "group": "",
     "requires": "f4c_zuni"
+  },
+  {
+    "aircraftId": "f-5e_switzerland",
+    "id": "us_agm_65g",
+    "display": "AGM-65G",
+    "tier": 4,
+    "modClass": "weapon",
+    "group": "",
+    "requires": "us_agm_65d"
   },
   {
     "aircraftId": "f-5e_switzerland",
@@ -93763,12 +95491,12 @@
   },
   {
     "aircraftId": "f-5e_switzerland",
-    "id": "sws_flz_lwf_63_80",
-    "display": "Flz Lwf 63/80",
+    "id": "sws_flz_lwf_63_90",
+    "display": "Flz Lwf 63/90",
     "tier": 4,
     "modClass": "weapon",
     "group": "",
-    "requires": "us_blu_1"
+    "requires": "sws_flz_lwf_63_80"
   },
   {
     "aircraftId": "f-5e_switzerland",
@@ -102971,7 +104699,7 @@
   {
     "aircraftId": "fa_18a",
     "id": "us_agm_84d",
-    "display": "AGM-84D",
+    "display": "AGM-84",
     "tier": 1,
     "modClass": "weapon",
     "group": "",
@@ -103313,7 +105041,7 @@
   {
     "aircraftId": "fa_18a_hug_2_raaf",
     "id": "us_agm_84d",
-    "display": "AGM-84D",
+    "display": "AGM-84",
     "tier": 3,
     "modClass": "weapon",
     "group": "",
@@ -103457,7 +105185,7 @@
   {
     "aircraftId": "fa_18a_raaf",
     "id": "us_agm_84d",
-    "display": "AGM-84D",
+    "display": "AGM-84",
     "tier": 1,
     "modClass": "weapon",
     "group": "",
@@ -103763,7 +105491,7 @@
   {
     "aircraftId": "fa_18c_early",
     "id": "us_agm_84d",
-    "display": "AGM-84D",
+    "display": "AGM-84",
     "tier": 3,
     "modClass": "weapon",
     "group": "",
@@ -104249,20 +105977,11 @@
   {
     "aircraftId": "fa_18c_late",
     "id": "us_agm_84d",
-    "display": "AGM-84D",
+    "display": "AGM-84",
     "tier": 4,
     "modClass": "weapon",
     "group": "",
     "requires": "us_arm"
-  },
-  {
-    "aircraftId": "fa_18c_late",
-    "id": "us_agm_84h",
-    "display": "AGM-84H",
-    "tier": 4,
-    "modClass": "weapon",
-    "group": "",
-    "requires": "us_agm_65f"
   },
   {
     "aircraftId": "fa_18c_late",
@@ -104290,6 +106009,15 @@
     "modClass": "",
     "group": "",
     "requires": "cd_98"
+  },
+  {
+    "aircraftId": "fa_18c_late",
+    "id": "us_agm_84h",
+    "display": "SLAM-ER",
+    "tier": 4,
+    "modClass": "weapon",
+    "group": "",
+    "requires": "us_agm_65f"
   },
   {
     "aircraftId": "fa_18c_late_switzerland",
@@ -104519,7 +106247,7 @@
   {
     "aircraftId": "fa_18c_late_switzerland",
     "id": "us_agm_84d",
-    "display": "AGM-84D",
+    "display": "AGM-84",
     "tier": 4,
     "modClass": "weapon",
     "group": "",
@@ -104771,7 +106499,7 @@
   {
     "aircraftId": "fa_18c_mlu_2_finland",
     "id": "us_agm_84d",
-    "display": "AGM-84D",
+    "display": "AGM-84",
     "tier": 4,
     "modClass": "weapon",
     "group": "",
@@ -105003,6 +106731,276 @@
     "requires": "cd_98"
   },
   {
+    "aircraftId": "fa_18d_late",
+    "id": "countermeasures_launcher_chaff",
+    "display": "Countermeasures Launcher Chaff",
+    "tier": 0,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "fa_18d_late",
+    "id": "M60_air_targets",
+    "display": "M60 Air Targets",
+    "tier": 0,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "fa_18d_late",
+    "id": "M60_armor_targets",
+    "display": "M60 Armor Targets",
+    "tier": 0,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "fa_18d_late",
+    "id": "M60_stealth",
+    "display": "M60 Stealth",
+    "tier": 0,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "fa_18d_late",
+    "id": "new_compressor_jet",
+    "display": "Compressor",
+    "tier": 1,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "fa_18d_late",
+    "id": "countermeasures_belt_pack",
+    "display": "Flares/Chaff",
+    "tier": 1,
+    "modClass": "weapon",
+    "group": "countermeasures",
+    "requires": ""
+  },
+  {
+    "aircraftId": "fa_18d_late",
+    "id": "f_4c_CdMin_Fuse",
+    "display": "Fuselage repair",
+    "tier": 1,
+    "modClass": "lth",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "fa_18d_late",
+    "id": "us_jdam",
+    "display": "JDAM",
+    "tier": 1,
+    "modClass": "weapon",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "fa_18d_late",
+    "id": "gr_litening_pod",
+    "display": "LITENING II",
+    "tier": 1,
+    "modClass": "weapon",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "fa_18d_late",
+    "id": "M60_belt_pack",
+    "display": "M60 Belt Pack",
+    "tier": 1,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "fa_18d_late",
+    "id": "us_aim_7p",
+    "display": "AIM-7P",
+    "tier": 2,
+    "modClass": "weapon",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "fa_18d_late",
+    "id": "structure_str",
+    "display": "Airframe",
+    "tier": 2,
+    "modClass": "lth",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "fa_18d_late",
+    "id": "asm",
+    "display": "ASM",
+    "tier": 2,
+    "modClass": "weapon",
+    "group": "",
+    "requires": "countermeasures_belt_pack"
+  },
+  {
+    "aircraftId": "fa_18d_late",
+    "id": "f_4c_g_suit",
+    "display": "G-suit",
+    "tier": 2,
+    "modClass": "armor",
+    "group": "",
+    "requires": "new_compressor_jet"
+  },
+  {
+    "aircraftId": "fa_18d_late",
+    "id": "us_gbu_laser",
+    "display": "LGBU",
+    "tier": 2,
+    "modClass": "weapon",
+    "group": "",
+    "requires": "us_jdam|gr_litening_pod"
+  },
+  {
+    "aircraftId": "fa_18d_late",
+    "id": "us_gbu54b",
+    "display": "LJDAM",
+    "tier": 2,
+    "modClass": "weapon",
+    "group": "",
+    "requires": "us_jdam|us_gbu_laser"
+  },
+  {
+    "aircraftId": "fa_18d_late",
+    "id": "M60_new_gun",
+    "display": "M60 New Gun",
+    "tier": 2,
+    "modClass": "",
+    "group": "",
+    "requires": "M60_belt_pack"
+  },
+  {
+    "aircraftId": "fa_18d_late",
+    "id": "us_agm_62_2_erdl",
+    "display": "AGM-62 ER/DL",
+    "tier": 3,
+    "modClass": "weapon",
+    "group": "",
+    "requires": "M60_new_gun"
+  },
+  {
+    "aircraftId": "fa_18d_late",
+    "id": "us_agm_65f",
+    "display": "AGM-65F",
+    "tier": 3,
+    "modClass": "weapon",
+    "group": "",
+    "requires": "us_gbu54b"
+  },
+  {
+    "aircraftId": "fa_18d_late",
+    "id": "us_aim_9m",
+    "display": "AIM-9M",
+    "tier": 3,
+    "modClass": "weapon",
+    "group": "",
+    "requires": "us_aim_7p"
+  },
+  {
+    "aircraftId": "fa_18d_late",
+    "id": "us_apkws",
+    "display": "APKWS II",
+    "tier": 3,
+    "modClass": "weapon",
+    "group": "",
+    "requires": "us_gbu_laser"
+  },
+  {
+    "aircraftId": "fa_18d_late",
+    "id": "new_cover",
+    "display": "Cover",
+    "tier": 3,
+    "modClass": "lth",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "fa_18d_late",
+    "id": "cd_98",
+    "display": "Wings repair",
+    "tier": 3,
+    "modClass": "",
+    "group": "",
+    "requires": "f_4c_g_suit"
+  },
+  {
+    "aircraftId": "fa_18d_late",
+    "id": "us_agm154_jsow",
+    "display": "AGM-154",
+    "tier": 4,
+    "modClass": "weapon",
+    "group": "",
+    "requires": "us_agm_62_2_erdl"
+  },
+  {
+    "aircraftId": "fa_18d_late",
+    "id": "us_agm_65e",
+    "display": "AGM-65E",
+    "tier": 4,
+    "modClass": "weapon",
+    "group": "",
+    "requires": "us_apkws"
+  },
+  {
+    "aircraftId": "fa_18d_late",
+    "id": "us_aim_120b",
+    "display": "AIM-120B",
+    "tier": 4,
+    "modClass": "weapon",
+    "group": "",
+    "requires": "us_aim_9m"
+  },
+  {
+    "aircraftId": "fa_18d_late",
+    "id": "us_arm",
+    "display": "ARM",
+    "tier": 4,
+    "modClass": "weapon",
+    "group": "",
+    "requires": "asm"
+  },
+  {
+    "aircraftId": "fa_18d_late",
+    "id": "air_extinguisher",
+    "display": "EFS",
+    "tier": 4,
+    "modClass": "lth",
+    "group": "",
+    "requires": "new_cover"
+  },
+  {
+    "aircraftId": "fa_18d_late",
+    "id": "hp_105_jet",
+    "display": "Engine",
+    "tier": 4,
+    "modClass": "",
+    "group": "",
+    "requires": "cd_98"
+  },
+  {
+    "aircraftId": "fa_18d_late",
+    "id": "us_agm_84h",
+    "display": "SLAM-ER",
+    "tier": 4,
+    "modClass": "weapon",
+    "group": "",
+    "requires": "us_agm_65f"
+  },
+  {
     "aircraftId": "fa_18d_late_malaysia",
     "id": "countermeasures_launcher_chaff",
     "display": "Countermeasures Launcher Chaff",
@@ -105221,7 +107219,7 @@
   {
     "aircraftId": "fa_18d_late_malaysia",
     "id": "us_agm_84d",
-    "display": "AGM-84D",
+    "display": "AGM-84",
     "tier": 4,
     "modClass": "weapon",
     "group": "",
@@ -105482,20 +107480,11 @@
   {
     "aircraftId": "fa_18e_block_2",
     "id": "us_agm_84d",
-    "display": "AGM-84D",
+    "display": "AGM-84",
     "tier": 4,
     "modClass": "weapon",
     "group": "",
     "requires": "us_arm"
-  },
-  {
-    "aircraftId": "fa_18e_block_2",
-    "id": "us_agm_84h",
-    "display": "AGM-84H",
-    "tier": 4,
-    "modClass": "weapon",
-    "group": "",
-    "requires": "us_agm_65f"
   },
   {
     "aircraftId": "fa_18e_block_2",
@@ -105532,6 +107521,15 @@
     "modClass": "weapon",
     "group": "",
     "requires": "us_agm_65e"
+  },
+  {
+    "aircraftId": "fa_18e_block_2",
+    "id": "us_agm_84h",
+    "display": "SLAM-ER",
+    "tier": 4,
+    "modClass": "weapon",
+    "group": "",
+    "requires": "us_agm_65f"
   },
   {
     "aircraftId": "fa_18f_block_2_raaf",
@@ -105752,20 +107750,11 @@
   {
     "aircraftId": "fa_18f_block_2_raaf",
     "id": "us_agm_84d",
-    "display": "AGM-84D",
+    "display": "AGM-84",
     "tier": 4,
     "modClass": "weapon",
     "group": "",
     "requires": "us_arm"
-  },
-  {
-    "aircraftId": "fa_18f_block_2_raaf",
-    "id": "us_agm_84h",
-    "display": "AGM-84H",
-    "tier": 4,
-    "modClass": "weapon",
-    "group": "",
-    "requires": "us_agm_65f"
   },
   {
     "aircraftId": "fa_18f_block_2_raaf",
@@ -105802,6 +107791,15 @@
     "modClass": "weapon",
     "group": "",
     "requires": "us_agm_65e"
+  },
+  {
+    "aircraftId": "fa_18f_block_2_raaf",
+    "id": "us_agm_84h",
+    "display": "SLAM-ER",
+    "tier": 4,
+    "modClass": "weapon",
+    "group": "",
+    "requires": "us_agm_65f"
   },
   {
     "aircraftId": "fairey_3f_mk3b",
@@ -109549,6 +111547,195 @@
   },
   {
     "aircraftId": "firefly_mk1",
+    "id": "hispano_mk_2_1943_new_gun",
+    "display": "Mk.II year 1943",
+    "tier": 4,
+    "modClass": "",
+    "group": "",
+    "requires": "hispano_mk_2_narrow_chamber_new_gun"
+  },
+  {
+    "aircraftId": "firefly_mk1_thailand",
+    "id": "hispano_ground_targets",
+    "display": "20 mm cannon ammunition belt for ground targets",
+    "tier": 0,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "firefly_mk1_thailand",
+    "id": "hispano_stealth",
+    "display": "20 mm cannon ammunition belt for stealth attack",
+    "tier": 0,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "firefly_mk1_thailand",
+    "id": "hispano_tracers",
+    "display": "20 mm cannon ammunition belt with increased amount of tracer shells",
+    "tier": 0,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "firefly_mk1_thailand",
+    "id": "structure_str",
+    "display": "Airframe",
+    "tier": 0,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "firefly_mk1_thailand",
+    "id": "new_compressor",
+    "display": "Compressor",
+    "tier": 0,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "firefly_mk1_thailand",
+    "id": "new_cover",
+    "display": "Cover",
+    "tier": 0,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "firefly_mk1_thailand",
+    "id": "hp_105",
+    "display": "Engine",
+    "tier": 0,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "firefly_mk1_thailand",
+    "id": "new_engine_injection",
+    "display": "Engine injection",
+    "tier": 0,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "firefly_mk1_thailand",
+    "id": "CdMin_Fuse",
+    "display": "Fuselage repair",
+    "tier": 0,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "firefly_mk1_thailand",
+    "id": "hispano_air_targets",
+    "display": "Hispano Air Targets",
+    "tier": 0,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "firefly_mk1_thailand",
+    "id": "hispano_universal",
+    "display": "Omni-purpose ammunition belt for 20 mm cannon",
+    "tier": 0,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "firefly_mk1_thailand",
+    "id": "new_radiator",
+    "display": "Radiator",
+    "tier": 0,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "firefly_mk1_thailand",
+    "id": "cd_98",
+    "display": "Wings repair",
+    "tier": 0,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "firefly_mk1_thailand",
+    "id": "hispano_belt_pack",
+    "display": "Hispano Belt Pack",
+    "tier": 1,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "firefly_mk1_thailand",
+    "id": "halker_sbc",
+    "display": "HSBC mk.2",
+    "tier": 1,
+    "modClass": "weapon",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "firefly_mk1_thailand",
+    "id": "hispano_mk2_new_gun",
+    "display": "Hispano Mk2 New Gun",
+    "tier": 2,
+    "modClass": "",
+    "group": "",
+    "requires": "hispano_belt_pack"
+  },
+  {
+    "aircraftId": "firefly_mk1_thailand",
+    "id": "halker_mbc",
+    "display": "HMBC mk.2",
+    "tier": 2,
+    "modClass": "weapon",
+    "group": "",
+    "requires": "halker_sbc"
+  },
+  {
+    "aircraftId": "firefly_mk1_thailand",
+    "id": "halker_lbc",
+    "display": "HLBC mk.2",
+    "tier": 3,
+    "modClass": "weapon",
+    "group": "",
+    "requires": "halker_mbc"
+  },
+  {
+    "aircraftId": "firefly_mk1_thailand",
+    "id": "hispano_mk_2_narrow_chamber_new_gun",
+    "display": "Mk.II year 1942",
+    "tier": 3,
+    "modClass": "",
+    "group": "",
+    "requires": "hispano_mk2_new_gun"
+  },
+  {
+    "aircraftId": "firefly_mk1_thailand",
+    "id": "halker_rc",
+    "display": "HRC mk.8",
+    "tier": 4,
+    "modClass": "weapon",
+    "group": "",
+    "requires": "halker_lbc"
+  },
+  {
+    "aircraftId": "firefly_mk1_thailand",
     "id": "hispano_mk_2_1943_new_gun",
     "display": "Mk.II year 1943",
     "tier": 4,
@@ -123858,6 +126045,159 @@
     "requires": ""
   },
   {
+    "aircraftId": "fr_prtl",
+    "id": "35mm_kda_APDS_ammo_pack",
+    "display": "35 mm Kda APDS Ammo Pack",
+    "tier": 1,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "fr_prtl",
+    "id": "35mm_kda_APHEI_ammo_pack",
+    "display": "35 mm Kda APHEI Ammo Pack",
+    "tier": 1,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "fr_prtl",
+    "id": "35mm_kda_HE_ammo_pack",
+    "display": "35 mm Kda HE Ammo Pack",
+    "tier": 1,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "fr_prtl",
+    "id": "new_tank_horizontal_aiming",
+    "display": "Horizontal Drive",
+    "tier": 1,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "fr_prtl",
+    "id": "tank_tool_kit",
+    "display": "Improved Parts",
+    "tier": 1,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "fr_prtl",
+    "id": "new_tank_tracks",
+    "display": "Tracks",
+    "tier": 1,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "fr_prtl",
+    "id": "tank_new_gun",
+    "display": "Adjustment of Fire",
+    "tier": 2,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "fr_prtl",
+    "id": "new_tank_brakes",
+    "display": "Brake System",
+    "tier": 2,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "fr_prtl",
+    "id": "manual_extinguisher",
+    "display": "Improved FPE",
+    "tier": 2,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "fr_prtl",
+    "id": "new_tank_suspension",
+    "display": "Suspension",
+    "tier": 2,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "fr_prtl",
+    "id": "tank_medical_kit",
+    "display": "Crew Replenishment",
+    "tier": 3,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "fr_prtl",
+    "id": "new_tank_vertical_aiming",
+    "display": "Elevation Mechanism",
+    "tier": 3,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "fr_prtl",
+    "id": "new_tank_filter",
+    "display": "Filters",
+    "tier": 3,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "fr_prtl",
+    "id": "art_support",
+    "display": "Artillery Support",
+    "tier": 4,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "fr_prtl",
+    "id": "new_tank_engine",
+    "display": "Engine",
+    "tier": 4,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "fr_prtl",
+    "id": "tank_smoke_screen_system_mod",
+    "display": "Smoke grenade",
+    "tier": 4,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "fr_prtl",
+    "id": "new_tank_transmission",
+    "display": "Transmission",
+    "tier": 4,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
     "aircraftId": "fr_pzkpfw_v_panther_dauphine",
     "id": "new_tank_horizontal_aiming",
     "display": "Horizontal Drive",
@@ -125865,6 +128205,141 @@
     "requires": ""
   },
   {
+    "aircraftId": "fulmar_mk2",
+    "id": "303_stealth",
+    "display": "7.7 mm machine gun ammunition belt for stealth attack",
+    "tier": 0,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "fulmar_mk2",
+    "id": "303_all_tracers",
+    "display": "7.7 mm machine gun ammunition belt with incendiary tracer bullets",
+    "tier": 0,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "fulmar_mk2",
+    "id": "structure_str",
+    "display": "Airframe",
+    "tier": 0,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "fulmar_mk2",
+    "id": "bmg303_belt_pack",
+    "display": "Bmg303 Belt Pack",
+    "tier": 0,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "fulmar_mk2",
+    "id": "new_cover",
+    "display": "Cover",
+    "tier": 0,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "fulmar_mk2",
+    "id": "hp_105",
+    "display": "Engine",
+    "tier": 0,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "fulmar_mk2",
+    "id": "new_engine_injection",
+    "display": "Engine injection",
+    "tier": 0,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "fulmar_mk2",
+    "id": "CdMin_Fuse",
+    "display": "Fuselage repair",
+    "tier": 0,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "fulmar_mk2",
+    "id": "303_universal",
+    "display": "Omni-purpose ammunition belt for 7.7 mm machine gun",
+    "tier": 0,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "fulmar_mk2",
+    "id": "new_radiator",
+    "display": "Radiator",
+    "tier": 0,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "fulmar_mk2",
+    "id": "cd_98",
+    "display": "Wings repair",
+    "tier": 0,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "fulmar_mk2",
+    "id": "halker_sbc",
+    "display": "HSBC mk.2",
+    "tier": 1,
+    "modClass": "weapon",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "fulmar_mk2",
+    "id": "bmg303_new_gun",
+    "display": "Bmg303 New Gun",
+    "tier": 3,
+    "modClass": "",
+    "group": "",
+    "requires": "bmg303_belt_pack"
+  },
+  {
+    "aircraftId": "fulmar_mk2",
+    "id": "air_extinguisher",
+    "display": "EFS",
+    "tier": 3,
+    "modClass": "armor",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "fulmar_mk2",
+    "id": "halker_mbc",
+    "display": "HMBC mk.2",
+    "tier": 3,
+    "modClass": "weapon",
+    "group": "",
+    "requires": "halker_sbc"
+  },
+  {
     "aircraftId": "fury_mk1",
     "id": "7_7_stealth",
     "display": "7.7 mm machine gun ammunition belt for stealth attack",
@@ -126457,6 +128932,78 @@
     "modClass": "",
     "group": "",
     "requires": "mg15120_belt_pack"
+  },
+  {
+    "aircraftId": "fw_190a_8_mistel",
+    "id": "structure_str",
+    "display": "Airframe",
+    "tier": 0,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "fw_190a_8_mistel",
+    "id": "new_compressor",
+    "display": "Compressor",
+    "tier": 0,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "fw_190a_8_mistel",
+    "id": "new_cover",
+    "display": "Cover",
+    "tier": 0,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "fw_190a_8_mistel",
+    "id": "hp_105",
+    "display": "Engine",
+    "tier": 0,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "fw_190a_8_mistel",
+    "id": "new_engine_injection",
+    "display": "Engine injection",
+    "tier": 0,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "fw_190a_8_mistel",
+    "id": "CdMin_Fuse",
+    "display": "Fuselage repair",
+    "tier": 0,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "fw_190a_8_mistel",
+    "id": "new_radiator",
+    "display": "Radiator",
+    "tier": 0,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "fw_190a_8_mistel",
+    "id": "cd_98",
+    "display": "Wings repair",
+    "tier": 0,
+    "modClass": "",
+    "group": "",
+    "requires": ""
   },
   {
     "aircraftId": "fw_190f_8_hungary",
@@ -127216,7 +129763,7 @@
   },
   {
     "aircraftId": "fw-190a-4",
-    "id": "mg151_air_targets",
+    "id": "mgff_air_targets",
     "display": "20 mm cannon ammunition belt for air targets",
     "tier": 0,
     "modClass": "",
@@ -127225,7 +129772,7 @@
   },
   {
     "aircraftId": "fw-190a-4",
-    "id": "mgff_air_targets",
+    "id": "mg151_air_targets",
     "display": "20 mm cannon ammunition belt for air targets",
     "tier": 0,
     "modClass": "",
@@ -127243,7 +129790,7 @@
   },
   {
     "aircraftId": "fw-190a-4",
-    "id": "mgff_stealth",
+    "id": "mg151_stealth",
     "display": "20 mm cannon ammunition belt for stealth attack",
     "tier": 0,
     "modClass": "",
@@ -127252,7 +129799,7 @@
   },
   {
     "aircraftId": "fw-190a-4",
-    "id": "mg151_stealth",
+    "id": "mgff_stealth",
     "display": "20 mm cannon ammunition belt for stealth attack",
     "tier": 0,
     "modClass": "",
@@ -127639,7 +130186,7 @@
   },
   {
     "aircraftId": "fw-190a-5_cannons",
-    "id": "mg151_air_targets",
+    "id": "mgff_air_targets",
     "display": "20 mm cannon ammunition belt for air targets",
     "tier": 0,
     "modClass": "",
@@ -127648,7 +130195,7 @@
   },
   {
     "aircraftId": "fw-190a-5_cannons",
-    "id": "mgff_air_targets",
+    "id": "mg151_air_targets",
     "display": "20 mm cannon ammunition belt for air targets",
     "tier": 0,
     "modClass": "",
@@ -127666,7 +130213,7 @@
   },
   {
     "aircraftId": "fw-190a-5_cannons",
-    "id": "mgff_stealth",
+    "id": "mg151_stealth",
     "display": "20 mm cannon ammunition belt for stealth attack",
     "tier": 0,
     "modClass": "",
@@ -127675,7 +130222,7 @@
   },
   {
     "aircraftId": "fw-190a-5_cannons",
-    "id": "mg151_stealth",
+    "id": "mgff_stealth",
     "display": "20 mm cannon ammunition belt for stealth attack",
     "tier": 0,
     "modClass": "",
@@ -127882,7 +130429,7 @@
   },
   {
     "aircraftId": "fw-190a-5_cannons_tutorial",
-    "id": "mgff_air_targets",
+    "id": "mg151_air_targets",
     "display": "20 mm cannon ammunition belt for air targets",
     "tier": 0,
     "modClass": "",
@@ -127891,7 +130438,7 @@
   },
   {
     "aircraftId": "fw-190a-5_cannons_tutorial",
-    "id": "mg151_air_targets",
+    "id": "mgff_air_targets",
     "display": "20 mm cannon ammunition belt for air targets",
     "tier": 0,
     "modClass": "",
@@ -128071,7 +130618,7 @@
   },
   {
     "aircraftId": "fw-190a-5_cannons_tutorial",
-    "id": "mgff_universal",
+    "id": "mg151_universal",
     "display": "Omni-purpose ammunition belt for 20 mm cannon",
     "tier": 0,
     "modClass": "",
@@ -128080,7 +130627,7 @@
   },
   {
     "aircraftId": "fw-190a-5_cannons_tutorial",
-    "id": "mg151_universal",
+    "id": "mgff_universal",
     "display": "Omni-purpose ammunition belt for 20 mm cannon",
     "tier": 0,
     "modClass": "",
@@ -128314,7 +130861,7 @@
   },
   {
     "aircraftId": "fw-190a-5_japan",
-    "id": "mgff_universal",
+    "id": "mg151_universal",
     "display": "Omni-purpose ammunition belt for 20 mm cannon",
     "tier": 0,
     "modClass": "",
@@ -128323,7 +130870,7 @@
   },
   {
     "aircraftId": "fw-190a-5_japan",
-    "id": "mg151_universal",
+    "id": "mgff_universal",
     "display": "Omni-purpose ammunition belt for 20 mm cannon",
     "tier": 0,
     "modClass": "",
@@ -140067,6 +142614,177 @@
     "requires": ""
   },
   {
+    "aircraftId": "germ_leopard_2a8",
+    "id": "120mm_DM_APDS_FS_ammo_pack",
+    "display": "120 mm DM APFSDS Ammo Pack",
+    "tier": 1,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "germ_leopard_2a8",
+    "id": "120mm_DM_HE_FS_ammo_pack",
+    "display": "120 mm DM HE FS Ammo Pack",
+    "tier": 1,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "germ_leopard_2a8",
+    "id": "new_tank_horizontal_aiming",
+    "display": "Horizontal Drive",
+    "tier": 1,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "germ_leopard_2a8",
+    "id": "tank_tool_kit",
+    "display": "Improved Parts",
+    "tier": 1,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "germ_leopard_2a8",
+    "id": "new_tank_tracks",
+    "display": "Tracks",
+    "tier": 1,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "germ_leopard_2a8",
+    "id": "tank_new_gun",
+    "display": "Adjustment of Fire",
+    "tier": 2,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "germ_leopard_2a8",
+    "id": "new_tank_brakes",
+    "display": "Brake System",
+    "tier": 2,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "germ_leopard_2a8",
+    "id": "manual_extinguisher",
+    "display": "Improved FPE",
+    "tier": 2,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "germ_leopard_2a8",
+    "id": "new_tank_suspension",
+    "display": "Suspension",
+    "tier": 2,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "germ_leopard_2a8",
+    "id": "tank_medical_kit",
+    "display": "Crew Replenishment",
+    "tier": 3,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "germ_leopard_2a8",
+    "id": "new_tank_vertical_aiming",
+    "display": "Elevation Mechanism",
+    "tier": 3,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "germ_leopard_2a8",
+    "id": "new_tank_filter",
+    "display": "Filters",
+    "tier": 3,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "germ_leopard_2a8",
+    "id": "art_support",
+    "display": "Artillery Support",
+    "tier": 4,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "germ_leopard_2a8",
+    "id": "new_tank_engine",
+    "display": "Engine",
+    "tier": 4,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "germ_leopard_2a8",
+    "id": "modern_tank_laser_rangefinder",
+    "display": "Laser rangefinder",
+    "tier": 4,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "germ_leopard_2a8",
+    "id": "night_vision_system",
+    "display": "NVD",
+    "tier": 4,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "germ_leopard_2a8",
+    "id": "tank_smoke_screen_system_mod",
+    "display": "Smoke grenade",
+    "tier": 4,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "germ_leopard_2a8",
+    "id": "new_tank_transmission",
+    "display": "Transmission",
+    "tier": 4,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "germ_leopard_2a8",
+    "id": "mine_protection_improvement",
+    "display": "Mine protection",
+    "tier": 5,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
     "aircraftId": "germ_leopard_2av",
     "id": "105mm_DM33_APDS_FS_ammo_pack",
     "display": "105 mm DM33 APFSDS Ammo Pack",
@@ -144154,6 +146872,159 @@
   },
   {
     "aircraftId": "germ_panzerjager_panther",
+    "id": "tank_smoke_screen_system_mod",
+    "display": "Smoke grenade",
+    "tier": 5,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "germ_panzerjager_panther_g2",
+    "id": "camouflage_net",
+    "display": "Camouflage net",
+    "tier": 0,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "germ_panzerjager_panther_g2",
+    "id": "88mm_kwk_36_43_APCR_ammo_pack",
+    "display": "88 mm Kwk 36 43 APCR Ammo Pack",
+    "tier": 1,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "germ_panzerjager_panther_g2",
+    "id": "88mm_kwk_36_43_HEAT_ammo_pack",
+    "display": "88 mm Kwk 36 43 HEAT Ammo Pack",
+    "tier": 1,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "germ_panzerjager_panther_g2",
+    "id": "new_tank_horizontal_aiming",
+    "display": "Horizontal Drive",
+    "tier": 1,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "germ_panzerjager_panther_g2",
+    "id": "tank_tool_kit",
+    "display": "Improved Parts",
+    "tier": 1,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "germ_panzerjager_panther_g2",
+    "id": "new_tank_tracks",
+    "display": "Tracks",
+    "tier": 1,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "germ_panzerjager_panther_g2",
+    "id": "tank_new_gun",
+    "display": "Adjustment of Fire",
+    "tier": 2,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "germ_panzerjager_panther_g2",
+    "id": "new_tank_brakes",
+    "display": "Brake System",
+    "tier": 2,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "germ_panzerjager_panther_g2",
+    "id": "manual_extinguisher",
+    "display": "Improved FPE",
+    "tier": 2,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "germ_panzerjager_panther_g2",
+    "id": "new_tank_suspension",
+    "display": "Suspension",
+    "tier": 2,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "germ_panzerjager_panther_g2",
+    "id": "tank_medical_kit",
+    "display": "Crew Replenishment",
+    "tier": 3,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "germ_panzerjager_panther_g2",
+    "id": "new_tank_vertical_aiming",
+    "display": "Elevation Mechanism",
+    "tier": 3,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "germ_panzerjager_panther_g2",
+    "id": "new_tank_filter",
+    "display": "Filters",
+    "tier": 3,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "germ_panzerjager_panther_g2",
+    "id": "new_tank_engine",
+    "display": "Engine",
+    "tier": 4,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "germ_panzerjager_panther_g2",
+    "id": "tank_rangefinder",
+    "display": "Rangefinder",
+    "tier": 4,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "germ_panzerjager_panther_g2",
+    "id": "new_tank_transmission",
+    "display": "Transmission",
+    "tier": 4,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "germ_panzerjager_panther_g2",
     "id": "tank_smoke_screen_system_mod",
     "display": "Smoke grenade",
     "tier": 5,
@@ -161028,6 +163899,123 @@
     "requires": ""
   },
   {
+    "aircraftId": "h_34_killstreak",
+    "id": "50cal_ground_targets",
+    "display": "12.7 mm machine gun ammunition belt for ground targets",
+    "tier": 0,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "h_34_killstreak",
+    "id": "50cal_stealth",
+    "display": "12.7 mm machine gun ammunition belt for stealth attack",
+    "tier": 0,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "h_34_killstreak",
+    "id": "50cal_tracers",
+    "display": "12.7 mm machine gun ammunition belt with tracer bullets",
+    "tier": 0,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "h_34_killstreak",
+    "id": "new_heli_cover",
+    "display": "Cover",
+    "tier": 0,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "h_34_killstreak",
+    "id": "heli_flak_jacket",
+    "display": "Flak jacket",
+    "tier": 0,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "h_34_killstreak",
+    "id": "50cal_universal",
+    "display": "Omni-purpose ammunition belt for 12.7 mm machine gun",
+    "tier": 0,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "h_34_killstreak",
+    "id": "new_compressor_mi_4",
+    "display": "Compressor",
+    "tier": 1,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "h_34_killstreak",
+    "id": "heli_structure",
+    "display": "Helicopter frame",
+    "tier": 2,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "h_34_killstreak",
+    "id": "cd_98_main_rotor",
+    "display": "Replacing helicopter blades",
+    "tier": 2,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "h_34_killstreak",
+    "id": "bmg50_belt_pack",
+    "display": "Bmg50 Belt Pack",
+    "tier": 3,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "h_34_killstreak",
+    "id": "hp_105",
+    "display": "Engine",
+    "tier": 3,
+    "modClass": "",
+    "group": "",
+    "requires": "cd_98_main_rotor"
+  },
+  {
+    "aircraftId": "h_34_killstreak",
+    "id": "bmg50_new_gun",
+    "display": "Bmg50 New Gun",
+    "tier": 4,
+    "modClass": "",
+    "group": "",
+    "requires": "bmg50_belt_pack"
+  },
+  {
+    "aircraftId": "h_34_killstreak",
+    "id": "air_extinguisher",
+    "display": "EFS",
+    "tier": 4,
+    "modClass": "armor",
+    "group": "",
+    "requires": ""
+  },
+  {
     "aircraftId": "h145m",
     "id": "50cal_ground_targets",
     "display": "12.7 mm machine gun ammunition belt for ground targets",
@@ -161197,6 +164185,15 @@
     "modClass": "weapon",
     "group": "",
     "requires": "fr_fz275"
+  },
+  {
+    "aircraftId": "h145m",
+    "id": "atgm_spike_x4_mitl",
+    "display": "Spike ER /4 (MITL)",
+    "tier": 4,
+    "modClass": "weapon",
+    "group": "",
+    "requires": "atgm_spike_x4"
   },
   {
     "aircraftId": "h6k4",
@@ -164566,6 +167563,15 @@
   },
   {
     "aircraftId": "h8k2",
+    "id": "air_extinguisher",
+    "display": "EFS",
+    "tier": 3,
+    "modClass": "armor",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "h8k2",
     "id": "h6k_14in_mod35",
     "display": "14 in (mod35)",
     "tier": 4,
@@ -164723,6 +167729,15 @@
     "display": "12 in (mod30)",
     "tier": 1,
     "modClass": "weapon",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "h8k3",
+    "id": "air_extinguisher",
+    "display": "EFS",
+    "tier": 3,
+    "modClass": "armor",
     "group": "",
     "requires": ""
   },
@@ -165391,6 +168406,15 @@
     "modClass": "weapon",
     "group": "",
     "requires": "sea_hawk_2x1000lb"
+  },
+  {
+    "aircraftId": "harrier_gr1",
+    "id": "us_aim_9g",
+    "display": "AIM-9G",
+    "tier": 4,
+    "modClass": "weapon",
+    "group": "",
+    "requires": "us_500lb_mk77_mod4"
   },
   {
     "aircraftId": "harrier_gr1",
@@ -168526,7 +171550,7 @@
   },
   {
     "aircraftId": "he_219a_7",
-    "id": "mk_103_stealth",
+    "id": "mk_108_fighter_stealth",
     "display": "30 mm cannon ammunition belt for stealth attack",
     "tier": 0,
     "modClass": "",
@@ -168535,7 +171559,7 @@
   },
   {
     "aircraftId": "he_219a_7",
-    "id": "mk_108_fighter_stealth",
+    "id": "mk_103_stealth",
     "display": "30 mm cannon ammunition belt for stealth attack",
     "tier": 0,
     "modClass": "",
@@ -172828,6 +175852,24 @@
   },
   {
     "aircraftId": "hs-129b-2_romania",
+    "id": "bk37_ground_targets",
+    "display": "Bk37 Ground Targets",
+    "tier": 0,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "hs-129b-2_romania",
+    "id": "bk37_light_targets",
+    "display": "Bk37 Light Targets",
+    "tier": 0,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "hs-129b-2_romania",
     "id": "bk37_new_gun",
     "display": "Bk37 New Gun",
     "tier": 0,
@@ -173127,6 +176169,24 @@
     "aircraftId": "hs-129b-2_romania_italy",
     "id": "bk37_belt_pack",
     "display": "Bk37 Belt Pack",
+    "tier": 0,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "hs-129b-2_romania_italy",
+    "id": "bk37_ground_targets",
+    "display": "Bk37 Ground Targets",
+    "tier": 0,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "hs-129b-2_romania_italy",
+    "id": "bk37_light_targets",
+    "display": "Bk37 Light Targets",
     "tier": 0,
     "modClass": "",
     "group": "",
@@ -175813,6 +178873,15 @@
     "modClass": "weapon",
     "group": "",
     "requires": ""
+  },
+  {
+    "aircraftId": "hurricanemkii",
+    "id": "halker_mbc",
+    "display": "HMBC mk.2",
+    "tier": 4,
+    "modClass": "weapon",
+    "group": "",
+    "requires": "halker_sbc"
   },
   {
     "aircraftId": "hurricanemkii",
@@ -182287,7 +185356,7 @@
   },
   {
     "aircraftId": "il_28_china",
-    "id": "ns23_armor_targets",
+    "id": "nr23_turret_apit",
     "display": "23 mm cannon ammunition belt for armored targets",
     "tier": 0,
     "modClass": "",
@@ -182296,7 +185365,7 @@
   },
   {
     "aircraftId": "il_28_china",
-    "id": "nr23_turret_apit",
+    "id": "ns23_armor_targets",
     "display": "23 mm cannon ammunition belt for armored targets",
     "tier": 0,
     "modClass": "",
@@ -182449,7 +185518,7 @@
   },
   {
     "aircraftId": "il_28_china_killstreak",
-    "id": "nr23_turret_apit",
+    "id": "ns23_armor_targets",
     "display": "23 mm cannon ammunition belt for armored targets",
     "tier": 0,
     "modClass": "",
@@ -182458,7 +185527,7 @@
   },
   {
     "aircraftId": "il_28_china_killstreak",
-    "id": "ns23_armor_targets",
+    "id": "nr23_turret_apit",
     "display": "23 mm cannon ammunition belt for armored targets",
     "tier": 0,
     "modClass": "",
@@ -182611,7 +185680,7 @@
   },
   {
     "aircraftId": "il_28_german",
-    "id": "nr23_turret_apit",
+    "id": "ns23_armor_targets",
     "display": "23 mm cannon ammunition belt for armored targets",
     "tier": 0,
     "modClass": "",
@@ -182620,7 +185689,7 @@
   },
   {
     "aircraftId": "il_28_german",
-    "id": "ns23_armor_targets",
+    "id": "nr23_turret_apit",
     "display": "23 mm cannon ammunition belt for armored targets",
     "tier": 0,
     "modClass": "",
@@ -182755,7 +185824,7 @@
   },
   {
     "aircraftId": "il_28_hungary",
-    "id": "nr23_turret_heit",
+    "id": "ns23_air_targets",
     "display": "23 mm cannon ammunition belt for air targets",
     "tier": 0,
     "modClass": "",
@@ -182764,7 +185833,7 @@
   },
   {
     "aircraftId": "il_28_hungary",
-    "id": "ns23_air_targets",
+    "id": "nr23_turret_heit",
     "display": "23 mm cannon ammunition belt for air targets",
     "tier": 0,
     "modClass": "",
@@ -183079,15 +186148,6 @@
   },
   {
     "aircraftId": "il_28sh",
-    "id": "ns23_air_targets",
-    "display": "23 mm cannon ammunition belt for air targets",
-    "tier": 0,
-    "modClass": "",
-    "group": "",
-    "requires": ""
-  },
-  {
-    "aircraftId": "il_28sh",
     "id": "nr23_turret_heit",
     "display": "23 mm cannon ammunition belt for air targets",
     "tier": 0,
@@ -183097,8 +186157,8 @@
   },
   {
     "aircraftId": "il_28sh",
-    "id": "nr23_turret_apit",
-    "display": "23 mm cannon ammunition belt for armored targets",
+    "id": "ns23_air_targets",
+    "display": "23 mm cannon ammunition belt for air targets",
     "tier": 0,
     "modClass": "",
     "group": "",
@@ -183107,6 +186167,15 @@
   {
     "aircraftId": "il_28sh",
     "id": "ns23_armor_targets",
+    "display": "23 mm cannon ammunition belt for armored targets",
+    "tier": 0,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "il_28sh",
+    "id": "nr23_turret_apit",
     "display": "23 mm cannon ammunition belt for armored targets",
     "tier": 0,
     "modClass": "",
@@ -199593,6 +202662,123 @@
     "requires": ""
   },
   {
+    "aircraftId": "it_lancia_flak38",
+    "id": "20mm_kwk_30_AP_ammo_pack",
+    "display": "20 mm Kwk 30 AP Ammo Pack",
+    "tier": 1,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "it_lancia_flak38",
+    "id": "20mm_kwk_30_HE_ammo_pack",
+    "display": "20 mm Kwk 30 HE Ammo Pack",
+    "tier": 1,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "it_lancia_flak38",
+    "id": "new_tank_horizontal_aiming",
+    "display": "Horizontal Drive",
+    "tier": 1,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "it_lancia_flak38",
+    "id": "tank_tool_kit",
+    "display": "Improved Parts",
+    "tier": 1,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "it_lancia_flak38",
+    "id": "tank_new_gun",
+    "display": "Adjustment of Fire",
+    "tier": 2,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "it_lancia_flak38",
+    "id": "new_tank_brakes",
+    "display": "Brake System",
+    "tier": 2,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "it_lancia_flak38",
+    "id": "manual_extinguisher",
+    "display": "Improved FPE",
+    "tier": 2,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "it_lancia_flak38",
+    "id": "tank_medical_kit",
+    "display": "Crew Replenishment",
+    "tier": 3,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "it_lancia_flak38",
+    "id": "new_tank_vertical_aiming",
+    "display": "Elevation Mechanism",
+    "tier": 3,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "it_lancia_flak38",
+    "id": "new_tank_filter",
+    "display": "Filters",
+    "tier": 3,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "it_lancia_flak38",
+    "id": "art_support",
+    "display": "Artillery Support",
+    "tier": 4,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "it_lancia_flak38",
+    "id": "new_tank_engine",
+    "display": "Engine",
+    "tier": 4,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "it_lancia_flak38",
+    "id": "new_tank_transmission",
+    "display": "Transmission",
+    "tier": 4,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
     "aircraftId": "it_lancia3ro_100",
     "id": "100mm_ep_HESH_ammo_pack",
     "display": "100 mm Ep HESH Ammo Pack",
@@ -205075,15 +208261,6 @@
   },
   {
     "aircraftId": "it_pzh_2000",
-    "id": "laser_rangefinder_lws",
-    "display": "LWS/LR",
-    "tier": 4,
-    "modClass": "",
-    "group": "",
-    "requires": ""
-  },
-  {
-    "aircraftId": "it_pzh_2000",
     "id": "new_tank_transmission",
     "display": "Transmission",
     "tier": 4,
@@ -205095,6 +208272,15 @@
     "aircraftId": "it_pzh_2000",
     "id": "155mm_NATO_HE_ammo_pack",
     "display": "155 mm NATO HE Ammo Pack",
+    "tier": 5,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "it_pzh_2000",
+    "id": "laser_rangefinder_lws",
+    "display": "LWS/LR",
     "tier": 5,
     "modClass": "",
     "group": "",
@@ -208072,6 +211258,132 @@
   },
   {
     "aircraftId": "it_toldi_ii_a",
+    "id": "new_tank_transmission",
+    "display": "Transmission",
+    "tier": 4,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "it_v_4_straussler",
+    "id": "40mm_hung_APBC_ammo_pack",
+    "display": "40 mm Hung APBC Ammo Pack",
+    "tier": 1,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "it_v_4_straussler",
+    "id": "new_tank_horizontal_aiming",
+    "display": "Horizontal Drive",
+    "tier": 1,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "it_v_4_straussler",
+    "id": "tank_tool_kit",
+    "display": "Improved Parts",
+    "tier": 1,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "it_v_4_straussler",
+    "id": "new_tank_tracks",
+    "display": "Tracks",
+    "tier": 1,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "it_v_4_straussler",
+    "id": "tank_new_gun",
+    "display": "Adjustment of Fire",
+    "tier": 2,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "it_v_4_straussler",
+    "id": "new_tank_brakes",
+    "display": "Brake System",
+    "tier": 2,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "it_v_4_straussler",
+    "id": "manual_extinguisher",
+    "display": "Improved FPE",
+    "tier": 2,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "it_v_4_straussler",
+    "id": "new_tank_suspension",
+    "display": "Suspension",
+    "tier": 2,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "it_v_4_straussler",
+    "id": "tank_medical_kit",
+    "display": "Crew Replenishment",
+    "tier": 3,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "it_v_4_straussler",
+    "id": "new_tank_vertical_aiming",
+    "display": "Elevation Mechanism",
+    "tier": 3,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "it_v_4_straussler",
+    "id": "new_tank_filter",
+    "display": "Filters",
+    "tier": 3,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "it_v_4_straussler",
+    "id": "art_support",
+    "display": "Artillery Support",
+    "tier": 4,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "it_v_4_straussler",
+    "id": "new_tank_engine",
+    "display": "Engine",
+    "tier": 4,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "it_v_4_straussler",
     "id": "new_tank_transmission",
     "display": "Transmission",
     "tier": 4,
@@ -212806,7 +216118,7 @@
   },
   {
     "aircraftId": "j2m3",
-    "id": "type99mk2_all_tracers",
+    "id": "type99mk1_all_tracers",
     "display": "20 mm cannon ammunition belt with tracer shells",
     "tier": 0,
     "modClass": "",
@@ -212815,7 +216127,7 @@
   },
   {
     "aircraftId": "j2m3",
-    "id": "type99mk1_all_tracers",
+    "id": "type99mk2_all_tracers",
     "display": "20 mm cannon ammunition belt with tracer shells",
     "tier": 0,
     "modClass": "",
@@ -212878,7 +216190,7 @@
   },
   {
     "aircraftId": "j2m3",
-    "id": "type99mk2_universal",
+    "id": "type99mk1_universal",
     "display": "Omni-purpose ammunition belt for 20 mm cannon",
     "tier": 0,
     "modClass": "",
@@ -212887,7 +216199,7 @@
   },
   {
     "aircraftId": "j2m3",
-    "id": "type99mk1_universal",
+    "id": "type99mk2_universal",
     "display": "Omni-purpose ammunition belt for 20 mm cannon",
     "tier": 0,
     "modClass": "",
@@ -213013,7 +216325,7 @@
   },
   {
     "aircraftId": "j2m4_kai",
-    "id": "type99mk2_stealth",
+    "id": "type99mk1_stealth",
     "display": "20 mm cannon ammunition belt for stealth attack",
     "tier": 0,
     "modClass": "",
@@ -213022,7 +216334,7 @@
   },
   {
     "aircraftId": "j2m4_kai",
-    "id": "type99mk1_stealth",
+    "id": "type99mk2_stealth",
     "display": "20 mm cannon ammunition belt for stealth attack",
     "tier": 0,
     "modClass": "",
@@ -213193,15 +216505,6 @@
   },
   {
     "aircraftId": "j2m5",
-    "id": "type99mk2_stealth",
-    "display": "20 mm cannon ammunition belt for stealth attack",
-    "tier": 0,
-    "modClass": "",
-    "group": "",
-    "requires": ""
-  },
-  {
-    "aircraftId": "j2m5",
     "id": "type99mk1_stealth",
     "display": "20 mm cannon ammunition belt for stealth attack",
     "tier": 0,
@@ -213211,8 +216514,8 @@
   },
   {
     "aircraftId": "j2m5",
-    "id": "type99mk2_all_tracers",
-    "display": "20 mm cannon ammunition belt with tracer shells",
+    "id": "type99mk2_stealth",
+    "display": "20 mm cannon ammunition belt for stealth attack",
     "tier": 0,
     "modClass": "",
     "group": "",
@@ -213221,6 +216524,15 @@
   {
     "aircraftId": "j2m5",
     "id": "type99mk1_all_tracers",
+    "display": "20 mm cannon ammunition belt with tracer shells",
+    "tier": 0,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "j2m5",
+    "id": "type99mk2_all_tracers",
     "display": "20 mm cannon ammunition belt with tracer shells",
     "tier": 0,
     "modClass": "",
@@ -213283,7 +216595,7 @@
   },
   {
     "aircraftId": "j2m5",
-    "id": "type99mk2_universal",
+    "id": "type99mk1_universal",
     "display": "Omni-purpose ammunition belt for 20 mm cannon",
     "tier": 0,
     "modClass": "",
@@ -213292,7 +216604,7 @@
   },
   {
     "aircraftId": "j2m5",
-    "id": "type99mk1_universal",
+    "id": "type99mk2_universal",
     "display": "Omni-purpose ammunition belt for 20 mm cannon",
     "tier": 0,
     "modClass": "",
@@ -214669,38 +217981,20 @@
   },
   {
     "aircraftId": "jaguar_a_germany_killstreak",
-    "id": "aden_ground_targets",
-    "display": "Aden Ground Targets",
-    "tier": 0,
-    "modClass": "",
-    "group": "",
-    "requires": ""
-  },
-  {
-    "aircraftId": "jaguar_a_germany_killstreak",
-    "id": "aden_stealth",
-    "display": "Aden Stealth",
-    "tier": 0,
-    "modClass": "",
-    "group": "",
-    "requires": ""
-  },
-  {
-    "aircraftId": "jaguar_a_germany_killstreak",
-    "id": "aden_belt_pack",
-    "display": "Aden Belt Pack",
-    "tier": 1,
-    "modClass": "",
-    "group": "",
-    "requires": ""
-  },
-  {
-    "aircraftId": "jaguar_a_germany_killstreak",
     "id": "new_compressor_jet",
     "display": "Compressor",
     "tier": 1,
     "modClass": "lth",
     "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "jaguar_a_germany_killstreak",
+    "id": "countermeasures_belt_pack",
+    "display": "Flares/Chaff",
+    "tier": 1,
+    "modClass": "armor",
+    "group": "mi-24_EVU",
     "requires": ""
   },
   {
@@ -214746,7 +218040,7 @@
     "tier": 3,
     "modClass": "",
     "group": "",
-    "requires": "aden_belt_pack"
+    "requires": ""
   },
   {
     "aircraftId": "jaguar_a_germany_killstreak",
@@ -214804,38 +218098,20 @@
   },
   {
     "aircraftId": "jaguar_a_iaf_killstreak",
-    "id": "aden_ground_targets",
-    "display": "Aden Ground Targets",
-    "tier": 0,
-    "modClass": "",
-    "group": "",
-    "requires": ""
-  },
-  {
-    "aircraftId": "jaguar_a_iaf_killstreak",
-    "id": "aden_stealth",
-    "display": "Aden Stealth",
-    "tier": 0,
-    "modClass": "",
-    "group": "",
-    "requires": ""
-  },
-  {
-    "aircraftId": "jaguar_a_iaf_killstreak",
-    "id": "aden_belt_pack",
-    "display": "Aden Belt Pack",
-    "tier": 1,
-    "modClass": "",
-    "group": "",
-    "requires": ""
-  },
-  {
-    "aircraftId": "jaguar_a_iaf_killstreak",
     "id": "new_compressor_jet",
     "display": "Compressor",
     "tier": 1,
     "modClass": "lth",
     "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "jaguar_a_iaf_killstreak",
+    "id": "countermeasures_belt_pack",
+    "display": "Flares/Chaff",
+    "tier": 1,
+    "modClass": "armor",
+    "group": "mi-24_EVU",
     "requires": ""
   },
   {
@@ -214881,7 +218157,7 @@
     "tier": 3,
     "modClass": "",
     "group": "",
-    "requires": "aden_belt_pack"
+    "requires": ""
   },
   {
     "aircraftId": "jaguar_a_iaf_killstreak",
@@ -214939,38 +218215,20 @@
   },
   {
     "aircraftId": "jaguar_a_italy_killstreak",
-    "id": "aden_ground_targets",
-    "display": "Aden Ground Targets",
-    "tier": 0,
-    "modClass": "",
-    "group": "",
-    "requires": ""
-  },
-  {
-    "aircraftId": "jaguar_a_italy_killstreak",
-    "id": "aden_stealth",
-    "display": "Aden Stealth",
-    "tier": 0,
-    "modClass": "",
-    "group": "",
-    "requires": ""
-  },
-  {
-    "aircraftId": "jaguar_a_italy_killstreak",
-    "id": "aden_belt_pack",
-    "display": "Aden Belt Pack",
-    "tier": 1,
-    "modClass": "",
-    "group": "",
-    "requires": ""
-  },
-  {
-    "aircraftId": "jaguar_a_italy_killstreak",
     "id": "new_compressor_jet",
     "display": "Compressor",
     "tier": 1,
     "modClass": "lth",
     "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "jaguar_a_italy_killstreak",
+    "id": "countermeasures_belt_pack",
+    "display": "Flares/Chaff",
+    "tier": 1,
+    "modClass": "armor",
+    "group": "mi-24_EVU",
     "requires": ""
   },
   {
@@ -215016,7 +218274,7 @@
     "tier": 3,
     "modClass": "",
     "group": "",
-    "requires": "aden_belt_pack"
+    "requires": ""
   },
   {
     "aircraftId": "jaguar_a_italy_killstreak",
@@ -215074,38 +218332,20 @@
   },
   {
     "aircraftId": "jaguar_a_japan_killstreak",
-    "id": "aden_ground_targets",
-    "display": "Aden Ground Targets",
-    "tier": 0,
-    "modClass": "",
-    "group": "",
-    "requires": ""
-  },
-  {
-    "aircraftId": "jaguar_a_japan_killstreak",
-    "id": "aden_stealth",
-    "display": "Aden Stealth",
-    "tier": 0,
-    "modClass": "",
-    "group": "",
-    "requires": ""
-  },
-  {
-    "aircraftId": "jaguar_a_japan_killstreak",
-    "id": "aden_belt_pack",
-    "display": "Aden Belt Pack",
-    "tier": 1,
-    "modClass": "",
-    "group": "",
-    "requires": ""
-  },
-  {
-    "aircraftId": "jaguar_a_japan_killstreak",
     "id": "new_compressor_jet",
     "display": "Compressor",
     "tier": 1,
     "modClass": "lth",
     "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "jaguar_a_japan_killstreak",
+    "id": "countermeasures_belt_pack",
+    "display": "Flares/Chaff",
+    "tier": 1,
+    "modClass": "armor",
+    "group": "mi-24_EVU",
     "requires": ""
   },
   {
@@ -215151,7 +218391,7 @@
     "tier": 3,
     "modClass": "",
     "group": "",
-    "requires": "aden_belt_pack"
+    "requires": ""
   },
   {
     "aircraftId": "jaguar_a_japan_killstreak",
@@ -215209,38 +218449,20 @@
   },
   {
     "aircraftId": "jaguar_a_killstreak",
-    "id": "aden_ground_targets",
-    "display": "Aden Ground Targets",
-    "tier": 0,
-    "modClass": "",
-    "group": "",
-    "requires": ""
-  },
-  {
-    "aircraftId": "jaguar_a_killstreak",
-    "id": "aden_stealth",
-    "display": "Aden Stealth",
-    "tier": 0,
-    "modClass": "",
-    "group": "",
-    "requires": ""
-  },
-  {
-    "aircraftId": "jaguar_a_killstreak",
-    "id": "aden_belt_pack",
-    "display": "Aden Belt Pack",
-    "tier": 1,
-    "modClass": "",
-    "group": "",
-    "requires": ""
-  },
-  {
-    "aircraftId": "jaguar_a_killstreak",
     "id": "new_compressor_jet",
     "display": "Compressor",
     "tier": 1,
     "modClass": "lth",
     "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "jaguar_a_killstreak",
+    "id": "countermeasures_belt_pack",
+    "display": "Flares/Chaff",
+    "tier": 1,
+    "modClass": "armor",
+    "group": "mi-24_EVU",
     "requires": ""
   },
   {
@@ -215286,7 +218508,7 @@
     "tier": 3,
     "modClass": "",
     "group": "",
-    "requires": "aden_belt_pack"
+    "requires": ""
   },
   {
     "aircraftId": "jaguar_a_killstreak",
@@ -215344,38 +218566,20 @@
   },
   {
     "aircraftId": "jaguar_a_sweden_killstreak",
-    "id": "aden_ground_targets",
-    "display": "Aden Ground Targets",
-    "tier": 0,
-    "modClass": "",
-    "group": "",
-    "requires": ""
-  },
-  {
-    "aircraftId": "jaguar_a_sweden_killstreak",
-    "id": "aden_stealth",
-    "display": "Aden Stealth",
-    "tier": 0,
-    "modClass": "",
-    "group": "",
-    "requires": ""
-  },
-  {
-    "aircraftId": "jaguar_a_sweden_killstreak",
-    "id": "aden_belt_pack",
-    "display": "Aden Belt Pack",
-    "tier": 1,
-    "modClass": "",
-    "group": "",
-    "requires": ""
-  },
-  {
-    "aircraftId": "jaguar_a_sweden_killstreak",
     "id": "new_compressor_jet",
     "display": "Compressor",
     "tier": 1,
     "modClass": "lth",
     "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "jaguar_a_sweden_killstreak",
+    "id": "countermeasures_belt_pack",
+    "display": "Flares/Chaff",
+    "tier": 1,
+    "modClass": "armor",
+    "group": "mi-24_EVU",
     "requires": ""
   },
   {
@@ -215421,7 +218625,7 @@
     "tier": 3,
     "modClass": "",
     "group": "",
-    "requires": "aden_belt_pack"
+    "requires": ""
   },
   {
     "aircraftId": "jaguar_a_sweden_killstreak",
@@ -215479,38 +218683,20 @@
   },
   {
     "aircraftId": "jaguar_a_uk_killstreak",
-    "id": "aden_ground_targets",
-    "display": "Aden Ground Targets",
-    "tier": 0,
-    "modClass": "",
-    "group": "",
-    "requires": ""
-  },
-  {
-    "aircraftId": "jaguar_a_uk_killstreak",
-    "id": "aden_stealth",
-    "display": "Aden Stealth",
-    "tier": 0,
-    "modClass": "",
-    "group": "",
-    "requires": ""
-  },
-  {
-    "aircraftId": "jaguar_a_uk_killstreak",
-    "id": "aden_belt_pack",
-    "display": "Aden Belt Pack",
-    "tier": 1,
-    "modClass": "",
-    "group": "",
-    "requires": ""
-  },
-  {
-    "aircraftId": "jaguar_a_uk_killstreak",
     "id": "new_compressor_jet",
     "display": "Compressor",
     "tier": 1,
     "modClass": "lth",
     "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "jaguar_a_uk_killstreak",
+    "id": "countermeasures_belt_pack",
+    "display": "Flares/Chaff",
+    "tier": 1,
+    "modClass": "armor",
+    "group": "mi-24_EVU",
     "requires": ""
   },
   {
@@ -215556,7 +218742,7 @@
     "tier": 3,
     "modClass": "",
     "group": "",
-    "requires": "aden_belt_pack"
+    "requires": ""
   },
   {
     "aircraftId": "jaguar_a_uk_killstreak",
@@ -215614,38 +218800,20 @@
   },
   {
     "aircraftId": "jaguar_a_usa_killstreak",
-    "id": "aden_ground_targets",
-    "display": "Aden Ground Targets",
-    "tier": 0,
-    "modClass": "",
-    "group": "",
-    "requires": ""
-  },
-  {
-    "aircraftId": "jaguar_a_usa_killstreak",
-    "id": "aden_stealth",
-    "display": "Aden Stealth",
-    "tier": 0,
-    "modClass": "",
-    "group": "",
-    "requires": ""
-  },
-  {
-    "aircraftId": "jaguar_a_usa_killstreak",
-    "id": "aden_belt_pack",
-    "display": "Aden Belt Pack",
-    "tier": 1,
-    "modClass": "",
-    "group": "",
-    "requires": ""
-  },
-  {
-    "aircraftId": "jaguar_a_usa_killstreak",
     "id": "new_compressor_jet",
     "display": "Compressor",
     "tier": 1,
     "modClass": "lth",
     "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "jaguar_a_usa_killstreak",
+    "id": "countermeasures_belt_pack",
+    "display": "Flares/Chaff",
+    "tier": 1,
+    "modClass": "armor",
+    "group": "mi-24_EVU",
     "requires": ""
   },
   {
@@ -215691,7 +218859,7 @@
     "tier": 3,
     "modClass": "",
     "group": "",
-    "requires": "aden_belt_pack"
+    "requires": ""
   },
   {
     "aircraftId": "jaguar_a_usa_killstreak",
@@ -217886,6 +221054,177 @@
     "display": "37 mm Kwk 36 APCR Ammo Pack",
     "tier": 1,
     "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "jp_bmp_3f",
+    "id": "tank_support_ucav",
+    "display": "Scout UAV",
+    "tier": 0,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "jp_bmp_3f",
+    "id": "new_tank_horizontal_aiming",
+    "display": "Horizontal Drive",
+    "tier": 1,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "jp_bmp_3f",
+    "id": "tank_tool_kit",
+    "display": "Improved Parts",
+    "tier": 1,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "jp_bmp_3f",
+    "id": "new_tank_tracks",
+    "display": "Tracks",
+    "tier": 1,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "jp_bmp_3f",
+    "id": "tank_new_gun",
+    "display": "Adjustment of Fire",
+    "tier": 2,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "jp_bmp_3f",
+    "id": "new_tank_brakes",
+    "display": "Brake System",
+    "tier": 2,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "jp_bmp_3f",
+    "id": "manual_extinguisher",
+    "display": "Improved FPE",
+    "tier": 2,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "jp_bmp_3f",
+    "id": "modern_tank_laser_rangefinder",
+    "display": "Laser rangefinder",
+    "tier": 2,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "jp_bmp_3f",
+    "id": "new_tank_suspension",
+    "display": "Suspension",
+    "tier": 2,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "jp_bmp_3f",
+    "id": "tank_medical_kit",
+    "display": "Crew Replenishment",
+    "tier": 3,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "jp_bmp_3f",
+    "id": "new_tank_vertical_aiming",
+    "display": "Elevation Mechanism",
+    "tier": 3,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "jp_bmp_3f",
+    "id": "tank_engine_smoke_screen_system",
+    "display": "ESS",
+    "tier": 3,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "jp_bmp_3f",
+    "id": "new_tank_filter",
+    "display": "Filters",
+    "tier": 3,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "jp_bmp_3f",
+    "id": "100mm_9m117m1_ammo_pack",
+    "display": "100 mm 9M117m1 Ammo Pack",
+    "tier": 4,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "jp_bmp_3f",
+    "id": "art_support",
+    "display": "Artillery Support",
+    "tier": 4,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "jp_bmp_3f",
+    "id": "new_tank_engine",
+    "display": "Engine",
+    "tier": 4,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "jp_bmp_3f",
+    "id": "new_tank_transmission",
+    "display": "Transmission",
+    "tier": 4,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "jp_bmp_3f",
+    "id": "30mm_2a42_APDS_ammo_pack",
+    "display": "30 mm 2A42 APDS Ammo Pack",
+    "tier": 5,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "jp_bmp_3f",
+    "id": "tank_smoke_screen_system_mod",
+    "display": "Smoke grenade",
+    "tier": 5,
+    "modClass": "protection",
     "group": "",
     "requires": ""
   },
@@ -233407,15 +236746,6 @@
   },
   {
     "aircraftId": "ka_29",
-    "id": "il_28sh_s24",
-    "display": "S-24",
-    "tier": 2,
-    "modClass": "weapon",
-    "group": "",
-    "requires": "yak_38_b8m1"
-  },
-  {
-    "aircraftId": "ka_29",
     "id": "ka_29_2a42",
     "display": "2A42",
     "tier": 3,
@@ -233457,7 +236787,7 @@
     "tier": 3,
     "modClass": "weapon",
     "group": "",
-    "requires": "il_28sh_s24"
+    "requires": "yak_38_b8m1"
   },
   {
     "aircraftId": "ka_29",
@@ -233763,7 +237093,7 @@
     "tier": 0,
     "modClass": "",
     "group": "",
-    "requires": ""
+    "requires": "MAW_system_heli_false_thermal_targets_large_dircm"
   },
   {
     "aircraftId": "ka_52",
@@ -233839,8 +237169,8 @@
   },
   {
     "aircraftId": "ka_52",
-    "id": "MAW_system_heli_false_thermal_targets_large",
-    "display": "MAW",
+    "id": "MAW_system_heli_false_thermal_targets_large_dircm",
+    "display": "MAWS/DIRCM",
     "tier": 2,
     "modClass": "weapon",
     "group": "countermeasures",
@@ -233880,7 +237210,7 @@
     "tier": 3,
     "modClass": "",
     "group": "",
-    "requires": "MAW_system_heli_false_thermal_targets_large"
+    "requires": "MAW_system_heli_false_thermal_targets_large_dircm"
   },
   {
     "aircraftId": "ka_52",
@@ -242488,15 +245818,6 @@
   },
   {
     "aircraftId": "ki-45_hei_tei",
-    "id": "ho1_ground_targets",
-    "display": "20 mm cannon ammunition belt for ground targets",
-    "tier": 0,
-    "modClass": "",
-    "group": "",
-    "requires": ""
-  },
-  {
-    "aircraftId": "ki-45_hei_tei",
     "id": "ho5_ground_targets",
     "display": "20 mm cannon ammunition belt for ground targets",
     "tier": 0,
@@ -242506,8 +245827,8 @@
   },
   {
     "aircraftId": "ki-45_hei_tei",
-    "id": "ho5_stealth",
-    "display": "20 mm cannon ammunition belt for stealth attack",
+    "id": "ho1_ground_targets",
+    "display": "20 mm cannon ammunition belt for ground targets",
     "tier": 0,
     "modClass": "",
     "group": "",
@@ -242516,6 +245837,15 @@
   {
     "aircraftId": "ki-45_hei_tei",
     "id": "ho1_stealth",
+    "display": "20 mm cannon ammunition belt for stealth attack",
+    "tier": 0,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "ki-45_hei_tei",
+    "id": "ho5_stealth",
     "display": "20 mm cannon ammunition belt for stealth attack",
     "tier": 0,
     "modClass": "",
@@ -242632,7 +245962,7 @@
   },
   {
     "aircraftId": "ki-45_hei_tei",
-    "id": "ho1_universal",
+    "id": "ho5_universal",
     "display": "Omni-purpose ammunition belt for 20 mm cannon",
     "tier": 0,
     "modClass": "",
@@ -242641,7 +245971,7 @@
   },
   {
     "aircraftId": "ki-45_hei_tei",
-    "id": "ho5_universal",
+    "id": "ho1_universal",
     "display": "Omni-purpose ammunition belt for 20 mm cannon",
     "tier": 0,
     "modClass": "",
@@ -242902,7 +246232,7 @@
   },
   {
     "aircraftId": "ki-45_hei_tei_china",
-    "id": "ho1_universal",
+    "id": "ho5_universal",
     "display": "Omni-purpose ammunition belt for 20 mm cannon",
     "tier": 0,
     "modClass": "",
@@ -242911,7 +246241,7 @@
   },
   {
     "aircraftId": "ki-45_hei_tei_china",
-    "id": "ho5_universal",
+    "id": "ho1_universal",
     "display": "Omni-purpose ammunition belt for 20 mm cannon",
     "tier": 0,
     "modClass": "",
@@ -249622,6 +252952,24 @@
     "modClass": "",
     "group": "",
     "requires": ""
+  },
+  {
+    "aircraftId": "lagg-i-301",
+    "id": "LaGG_dz-40",
+    "display": "DZ-40",
+    "tier": 3,
+    "modClass": "weapon",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "lagg-i-301",
+    "id": "LaGG_ro-82",
+    "display": "RO-82",
+    "tier": 4,
+    "modClass": "weapon",
+    "group": "",
+    "requires": "LaGG_dz-40"
   },
   {
     "aircraftId": "lancaster_mk1",
@@ -259309,7 +262657,7 @@
   },
   {
     "aircraftId": "me-262a1_u1",
-    "id": "mk_108_fighter_stealth",
+    "id": "mk_103_stealth",
     "display": "30 mm cannon ammunition belt for stealth attack",
     "tier": 0,
     "modClass": "",
@@ -259318,7 +262666,7 @@
   },
   {
     "aircraftId": "me-262a1_u1",
-    "id": "mk_103_stealth",
+    "id": "mk_108_fighter_stealth",
     "display": "30 mm cannon ammunition belt for stealth attack",
     "tier": 0,
     "modClass": "",
@@ -266694,7 +270042,7 @@
     "tier": 0,
     "modClass": "",
     "group": "",
-    "requires": ""
+    "requires": "MAW_system_heli_false_thermal_targets_large_dircm"
   },
   {
     "aircraftId": "mi_28nm",
@@ -266734,8 +270082,8 @@
   },
   {
     "aircraftId": "mi_28nm",
-    "id": "MAW_system_heli_false_thermal_targets_large",
-    "display": "MAW",
+    "id": "MAW_system_heli_false_thermal_targets_large_dircm",
+    "display": "MAWS/DIRCM",
     "tier": 1,
     "modClass": "weapon",
     "group": "countermeasures",
@@ -266820,7 +270168,7 @@
     "tier": 3,
     "modClass": "weapon",
     "group": "",
-    "requires": "MAW_system_heli_false_thermal_targets_large"
+    "requires": "MAW_system_heli_false_thermal_targets_large_dircm"
   },
   {
     "aircraftId": "mi_28nm",
@@ -266848,6 +270196,15 @@
     "modClass": "weapon",
     "group": "",
     "requires": "ka_9K121"
+  },
+  {
+    "aircraftId": "mi_28nm",
+    "id": "su_lmur_mitl",
+    "display": "LMUR (MITL)",
+    "tier": 4,
+    "modClass": "weapon",
+    "group": "",
+    "requires": "su_lmur"
   },
   {
     "aircraftId": "mi_28nm",
@@ -268074,6 +271431,132 @@
     "requires": ""
   },
   {
+    "aircraftId": "mi_4av_killstreak",
+    "id": "new_heli_cover",
+    "display": "Cover",
+    "tier": 0,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "mi_4av_killstreak",
+    "id": "heli_flak_jacket",
+    "display": "Flak jacket",
+    "tier": 0,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "mi_4av_killstreak",
+    "id": "YaK-B_air_targets",
+    "display": "Yak-B Air Targets",
+    "tier": 0,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "mi_4av_killstreak",
+    "id": "YaK-B_ground_targets",
+    "display": "Yak-B Ground Targets",
+    "tier": 0,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "mi_4av_killstreak",
+    "id": "YaK-B_universal",
+    "display": "Yak-B Universal",
+    "tier": 0,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "mi_4av_killstreak",
+    "id": "new_compressor_mi_4",
+    "display": "Compressor",
+    "tier": 1,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "mi_4av_killstreak",
+    "id": "mi_4_fab_100",
+    "display": "FAB-100",
+    "tier": 1,
+    "modClass": "weapon",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "mi_4av_killstreak",
+    "id": "YaK-B_belt_pack",
+    "display": "Yak-B Belt Pack",
+    "tier": 1,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "mi_4av_killstreak",
+    "id": "heli_structure",
+    "display": "Helicopter frame",
+    "tier": 2,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "mi_4av_killstreak",
+    "id": "cd_98_main_rotor",
+    "display": "Replacing helicopter blades",
+    "tier": 2,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "mi_4av_killstreak",
+    "id": "hp_105",
+    "display": "Engine",
+    "tier": 3,
+    "modClass": "",
+    "group": "",
+    "requires": "cd_98_main_rotor"
+  },
+  {
+    "aircraftId": "mi_4av_killstreak",
+    "id": "mi_24_fab_250",
+    "display": "FAB-250",
+    "tier": 3,
+    "modClass": "weapon",
+    "group": "",
+    "requires": "mi_4_fab_100"
+  },
+  {
+    "aircraftId": "mi_4av_killstreak",
+    "id": "YaK-B_new_gun",
+    "display": "Yak-B New Gun",
+    "tier": 3,
+    "modClass": "",
+    "group": "",
+    "requires": "YaK-B_belt_pack"
+  },
+  {
+    "aircraftId": "mi_4av_killstreak",
+    "id": "air_extinguisher",
+    "display": "EFS",
+    "tier": 4,
+    "modClass": "weapon",
+    "group": "",
+    "requires": ""
+  },
+  {
     "aircraftId": "mi_8amtsh",
     "id": "ns23_air_targets",
     "display": "23 mm cannon ammunition belt for air targets",
@@ -268350,7 +271833,7 @@
     "tier": 0,
     "modClass": "",
     "group": "",
-    "requires": ""
+    "requires": "MAW_system_heli_false_thermal_targets_large_dircm"
   },
   {
     "aircraftId": "mi_8amtsh_vn",
@@ -268417,8 +271900,8 @@
   },
   {
     "aircraftId": "mi_8amtsh_vn",
-    "id": "MAW_system_heli_false_thermal_targets_large",
-    "display": "MAW",
+    "id": "MAW_system_heli_false_thermal_targets_large_dircm",
+    "display": "MAWS/DIRCM",
     "tier": 2,
     "modClass": "armor",
     "group": "countermeasures",
@@ -268467,7 +271950,7 @@
     "tier": 3,
     "modClass": "armor",
     "group": "",
-    "requires": "MAW_system_heli_false_thermal_targets_large"
+    "requires": "MAW_system_heli_false_thermal_targets_large_dircm"
   },
   {
     "aircraftId": "mi_8amtsh_vn",
@@ -269601,7 +273084,7 @@
     "tier": 3,
     "modClass": "weapon",
     "group": "",
-    "requires": "mig_21_ub32"
+    "requires": "yak_38_b8m1"
   },
   {
     "aircraftId": "mig_23m",
@@ -279460,6 +282943,15 @@
   },
   {
     "aircraftId": "mig-21_bison",
+    "id": "mig_29_r_73e",
+    "display": "R-73E",
+    "tier": 1,
+    "modClass": "weapon",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "mig-21_bison",
     "id": "mig_21_ub16",
     "display": "UB-16",
     "tier": 1,
@@ -279505,12 +282997,12 @@
   },
   {
     "aircraftId": "mig-21_bison",
-    "id": "mig_29_r_73e",
-    "display": "R-73E",
+    "id": "mig_29_r_27r1",
+    "display": "R-27R1",
     "tier": 2,
     "modClass": "weapon",
     "group": "",
-    "requires": ""
+    "requires": "mig_29_r_73e"
   },
   {
     "aircraftId": "mig-21_bison",
@@ -279550,12 +283042,12 @@
   },
   {
     "aircraftId": "mig-21_bison",
-    "id": "mig_29_r_27r1",
-    "display": "R-27R1",
+    "id": "mig_29_r_27t1",
+    "display": "R-27T1",
     "tier": 3,
     "modClass": "weapon",
     "group": "",
-    "requires": "mig_29_r_73e"
+    "requires": "mig_29_r_27r1"
   },
   {
     "aircraftId": "mig-21_bison",
@@ -279613,12 +283105,12 @@
   },
   {
     "aircraftId": "mig-21_bison",
-    "id": "mig_29_r_27t1",
-    "display": "R-27T1",
+    "id": "mig_21_bison_r_77e",
+    "display": "RVV-AE",
     "tier": 4,
     "modClass": "weapon",
     "group": "",
-    "requires": "mig_29_r_27r1"
+    "requires": "mig_29_r_27t1"
   },
   {
     "aircraftId": "mig-21_f13",
@@ -285870,6 +289362,15 @@
     "aircraftId": "morko_morane",
     "id": "mg151_armor_targets",
     "display": "20 mm cannon ammunition belt for armored targets",
+    "tier": 0,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "morko_morane",
+    "id": "mg151_stealth",
+    "display": "20 mm cannon ammunition belt for stealth attack",
     "tier": 0,
     "modClass": "",
     "group": "",
@@ -292654,7 +296155,7 @@
   },
   {
     "aircraftId": "p_108a_serie2",
-    "id": "breda12_7_turret_ap",
+    "id": "breda_turret_ap",
     "display": "12.7 mm machine gun ammunition belt with AP bullets",
     "tier": 0,
     "modClass": "",
@@ -292663,7 +296164,7 @@
   },
   {
     "aircraftId": "p_108a_serie2",
-    "id": "breda_turret_ap",
+    "id": "breda12_7_turret_ap",
     "display": "12.7 mm machine gun ammunition belt with AP bullets",
     "tier": 0,
     "modClass": "",
@@ -313714,8 +317215,8 @@
   },
   {
     "aircraftId": "q_5a",
-    "id": "countermeasures_launcher_chaff_large",
-    "display": "Countermeasures Launcher Chaff Large",
+    "id": "countermeasures_launcher_chaff",
+    "display": "Countermeasures Launcher Chaff",
     "tier": 0,
     "modClass": "",
     "group": "",
@@ -313848,6 +317349,186 @@
     "requires": ""
   },
   {
+    "aircraftId": "q_5d",
+    "id": "ns23_air_targets",
+    "display": "23 mm cannon ammunition belt for air targets",
+    "tier": 0,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "q_5d",
+    "id": "ns23_armor_targets",
+    "display": "23 mm cannon ammunition belt for armored targets",
+    "tier": 0,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "q_5d",
+    "id": "ns23_stealth",
+    "display": "23 mm cannon ammunition belt for stealth attack",
+    "tier": 0,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "q_5d",
+    "id": "structure_str",
+    "display": "Airframe",
+    "tier": 0,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "q_5d",
+    "id": "countermeasures_launcher_chaff",
+    "display": "Countermeasures Launcher Chaff",
+    "tier": 0,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "q_5d",
+    "id": "new_cover",
+    "display": "Cover",
+    "tier": 0,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "q_5d",
+    "id": "CdMin_Fuse",
+    "display": "Fuselage repair",
+    "tier": 0,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "q_5d",
+    "id": "g_suit",
+    "display": "G-suit",
+    "tier": 0,
+    "modClass": "",
+    "group": "",
+    "requires": "cd_98"
+  },
+  {
+    "aircraftId": "q_5d",
+    "id": "hydravlic_power",
+    "display": "New boosters",
+    "tier": 0,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "q_5d",
+    "id": "cd_98",
+    "display": "Wings repair",
+    "tier": 0,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "q_5d",
+    "id": "new_compressor_jet",
+    "display": "Compressor",
+    "tier": 1,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "q_5d",
+    "id": "countermeasures_belt_pack",
+    "display": "Flares/Chaff",
+    "tier": 1,
+    "modClass": "weapon",
+    "group": "countermeasures",
+    "requires": ""
+  },
+  {
+    "aircraftId": "q_5d",
+    "id": "cn_q5_hf6",
+    "display": "HF-6",
+    "tier": 1,
+    "modClass": "weapon",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "q_5d",
+    "id": "ns23_belt_pack",
+    "display": "Ns23 Belt Pack",
+    "tier": 1,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "q_5d",
+    "id": "cn_q5_type_250",
+    "display": "Type 250",
+    "tier": 2,
+    "modClass": "weapon",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "q_5d",
+    "id": "q_5b_type130",
+    "display": "HF-14",
+    "tier": 3,
+    "modClass": "weapon",
+    "group": "",
+    "requires": "cn_q5_hf6"
+  },
+  {
+    "aircraftId": "q_5d",
+    "id": "ns23_new_gun",
+    "display": "Ns23 New Gun",
+    "tier": 3,
+    "modClass": "",
+    "group": "",
+    "requires": "ns23_belt_pack"
+  },
+  {
+    "aircraftId": "q_5d",
+    "id": "air_extinguisher",
+    "display": "EFS",
+    "tier": 4,
+    "modClass": "weapon",
+    "group": "",
+    "requires": "ns23_new_gun"
+  },
+  {
+    "aircraftId": "q_5d",
+    "id": "hp_105_jet",
+    "display": "Engine",
+    "tier": 4,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "q_5d",
+    "id": "cn_q5_type_500",
+    "display": "Type 500",
+    "tier": 4,
+    "modClass": "weapon",
+    "group": "",
+    "requires": "cn_q5_type_250"
+  },
+  {
     "aircraftId": "q_5l",
     "id": "ns23_air_targets",
     "display": "23 mm cannon ammunition belt for air targets",
@@ -313885,8 +317566,8 @@
   },
   {
     "aircraftId": "q_5l",
-    "id": "countermeasures_launcher_chaff_large",
-    "display": "Countermeasures Launcher Chaff Large",
+    "id": "countermeasures_launcher_chaff",
+    "display": "Countermeasures Launcher Chaff",
     "tier": 0,
     "modClass": "",
     "group": "",
@@ -321994,8 +325675,8 @@
   },
   {
     "aircraftId": "saab_f35_wdns",
-    "id": "us_aim_9b",
-    "display": "AIM-9B",
+    "id": "us_aim_9n",
+    "display": "AIM-9N",
     "tier": 1,
     "modClass": "weapon",
     "group": "",
@@ -322053,7 +325734,7 @@
     "tier": 2,
     "modClass": "weapon",
     "group": "",
-    "requires": "us_aim_9b"
+    "requires": "us_aim_9n"
   },
   {
     "aircraftId": "saab_f35_wdns",
@@ -323218,6 +326899,15 @@
   },
   {
     "aircraftId": "saab_j32b",
+    "id": "swe_m57b",
+    "display": "m/57",
+    "tier": 1,
+    "modClass": "weapon",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "saab_j32b",
     "id": "structure_str",
     "display": "Airframe",
     "tier": 2,
@@ -323236,12 +326926,12 @@
   },
   {
     "aircraftId": "saab_j32b",
-    "id": "swe_m57b",
-    "display": "m/57",
+    "id": "swd_j29_145mm_m49a",
+    "display": "m/49B",
     "tier": 2,
     "modClass": "weapon",
     "group": "",
-    "requires": ""
+    "requires": "swe_m57b"
   },
   {
     "aircraftId": "saab_j32b",
@@ -323272,6 +326962,15 @@
   },
   {
     "aircraftId": "saab_j32b",
+    "id": "swd_j29_150mm_m51",
+    "display": "m/51",
+    "tier": 3,
+    "modClass": "weapon",
+    "group": "",
+    "requires": "swd_j29_145mm_m49a"
+  },
+  {
+    "aircraftId": "saab_j32b",
     "id": "cd_98",
     "display": "Wings repair",
     "tier": 3,
@@ -323299,12 +326998,21 @@
   },
   {
     "aircraftId": "saab_j32b",
+    "id": "swd_j29_180mm_m49",
+    "display": "m/49",
+    "tier": 4,
+    "modClass": "weapon",
+    "group": "",
+    "requires": "swd_j29_150mm_m51"
+  },
+  {
+    "aircraftId": "saab_j32b",
     "id": "swe_rb24",
     "display": "RB24",
     "tier": 4,
     "modClass": "weapon",
     "group": "",
-    "requires": "swe_m57b"
+    "requires": "aden_new_gun"
   },
   {
     "aircraftId": "saab_j35a",
@@ -324612,6 +328320,258 @@
     "requires": "hydravlic_power"
   },
   {
+    "aircraftId": "saab_jas39_pre_serie",
+    "id": "akan_85_air_targets",
+    "display": "Akan 85 Air Targets",
+    "tier": 0,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "saab_jas39_pre_serie",
+    "id": "akan_85_armor_targets",
+    "display": "Akan 85 Armor Targets",
+    "tier": 0,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "saab_jas39_pre_serie",
+    "id": "akan_85_ground_targets",
+    "display": "Akan 85 Ground Targets",
+    "tier": 0,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "saab_jas39_pre_serie",
+    "id": "akan_85_stealth",
+    "display": "Akan 85 Stealth",
+    "tier": 0,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "saab_jas39_pre_serie",
+    "id": "countermeasures_launcher_chaff_bol_pod",
+    "display": "Countermeasures Launcher Chaff Bol Pod",
+    "tier": 0,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "saab_jas39_pre_serie",
+    "id": "countermeasures_launcher_chaff_large",
+    "display": "Countermeasures Launcher Chaff Large",
+    "tier": 0,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "saab_jas39_pre_serie",
+    "id": "akan_85_belt_pack",
+    "display": "Akan 85 Belt Pack",
+    "tier": 1,
+    "modClass": "weapon",
+    "group": "",
+    "requires": "asm"
+  },
+  {
+    "aircraftId": "saab_jas39_pre_serie",
+    "id": "asm",
+    "display": "ASM",
+    "tier": 1,
+    "modClass": "weapon",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "saab_jas39_pre_serie",
+    "id": "new_compressor_jet",
+    "display": "Compressor",
+    "tier": 1,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "saab_jas39_pre_serie",
+    "id": "countermeasures_belt_pack",
+    "display": "Flares/Chaff",
+    "tier": 1,
+    "modClass": "armor",
+    "group": "countermeasures",
+    "requires": ""
+  },
+  {
+    "aircraftId": "saab_jas39_pre_serie",
+    "id": "f_4c_CdMin_Fuse",
+    "display": "Fuselage repair",
+    "tier": 1,
+    "modClass": "lth",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "saab_jas39_pre_serie",
+    "id": "gr_litening_pod",
+    "display": "LITENING II",
+    "tier": 1,
+    "modClass": "weapon",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "saab_jas39_pre_serie",
+    "id": "swd_rb74",
+    "display": "RB 74",
+    "tier": 1,
+    "modClass": "weapon",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "saab_jas39_pre_serie",
+    "id": "structure_str",
+    "display": "Airframe",
+    "tier": 2,
+    "modClass": "lth",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "saab_jas39_pre_serie",
+    "id": "akan_85_new_gun",
+    "display": "Akan 85 New Gun",
+    "tier": 2,
+    "modClass": "weapon",
+    "group": "",
+    "requires": "akan_85_belt_pack"
+  },
+  {
+    "aircraftId": "saab_jas39_pre_serie",
+    "id": "uk_ltc_bol",
+    "display": "Flares/Chaff BOL",
+    "tier": 2,
+    "modClass": "armor",
+    "group": "",
+    "requires": "countermeasures_belt_pack"
+  },
+  {
+    "aircraftId": "saab_jas39_pre_serie",
+    "id": "us_gbu_laser",
+    "display": "LGBU",
+    "tier": 2,
+    "modClass": "weapon",
+    "group": "",
+    "requires": "gr_litening_pod"
+  },
+  {
+    "aircraftId": "saab_jas39_pre_serie",
+    "id": "hydravlic_power",
+    "display": "New boosters",
+    "tier": 2,
+    "modClass": "",
+    "group": "",
+    "requires": "new_compressor_jet"
+  },
+  {
+    "aircraftId": "saab_jas39_pre_serie",
+    "id": "swe_rb71",
+    "display": "RB71",
+    "tier": 2,
+    "modClass": "weapon",
+    "group": "",
+    "requires": "swd_rb74"
+  },
+  {
+    "aircraftId": "saab_jas39_pre_serie",
+    "id": "new_cover",
+    "display": "Cover",
+    "tier": 3,
+    "modClass": "lth",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "saab_jas39_pre_serie",
+    "id": "f_4c_g_suit",
+    "display": "G-suit",
+    "tier": 3,
+    "modClass": "armor",
+    "group": "",
+    "requires": "uk_ltc_bol"
+  },
+  {
+    "aircraftId": "saab_jas39_pre_serie",
+    "id": "swd_rb74m",
+    "display": "RB 74(M)",
+    "tier": 3,
+    "modClass": "weapon",
+    "group": "",
+    "requires": "swe_rb71"
+  },
+  {
+    "aircraftId": "saab_jas39_pre_serie",
+    "id": "swd_rb75",
+    "display": "RB75",
+    "tier": 3,
+    "modClass": "weapon",
+    "group": "",
+    "requires": "akan_85_new_gun"
+  },
+  {
+    "aircraftId": "saab_jas39_pre_serie",
+    "id": "cd_98",
+    "display": "Wings repair",
+    "tier": 3,
+    "modClass": "",
+    "group": "",
+    "requires": "hydravlic_power"
+  },
+  {
+    "aircraftId": "saab_jas39_pre_serie",
+    "id": "air_extinguisher",
+    "display": "EFS",
+    "tier": 4,
+    "modClass": "armor",
+    "group": "",
+    "requires": "f_4c_g_suit"
+  },
+  {
+    "aircraftId": "saab_jas39_pre_serie",
+    "id": "hp_105_jet",
+    "display": "Engine",
+    "tier": 4,
+    "modClass": "",
+    "group": "",
+    "requires": "cd_98"
+  },
+  {
+    "aircraftId": "saab_jas39_pre_serie",
+    "id": "swd_rb75t",
+    "display": "RB 75T",
+    "tier": 4,
+    "modClass": "weapon",
+    "group": "",
+    "requires": "swd_rb75"
+  },
+  {
+    "aircraftId": "saab_jas39_pre_serie",
+    "id": "swd_rb99",
+    "display": "RB 99",
+    "tier": 4,
+    "modClass": "weapon",
+    "group": "",
+    "requires": "swd_rb74m"
+  },
+  {
     "aircraftId": "saab_jas39a",
     "id": "akan_85_air_targets",
     "display": "Akan 85 Air Targets",
@@ -324853,6 +328813,15 @@
     "modClass": "weapon",
     "group": "",
     "requires": "swd_rb75"
+  },
+  {
+    "aircraftId": "saab_jas39a",
+    "id": "swd_rb99",
+    "display": "RB 99",
+    "tier": 4,
+    "modClass": "weapon",
+    "group": "",
+    "requires": "swd_rb74m"
   },
   {
     "aircraftId": "saab_jas39c",
@@ -331075,6 +335044,15 @@
   },
   {
     "aircraftId": "se_203",
+    "id": "hispano_air_targets",
+    "display": "Hispano Air Targets",
+    "tier": 0,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "se_203",
     "id": "hispano_universal",
     "display": "Omni-purpose ammunition belt for 20 mm cannon",
     "tier": 0,
@@ -331156,6 +335134,15 @@
   },
   {
     "aircraftId": "se_203",
+    "id": "g_suit",
+    "display": "G-suit",
+    "tier": 3,
+    "modClass": "armor",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "se_203",
     "id": "hispano_mk5_new_gun",
     "display": "Hispano Mk5 New Gun",
     "tier": 3,
@@ -331206,7 +335193,7 @@
     "tier": 4,
     "modClass": "armor",
     "group": "",
-    "requires": ""
+    "requires": "g_suit"
   },
   {
     "aircraftId": "se_203",
@@ -345330,6 +349317,213 @@
     "requires": "us_500lb_mk82"
   },
   {
+    "aircraftId": "su_15tm",
+    "id": "ns23_air_targets",
+    "display": "23 mm cannon ammunition belt for air targets",
+    "tier": 0,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "su_15tm",
+    "id": "ns23_armor_targets",
+    "display": "23 mm cannon ammunition belt for armored targets",
+    "tier": 0,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "su_15tm",
+    "id": "ns23_stealth",
+    "display": "23 mm cannon ammunition belt for stealth attack",
+    "tier": 0,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "su_15tm",
+    "id": "new_compressor_jet",
+    "display": "Compressor",
+    "tier": 1,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "su_15tm",
+    "id": "f_4c_CdMin_Fuse",
+    "display": "Fuselage repair",
+    "tier": 1,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "su_15tm",
+    "id": "ns23_belt_pack",
+    "display": "Ns23 Belt Pack",
+    "tier": 1,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "su_15tm",
+    "id": "mig_21_ub16",
+    "display": "UB-16",
+    "tier": 1,
+    "modClass": "weapon",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "su_15tm",
+    "id": "zb_500",
+    "display": "ZB-500",
+    "tier": 1,
+    "modClass": "weapon",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "su_15tm",
+    "id": "structure_str",
+    "display": "Airframe",
+    "tier": 2,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "su_15tm",
+    "id": "hydravlic_power",
+    "display": "New boosters",
+    "tier": 2,
+    "modClass": "",
+    "group": "",
+    "requires": "new_compressor_jet"
+  },
+  {
+    "aircraftId": "su_15tm",
+    "id": "ns23_new_gun",
+    "display": "Ns23 New Gun",
+    "tier": 2,
+    "modClass": "",
+    "group": "",
+    "requires": "ns23_belt_pack"
+  },
+  {
+    "aircraftId": "su_15tm",
+    "id": "su_17_ofab_100",
+    "display": "OFAB-100",
+    "tier": 2,
+    "modClass": "weapon",
+    "group": "",
+    "requires": "zb_500"
+  },
+  {
+    "aircraftId": "su_15tm",
+    "id": "mig_21_ub32",
+    "display": "UB-32",
+    "tier": 2,
+    "modClass": "weapon",
+    "group": "",
+    "requires": "mig_21_ub16"
+  },
+  {
+    "aircraftId": "su_15tm",
+    "id": "mi_24_fab_250",
+    "display": "FAB-250",
+    "tier": 3,
+    "modClass": "weapon",
+    "group": "",
+    "requires": "su_17_ofab_100"
+  },
+  {
+    "aircraftId": "su_15tm",
+    "id": "f_4c_g_suit",
+    "display": "G-suit",
+    "tier": 3,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "su_15tm",
+    "id": "su_r_98mt",
+    "display": "R-98MT",
+    "tier": 3,
+    "modClass": "weapon",
+    "group": "",
+    "requires": "ns23_new_gun"
+  },
+  {
+    "aircraftId": "su_15tm",
+    "id": "il_28sh_s24",
+    "display": "S-24",
+    "tier": 3,
+    "modClass": "weapon",
+    "group": "",
+    "requires": "mig_21_ub32"
+  },
+  {
+    "aircraftId": "su_15tm",
+    "id": "cd_98",
+    "display": "Wings repair",
+    "tier": 3,
+    "modClass": "",
+    "group": "",
+    "requires": "hydravlic_power"
+  },
+  {
+    "aircraftId": "su_15tm",
+    "id": "new_cover",
+    "display": "Cover",
+    "tier": 4,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "su_15tm",
+    "id": "air_extinguisher",
+    "display": "EFS",
+    "tier": 4,
+    "modClass": "weapon",
+    "group": "",
+    "requires": "il_28sh_s24"
+  },
+  {
+    "aircraftId": "su_15tm",
+    "id": "hp_105_jet",
+    "display": "Engine",
+    "tier": 4,
+    "modClass": "",
+    "group": "",
+    "requires": "cd_98"
+  },
+  {
+    "aircraftId": "su_15tm",
+    "id": "mi_24_fab_500",
+    "display": "FAB-500",
+    "tier": 4,
+    "modClass": "weapon",
+    "group": "",
+    "requires": "mi_24_fab_250"
+  },
+  {
+    "aircraftId": "su_15tm",
+    "id": "su_r_98mr",
+    "display": "R-98MR",
+    "tier": 4,
+    "modClass": "weapon",
+    "group": "",
+    "requires": "su_r_98mt"
+  },
+  {
     "aircraftId": "su_17m2",
     "id": "ns23_air_targets",
     "display": "23 mm cannon ammunition belt for air targets",
@@ -349300,17 +353494,8 @@
   },
   {
     "aircraftId": "su_25tm",
-    "id": "il_28sh_s24",
-    "display": "S-24",
-    "tier": 1,
-    "modClass": "weapon",
-    "group": "",
-    "requires": ""
-  },
-  {
-    "aircraftId": "su_25tm",
-    "id": "zb_500",
-    "display": "ZB-500",
+    "id": "mig_29_r_73",
+    "display": "R-73",
     "tier": 1,
     "modClass": "weapon",
     "group": "",
@@ -349324,15 +353509,6 @@
     "modClass": "lth",
     "group": "",
     "requires": "f_4c_CdMin_Fuse"
-  },
-  {
-    "aircraftId": "su_25tm",
-    "id": "mi_24_fab_250",
-    "display": "FAB-250",
-    "tier": 2,
-    "modClass": "weapon",
-    "group": "",
-    "requires": "zb_500"
   },
   {
     "aircraftId": "su_25tm",
@@ -349354,8 +353530,8 @@
   },
   {
     "aircraftId": "su_25tm",
-    "id": "su_mercury_pod",
-    "display": "Mercury",
+    "id": "su_hod_pod",
+    "display": "Khod",
     "tier": 2,
     "modClass": "weapon",
     "group": "",
@@ -349372,21 +353548,21 @@
   },
   {
     "aircraftId": "su_25tm",
-    "id": "su_17_s25",
-    "display": "S-25",
+    "id": "mig_29_r_27r",
+    "display": "R-27R",
     "tier": 2,
     "modClass": "weapon",
     "group": "",
-    "requires": "il_28sh_s24"
+    "requires": "mig_29_r_73"
   },
   {
     "aircraftId": "su_25tm",
-    "id": "mi_28_C13",
-    "display": "B-13L",
-    "tier": 3,
+    "id": "su_27sm_r_27r_r_27er",
+    "display": "R-27R/R-27ER",
+    "tier": 2,
     "modClass": "weapon",
     "group": "",
-    "requires": "su_17_s25"
+    "requires": "mig_29_r_27r"
   },
   {
     "aircraftId": "su_25tm",
@@ -349395,16 +353571,7 @@
     "tier": 3,
     "modClass": "weapon",
     "group": "",
-    "requires": "su_mercury_pod"
-  },
-  {
-    "aircraftId": "su_25tm",
-    "id": "mi_24_fab_500",
-    "display": "FAB-500",
-    "tier": 3,
-    "modClass": "weapon",
-    "group": "",
-    "requires": "mi_24_fab_250"
+    "requires": "su_hod_pod"
   },
   {
     "aircraftId": "su_25tm",
@@ -349423,6 +353590,24 @@
     "modClass": "weapon",
     "group": "",
     "requires": "su_17_x29l"
+  },
+  {
+    "aircraftId": "su_25tm",
+    "id": "mig_29_r_27t",
+    "display": "R-27T",
+    "tier": 3,
+    "modClass": "weapon",
+    "group": "",
+    "requires": "mig_29_r_27r"
+  },
+  {
+    "aircraftId": "su_25tm",
+    "id": "su_27sm_r_27t_r_27et",
+    "display": "R-27T/R-27ET",
+    "tier": 3,
+    "modClass": "weapon",
+    "group": "",
+    "requires": "mig_29_r_27t"
   },
   {
     "aircraftId": "su_25tm",
@@ -349485,7 +353670,7 @@
     "tier": 4,
     "modClass": "weapon",
     "group": "",
-    "requires": "mi_24_fab_500"
+    "requires": "su_27sm_r_27t_r_27et"
   },
   {
     "aircraftId": "su_25tm",
@@ -349498,12 +353683,12 @@
   },
   {
     "aircraftId": "su_25tm",
-    "id": "mig_29_r_73",
-    "display": "R-73",
+    "id": "yak_141_r_77",
+    "display": "R-77",
     "tier": 4,
     "modClass": "weapon",
     "group": "",
-    "requires": "mi_28_C13"
+    "requires": "mig_29_r_27t"
   },
   {
     "aircraftId": "su_27",
@@ -359811,6 +363996,177 @@
     "requires": ""
   },
   {
+    "aircraftId": "sw_leopard_2a8no",
+    "id": "120mm_DM_APDS_FS_ammo_pack",
+    "display": "120 mm DM APFSDS Ammo Pack",
+    "tier": 1,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "sw_leopard_2a8no",
+    "id": "120mm_DM_HE_FS_ammo_pack",
+    "display": "120 mm DM HE FS Ammo Pack",
+    "tier": 1,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "sw_leopard_2a8no",
+    "id": "new_tank_horizontal_aiming",
+    "display": "Horizontal Drive",
+    "tier": 1,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "sw_leopard_2a8no",
+    "id": "tank_tool_kit",
+    "display": "Improved Parts",
+    "tier": 1,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "sw_leopard_2a8no",
+    "id": "new_tank_tracks",
+    "display": "Tracks",
+    "tier": 1,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "sw_leopard_2a8no",
+    "id": "tank_new_gun",
+    "display": "Adjustment of Fire",
+    "tier": 2,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "sw_leopard_2a8no",
+    "id": "new_tank_brakes",
+    "display": "Brake System",
+    "tier": 2,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "sw_leopard_2a8no",
+    "id": "manual_extinguisher",
+    "display": "Improved FPE",
+    "tier": 2,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "sw_leopard_2a8no",
+    "id": "new_tank_suspension",
+    "display": "Suspension",
+    "tier": 2,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "sw_leopard_2a8no",
+    "id": "tank_medical_kit",
+    "display": "Crew Replenishment",
+    "tier": 3,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "sw_leopard_2a8no",
+    "id": "new_tank_vertical_aiming",
+    "display": "Elevation Mechanism",
+    "tier": 3,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "sw_leopard_2a8no",
+    "id": "new_tank_filter",
+    "display": "Filters",
+    "tier": 3,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "sw_leopard_2a8no",
+    "id": "art_support",
+    "display": "Artillery Support",
+    "tier": 4,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "sw_leopard_2a8no",
+    "id": "new_tank_engine",
+    "display": "Engine",
+    "tier": 4,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "sw_leopard_2a8no",
+    "id": "night_vision_system",
+    "display": "NVD",
+    "tier": 4,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "sw_leopard_2a8no",
+    "id": "tank_smoke_screen_system_mod",
+    "display": "Smoke grenade",
+    "tier": 4,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "sw_leopard_2a8no",
+    "id": "new_tank_transmission",
+    "display": "Transmission",
+    "tier": 4,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "sw_leopard_2a8no",
+    "id": "laser_rangefinder_lws",
+    "display": "LWS/LR",
+    "tier": 5,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "sw_leopard_2a8no",
+    "id": "mine_protection_improvement",
+    "display": "Mine protection",
+    "tier": 5,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
     "aircraftId": "sw_lvkv_42",
     "id": "40mm_sw_kan_APC_ammo_pack",
     "display": "40 mm Sw Kan APC Ammo Pack",
@@ -360837,6 +365193,168 @@
     "requires": ""
   },
   {
+    "aircraftId": "sw_patria_bmp_3",
+    "id": "new_tank_horizontal_aiming",
+    "display": "Horizontal Drive",
+    "tier": 1,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "sw_patria_bmp_3",
+    "id": "tank_tool_kit",
+    "display": "Improved Parts",
+    "tier": 1,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "sw_patria_bmp_3",
+    "id": "tank_new_gun",
+    "display": "Adjustment of Fire",
+    "tier": 2,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "sw_patria_bmp_3",
+    "id": "new_tank_brakes",
+    "display": "Brake System",
+    "tier": 2,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "sw_patria_bmp_3",
+    "id": "manual_extinguisher",
+    "display": "Improved FPE",
+    "tier": 2,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "sw_patria_bmp_3",
+    "id": "modern_tank_laser_rangefinder",
+    "display": "Laser rangefinder",
+    "tier": 2,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "sw_patria_bmp_3",
+    "id": "tank_medical_kit",
+    "display": "Crew Replenishment",
+    "tier": 3,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "sw_patria_bmp_3",
+    "id": "new_tank_vertical_aiming",
+    "display": "Elevation Mechanism",
+    "tier": 3,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "sw_patria_bmp_3",
+    "id": "new_tank_filter",
+    "display": "Filters",
+    "tier": 3,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "sw_patria_bmp_3",
+    "id": "100mm_9m117m1_ammo_pack",
+    "display": "100 mm 9M117m1 Ammo Pack",
+    "tier": 4,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "sw_patria_bmp_3",
+    "id": "art_support",
+    "display": "Artillery Support",
+    "tier": 4,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "sw_patria_bmp_3",
+    "id": "new_tank_engine",
+    "display": "Engine",
+    "tier": 4,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "sw_patria_bmp_3",
+    "id": "improved_optics",
+    "display": "Improved optics",
+    "tier": 4,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "sw_patria_bmp_3",
+    "id": "night_vision_system",
+    "display": "NVD",
+    "tier": 4,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "sw_patria_bmp_3",
+    "id": "new_tank_transmission",
+    "display": "Transmission",
+    "tier": 4,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "sw_patria_bmp_3",
+    "id": "30mm_2a42_APDS_ammo_pack",
+    "display": "30 mm 2A42 APDS Ammo Pack",
+    "tier": 5,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "sw_patria_bmp_3",
+    "id": "tank_support_ucav",
+    "display": "Scout UAV",
+    "tier": 5,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "sw_patria_bmp_3",
+    "id": "tank_smoke_screen_system_mod",
+    "display": "Smoke grenade",
+    "tier": 5,
+    "modClass": "protection",
+    "group": "",
+    "requires": ""
+  },
+  {
     "aircraftId": "sw_pbil_m40",
     "id": "20mm_sw_kan_AP_ammo_pack",
     "display": "20 mm Sw Kan AP Ammo Pack",
@@ -361504,6 +366022,123 @@
   },
   {
     "aircraftId": "sw_pt_76b",
+    "id": "new_tank_transmission",
+    "display": "Transmission",
+    "tier": 4,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "sw_pv_m39",
+    "id": "20mm_sw_kan_AP_ammo_pack",
+    "display": "20 mm Sw Kan AP Ammo Pack",
+    "tier": 1,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "sw_pv_m39",
+    "id": "20mm_sw_kan_HE_ammo_pack",
+    "display": "20 mm Sw Kan HE Ammo Pack",
+    "tier": 1,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "sw_pv_m39",
+    "id": "new_tank_horizontal_aiming",
+    "display": "Horizontal Drive",
+    "tier": 1,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "sw_pv_m39",
+    "id": "tank_tool_kit",
+    "display": "Improved Parts",
+    "tier": 1,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "sw_pv_m39",
+    "id": "tank_new_gun",
+    "display": "Adjustment of Fire",
+    "tier": 2,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "sw_pv_m39",
+    "id": "new_tank_brakes",
+    "display": "Brake System",
+    "tier": 2,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "sw_pv_m39",
+    "id": "manual_extinguisher",
+    "display": "Improved FPE",
+    "tier": 2,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "sw_pv_m39",
+    "id": "tank_medical_kit",
+    "display": "Crew Replenishment",
+    "tier": 3,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "sw_pv_m39",
+    "id": "new_tank_vertical_aiming",
+    "display": "Elevation Mechanism",
+    "tier": 3,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "sw_pv_m39",
+    "id": "new_tank_filter",
+    "display": "Filters",
+    "tier": 3,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "sw_pv_m39",
+    "id": "art_support",
+    "display": "Artillery Support",
+    "tier": 4,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "sw_pv_m39",
+    "id": "new_tank_engine",
+    "display": "Engine",
+    "tier": 4,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "sw_pv_m39",
     "id": "new_tank_transmission",
     "display": "Transmission",
     "tier": 4,
@@ -372661,6 +377296,15 @@
     "modClass": "weapon",
     "group": "",
     "requires": "atgm_spike_x2"
+  },
+  {
+    "aircraftId": "tiger_had_block2_france",
+    "id": "atgm_spike_x4_mitl",
+    "display": "Spike ER /4 (MITL)",
+    "tier": 4,
+    "modClass": "weapon",
+    "group": "",
+    "requires": "atgm_spike_x4"
   },
   {
     "aircraftId": "tiger_had_france",
@@ -386938,15 +391582,6 @@
   },
   {
     "aircraftId": "uk_challenger_1",
-    "id": "120mm_britain_L23A1_APDSFS_ammo_pack",
-    "display": "120 mm Britain L23A1 APFSDS Ammo Pack",
-    "tier": 1,
-    "modClass": "",
-    "group": "",
-    "requires": ""
-  },
-  {
-    "aircraftId": "uk_challenger_1",
     "id": "new_tank_horizontal_aiming",
     "display": "Horizontal Drive",
     "tier": 1,
@@ -396261,6 +400896,186 @@
     "requires": ""
   },
   {
+    "aircraftId": "uk_olifant_optimering",
+    "id": "105mm_DM33_APDS_FS_ammo_pack",
+    "display": "105 mm DM33 APFSDS Ammo Pack",
+    "tier": 1,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "uk_olifant_optimering",
+    "id": "105mm_NATO_APDS_FS_ammo_pack",
+    "display": "105 mm NATO APFSDS Ammo Pack",
+    "tier": 1,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "uk_olifant_optimering",
+    "id": "new_tank_horizontal_aiming",
+    "display": "Horizontal Drive",
+    "tier": 1,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "uk_olifant_optimering",
+    "id": "tank_tool_kit",
+    "display": "Improved Parts",
+    "tier": 1,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "uk_olifant_optimering",
+    "id": "new_tank_tracks",
+    "display": "Tracks",
+    "tier": 1,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "uk_olifant_optimering",
+    "id": "tank_new_gun",
+    "display": "Adjustment of Fire",
+    "tier": 2,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "uk_olifant_optimering",
+    "id": "new_tank_brakes",
+    "display": "Brake System",
+    "tier": 2,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "uk_olifant_optimering",
+    "id": "manual_extinguisher",
+    "display": "Improved FPE",
+    "tier": 2,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "uk_olifant_optimering",
+    "id": "new_tank_suspension",
+    "display": "Suspension",
+    "tier": 2,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "uk_olifant_optimering",
+    "id": "tank_medical_kit",
+    "display": "Crew Replenishment",
+    "tier": 3,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "uk_olifant_optimering",
+    "id": "new_tank_vertical_aiming",
+    "display": "Elevation Mechanism",
+    "tier": 3,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "uk_olifant_optimering",
+    "id": "tank_engine_smoke_screen_system",
+    "display": "ESS",
+    "tier": 3,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "uk_olifant_optimering",
+    "id": "new_tank_filter",
+    "display": "Filters",
+    "tier": 3,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "uk_olifant_optimering",
+    "id": "art_support",
+    "display": "Artillery Support",
+    "tier": 4,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "uk_olifant_optimering",
+    "id": "new_tank_engine",
+    "display": "Engine",
+    "tier": 4,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "uk_olifant_optimering",
+    "id": "modern_tank_laser_rangefinder",
+    "display": "Laser rangefinder",
+    "tier": 4,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "uk_olifant_optimering",
+    "id": "night_vision_system",
+    "display": "NVD",
+    "tier": 4,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "uk_olifant_optimering",
+    "id": "new_tank_transmission",
+    "display": "Transmission",
+    "tier": 4,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "uk_olifant_optimering",
+    "id": "mine_protection_improvement",
+    "display": "Mine protection",
+    "tier": 5,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "uk_olifant_optimering",
+    "id": "tank_smoke_screen_system_mod",
+    "display": "Smoke grenade",
+    "tier": 5,
+    "modClass": "protection",
+    "group": "",
+    "requires": ""
+  },
+  {
     "aircraftId": "uk_ram_90mm_aa",
     "id": "new_tank_horizontal_aiming",
     "display": "Horizontal Drive",
@@ -402058,6 +406873,24 @@
   },
   {
     "aircraftId": "us_ai_aew_radar_tps_59",
+    "id": "manual_extinguisher",
+    "display": "Improved FPE",
+    "tier": 2,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "us_ai_mlrs_atacms_m270",
+    "id": "tank_tool_kit",
+    "display": "Improved Parts",
+    "tier": 1,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "us_ai_mlrs_atacms_m270",
     "id": "manual_extinguisher",
     "display": "Improved FPE",
     "tier": 2,
@@ -412065,6 +416898,141 @@
     "requires": ""
   },
   {
+    "aircraftId": "us_m3a1_stuart_nvidia",
+    "id": "37mm_usa_m3_APC_ammo_pack",
+    "display": "37 mm Usa M3 APC Ammo Pack",
+    "tier": 1,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "us_m3a1_stuart_nvidia",
+    "id": "new_tank_horizontal_aiming",
+    "display": "Horizontal Drive",
+    "tier": 1,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "us_m3a1_stuart_nvidia",
+    "id": "tank_tool_kit",
+    "display": "Improved Parts",
+    "tier": 1,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "us_m3a1_stuart_nvidia",
+    "id": "new_tank_tracks",
+    "display": "Tracks",
+    "tier": 1,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "us_m3a1_stuart_nvidia",
+    "id": "tank_new_gun",
+    "display": "Adjustment of Fire",
+    "tier": 2,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "us_m3a1_stuart_nvidia",
+    "id": "new_tank_brakes",
+    "display": "Brake System",
+    "tier": 2,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "us_m3a1_stuart_nvidia",
+    "id": "manual_extinguisher",
+    "display": "Improved FPE",
+    "tier": 2,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "us_m3a1_stuart_nvidia",
+    "id": "new_tank_suspension",
+    "display": "Suspension",
+    "tier": 2,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "us_m3a1_stuart_nvidia",
+    "id": "tank_additional_armor",
+    "display": "Add-on Armor",
+    "tier": 3,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "us_m3a1_stuart_nvidia",
+    "id": "tank_medical_kit",
+    "display": "Crew Replenishment",
+    "tier": 3,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "us_m3a1_stuart_nvidia",
+    "id": "new_tank_vertical_aiming",
+    "display": "Elevation Mechanism",
+    "tier": 3,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "us_m3a1_stuart_nvidia",
+    "id": "new_tank_filter",
+    "display": "Filters",
+    "tier": 3,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "us_m3a1_stuart_nvidia",
+    "id": "art_support",
+    "display": "Artillery Support",
+    "tier": 4,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "us_m3a1_stuart_nvidia",
+    "id": "new_tank_engine",
+    "display": "Engine",
+    "tier": 4,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "us_m3a1_stuart_nvidia",
+    "id": "new_tank_transmission",
+    "display": "Transmission",
+    "tier": 4,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
     "aircraftId": "us_m3a1_stuart_usmc",
     "id": "37mm_usa_m3_APC_ammo_pack",
     "display": "37 mm Usa M3 APC Ammo Pack",
@@ -421803,6 +426771,186 @@
     "requires": ""
   },
   {
+    "aircraftId": "us_stingray_2",
+    "id": "tank_support_ucav",
+    "display": "Scout UAV",
+    "tier": 0,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "us_stingray_2",
+    "id": "105mm_NATO_APDS_FS_ammo_pack",
+    "display": "105 mm NATO APFSDS Ammo Pack",
+    "tier": 1,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "us_stingray_2",
+    "id": "105mm_usa_M735_APDS_FS_ammo_pack",
+    "display": "105 mm Usa M735 APFSDS Ammo Pack",
+    "tier": 1,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "us_stingray_2",
+    "id": "new_tank_horizontal_aiming",
+    "display": "Horizontal Drive",
+    "tier": 1,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "us_stingray_2",
+    "id": "tank_tool_kit",
+    "display": "Improved Parts",
+    "tier": 1,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "us_stingray_2",
+    "id": "new_tank_tracks",
+    "display": "Tracks",
+    "tier": 1,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "us_stingray_2",
+    "id": "105mm_usa_HESH_ammo_pack",
+    "display": "105 mm Usa HESH Ammo Pack",
+    "tier": 2,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "us_stingray_2",
+    "id": "tank_new_gun",
+    "display": "Adjustment of Fire",
+    "tier": 2,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "us_stingray_2",
+    "id": "new_tank_brakes",
+    "display": "Brake System",
+    "tier": 2,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "us_stingray_2",
+    "id": "manual_extinguisher",
+    "display": "Improved FPE",
+    "tier": 2,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "us_stingray_2",
+    "id": "new_tank_suspension",
+    "display": "Suspension",
+    "tier": 2,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "us_stingray_2",
+    "id": "tank_medical_kit",
+    "display": "Crew Replenishment",
+    "tier": 3,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "us_stingray_2",
+    "id": "new_tank_vertical_aiming",
+    "display": "Elevation Mechanism",
+    "tier": 3,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "us_stingray_2",
+    "id": "new_tank_filter",
+    "display": "Filters",
+    "tier": 3,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "us_stingray_2",
+    "id": "art_support",
+    "display": "Artillery Support",
+    "tier": 4,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "us_stingray_2",
+    "id": "new_tank_engine",
+    "display": "Engine",
+    "tier": 4,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "us_stingray_2",
+    "id": "night_vision_system",
+    "display": "NVD",
+    "tier": 4,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "us_stingray_2",
+    "id": "new_tank_transmission",
+    "display": "Transmission",
+    "tier": 4,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "us_stingray_2",
+    "id": "modern_tank_laser_rangefinder",
+    "display": "Laser rangefinder",
+    "tier": 5,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "us_stingray_2",
+    "id": "tank_smoke_screen_system_mod",
+    "display": "Smoke grenade",
+    "tier": 5,
+    "modClass": "protection",
+    "group": "",
+    "requires": ""
+  },
+  {
     "aircraftId": "us_t114",
     "id": "new_tank_horizontal_aiming",
     "display": "Horizontal Drive",
@@ -428301,6 +433449,42 @@
     "requires": ""
   },
   {
+    "aircraftId": "ussr_ai_tbm_9k720_k_iskander",
+    "id": "tank_tool_kit",
+    "display": "Improved Parts",
+    "tier": 1,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "ussr_ai_tbm_9k720_k_iskander",
+    "id": "manual_extinguisher",
+    "display": "Improved FPE",
+    "tier": 2,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "ussr_ai_tbm_9k720_m_iskander",
+    "id": "tank_tool_kit",
+    "display": "Improved Parts",
+    "tier": 1,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "ussr_ai_tbm_9k720_m_iskander",
+    "id": "manual_extinguisher",
+    "display": "Improved FPE",
+    "tier": 2,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
     "aircraftId": "ussr_ai_tbm_9k79_tochka",
     "id": "tank_tool_kit",
     "display": "Improved Parts",
@@ -431406,6 +436590,132 @@
     "requires": ""
   },
   {
+    "aircraftId": "ussr_bt_7_m_816",
+    "id": "45mm_AP_1942_ammo_pack",
+    "display": "45 mm AP 1942 Ammo Pack",
+    "tier": 1,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "ussr_bt_7_m_816",
+    "id": "new_tank_horizontal_aiming",
+    "display": "Horizontal Drive",
+    "tier": 1,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "ussr_bt_7_m_816",
+    "id": "tank_tool_kit",
+    "display": "Improved Parts",
+    "tier": 1,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "ussr_bt_7_m_816",
+    "id": "new_tank_tracks",
+    "display": "Tracks",
+    "tier": 1,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "ussr_bt_7_m_816",
+    "id": "tank_new_gun",
+    "display": "Adjustment of Fire",
+    "tier": 2,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "ussr_bt_7_m_816",
+    "id": "new_tank_brakes",
+    "display": "Brake System",
+    "tier": 2,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "ussr_bt_7_m_816",
+    "id": "manual_extinguisher",
+    "display": "Improved FPE",
+    "tier": 2,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "ussr_bt_7_m_816",
+    "id": "new_tank_suspension",
+    "display": "Suspension",
+    "tier": 2,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "ussr_bt_7_m_816",
+    "id": "tank_medical_kit",
+    "display": "Crew Replenishment",
+    "tier": 3,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "ussr_bt_7_m_816",
+    "id": "new_tank_vertical_aiming",
+    "display": "Elevation Mechanism",
+    "tier": 3,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "ussr_bt_7_m_816",
+    "id": "new_tank_filter",
+    "display": "Filters",
+    "tier": 3,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "ussr_bt_7_m_816",
+    "id": "art_support",
+    "display": "Artillery Support",
+    "tier": 4,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "ussr_bt_7_m_816",
+    "id": "new_tank_engine",
+    "display": "Engine",
+    "tier": 4,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "ussr_bt_7_m_816",
+    "id": "new_tank_transmission",
+    "display": "Transmission",
+    "tier": 4,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
     "aircraftId": "ussr_bt_7a_f32",
     "id": "76mm_AP_1942_ammo_pack",
     "display": "76 mm AP 1942 Ammo Pack",
@@ -432059,6 +437369,186 @@
     "display": "Smoke grenade",
     "tier": 5,
     "modClass": "protection",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "ussr_btr_90_2004",
+    "id": "tank_support_ucav",
+    "display": "Scout UAV",
+    "tier": 0,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "ussr_btr_90_2004",
+    "id": "30mm_2a42_APDS_ammo_pack",
+    "display": "30 mm 2A42 APDS Ammo Pack",
+    "tier": 1,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "ussr_btr_90_2004",
+    "id": "30mm_2a42_APDS_FS_ammo_pack",
+    "display": "30 mm 2A42 APFSDS Ammo Pack",
+    "tier": 1,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "ussr_btr_90_2004",
+    "id": "new_tank_horizontal_aiming",
+    "display": "Horizontal Drive",
+    "tier": 1,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "ussr_btr_90_2004",
+    "id": "tank_tool_kit",
+    "display": "Improved Parts",
+    "tier": 1,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "ussr_btr_90_2004",
+    "id": "30mm_2a42_AP_ammo_pack",
+    "display": "30 mm 2A42 AP Ammo Pack",
+    "tier": 2,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "ussr_btr_90_2004",
+    "id": "tank_new_gun",
+    "display": "Adjustment of Fire",
+    "tier": 2,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "ussr_btr_90_2004",
+    "id": "airstrike",
+    "display": "Airstrike",
+    "tier": 2,
+    "modClass": "firepower",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "ussr_btr_90_2004",
+    "id": "new_tank_brakes",
+    "display": "Brake System",
+    "tier": 2,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "ussr_btr_90_2004",
+    "id": "manual_extinguisher",
+    "display": "Improved FPE",
+    "tier": 2,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "ussr_btr_90_2004",
+    "id": "152mm_9M133FM_3_ATGM_ammo_pack",
+    "display": "152 mm 9M133FM 3 ATGM Ammo Pack",
+    "tier": 3,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "ussr_btr_90_2004",
+    "id": "tank_medical_kit",
+    "display": "Crew Replenishment",
+    "tier": 3,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "ussr_btr_90_2004",
+    "id": "new_tank_vertical_aiming",
+    "display": "Elevation Mechanism",
+    "tier": 3,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "ussr_btr_90_2004",
+    "id": "new_tank_filter",
+    "display": "Filters",
+    "tier": 3,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "ussr_btr_90_2004",
+    "id": "art_support",
+    "display": "Artillery Support",
+    "tier": 4,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "ussr_btr_90_2004",
+    "id": "new_tank_engine",
+    "display": "Engine",
+    "tier": 4,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "ussr_btr_90_2004",
+    "id": "modern_tank_laser_rangefinder",
+    "display": "Laser rangefinder",
+    "tier": 4,
+    "modClass": "firepower",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "ussr_btr_90_2004",
+    "id": "night_vision_system",
+    "display": "NVD",
+    "tier": 4,
+    "modClass": "firepower",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "ussr_btr_90_2004",
+    "id": "new_tank_transmission",
+    "display": "Transmission",
+    "tier": 4,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "ussr_btr_90_2004",
+    "id": "tank_smoke_screen_system_mod",
+    "display": "Smoke grenade",
+    "tier": 5,
+    "modClass": "firepower",
     "group": "",
     "requires": ""
   },
@@ -438178,15 +443668,6 @@
     "id": "tank_smoke_screen_system_mod",
     "display": "Smoke grenade",
     "tier": 3,
-    "modClass": "",
-    "group": "",
-    "requires": ""
-  },
-  {
-    "aircraftId": "ussr_object_416",
-    "id": "art_support",
-    "display": "Artillery Support",
-    "tier": 4,
     "modClass": "",
     "group": "",
     "requires": ""
@@ -462043,8 +467524,8 @@
   },
   {
     "aircraftId": "yak_141",
-    "id": "mi_24_r_60m",
-    "display": "R-60M",
+    "id": "mig_29_r_27r",
+    "display": "R-27R",
     "tier": 1,
     "modClass": "weapon",
     "group": "",
@@ -462115,12 +467596,12 @@
   },
   {
     "aircraftId": "yak_141",
-    "id": "mig_29_r_27r",
-    "display": "R-27R",
+    "id": "mig_29_r_73",
+    "display": "R-73",
     "tier": 2,
     "modClass": "weapon",
     "group": "",
-    "requires": "mi_24_r_60m"
+    "requires": "mig_29_r_27r"
   },
   {
     "aircraftId": "yak_141",
@@ -462160,12 +467641,12 @@
   },
   {
     "aircraftId": "yak_141",
-    "id": "mig_29_r_73",
-    "display": "R-73",
+    "id": "mig_29_r_27t",
+    "display": "R-27T",
     "tier": 3,
     "modClass": "weapon",
     "group": "",
-    "requires": "mig_29_r_27r"
+    "requires": "mig_29_r_73"
   },
   {
     "aircraftId": "yak_141",
@@ -462205,12 +467686,12 @@
   },
   {
     "aircraftId": "yak_141",
-    "id": "mig_29_r_27t",
-    "display": "R-27T",
+    "id": "yak_141_r_77",
+    "display": "R-77",
     "tier": 4,
     "modClass": "weapon",
     "group": "",
-    "requires": "mig_29_r_73"
+    "requires": "mig_29_r_27t"
   },
   {
     "aircraftId": "yak_141",
@@ -468091,7 +473572,7 @@
   },
   {
     "aircraftId": "z_1007_bis_serie3",
-    "id": "breda12_7_turret_ap",
+    "id": "breda_turret_ap",
     "display": "12.7 mm machine gun ammunition belt with AP bullets",
     "tier": 0,
     "modClass": "",
@@ -468100,7 +473581,7 @@
   },
   {
     "aircraftId": "z_1007_bis_serie3",
-    "id": "breda_turret_ap",
+    "id": "breda12_7_turret_ap",
     "display": "12.7 mm machine gun ammunition belt with AP bullets",
     "tier": 0,
     "modClass": "",
@@ -468271,7 +473752,7 @@
   },
   {
     "aircraftId": "z_1007_bis_serie5",
-    "id": "breda12_7_turret_ap",
+    "id": "breda_turret_ap",
     "display": "12.7 mm machine gun ammunition belt with AP bullets",
     "tier": 0,
     "modClass": "",
@@ -468280,7 +473761,7 @@
   },
   {
     "aircraftId": "z_1007_bis_serie5",
-    "id": "breda_turret_ap",
+    "id": "breda12_7_turret_ap",
     "display": "12.7 mm machine gun ammunition belt with AP bullets",
     "tier": 0,
     "modClass": "",
@@ -468699,7 +474180,7 @@
     "tier": 0,
     "modClass": "",
     "group": "",
-    "requires": ""
+    "requires": "MAW_system_heli_false_thermal_targets_large_dircm"
   },
   {
     "aircraftId": "z_10me",
@@ -468784,8 +474265,8 @@
   },
   {
     "aircraftId": "z_10me",
-    "id": "MAW_system_heli_false_thermal_targets_large",
-    "display": "MAW",
+    "id": "MAW_system_heli_false_thermal_targets_large_dircm",
+    "display": "MAWS/DIRCM",
     "tier": 1,
     "modClass": "weapon",
     "group": "",
@@ -468838,6 +474319,15 @@
   },
   {
     "aircraftId": "z_10me",
+    "id": "cn_cm_502kg_mitl",
+    "display": "CM-502KG (MITL)",
+    "tier": 3,
+    "modClass": "weapon",
+    "group": "",
+    "requires": "cn_cm_502kg"
+  },
+  {
+    "aircraftId": "z_10me",
     "id": "automatic_air_extinguisher",
     "display": "EFS(a)",
     "tier": 3,
@@ -468861,7 +474351,7 @@
     "tier": 3,
     "modClass": "weapon",
     "group": "",
-    "requires": "MAW_system_heli_false_thermal_targets_large"
+    "requires": "MAW_system_heli_false_thermal_targets_large_dircm"
   },
   {
     "aircraftId": "z_10me",
@@ -468879,7 +474369,7 @@
     "tier": 4,
     "modClass": "weapon",
     "group": "",
-    "requires": "cn_cm_502kg"
+    "requires": "cn_cm_502kg_mitl"
   },
   {
     "aircraftId": "z_10me",
@@ -469387,6 +474877,15 @@
   },
   {
     "aircraftId": "z_9w",
+    "id": "ns23_stealth",
+    "display": "23 mm cannon ammunition belt for stealth attack",
+    "tier": 0,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "z_9w",
     "id": "new_heli_cover",
     "display": "Cover",
     "tier": 0,
@@ -469569,6 +475068,15 @@
     "aircraftId": "z_9wa",
     "id": "ns23_armor_targets",
     "display": "23 mm cannon ammunition belt for armored targets",
+    "tier": 0,
+    "modClass": "",
+    "group": "",
+    "requires": ""
+  },
+  {
+    "aircraftId": "z_9wa",
+    "id": "ns23_stealth",
+    "display": "23 mm cannon ammunition belt for stealth attack",
     "tier": 0,
     "modClass": "",
     "group": "",
