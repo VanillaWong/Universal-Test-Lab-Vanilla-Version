@@ -306,6 +306,10 @@ namespace UniversalTestLab
         public string id { get; set; }
         public string name { get; set; }
         public string vehicle { get; set; }
+        // Donor vehicle that carries `cannon`. The generation step redirects the
+        // host weapon preset at it so the swapped gun resolves its default round;
+        // without it the host ammo packs are dropped and the gun spawns empty.
+        public string unit { get; set; }
         public string cannon { get; set; }
         public string cannonRound { get; set; }
         public int cannonRounds { get; set; }

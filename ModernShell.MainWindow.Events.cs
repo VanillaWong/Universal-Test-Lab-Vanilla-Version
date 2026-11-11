@@ -666,17 +666,33 @@ namespace UniversalTestLab
             // WorkspaceGetSettings returns a COPY of the live settings - mutate it, then
             // write it back through WorkspaceSetSettings or the preset never lands.
             AircraftSettings s = controller.WorkspaceGetSettings(target);
+            // A cannon swap only works when the generation step knows which vehicle the
+            // donor cannon came from: it redirects the host weapon preset payload at that
+            // vehicle so the swapped gun resolves its default round (and, on a missile
+            // carrier, its ammunition). Presets used to name the cannon blk only, which
+            // left the donor stale (or empty) - the host ammo packs were deleted, the
+            // weapon spawned with nothing and the game reported "ammunition depleted".
+            string donorUnit = null;
+            if (!String.IsNullOrWhiteSpace(preset.cannon))
+                donorUnit = !String.IsNullOrWhiteSpace(preset.unit) ? preset.unit : MainForm.ResolveCannonOwnerUnit(preset.cannon);
             // Empty cannon = keep the vehicle's native weapon (per-vehicle).
             if (String.IsNullOrWhiteSpace(preset.cannon))
             {
-                s.InjectedCannonBlk = null; s.InjectedCannonDomain = null; s.InjectedCannonRound = null; s.InjectedCannonRounds = 0;
+                s.InjectedCannonBlk = null; s.InjectedCannonDomain = null; s.InjectedCannonUnit = null; s.InjectedCannonRound = null; s.InjectedCannonRounds = 0;
             }
             else
             {
                 s.InjectedCannonBlk = preset.cannon;
+                s.InjectedCannonDomain = "ground";
+                s.InjectedCannonUnit = donorUnit;
                 s.InjectedCannonRound = preset.cannonRound;
                 s.InjectedCannonRounds = preset.cannonRounds;
             }
+            // Drop leftovers from an earlier manual assembly: a stale host slot would aim
+            // the donation at the wrong mount and stale extra swaps would inject weapons
+            // this preset never asked for.
+            s.InjectedCannonHostSlot = null;
+            s.CannonSwaps = new List<CannonSwap>();
             s.UnlimitedAmmo = preset.unlimited;
             s.FakeArhConversion = preset.fakeArh;
             s.InjectNativeLauncher = preset.injectNative;
@@ -685,6 +701,8 @@ namespace UniversalTestLab
             controller.WorkspaceSetSettings(target, s);
             SelectVehicleById(target.Id, null);
             InvalidateExperimentalPanel();   // 一键装配后按需重建面板与左卡汇总（EXPERIMENTAL 可见时立即）
+            if (status != null && !String.IsNullOrWhiteSpace(preset.cannon) && String.IsNullOrWhiteSpace(donorUnit))
+                status.Text = ModernText.L("Preset applied, but its source vehicle could not be resolved - the swapped gun may spawn without ammunition.", "预设已应用，但未能解析来源载具——换上的炮可能没有弹药。");
         }
 
         private void SelectVehicleById(string id, string kind)

@@ -479,13 +479,20 @@ namespace UniversalTestLab
                 // After-death respawn mode for air spawns: default = unlimited engine
                 // air respawn (attempts raised once at mission start); disabled =
                 // legacy manual runway return via spawnOnAirfield.
-                string airAttemptsMission = BlkTools.ConfigureInstantPlayerRespawn(text, false, 0, null, 2.1, false, 1500, true);
-                string airRunwayMission = BlkTools.ConfigureInstantPlayerRespawn(text, false, 0, null, 2.1, false, 1500, false);
+                string airAttemptsMission = BlkTools.ConfigureInstantPlayerRespawn(text, false, 450, null, 2.1, false, 1500, true);
+                string airRunwayMission = BlkTools.ConfigureInstantPlayerRespawn(text, false, 450, null, 2.1, false, 1500, false);
                 if (airAttemptsMission.IndexOf("restoreType:t=\"attempts\"", StringComparison.Ordinal) < 0 ||
                     airAttemptsMission.IndexOf("\"UTL Attempts Boost\"", StringComparison.Ordinal) < 0 ||
                     airAttemptsMission.IndexOf("action:t=\"set_max\"", StringComparison.Ordinal) < 0 ||
                     airAttemptsMission.IndexOf("value:i=999", StringComparison.Ordinal) < 0 ||
                     airAttemptsMission.IndexOf("UTL Player Respawn Compatible", StringComparison.Ordinal) >= 0 ||
+                    // An in-air respawn must keep the template's respawn speed restore,
+                    // pinned to this mission's configured spawn speed - with the block
+                    // gone the engine drops the aircraft back in at 0 km/h.
+                    airAttemptsMission.IndexOf("Player Respawn Flight Profile", StringComparison.Ordinal) < 0 ||
+                    airAttemptsMission.IndexOf("speed:r=450", StringComparison.Ordinal) < 0 ||
+                    // A runway return must NOT receive cruise speed while parked.
+                    airRunwayMission.IndexOf("Player Respawn Flight Profile", StringComparison.Ordinal) >= 0 ||
                     airRunwayMission.IndexOf("restoreType:t=\"manual\"", StringComparison.Ordinal) < 0 ||
                     airRunwayMission.IndexOf("UTL Player Respawn Compatible", StringComparison.Ordinal) < 0 ||
                     airRunwayMission.IndexOf("UTL Attempts Boost", StringComparison.Ordinal) >= 0)

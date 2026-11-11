@@ -1231,6 +1231,18 @@ namespace UniversalTestLab
             return match.Success ? match.Groups[1].Value : "";
         }
 
+        // The template's "Player Respawn Flight Profile" trigger restores the player's
+        // air-spawn speed after every respawn (unitWhenRespawn). Pin its speed to the
+        // value this mission was configured with, so an in-air respawn does not drop
+        // the aircraft back in at 0 km/h.
+        private static string SetRespawnFlightSpeed(string text, int speedKmh)
+        {
+            BlockSpan block = FirstBlock(text, "\"Player Respawn Flight Profile\"", 0);
+            if (block == null || speedKmh <= 0) return text;
+            string updated = Regex.Replace(block.Text, @"(?m)^(\s*)speed:r\s*=\s*-?[\d.]+", "${1}speed:r=" + speedKmh.ToString(CultureInfo.InvariantCulture));
+            return String.Equals(updated, block.Text, StringComparison.Ordinal) ? text : ReplaceSpan(text, block, updated);
+        }
+
         public static string ConfigureInstantPlayerRespawn(string text, bool ground, int airSpeedKmh)
         {
             return ConfigureInstantPlayerRespawn(text, ground, airSpeedKmh, null);
@@ -1238,14 +1250,26 @@ namespace UniversalTestLab
 
         public static string ConfigureInstantPlayerRespawn(string text, bool ground, int airSpeedKmh, string customSpawnTransform, double respawnDelay = 0, bool airportTakeoff = false, int airSpawnAltitude = 1500, bool respawnInAir = true)
         {
-            // The template's "Player Respawn Flight Profile" trigger kicks the
-            // player to speed:1100 shortly after EVERY respawn (unitWhenRespawn).
-            // That was meant for the old 1500 m air respawn; after-death runway
-            // respawns now come via spawnOnAirfield, and receiving 1100 km/h while
-            // parked on the runway launches the aircraft into a jump. Aircraft
-            // missions therefore drop the block entirely; ground missions keep
-            // their own existing disable handling.
-            if (!ground)
+            // Air-spawn site: an explicit height rewrites the player "You" armada
+            // transform (the template starts it at 1500 m). Airport takeoff, combined
+            // scenario spawns and ground missions keep their own fixed positions, so
+            // the rewrite only runs for a plain air spawn with a non-stock height.
+            bool plainAirSpawn = !ground && !airportTakeoff && String.IsNullOrWhiteSpace(customSpawnTransform);
+            // After-death behaviour of air spawns: unlimited engine air respawn
+            // (attempts raised once at mission start) or legacy runway return via
+            // spawnOnAirfield. Runtime refills do not work - the engine fixes the
+            // limit when initMission runs.
+            bool useAttemptsAirRespawn = plainAirSpawn && respawnInAir;
+            // The template's "Player Respawn Flight Profile" trigger restores the
+            // configured air-spawn speed shortly after EVERY respawn (unitWhenRespawn).
+            // It must go when the after-death path puts the player back on the runway -
+            // receiving cruise speed while parked launches the aircraft into a jump -
+            // but it is exactly what keeps an in-air respawn flying: with the block
+            // removed the engine respawns the player at its spawn point at 0 km/h and
+            // the aircraft immediately falls out of the sky.
+            if (!ground && useAttemptsAirRespawn)
+                text = SetRespawnFlightSpeed(text, airSpeedKmh);
+            else if (!ground)
                 text = RemoveNamedBlockAnywhere(text, "\"Player Respawn Flight Profile\"");
             if (ground)
                 text = RemoveAirfieldContent(text);
@@ -1257,16 +1281,6 @@ namespace UniversalTestLab
             // start threshold for the full takeoff run.
             if (!ground && airportTakeoff)
                 text = SetPlayerSpawnPosition(text, 551.7, 30, 950.0);
-            // Air-spawn site: an explicit height rewrites the player "You" armada
-            // transform (the template starts it at 1500 m). Airport takeoff, combined
-            // scenario spawns and ground missions keep their own fixed positions, so
-            // the rewrite only runs for a plain air spawn with a non-stock height.
-            bool plainAirSpawn = !ground && !airportTakeoff && String.IsNullOrWhiteSpace(customSpawnTransform);
-            // After-death behaviour of air spawns: unlimited engine air respawn
-            // (attempts raised once at mission start) or legacy runway return via
-            // spawnOnAirfield. Runtime refills do not work - the engine fixes the
-            // limit when initMission runs.
-            bool useAttemptsAirRespawn = plainAirSpawn && respawnInAir;
             if (plainAirSpawn && airSpawnAltitude != 1500)
                 text = SetPlayerSpawnAltitude(text, airSpawnAltitude);
             BlockSpan mission = FirstBlock(text, "mission", 0);

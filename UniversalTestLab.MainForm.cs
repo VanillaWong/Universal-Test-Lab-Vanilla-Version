@@ -123,6 +123,38 @@ namespace UniversalTestLab
         get { if (prebuiltGroundWeaponsBacking == null) { prebuiltGroundWeaponsBacking = LoadPrebuiltGroundWeapons(); } return prebuiltGroundWeaponsBacking; }
     }
 
+        // Reverse lookup: which ground vehicle carries this cannon blk. The one-click
+        // assembly presets name only the donor *cannon*, but the generation step also
+        // needs the donor *vehicle*: it redirects the host weapon preset payload at it
+        // so the swapped gun can resolve its default round (and a missile carrier's
+        // ammunition). Without a donor the host ammo packs are deleted and the weapon
+        // spawns reporting "ammunition depleted".
+        internal static string ResolveCannonOwnerUnit(string cannonBlk)
+        {
+            if (String.IsNullOrWhiteSpace(cannonBlk)) return null;
+            string wanted = NormalizeBlkPath(cannonBlk);
+            string wantedFile = wanted.Substring(wanted.LastIndexOf('/') + 1);
+            string byFileName = null;
+            foreach (KeyValuePair<string, GroundWeaponCacheData> kv in prebuiltGroundWeapons)
+            {
+                if (kv.Value == null || kv.Value.Weapons == null) continue;
+                foreach (GroundWeaponInfo info in kv.Value.Weapons)
+                {
+                    if (info == null || String.IsNullOrWhiteSpace(info.Blk)) continue;
+                    string have = NormalizeBlkPath(info.Blk);
+                    if (String.Equals(have, wanted, StringComparison.Ordinal)) return kv.Key;
+                    if (byFileName == null && String.Equals(have.Substring(have.LastIndexOf('/') + 1), wantedFile, StringComparison.Ordinal))
+                        byFileName = kv.Key;
+                }
+            }
+            return byFileName;
+        }
+
+        private static string NormalizeBlkPath(string blk)
+        {
+            string value = (blk ?? String.Empty).Replace('\\', '/').Trim().TrimStart('/');
+            return value.ToLowerInvariant();
+        }
         internal static Dictionary<string, GroundWeaponCacheData> LoadPrebuiltGroundWeapons()
         {
             Dictionary<string, GroundWeaponCacheData> result = new Dictionary<string, GroundWeaponCacheData>(StringComparer.OrdinalIgnoreCase);
