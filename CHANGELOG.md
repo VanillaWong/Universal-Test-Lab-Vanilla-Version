@@ -1,5 +1,47 @@
 # Changelog
 
+## v0.12.0-beta.9 — 2026-11-11
+
+### Added / 新增
+
+- **Experimental airframe options** in Flight Configure / 飞行配置新增**实验性机体选项**:
+  - *Zero mass* — the flight model's empty mass is scaled to ~1 %. / **零质量**——机体空重缩到约 1%。
+  - *Indestructible* — never-exceed speed, Mach, overload and gear/canopy limits are raised. / **超速过载不损毁**——放宽 VNE、马赫、过载与起落架/舱盖限制。
+  - *Helmet-mounted designator (HMD)* — adds the HMD designator fields to any aircraft. / **头盔瞄准具**——为任意机型补上 HMD 瞄准指示字段。
+  - *Missile-approach warner (MAWS)* — appends a missile-approach warner to the sensor set. / **导弹来袭告警**——在传感器列表末尾追加来袭告警器。
+  
+  The first two write a tuned copy of the game's own flight model and reference it from
+  the unit, so the original file is never modified. / 前两项会生成一份调校后的机体文件并由
+  单位引用，游戏原文件不动。
+
+### Fixed / 修复
+
+- **One-click assembly presets spawned with no ammunition** ("ammunition depleted"): the
+  donor vehicle is now recorded with each preset and resolved automatically from the
+  donor cannon when missing, so the weapon-preset redirect points at the right vehicle.
+  / **一键装配后弹药耗尽**：预设现在会记录来源载具，缺失时按来源炮自动反查，武器预设
+  重定向不会再指错车。
+- **Aircraft respawned at 0 km/h** after death in the default in-air respawn mode: the
+  respawn speed restore is kept for in-air respawns (and dropped for runway returns,
+  where cruise speed would launch the aircraft off the ground). / **飞机重生 0 速度**：
+  默认"空中重生"模式保留速度恢复（回跑道模式仍然移除，避免静止状态被弹出）。
+
+### Changed / 变更
+
+- **Data catalog rebuilt for the 2026-11-11 game update / 数据目录随 2026-11-11 更新重建**:
+  1621 aircraft · 1321 ground vehicles · 663 ships · 35028 donor mounts ·
+  52822 modifications · 485 sensor blocks.
+- `Update-Data.ps1` keeps the sensor tree and radar catalogs in sync (see beta.8).
+  / `Update-Data.ps1` 继续同步传感器与雷达目录。
+
+### Notes / 说明
+
+- The airframe options are experimental; they change the flight model in ways the
+  engine does not normally allow. Use them for testing, not for reproducing stock
+  behaviour. / 机体选项为实验性功能，会改动引擎通常不允许的飞行模型参数，仅用于测试。
+- Crash reports and bug reports go to GitHub Issues:
+  https://github.com/VanillaWong/Universal-Test-Lab-Vanilla-Version/issues
+
 ## v0.12.0-beta.8 — 2026-09-17
 
 ### Added / 新增
