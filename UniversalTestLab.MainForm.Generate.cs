@@ -202,6 +202,10 @@ namespace UniversalTestLab
                 }
                 catch { }
             }
+            // Aircraft radar swap: replace an EXISTING radar sensor in place (no insert,
+            // no reorder) - see ApplyAircraftRadarSwap for why.
+            if (!String.IsNullOrWhiteSpace(settings.RadarSearchBlk) || !String.IsNullOrWhiteSpace(settings.RadarTrackBlk))
+                fm = ApplyAircraftRadarSwap(fm, settings.RadarSearchBlk, settings.RadarTrackBlk);
             if (settings.HelmetSight) fm = ApplyHelmetSightFields(fm);
             if (settings.MawsUpgrade) fm = AppendMawsSensor(fm);
             string fmOut = Path.Combine(root, @"content\pkg_user\gameData\flightModels", classId + ".blk");
@@ -1152,6 +1156,38 @@ string cannon = ((customCannonNeeded || moduleShipsWeapons) && hasEditableCannon
         // Rebuilds the vehicle's sensors block in the include proxy: installs the
         // requested player search/track radars and optionally strips the AI-only
         // *_ai sensor pair (AI secondary sight). Used by the radar-swap lab.
+
+        // Aircraft radar swap. Replaces the blk of an EXISTING radar sensor, in place:
+        // sensors are addressed by position (sensorsMode.blockSensorIndex and
+        // WeaponPreset.externalSensorIndex), so inserting or reordering would silently
+        // re-point every mode. Aircraft with no radar sensor are left untouched.
+        internal static string ApplyAircraftRadarSwap(string unitBlk, string searchRadarId, string trackRadarId)
+        {
+            if (String.IsNullOrWhiteSpace(unitBlk)) return unitBlk;
+            if (String.IsNullOrWhiteSpace(searchRadarId) && String.IsNullOrWhiteSpace(trackRadarId)) return unitBlk;
+            BlockSpan sensors = BlkTools.FirstBlock(unitBlk, "sensors", 0);
+            if (sensors == null) return unitBlk;
+            List<BlockSpan> radarSensors = new List<BlockSpan>();
+            foreach (BlockSpan sensor in BlkTools.Blocks(sensors.Text, "sensor"))
+            {
+                if (Regex.IsMatch(sensor.Text, "(?im)^\\s*dmPart\\s*:\\s*t\\s*=\\s*\"radar")) radarSensors.Add(sensor);
+            }
+            if (radarSensors.Count == 0) return unitBlk;
+            string[] requested = new string[] { searchRadarId, trackRadarId };
+            for (int index = radarSensors.Count - 1; index >= 0; index--)
+            {
+                string radarId = index < requested.Length ? requested[index] : null;
+                if (String.IsNullOrWhiteSpace(radarId)) continue;
+                BlockSpan sensor = radarSensors[index];
+                string newBlk = "gameData/sensors/" + radarId.Trim() + ".blk";
+                string replaced = BlkTools.ReplaceStringField(sensor.Text, "blk", newBlk);
+                if (String.Equals(replaced, sensor.Text, StringComparison.Ordinal)) continue;
+                int start = sensors.Start + sensor.Start;
+                int end = sensors.Start + sensor.End;
+                unitBlk = unitBlk.Substring(0, start) + replaced + unitBlk.Substring(end + 1);
+            }
+            return unitBlk;
+        }
 
         // ---- experimental airframe helpers ------------------------------------
 

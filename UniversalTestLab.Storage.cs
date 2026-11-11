@@ -240,6 +240,8 @@ namespace UniversalTestLab
             if (settings.Indestructible) o.Add("indestructible", true);
             if (settings.HelmetSight) o.Add("helmet_sight", true);
             if (settings.MawsUpgrade) o.Add("maws_upgrade", true);
+            if (!String.IsNullOrWhiteSpace(settings.RadarSearchBlk)) o.Add("radar_search_blk", settings.RadarSearchBlk);
+            if (!String.IsNullOrWhiteSpace(settings.RadarTrackBlk)) o.Add("radar_track_blk", settings.RadarTrackBlk);
             return o;
         }
 
@@ -327,6 +329,8 @@ namespace UniversalTestLab
             s.Indestructible = JsonBool(o, "indestructible", false);
             s.HelmetSight = JsonBool(o, "helmet_sight", false);
             s.MawsUpgrade = JsonBool(o, "maws_upgrade", false);
+            s.RadarSearchBlk = JsonStr(o, "radar_search_blk");
+            s.RadarTrackBlk = JsonStr(o, "radar_track_blk");
             s.CannonSwaps = new List<CannonSwap>();
             object swapValue;
             if (o.TryGetValue("cannon_swaps", out swapValue) && swapValue != null)

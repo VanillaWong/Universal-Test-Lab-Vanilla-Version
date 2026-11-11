@@ -736,6 +736,7 @@ namespace UniversalTestLab
         private readonly CheckBox indestructibleBox;
         private readonly CheckBox helmetSightBox;
         private readonly CheckBox mawsBox;
+        private readonly ComboBox radarBox;
         private readonly ScrollViewer contentScroll;
         private readonly List<CountermeasureEditor> editors = new List<CountermeasureEditor>();
         private readonly List<GunBeltEditor> gunBeltEditors = new List<GunBeltEditor>();
@@ -776,6 +777,20 @@ namespace UniversalTestLab
             mawsBox = new CheckBox { Content = ModernText.L("Missile-approach warner (MAWS)", "导弹来袭告警（MAWS）"), IsChecked = original.MawsUpgrade, Foreground = ModernPalette.Brush(ModernPalette.Text), Margin = new Thickness(0, 3, 0, 8) };
             expContent.Children.Add(mawsBox);
             content.Children.Add(expCard);
+
+            Border radarCard = Card("RADAR"); StackPanel radarContent = radarCard.Child as StackPanel;
+            radarContent.Children.Add(new TextBlock { Text = ModernText.L("Replaces the aircraft's existing radar in place - sensor order and modes are preserved. Aircraft without a radar are left alone.", "就地替换该机现有雷达，保留传感器顺序与模式；没有雷达的机型不受影响。"), Foreground = ModernPalette.Brush(ModernPalette.Muted), TextWrapping = TextWrapping.Wrap, Margin = new Thickness(0, 2, 0, 8) });
+            radarBox = new ComboBox { Foreground = ModernPalette.Brush(ModernPalette.Text), Background = ModernPalette.Brush("#FF16283E"), BorderBrush = ModernPalette.Brush(ModernPalette.Border), Padding = new Thickness(8, 4, 8, 4), Height = 30, HorizontalAlignment = HorizontalAlignment.Stretch };
+            radarBox.Items.Add(new ComboBoxItem { Content = ModernText.L("(native radar)", "（原生雷达）"), Tag = "" });
+            foreach (SensorRowJson sensor in RadarChoices()) radarBox.Items.Add(new ComboBoxItem { Content = sensor.display + "  •  " + RadarDetail(sensor), Tag = sensor.id });
+            if (!String.IsNullOrWhiteSpace(original.RadarSearchBlk))
+            {
+                ComboBoxItem savedRadar = radarBox.Items.OfType<ComboBoxItem>().FirstOrDefault(x => String.Equals(x.Tag as string, original.RadarSearchBlk, StringComparison.OrdinalIgnoreCase));
+                if (savedRadar != null) radarBox.SelectedItem = savedRadar;
+            }
+            if (radarBox.SelectedItem == null) radarBox.SelectedIndex = 0;
+            radarContent.Children.Add(radarBox);
+            content.Children.Add(radarCard);
             contentScroll = new ScrollViewer { Content = content, VerticalScrollBarVisibility = ScrollBarVisibility.Auto, HorizontalScrollBarVisibility = ScrollBarVisibility.Disabled, Margin = new Thickness(0, 6, 0, 14), Padding = new Thickness(0, 0, 8, 30) }; Grid.SetRow(contentScroll, 1); layout.Children.Add(contentScroll);
             Grid footer = new Grid(); footer.ColumnDefinitions.Add(new ColumnDefinition()); footer.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(145) }); footer.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(175) }); footer.Children.Add(new TextBlock { Text = ModernText.L("Settings are saved with this aircraft and custom presets.", "设置随该飞机及自定义预设保存。"), Foreground = ModernPalette.Brush(ModernPalette.Muted), VerticalAlignment = VerticalAlignment.Center });
             Button cancel = DialogButton("取消", false); cancel.Click += delegate { DialogResult = false; Close(); }; Grid.SetColumn(cancel, 1); footer.Children.Add(cancel);
@@ -921,6 +936,33 @@ namespace UniversalTestLab
             foreach (CountermeasureEditor editor in editors) { if (editor.FlareSlider != null) editor.FlareSlider.IsEnabled = enabled; if (editor.ChaffSlider != null) editor.ChaffSlider.IsEnabled = enabled; editor.Card.Opacity = customizeCountermeasures.IsChecked == true ? 1.0 : 0.62; }
         }
 
+        // Radars offered by the aircraft radar picker: engine-typed "radar" sensors
+        // minus the IR/optical trackers that share that type.
+        private static IEnumerable<SensorRowJson> RadarChoices()
+        {
+            List<SensorRowJson> list = new List<SensorRowJson>();
+            foreach (SensorRowJson sensor in MainForm.SensorCatalog)
+            {
+                if (sensor == null || String.IsNullOrWhiteSpace(sensor.id)) continue;
+                if (!String.Equals((sensor.type ?? "").Trim(), "radar", StringComparison.OrdinalIgnoreCase)) continue;
+                string id = sensor.id.ToLowerInvariant();
+                if (id.Contains("tracker") || id.Contains("flir") || id.Contains("optic")) continue;
+                list.Add(sensor);
+            }
+            return list.OrderBy(x => x.display).ThenBy(x => x.id).ToList();
+        }
+
+        private static string RadarDetail(SensorRowJson sensor)
+        {
+            double range;
+            if (!String.IsNullOrWhiteSpace(sensor.rangeMax)
+                && Double.TryParse(sensor.rangeMax.Trim(), System.Globalization.NumberStyles.Any, System.Globalization.CultureInfo.InvariantCulture, out range))
+                return range >= 1000
+                    ? (range / 1000.0).ToString("0.#", System.Globalization.CultureInfo.InvariantCulture) + " km"
+                    : range.ToString("0", System.Globalization.CultureInfo.InvariantCulture) + " m";
+            return sensor.role ?? "";
+        }
+
         private void Save()
         {
             AircraftSettings result = original.Copy(); result.FullFuel = fullFuel.IsChecked == true; result.FuelMinutes = (int)fuelSlider.Value; result.OverrideCountermeasures = customizeCountermeasures.IsChecked == true; result.UnlimitedCountermeasures = false; result.CountermeasureLoadouts.Clear(); result.GunBeltSelections.Clear();
@@ -940,6 +982,12 @@ namespace UniversalTestLab
             if (indestructibleBox != null) result.Indestructible = indestructibleBox.IsChecked == true;
             if (helmetSightBox != null) result.HelmetSight = helmetSightBox.IsChecked == true;
             if (mawsBox != null) result.MawsUpgrade = mawsBox.IsChecked == true;
+            if (radarBox != null)
+            {
+                ComboBoxItem radarItem = radarBox.SelectedItem as ComboBoxItem;
+                string radarId = radarItem == null ? null : (radarItem.Tag as string);
+                result.RadarSearchBlk = String.IsNullOrWhiteSpace(radarId) ? null : radarId;
+            }
             Result = result; DialogResult = true; Close();
         }
     }

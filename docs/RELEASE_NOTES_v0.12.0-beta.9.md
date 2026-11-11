@@ -22,6 +22,11 @@ first batch of **experimental airframe options** to Flight Configure.
   The first two write a tuned copy of the game's own flight model and reference it from the
   unit, so the game's original files are never modified. / 前两项生成一份调校后的机体文件并
   由单位引用，游戏原文件不动。
+- **Aircraft radar swap / 飞机换雷达** (Flight Configure → RADAR): replace an aircraft's radar
+  with any radar in the catalog. The swap rewrites the existing radar sensor in place, so
+  sensor order and modes stay valid, and aircraft without a radar are left alone. The choice
+  is saved per vehicle. / 「飞行配置 → RADAR」可把机载雷达换成目录里的任意雷达。替换为就地
+  改写已有传感器，顺序与模式保持不变；无雷达机型不受影响。选择会按载具保存。
 
 ## Fixed / 修复
 

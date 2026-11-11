@@ -13,6 +13,11 @@
   The first two write a tuned copy of the game's own flight model and reference it from
   the unit, so the original file is never modified. / 前两项会生成一份调校后的机体文件并由
   单位引用，游戏原文件不动。
+- **Aircraft radar swap / 飞机换雷达**: Flight Configure can replace an aircraft's radar with
+  any radar in the catalog — fighter sets, TWS sets, ground-search sets. The swap rewrites the
+  existing radar sensor in place, so sensor order and modes are preserved; aircraft without a
+  radar are left untouched. / 「飞行配置」可把机载雷达换成目录里的任意雷达。替换是就地改写
+  已有雷达传感器，保持传感器顺序与模式不变；没有雷达的机型不受影响。
 
 ### Fixed / 修复
 

@@ -519,6 +519,28 @@ namespace UniversalTestLab
                     mawUnit.IndexOf("uk_praetorian_maw.blk", StringComparison.Ordinal) < mawUnit.IndexOf("a.blk", StringComparison.Ordinal) ||
                     mawUnit.Count(c => c == '{') != mawUnit.Count(c => c == '}'))
                     throw new InvalidOperationException("MAWS sensor self-test failed.");
+                // Aircraft radar swap: replace in place - never insert, remove or reorder.
+                string radarUnit = "sensors {" + Environment.NewLine
+                    + "\tsensor {" + Environment.NewLine
+                    + "\t\tblk:t = \"gameData/sensors/old_radar.blk\"" + Environment.NewLine
+                    + "\t\tdmPart:t = \"radar_dm\"" + Environment.NewLine
+                    + "\t}" + Environment.NewLine
+                    + "\tsensor {" + Environment.NewLine
+                    + "\t\tblk:t = \"gameData/sensors/rwr.blk\"" + Environment.NewLine
+                    + "\t}" + Environment.NewLine
+                    + "\tsensorsMode {" + Environment.NewLine
+                    + "\t\tblockSensorIndex:i = 0" + Environment.NewLine
+                    + "\t}" + Environment.NewLine
+                    + "}" + Environment.NewLine;
+                string radarSwapped = MainForm.ApplyAircraftRadarSwap(radarUnit, "us_an_awg_9", null);
+                if (radarSwapped.IndexOf("gameData/sensors/us_an_awg_9.blk", StringComparison.Ordinal) < 0 ||
+                    radarSwapped.IndexOf("old_radar.blk", StringComparison.Ordinal) >= 0 ||
+                    radarSwapped.IndexOf("gameData/sensors/rwr.blk", StringComparison.Ordinal) < 0 ||
+                    radarSwapped.IndexOf("blockSensorIndex:i = 0", StringComparison.Ordinal) < 0 ||
+                    radarSwapped.Count(c => c == '{') != radarSwapped.Count(c => c == '}'))
+                    throw new InvalidOperationException("Aircraft radar swap self-test failed.");
+                if (!String.Equals(MainForm.ApplyAircraftRadarSwap(radarUnit, null, null), radarUnit, StringComparison.Ordinal))
+                    throw new InvalidOperationException("Aircraft radar swap must be a no-op with no selection.");
                 // Deployable carrier ammo (NASAMS-style): a player block carrying an
                 // *_ammo_pack modification gets all non-pack \d+mm_ weapon groups with
                 // 9999 rounds; ordinary tanks (no pack) are left untouched.
