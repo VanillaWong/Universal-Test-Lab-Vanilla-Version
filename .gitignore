@@ -35,3 +35,6 @@ selftest_crash.log
 data/*.bak*
 build_selftest.rsp
 UniversalTestLab_selftest.exe
+
+# Ask3lad capture snapshots (local, large)
+captures/

@@ -110,6 +110,14 @@ namespace UniversalTestLab
         // with a donor weapon (main gun + machine gun + ... in one go).
         public List<CannonSwap> CannonSwaps = new List<CannonSwap>();
 
+        // ---- Experimental airframe / avionics toggles -------------------------
+        // All four are plain engine fields on the copied unit/flight model, the
+        // same recipe the reference tool uses.
+        public bool ZeroMass;        // FM: EmptyMass scaled down to ~1%
+        public bool Indestructible;  // FM: VNE / MNE / overload / gear / canopy limits raised
+        public bool HelmetSight;     // unit: HMD designator fields
+        public bool MawsUpgrade;     // sensors: append a missile-approach warner
+
         public AircraftSettings Copy()
         {
             AircraftSettings copy = new AircraftSettings
@@ -146,7 +154,11 @@ namespace UniversalTestLab
                 FakeArhConversion = FakeArhConversion,
                 RadarSearchBlk = RadarSearchBlk,
                 RadarTrackBlk = RadarTrackBlk,
-                RadarStripAiSensors = RadarStripAiSensors
+                RadarStripAiSensors = RadarStripAiSensors,
+                ZeroMass = ZeroMass,
+                Indestructible = Indestructible,
+                HelmetSight = HelmetSight,
+                MawsUpgrade = MawsUpgrade
             };
             foreach (string id in EnabledModifications) copy.EnabledModifications.Add(id);
             foreach (CountermeasureLoadout loadout in CountermeasureLoadouts) copy.CountermeasureLoadouts.Add(loadout.Copy());

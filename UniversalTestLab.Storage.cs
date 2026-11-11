@@ -236,6 +236,10 @@ namespace UniversalTestLab
                 }
                 if (swaps.Count > 0) o.Add("cannon_swaps", swaps);
             }
+            if (settings.ZeroMass) o.Add("zero_mass", true);
+            if (settings.Indestructible) o.Add("indestructible", true);
+            if (settings.HelmetSight) o.Add("helmet_sight", true);
+            if (settings.MawsUpgrade) o.Add("maws_upgrade", true);
             return o;
         }
 
@@ -319,6 +323,10 @@ namespace UniversalTestLab
             s.InjectedCannonRounds = JsonInt(o, "inject_cannon_rounds", 0);
             s.InjectNativeLauncher = JsonBool(o, "inject_native_launcher", false);
             s.InjectedCannonHostSlot = JsonStr(o, "inject_cannon_slot");
+            s.ZeroMass = JsonBool(o, "zero_mass", false);
+            s.Indestructible = JsonBool(o, "indestructible", false);
+            s.HelmetSight = JsonBool(o, "helmet_sight", false);
+            s.MawsUpgrade = JsonBool(o, "maws_upgrade", false);
             s.CannonSwaps = new List<CannonSwap>();
             object swapValue;
             if (o.TryGetValue("cannon_swaps", out swapValue) && swapValue != null)

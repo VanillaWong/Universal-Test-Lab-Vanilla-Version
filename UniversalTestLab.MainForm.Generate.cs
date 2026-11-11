@@ -179,6 +179,31 @@ namespace UniversalTestLab
                 presetOut = Path.Combine(root, @"content\pkg_user\gameData\flightModels\weaponPresets", presetId + ".blk");
                 WriteBytes(presetOut, new UTF8Encoding(false).GetBytes(loadout.ToString()));
             }
+            // ---- Experimental airframe toggles -------------------------------
+            // Tuned copy of the game's own flight model, referenced through fmFile.
+            // Both options are plain engine fields: EmptyMass for "zero mass", and
+            // the VNE / MNE / overload / gear / canopy limits for "indestructible".
+            if (settings.ZeroMass || settings.Indestructible)
+            {
+                try
+                {
+                    string sourceFmPath = ExtractGameBlk(root, "gamedata/flightmodels/fm/" + target.Id + ".blk");
+                    if (File.Exists(sourceFmPath))
+                    {
+                        string tunedFm = File.ReadAllText(sourceFmPath, Encoding.UTF8);
+                        tunedFm = TuneFlightModel(tunedFm, settings.ZeroMass, settings.Indestructible);
+                        string tunedDir = Path.Combine(root, @"content\pkg_user\gameData\flightModels\fm");
+                        Directory.CreateDirectory(tunedDir);
+                        string tunedPath = Path.Combine(tunedDir, classId + ".blk");
+                        WriteBytes(tunedPath, new UTF8Encoding(false).GetBytes(tunedFm));
+                        fm = ReplaceFlightModelReference(fm, "fm/" + classId + ".blk");
+                        auxiliaryPaths.Add(tunedPath);
+                    }
+                }
+                catch { }
+            }
+            if (settings.HelmetSight) fm = ApplyHelmetSightFields(fm);
+            if (settings.MawsUpgrade) fm = AppendMawsSensor(fm);
             string fmOut = Path.Combine(root, @"content\pkg_user\gameData\flightModels", classId + ".blk");
             WriteBytes(fmOut, new UTF8Encoding(false).GetBytes(fm));
             GeneratedAircraft generated = new GeneratedAircraft { ClassId = classId, PresetId = presetId, ModelId = BlkTools.Field(fm, "model", "t"), FlightModelPath = fmOut, PresetPath = presetOut, SpawnSpeedKmh = spawnSpeedKmh };
@@ -1127,6 +1152,93 @@ string cannon = ((customCannonNeeded || moduleShipsWeapons) && hasEditableCannon
         // Rebuilds the vehicle's sensors block in the include proxy: installs the
         // requested player search/track radars and optionally strips the AI-only
         // *_ai sensor pair (AI secondary sight). Used by the radar-swap lab.
+
+        // ---- experimental airframe helpers ------------------------------------
+
+        // Relax the engine limits the reference tool relaxes. Field names and the
+        // magnitudes are WT's own (verified against its tuned FM output).
+        internal static string TuneFlightModel(string text, bool zeroMass, bool indestructible)
+        {
+            if (indestructible)
+            {
+                text = SetFloatField(text, "VNE", 5000);
+                text = SetFloatField(text, "MNE", 10);
+                text = SetFloatField(text, "GearDestructionIndSpeed", 5000);
+                text = SetFloatField(text, "CockpitOpenedDoorBreakSpeed", 5000);
+                text = ScaleFloatPair(text, "CritOverload", 10.0);
+            }
+            if (zeroMass)
+            {
+                Match mass = Regex.Match(text, @"(?m)^(\s*EmptyMass\s*:\s*r\s*=\s*)([\d.]+)");
+                if (mass.Success)
+                {
+                    double value = Double.Parse(mass.Groups[2].Value, CultureInfo.InvariantCulture);
+                    double scaled = Math.Max(100.0, Math.Round(value * 0.01, 1));
+                    text = text.Substring(0, mass.Groups[2].Index) + scaled.ToString("0.##", CultureInfo.InvariantCulture)
+                        + text.Substring(mass.Groups[2].Index + mass.Groups[2].Length);
+                }
+            }
+            return text;
+        }
+
+        private static string SetFloatField(string text, string field, double value)
+        {
+            Regex re = new Regex(@"(?m)^(\s*" + Regex.Escape(field) + @"\s*:\s*r\s*=\s*)[\d.]+");
+            if (!re.IsMatch(text)) return text;
+            return re.Replace(text, "${1}" + value.ToString("0.###", CultureInfo.InvariantCulture), 1);
+        }
+
+        private static string ScaleFloatPair(string text, string field, double factor)
+        {
+            Regex re = new Regex(@"(?m)^(\s*" + Regex.Escape(field) + @"\s*:\s*p2\s*=\s*)(-?[\d.]+)\s*,\s*(-?[\d.]+)");
+            if (!re.IsMatch(text)) return text;
+            return re.Replace(text, delegate(Match m)
+            {
+                double a = Double.Parse(m.Groups[2].Value, CultureInfo.InvariantCulture) * factor;
+                double b = Double.Parse(m.Groups[3].Value, CultureInfo.InvariantCulture) * factor;
+                return m.Groups[1].Value + a.ToString("0.###", CultureInfo.InvariantCulture)
+                    + ", " + b.ToString("0.###", CultureInfo.InvariantCulture);
+            }, 1);
+        }
+
+        internal static string ReplaceFlightModelReference(string unitBlk, string relativeFm)
+        {
+            Regex re = new Regex("(?m)^(\\s*fmFile\\s*:\\s*t\\s*=\\s*\")[^\"]*(\")");
+            if (re.IsMatch(unitBlk)) return re.Replace(unitBlk, "${1}" + relativeFm + "${2}", 1);
+            return "fmFile:t = \"" + relativeFm + "\"" + Environment.NewLine + unitBlk;
+        }
+
+        // Helmet-mounted designator: a fixed set of unit-level fields.
+        internal static string ApplyHelmetSightFields(string unitBlk)
+        {
+            if (Regex.IsMatch(unitBlk, @"(?m)^\s*hasHelmetDesignator\s*:\s*b\s*=")) return unitBlk;
+            StringBuilder hmd = new StringBuilder();
+            hmd.AppendLine("havePointOfInterestDesignator:b = yes");
+            hmd.AppendLine("hasHelmetDesignator:b = yes");
+            for (int i = 0; i < 5; i++)
+                hmd.AppendLine("helmetDesignatorZone" + i.ToString(CultureInfo.InvariantCulture) + ":p3 = "
+                    + (-70 + 35 * i).ToString(CultureInfo.InvariantCulture) + ", -35, 65");
+            hmd.AppendLine("hmdEnabledByDefault:b = yes");
+            hmd.AppendLine("hmdScreenBlockRad:r = 0.06");
+            return hmd.ToString() + unitBlk;
+        }
+
+        // Missile-approach warner: appended LAST so every existing sensor keeps its
+        // index (sensorsMode.blockSensorIndex and WeaponPreset.externalSensorIndex
+        // both address the list by position).
+        internal static string AppendMawsSensor(string unitBlk)
+        {
+            const string mawBlk = "gameData/sensors/uk_praetorian_maw.blk";
+            if (unitBlk.IndexOf(mawBlk, StringComparison.OrdinalIgnoreCase) >= 0) return unitBlk;
+            BlockSpan sensors = BlkTools.FirstBlock(unitBlk, "sensors", 0);
+            if (sensors == null) return unitBlk;
+            int close = BlkTools.MatchingBrace(unitBlk, sensors.Open);
+            if (close <= sensors.Open) return unitBlk;
+            string addition = "\tsensor {" + Environment.NewLine
+                + "\t\tblk:t = \"" + mawBlk + "\"" + Environment.NewLine
+                + "\t}" + Environment.NewLine;
+            return unitBlk.Insert(close, addition);
+        }
     }
 
 }

@@ -497,6 +497,28 @@ namespace UniversalTestLab
                     airRunwayMission.IndexOf("UTL Player Respawn Compatible", StringComparison.Ordinal) < 0 ||
                     airRunwayMission.IndexOf("UTL Attempts Boost", StringComparison.Ordinal) >= 0)
                     throw new InvalidOperationException("Air after-death respawn mode self-test failed.");
+                // Experimental airframe toggles: tuned FM copy, HMD fields, MAWS sensor.
+                string sampleFm = "VNE:r = 1607\nMNE:r = 2.46\nCritOverload:p2 = -430000, 810000\nEmptyMass:r = 11220\nGearDestructionIndSpeed:r = 700\nCockpitOpenedDoorBreakSpeed:r = 450\n";
+                string tunedFm = MainForm.TuneFlightModel(sampleFm, true, true);
+                if (tunedFm.IndexOf("VNE:r = 5000", StringComparison.Ordinal) < 0 ||
+                    tunedFm.IndexOf("MNE:r = 10", StringComparison.Ordinal) < 0 ||
+                    tunedFm.IndexOf("EmptyMass:r = 112", StringComparison.Ordinal) < 0 ||
+                    tunedFm.IndexOf("-4300000, 8100000", StringComparison.Ordinal) < 0)
+                    throw new InvalidOperationException("Airframe tuning self-test failed.");
+                string tunedUntouched = MainForm.TuneFlightModel(sampleFm, false, false);
+                if (!String.Equals(tunedUntouched, sampleFm, StringComparison.Ordinal))
+                    throw new InvalidOperationException("Airframe tuning must be a no-op when both toggles are off.");
+                string hmdUnit = MainForm.ApplyHelmetSightFields("model:t = \"x\"" + Environment.NewLine);
+                if (hmdUnit.IndexOf("hasHelmetDesignator:b = yes", StringComparison.Ordinal) < 0 ||
+                    hmdUnit.IndexOf("helmetDesignatorZone4:p3 = 70, -35, 65", StringComparison.Ordinal) < 0 ||
+                    hmdUnit.IndexOf("hmdScreenBlockRad:r = 0.06", StringComparison.Ordinal) < 0)
+                    throw new InvalidOperationException("Helmet sight self-test failed.");
+                string sensorUnit = "sensors {" + Environment.NewLine + "\tsensor {" + Environment.NewLine + "\t\tblk:t = \"a.blk\"" + Environment.NewLine + "\t}" + Environment.NewLine + "}" + Environment.NewLine;
+                string mawUnit = MainForm.AppendMawsSensor(sensorUnit);
+                if (mawUnit.IndexOf("uk_praetorian_maw.blk", StringComparison.Ordinal) < 0 ||
+                    mawUnit.IndexOf("uk_praetorian_maw.blk", StringComparison.Ordinal) < mawUnit.IndexOf("a.blk", StringComparison.Ordinal) ||
+                    mawUnit.Count(c => c == '{') != mawUnit.Count(c => c == '}'))
+                    throw new InvalidOperationException("MAWS sensor self-test failed.");
                 // Deployable carrier ammo (NASAMS-style): a player block carrying an
                 // *_ammo_pack modification gets all non-pack \d+mm_ weapon groups with
                 // 9999 rounds; ordinary tanks (no pack) are left untouched.

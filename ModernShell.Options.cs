@@ -732,6 +732,10 @@ namespace UniversalTestLab
         private readonly TextBox fuelBox;
         private readonly TextBlock fuelValue;
         private readonly CheckBox customizeCountermeasures;
+        private readonly CheckBox zeroMassBox;
+        private readonly CheckBox indestructibleBox;
+        private readonly CheckBox helmetSightBox;
+        private readonly CheckBox mawsBox;
         private readonly ScrollViewer contentScroll;
         private readonly List<CountermeasureEditor> editors = new List<CountermeasureEditor>();
         private readonly List<GunBeltEditor> gunBeltEditors = new List<GunBeltEditor>();
@@ -761,6 +765,17 @@ namespace UniversalTestLab
             customizeCountermeasures = new CheckBox { Content = ModernText.L("Customize installed countermeasure stations", "自定义已装干扰弹站"), IsChecked = original.OverrideCountermeasures, Foreground = ModernPalette.Brush(ModernPalette.Cyan), FontWeight = FontWeights.SemiBold, Margin = new Thickness(0, 10, 0, 8) }; cmContent.Children.Add(customizeCountermeasures);
             foreach (CountermeasureLauncher launcher in launchers) AddLauncher(cmContent, launcher);
             cmContent.Children.Add(new TextBlock { Text = "Each emitter is configured separately. Flare-only or chaff-only dispensers expose only the supported slider; BOL, BKO and MAW modules still decide which stations exist. Ammunition is restored only after it is exhausted so active optics and seekers are not reset in flight.", Foreground = ModernPalette.Brush(ModernPalette.Muted), TextWrapping = TextWrapping.Wrap, Margin = new Thickness(0, 8, 0, 0) }); content.Children.Add(cmCard);
+            Border expCard = Card("EXPERIMENTAL AIRFRAME"); StackPanel expContent = expCard.Child as StackPanel;
+            expContent.Children.Add(new TextBlock { Text = ModernText.L("Plain flight-model and avionics fields written into the copied unit.", "直接写入拷贝后的单位/机体文件，不使用代理补丁。"), Foreground = ModernPalette.Brush(ModernPalette.Muted), TextWrapping = TextWrapping.Wrap, Margin = new Thickness(0, 2, 0, 6) });
+            zeroMassBox = new CheckBox { Content = ModernText.L("Zero mass (empty mass x0.01)", "零质量（空重 ×0.01）"), IsChecked = original.ZeroMass, Foreground = ModernPalette.Brush(ModernPalette.Text), Margin = new Thickness(0, 3, 0, 2) };
+            expContent.Children.Add(zeroMassBox);
+            indestructibleBox = new CheckBox { Content = ModernText.L("Indestructible (VNE / Mach / overload / gear / canopy limits raised)", "超速过载不损毁（放宽 VNE / 马赫 / 过载 / 起落架 / 舱盖限制）"), IsChecked = original.Indestructible, Foreground = ModernPalette.Brush(ModernPalette.Text), Margin = new Thickness(0, 3, 0, 2) };
+            expContent.Children.Add(indestructibleBox);
+            helmetSightBox = new CheckBox { Content = ModernText.L("Helmet-mounted designator (HMD)", "头盔瞄准具（HMD）"), IsChecked = original.HelmetSight, Foreground = ModernPalette.Brush(ModernPalette.Text), Margin = new Thickness(0, 3, 0, 2) };
+            expContent.Children.Add(helmetSightBox);
+            mawsBox = new CheckBox { Content = ModernText.L("Missile-approach warner (MAWS)", "导弹来袭告警（MAWS）"), IsChecked = original.MawsUpgrade, Foreground = ModernPalette.Brush(ModernPalette.Text), Margin = new Thickness(0, 3, 0, 8) };
+            expContent.Children.Add(mawsBox);
+            content.Children.Add(expCard);
             contentScroll = new ScrollViewer { Content = content, VerticalScrollBarVisibility = ScrollBarVisibility.Auto, HorizontalScrollBarVisibility = ScrollBarVisibility.Disabled, Margin = new Thickness(0, 6, 0, 14), Padding = new Thickness(0, 0, 8, 30) }; Grid.SetRow(contentScroll, 1); layout.Children.Add(contentScroll);
             Grid footer = new Grid(); footer.ColumnDefinitions.Add(new ColumnDefinition()); footer.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(145) }); footer.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(175) }); footer.Children.Add(new TextBlock { Text = ModernText.L("Settings are saved with this aircraft and custom presets.", "设置随该飞机及自定义预设保存。"), Foreground = ModernPalette.Brush(ModernPalette.Muted), VerticalAlignment = VerticalAlignment.Center });
             Button cancel = DialogButton("取消", false); cancel.Click += delegate { DialogResult = false; Close(); }; Grid.SetColumn(cancel, 1); footer.Children.Add(cancel);
@@ -920,7 +935,12 @@ namespace UniversalTestLab
                 int flares = editor.FlareSlider == null ? 0 : (int)editor.FlareSlider.Value; int chaff = editor.ChaffSlider == null ? 0 : (int)editor.ChaffSlider.Value;
                 result.CountermeasureLoadouts.Add(new CountermeasureLoadout { Key = editor.Launcher.Key, Flares = flares, Chaff = chaff }); totalFlares += flares; totalChaff += chaff;
             }
-            result.FlareRounds = totalFlares; result.ChaffRounds = totalChaff; Result = result; DialogResult = true; Close();
+            result.FlareRounds = totalFlares; result.ChaffRounds = totalChaff;
+            if (zeroMassBox != null) result.ZeroMass = zeroMassBox.IsChecked == true;
+            if (indestructibleBox != null) result.Indestructible = indestructibleBox.IsChecked == true;
+            if (helmetSightBox != null) result.HelmetSight = helmetSightBox.IsChecked == true;
+            if (mawsBox != null) result.MawsUpgrade = mawsBox.IsChecked == true;
+            Result = result; DialogResult = true; Close();
         }
     }
     internal sealed class ModificationChoice
