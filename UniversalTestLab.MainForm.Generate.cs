@@ -19,6 +19,26 @@ namespace UniversalTestLab
 {
     internal sealed partial class MainForm
     {
+        // Naval player: a userVehicles proxy under units/ships, plus a unit in the
+        // mission's ships{} container. Ships have no flight model, no weapon presets of
+        // their own and no air respawn logic, so they get their own small path.
+        private GeneratedAircraft BuildCustomShip(string root, Aircraft target, string token)
+        {
+            string proxyDir = Path.Combine(root, @"content\pkg_local\gameData\units\ships\userVehicles");
+            Directory.CreateDirectory(proxyDir);
+            string proxyPath = Path.Combine(proxyDir, "utl_naval_player.blk");
+            string proxy = "include \"#/develop/gameBase/gameData/units/ships/" + target.Id + ".blk\"" + Environment.NewLine;
+            WriteBytes(proxyPath, new UTF8Encoding(false).GetBytes(proxy));
+            return new GeneratedAircraft
+            {
+                ClassId = "userVehicles/utl_naval_player",
+                PresetId = target.DefaultPreset,
+                ModelId = target.Id,
+                FlightModelPath = proxyPath,
+                SpawnSpeedKmh = 0
+            };
+        }
+
         private GeneratedAircraft BuildCustomAircraft(string root, Aircraft target, string token)
         {
             string fm;

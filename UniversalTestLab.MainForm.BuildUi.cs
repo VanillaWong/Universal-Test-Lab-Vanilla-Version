@@ -434,6 +434,11 @@ namespace UniversalTestLab
 
         private Aircraft SelectedAircraft { get { return aircraftList.SelectedItem as Aircraft; } }
 
+        internal static bool IsShip(Aircraft item)
+        {
+            return item != null && String.Equals(item.Kind, "Ship", StringComparison.OrdinalIgnoreCase);
+        }
+
         internal static bool IsGroundVehicle(Aircraft item)
         {
             return item != null && String.Equals(item.Kind, "Ground Vehicle", StringComparison.OrdinalIgnoreCase);

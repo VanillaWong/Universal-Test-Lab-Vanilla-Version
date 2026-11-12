@@ -31,7 +31,8 @@ namespace UniversalTestLab
                 string token = DateTime.UtcNow.ToString("yyyyMMddHHmmssfff", CultureInfo.InvariantCulture) + "_" + Process.GetCurrentProcess().Id;
                 System.Diagnostics.Stopwatch applyWatch = System.Diagnostics.Stopwatch.StartNew();
                 LogTiming("=== APPLY START  vehicle=" + selected.Id + " ===");
-                bool groundPlayer = IsGroundVehicle(selected);
+                bool groundPlayer = IsGroundVehicle(selected);
+                bool shipPlayer = IsShip(selected);
                 bool helicopterPlayer = !groundPlayer && IsHelicopter(selected, null);
                 CombinedMap combinedMap = null;
                 CombinedSpawn combinedSpawn = null;
@@ -46,7 +47,8 @@ namespace UniversalTestLab
                         combinedSpawn = combinedMap.Spawns.FirstOrDefault(x => x.Side == selectedSide && x.Kind.Equals(playerKind, StringComparison.OrdinalIgnoreCase));
                     if (combinedSpawn == null) throw new InvalidOperationException("This map has no compatible spawn for the selected vehicle and side.");
                 }
-                GeneratedAircraft generated = groundPlayer ? BuildCustomGroundVehicle(root, selected, token) : BuildCustomAircraft(root, selected, token);
+                GeneratedAircraft generated = shipPlayer ? BuildCustomShip(root, selected, token)
+                    : groundPlayer ? BuildCustomGroundVehicle(root, selected, token) : BuildCustomAircraft(root, selected, token);
                 WriteMissionLocalization(root, generated, selected);
                 Aircraft air = ResolveAircraft(airTargetBox);
                 TargetUnit ground = ResolveTarget(groundTargetBox, groundTargets);
@@ -56,7 +58,9 @@ namespace UniversalTestLab
                 string text = Embedded.Text("UTL.universal_test_lab.blk");
                 text = BlkTools.DisablePlayerSwitch(text);
                 text = BlkTools.RemoveBotNotifications(text);
-                if (groundPlayer)
+                if (shipPlayer)
+                    text = BlkTools.ConfigureShipPlayer(text, generated.ClassId, generated.PresetId);
+                else if (groundPlayer)
                     text = BlkTools.ConfigureGroundPlayer(text, generated.ClassId, generated.ModelId, generated.PresetId, settings, generated.GroundAmmoLoadouts);
                 else
                 {
@@ -72,7 +76,8 @@ namespace UniversalTestLab
                 // always receive the complete native weapon-controller set. Ground
                 // vehicles, however, must receive their requested research state too;
                 // skipping this call forced every player tank to a stock configuration.
-                text = BlkTools.ConfigureUnitModifications(text, "You", helicopterPlayer || settings.UseAllModifications, helicopterPlayer ? Enumerable.Empty<string>() : settings.EnabledModifications);
+                if (!shipPlayer)
+                    text = BlkTools.ConfigureUnitModifications(text, "You", helicopterPlayer || settings.UseAllModifications, helicopterPlayer ? Enumerable.Empty<string>() : settings.EnabledModifications);
                 // Deployable radar/launcher trucks (NASAMS TADS, CLAWS, ...) carry
                 // missile weapon groups instead of a cannon; arm them Ask3lad-style
                 // (all non-pack groups, 9999 rounds) so deployed launchers have ammo.
@@ -231,6 +236,7 @@ namespace UniversalTestLab
                     airSpawnAltitude = MissionSettings.Current.SpawnAltitude;
                     airDeathInAir = !MissionSettings.Current.AirDeathMode.Equals("runway", StringComparison.OrdinalIgnoreCase);
                 }
+                if (!shipPlayer)
                 text = BlkTools.ConfigureInstantPlayerRespawn(text, groundPlayer, generated.SpawnSpeedKmh,
                     combinedSpawn == null ? null : BlkTools.CombinedRespawnTransform(combinedSpawn), MissionSettings.Current.PlayerRespawnDelaySeconds,
                     airportTakeoffMode, airSpawnAltitude, airDeathInAir);

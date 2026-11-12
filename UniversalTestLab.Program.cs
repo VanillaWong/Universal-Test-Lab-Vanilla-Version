@@ -541,6 +541,33 @@ namespace UniversalTestLab
                     throw new InvalidOperationException("Aircraft radar swap self-test failed.");
                 if (!String.Equals(MainForm.ApplyAircraftRadarSwap(radarUnit, null, null), radarUnit, StringComparison.Ordinal))
                     throw new InvalidOperationException("Aircraft radar swap must be a no-op with no selection.");
+                // Naval player: the unit must move out of armada into ships{} and the
+                // mission level must become a sea map.
+                string navalTemplate = "mission{" + Environment.NewLine
+                    + "  level:t=\"levels/Clean_Testdrive.bin\"" + Environment.NewLine
+                    + "}" + Environment.NewLine
+                    + "units{" + Environment.NewLine
+                    + "  armada{" + Environment.NewLine
+                    + "    name:t=\"You\"" + Environment.NewLine
+                    + "    tm:m=[[0, 0, -1] [0, 1, 0] [1, 0, 0] [531.8, 1500, 577]]" + Environment.NewLine
+                    + "    unit_class:t=\"utl_safe_player\"" + Environment.NewLine
+                    + "    weapons:t=\"x\"" + Environment.NewLine
+                    + "  }" + Environment.NewLine
+                    + "  ships{" + Environment.NewLine
+                    + "    name:t=\"Ship_Target\"" + Environment.NewLine
+                    + "    unit_class:t=\"jp_battleship_yamato\"" + Environment.NewLine
+                    + "  }" + Environment.NewLine
+                    + "}" + Environment.NewLine;
+                string navalMission = BlkTools.ConfigureShipPlayer(navalTemplate, "userVehicles/utl_naval_player", "jp_battleship_yamato_default");
+                int navalShipsAt = navalMission.IndexOf("ships{", StringComparison.Ordinal);
+                int navalYouAt = navalMission.IndexOf("name:t=\"You\"", StringComparison.Ordinal);
+                if (navalShipsAt < 0 || navalYouAt < navalShipsAt ||
+                    navalMission.IndexOf("levels/iwo_jima.bin", StringComparison.Ordinal) < 0 ||
+                    navalMission.IndexOf("userVehicles/utl_naval_player", StringComparison.Ordinal) < 0 ||
+                    navalMission.IndexOf("jp_battleship_yamato_default", StringComparison.Ordinal) < 0 ||
+                    navalMission.IndexOf("armada{" + Environment.NewLine + "    name:t=\"You\"", StringComparison.Ordinal) >= 0 ||
+                    navalMission.Count(c => c == '{') != navalMission.Count(c => c == '}'))
+                    throw new InvalidOperationException("Naval player self-test failed.");
                 // Deployable carrier ammo (NASAMS-style): a player block carrying an
                 // *_ammo_pack modification gets all non-pack \d+mm_ weapon groups with
                 // 9999 rounds; ordinary tanks (no pack) are left untouched.

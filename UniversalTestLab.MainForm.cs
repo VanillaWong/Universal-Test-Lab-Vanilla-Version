@@ -804,7 +804,16 @@ public IList<GroundAmmo> WorkspaceResolveCannonAmmo(string cannonBlk)
             foreach (ShipRowJson r in MainForm.JsonRows<ShipRowJson>("UTL.ships.json"))
             {
                 if (r == null || String.IsNullOrWhiteSpace(r.id)) continue;
-                shipTargets.Add(new TargetUnit { Id = r.id, Display = r.display, DefaultPreset = r.defaultPreset, Nation = String.IsNullOrWhiteSpace(r.nation) ? "Other" : r.nation, Rank = r.rank, Type = String.IsNullOrWhiteSpace(r.type) ? "Ship" : r.type });
+                TargetUnit shipTarget = new TargetUnit { Id = r.id, Display = r.display, DefaultPreset = r.defaultPreset, Nation = String.IsNullOrWhiteSpace(r.nation) ? "Other" : r.nation, Rank = r.rank, Type = String.IsNullOrWhiteSpace(r.type) ? "Ship" : r.type };
+                shipTargets.Add(shipTarget);
+                // Ships are also playable: the naval test drive puts the player unit
+                // into the mission's ships{} container behind a userVehicles proxy.
+                aircraft.Add(new Aircraft
+                {
+                    Id = shipTarget.Id, Display = shipTarget.Display, Type = shipTarget.Type,
+                    DefaultPreset = shipTarget.DefaultPreset, Nation = shipTarget.Nation,
+                    Rank = shipTarget.Rank, Kind = "Ship"
+                });
             }
             foreach (DonorWeaponRowJson r in MainForm.JsonRows<DonorWeaponRowJson>("UTL.weapon_catalog.json"))
             {

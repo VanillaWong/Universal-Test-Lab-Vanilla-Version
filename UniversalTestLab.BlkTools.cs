@@ -1243,6 +1243,28 @@ namespace UniversalTestLab
             return String.Equals(updated, block.Text, StringComparison.Ordinal) ? text : ReplaceSpan(text, block, updated);
         }
 
+        // Naval player. The unit has to sit in the ships{} container (armada is
+        // air-only) and the mission needs a sea map with a valid spawn point.
+        public static string ConfigureShipPlayer(string text, string classId, string presetId)
+        {
+            BlockSpan player = UnitBlockByName(text, "You");
+            if (player == null) throw new InvalidOperationException("Player unit is missing from the mission template.");
+            BlockSpan ships = FirstBlock(text, "ships", 0);
+            if (ships == null) throw new InvalidOperationException("Ships container is missing from the mission template.");
+            string block = player.Text;
+            // UnitBlockByName returns the whole container ("  armada{ ... }"); the
+            // player unit has to be re-headered as a ships block, not nested inside one.
+            block = new Regex(@"^\s*(armada|tankModels|ships|wheeled_vehicles|structures)\s*\{").Replace(block, "    ships{", 1);
+            block = Regex.Replace(block, @"(?m)^(\s*)unit_class:t\s*=\s*""[^""]*""", "${1}unit_class:t=\"" + classId + "\"");
+            block = Regex.Replace(block, @"(?m)^(\s*)weapons:t\s*=\s*""[^""]*""", "${1}weapons:t=\"" + presetId + "\"");
+            block = Regex.Replace(block, @"(?m)^\s*dontOverrideHeight:b\s*=\s*yes\s*\r?\n", "");
+            block = Regex.Replace(block, @"(?m)^[ \t]*tm:m=.*$", "    tm:m=[[-0.709198, 0, -0.70501] [0, 1, 0] [0.70501, 0, -0.709198] [-3391.7, 0, -6256.09]]");
+            text = text.Remove(player.Start, player.End - player.Start + 1);
+            text = new Regex(@"(?m)^(\s*)level:t\s*=\s*""[^""]*""").Replace(text, "${1}level:t=\"levels/iwo_jima.bin\"", 1);
+            BlockSpan shipsAfter = FirstBlock(text, "ships", 0);
+            int close = MatchingBrace(text, shipsAfter.Open);
+            return text.Insert(close, block + Environment.NewLine + "    ");
+        }
         public static string ConfigureInstantPlayerRespawn(string text, bool ground, int airSpeedKmh)
         {
             return ConfigureInstantPlayerRespawn(text, ground, airSpeedKmh, null);
