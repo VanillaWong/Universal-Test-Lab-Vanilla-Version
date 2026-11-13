@@ -801,6 +801,11 @@ public IList<GroundAmmo> WorkspaceResolveCannonAmmo(string cannonBlk)
                     NativeReverseSpeed = target.NativeReverseSpeed, NativeReloadSeconds = target.NativeReloadSeconds, NativeRecoil = target.NativeRecoil
                 });
             }
+            // Playable-ship filter: the extracted weaponpresets tree tells us whether a
+            // hull can be armed at all (see the loop below).
+            string shipPresetDir = Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "..",
+                "universal_units_data", "aces.vromfs.bin_u", "gamedata", "units", "ships", "weaponpresets"));
+            bool shipPresetDirExists = Directory.Exists(shipPresetDir);
             foreach (ShipRowJson r in MainForm.JsonRows<ShipRowJson>("UTL.ships.json"))
             {
                 if (r == null || String.IsNullOrWhiteSpace(r.id)) continue;
@@ -808,12 +813,24 @@ public IList<GroundAmmo> WorkspaceResolveCannonAmmo(string cannonBlk)
                 shipTargets.Add(shipTarget);
                 // Ships are also playable: the naval test drive puts the player unit
                 // into the mission's ships{} container behind a userVehicles proxy.
-                aircraft.Add(new Aircraft
+                // Only offer hulls we can actually arm: AI-only variants cannot take a
+                // player fire control, and a hull without a weapon preset spawns with
+                // no ammunition at all.
+                bool aiOnlyHull = shipTarget.Id.EndsWith("_ai", StringComparison.OrdinalIgnoreCase)
+                    || String.Equals(shipTarget.Type, "typeShip", StringComparison.OrdinalIgnoreCase);
+                bool armableHull = !shipPresetDirExists
+                    || File.Exists(Path.Combine(shipPresetDir, shipTarget.Id + "_default.blk"))
+                    || (!String.IsNullOrWhiteSpace(shipTarget.DefaultPreset)
+                        && File.Exists(Path.Combine(shipPresetDir, shipTarget.DefaultPreset + ".blk")));
+                if (!aiOnlyHull && armableHull)
                 {
-                    Id = shipTarget.Id, Display = shipTarget.Display, Type = shipTarget.Type,
-                    DefaultPreset = shipTarget.DefaultPreset, Nation = shipTarget.Nation,
-                    Rank = shipTarget.Rank, Kind = "Ship"
-                });
+                    aircraft.Add(new Aircraft
+                    {
+                        Id = shipTarget.Id, Display = shipTarget.Display, Type = shipTarget.Type,
+                        DefaultPreset = shipTarget.DefaultPreset, Nation = shipTarget.Nation,
+                        Rank = shipTarget.Rank, Kind = "Ship"
+                    });
+                }
             }
             foreach (DonorWeaponRowJson r in MainForm.JsonRows<DonorWeaponRowJson>("UTL.weapon_catalog.json"))
             {

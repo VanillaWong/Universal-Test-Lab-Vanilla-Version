@@ -22,6 +22,25 @@ namespace UniversalTestLab
         // Naval player: a userVehicles proxy under units/ships, plus a unit in the
         // mission's ships{} container. Ships have no flight model, no weapon presets of
         // their own and no air respawn logic, so they get their own small path.
+        // ships.json defaultPreset is unreliable (many entries are "torpedoes", "default"
+        // or a *_torpedoes variant), and a wrong name leaves the ship with no weapons.
+        // The game ships <id>_default for 607 of 663 hulls, so prefer that.
+        internal static string ResolveShipPreset(string root, string shipId, string dataPreset)
+        {
+            string dir = Path.Combine(root, @"universal_units_data\aces.vromfs.bin_u\gamedata\units\ships\weaponpresets");
+            string byId = shipId + "_default";
+            try
+            {
+                if (Directory.Exists(dir))
+                {
+                    if (File.Exists(Path.Combine(dir, byId + ".blk"))) return byId;
+                    if (!String.IsNullOrWhiteSpace(dataPreset) && File.Exists(Path.Combine(dir, dataPreset + ".blk"))) return dataPreset;
+                }
+            }
+            catch { }
+            return byId;
+        }
+
         private GeneratedAircraft BuildCustomShip(string root, Aircraft target, string token)
         {
             string proxyDir = Path.Combine(root, @"content\pkg_local\gameData\units\ships\userVehicles");
@@ -32,7 +51,7 @@ namespace UniversalTestLab
             return new GeneratedAircraft
             {
                 ClassId = "userVehicles/utl_naval_player",
-                PresetId = target.DefaultPreset,
+                PresetId = ResolveShipPreset(root, target.Id, target.DefaultPreset),
                 ModelId = target.Id,
                 FlightModelPath = proxyPath,
                 SpawnSpeedKmh = 0

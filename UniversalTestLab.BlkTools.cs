@@ -1256,7 +1256,14 @@ namespace UniversalTestLab
             // player unit has to be re-headered as a ships block, not nested inside one.
             block = new Regex(@"^\s*(armada|tankModels|ships|wheeled_vehicles|structures)\s*\{").Replace(block, "    ships{", 1);
             block = Regex.Replace(block, @"(?m)^(\s*)unit_class:t\s*=\s*""[^""]*""", "${1}unit_class:t=\"" + classId + "\"");
-            block = Regex.Replace(block, @"(?m)^(\s*)weapons:t\s*=\s*""[^""]*""", "${1}weapons:t=\"" + presetId + "\"");
+            block = Regex.Replace(block, @"(?m)^(\s*)weapons:t\s*=\s*""[^""]*""", "${1}weapons:t=\"" + presetId + "\"");
+            // The aircraft template leaves the four mission ammo slots at 0; a ship
+            // then reports "ammunition depleted" even with a valid weapon preset.
+            for (int ammoSlot = 0; ammoSlot < 4; ammoSlot++)
+            {
+                string ammoField = "bulletsCount" + ammoSlot.ToString(CultureInfo.InvariantCulture);
+                block = new Regex(@"(?m)^(\s*" + ammoField + @":i\s*=\s*)\d+").Replace(block, "${1}9999", 1);
+            }
             block = Regex.Replace(block, @"(?m)^\s*dontOverrideHeight:b\s*=\s*yes\s*\r?\n", "");
             block = Regex.Replace(block, @"(?m)^[ \t]*tm:m=.*$", "    tm:m=[[-0.709198, 0, -0.70501] [0, 1, 0] [0.70501, 0, -0.709198] [-3391.7, 0, -6256.09]]");
             text = text.Remove(player.Start, player.End - player.Start + 1);
