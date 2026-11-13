@@ -1245,32 +1245,58 @@ namespace UniversalTestLab
 
         // Naval player. The unit has to sit in the ships{} container (armada is
         // air-only) and the mission needs a sea map with a valid spawn point.
-        public static string ConfigureShipPlayer(string text, string classId, string presetId)
+        public static string ConfigureShipPlayer(string text, string classId, string presetId, string navalMap, double spawnX, double spawnZ)
         {
             BlockSpan player = UnitBlockByName(text, "You");
             if (player == null) throw new InvalidOperationException("Player unit is missing from the mission template.");
             BlockSpan ships = FirstBlock(text, "ships", 0);
             if (ships == null) throw new InvalidOperationException("Ships container is missing from the mission template.");
             string block = player.Text;
-            // UnitBlockByName returns the whole container ("  armada{ ... }"); the
-            // player unit has to be re-headered as a ships block, not nested inside one.
-            block = new Regex(@"^\s*(armada|tankModels|ships|wheeled_vehicles|structures)\s*\{").Replace(block, "    ships{", 1);
+            // The player unit comes from the aircraft armada. Re-header it into its own
+            // ships block: units are SIBLINGS inside units{}, never nested containers.
+            block = new Regex(@"^\s*(armada|tankModels|ships|wheeled_vehicles|structures)\s*\{").Replace(block, "  ships{", 1);
             block = Regex.Replace(block, @"(?m)^(\s*)unit_class:t\s*=\s*""[^""]*""", "${1}unit_class:t=\"" + classId + "\"");
-            block = Regex.Replace(block, @"(?m)^(\s*)weapons:t\s*=\s*""[^""]*""", "${1}weapons:t=\"" + presetId + "\"");
-            // The aircraft template leaves the four mission ammo slots at 0; a ship
-            // then reports "ammunition depleted" even with a valid weapon preset.
-            for (int ammoSlot = 0; ammoSlot < 4; ammoSlot++)
-            {
-                string ammoField = "bulletsCount" + ammoSlot.ToString(CultureInfo.InvariantCulture);
-                block = new Regex(@"(?m)^(\s*" + ammoField + @":i\s*=\s*)\d+").Replace(block, "${1}9999", 1);
+            block = Regex.Replace(block, @"(?m)^(\s*)weapons:t\s*=\s*""[^""]*""", "${1}weapons:t=\"" + presetId + "\"");
+            block = Regex.Replace(block, @"(?m)^(\s*)crewSkillK:r\s*=\s*[\d.]+", "${1}crewSkillK:r=1");
+            // Arm the four mission slots: the aircraft template leaves them at 0, and
+            // the game then reports "ammunition depleted" even with a valid preset.
+            for (int ammoSlot = 0; ammoSlot < 4; ammoSlot++)
+            {
+                string ammoField = "bulletsCount" + ammoSlot.ToString(CultureInfo.InvariantCulture);
+                block = new Regex(@"(?m)^(\s*" + ammoField + @":i\s*=\s*)\d+").Replace(block, "${1}9999", 1);
             }
             block = Regex.Replace(block, @"(?m)^\s*dontOverrideHeight:b\s*=\s*yes\s*\r?\n", "");
-            block = Regex.Replace(block, @"(?m)^[ \t]*tm:m=.*$", "    tm:m=[[-0.709198, 0, -0.70501] [0, 1, 0] [0.70501, 0, -0.709198] [-3391.7, 0, -6256.09]]");
+            string spawnTransform = "    tm:m=[[-0.709198, 0, -0.70501] [0, 1, 0] [0.70501, 0, -0.709198] ["
+                + spawnX.ToString("0.###", CultureInfo.InvariantCulture) + ", 0, "
+                + spawnZ.ToString("0.###", CultureInfo.InvariantCulture) + "]]";
+            block = new Regex(@"(?m)^[ \t]*tm:m=.*$").Replace(block, spawnTransform, 1);
+            // Air-only props (altLimit, plane{}, speed 1100) keep a ship from being
+            // placed at all - the mission then looks like an empty map.
+            Match props = Regex.Match(block, @"(?m)^(\s*)props\s*\{");
+            if (props.Success)
+            {
+                int propsOpen = block.IndexOf('{', props.Index);
+                int propsEnd = MatchingBrace(block, propsOpen);
+                if (propsEnd > propsOpen)
+                {
+                    string shipProps = "    props{" + Environment.NewLine
+                        + "      army:i=1" + Environment.NewLine
+                        + "      count:i=1" + Environment.NewLine
+                        + "      formation_type:t=\"rows\"" + Environment.NewLine
+                        + "      formation_div:i=3" + Environment.NewLine
+                        + "      formation_step:p2=2.5, 2" + Environment.NewLine
+                        + "      formation_noise:p2=0.1, 0.1" + Environment.NewLine
+                        + "    }";
+                    block = block.Substring(0, props.Index) + shipProps + block.Substring(propsEnd + 1);
+                }
+            }
             text = text.Remove(player.Start, player.End - player.Start + 1);
-            text = new Regex(@"(?m)^(\s*)level:t\s*=\s*""[^""]*""").Replace(text, "${1}level:t=\"levels/iwo_jima.bin\"", 1);
+            string levelLine = String.IsNullOrWhiteSpace(navalMap) ? "levels/iwo_jima.bin" : navalMap.Trim();
+            text = new Regex(@"(?m)^(\s*)level:t\s*=\s*""[^""]*""").Replace(text, "${1}level:t=\"" + levelLine + "\"", 1);
+            // Sibling block, directly after the existing ships{} unit.
             BlockSpan shipsAfter = FirstBlock(text, "ships", 0);
             int close = MatchingBrace(text, shipsAfter.Open);
-            return text.Insert(close, block + Environment.NewLine + "    ");
+            return text.Insert(close + 1, Environment.NewLine + block);
         }
         public static string ConfigureInstantPlayerRespawn(string text, bool ground, int airSpeedKmh)
         {

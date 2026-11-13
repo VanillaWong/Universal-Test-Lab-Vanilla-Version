@@ -737,7 +737,10 @@ namespace UniversalTestLab
         private readonly CheckBox helmetSightBox;
         private readonly CheckBox mawsBox;
         private readonly ComboBox radarBox;
-        private readonly ComboBox shipPresetBox;
+        private readonly ComboBox shipPresetBox;
+        private readonly ComboBox shipMapBox;
+        private readonly TextBox shipSpawnXBox;
+        private readonly TextBox shipSpawnZBox;
         private readonly ScrollViewer contentScroll;
         private readonly List<CountermeasureEditor> editors = new List<CountermeasureEditor>();
         private readonly List<GunBeltEditor> gunBeltEditors = new List<GunBeltEditor>();
@@ -805,6 +808,22 @@ namespace UniversalTestLab
                 if (matchPreset != null) shipPresetBox.SelectedItem = matchPreset;
                 if (shipPresetBox.SelectedItem == null && shipPresetBox.Items.Count > 0) shipPresetBox.SelectedIndex = 0;
                 shipContent.Children.Add(shipPresetBox);
+                shipContent.Children.Add(new TextBlock { Text = ModernText.L("Map", "地图"), Foreground = ModernPalette.Brush(ModernPalette.Cyan), FontSize = 11, FontWeight = FontWeights.SemiBold, Margin = new Thickness(0, 10, 0, 2) });
+                shipMapBox = new ComboBox { Foreground = ModernPalette.Brush(ModernPalette.Text), Background = ModernPalette.Brush("#FF16283E"), BorderBrush = ModernPalette.Brush(ModernPalette.Border), Padding = new Thickness(8, 4, 8, 4), Height = 30, HorizontalAlignment = HorizontalAlignment.Stretch, Margin = new Thickness(0, 2, 0, 0) };
+                shipMapBox.Items.Add(new ComboBoxItem { Content = "Iwo Jima (stock naval map)", Tag = "levels/iwo_jima.bin" });
+                shipMapBox.Items.Add(new ComboBoxItem { Content = "Clean Testdrive (UTL level, has water)", Tag = "levels/Clean_Testdrive.bin" });
+                string wantedMap = String.IsNullOrWhiteSpace(original.NavalMap) ? "levels/iwo_jima.bin" : original.NavalMap;
+                ComboBoxItem mapMatch = shipMapBox.Items.OfType<ComboBoxItem>().FirstOrDefault(x => String.Equals(x.Tag as string, wantedMap, StringComparison.OrdinalIgnoreCase));
+                if (mapMatch != null) shipMapBox.SelectedItem = mapMatch;
+                if (shipMapBox.SelectedItem == null) shipMapBox.SelectedIndex = 0;
+                shipContent.Children.Add(shipMapBox);
+                StackPanel spawnRow = new StackPanel { Orientation = Orientation.Horizontal, Margin = new Thickness(0, 8, 0, 0) };
+                spawnRow.Children.Add(new TextBlock { Text = ModernText.L("Spawn X / Z", "出生点 X / Z"), Foreground = ModernPalette.Brush(ModernPalette.Muted), VerticalAlignment = VerticalAlignment.Center, Margin = new Thickness(0, 0, 8, 0) });
+                shipSpawnXBox = new TextBox { Text = original.NavalSpawnX.ToString("0.###", System.Globalization.CultureInfo.InvariantCulture), Width = 110, Margin = new Thickness(0, 0, 6, 0) };
+                shipSpawnZBox = new TextBox { Text = original.NavalSpawnZ.ToString("0.###", System.Globalization.CultureInfo.InvariantCulture), Width = 110 };
+                spawnRow.Children.Add(shipSpawnXBox);
+                spawnRow.Children.Add(shipSpawnZBox);
+                shipContent.Children.Add(spawnRow);
                 content.Children.Add(shipCard);
             }
             contentScroll = new ScrollViewer { Content = content, VerticalScrollBarVisibility = ScrollBarVisibility.Auto, HorizontalScrollBarVisibility = ScrollBarVisibility.Disabled, Margin = new Thickness(0, 6, 0, 14), Padding = new Thickness(0, 0, 8, 30) }; Grid.SetRow(contentScroll, 1); layout.Children.Add(contentScroll);
@@ -998,6 +1017,21 @@ namespace UniversalTestLab
             if (indestructibleBox != null) result.Indestructible = indestructibleBox.IsChecked == true;
             if (helmetSightBox != null) result.HelmetSight = helmetSightBox.IsChecked == true;
             if (mawsBox != null) result.MawsUpgrade = mawsBox.IsChecked == true;
+            if (shipMapBox != null)
+            {
+                ComboBoxItem mapItem = shipMapBox.SelectedItem as ComboBoxItem;
+                result.NavalMap = mapItem == null ? "levels/iwo_jima.bin" : (mapItem.Tag as string);
+            }
+            if (shipSpawnXBox != null)
+            {
+                double spawnX;
+                result.NavalSpawnX = Double.TryParse(shipSpawnXBox.Text, System.Globalization.NumberStyles.Any, System.Globalization.CultureInfo.InvariantCulture, out spawnX) ? spawnX : -3391.7;
+            }
+            if (shipSpawnZBox != null)
+            {
+                double spawnZ;
+                result.NavalSpawnZ = Double.TryParse(shipSpawnZBox.Text, System.Globalization.NumberStyles.Any, System.Globalization.CultureInfo.InvariantCulture, out spawnZ) ? spawnZ : -6256.09;
+            }
             if (shipPresetBox != null)
             {
                 ComboBoxItem presetItem = shipPresetBox.SelectedItem as ComboBoxItem;

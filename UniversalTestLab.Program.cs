@@ -552,13 +552,21 @@ namespace UniversalTestLab
                     + "    tm:m=[[0, 0, -1] [0, 1, 0] [1, 0, 0] [531.8, 1500, 577]]" + Environment.NewLine
                     + "    unit_class:t=\"utl_safe_player\"" + Environment.NewLine
                     + "    weapons:t=\"x\"" + Environment.NewLine
+                    + "    crewSkillK:r=0" + Environment.NewLine
+                    + "    props{" + Environment.NewLine
+                    + "      army:i=1" + Environment.NewLine
+                    + "      speed:r=1100" + Environment.NewLine
+                    + "      plane{" + Environment.NewLine
+                    + "        task:t=\"FLY_WAYPOINT\"" + Environment.NewLine
+                    + "      }" + Environment.NewLine
+                    + "    }" + Environment.NewLine
                     + "  }" + Environment.NewLine
                     + "  ships{" + Environment.NewLine
                     + "    name:t=\"Ship_Target\"" + Environment.NewLine
                     + "    unit_class:t=\"jp_battleship_yamato\"" + Environment.NewLine
                     + "  }" + Environment.NewLine
                     + "}" + Environment.NewLine;
-                string navalMission = BlkTools.ConfigureShipPlayer(navalTemplate, "userVehicles/utl_naval_player", "jp_battleship_yamato_default");
+                string navalMission = BlkTools.ConfigureShipPlayer(navalTemplate, "userVehicles/utl_naval_player", "jp_battleship_yamato_default", "levels/iwo_jima.bin", -3391.7, -6256.09);
                 int navalShipsAt = navalMission.IndexOf("ships{", StringComparison.Ordinal);
                 int navalYouAt = navalMission.IndexOf("name:t=\"You\"", StringComparison.Ordinal);
                 if (navalShipsAt < 0 || navalYouAt < navalShipsAt ||
@@ -566,6 +574,9 @@ namespace UniversalTestLab
                     navalMission.IndexOf("userVehicles/utl_naval_player", StringComparison.Ordinal) < 0 ||
                     navalMission.IndexOf("jp_battleship_yamato_default", StringComparison.Ordinal) < 0 ||
                     navalMission.IndexOf("armada{" + Environment.NewLine + "    name:t=\"You\"", StringComparison.Ordinal) >= 0 ||
+                    navalMission.IndexOf("plane{", StringComparison.Ordinal) >= 0 ||
+                    navalMission.IndexOf("speed:r=1100", StringComparison.Ordinal) >= 0 ||
+                    navalMission.IndexOf("crewSkillK:r=1", StringComparison.Ordinal) < 0 ||
                     navalMission.Count(c => c == '{') != navalMission.Count(c => c == '}'))
                     throw new InvalidOperationException("Naval player self-test failed.");
                 // Deployable carrier ammo (NASAMS-style): a player block carrying an

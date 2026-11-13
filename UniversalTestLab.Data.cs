@@ -118,7 +118,11 @@ namespace UniversalTestLab
         public bool HelmetSight;     // unit: HMD designator fields
         public bool MawsUpgrade;     // sensors: append a missile-approach warner
         // Ship loadout preset (<shipId>_default, _torpedoes, ...). Empty = _default.
-        public string ShipPreset;
+        public string ShipPreset;
+        // Naval map + spawn, so hulls can be tried on stock maps or on UTL's own level.
+        public string NavalMap = "levels/iwo_jima.bin";
+        public double NavalSpawnX = -3391.7;
+        public double NavalSpawnZ = -6256.09;
 
         public AircraftSettings Copy()
         {
@@ -161,7 +165,10 @@ namespace UniversalTestLab
                 Indestructible = Indestructible,
                 HelmetSight = HelmetSight,
                 MawsUpgrade = MawsUpgrade,
-                ShipPreset = ShipPreset
+                ShipPreset = ShipPreset,
+                NavalMap = NavalMap,
+                NavalSpawnX = NavalSpawnX,
+                NavalSpawnZ = NavalSpawnZ
             };
             foreach (string id in EnabledModifications) copy.EnabledModifications.Add(id);
             foreach (CountermeasureLoadout loadout in CountermeasureLoadouts) copy.CountermeasureLoadouts.Add(loadout.Copy());
