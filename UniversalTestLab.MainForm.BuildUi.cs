@@ -434,62 +434,67 @@ namespace UniversalTestLab
 
         private Aircraft SelectedAircraft { get { return aircraftList.SelectedItem as Aircraft; } }
 
-        // Weapon presets shipped for this hull (e.g. <id>_default, <id>_torpedoes).
+        // Weapon presets REGISTERED by this hull. The mission has to reference these
+        // names (e.g. "torpedoes", "mk6_bomb_mortar_mk15_torpedoes"), not the blk
+        // file names - a file name resolves to nothing and the ship spawns unarmed.
         internal static List<string> ShipPresetNames(string shipId)
         {
             List<string> names = new List<string>();
             try
             {
-                string dir = Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "..",
-                    "universal_units_data", "aces.vromfs.bin_u", "gamedata", "units", "ships", "weaponpresets"));
-                if (Directory.Exists(dir))
+                string unitPath = Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "..",
+                    "universal_units_data", "aces.vromfs.bin_u", "gamedata", "units", "ships", shipId + ".blk"));
+                if (File.Exists(unitPath))
                 {
-                    foreach (string file in Directory.GetFiles(dir, shipId + "_*.blk"))
+                    BlockSpan presets = BlkTools.FirstBlock(File.ReadAllText(unitPath), "weapon_presets", 0);
+                    if (presets != null)
                     {
-                        string name = Path.GetFileNameWithoutExtension(file);
-                        if (!String.IsNullOrWhiteSpace(name)) names.Add(name);
+                        foreach (BlockSpan preset in BlkTools.Blocks(presets.Text, "preset"))
+                        {
+                            string name = BlkTools.Field(preset.Text, "name", "t");
+                            if (!String.IsNullOrWhiteSpace(name) && !names.Contains(name)) names.Add(name);
+                        }
                     }
                 }
             }
             catch { }
             if (names.Count == 0) names.Add(shipId + "_default");
-            names.Sort(StringComparer.OrdinalIgnoreCase);
             return names;
         }
 
-        // Ships have no entries in data/modifications.json (the catalog only scans
-        // aircraft and tanks), yet their unit files define a modifications block.
-        // Parse it on demand so the MODULES window is not empty for hulls.
-        internal static List<AircraftModification> ModificationsFor(Aircraft item, IEnumerable<AircraftModification> catalog)
-        {
-            List<AircraftModification> list = catalog == null
-                ? new List<AircraftModification>()
-                : catalog.Where(x => x != null && String.Equals(x.AircraftId, item == null ? "" : item.Id, StringComparison.OrdinalIgnoreCase)).ToList();
-            if (list.Count > 0 || item == null || !IsShip(item)) return list;
-            try
-            {
-                string unitPath = Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "..",
-                    "universal_units_data", "aces.vromfs.bin_u", "gamedata", "units", "ships", item.Id + ".blk"));
-                if (!File.Exists(unitPath)) return list;
-                BlockSpan mods = BlkTools.FirstBlock(File.ReadAllText(unitPath), "modifications", 0);
-                if (mods == null) return list;
-                foreach (BlockSpan child in BlkTools.DirectChildBlocks(mods.Text))
-                {
-                    string id = BlkTools.BlockName(child);
-                    if (String.IsNullOrWhiteSpace(id)) continue;
-                    string[] parts = id.Split(new char[] { '_' }, StringSplitOptions.RemoveEmptyEntries);
-                    for (int p = 0; p < parts.Length; p++) parts[p] = Char.ToUpperInvariant(parts[p][0]) + parts[p].Substring(1);
-                    list.Add(new AircraftModification
-                    {
-                        AircraftId = item.Id, Id = id, Display = String.Join(" ", parts),
-                        Tier = 0, ModClass = "", Group = ""
-                    });
-                }
-            }
-            catch { }
-            return list;
-        }
-
+        // Ships have no entries in data/modifications.json (the catalog only scans
+        // aircraft and tanks), yet their unit files define a modifications block.
+        // Parse it on demand so the MODULES window is not empty for hulls.
+        internal static List<AircraftModification> ModificationsFor(Aircraft item, IEnumerable<AircraftModification> catalog)
+        {
+            List<AircraftModification> list = catalog == null
+                ? new List<AircraftModification>()
+                : catalog.Where(x => x != null && String.Equals(x.AircraftId, item == null ? "" : item.Id, StringComparison.OrdinalIgnoreCase)).ToList();
+            if (list.Count > 0 || item == null || !IsShip(item)) return list;
+            try
+            {
+                string unitPath = Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "..",
+                    "universal_units_data", "aces.vromfs.bin_u", "gamedata", "units", "ships", item.Id + ".blk"));
+                if (!File.Exists(unitPath)) return list;
+                BlockSpan mods = BlkTools.FirstBlock(File.ReadAllText(unitPath), "modifications", 0);
+                if (mods == null) return list;
+                foreach (BlockSpan child in BlkTools.DirectChildBlocks(mods.Text))
+                {
+                    string id = BlkTools.BlockName(child);
+                    if (String.IsNullOrWhiteSpace(id)) continue;
+                    string[] parts = id.Split(new char[] { '_' }, StringSplitOptions.RemoveEmptyEntries);
+                    for (int p = 0; p < parts.Length; p++) parts[p] = Char.ToUpperInvariant(parts[p][0]) + parts[p].Substring(1);
+                    list.Add(new AircraftModification
+                    {
+                        AircraftId = item.Id, Id = id, Display = String.Join(" ", parts),
+                        Tier = 0, ModClass = "", Group = ""
+                    });
+                }
+            }
+            catch { }
+            return list;
+        }
+
         internal static bool IsShip(Aircraft item)
         {
             return item != null && String.Equals(item.Kind, "Ship", StringComparison.OrdinalIgnoreCase);
