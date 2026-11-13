@@ -635,7 +635,7 @@ namespace UniversalTestLab
         {
             if (selectedAircraft == null) return;
             ModernFlightSystemsWindow dialog = new ModernFlightSystemsWindow(selectedAircraft,
-                controller.WorkspaceModifications.Where(x => x.AircraftId.Equals(selectedAircraft.Id, StringComparison.OrdinalIgnoreCase)),
+                MainForm.ModificationsFor(selectedAircraft, controller.WorkspaceModifications),
                 controller.WorkspaceGetSettings(selectedAircraft), MainForm.IsHelicopter(selectedAircraft, null));
             dialog.Owner = this;
             if (dialog.ShowDialog() == true && dialog.Result != null)
@@ -663,7 +663,7 @@ namespace UniversalTestLab
             }
             ModernFlightConfigureWindow dialog = new ModernFlightConfigureWindow(selectedAircraft,
                 controller.WorkspaceGetSettings(selectedAircraft), controller.WorkspaceCountermeasureLaunchers(selectedAircraft),
-                controller.WorkspaceModifications.Where(x => x.AircraftId.Equals(selectedAircraft.Id, StringComparison.OrdinalIgnoreCase)));
+                MainForm.ModificationsFor(selectedAircraft, controller.WorkspaceModifications));
             dialog.Owner = this;
             if (dialog.ShowDialog() == true && dialog.Result != null)
             {
