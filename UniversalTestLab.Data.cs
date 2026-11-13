@@ -116,7 +116,9 @@ namespace UniversalTestLab
         public bool ZeroMass;        // FM: EmptyMass scaled down to ~1%
         public bool Indestructible;  // FM: VNE / MNE / overload / gear / canopy limits raised
         public bool HelmetSight;     // unit: HMD designator fields
-        public bool MawsUpgrade;     // sensors: append a missile-approach warner
+        public bool MawsUpgrade;     // sensors: append a missile-approach warner
+        // Ship loadout preset (<shipId>_default, _torpedoes, ...). Empty = _default.
+        public string ShipPreset;
 
         public AircraftSettings Copy()
         {
@@ -158,7 +160,8 @@ namespace UniversalTestLab
                 ZeroMass = ZeroMass,
                 Indestructible = Indestructible,
                 HelmetSight = HelmetSight,
-                MawsUpgrade = MawsUpgrade
+                MawsUpgrade = MawsUpgrade,
+                ShipPreset = ShipPreset
             };
             foreach (string id in EnabledModifications) copy.EnabledModifications.Add(id);
             foreach (CountermeasureLoadout loadout in CountermeasureLoadouts) copy.CountermeasureLoadouts.Add(loadout.Copy());

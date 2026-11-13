@@ -76,7 +76,6 @@ namespace UniversalTestLab
                 // always receive the complete native weapon-controller set. Ground
                 // vehicles, however, must receive their requested research state too;
                 // skipping this call forced every player tank to a stock configuration.
-                if (!shipPlayer)
                     text = BlkTools.ConfigureUnitModifications(text, "You", helicopterPlayer || settings.UseAllModifications, helicopterPlayer ? Enumerable.Empty<string>() : settings.EnabledModifications);
                 // Deployable radar/launcher trucks (NASAMS TADS, CLAWS, ...) carry
                 // missile weapon groups instead of a cannon; arm them Ask3lad-style
@@ -244,6 +243,8 @@ namespace UniversalTestLab
                 if (IsFpvDrone(selected)) text = BlkTools.AddFpvDetonationTriggers(text);
                 string title = combinedMap != null
                     ? "HOT UTL - " + selected.Display + " - " + combinedMap.Display
+                    : shipPlayer
+                    ? "HOT UTL - " + selected.Display + " - Naval Test"
                     : groundPlayer
                     ? "HOT UTL - " + selected.Display + " - Ground Test"
                     : IsFpvDrone(selected)
@@ -252,6 +253,8 @@ namespace UniversalTestLab
                 if (title.Length > 150) title = title.Substring(0, 150);
                 string description = combinedMap != null
                     ? "Solo combined-battles sandbox on the " + combinedMap.Display + " Domination layout. Side " + combinedSpawn.Side.ToString(CultureInfo.InvariantCulture) + ", " + combinedSpawn.Label + ". No AI units."
+                    : shipPlayer
+                    ? "Player-controlled ship on a stock naval map."
                     : groundPlayer
                     ? "Custom ground vehicle, ammunition, modules and mobility test."
                     : IsFpvDrone(selected)

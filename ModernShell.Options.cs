@@ -736,7 +736,8 @@ namespace UniversalTestLab
         private readonly CheckBox indestructibleBox;
         private readonly CheckBox helmetSightBox;
         private readonly CheckBox mawsBox;
-        private readonly ComboBox radarBox;
+        private readonly ComboBox radarBox;
+        private readonly ComboBox shipPresetBox;
         private readonly ScrollViewer contentScroll;
         private readonly List<CountermeasureEditor> editors = new List<CountermeasureEditor>();
         private readonly List<GunBeltEditor> gunBeltEditors = new List<GunBeltEditor>();
@@ -790,7 +791,22 @@ namespace UniversalTestLab
             }
             if (radarBox.SelectedItem == null) radarBox.SelectedIndex = 0;
             radarContent.Children.Add(radarBox);
-            content.Children.Add(radarCard);
+            content.Children.Add(radarCard);
+
+            if (MainForm.IsShip(aircraft))
+            {
+                Border shipCard = Card("SHIP LOADOUT"); StackPanel shipContent = shipCard.Child as StackPanel;
+                shipContent.Children.Add(new TextBlock { Text = ModernText.L("Weapon preset for this hull. Torpedoes live in a separate preset.", "该舰的武器预设；鱼雷在独立预设里。"), Foreground = ModernPalette.Brush(ModernPalette.Muted), TextWrapping = TextWrapping.Wrap, Margin = new Thickness(0, 2, 0, 8) });
+                shipPresetBox = new ComboBox { Foreground = ModernPalette.Brush(ModernPalette.Text), Background = ModernPalette.Brush("#FF16283E"), BorderBrush = ModernPalette.Brush(ModernPalette.Border), Padding = new Thickness(8, 4, 8, 4), Height = 30, HorizontalAlignment = HorizontalAlignment.Stretch };
+                foreach (string presetName in MainForm.ShipPresetNames(aircraft.Id))
+                    shipPresetBox.Items.Add(new ComboBoxItem { Content = presetName, Tag = presetName });
+                string wantedPreset = String.IsNullOrWhiteSpace(original.ShipPreset) ? aircraft.Id + "_default" : original.ShipPreset;
+                ComboBoxItem matchPreset = shipPresetBox.Items.OfType<ComboBoxItem>().FirstOrDefault(x => String.Equals(x.Tag as string, wantedPreset, StringComparison.OrdinalIgnoreCase));
+                if (matchPreset != null) shipPresetBox.SelectedItem = matchPreset;
+                if (shipPresetBox.SelectedItem == null && shipPresetBox.Items.Count > 0) shipPresetBox.SelectedIndex = 0;
+                shipContent.Children.Add(shipPresetBox);
+                content.Children.Add(shipCard);
+            }
             contentScroll = new ScrollViewer { Content = content, VerticalScrollBarVisibility = ScrollBarVisibility.Auto, HorizontalScrollBarVisibility = ScrollBarVisibility.Disabled, Margin = new Thickness(0, 6, 0, 14), Padding = new Thickness(0, 0, 8, 30) }; Grid.SetRow(contentScroll, 1); layout.Children.Add(contentScroll);
             Grid footer = new Grid(); footer.ColumnDefinitions.Add(new ColumnDefinition()); footer.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(145) }); footer.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(175) }); footer.Children.Add(new TextBlock { Text = ModernText.L("Settings are saved with this aircraft and custom presets.", "设置随该飞机及自定义预设保存。"), Foreground = ModernPalette.Brush(ModernPalette.Muted), VerticalAlignment = VerticalAlignment.Center });
             Button cancel = DialogButton("取消", false); cancel.Click += delegate { DialogResult = false; Close(); }; Grid.SetColumn(cancel, 1); footer.Children.Add(cancel);
@@ -982,6 +998,11 @@ namespace UniversalTestLab
             if (indestructibleBox != null) result.Indestructible = indestructibleBox.IsChecked == true;
             if (helmetSightBox != null) result.HelmetSight = helmetSightBox.IsChecked == true;
             if (mawsBox != null) result.MawsUpgrade = mawsBox.IsChecked == true;
+            if (shipPresetBox != null)
+            {
+                ComboBoxItem presetItem = shipPresetBox.SelectedItem as ComboBoxItem;
+                result.ShipPreset = presetItem == null ? null : (presetItem.Tag as string);
+            }
             if (radarBox != null)
             {
                 ComboBoxItem radarItem = radarBox.SelectedItem as ComboBoxItem;

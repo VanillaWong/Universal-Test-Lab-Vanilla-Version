@@ -434,6 +434,29 @@ namespace UniversalTestLab
 
         private Aircraft SelectedAircraft { get { return aircraftList.SelectedItem as Aircraft; } }
 
+        // Weapon presets shipped for this hull (e.g. <id>_default, <id>_torpedoes).
+        internal static List<string> ShipPresetNames(string shipId)
+        {
+            List<string> names = new List<string>();
+            try
+            {
+                string dir = Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "..",
+                    "universal_units_data", "aces.vromfs.bin_u", "gamedata", "units", "ships", "weaponpresets"));
+                if (Directory.Exists(dir))
+                {
+                    foreach (string file in Directory.GetFiles(dir, shipId + "_*.blk"))
+                    {
+                        string name = Path.GetFileNameWithoutExtension(file);
+                        if (!String.IsNullOrWhiteSpace(name)) names.Add(name);
+                    }
+                }
+            }
+            catch { }
+            if (names.Count == 0) names.Add(shipId + "_default");
+            names.Sort(StringComparer.OrdinalIgnoreCase);
+            return names;
+        }
+
         internal static bool IsShip(Aircraft item)
         {
             return item != null && String.Equals(item.Kind, "Ship", StringComparison.OrdinalIgnoreCase);

@@ -51,7 +51,9 @@ namespace UniversalTestLab
             return new GeneratedAircraft
             {
                 ClassId = "userVehicles/utl_naval_player",
-                PresetId = ResolveShipPreset(root, target.Id, target.DefaultPreset),
+                PresetId = ResolveShipPreset(root, target.Id,
+                    String.IsNullOrWhiteSpace(GetAircraftSettings(target).ShipPreset)
+                        ? target.DefaultPreset : GetAircraftSettings(target).ShipPreset),
                 ModelId = target.Id,
                 FlightModelPath = proxyPath,
                 SpawnSpeedKmh = 0
