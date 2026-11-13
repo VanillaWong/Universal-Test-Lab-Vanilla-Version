@@ -243,7 +243,8 @@ namespace UniversalTestLab
             if (!String.IsNullOrWhiteSpace(settings.ShipPreset)) o.Add("ship_preset", settings.ShipPreset);
             if (!String.IsNullOrWhiteSpace(settings.NavalMap)) o.Add("naval_map", settings.NavalMap);
             if (settings.NavalSpawnX != -3391.7) o.Add("naval_spawn_x", settings.NavalSpawnX);
-            if (settings.NavalSpawnZ != -6256.09) o.Add("naval_spawn_z", settings.NavalSpawnZ);
+            if (settings.NavalSpawnZ != -6256.09) o.Add("naval_spawn_z", settings.NavalSpawnZ);
+            if (settings.NavalSpawnY != 0) o.Add("naval_spawn_y", settings.NavalSpawnY);
             if (!String.IsNullOrWhiteSpace(settings.RadarSearchBlk)) o.Add("radar_search_blk", settings.RadarSearchBlk);
             if (!String.IsNullOrWhiteSpace(settings.RadarTrackBlk)) o.Add("radar_track_blk", settings.RadarTrackBlk);
             return o;
@@ -337,7 +338,8 @@ namespace UniversalTestLab
             s.NavalMap = JsonStr(o, "naval_map");
             if (String.IsNullOrWhiteSpace(s.NavalMap)) s.NavalMap = "levels/iwo_jima.bin";
             s.NavalSpawnX = JsonDouble(o, "naval_spawn_x", -3391.7);
-            s.NavalSpawnZ = JsonDouble(o, "naval_spawn_z", -6256.09);
+            s.NavalSpawnZ = JsonDouble(o, "naval_spawn_z", -6256.09);
+            s.NavalSpawnY = JsonDouble(o, "naval_spawn_y", 0);
             s.RadarSearchBlk = JsonStr(o, "radar_search_blk");
             s.RadarTrackBlk = JsonStr(o, "radar_track_blk");
             s.CannonSwaps = new List<CannonSwap>();

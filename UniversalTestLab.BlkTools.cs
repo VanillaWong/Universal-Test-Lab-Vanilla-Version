@@ -1245,7 +1245,7 @@ namespace UniversalTestLab
 
         // Naval player. The unit has to sit in the ships{} container (armada is
         // air-only) and the mission needs a sea map with a valid spawn point.
-        public static string ConfigureShipPlayer(string text, string classId, string presetId, string navalMap, double spawnX, double spawnZ)
+        public static string ConfigureShipPlayer(string text, string classId, string presetId, string navalMap, double spawnX, double spawnY, double spawnZ)
         {
             BlockSpan player = UnitBlockByName(text, "You");
             if (player == null) throw new InvalidOperationException("Player unit is missing from the mission template.");
@@ -1267,7 +1267,8 @@ namespace UniversalTestLab
             }
             block = Regex.Replace(block, @"(?m)^\s*dontOverrideHeight:b\s*=\s*yes\s*\r?\n", "");
             string spawnTransform = "    tm:m=[[-0.709198, 0, -0.70501] [0, 1, 0] [0.70501, 0, -0.709198] ["
-                + spawnX.ToString("0.###", CultureInfo.InvariantCulture) + ", 0, "
+                + spawnX.ToString("0.###", CultureInfo.InvariantCulture) + ", "
+                + spawnY.ToString("0.###", CultureInfo.InvariantCulture) + ", "
                 + spawnZ.ToString("0.###", CultureInfo.InvariantCulture) + "]]";
             block = new Regex(@"(?m)^[ \t]*tm:m=.*$").Replace(block, spawnTransform, 1);
             // Air-only props (altLimit, plane{}, speed 1100) keep a ship from being

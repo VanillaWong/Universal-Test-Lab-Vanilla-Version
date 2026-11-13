@@ -59,7 +59,7 @@ namespace UniversalTestLab
                 text = BlkTools.DisablePlayerSwitch(text);
                 text = BlkTools.RemoveBotNotifications(text);
                 if (shipPlayer)
-                    text = BlkTools.ConfigureShipPlayer(text, generated.ClassId, generated.PresetId, settings.NavalMap, settings.NavalSpawnX, settings.NavalSpawnZ);
+                    text = BlkTools.ConfigureShipPlayer(text, generated.ClassId, generated.PresetId, settings.NavalMap, settings.NavalSpawnX, settings.NavalSpawnY, settings.NavalSpawnZ);
                 else if (groundPlayer)
                     text = BlkTools.ConfigureGroundPlayer(text, generated.ClassId, generated.ModelId, generated.PresetId, settings, generated.GroundAmmoLoadouts);
                 else

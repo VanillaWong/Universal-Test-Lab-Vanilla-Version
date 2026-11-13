@@ -740,7 +740,8 @@ namespace UniversalTestLab
         private readonly ComboBox shipPresetBox;
         private readonly ComboBox shipMapBox;
         private readonly TextBox shipSpawnXBox;
-        private readonly TextBox shipSpawnZBox;
+        private readonly TextBox shipSpawnZBox;
+        private readonly TextBox shipSpawnYBox;
         private readonly ScrollViewer contentScroll;
         private readonly List<CountermeasureEditor> editors = new List<CountermeasureEditor>();
         private readonly List<GunBeltEditor> gunBeltEditors = new List<GunBeltEditor>();
@@ -811,18 +812,27 @@ namespace UniversalTestLab
                 shipContent.Children.Add(new TextBlock { Text = ModernText.L("Map", "地图"), Foreground = ModernPalette.Brush(ModernPalette.Cyan), FontSize = 11, FontWeight = FontWeights.SemiBold, Margin = new Thickness(0, 10, 0, 2) });
                 shipMapBox = new ComboBox { Foreground = ModernPalette.Brush(ModernPalette.Text), Background = ModernPalette.Brush("#FF16283E"), BorderBrush = ModernPalette.Brush(ModernPalette.Border), Padding = new Thickness(8, 4, 8, 4), Height = 30, HorizontalAlignment = HorizontalAlignment.Stretch, Margin = new Thickness(0, 2, 0, 0) };
                 shipMapBox.Items.Add(new ComboBoxItem { Content = "Iwo Jima (stock naval map)", Tag = "levels/iwo_jima.bin" });
-                shipMapBox.Items.Add(new ComboBoxItem { Content = "Clean Testdrive (UTL level, has water)", Tag = "levels/Clean_Testdrive.bin" });
+                shipMapBox.Items.Add(new ComboBoxItem { Content = "Clean Testdrive (UTL level, has water)", Tag = "levels/Clean_Testdrive.bin" });
+                shipMapBox.Items.Add(new ComboBoxItem { Content = "Black Sea port (official naval)", Tag = "levels/avn_blacksea_port.bin" });
+                shipMapBox.Items.Add(new ComboBoxItem { Content = "Fiji (official naval)", Tag = "levels/avn_fiji.bin" });
+                shipMapBox.Items.Add(new ComboBoxItem { Content = "Japan naval (official)", Tag = "levels/avn_japan.bin" });
+                shipMapBox.Items.Add(new ComboBoxItem { Content = "Norway islands (official naval)", Tag = "levels/avn_norway_islands.bin" });
+                shipMapBox.Items.Add(new ComboBoxItem { Content = "Guadalcanal (official naval)", Tag = "levels/guadalcanal.bin" });
+                shipMapBox.Items.Add(new ComboBoxItem { Content = "Saipan (official naval)", Tag = "levels/saipan.bin" });
+                shipMapBox.Items.Add(new ComboBoxItem { Content = "Mediterranean port (official naval)", Tag = "levels/avn_mediterranean_port.bin" });
                 string wantedMap = String.IsNullOrWhiteSpace(original.NavalMap) ? "levels/iwo_jima.bin" : original.NavalMap;
                 ComboBoxItem mapMatch = shipMapBox.Items.OfType<ComboBoxItem>().FirstOrDefault(x => String.Equals(x.Tag as string, wantedMap, StringComparison.OrdinalIgnoreCase));
                 if (mapMatch != null) shipMapBox.SelectedItem = mapMatch;
                 if (shipMapBox.SelectedItem == null) shipMapBox.SelectedIndex = 0;
                 shipContent.Children.Add(shipMapBox);
                 StackPanel spawnRow = new StackPanel { Orientation = Orientation.Horizontal, Margin = new Thickness(0, 8, 0, 0) };
-                spawnRow.Children.Add(new TextBlock { Text = ModernText.L("Spawn X / Z", "出生点 X / Z"), Foreground = ModernPalette.Brush(ModernPalette.Muted), VerticalAlignment = VerticalAlignment.Center, Margin = new Thickness(0, 0, 8, 0) });
+                spawnRow.Children.Add(new TextBlock { Text = ModernText.L("Spawn X / Z / Y", "出生点 X / Z / Y(水面高度)"), Foreground = ModernPalette.Brush(ModernPalette.Muted), VerticalAlignment = VerticalAlignment.Center, Margin = new Thickness(0, 0, 8, 0) });
                 shipSpawnXBox = new TextBox { Text = original.NavalSpawnX.ToString("0.###", System.Globalization.CultureInfo.InvariantCulture), Width = 110, Margin = new Thickness(0, 0, 6, 0) };
                 shipSpawnZBox = new TextBox { Text = original.NavalSpawnZ.ToString("0.###", System.Globalization.CultureInfo.InvariantCulture), Width = 110 };
+                shipSpawnYBox = new TextBox { Text = original.NavalSpawnY.ToString("0.###", System.Globalization.CultureInfo.InvariantCulture), Width = 90, Margin = new Thickness(6, 0, 0, 0) };
                 spawnRow.Children.Add(shipSpawnXBox);
                 spawnRow.Children.Add(shipSpawnZBox);
+                spawnRow.Children.Add(shipSpawnYBox);
                 shipContent.Children.Add(spawnRow);
                 content.Children.Add(shipCard);
             }
@@ -1026,6 +1036,11 @@ namespace UniversalTestLab
             {
                 double spawnX;
                 result.NavalSpawnX = Double.TryParse(shipSpawnXBox.Text, System.Globalization.NumberStyles.Any, System.Globalization.CultureInfo.InvariantCulture, out spawnX) ? spawnX : -3391.7;
+            }
+            if (shipSpawnYBox != null)
+            {
+                double spawnY;
+                result.NavalSpawnY = Double.TryParse(shipSpawnYBox.Text, System.Globalization.NumberStyles.Any, System.Globalization.CultureInfo.InvariantCulture, out spawnY) ? spawnY : 0;
             }
             if (shipSpawnZBox != null)
             {

@@ -122,7 +122,8 @@ namespace UniversalTestLab
         // Naval map + spawn, so hulls can be tried on stock maps or on UTL's own level.
         public string NavalMap = "levels/iwo_jima.bin";
         public double NavalSpawnX = -3391.7;
-        public double NavalSpawnZ = -6256.09;
+        public double NavalSpawnZ = -6256.09;
+        public double NavalSpawnY = 0;
 
         public AircraftSettings Copy()
         {
@@ -168,7 +169,8 @@ namespace UniversalTestLab
                 ShipPreset = ShipPreset,
                 NavalMap = NavalMap,
                 NavalSpawnX = NavalSpawnX,
-                NavalSpawnZ = NavalSpawnZ
+                NavalSpawnZ = NavalSpawnZ,
+                NavalSpawnY = NavalSpawnY
             };
             foreach (string id in EnabledModifications) copy.EnabledModifications.Add(id);
             foreach (CountermeasureLoadout loadout in CountermeasureLoadouts) copy.CountermeasureLoadouts.Add(loadout.Copy());

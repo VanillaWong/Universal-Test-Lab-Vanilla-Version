@@ -566,7 +566,7 @@ namespace UniversalTestLab
                     + "    unit_class:t=\"jp_battleship_yamato\"" + Environment.NewLine
                     + "  }" + Environment.NewLine
                     + "}" + Environment.NewLine;
-                string navalMission = BlkTools.ConfigureShipPlayer(navalTemplate, "userVehicles/utl_naval_player", "jp_battleship_yamato_default", "levels/iwo_jima.bin", -3391.7, -6256.09);
+                string navalMission = BlkTools.ConfigureShipPlayer(navalTemplate, "userVehicles/utl_naval_player", "jp_battleship_yamato_default", "levels/iwo_jima.bin", -3391.7, 0, -6256.09);
                 int navalShipsAt = navalMission.IndexOf("ships{", StringComparison.Ordinal);
                 int navalYouAt = navalMission.IndexOf("name:t=\"You\"", StringComparison.Ordinal);
                 if (navalShipsAt < 0 || navalYouAt < navalShipsAt ||
