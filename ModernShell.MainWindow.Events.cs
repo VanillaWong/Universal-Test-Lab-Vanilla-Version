@@ -265,7 +265,7 @@ namespace UniversalTestLab
         // Inline scene block: map, time/weather, spawn and target counts live on the
         // page. Only the deep target editor (seven range positions, combined battles,
         // SAM sites) still opens a dialog - that is a picker, not a setting.
-        private StackPanel inlineSceneHost;
+        private ScrollViewer inlineSceneHost;
 
         // Real page switch: the scene page replaces the loadout body instead of
         // floating over it. Everything except the card header is hidden while it is up.
@@ -275,17 +275,20 @@ namespace UniversalTestLab
             if (card == null) return;
             if (show && inlineSceneHost == null)
             {
-                inlineSceneHost = new StackPanel
+                inlineSceneHost = new ScrollViewer
                 {
-                    Margin = new Thickness(16, 8, 16, 12),
-                    Background = ModernPalette.Brush(ModernPalette.Field),
+                    Margin = new Thickness(14, 6, 14, 10),
+                    VerticalScrollBarVisibility = ScrollBarVisibility.Auto,
+                    HorizontalScrollBarVisibility = ScrollBarVisibility.Disabled,
                     Visibility = Visibility.Collapsed,
                 };
+                StackPanel sceneBody = new StackPanel();
+                inlineSceneHost.Content = sceneBody;
                 Grid.SetRow(inlineSceneHost, 1);
                 Grid.SetRowSpan(inlineSceneHost, 5);
                 Panel.SetZIndex(inlineSceneHost, 60);
                 card.Children.Add(inlineSceneHost);
-                BuildInlineScene(inlineSceneHost);
+                BuildInlineScene(sceneBody);
             }
             string[] body = { "StationText", "PylonCard", "WeaponFilterPanel", "WeaponTableFrame", "BuildFooterRow" };
             foreach (string name in body)
@@ -299,16 +302,15 @@ namespace UniversalTestLab
         // live inside the 58px header row, where it was clipped and looked like a
         // dead button.
 
-        // Scene page in Ask3lad's form language: section captions with a hairline,
-        // a four-column environment grid, then spawn and target rows. Controls stretch
-        // to their column so nothing floats loose in the card.
+        // Scene page: every section lives in its own translucent frame (the grouping is
+        // visible but quiet), the body scrolls, and the editors the map dialog used to
+        // own are hosted inline. The dialog is still reachable for the range table.
         private void BuildInlineScene(StackPanel host)
         {
             host.Children.Clear();
             AircraftSettings settings = selectedAircraft == null ? new AircraftSettings() : controller.WorkspaceGetSettings(selectedAircraft);
 
-            host.Children.Add(SceneSection(ModernText.L("ENVIRONMENT", "环境")));
-            UniformGrid env = new UniformGrid { Columns = 4, Margin = new Thickness(0, 6, 0, 4) };
+            UniformGrid env = new UniformGrid { Columns = 4, Margin = new Thickness(0, 8, 0, 2) };
             env.Children.Add(SceneField(ModernText.L("Scenario", "自定义任务"), SceneValue(CurrentSceneName())));
             ComboBox mapBox = SceneCombo();
             if (selectedAircraft != null && MainForm.IsShip(selectedAircraft))
@@ -342,12 +344,12 @@ namespace UniversalTestLab
             env.Children.Add(SceneField(ModernText.L("Map", "地图"), mapBox));
             env.Children.Add(SceneField(ModernText.L("Time", "时间"), SceneValue(ModernText.L("Day", "白天"))));
             env.Children.Add(SceneField(ModernText.L("Weather", "天气"), SceneValue(ModernText.L("Clear", "晴朗"))));
-            host.Children.Add(env);
+            host.Children.Add(FramedSection(ModernText.L("ENVIRONMENT", "环境"), env));
 
-            host.Children.Add(SceneSection(ModernText.L("SPAWN", "出生点")));
-            UniformGrid spawnGrid = new UniformGrid { Columns = 4, Margin = new Thickness(0, 6, 0, 4) };
+            StackPanel spawn = new StackPanel();
             if (!GroundSelected)
             {
+                UniformGrid spawnGrid = new UniformGrid { Columns = 4, Margin = new Thickness(0, 8, 0, 2) };
                 ComboBox spawnBox = SceneCombo();
                 spawnBox.Items.Add(new ComboBoxItem { Content = ModernText.L("Air spawn", "空中出生"), Tag = "air" });
                 spawnBox.Items.Add(new ComboBoxItem { Content = ModernText.L("Runway takeoff", "跑道起飞"), Tag = "airport" });
@@ -371,27 +373,46 @@ namespace UniversalTestLab
                     UpdateConfigurationSummary();
                 };
                 spawnGrid.Children.Add(SceneField(ModernText.L("Altitude (m)", "高度（米）"), altBox));
+                spawn.Children.Add(spawnGrid);
             }
             else
             {
-                spawnGrid.Children.Add(SceneField(ModernText.L("Mode", "方式"), SceneValue(ModernText.L("Range hangar", "靶场机库"))));
+                spawn.Children.Add(SceneControlRow(ModernText.L("Mode", "方式"), SceneValue(ModernText.L("Range hangar", "靶场机库"))));
             }
-            host.Children.Add(spawnGrid);
+            host.Children.Add(FramedSection(ModernText.L("SPAWN", "出生点"), spawn));
 
-            host.Children.Add(SceneSection(ModernText.L("TARGETS", "目标")));
-            AircraftView air = airTarget == null ? null : airTarget.SelectedItem as AircraftView;
-            host.Children.Add(SceneTargetRow(ModernText.L("Air", "空中目标"), SelectedCount(airCount).ToString(CultureInfo.InvariantCulture) + " × " + (air == null ? "—" : air.Name), false));
-            host.Children.Add(SceneTargetRow(ModernText.L("Ground", "地面目标"), configuredGroundTargets.Count.ToString(CultureInfo.InvariantCulture) + ModernText.L(" positions", " 个位置"), false));
-            host.Children.Add(SceneTargetRow(ModernText.L("Naval", "海上目标"), SelectedCount(shipCount).ToString(CultureInfo.InvariantCulture), false));
-            host.Children.Add(SceneTargetRow(ModernText.L("Deep editor", "深度编辑"), ModernText.L("range table, combined battles, SAM sites", "距离表 / 联合战役 / SAM 阵地"), true));
+            StackPanel targets = new StackPanel();
+            targets.Children.Add(SceneControlRow(ModernText.L("Air target", "空中目标"), Find<ComboBox>("AirTargetBox"), Find<ComboBox>("AirCountBox")));
+            targets.Children.Add(SceneControlRow(ModernText.L("Ground target", "地面目标"), Find<ComboBox>("GroundTargetBox"), Find<ComboBox>("GroundCountBox")));
+            targets.Children.Add(SceneControlRow(ModernText.L("Naval target", "海上目标"), Find<ComboBox>("ShipTargetBox"), Find<ComboBox>("ShipCountBox")));
+            targets.Children.Add(SceneControlRow(ModernText.L("Air defence", "防空阵地"), Find<ToggleButton>("SamSitesToggle"), Find<TextBlock>("SamSitesMode"), Find<TextBlock>("SamSitesSelection")));
+            targets.Children.Add(SceneControlRow(ModernText.L("Return fire", "敌方还击"), Find<ToggleButton>("HostileToggle")));
+            host.Children.Add(FramedSection(ModernText.L("TARGETS", "目标"), targets));
+
+            StackPanel deep = new StackPanel();
+            deep.Children.Add(SceneControlRow(ModernText.L("Range table", "距离表"), SceneHint(ModernText.L("7 positions, combined battles, SAM sites", "7 个距离位 / 联合战役 / SAM 阵地"))));
+            Button edit = new Button { Content = ModernText.L("Open editor…", "打开编辑器…"), Style = (Style)Resources["ButtonStyle"], Height = 28, Padding = new Thickness(14, 0, 14, 0), HorizontalAlignment = HorizontalAlignment.Left, Margin = new Thickness(0, 6, 0, 0) };
+            edit.Click += delegate { ShowMap(); };
+            deep.Children.Add(edit);
+            host.Children.Add(FramedSection(ModernText.L("ADVANCED", "高级"), deep));
         }
 
-        private static StackPanel SceneSection(string title)
+        private static Border FramedSection(string title, UIElement content)
         {
-            StackPanel section = new StackPanel { Margin = new Thickness(0, 12, 0, 0) };
-            section.Children.Add(new TextBlock { Text = "// " + title, Foreground = ModernPalette.Brush(ModernPalette.Cyan), FontSize = 11, FontWeight = FontWeights.SemiBold });
-            section.Children.Add(new Border { Height = 1, Background = ModernPalette.Brush("#332C4A6B"), Margin = new Thickness(0, 4, 0, 2) });
-            return section;
+            StackPanel inner = new StackPanel();
+            inner.Children.Add(new TextBlock { Text = "// " + title, Foreground = ModernPalette.Brush(ModernPalette.Cyan), FontSize = 11, FontWeight = FontWeights.SemiBold });
+            inner.Children.Add(new Border { Height = 1, Background = ModernPalette.Brush("#332C4A6B"), Margin = new Thickness(0, 4, 0, 0) });
+            inner.Children.Add(content);
+            return new Border
+            {
+                Child = inner,
+                BorderBrush = ModernPalette.Brush("#332C4A6B"),
+                BorderThickness = new Thickness(1),
+                CornerRadius = new CornerRadius(10),
+                Background = ModernPalette.Brush("#121A2E"),
+                Padding = new Thickness(12, 8, 12, 12),
+                Margin = new Thickness(0, 0, 0, 10),
+            };
         }
 
         private static StackPanel SceneField(string label, FrameworkElement control)
@@ -403,6 +424,32 @@ namespace UniversalTestLab
             return field;
         }
 
+        private static Grid SceneControlRow(string label, params FrameworkElement[] controls)
+        {
+            Grid row = new Grid { Margin = new Thickness(0, 5, 0, 5) };
+            row.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(110) });
+            row.ColumnDefinitions.Add(new ColumnDefinition());
+            row.Children.Add(new TextBlock { Text = label, Foreground = ModernPalette.Brush(ModernPalette.Text), VerticalAlignment = VerticalAlignment.Center });
+            StackPanel cell = new StackPanel { Orientation = Orientation.Horizontal };
+            foreach (FrameworkElement control in controls)
+            {
+                if (control == null) continue;
+                Panel oldParent = control.Parent as Panel;
+                if (oldParent != null) oldParent.Children.Remove(control);
+                control.Margin = new Thickness(0, 0, 8, 0);
+                control.VerticalAlignment = VerticalAlignment.Center;
+                cell.Children.Add(control);
+            }
+            Grid.SetColumn(cell, 1);
+            row.Children.Add(cell);
+            return row;
+        }
+
+        private static TextBlock SceneHint(string text)
+        {
+            return new TextBlock { Text = text, Foreground = ModernPalette.Brush(ModernPalette.Muted), VerticalAlignment = VerticalAlignment.Center };
+        }
+
         private static ComboBox SceneCombo()
         {
             return new ComboBox { Foreground = ModernPalette.Brush(ModernPalette.Text), Background = ModernPalette.Brush("#FF16283E"), BorderBrush = ModernPalette.Brush(ModernPalette.Border), Height = 28, VerticalContentAlignment = VerticalAlignment.Center };
@@ -411,26 +458,6 @@ namespace UniversalTestLab
         private static TextBlock SceneValue(string text)
         {
             return new TextBlock { Text = text, Foreground = ModernPalette.Brush(ModernPalette.Text), Height = 28, VerticalAlignment = VerticalAlignment.Center };
-        }
-
-        private FrameworkElement SceneTargetRow(string label, string value, bool withButton)
-        {
-            Grid row = new Grid { Margin = new Thickness(0, 3, 0, 3) };
-            row.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(110) });
-            row.ColumnDefinitions.Add(new ColumnDefinition());
-            row.ColumnDefinitions.Add(new ColumnDefinition { Width = GridLength.Auto });
-            row.Children.Add(new TextBlock { Text = label, Foreground = ModernPalette.Brush(ModernPalette.Text), VerticalAlignment = VerticalAlignment.Center });
-            TextBlock valueText = new TextBlock { Text = value, Foreground = ModernPalette.Brush(ModernPalette.Muted), VerticalAlignment = VerticalAlignment.Center, TextTrimming = TextTrimming.CharacterEllipsis };
-            Grid.SetColumn(valueText, 1);
-            row.Children.Add(valueText);
-            if (withButton)
-            {
-                Button edit = new Button { Content = ModernText.L("Edit…", "编辑…"), Style = (Style)Resources["ButtonStyle"], Height = 26, Padding = new Thickness(14, 0, 14, 0) };
-                edit.Click += delegate { ShowMap(); };
-                Grid.SetColumn(edit, 2);
-                row.Children.Add(edit);
-            }
-            return row;
         }
 
         private string CurrentSceneName()
