@@ -33,6 +33,25 @@
 
 ## 1. 下一步（按优先级）
 
+### P0 · 场景页内嵌 Map & Scenario（用户指定方案 B）
+
+**目标**：把 `ModernMapWindow` 的整块表单直接放进中间卡片的「02 场景」页，去掉现在的摘要版 + “打开编辑器…”按钮。
+
+**做法（B：内嵌窗口内容）**
+1. 给 `ModernMapWindow` 加构造参数 `bool inline = false`
+2. `inline == true` 时：
+   - 不创建窗口外壳/关闭按钮，只构建表单内容
+   - Apply 按钮改为调用回调（把 `Result` 交给调用方），**不调用 Close()**
+   - 暴露一个 `internal UIElement BuildInlineBody()` 或 `internal UIElement InlineBody`
+3. 场景页持有该窗口实例（不 Show），把 `InlineBody` 插入 `SceneInlineHost`
+4. 保留弹窗入口作为备选（同一份表单两个出口）
+
+**已知雷点**
+- 对未 Show 的 Window 调用 `Close()` 会抛异常 —— Apply 必须走回调
+- 窗口根的 Margin/Padding 是为弹窗设计的，内嵌后要去掉外壳内边距
+- 场景页已是 ScrollViewer，内嵌表单自带滚动会导致双层滚动条
+- 每次 Apply 后需要 `UpdateConfigurationSummary()` 刷新右栏
+
 ### P1 · 03 应用页
 - 文件清单：本次写入了哪些文件、每个文件几处改动
 - 备份：`%APPDATA%\UniversalTestLab\backups\<时间戳>\` + `manifest.json`
