@@ -643,6 +643,44 @@ foreach ($group in ($samCandidates | Group-Object Bullet | Sort-Object Name)) {
     $weaponCatalogRows.Add("aam`t$descriptor`t1`tmissile_type_b_air_to_air`t$name (Ground SAM)`tGround SAM Missiles`t$mass`t$mass`t$(Get-SamNation $sam.Bullet)")
   }
 }
+# Naval missiles: AI-only ships keep their guided rounds inside naval launcher files
+# (VLS blocks, trainable arms) instead of aircraft pylon files. Publish every guided
+# round as a virtual catalog entry; the same utl-sam adapter extracts it into an
+# aircraft-compatible rocketGun at build time, so planes and tanks can mount fleet
+# missiles (HHQ-16, HHQ-9, SM-2/SM-6, ESSM, RAM, ...).
+$navalCandidates = New-Object System.Collections.Generic.List[object]
+$navalWeaponsRoot = Join-Path $WeaponsRoot 'navalmodels_weapons'
+if (Test-Path $navalWeaponsRoot) {
+  foreach ($file in (Get-ChildItem -LiteralPath $navalWeaponsRoot -File -Filter '*.blk' | Sort-Object Name)) {
+    $text = [IO.File]::ReadAllText($file.FullName)
+    if ($text -notmatch 'guidanceType:t') { continue }
+    foreach ($bulletBlock in (Get-NamedBlocks $text 'bullet')) {
+      if ($bulletBlock.Text -notmatch 'guidanceType:t') { continue }
+      $bulletMatch = [regex]::Match($bulletBlock.Text, 'bulletName:t\s*=\s*"([^"]+)"')
+      if (-not $bulletMatch.Success) { continue }
+      $rocketBlock = Get-NamedBlocks $bulletBlock.Text 'rocket' | Select-Object -First 1
+      if ($null -eq $rocketBlock) { continue }
+      $massMatch = [regex]::Match($rocketBlock.Text, '(?m)^\s*mass:r\s*=\s*([0-9.]+)')
+      $mass = if ($massMatch.Success) { [double]::Parse($massMatch.Groups[1].Value, [Globalization.CultureInfo]::InvariantCulture) } else { 0.0 }
+      $guidanceMatch = [regex]::Match($rocketBlock.Text, 'guidanceType:t\s*=\s*"([a-z]+)"')
+      $guidance = if ($guidanceMatch.Success) { $guidanceMatch.Groups[1].Value } else { 'guided' }
+      $navalCandidates.Add([pscustomobject]@{ File = $file.Name; Bullet = $bulletMatch.Groups[1].Value; Mass = $mass; Guidance = $guidance })
+    }
+  }
+}
+
+foreach ($group in ($navalCandidates | Group-Object Bullet | Sort-Object Name)) {
+  $naval = $group.Group | Select-Object -First 1
+  $nameKey = 'weapons/' + $naval.Bullet
+  $name = if ($weaponNames.ContainsKey($nameKey)) { Clean-Field $weaponNames[$nameKey] } else { Clean-Field (($naval.Bullet -replace '_', ' ').ToUpperInvariant()) }
+  $mass = $naval.Mass.ToString('0.###', [Globalization.CultureInfo]::InvariantCulture)
+  $descriptor = 'utl-sam:gamedata/weapons/navalModels_weapons/' + $naval.File + '#' + $naval.Bullet
+  $catalogKey = "$descriptor|aam|1"
+  if (-not $weaponCatalogSeen.ContainsKey($catalogKey)) {
+    $weaponCatalogSeen[$catalogKey] = $true
+    $weaponCatalogRows.Add("aam`t$descriptor`t1`tmissile_type_b_air_to_air`t$name (Naval $($naval.Guidance))`tNaval Missiles`t$mass`t$mass`t$(Get-SamNation $naval.Bullet)")
+  }
+}
 
 function Add-GroundModifications([string]$id, [string]$text) {
   $mods = Get-NamedBlocks $text 'modifications' | Select-Object -First 1

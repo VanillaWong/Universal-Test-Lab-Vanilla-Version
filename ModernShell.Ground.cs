@@ -108,6 +108,27 @@ namespace UniversalTestLab
 
         private int AmmoCapacity { get { return vehicle.MaxAmmo > 0 ? vehicle.MaxAmmo : 200; } }
 
+        // Saved presets were written before the capacity guard existed, so a slot can
+        // still carry thousands of rounds for a 44-round gun. Trim from the last slot
+        // backwards whenever the panel loads or writes a loadout.
+        private void TrimToCapacity()
+        {
+            int capacity = AmmoCapacity;
+            int used = 0;
+            foreach (GroundAmmoLoadout entry in loadouts.Values) if (entry != null) used += Math.Max(0, entry.Count);
+            if (used <= capacity) return;
+            foreach (int slot in loadouts.Keys.OrderByDescending(k => k).ToList())
+            {
+                if (used <= capacity) break;
+                GroundAmmoLoadout entry = loadouts[slot];
+                if (entry == null) continue;
+                int cut = Math.Min(entry.Count, used - capacity);
+                entry.Count -= cut;
+                used -= cut;
+                if (entry.Count <= 0) loadouts[slot] = null;
+            }
+        }
+
         private bool ContainerAllowed(string container)
         {
             // Unnamed default rounds (empty container) are the STOCK ammunition - they
@@ -138,6 +159,7 @@ namespace UniversalTestLab
             buttonStyle = buttonStyleSource;
             toggleStyle = toggleStyleSource;
             foreach (GroundAmmoLoadout entry in original.GroundAmmoLoadouts.Where(x => x.Slot >= 0 && x.Slot < 4)) loadouts[entry.Slot] = entry.Copy();
+            TrimToCapacity();
 
             // ---- 标题行（EXPERIMENTAL 内嵌版带大标题；独立窗口自带标题故简化）----
             if (!simplified)
@@ -246,6 +268,7 @@ namespace UniversalTestLab
                     currentSettings.ForwardSpeedMultiplier = 1;
                     currentSettings.ReverseSpeedMultiplier = 1;
                     // 弹药槽
+                    TrimToCapacity();
                     currentSettings.GroundAmmoLoadouts.Clear();
                 }
                 ResetAllValues();

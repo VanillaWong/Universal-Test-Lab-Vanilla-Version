@@ -38,6 +38,7 @@
 /resource:resources\WT_EXT_LICENSE.txt,UTL.WT_EXT_LICENSE.txt
 UniversalTestLab.BlkTools.cs
 UniversalTestLab.Data.cs
+UniversalTestLab.Naval.cs
 UniversalTestLab.Storage.cs
 UniversalTestLab.UserSights.cs
 UniversalTestLab.WinForms.cs
@@ -54,6 +55,7 @@ ModernShell.Xaml.cs
 ModernShell.Maps.cs
 ModernShell.Ground.cs
 ModernShell.Options.cs
+ModernShell.OptionTabs.cs
 ModernShell.Ui.cs
 ModernShell.MainWindow.Ground.cs
 ModernShell.MainWindow.Events.cs
@@ -62,6 +64,7 @@ ModernShell.MainWindow.SelfTest.cs
 ModernShell.cs
 /resource:data\era_presets.json,UTL.era_presets.json
 /resource:data\sensors.json,UTL.sensors.json
+/resource:data\naval_weapons.json,UTL.naval_weapons.json
 /resource:data\aircraft_radars.json,UTL.aircraft_radars.json
 /resource:data\aircraft_radar_sites.json,UTL.aircraft_radar_sites.json
 /resource:data\ground_presets.json,UTL.ground_presets.json

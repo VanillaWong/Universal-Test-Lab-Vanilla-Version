@@ -77,6 +77,9 @@ namespace UniversalTestLab
             Find<Button>("FlightConfigureButton").Click += delegate { ShowFlightConfigure(); };
             Find<Button>("MapButton").Click += delegate { ShowMap(); };
             Find<Button>("MissionOptionsButton").Click += delegate { ShowMissionOptions(); };
+            Find<Button>("StepConfigureButton").Click += delegate { ShowScenePage(false); };
+            Find<Button>("StepScenarioButton").Click += delegate { ShowScenePage(true); };
+            Find<Button>("StepApplyButton").Click += delegate { GenerateMission(); };
             Find<Button>("GenerateButton").Click += delegate { GenerateMission(); };
             tabVehicleButton = Find<ToggleButton>("TabVehicleButton");
             tabTargetsButton = Find<ToggleButton>("TabTargetsButton");
@@ -257,6 +260,185 @@ namespace UniversalTestLab
             experimentalBuilt = false;
             if (tabExperimentalContent != null && tabExperimentalContent.Visibility == Visibility.Visible)
                 BuildExperimentalTab();
+        }
+
+        // Inline scene block: map, time/weather, spawn and target counts live on the
+        // page. Only the deep target editor (seven range positions, combined battles,
+        // SAM sites) still opens a dialog - that is a picker, not a setting.
+        private StackPanel inlineSceneHost;
+
+        // Real page switch: the scene page replaces the loadout body instead of
+        // floating over it. Everything except the card header is hidden while it is up.
+        private void ShowScenePage(bool show)
+        {
+            Grid card = Find<Grid>("BuildCardGrid");
+            if (card == null) return;
+            if (show && inlineSceneHost == null)
+            {
+                inlineSceneHost = new StackPanel
+                {
+                    Margin = new Thickness(16, 8, 16, 12),
+                    Background = ModernPalette.Brush(ModernPalette.Field),
+                    Visibility = Visibility.Collapsed,
+                };
+                Grid.SetRow(inlineSceneHost, 1);
+                Grid.SetRowSpan(inlineSceneHost, 5);
+                Panel.SetZIndex(inlineSceneHost, 60);
+                card.Children.Add(inlineSceneHost);
+                BuildInlineScene(inlineSceneHost);
+            }
+            string[] body = { "StationText", "PylonCard", "WeaponFilterPanel", "WeaponTableFrame", "BuildFooterRow" };
+            foreach (string name in body)
+            {
+                FrameworkElement element = Find<FrameworkElement>(name);
+                if (element != null) element.Visibility = show ? Visibility.Collapsed : Visibility.Visible;
+            }
+            if (inlineSceneHost != null) inlineSceneHost.Visibility = show ? Visibility.Visible : Visibility.Collapsed;
+        }
+        // The scene block overlays the weapon table inside the build card. It used to
+        // live inside the 58px header row, where it was clipped and looked like a
+        // dead button.
+
+        // Scene page in Ask3lad's form language: section captions with a hairline,
+        // a four-column environment grid, then spawn and target rows. Controls stretch
+        // to their column so nothing floats loose in the card.
+        private void BuildInlineScene(StackPanel host)
+        {
+            host.Children.Clear();
+            AircraftSettings settings = selectedAircraft == null ? new AircraftSettings() : controller.WorkspaceGetSettings(selectedAircraft);
+
+            host.Children.Add(SceneSection(ModernText.L("ENVIRONMENT", "环境")));
+            UniformGrid env = new UniformGrid { Columns = 4, Margin = new Thickness(0, 6, 0, 4) };
+            env.Children.Add(SceneField(ModernText.L("Scenario", "自定义任务"), SceneValue(CurrentSceneName())));
+            ComboBox mapBox = SceneCombo();
+            if (selectedAircraft != null && MainForm.IsShip(selectedAircraft))
+            {
+                foreach (string entry in new[]
+                {
+                    "levels/iwo_jima.bin", "levels/Clean_Testdrive.bin", "levels/avn_blacksea_port.bin",
+                    "levels/avn_fiji.bin", "levels/avn_japan.bin", "levels/avn_norway_islands.bin",
+                    "levels/guadalcanal.bin", "levels/saipan.bin", "levels/avn_mediterranean_port.bin",
+                    "levels/avn_peleliu.bin"
+                })
+                    mapBox.Items.Add(new ComboBoxItem { Content = System.IO.Path.GetFileNameWithoutExtension(entry), Tag = entry });
+                string wanted = String.IsNullOrWhiteSpace(settings.NavalMap) ? "levels/iwo_jima.bin" : settings.NavalMap;
+                mapBox.SelectedItem = mapBox.Items.OfType<ComboBoxItem>().FirstOrDefault(x => String.Equals(x.Tag as string, wanted, StringComparison.OrdinalIgnoreCase));
+                if (mapBox.SelectedItem == null) mapBox.SelectedIndex = 0;
+                mapBox.SelectionChanged += delegate
+                {
+                    ComboBoxItem picked = mapBox.SelectedItem as ComboBoxItem;
+                    if (picked == null || selectedAircraft == null) return;
+                    AircraftSettings current = controller.WorkspaceGetSettings(selectedAircraft);
+                    current.NavalMap = picked.Tag as string;
+                    controller.WorkspaceSetSettings(selectedAircraft, current);
+                    UpdateConfigurationSummary();
+                };
+            }
+            else
+            {
+                mapBox.Items.Add(new ComboBoxItem { Content = "Clean Testdrive", Tag = "levels/Clean_Testdrive.bin" });
+                mapBox.SelectedIndex = 0;
+            }
+            env.Children.Add(SceneField(ModernText.L("Map", "地图"), mapBox));
+            env.Children.Add(SceneField(ModernText.L("Time", "时间"), SceneValue(ModernText.L("Day", "白天"))));
+            env.Children.Add(SceneField(ModernText.L("Weather", "天气"), SceneValue(ModernText.L("Clear", "晴朗"))));
+            host.Children.Add(env);
+
+            host.Children.Add(SceneSection(ModernText.L("SPAWN", "出生点")));
+            UniformGrid spawnGrid = new UniformGrid { Columns = 4, Margin = new Thickness(0, 6, 0, 4) };
+            if (!GroundSelected)
+            {
+                ComboBox spawnBox = SceneCombo();
+                spawnBox.Items.Add(new ComboBoxItem { Content = ModernText.L("Air spawn", "空中出生"), Tag = "air" });
+                spawnBox.Items.Add(new ComboBoxItem { Content = ModernText.L("Runway takeoff", "跑道起飞"), Tag = "airport" });
+                spawnBox.SelectedIndex = "airport".Equals(MissionSettings.Current.SpawnMode, StringComparison.OrdinalIgnoreCase) ? 1 : 0;
+                spawnBox.SelectionChanged += delegate
+                {
+                    ComboBoxItem picked = spawnBox.SelectedItem as ComboBoxItem;
+                    if (picked == null) return;
+                    MissionSettings.Current.SpawnMode = picked.Tag as string;
+                    MissionSettings.Current.Save();
+                    UpdateConfigurationSummary();
+                };
+                spawnGrid.Children.Add(SceneField(ModernText.L("Mode", "方式"), spawnBox));
+                TextBox altBox = new TextBox { Text = MissionSettings.Current.SpawnAltitude.ToString(CultureInfo.InvariantCulture), Height = 28, VerticalContentAlignment = VerticalAlignment.Center, Padding = new Thickness(6, 0, 6, 0) };
+                altBox.LostFocus += delegate
+                {
+                    double parsed;
+                    if (!Double.TryParse(altBox.Text.Trim(), NumberStyles.Float, CultureInfo.InvariantCulture, out parsed)) return;
+                    MissionSettings.Current.SpawnAltitude = (int)Math.Max(50, Math.Min(12000, parsed));
+                    MissionSettings.Current.Save();
+                    UpdateConfigurationSummary();
+                };
+                spawnGrid.Children.Add(SceneField(ModernText.L("Altitude (m)", "高度（米）"), altBox));
+            }
+            else
+            {
+                spawnGrid.Children.Add(SceneField(ModernText.L("Mode", "方式"), SceneValue(ModernText.L("Range hangar", "靶场机库"))));
+            }
+            host.Children.Add(spawnGrid);
+
+            host.Children.Add(SceneSection(ModernText.L("TARGETS", "目标")));
+            AircraftView air = airTarget == null ? null : airTarget.SelectedItem as AircraftView;
+            host.Children.Add(SceneTargetRow(ModernText.L("Air", "空中目标"), SelectedCount(airCount).ToString(CultureInfo.InvariantCulture) + " × " + (air == null ? "—" : air.Name), false));
+            host.Children.Add(SceneTargetRow(ModernText.L("Ground", "地面目标"), configuredGroundTargets.Count.ToString(CultureInfo.InvariantCulture) + ModernText.L(" positions", " 个位置"), false));
+            host.Children.Add(SceneTargetRow(ModernText.L("Naval", "海上目标"), SelectedCount(shipCount).ToString(CultureInfo.InvariantCulture), false));
+            host.Children.Add(SceneTargetRow(ModernText.L("Deep editor", "深度编辑"), ModernText.L("range table, combined battles, SAM sites", "距离表 / 联合战役 / SAM 阵地"), true));
+        }
+
+        private static StackPanel SceneSection(string title)
+        {
+            StackPanel section = new StackPanel { Margin = new Thickness(0, 12, 0, 0) };
+            section.Children.Add(new TextBlock { Text = "// " + title, Foreground = ModernPalette.Brush(ModernPalette.Cyan), FontSize = 11, FontWeight = FontWeights.SemiBold });
+            section.Children.Add(new Border { Height = 1, Background = ModernPalette.Brush("#332C4A6B"), Margin = new Thickness(0, 4, 0, 2) });
+            return section;
+        }
+
+        private static StackPanel SceneField(string label, FrameworkElement control)
+        {
+            StackPanel field = new StackPanel { Margin = new Thickness(0, 2, 10, 0) };
+            field.Children.Add(new TextBlock { Text = label, Foreground = ModernPalette.Brush(ModernPalette.Muted), FontSize = 10, Margin = new Thickness(0, 0, 0, 3) });
+            control.HorizontalAlignment = HorizontalAlignment.Stretch;
+            field.Children.Add(control);
+            return field;
+        }
+
+        private static ComboBox SceneCombo()
+        {
+            return new ComboBox { Foreground = ModernPalette.Brush(ModernPalette.Text), Background = ModernPalette.Brush("#FF16283E"), BorderBrush = ModernPalette.Brush(ModernPalette.Border), Height = 28, VerticalContentAlignment = VerticalAlignment.Center };
+        }
+
+        private static TextBlock SceneValue(string text)
+        {
+            return new TextBlock { Text = text, Foreground = ModernPalette.Brush(ModernPalette.Text), Height = 28, VerticalAlignment = VerticalAlignment.Center };
+        }
+
+        private FrameworkElement SceneTargetRow(string label, string value, bool withButton)
+        {
+            Grid row = new Grid { Margin = new Thickness(0, 3, 0, 3) };
+            row.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(110) });
+            row.ColumnDefinitions.Add(new ColumnDefinition());
+            row.ColumnDefinitions.Add(new ColumnDefinition { Width = GridLength.Auto });
+            row.Children.Add(new TextBlock { Text = label, Foreground = ModernPalette.Brush(ModernPalette.Text), VerticalAlignment = VerticalAlignment.Center });
+            TextBlock valueText = new TextBlock { Text = value, Foreground = ModernPalette.Brush(ModernPalette.Muted), VerticalAlignment = VerticalAlignment.Center, TextTrimming = TextTrimming.CharacterEllipsis };
+            Grid.SetColumn(valueText, 1);
+            row.Children.Add(valueText);
+            if (withButton)
+            {
+                Button edit = new Button { Content = ModernText.L("Edit…", "编辑…"), Style = (Style)Resources["ButtonStyle"], Height = 26, Padding = new Thickness(14, 0, 14, 0) };
+                edit.Click += delegate { ShowMap(); };
+                Grid.SetColumn(edit, 2);
+                row.Children.Add(edit);
+            }
+            return row;
+        }
+
+        private string CurrentSceneName()
+        {
+            if (selectedAircraft == null) return "—";
+            if (MainForm.IsShip(selectedAircraft)) return ModernText.L("Naval", "海战试驾");
+            if (GroundSelected) return ModernText.L("Ground", "陆战试驾");
+            return ModernText.L("Air", "空战试驾");
         }
 
         private void BuildExperimentalTab()

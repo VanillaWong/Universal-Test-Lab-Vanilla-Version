@@ -44,18 +44,50 @@ namespace UniversalTestLab
             string proxyDir = Path.Combine(root, @"content\pkg_local\gameData\units\ships\userVehicles");
             Directory.CreateDirectory(proxyDir);
             string proxyPath = Path.Combine(proxyDir, "utl_naval_player.blk");
-            string proxy = "include \"#/develop/gameBase/gameData/units/ships/" + target.Id + ".blk\"" + Environment.NewLine;
+            // AI-only hulls (nation "Other", rank 0) ship missile mounts a player cannot
+            // use: fixed VLS blocks need a wide fire cone, and semi-active rounds need an
+            // illumination channel the player-side fire control never opens. They get a
+            // patched full copy instead of a bare include; the copy lives in pkg_local,
+            // so no shipped game file is modified.
+            List<string> patchedFiles = new List<string>();
+            string proxy;
+            if (NavalWeapons.IsAiOnly(target.Id))
+                proxy = NavalShipPatcher.Build(root, target.Id, out patchedFiles);
+            else
+                proxy = "include \"#/develop/gameBase/gameData/units/ships/" + target.Id + ".blk\"" + Environment.NewLine;
             WriteBytes(proxyPath, new UTF8Encoding(false).GetBytes(proxy));
-            return new GeneratedAircraft
+            GeneratedAircraft generatedShip = new GeneratedAircraft
             {
                 ClassId = "userVehicles/utl_naval_player",
-                PresetId = ResolveShipPreset(root, target.Id,
-                    String.IsNullOrWhiteSpace(GetAircraftSettings(target).ShipPreset)
-                        ? target.DefaultPreset : GetAircraftSettings(target).ShipPreset),
+                // ships.json carries the AI preset (often the torpedo variant) as the
+                // default; only an explicit user choice should beat <id>_default.
+                PresetId = ResolveShipPreset(root, target.Id, GetAircraftSettings(target).ShipPreset),
                 ModelId = target.Id,
                 FlightModelPath = proxyPath,
                 SpawnSpeedKmh = 0
             };
+            foreach (string patched in patchedFiles) generatedShip.AuxiliaryPaths.Add(patched);
+            return generatedShip;
+        }
+
+        // Some 2.61 jets reference a generic MetaPartsBlk that the game cannot load
+        // ("BLK not found: .../jet_fighter_metaparts.blk"); the stock file uses the
+        // 1x/2x_engine_ variant instead. Pick the first variant that actually exists.
+        private static string SanitizeMetaParts(string root, string fm)
+        {
+            Match match = Regex.Match(fm ?? "", @"MetaPartsBlk:t\s*=\s*""([^""]*jet_fighter_metaparts\.blk)""");
+            if (!match.Success) return fm;
+            foreach (string candidate in new[] { "2x_engine_jet_fighter_metaparts.blk", "1x_engine_jet_fighter_metaparts.blk" })
+            {
+                try
+                {
+                    string extracted = ExtractGameBlk(root, "gamedata/flightmodels/dm/metaparts/" + candidate);
+                    if (!String.IsNullOrEmpty(extracted) && File.Exists(extracted))
+                        return fm.Replace(match.Groups[1].Value, "gamedata/flightModels/dm/metaparts/" + candidate);
+                }
+                catch { }
+            }
+            return fm;
         }
 
         private GeneratedAircraft BuildCustomAircraft(string root, Aircraft target, string token)
@@ -68,6 +100,7 @@ namespace UniversalTestLab
                 fm = BuildDownloadedFpvVariant(quad, originalFpv);
             }
             else fm = File.ReadAllText(ExtractGameBlk(root, "gamedata/flightmodels/" + target.Id + ".blk"), Encoding.UTF8);
+            fm = SanitizeMetaParts(root, fm);
             int spawnSpeedKmh = ResolveConfiguredSpawnSpeed(target, fm, MissionSettings.Current);
             AircraftSettings settings = GetAircraftSettings(target);
             bool helicopter = IsHelicopter(target, fm);

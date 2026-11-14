@@ -1,91 +1,80 @@
-# UTL 待办事项（更新于 2026-11-13）
+# UTL 待办事项（更新于 2026-11-14 晚）
 
-> 背景与历史见 `docs/ARCHIVE_2026-11-13.md`（本轮，含海军机制与坑）与更早归档。
-> 每项格式：目标 → 现状 → 涉及文件 → 下一步。
-
----
-
-## 0. 当前主线：海军
-
-玩家开船已通（602/663 艘可选）。现在的短板是**内容与弹药**，不是链路。
-
-### N1. 海军靶场（3 / 6 / 9 / 12 / 15 km）
-- 目标：按距离铺开舰种（驱逐→轻巡→重巡→战列→航母）+ 2 组靶机
-- 现状：任务里只有模板自带的 1 艘大和 + 2 架靶机
-- 做法：生成时克隆 N 个 `ships{...}` 兄弟块，名字 `UTL_Range_XX`，`props.army=2`
-- 文件：`UniversalTestLab.BlkTools.cs`（`ConfigureShipPlayer` 附近）
-
-### N2. 战争模式（靶船反击）
-- 目标：开关打开后靶船主动攻击玩家
-- 实现：`unitAttackTarget{ object:"Target_Ship_XX" target:"You" playerAttracted:yes fireRandom:yes }`
-- 现状：未做；Ask3lad 用 3–4 条该动作实现
-
-### N3. 舰船弹药面板（按口径选弹）
-- 目标：127mm / 40mm / 20mm 各自选弹种，写进 `bullets0..3`
-- 现状：`bulletsN:t=""` + 9999（引擎用默认弹，主炮可用）
-- 参考写法（Ask3lad）：
-  ```
-  bullets0:t="127mm_usa_mk34_common_he"
-  bullets1:t="40mm_bofors_l60_navy_universal"
-  bullets2:t="20mm_oerlikon_navy_he"
-  ```
-- 数据：可从舰船各 Weapon 的炮文件容器列表生成
-
-### N4. 未确认项
-- **鱼雷**：注册预设名修复后是否真的出现（`mk6_bomb_mortar_mk15_torpedoes`）
-- **航母 HHQ-10**：4 座火箭发射器能否切换/发射
-- **官方海图出生点**：每图找一组稳定坐标，写进默认值
-
-### N5. 深水 / 潜艇
-- 现状：`Clean_Testdrive` 抬海面（water 1→100）能潜但视觉差，已回滚
-- 已加官方海图（Black Sea port / Guadalcanal / Saipan …）待实测深度
-- 真要深水图：CDK 的 `heightmapLand.plugin.blk` 有 `minUnderwaterBottomDepth`，但需 Dagor 重新导出
+> 本日完整记录见 `docs/ARCHIVE_2026-11-14.md`；
+> AI 舰导弹技术细节见 `docs/NAVAL_AI_MISSILES_2026-11-14.md`。
 
 ---
 
-## A. 飞机（实验性功能）
+## 0. 已完成
 
-### A1. weightless（挂载无重无阻）
-- 做法：每个挂载生成薄包装 `include` 原武器 + `"@override:rocket"{ "@override:dragCx":r = 0 }`（炸弹再加 `mass:r = 1`）
-- 现状：未做
+### ✅ AI 舰导弹可用性（11 条补丁，三艘实测通过）
+054A / Halsey / 052D 均可正常发射并命中。核心是 `applyAllMods`、导弹优先占弹药槽、
+`finsAoa 0.125→0.35`、借用 SM-6 自动驾驶。**不是 bug，是 AI 资产没做玩家侧调校。**
 
-### A2. 武器调校（wtune）
-- 做法：薄包装 + 顶层 `"@override:字段":类型 = 值`（射速/后坐/弹重/装药）
-- 现状：未做
+### ✅ 海军导弹进换挂载
+16 条 `Naval Missiles` 目录项，飞机/坦克可挂（`utl-sam:` 机制）。
 
-### A3. 飞机换机炮
-- 现状：地面换炮已有；飞机 `commonWeapons` 仍是原生 preset
-- 做法：改 `Weapon.blk` 指向薄包装文件
+### ✅ 舰船武器数据
+`tools/build-naval-weapons.js` → `data/naval_weapons.json`（663 艘 / 15227 组 / 28 弹）。
 
----
+### ✅ UI 重构（第一批）
+- 右栏改为 `SUMMARY`：标签/值两列 + 滚动条 + 弹种名/数量/总计
+- 三步骤按钮 `01 配置 / 02 场景 / 03 应用`
+- 内联场景面板：地图、时间天气、出生方式+高度、目标摘要 + `编辑…` 弹窗
+- 飞行配置三张卡片（AIRFRAME / RADAR / SHIP LOADOUT）搬进内联页
+- `OptionCategory` 分类标签条（空分类自动隐藏）
+- 实验开关改为紧凑行（名称 + 开关 + tooltip）
 
-## B. 弹药 / 换炮（旧账）
-
-### B1. 4 种弹上限提醒
-- 界面显示「弹药种类 X/4」，第 5 种红字阻止；生成时提示"已忽略 N 种"
-
-### B2. `(fixed ammo)` 标注
-- 换炮页 donor 武器没有可编辑弹种时标注
-
-### B3. 工作台覆盖原生弹药
-- 方案 A：工作台在「原生炮」模式不写回 `GroundAmmoLoadouts`
+### ✅ 弹药容量上限（bug 修复）
+`TrimGroundLoadouts` 曾是死代码 → 新增 `TrimToCapacity()`，读档/写回双向裁剪；
+选弹种与应用时也各夹一次。四道防线。
 
 ---
 
-## C. 架构 / UI
+## 1. 下一步（按优先级）
 
-### C1. 用"整份单位拷贝"替代 `@override:Weapon[1]` / `preset[1]`
-- 根治下标错位类 bug（防空车 preset 那次），Ask3lad 已采用该架构
+### P1 · 03 应用页
+- 文件清单：本次写入了哪些文件、每个文件几处改动
+- 备份：`%APPDATA%\UniversalTestLab\backups\<时间戳>\` + `manifest.json`
+- 历史列表 + 撤销上一次应用
+- 参考 Ask3lad 的 `01 配置 / 02 场景 / 03 应用` 第三页
 
-### C2. UI 重构三批
-- 见 `docs/UI_REFACTOR_PLAN_2026-09-11.md`
+### P2 · 清理占位标签
+顶部 `TARGETS / OPTIONS / GARAGE / EXPERIMENTAL` 四个占位页仍是
+"Stage1: migrating ..."，应合并进三步或删除。
+
+### P3 · 多场景任务拆分
+| 场景 | 文件 | chapter | 默认地图 |
+|---|---|---|---|
+| 空战 | `utl_scene_air.blk` | `TestDrive_Air` | Clean_Testdrive |
+| 陆战 | `utl_scene_ground.blk` | `TestDrive_Ground` | Clean_Testdrive |
+| 海战 | `utl_scene_naval.blk` | `TestDrive_Naval` | iwo_jima |
+| 潜艇 | `utl_scene_sub.blk` | `TestDrive_Sub` | avn_peleliu |
+
+雷点：`Actions.cs:312` 的清理通配 `universal_test_lab_*.blk` 会互删，必须改白名单。
+
+### P4 · 目标表
+每目标一行：载具 / 数量 / 武器 / 重生。对标 Ask3lad 的表格。
+
+### P5 · 海军内容
+N1 靶场、N2 战争模式、N3 按口径选弹 UI、N5 深水/潜艇（Peleliu 待实测）
 
 ---
 
-## D. 环境备忘
+## 2. 交互原则（已确立）
 
-- 改代码：`code_execution` 写补丁脚本 → `user_exec node <脚本>`（绕开审批超时）
-- 编译：`cmd /c compile.bat`（**UTL 必须关闭**；崩溃会留僵尸进程，需任务管理器）
+1. 三栏：左选载具 / 中设置（三步）/ 右摘要
+2. **弹窗只用于"选择"**：挑供体飞机、雷达、深度目标编辑
+3. **设置一律内联**：弹药、开关、地图、出生、目标数量
+4. 右栏永远显示当前配置，改完立刻刷新
+
+---
+
+## 3. 环境备忘
+
+- 编译：`cmd /c compile.bat`（UTL 必须关闭，否则 CS0016）
 - 自测：`dist\UniversalTestLab.exe --selftest`
-- 数据重建：`Update-Data.ps1` ≈25 分钟，后台跑 + 轮询
-- Ask3lad 抓取：`node tools/capture-ask3lad.js`
+- 新增 `.cs` 必须加进 `build.rsp`
+- 改 C# 用 Node 脚本（`edit_file` 对 CRLF/`\r\r\n` 敏感）
+- 目录重建：`Build-Catalog.ps1` + `node tools\tsv2json.js`（≈30 分钟）
+- 数据重建：`Update-Data.ps1`（≈25 分钟）

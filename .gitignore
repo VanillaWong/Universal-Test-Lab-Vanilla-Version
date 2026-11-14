@@ -18,6 +18,8 @@ diagnostics/
 build_run.log
 build_run.err
 build_catalog_phase5.log
+catalog.log
+catalog.err
 # Game unpacked data (530 MB) — never push
 universal_char_data/
 universal_game_data/

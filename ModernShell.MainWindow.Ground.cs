@@ -120,6 +120,14 @@ namespace UniversalTestLab
                 count = remaining;
                 if (remaining > 0) countBox.Text = count.ToString(CultureInfo.InvariantCulture);
             }
+            // Presets and typed values can exceed the magazine; clamp against what the
+            // other slots of the same calibre already reserve.
+            int capMax = GroundAmmoCapacity(groundCache, cal);
+            int capUsed = GroundLoadoutUsed(loadouts, cal);
+            GroundAmmoLoadout capExisting = loadouts[slotCopy];
+            if (capExisting != null) capUsed -= capExisting.Count;
+            int capRoom = Math.Max(0, capMax - capUsed);
+            if (count > capRoom) count = capRoom;
             loadouts[slotCopy] = new GroundAmmoLoadout { Slot = slotCopy, Count = count, SourceBlk = String.IsNullOrEmpty(opt.Value) ? "stock:" + (cal > 0 ? cal.ToString(CultureInfo.InvariantCulture) : "0") : null, BulletName = opt.Value };
             SyncGroundLoadoutBoxes(boxes, counts, loadouts);
             UpdateGroundLoadoutCounter(counter, loadouts, groundCache);
@@ -169,8 +177,25 @@ namespace UniversalTestLab
     apply.Click += delegate {
         if (selectedAircraft == null) return;
         settings.GroundAmmoLoadouts.Clear();
-        foreach (GroundAmmoLoadout lo in loadouts) if (lo != null && lo.Count > 0) settings.GroundAmmoLoadouts.Add(lo);
+        foreach (GroundAmmoLoadout lo in loadouts)
+        {
+            if (lo == null || lo.Count <= 0) continue;
+            int loCalibre = GroundLoadoutCalibre(lo);
+            int capTotal = GroundAmmoCapacity(groundCache, loCalibre);
+            int capTaken = 0;
+            foreach (GroundAmmoLoadout other in settings.GroundAmmoLoadouts)
+                if (GroundLoadoutCalibre(other) == loCalibre) capTaken += other.Count;
+            int capLeft = Math.Max(0, capTotal - capTaken);
+            if (lo.Count > capLeft) lo.Count = capLeft;
+            if (lo.Count > 0) settings.GroundAmmoLoadouts.Add(lo);
+        }
+        SyncGroundLoadoutBoxes(boxes, counts, loadouts);
+        UpdateGroundLoadoutCounter(counter, loadouts, groundCache);
         controller.WorkspaceSetSettings(selectedAircraft, settings);
+        // The right-hand summary is the only feedback for this action; without an
+        // explicit refresh it kept showing the previous ammunition until a vehicle
+        // switch forced a rebuild.
+        UpdateConfigurationSummary();
     };
     Grid.SetColumn(apply, 1); actionRow.Children.Add(apply);
     stack.Children.Add(actionRow);

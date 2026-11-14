@@ -197,8 +197,8 @@ namespace UniversalTestLab
         private Border Card(string title)
         {
             StackPanel stack = new StackPanel();
-            stack.Children.Add(Heading(title, 15));
-            return new Border { CornerRadius = new CornerRadius(15), BorderBrush = ModernPalette.Brush(ModernPalette.Border), BorderThickness = new Thickness(1), Background = ModernPalette.Brush("#A024324D"), Padding = new Thickness(16), Margin = new Thickness(0, 0, 0, 12), Child = stack };
+            stack.Children.Add(new TextBlock { Text = "// " + title, Foreground = ModernPalette.Brush(ModernPalette.Cyan), FontSize = 12, FontWeight = FontWeights.SemiBold, Margin = new Thickness(0, 0, 0, 8) });
+            return new Border { Child = stack, BorderThickness = new Thickness(0, 0, 0, 1), BorderBrush = ModernPalette.Brush("#332C4A6B"), Padding = new Thickness(0, 0, 0, 10), Margin = new Thickness(0, 0, 0, 14) };
         }
 
         private Slider OptionCard(StackPanel host, string title, string hint, double value, double minimum, double maximum, bool tenthStep)
@@ -464,8 +464,8 @@ namespace UniversalTestLab
         private Border Card(string title)
         {
             StackPanel stack = new StackPanel();
-            stack.Children.Add(Heading(title, 15));
-            return new Border { CornerRadius = new CornerRadius(15), BorderBrush = ModernPalette.Brush(ModernPalette.Border), BorderThickness = new Thickness(1), Background = ModernPalette.Brush("#A024324D"), Padding = new Thickness(16), Margin = new Thickness(0, 0, 0, 12), Child = stack };
+            stack.Children.Add(new TextBlock { Text = "// " + title, Foreground = ModernPalette.Brush(ModernPalette.Cyan), FontSize = 12, FontWeight = FontWeights.SemiBold, Margin = new Thickness(0, 0, 0, 8) });
+            return new Border { Child = stack, BorderThickness = new Thickness(0, 0, 0, 1), BorderBrush = ModernPalette.Brush("#332C4A6B"), Padding = new Thickness(0, 0, 0, 10), Margin = new Thickness(0, 0, 0, 14) };
         }
 
         private Slider OptionCard(StackPanel host, string title, string hint, double value, double minimum, double maximum, bool tenthStep)
@@ -543,6 +543,11 @@ namespace UniversalTestLab
         private readonly ScrollViewer contentScroll;
         private readonly List<CountermeasureEditor> editors = new List<CountermeasureEditor>();
         private readonly List<GunBeltEditor> gunBeltEditors = new List<GunBeltEditor>();
+        // Experimental / sensor / naval cards were previously only reachable from the
+        // modal dialog; they now live inline so every option is in one place.
+        private CheckBox zeroMassBox, indestructibleBox, helmetSightBox, mawsBox;
+        private ComboBox radarBox, shipPresetBox, shipMapBox;
+        private TextBox shipSpawnXBox, shipSpawnYBox, shipSpawnZBox;
 
         public FlightConfigurePanel(Aircraft aircraft, AircraftSettings current, IEnumerable<CountermeasureLauncher> launchers, IEnumerable<AircraftModification> modifications)
         {
@@ -567,16 +572,107 @@ namespace UniversalTestLab
             customizeCountermeasures = new CheckBox { Content = ModernText.L("Customize installed countermeasure stations", "自定义已装干扰弹站"), IsChecked = original.OverrideCountermeasures, Foreground = ModernPalette.Brush(ModernPalette.Cyan), FontWeight = FontWeights.SemiBold, Margin = new Thickness(0, 10, 0, 8) }; cmContent.Children.Add(customizeCountermeasures);
             foreach (CountermeasureLauncher launcher in launchers) AddLauncher(cmContent, launcher);
             cmContent.Children.Add(new TextBlock { Text = "Each emitter is configured separately. Flare-only or chaff-only dispensers expose only the supported slider; BOL, BKO and MAW modules still decide which stations exist. Ammunition is restored only after it is exhausted so active optics and seekers are not reset in flight.", Foreground = ModernPalette.Brush(ModernPalette.Muted), TextWrapping = TextWrapping.Wrap, Margin = new Thickness(0, 8, 0, 0) }); content.Children.Add(cmCard);
+            Border expCard = Card("EXPERIMENTAL AIRFRAME"); StackPanel expContent = expCard.Child as StackPanel;
+            expContent.Children.Add(new TextBlock { Text = ModernText.L("Plain flight-model and avionics fields written into the copied unit.", "直接写入拷贝后的机体/单位文件。"), Foreground = ModernPalette.Brush(ModernPalette.Muted), TextWrapping = TextWrapping.Wrap, Margin = new Thickness(0, 2, 0, 6) });
+            zeroMassBox = new CheckBox { IsChecked = original.ZeroMass };
+            expContent.Children.Add(OptionRow(ModernText.L("Zero mass", "零质量"), ModernText.L("Empty mass is multiplied by 0.01.", "空重 ×0.01。"), zeroMassBox));
+            indestructibleBox = new CheckBox { IsChecked = original.Indestructible };
+            expContent.Children.Add(OptionRow(ModernText.L("Indestructible", "超速过载不损毁"), ModernText.L("Raises VNE / Mach / overload / gear / canopy limits.", "放宽 VNE / 马赫 / 过载 / 起落架 / 舱盖限制。"), indestructibleBox));
+            helmetSightBox = new CheckBox { IsChecked = original.HelmetSight };
+            expContent.Children.Add(OptionRow(ModernText.L("Helmet sight (HMD)", "头盔瞄准具（HMD）"), ModernText.L("Adds the helmet-mounted designator fields.", "写入头盔瞄准具字段。"), helmetSightBox));
+            mawsBox = new CheckBox { IsChecked = original.MawsUpgrade };
+            expContent.Children.Add(OptionRow(ModernText.L("Missile warning (MAWS)", "导弹来袭告警（MAWS）"), ModernText.L("Installs the missile-approach warning sensor.", "安装导弹来袭告警传感器。"), mawsBox));
+            content.Children.Add(expCard);
+
+            Border radarCard = Card("RADAR"); StackPanel radarContent = radarCard.Child as StackPanel;
+            radarContent.Children.Add(new TextBlock { Text = ModernText.L("Replaces the aircraft's existing radar in place - sensor order and modes are preserved.", "就地替换该机现有雷达，保留传感器顺序与模式。"), Foreground = ModernPalette.Brush(ModernPalette.Muted), TextWrapping = TextWrapping.Wrap, Margin = new Thickness(0, 2, 0, 8) });
+            radarBox = new ComboBox { Foreground = ModernPalette.Brush(ModernPalette.Text), Background = ModernPalette.Brush("#FF16283E"), BorderBrush = ModernPalette.Brush(ModernPalette.Border), Padding = new Thickness(8, 4, 8, 4), Height = 30, HorizontalAlignment = HorizontalAlignment.Stretch };
+            radarBox.Items.Add(new ComboBoxItem { Content = ModernText.L("(native radar)", "（原生雷达）"), Tag = "" });
+            foreach (SensorRowJson sensor in ModernFlightConfigureWindow.RadarChoices()) radarBox.Items.Add(new ComboBoxItem { Content = sensor.display + "  •  " + ModernFlightConfigureWindow.RadarDetail(sensor), Tag = sensor.id });
+            if (!String.IsNullOrWhiteSpace(original.RadarSearchBlk))
+            {
+                ComboBoxItem savedRadar = radarBox.Items.OfType<ComboBoxItem>().FirstOrDefault(x => String.Equals(x.Tag as string, original.RadarSearchBlk, StringComparison.OrdinalIgnoreCase));
+                if (savedRadar != null) radarBox.SelectedItem = savedRadar;
+            }
+            if (radarBox.SelectedItem == null) radarBox.SelectedIndex = 0;
+            radarContent.Children.Add(radarBox);
+            content.Children.Add(radarCard);
+
+            if (MainForm.IsShip(aircraft))
+            {
+                Border shipCard = Card("SHIP LOADOUT"); StackPanel shipContent = shipCard.Child as StackPanel;
+                shipContent.Children.Add(new TextBlock { Text = ModernText.L("Weapon preset for this hull. Torpedoes live in a separate preset.", "该舰的武器预设；鱼雷在独立预设里。"), Foreground = ModernPalette.Brush(ModernPalette.Muted), TextWrapping = TextWrapping.Wrap, Margin = new Thickness(0, 2, 0, 8) });
+                shipPresetBox = new ComboBox { Foreground = ModernPalette.Brush(ModernPalette.Text), Background = ModernPalette.Brush("#FF16283E"), BorderBrush = ModernPalette.Brush(ModernPalette.Border), Padding = new Thickness(8, 4, 8, 4), Height = 30, HorizontalAlignment = HorizontalAlignment.Stretch };
+                foreach (string presetName in MainForm.ShipPresetNames(aircraft.Id)) shipPresetBox.Items.Add(new ComboBoxItem { Content = presetName, Tag = presetName });
+                string wantedPreset = String.IsNullOrWhiteSpace(original.ShipPreset) ? aircraft.Id + "_default" : original.ShipPreset;
+                ComboBoxItem matchPreset = shipPresetBox.Items.OfType<ComboBoxItem>().FirstOrDefault(x => String.Equals(x.Tag as string, wantedPreset, StringComparison.OrdinalIgnoreCase));
+                if (matchPreset != null) shipPresetBox.SelectedItem = matchPreset;
+                if (shipPresetBox.SelectedItem == null && shipPresetBox.Items.Count > 0) shipPresetBox.SelectedIndex = 0;
+                shipContent.Children.Add(shipPresetBox);
+                shipContent.Children.Add(new TextBlock { Text = ModernText.L("Map", "地图"), Foreground = ModernPalette.Brush(ModernPalette.Cyan), FontSize = 11, FontWeight = FontWeights.SemiBold, Margin = new Thickness(0, 10, 0, 2) });
+                shipMapBox = new ComboBox { Foreground = ModernPalette.Brush(ModernPalette.Text), Background = ModernPalette.Brush("#FF16283E"), BorderBrush = ModernPalette.Brush(ModernPalette.Border), Padding = new Thickness(8, 4, 8, 4), Height = 30, HorizontalAlignment = HorizontalAlignment.Stretch, Margin = new Thickness(0, 2, 0, 0) };
+                shipMapBox.Items.Add(new ComboBoxItem { Content = "Iwo Jima (stock naval map)", Tag = "levels/iwo_jima.bin" });
+                shipMapBox.Items.Add(new ComboBoxItem { Content = "Clean Testdrive (UTL level)", Tag = "levels/Clean_Testdrive.bin" });
+                shipMapBox.Items.Add(new ComboBoxItem { Content = "Black Sea port", Tag = "levels/avn_blacksea_port.bin" });
+                shipMapBox.Items.Add(new ComboBoxItem { Content = "Fiji", Tag = "levels/avn_fiji.bin" });
+                shipMapBox.Items.Add(new ComboBoxItem { Content = "Japan naval", Tag = "levels/avn_japan.bin" });
+                shipMapBox.Items.Add(new ComboBoxItem { Content = "Norway islands", Tag = "levels/avn_norway_islands.bin" });
+                shipMapBox.Items.Add(new ComboBoxItem { Content = "Guadalcanal", Tag = "levels/guadalcanal.bin" });
+                shipMapBox.Items.Add(new ComboBoxItem { Content = "Saipan", Tag = "levels/saipan.bin" });
+                shipMapBox.Items.Add(new ComboBoxItem { Content = "Mediterranean port", Tag = "levels/avn_mediterranean_port.bin" });
+                shipMapBox.Items.Add(new ComboBoxItem { Content = "Peleliu (deep water, submarine)", Tag = "levels/avn_peleliu.bin" });
+                string wantedMap = String.IsNullOrWhiteSpace(original.NavalMap) ? "levels/iwo_jima.bin" : original.NavalMap;
+                ComboBoxItem mapMatch = shipMapBox.Items.OfType<ComboBoxItem>().FirstOrDefault(x => String.Equals(x.Tag as string, wantedMap, StringComparison.OrdinalIgnoreCase));
+                if (mapMatch != null) shipMapBox.SelectedItem = mapMatch;
+                if (shipMapBox.SelectedItem == null) shipMapBox.SelectedIndex = 0;
+                shipContent.Children.Add(shipMapBox);
+                StackPanel spawnRow = new StackPanel { Orientation = Orientation.Horizontal, Margin = new Thickness(0, 8, 0, 0) };
+                spawnRow.Children.Add(new TextBlock { Text = ModernText.L("Spawn X / Z / Y", "出生点 X / Z / Y"), Foreground = ModernPalette.Brush(ModernPalette.Muted), VerticalAlignment = VerticalAlignment.Center, Margin = new Thickness(0, 0, 8, 0) });
+                shipSpawnXBox = new TextBox { Text = original.NavalSpawnX.ToString("0.###", CultureInfo.InvariantCulture), Width = 110, Margin = new Thickness(0, 0, 6, 0) };
+                shipSpawnZBox = new TextBox { Text = original.NavalSpawnZ.ToString("0.###", CultureInfo.InvariantCulture), Width = 110 };
+                shipSpawnYBox = new TextBox { Text = original.NavalSpawnY.ToString("0.###", CultureInfo.InvariantCulture), Width = 90, Margin = new Thickness(6, 0, 0, 0) };
+                spawnRow.Children.Add(shipSpawnXBox);
+                spawnRow.Children.Add(shipSpawnZBox);
+                spawnRow.Children.Add(shipSpawnYBox);
+                shipContent.Children.Add(spawnRow);
+                content.Children.Add(shipCard);
+            }
+
+            OptionCategory.Apply(content, new Dictionary<string, string[]>
+            {
+                { ModernText.L("FLIGHT", "飞行"), new[] { "STARTING FUEL", "EXPERIMENTAL AIRFRAME" } },
+                { ModernText.L("WEAPONS", "武器"), new[] { "CANNON AMMUNITION BELTS", "COUNTERMEASURE STATIONS", "SHIP LOADOUT" } },
+                { ModernText.L("SENSORS", "传感器"), new[] { "RADAR" } },
+            });
             contentScroll = new ScrollViewer { Content = content, VerticalScrollBarVisibility = ScrollBarVisibility.Auto, HorizontalScrollBarVisibility = ScrollBarVisibility.Disabled, Margin = new Thickness(0, 6, 0, 8), Padding = new Thickness(0, 0, 8, 20) };
             Children.Add(contentScroll);
             fuelSlider.ValueChanged += delegate { UpdateState(); }; fullFuel.Checked += delegate { UpdateState(); }; fullFuel.Unchecked += delegate { UpdateState(); };
             customizeCountermeasures.Checked += delegate { UpdateState(); }; customizeCountermeasures.Unchecked += delegate { UpdateState(); }; UpdateState();
         }
 
+        // One option per line: label on the left, switch on the right, details in a
+        // tooltip. Ask3lad keeps its option tables this dense; long paragraphs pushed
+        // every other control off screen.
+        private FrameworkElement OptionRow(string label, string hint, CheckBox box)
+        {
+            Grid row = new Grid { Margin = new Thickness(0, 7, 0, 7) };
+            row.ColumnDefinitions.Add(new ColumnDefinition());
+            row.ColumnDefinitions.Add(new ColumnDefinition { Width = GridLength.Auto });
+            TextBlock text = new TextBlock { Text = label, Foreground = ModernPalette.Brush(ModernPalette.Text), VerticalAlignment = VerticalAlignment.Center, TextWrapping = TextWrapping.NoWrap, TextTrimming = TextTrimming.CharacterEllipsis };
+            if (!String.IsNullOrEmpty(hint)) text.ToolTip = hint;
+            row.Children.Add(text);
+            box.Content = null;
+            box.VerticalAlignment = VerticalAlignment.Center;
+            box.HorizontalAlignment = HorizontalAlignment.Right;
+            Grid.SetColumn(box, 1);
+            row.Children.Add(box);
+            return row;
+        }
+
         private Border Card(string title)
         {
-            StackPanel stack = new StackPanel(); stack.Children.Add(Heading(title, 15));
-            return new Border { CornerRadius = new CornerRadius(15), BorderBrush = ModernPalette.Brush(ModernPalette.Border), BorderThickness = new Thickness(1), Background = ModernPalette.Brush("#A024324D"), Padding = new Thickness(16), Margin = new Thickness(0, 0, 0, 12), Child = stack };
+            StackPanel stack = new StackPanel(); stack.Children.Add(new TextBlock { Text = "// " + title, Foreground = ModernPalette.Brush(ModernPalette.Cyan), FontSize = 12, FontWeight = FontWeights.SemiBold, Margin = new Thickness(0, 0, 0, 8) });
+            return new Border { Child = stack, BorderThickness = new Thickness(0, 0, 0, 1), BorderBrush = ModernPalette.Brush("#332C4A6B"), Padding = new Thickness(0, 0, 0, 10), Margin = new Thickness(0, 0, 0, 14) };
         }
 
         private TextBlock ValueText()
@@ -716,6 +812,41 @@ namespace UniversalTestLab
                 result.CountermeasureLoadouts.Add(new CountermeasureLoadout { Key = editor.Launcher.Key, Flares = flares, Chaff = chaff }); totalFlares += flares; totalChaff += chaff;
             }
             result.FlareRounds = totalFlares; result.ChaffRounds = totalChaff;
+            if (zeroMassBox != null) result.ZeroMass = zeroMassBox.IsChecked == true;
+            if (indestructibleBox != null) result.Indestructible = indestructibleBox.IsChecked == true;
+            if (helmetSightBox != null) result.HelmetSight = helmetSightBox.IsChecked == true;
+            if (mawsBox != null) result.MawsUpgrade = mawsBox.IsChecked == true;
+            if (radarBox != null)
+            {
+                ComboBoxItem radarItem = radarBox.SelectedItem as ComboBoxItem;
+                string radarId = radarItem == null ? null : (radarItem.Tag as string);
+                result.RadarSearchBlk = String.IsNullOrWhiteSpace(radarId) ? null : radarId;
+            }
+            if (shipMapBox != null)
+            {
+                ComboBoxItem mapItem = shipMapBox.SelectedItem as ComboBoxItem;
+                result.NavalMap = mapItem == null ? "levels/iwo_jima.bin" : (mapItem.Tag as string);
+            }
+            if (shipSpawnXBox != null)
+            {
+                double spawnX;
+                result.NavalSpawnX = Double.TryParse(shipSpawnXBox.Text, NumberStyles.Any, CultureInfo.InvariantCulture, out spawnX) ? spawnX : -3391.7;
+            }
+            if (shipSpawnYBox != null)
+            {
+                double spawnY;
+                result.NavalSpawnY = Double.TryParse(shipSpawnYBox.Text, NumberStyles.Any, CultureInfo.InvariantCulture, out spawnY) ? spawnY : 0;
+            }
+            if (shipSpawnZBox != null)
+            {
+                double spawnZ;
+                result.NavalSpawnZ = Double.TryParse(shipSpawnZBox.Text, NumberStyles.Any, CultureInfo.InvariantCulture, out spawnZ) ? spawnZ : -6256.09;
+            }
+            if (shipPresetBox != null)
+            {
+                ComboBoxItem presetItem = shipPresetBox.SelectedItem as ComboBoxItem;
+                result.ShipPreset = presetItem == null ? null : (presetItem.Tag as string);
+            }
             return result;
         }
 
@@ -736,11 +867,11 @@ namespace UniversalTestLab
         private readonly CheckBox indestructibleBox;
         private readonly CheckBox helmetSightBox;
         private readonly CheckBox mawsBox;
-        private readonly ComboBox radarBox;
-        private readonly ComboBox shipPresetBox;
-        private readonly ComboBox shipMapBox;
-        private readonly TextBox shipSpawnXBox;
-        private readonly TextBox shipSpawnZBox;
+        private readonly ComboBox radarBox;
+        private readonly ComboBox shipPresetBox;
+        private readonly ComboBox shipMapBox;
+        private readonly TextBox shipSpawnXBox;
+        private readonly TextBox shipSpawnZBox;
         private readonly TextBox shipSpawnYBox;
         private readonly ScrollViewer contentScroll;
         private readonly List<CountermeasureEditor> editors = new List<CountermeasureEditor>();
@@ -795,23 +926,23 @@ namespace UniversalTestLab
             }
             if (radarBox.SelectedItem == null) radarBox.SelectedIndex = 0;
             radarContent.Children.Add(radarBox);
-            content.Children.Add(radarCard);
-
-            if (MainForm.IsShip(aircraft))
-            {
-                Border shipCard = Card("SHIP LOADOUT"); StackPanel shipContent = shipCard.Child as StackPanel;
-                shipContent.Children.Add(new TextBlock { Text = ModernText.L("Weapon preset for this hull. Torpedoes live in a separate preset.", "该舰的武器预设；鱼雷在独立预设里。"), Foreground = ModernPalette.Brush(ModernPalette.Muted), TextWrapping = TextWrapping.Wrap, Margin = new Thickness(0, 2, 0, 8) });
-                shipPresetBox = new ComboBox { Foreground = ModernPalette.Brush(ModernPalette.Text), Background = ModernPalette.Brush("#FF16283E"), BorderBrush = ModernPalette.Brush(ModernPalette.Border), Padding = new Thickness(8, 4, 8, 4), Height = 30, HorizontalAlignment = HorizontalAlignment.Stretch };
-                foreach (string presetName in MainForm.ShipPresetNames(aircraft.Id))
-                    shipPresetBox.Items.Add(new ComboBoxItem { Content = presetName, Tag = presetName });
-                string wantedPreset = String.IsNullOrWhiteSpace(original.ShipPreset) ? aircraft.Id + "_default" : original.ShipPreset;
-                ComboBoxItem matchPreset = shipPresetBox.Items.OfType<ComboBoxItem>().FirstOrDefault(x => String.Equals(x.Tag as string, wantedPreset, StringComparison.OrdinalIgnoreCase));
-                if (matchPreset != null) shipPresetBox.SelectedItem = matchPreset;
-                if (shipPresetBox.SelectedItem == null && shipPresetBox.Items.Count > 0) shipPresetBox.SelectedIndex = 0;
-                shipContent.Children.Add(shipPresetBox);
-                shipContent.Children.Add(new TextBlock { Text = ModernText.L("Map", "地图"), Foreground = ModernPalette.Brush(ModernPalette.Cyan), FontSize = 11, FontWeight = FontWeights.SemiBold, Margin = new Thickness(0, 10, 0, 2) });
-                shipMapBox = new ComboBox { Foreground = ModernPalette.Brush(ModernPalette.Text), Background = ModernPalette.Brush("#FF16283E"), BorderBrush = ModernPalette.Brush(ModernPalette.Border), Padding = new Thickness(8, 4, 8, 4), Height = 30, HorizontalAlignment = HorizontalAlignment.Stretch, Margin = new Thickness(0, 2, 0, 0) };
-                shipMapBox.Items.Add(new ComboBoxItem { Content = "Iwo Jima (stock naval map)", Tag = "levels/iwo_jima.bin" });
+            content.Children.Add(radarCard);
+
+            if (MainForm.IsShip(aircraft))
+            {
+                Border shipCard = Card("SHIP LOADOUT"); StackPanel shipContent = shipCard.Child as StackPanel;
+                shipContent.Children.Add(new TextBlock { Text = ModernText.L("Weapon preset for this hull. Torpedoes live in a separate preset.", "该舰的武器预设；鱼雷在独立预设里。"), Foreground = ModernPalette.Brush(ModernPalette.Muted), TextWrapping = TextWrapping.Wrap, Margin = new Thickness(0, 2, 0, 8) });
+                shipPresetBox = new ComboBox { Foreground = ModernPalette.Brush(ModernPalette.Text), Background = ModernPalette.Brush("#FF16283E"), BorderBrush = ModernPalette.Brush(ModernPalette.Border), Padding = new Thickness(8, 4, 8, 4), Height = 30, HorizontalAlignment = HorizontalAlignment.Stretch };
+                foreach (string presetName in MainForm.ShipPresetNames(aircraft.Id))
+                    shipPresetBox.Items.Add(new ComboBoxItem { Content = presetName, Tag = presetName });
+                string wantedPreset = String.IsNullOrWhiteSpace(original.ShipPreset) ? aircraft.Id + "_default" : original.ShipPreset;
+                ComboBoxItem matchPreset = shipPresetBox.Items.OfType<ComboBoxItem>().FirstOrDefault(x => String.Equals(x.Tag as string, wantedPreset, StringComparison.OrdinalIgnoreCase));
+                if (matchPreset != null) shipPresetBox.SelectedItem = matchPreset;
+                if (shipPresetBox.SelectedItem == null && shipPresetBox.Items.Count > 0) shipPresetBox.SelectedIndex = 0;
+                shipContent.Children.Add(shipPresetBox);
+                shipContent.Children.Add(new TextBlock { Text = ModernText.L("Map", "地图"), Foreground = ModernPalette.Brush(ModernPalette.Cyan), FontSize = 11, FontWeight = FontWeights.SemiBold, Margin = new Thickness(0, 10, 0, 2) });
+                shipMapBox = new ComboBox { Foreground = ModernPalette.Brush(ModernPalette.Text), Background = ModernPalette.Brush("#FF16283E"), BorderBrush = ModernPalette.Brush(ModernPalette.Border), Padding = new Thickness(8, 4, 8, 4), Height = 30, HorizontalAlignment = HorizontalAlignment.Stretch, Margin = new Thickness(0, 2, 0, 0) };
+                shipMapBox.Items.Add(new ComboBoxItem { Content = "Iwo Jima (stock naval map)", Tag = "levels/iwo_jima.bin" });
                 shipMapBox.Items.Add(new ComboBoxItem { Content = "Clean Testdrive (UTL level, has water)", Tag = "levels/Clean_Testdrive.bin" });
                 shipMapBox.Items.Add(new ComboBoxItem { Content = "Black Sea port (official naval)", Tag = "levels/avn_blacksea_port.bin" });
                 shipMapBox.Items.Add(new ComboBoxItem { Content = "Fiji (official naval)", Tag = "levels/avn_fiji.bin" });
@@ -819,22 +950,22 @@ namespace UniversalTestLab
                 shipMapBox.Items.Add(new ComboBoxItem { Content = "Norway islands (official naval)", Tag = "levels/avn_norway_islands.bin" });
                 shipMapBox.Items.Add(new ComboBoxItem { Content = "Guadalcanal (official naval)", Tag = "levels/guadalcanal.bin" });
                 shipMapBox.Items.Add(new ComboBoxItem { Content = "Saipan (official naval)", Tag = "levels/saipan.bin" });
-                shipMapBox.Items.Add(new ComboBoxItem { Content = "Mediterranean port (official naval)", Tag = "levels/avn_mediterranean_port.bin" });
-                string wantedMap = String.IsNullOrWhiteSpace(original.NavalMap) ? "levels/iwo_jima.bin" : original.NavalMap;
-                ComboBoxItem mapMatch = shipMapBox.Items.OfType<ComboBoxItem>().FirstOrDefault(x => String.Equals(x.Tag as string, wantedMap, StringComparison.OrdinalIgnoreCase));
-                if (mapMatch != null) shipMapBox.SelectedItem = mapMatch;
-                if (shipMapBox.SelectedItem == null) shipMapBox.SelectedIndex = 0;
-                shipContent.Children.Add(shipMapBox);
-                StackPanel spawnRow = new StackPanel { Orientation = Orientation.Horizontal, Margin = new Thickness(0, 8, 0, 0) };
-                spawnRow.Children.Add(new TextBlock { Text = ModernText.L("Spawn X / Z / Y", "出生点 X / Z / Y(水面高度)"), Foreground = ModernPalette.Brush(ModernPalette.Muted), VerticalAlignment = VerticalAlignment.Center, Margin = new Thickness(0, 0, 8, 0) });
-                shipSpawnXBox = new TextBox { Text = original.NavalSpawnX.ToString("0.###", System.Globalization.CultureInfo.InvariantCulture), Width = 110, Margin = new Thickness(0, 0, 6, 0) };
-                shipSpawnZBox = new TextBox { Text = original.NavalSpawnZ.ToString("0.###", System.Globalization.CultureInfo.InvariantCulture), Width = 110 };
-                shipSpawnYBox = new TextBox { Text = original.NavalSpawnY.ToString("0.###", System.Globalization.CultureInfo.InvariantCulture), Width = 90, Margin = new Thickness(6, 0, 0, 0) };
-                spawnRow.Children.Add(shipSpawnXBox);
-                spawnRow.Children.Add(shipSpawnZBox);
-                spawnRow.Children.Add(shipSpawnYBox);
-                shipContent.Children.Add(spawnRow);
-                content.Children.Add(shipCard);
+                shipMapBox.Items.Add(new ComboBoxItem { Content = "Mediterranean port (official naval)", Tag = "levels/avn_mediterranean_port.bin" });
+                string wantedMap = String.IsNullOrWhiteSpace(original.NavalMap) ? "levels/iwo_jima.bin" : original.NavalMap;
+                ComboBoxItem mapMatch = shipMapBox.Items.OfType<ComboBoxItem>().FirstOrDefault(x => String.Equals(x.Tag as string, wantedMap, StringComparison.OrdinalIgnoreCase));
+                if (mapMatch != null) shipMapBox.SelectedItem = mapMatch;
+                if (shipMapBox.SelectedItem == null) shipMapBox.SelectedIndex = 0;
+                shipContent.Children.Add(shipMapBox);
+                StackPanel spawnRow = new StackPanel { Orientation = Orientation.Horizontal, Margin = new Thickness(0, 8, 0, 0) };
+                spawnRow.Children.Add(new TextBlock { Text = ModernText.L("Spawn X / Z / Y", "出生点 X / Z / Y(水面高度)"), Foreground = ModernPalette.Brush(ModernPalette.Muted), VerticalAlignment = VerticalAlignment.Center, Margin = new Thickness(0, 0, 8, 0) });
+                shipSpawnXBox = new TextBox { Text = original.NavalSpawnX.ToString("0.###", System.Globalization.CultureInfo.InvariantCulture), Width = 110, Margin = new Thickness(0, 0, 6, 0) };
+                shipSpawnZBox = new TextBox { Text = original.NavalSpawnZ.ToString("0.###", System.Globalization.CultureInfo.InvariantCulture), Width = 110 };
+                shipSpawnYBox = new TextBox { Text = original.NavalSpawnY.ToString("0.###", System.Globalization.CultureInfo.InvariantCulture), Width = 90, Margin = new Thickness(6, 0, 0, 0) };
+                spawnRow.Children.Add(shipSpawnXBox);
+                spawnRow.Children.Add(shipSpawnZBox);
+                spawnRow.Children.Add(shipSpawnYBox);
+                shipContent.Children.Add(spawnRow);
+                content.Children.Add(shipCard);
             }
             contentScroll = new ScrollViewer { Content = content, VerticalScrollBarVisibility = ScrollBarVisibility.Auto, HorizontalScrollBarVisibility = ScrollBarVisibility.Disabled, Margin = new Thickness(0, 6, 0, 14), Padding = new Thickness(0, 0, 8, 30) }; Grid.SetRow(contentScroll, 1); layout.Children.Add(contentScroll);
             Grid footer = new Grid(); footer.ColumnDefinitions.Add(new ColumnDefinition()); footer.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(145) }); footer.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(175) }); footer.Children.Add(new TextBlock { Text = ModernText.L("Settings are saved with this aircraft and custom presets.", "设置随该飞机及自定义预设保存。"), Foreground = ModernPalette.Brush(ModernPalette.Muted), VerticalAlignment = VerticalAlignment.Center });
@@ -852,8 +983,8 @@ namespace UniversalTestLab
 
         private Border Card(string title)
         {
-            StackPanel stack = new StackPanel(); stack.Children.Add(Heading(title, 15));
-            return new Border { CornerRadius = new CornerRadius(15), BorderBrush = ModernPalette.Brush(ModernPalette.Border), BorderThickness = new Thickness(1), Background = ModernPalette.Brush("#A024324D"), Padding = new Thickness(16), Margin = new Thickness(0, 0, 0, 12), Child = stack };
+            StackPanel stack = new StackPanel(); stack.Children.Add(new TextBlock { Text = "// " + title, Foreground = ModernPalette.Brush(ModernPalette.Cyan), FontSize = 12, FontWeight = FontWeights.SemiBold, Margin = new Thickness(0, 0, 0, 8) });
+            return new Border { Child = stack, BorderThickness = new Thickness(0, 0, 0, 1), BorderBrush = ModernPalette.Brush("#332C4A6B"), Padding = new Thickness(0, 0, 0, 10), Margin = new Thickness(0, 0, 0, 14) };
         }
 
         private TextBlock ValueText()
@@ -983,7 +1114,7 @@ namespace UniversalTestLab
 
         // Radars offered by the aircraft radar picker: engine-typed "radar" sensors
         // minus the IR/optical trackers that share that type.
-        private static IEnumerable<SensorRowJson> RadarChoices()
+        internal static IEnumerable<SensorRowJson> RadarChoices()
         {
             List<SensorRowJson> list = new List<SensorRowJson>();
             foreach (SensorRowJson sensor in MainForm.SensorCatalog)
@@ -997,7 +1128,7 @@ namespace UniversalTestLab
             return list.OrderBy(x => x.display).ThenBy(x => x.id).ToList();
         }
 
-        private static string RadarDetail(SensorRowJson sensor)
+        internal static string RadarDetail(SensorRowJson sensor)
         {
             double range;
             if (!String.IsNullOrWhiteSpace(sensor.rangeMax)
@@ -1027,31 +1158,31 @@ namespace UniversalTestLab
             if (indestructibleBox != null) result.Indestructible = indestructibleBox.IsChecked == true;
             if (helmetSightBox != null) result.HelmetSight = helmetSightBox.IsChecked == true;
             if (mawsBox != null) result.MawsUpgrade = mawsBox.IsChecked == true;
-            if (shipMapBox != null)
-            {
-                ComboBoxItem mapItem = shipMapBox.SelectedItem as ComboBoxItem;
-                result.NavalMap = mapItem == null ? "levels/iwo_jima.bin" : (mapItem.Tag as string);
-            }
-            if (shipSpawnXBox != null)
-            {
-                double spawnX;
-                result.NavalSpawnX = Double.TryParse(shipSpawnXBox.Text, System.Globalization.NumberStyles.Any, System.Globalization.CultureInfo.InvariantCulture, out spawnX) ? spawnX : -3391.7;
-            }
-            if (shipSpawnYBox != null)
-            {
-                double spawnY;
-                result.NavalSpawnY = Double.TryParse(shipSpawnYBox.Text, System.Globalization.NumberStyles.Any, System.Globalization.CultureInfo.InvariantCulture, out spawnY) ? spawnY : 0;
-            }
-            if (shipSpawnZBox != null)
-            {
-                double spawnZ;
-                result.NavalSpawnZ = Double.TryParse(shipSpawnZBox.Text, System.Globalization.NumberStyles.Any, System.Globalization.CultureInfo.InvariantCulture, out spawnZ) ? spawnZ : -6256.09;
-            }
-            if (shipPresetBox != null)
-            {
-                ComboBoxItem presetItem = shipPresetBox.SelectedItem as ComboBoxItem;
-                result.ShipPreset = presetItem == null ? null : (presetItem.Tag as string);
-            }
+            if (shipMapBox != null)
+            {
+                ComboBoxItem mapItem = shipMapBox.SelectedItem as ComboBoxItem;
+                result.NavalMap = mapItem == null ? "levels/iwo_jima.bin" : (mapItem.Tag as string);
+            }
+            if (shipSpawnXBox != null)
+            {
+                double spawnX;
+                result.NavalSpawnX = Double.TryParse(shipSpawnXBox.Text, System.Globalization.NumberStyles.Any, System.Globalization.CultureInfo.InvariantCulture, out spawnX) ? spawnX : -3391.7;
+            }
+            if (shipSpawnYBox != null)
+            {
+                double spawnY;
+                result.NavalSpawnY = Double.TryParse(shipSpawnYBox.Text, System.Globalization.NumberStyles.Any, System.Globalization.CultureInfo.InvariantCulture, out spawnY) ? spawnY : 0;
+            }
+            if (shipSpawnZBox != null)
+            {
+                double spawnZ;
+                result.NavalSpawnZ = Double.TryParse(shipSpawnZBox.Text, System.Globalization.NumberStyles.Any, System.Globalization.CultureInfo.InvariantCulture, out spawnZ) ? spawnZ : -6256.09;
+            }
+            if (shipPresetBox != null)
+            {
+                ComboBoxItem presetItem = shipPresetBox.SelectedItem as ComboBoxItem;
+                result.ShipPreset = presetItem == null ? null : (presetItem.Tag as string);
+            }
             if (radarBox != null)
             {
                 ComboBoxItem radarItem = radarBox.SelectedItem as ComboBoxItem;

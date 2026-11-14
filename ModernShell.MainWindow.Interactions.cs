@@ -725,6 +725,7 @@ namespace UniversalTestLab
         private void UpdateConfigurationSummary()
         {
             if (flightProfileText == null || targetSummaryText == null) return;
+            FillSummaryRows();
             AircraftSettings settings = selectedAircraft == null ? new AircraftSettings() : controller.WorkspaceGetSettings(selectedAircraft);
             if (GroundSelected)
             {
@@ -757,6 +758,108 @@ namespace UniversalTestLab
                 ModernText.L("\nGround: ", "\n地面: ") + configuredGroundTargets.Count.ToString(CultureInfo.InvariantCulture) + " positions  •  " + (hostileToggle.IsChecked == true ? "ATTACKING" : "PASSIVE") +
                 ModernText.L("\nNaval: ", "\n海上: ") + SelectedCount(shipCount).ToString(CultureInfo.InvariantCulture) + " × " + (ship == null ? "none" : ship.Name) + "  •  " + (passiveShip ? "PASSIVE" : "RETURNS FIRE") +
                 ModernText.L("\nAir Defence: ", "\n防空: ") + (samSitesToggle.IsChecked == true ? ModernText.L("SAM SITES ", "SAM 阵地 ") + (samSitesMode != null && samSitesMode.Text == "passive" ? "PASSIVE" : samSitesMode != null && samSitesMode.Text == "friendly" ? "FRIENDLY" : "ACTIVE") : "SAM SITES DISABLED") + "  •  " + (samSitesSelection == null ? "S300" : samSitesSelection.Text.ToUpperInvariant());
+        }
+
+        // Label/value rows for the right-hand summary card. Ask3lad keeps the same
+        // information there; two dense paragraphs pushed everything else off screen.
+        private void FillSummaryRows()
+        {
+            StackPanel configRows = Find<StackPanel>("SummaryConfigRows");
+            StackPanel sceneRows = Find<StackPanel>("SummarySceneRows");
+            if (configRows == null || sceneRows == null) return;
+            configRows.Children.Clear();
+            sceneRows.Children.Clear();
+
+            AircraftSettings settings = selectedAircraft == null ? new AircraftSettings() : controller.WorkspaceGetSettings(selectedAircraft);
+            if (GroundSelected)
+            {
+                if (settings.GroundAmmoLoadouts.Count == 0)
+                {
+                    AddSummaryRow(configRows, ModernText.L("Ammunition", "弹药"), ModernText.L("native", "原生"));
+                }
+                else
+                {
+                    // Show the projectile name the player picked, not the raw container
+                    // id, plus the loaded count and the grand total (Ask3lad shows the
+                    // same three columns in its summary).
+                    Dictionary<string, string> displays = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
+                    foreach (GroundAmmoLoadout ammo in settings.GroundAmmoLoadouts)
+                    {
+                        if (String.IsNullOrWhiteSpace(ammo.SourceBlk)) continue;
+                        foreach (GroundAmmo candidate in controller.WorkspaceResolveCannonAmmo(ammo.SourceBlk))
+                        {
+                            if (!String.IsNullOrWhiteSpace(candidate.Container) && !displays.ContainsKey(candidate.Container)) displays[candidate.Container] = candidate.Display;
+                            if (!String.IsNullOrWhiteSpace(candidate.BulletName) && !displays.ContainsKey(candidate.BulletName)) displays[candidate.BulletName] = candidate.Display;
+                        }
+                    }
+                    int totalRounds = 0;
+                    foreach (GroundAmmoLoadout ammo in settings.GroundAmmoLoadouts)
+                    {
+                        string key = String.IsNullOrWhiteSpace(ammo.AmmoGroup) ? ammo.BulletName : ammo.AmmoGroup;
+                        string label;
+                        if (String.IsNullOrWhiteSpace(key) || !displays.TryGetValue(key, out label) || String.IsNullOrWhiteSpace(label))
+                            label = key ?? "—";
+                        AddSummaryRow(configRows, label, ammo.Count.ToString(CultureInfo.InvariantCulture));
+                        totalRounds += ammo.Count;
+                    }
+                    AddSummaryRow(configRows, ModernText.L("Total", "总计"), totalRounds.ToString(CultureInfo.InvariantCulture));
+                }
+            }
+            else
+            {
+                AddSummaryRow(configRows, ModernText.L("Fuel", "燃油"), settings.FullFuel
+                    ? ModernText.L("full", "满油") : settings.FuelMinutes.ToString(CultureInfo.InvariantCulture) + " min");
+                string beltsValue = settings.GunBeltSelections.Count == 0
+                    ? ModernText.L("default", "默认")
+                    : settings.GunBeltSelections.Count.ToString(CultureInfo.InvariantCulture) + ModernText.L(" groups", " 组");
+                AddSummaryRow(configRows, ModernText.L("Belts", "弹链"), beltsValue);
+            }
+
+            CombinedMap combined = combinedScenario == null ? null : controller.WorkspaceCombinedMaps.FirstOrDefault(x => x.Id.Equals(combinedScenario.MapId ?? "", StringComparison.OrdinalIgnoreCase));
+            string mapName = combinedScenario != null && combinedScenario.Enabled
+                ? (combined == null ? "—" : combined.Display)
+                : (selectedAircraft != null && MainForm.IsShip(selectedAircraft) && !String.IsNullOrWhiteSpace(settings.NavalMap)
+                    ? System.IO.Path.GetFileNameWithoutExtension(settings.NavalMap)
+                    : "Clean Testdrive");
+            AddSummaryRow(sceneRows, ModernText.L("Map", "地图"), mapName);
+            AddSummaryRow(sceneRows, ModernText.L("Respawn", "重生"), combinedScenario != null && combinedScenario.Enabled
+                ? ModernText.L("combined spawn", "联合战役出生点")
+                : ModernText.L("instant", "即时"));
+
+            AircraftView air = airTarget == null ? null : airTarget.SelectedItem as AircraftView;
+            AddSummaryRow(sceneRows, ModernText.L("Air targets", "空中目标"), SelectedCount(airCount).ToString(CultureInfo.InvariantCulture) + " × " + (air == null ? "—" : air.Name));
+
+            if (configuredGroundTargets.Count == 0)
+            {
+                AddSummaryRow(sceneRows, ModernText.L("Ground", "地面"), ModernText.L("none", "无"));
+            }
+            else
+            {
+                AddSummaryRow(sceneRows, ModernText.L("Ground targets", "地面目标"), configuredGroundTargets.Count.ToString(CultureInfo.InvariantCulture) + ModernText.L(" positions", " 个位置"));
+                foreach (object entry in configuredGroundTargets.Take(8))
+                {
+                    string name = null;
+                    TargetView view = entry as TargetView;
+                    if (view != null) name = view.Name;
+                    else name = entry == null ? null : entry.ToString();
+                    AddSummaryRow(sceneRows, "", name ?? "—");
+                }
+            }
+
+            AddSummaryRow(configRows, ModernText.L("Modules", "改装件"), settings.UseAllModifications
+                ? ModernText.L("all researched", "全部已研究")
+                : settings.EnabledModifications.Count.ToString(CultureInfo.InvariantCulture) + ModernText.L(" selected", " 项已选"));
+        }
+        private static void AddSummaryRow(StackPanel host, string label, string value)
+        {
+            Grid row = new Grid { Margin = new Thickness(0, 2, 0, 2) };
+            row.ColumnDefinitions.Add(new ColumnDefinition());
+            row.ColumnDefinitions.Add(new ColumnDefinition { Width = GridLength.Auto });
+            row.Children.Add(new TextBlock { Text = label, Foreground = ModernPalette.Brush(ModernPalette.Muted), FontSize = 11, VerticalAlignment = VerticalAlignment.Center });
+            TextBlock v = new TextBlock { Text = value ?? "—", Foreground = ModernPalette.Brush(ModernPalette.Cyan), FontSize = 11, FontWeight = FontWeights.SemiBold, MaxWidth = 190, TextTrimming = TextTrimming.CharacterEllipsis, HorizontalAlignment = HorizontalAlignment.Right };
+            Grid.SetColumn(v, 1);
+            row.Children.Add(v);
+            host.Children.Add(row);
         }
 
         private void ShowPresets()

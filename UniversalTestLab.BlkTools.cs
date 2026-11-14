@@ -1245,7 +1245,7 @@ namespace UniversalTestLab
 
         // Naval player. The unit has to sit in the ships{} container (armada is
         // air-only) and the mission needs a sea map with a valid spawn point.
-        public static string ConfigureShipPlayer(string text, string classId, string presetId, string navalMap, double spawnX, double spawnY, double spawnZ)
+        public static string ConfigureShipPlayer(string text, string classId, string presetId, string navalMap, double spawnX, double spawnY, double spawnZ, string shipId = null)
         {
             BlockSpan player = UnitBlockByName(text, "You");
             if (player == null) throw new InvalidOperationException("Player unit is missing from the mission template.");
@@ -1258,6 +1258,13 @@ namespace UniversalTestLab
             block = Regex.Replace(block, @"(?m)^(\s*)unit_class:t\s*=\s*""[^""]*""", "${1}unit_class:t=\"" + classId + "\"");
             block = Regex.Replace(block, @"(?m)^(\s*)weapons:t\s*=\s*""[^""]*""", "${1}weapons:t=\"" + presetId + "\"");
             block = Regex.Replace(block, @"(?m)^(\s*)crewSkillK:r\s*=\s*[\d.]+", "${1}crewSkillK:r=1");
+            // Unlock the full modification set, exactly like Ask3lad does for a player
+            // ship. Without it missile rounds stay research-locked and a launched round
+            // never guides.
+            if (Regex.IsMatch(block, @"(?m)^\s*applyAllMods:b\s*="))
+                block = Regex.Replace(block, @"(?m)^(\s*)applyAllMods:b\s*=\s*(?:yes|no)", "${1}applyAllMods:b=yes");
+            else
+                block = block.Replace("crewSkillK:r=1", "crewSkillK:r=1" + Environment.NewLine + "    applyAllMods:b=yes");
             // Arm the four mission slots: the aircraft template leaves them at 0, and
             // the game then reports "ammunition depleted" even with a valid preset.
             for (int ammoSlot = 0; ammoSlot < 4; ammoSlot++)
@@ -1265,11 +1272,21 @@ namespace UniversalTestLab
                 string ammoField = "bulletsCount" + ammoSlot.ToString(CultureInfo.InvariantCulture);
                 block = new Regex(@"(?m)^(\s*" + ammoField + @":i\s*=\s*)\d+").Replace(block, "${1}9999", 1);
             }
+            // Fill the four mission ammo slots with real containers. Empty slots leave the
+            // engine without an ammo type for that weapon group, which is what made AI
+            // hulls report "no ammunition" for every group except the main gun.
+            List<string> missionAmmo = NavalWeapons.MissionAmmo(shipId);
+            for (int ammoSlot = 0; ammoSlot < 4 && ammoSlot < missionAmmo.Count; ammoSlot++)
+            {
+                string ammoField = "bullets" + ammoSlot.ToString(CultureInfo.InvariantCulture) + ":t";
+                string pattern = @"(?m)^(\s*" + ammoField + @"\s*=\s*"")[^""]*("")";
+                block = new Regex(pattern).Replace(block, "${1}" + missionAmmo[ammoSlot].Replace("\"", "") + "${2}", 1);
+            }
             block = Regex.Replace(block, @"(?m)^\s*dontOverrideHeight:b\s*=\s*yes\s*\r?\n", "");
-            string spawnTransform = "    tm:m=[[-0.709198, 0, -0.70501] [0, 1, 0] [0.70501, 0, -0.709198] ["
-                + spawnX.ToString("0.###", CultureInfo.InvariantCulture) + ", "
-                + spawnY.ToString("0.###", CultureInfo.InvariantCulture) + ", "
-                + spawnZ.ToString("0.###", CultureInfo.InvariantCulture) + "]]";
+            string spawnTransform = "    tm:m=[[-0.709198, 0, -0.70501] [0, 1, 0] [0.70501, 0, -0.709198] ["
+                + spawnX.ToString("0.###", CultureInfo.InvariantCulture) + ", "
+                + spawnY.ToString("0.###", CultureInfo.InvariantCulture) + ", "
+                + spawnZ.ToString("0.###", CultureInfo.InvariantCulture) + "]]";
             block = new Regex(@"(?m)^[ \t]*tm:m=.*$").Replace(block, spawnTransform, 1);
             // Air-only props (altLimit, plane{}, speed 1100) keep a ship from being
             // placed at all - the mission then looks like an empty map.
@@ -1292,7 +1309,7 @@ namespace UniversalTestLab
                 }
             }
             text = text.Remove(player.Start, player.End - player.Start + 1);
-            string levelLine = String.IsNullOrWhiteSpace(navalMap) ? "levels/iwo_jima.bin" : navalMap.Trim();
+            string levelLine = String.IsNullOrWhiteSpace(navalMap) ? "levels/iwo_jima.bin" : navalMap.Trim();
             text = new Regex(@"(?m)^(\s*)level:t\s*=\s*""[^""]*""").Replace(text, "${1}level:t=\"" + levelLine + "\"", 1);
             // Sibling block, directly after the existing ships{} unit.
             BlockSpan shipsAfter = FirstBlock(text, "ships", 0);

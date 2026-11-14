@@ -31,7 +31,7 @@ namespace UniversalTestLab
                 string token = DateTime.UtcNow.ToString("yyyyMMddHHmmssfff", CultureInfo.InvariantCulture) + "_" + Process.GetCurrentProcess().Id;
                 System.Diagnostics.Stopwatch applyWatch = System.Diagnostics.Stopwatch.StartNew();
                 LogTiming("=== APPLY START  vehicle=" + selected.Id + " ===");
-                bool groundPlayer = IsGroundVehicle(selected);
+                bool groundPlayer = IsGroundVehicle(selected);
                 bool shipPlayer = IsShip(selected);
                 bool helicopterPlayer = !groundPlayer && IsHelicopter(selected, null);
                 CombinedMap combinedMap = null;
@@ -47,7 +47,7 @@ namespace UniversalTestLab
                         combinedSpawn = combinedMap.Spawns.FirstOrDefault(x => x.Side == selectedSide && x.Kind.Equals(playerKind, StringComparison.OrdinalIgnoreCase));
                     if (combinedSpawn == null) throw new InvalidOperationException("This map has no compatible spawn for the selected vehicle and side.");
                 }
-                GeneratedAircraft generated = shipPlayer ? BuildCustomShip(root, selected, token)
+                GeneratedAircraft generated = shipPlayer ? BuildCustomShip(root, selected, token)
                     : groundPlayer ? BuildCustomGroundVehicle(root, selected, token) : BuildCustomAircraft(root, selected, token);
                 WriteMissionLocalization(root, generated, selected);
                 Aircraft air = ResolveAircraft(airTargetBox);
@@ -59,7 +59,7 @@ namespace UniversalTestLab
                 text = BlkTools.DisablePlayerSwitch(text);
                 text = BlkTools.RemoveBotNotifications(text);
                 if (shipPlayer)
-                    text = BlkTools.ConfigureShipPlayer(text, generated.ClassId, generated.PresetId, settings.NavalMap, settings.NavalSpawnX, settings.NavalSpawnY, settings.NavalSpawnZ);
+                    text = BlkTools.ConfigureShipPlayer(text, generated.ClassId, generated.PresetId, settings.NavalMap, settings.NavalSpawnX, settings.NavalSpawnY, settings.NavalSpawnZ, selected.Id);
                 else if (groundPlayer)
                     text = BlkTools.ConfigureGroundPlayer(text, generated.ClassId, generated.ModelId, generated.PresetId, settings, generated.GroundAmmoLoadouts);
                 else
@@ -235,7 +235,7 @@ namespace UniversalTestLab
                     airSpawnAltitude = MissionSettings.Current.SpawnAltitude;
                     airDeathInAir = !MissionSettings.Current.AirDeathMode.Equals("runway", StringComparison.OrdinalIgnoreCase);
                 }
-                if (!shipPlayer)
+                if (!shipPlayer)
                 text = BlkTools.ConfigureInstantPlayerRespawn(text, groundPlayer, generated.SpawnSpeedKmh,
                     combinedSpawn == null ? null : BlkTools.CombinedRespawnTransform(combinedSpawn), MissionSettings.Current.PlayerRespawnDelaySeconds,
                     airportTakeoffMode, airSpawnAltitude, airDeathInAir);
